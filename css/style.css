@@ -7522,6 +7522,7 @@ fieldset[disabled] .form-control {
     box-shadow: 0 0 200px rgba(0,0,0,0.95) inset; }
     .sidebar .user-info .image {
       margin-right: 12px;
+      margin-top: 20px;
       display: inline-block; }
       .sidebar .user-info .image img {
         -webkit-border-radius: 50%;
@@ -7533,7 +7534,7 @@ fieldset[disabled] .form-control {
       cursor: default;
       display: block;
       position: relative;
-      top: 25px; }
+      top: 5px; }
       .sidebar .user-info .info-container .name {
         white-space: nowrap;
         -ms-text-overflow: ellipsis;
