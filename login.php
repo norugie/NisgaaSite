@@ -56,11 +56,6 @@
                             <button class="btn btn-block bg-blue-grey waves-effect" type="submit">SIGN IN</button>
                         </div>
                     </div>
-                    <div class="row m-t-15 m-b--20">
-                        <div class="col-lg-12 align-right">
-                            <a href="forgot-password.html">Forgot Password?</a>
-                        </div>
-                    </div>
                 </form>
             </div>
         </div>
