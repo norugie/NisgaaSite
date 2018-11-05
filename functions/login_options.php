@@ -23,7 +23,6 @@
 				header("location: ../login.php?invalid=true");
             }
             
-            //echo $loginInfo['username'] . " = " . $user . "<br />" . $loginInfo['password'] . " = " . md5($pass); 
 		}
 	}
     
