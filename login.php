@@ -1,3 +1,14 @@
+<?php
+
+    session_start();
+
+    if(isset($_SESSION['id']) && isset($_SESSION['type'])){
+        
+        header("location: cms/");
+
+    }
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -33,7 +44,7 @@
         </div>
         <div class="card">
             <div class="body">
-                <form id="sign_in" method="POST">
+                <form id="sign_in" method="POST" action="functions/login.php?login=true">
                     <div class="msg">Sign in to start your session</div>
                     <div class="input-group">
                         <span class="input-group-addon">

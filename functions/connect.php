@@ -1,4 +1,5 @@
 <?php
+
 	class Database {
 		public $con;
 		public function __construct(){
@@ -8,4 +9,5 @@
 			}
 		}
 	}
+	
 ?>
