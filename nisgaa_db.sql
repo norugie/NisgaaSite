@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Oct 26, 2018 at 08:17 PM
+-- Generation Time: Nov 06, 2018 at 10:22 PM
 -- Server version: 10.1.36-MariaDB
 -- PHP Version: 5.6.38
 
@@ -50,20 +50,21 @@ INSERT INTO `roles` (`id`, `role_abbv`, `role_desc`) VALUES
 
 CREATE TABLE `users` (
   `id` int(5) NOT NULL,
-  `user_id` varchar(20) NOT NULL,
+  `username` varchar(20) NOT NULL,
   `first_name` varchar(255) NOT NULL,
   `last_name` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
-  `user_type` int(5) NOT NULL
+  `user_type` int(5) NOT NULL,
+  `status` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `user_id`, `first_name`, `last_name`, `email`, `password`, `user_type`) VALUES
-(1, 'admin', 'Rugie Ann', 'Barrameda', 'rbarrameda@nisgaa.bc.ca', 'c113241856b03df2f484b48ba241dc5e', 1);
+INSERT INTO `users` (`id`, `username`, `first_name`, `last_name`, `email`, `password`, `user_type`, `status`) VALUES
+(1, 'admin', 'Rugie Ann', 'Barrameda', 'rbarrameda@nisgaa.bc.ca', '9b3fe3b23a3f267b9dedda7a86bfc18d', 1, 'Active');
 
 --
 -- Indexes for dumped tables
