@@ -125,11 +125,7 @@
                         <i class="material-icons">keyboard_arrow_down</i>
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a href="javascript:void(0);"><i class="material-icons">person</i>Profile</a></li>
-                        <li role="separator" class="divider"></li>
-                        <li><a href="javascript:void(0);"><i class="material-icons">group</i>Followers</a></li>
-                        <li><a href="javascript:void(0);"><i class="material-icons">shopping_cart</i>Sales</a></li>
-                        <li><a href="javascript:void(0);"><i class="material-icons">favorite</i>Likes</a></li>
+                        <li><a href="#" data-toggle="modal" data-target="#profile-modal"><i class="material-icons">person</i>Profile</a></li>
                         <li role="separator" class="divider"></li>
                         <li><a href="../functions/logout.php"><i class="material-icons">input</i>Sign Out</a></li>
                     </ul>
@@ -139,3 +135,5 @@
         </div>
     </div>
 </nav>
+
+<?php require 'modals/profile.php'; ?>
