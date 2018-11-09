@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Nov 06, 2018 at 10:22 PM
+-- Generation Time: Nov 10, 2018 at 12:25 AM
 -- Server version: 10.1.36-MariaDB
 -- PHP Version: 5.6.38
 
@@ -51,11 +51,12 @@ INSERT INTO `roles` (`id`, `role_abbv`, `role_desc`) VALUES
 CREATE TABLE `users` (
   `id` int(5) NOT NULL,
   `username` varchar(20) NOT NULL,
-  `first_name` varchar(255) NOT NULL,
-  `last_name` varchar(255) NOT NULL,
+  `firstname` varchar(255) NOT NULL,
+  `lastname` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
   `user_type` int(5) NOT NULL,
+  `display_picture` text,
   `status` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -63,8 +64,8 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `username`, `first_name`, `last_name`, `email`, `password`, `user_type`, `status`) VALUES
-(1, 'admin', 'Rugie Ann', 'Barrameda', 'rbarrameda@nisgaa.bc.ca', '9b3fe3b23a3f267b9dedda7a86bfc18d', 1, 'Active');
+INSERT INTO `users` (`id`, `username`, `firstname`, `lastname`, `email`, `password`, `user_type`, `display_picture`, `status`) VALUES
+(1, 'admin', 'IT', 'Manager', 'itmanager@nisgaa.bc.ca', '9b3fe3b23a3f267b9dedda7a86bfc18d', 1, 'user.png', 'Active');
 
 --
 -- Indexes for dumped tables
