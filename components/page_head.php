@@ -18,6 +18,12 @@
 <!-- Animation Css -->
 <link href="../plugins/animate-css/animate.css" rel="stylesheet" />
 
+<!-- Sweetalert Css -->
+<link href="../plugins/sweetalert/sweetalert.css" rel="stylesheet" />
+
+<!-- JQuery DataTable Css -->
+<link href="../plugins/jquery-datatable/skin/bootstrap/css/dataTables.bootstrap.css" rel="stylesheet">
+
 <!-- Custom Css -->
 <link href="../css/style.css" rel="stylesheet">
 <link href="../css/themes/theme-blue-grey.css" rel="stylesheet" />

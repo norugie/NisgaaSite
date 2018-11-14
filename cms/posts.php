@@ -4,6 +4,9 @@
     if(isset($_SESSION['id']) && isset($_SESSION['type'])){
         $page_name = $_GET['page'];
         $page = 'pages/' . $page_name . '.php';
+
+        require '../functions/posts.php';
+        $post = new Post();
 ?>
 
 <!DOCTYPE html>
