@@ -16,6 +16,8 @@
 			if($loginInfo['status'] !== 'Inactive'){
 				if($loginInfo['user_type'] == 1){
 					$loginProcess->adminLogin($loginInfo);
+				} else if ($loginInfo['user_type'] == 2){
+					$loginProcess->editorLogin($loginInfo);
 				} else {
 					header("location:../login.php?error=true");
 				}

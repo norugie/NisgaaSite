@@ -1,12 +1,14 @@
 <?php $users = $district->userList($database); ?>
-
+<?php require '../components/modals/new_user.php'; ?>
 <div class="row clearfix">
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
         <div class="card">
-            <div class="header">
-                <button type="button" class="btn bg-blue waves-effect" data-toggle="modal" data-target="#new-user-modal" style="float: right; margin-top: -5px;">ADD NEW USER</button>
-                <br>
-            </div>
+            <?php if($_SESSION['type'] == 1){ ?>
+                <div class="header">
+                    <button type="button" class="btn bg-blue waves-effect" data-toggle="modal" data-target="#new-user-modal" style="float: right; margin-top: -5px;">ADD NEW USER</button>
+                    <br>
+                </div>
+            <?php } ?>
             <div class="body">
                 <div class="table-responsive">
                     <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
@@ -57,7 +59,11 @@
                                             <td><?php echo $solo['username']; ?></td>
                                             <td><?php echo $solo['email']; ?></td>
                                             <td><center><button type="button" class="btn bg-green waves-effect">MODIFY</button></center></td>
-                                            <td><center><button type="button" class="btn bg-red waves-effect" data-type="delete-user" data-id="<?php echo $solo['id']; ?>" onclick="alertDesign(this);">DELETE</button></center></td>
+                                            <?php if($solo['user_type'] != 1){ ?>
+                                                <td><center><button type="button" class="btn bg-red waves-effect" data-type="delete-user" data-id="<?php echo $solo['id']; ?>" onclick="alertDesign(this);">DELETE</button></center></td>
+                                            <?php } else { ?>
+                                                <td><center><button type="button" class="btn bg-red waves-effect" disabled>DELETE</button></center></td>
+                                            <?php } ?>
                                         </tr>
                                     <?php } ?>
                                 <?php } ?>

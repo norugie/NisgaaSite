@@ -31,7 +31,7 @@ function showDisableUserConfirm(id){
     });
 }
 
-//Warning for re-enabling user accounts
+//Warning for reactivating user accounts
 function showReactivateUserConfirm(id){
     swal({
         title: "Are you sure you want to reactivate this account?",

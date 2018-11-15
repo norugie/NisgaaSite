@@ -25,6 +25,13 @@
 			//Might set folder names here in the future
 			$this->routerUser($info);
 
+		}
+
+		public function editorLogin($info) {
+			
+			//Might set folder names here in the future
+			$this->routerUser($info);
+
         }
     }
     

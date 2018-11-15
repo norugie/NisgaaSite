@@ -13,9 +13,6 @@
 <!-- SweetAlert Plugin Js -->
 <script src="../plugins/sweetalert/sweetalert.min.js"></script>
 
-<!-- Custom JS -->
-<script src="../js/dialogs.js"></script>
-
 <!-- Jquery DataTable Plugin Js -->
 <script src="../plugins/jquery-datatable/jquery.dataTables.js"></script>
 <script src="../plugins/jquery-datatable/skin/bootstrap/js/dataTables.bootstrap.js"></script>
@@ -27,11 +24,13 @@
 <script src="../plugins/jquery-datatable/extensions/export/buttons.html5.min.js"></script>
 <script src="../plugins/jquery-datatable/extensions/export/buttons.print.min.js"></script>
 
+<!-- Select Plugin Js -->
+<script src="../plugins/bootstrap-select/js/bootstrap-select.js"></script>
+
 <!-- Custom Js -->
 <script src="../js/admin.js"></script>
-
-<!-- Demo Js -->
 <script src="../js/demo.js"></script>
+<script src="../js/dialogs.js"></script>
 
 <!-- Custom JS DataTable -->
 <script>
