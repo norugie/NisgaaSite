@@ -13,7 +13,7 @@
 		    header("location: ../login.php?invalid=true");
 		} else {
 			$loginInfo = mysqli_fetch_assoc($query);
-			if($loginInfo['status'] !== 'Archived'){
+			if($loginInfo['status'] !== 'Inactive'){
 				if($loginInfo['user_type'] == 1){
 					$loginProcess->adminLogin($loginInfo);
 				} else {

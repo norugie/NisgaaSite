@@ -6,7 +6,6 @@
         require 'connect.php';
         $database = new Database();
         $post = new Post();
-
     }
 
 ?>

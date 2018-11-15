@@ -7,6 +7,14 @@
         $database = new Database();
         $district = new District();
 
+
+        if(isset($_GET['userDisable'])){
+            
+            $id = $_GET['id'];
+
+            $district->disableUser($database, $id);
+
+        }
     }
 
 ?>

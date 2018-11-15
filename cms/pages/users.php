@@ -37,11 +37,11 @@
                             <tr>
                                 <td><?php echo $solo['firstname'] . " " . $solo['lastname']; ?></td>
                                 <td><?php echo $solo['role_desc']; ?></td>
-                                <td></td>
+                                <td><?php echo $solo['school_abbv']; ?></td>
                                 <td><?php echo $solo['username']; ?></td>
                                 <td><?php echo $solo['email']; ?></td>
                                 <td><center><button type="button" class="btn bg-green waves-effect">MODIFY</button></center></td>
-                                <td class="js-sweetalert"><center><button type="button" class="btn bg-red waves-effect" data-type="delete-user">DELETE</button></center></td>
+                                <td><center><button type="button" class="btn bg-red waves-effect" data-type="delete-user" data-id="<?php echo $solo['id']; ?>" onclick="alertDesign(this);">DELETE</button></center></td>
                             </tr>
                             <?php endforeach; ?>
                         </tbody>

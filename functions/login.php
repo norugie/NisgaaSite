@@ -21,10 +21,10 @@
         }
         
 		public function adminLogin($info) {
-
-			$_SESSION['folder'] = 'admin';
-            
+			
+			//Might set folder names here in the future
 			$this->routerUser($info);
+
         }
     }
     
