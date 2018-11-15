@@ -15,6 +15,13 @@
             $district->disableUser($database, $id);
 
         }
+
+        if(isset($_GET['userReactivate'])){
+
+            $id = $_GET['id'];
+
+            $district->reactivateUser($database, $id);
+        }
     }
 
 ?>

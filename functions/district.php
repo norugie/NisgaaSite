@@ -42,6 +42,19 @@
 	
 		}
 
+		public function reactivateUser($database, $id){			
+			$sql = "UPDATE users SET 
+					status = 'Active'
+					WHERE id = '$id'";
+			$query = mysqli_query($database->con, $sql);
+			if(!$query){
+			    header("location:../cms/district.php?page=users&error=true");
+			} else {
+				header("location:../cms/district.php?page=users&reactivated=true");
+			}	
+	
+		}
+
     }
 
     require 'district_options.php';

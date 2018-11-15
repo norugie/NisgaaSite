@@ -18,7 +18,7 @@
                                 <th>Username</th>
                                 <th>Email</th>
                                 <th>Edit</th>
-                                <th>Delete</th>
+                                <th>Delete<?php if($_SESSION['type'] == 1) echo '/Reactivate'; ?></th>
                             </tr>
                         </thead>
                         <tfoot>
@@ -29,20 +29,38 @@
                                 <th>Username</th>
                                 <th>Email</th>
                                 <th>Edit</th>
-                                <th>Delete</th>
+                                <th>Delete<?php if($_SESSION['type'] == 1) echo '/Reactivate'; ?></th>
                             </tr>
                         </tfoot>
                         <tbody>
                             <?php foreach($users as $solo): ?>
-                            <tr>
-                                <td><?php echo $solo['firstname'] . " " . $solo['lastname']; ?></td>
-                                <td><?php echo $solo['role_desc']; ?></td>
-                                <td><?php echo $solo['school_abbv']; ?></td>
-                                <td><?php echo $solo['username']; ?></td>
-                                <td><?php echo $solo['email']; ?></td>
-                                <td><center><button type="button" class="btn bg-green waves-effect">MODIFY</button></center></td>
-                                <td><center><button type="button" class="btn bg-red waves-effect" data-type="delete-user" data-id="<?php echo $solo['id']; ?>" onclick="alertDesign(this);">DELETE</button></center></td>
-                            </tr>
+                                <?php if($_SESSION['type'] == 1){ ?>
+                                    <tr>
+                                        <td><?php echo $solo['firstname'] . " " . $solo['lastname']; ?></td>
+                                        <td><?php echo $solo['role_desc']; ?></td>
+                                        <td><?php echo $solo['school_abbv']; ?></td>
+                                        <td><?php echo $solo['username']; ?></td>
+                                        <td><?php echo $solo['email']; ?></td>
+                                        <td><center><button type="button" class="btn bg-green waves-effect">MODIFY</button></center></td>
+                                        <?php if($solo['status'] == 'Active'){ ?>
+                                            <td><center><button type="button" class="btn bg-red waves-effect" data-type="delete-user" data-id="<?php echo $solo['id']; ?>" onclick="alertDesign(this);">DELETE</button></center></td>
+                                        <?php } else { ?>
+                                            <td><center><button type="button" class="btn bg-cyan waves-effect" data-type="reactivate-user" data-id="<?php echo $solo['id']; ?>" onclick="alertDesign(this);">REACTIVATE</button></center></td>
+                                        <?php } ?>                                       
+                                    </tr>
+                                <?php } else { ?>
+                                    <?php if($solo['status'] !== 'Inactive'){ ?>
+                                        <tr>
+                                            <td><?php echo $solo['firstname'] . " " . $solo['lastname']; ?></td>
+                                            <td><?php echo $solo['role_desc']; ?></td>
+                                            <td><?php echo $solo['school_abbv']; ?></td>
+                                            <td><?php echo $solo['username']; ?></td>
+                                            <td><?php echo $solo['email']; ?></td>
+                                            <td><center><button type="button" class="btn bg-green waves-effect">MODIFY</button></center></td>
+                                            <td><center><button type="button" class="btn bg-red waves-effect" data-type="delete-user" data-id="<?php echo $solo['id']; ?>" onclick="alertDesign(this);">DELETE</button></center></td>
+                                        </tr>
+                                    <?php } ?>
+                                <?php } ?>
                             <?php endforeach; ?>
                         </tbody>
                     </table>
