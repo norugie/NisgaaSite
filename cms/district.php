@@ -7,6 +7,8 @@
 
         require '../functions/district.php';
         $district = new District();
+        $roles = $district->roleList($database);
+        $schools = $district->schoolList($database);
 ?>
 
 <!DOCTYPE html>
@@ -44,6 +46,8 @@
 
     <section class="content">
         <div class="container-fluid">
+            <?php require '../components/district_notification.php'; ?>
+            
             <div class="block-header">
                 <h2>SCHOOL DISTRICT - <?php echo strtoupper($page_name); ?></h2>
             </div>

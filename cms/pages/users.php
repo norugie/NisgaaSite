@@ -1,5 +1,10 @@
-<?php $users = $district->userList($database); ?>
+<?php 
+
+    $users = $district->userList($database);
+
+ ?>
 <?php require '../components/modals/new_user.php'; ?>
+<?php require '../components/modals/edit_user.php'; ?>
 <div class="row clearfix">
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
         <div class="card">
@@ -19,7 +24,7 @@
                                 <th>School</th>
                                 <th>Username</th>
                                 <th>Email</th>
-                                <th>Edit</th>
+                                <?php if($_SESSION['type'] == 1){ ?><th>Modify</th><?php } ?>
                                 <th>Delete<?php if($_SESSION['type'] == 1) echo '/Reactivate'; ?></th>
                             </tr>
                         </thead>
@@ -30,7 +35,7 @@
                                 <th>School</th>
                                 <th>Username</th>
                                 <th>Email</th>
-                                <th>Edit</th>
+                                <?php if($_SESSION['type'] == 1){ ?><th>Modify</th><?php } ?>
                                 <th>Delete<?php if($_SESSION['type'] == 1) echo '/Reactivate'; ?></th>
                             </tr>
                         </tfoot>
@@ -43,11 +48,11 @@
                                         <td><?php echo $solo['school_abbv']; ?></td>
                                         <td><?php echo $solo['username']; ?></td>
                                         <td><?php echo $solo['email']; ?></td>
-                                        <td><center><button type="button" class="btn bg-green waves-effect">MODIFY</button></center></td>
+                                        <td><center><button type="button" class="btn bg-green waves-effect" data-toggle="modal" data-target="#edit-user-modal" data-values="<?php echo htmlspecialchars(json_encode($solo)); ?>" onclick="editUser(this);" <?php if($solo['status'] == 'Inactive') echo "disabled"; ?>>MODIFY</button></center></td>
                                         <?php if($solo['status'] == 'Active'){ ?>
-                                            <td><center><button type="button" class="btn bg-red waves-effect" data-type="delete-user" data-id="<?php echo $solo['id']; ?>" onclick="alertDesign(this);">DELETE</button></center></td>
+                                            <td><center><button type="button" class="btn bg-red waves-effect" data-type="delete-user" data-id="<?php echo $solo['id']; ?>" data-username="<?php echo $solo['username']; ?>" onclick="alertDesign(this);">DELETE</button></center></td>
                                         <?php } else { ?>
-                                            <td><center><button type="button" class="btn bg-cyan waves-effect" data-type="reactivate-user" data-id="<?php echo $solo['id']; ?>" onclick="alertDesign(this);">REACTIVATE</button></center></td>
+                                            <td><center><button type="button" class="btn bg-cyan waves-effect" data-type="reactivate-user" data-id="<?php echo $solo['id']; ?>" data-username="<?php echo $solo['username']; ?>" onclick="alertDesign(this);">REACTIVATE</button></center></td>
                                         <?php } ?>                                       
                                     </tr>
                                 <?php } else { ?>
@@ -58,9 +63,8 @@
                                             <td><?php echo $solo['school_abbv']; ?></td>
                                             <td><?php echo $solo['username']; ?></td>
                                             <td><?php echo $solo['email']; ?></td>
-                                            <td><center><button type="button" class="btn bg-green waves-effect">MODIFY</button></center></td>
                                             <?php if($solo['user_type'] != 1){ ?>
-                                                <td><center><button type="button" class="btn bg-red waves-effect" data-type="delete-user" data-id="<?php echo $solo['id']; ?>" onclick="alertDesign(this);">DELETE</button></center></td>
+                                                <td><center><button type="button" class="btn bg-red waves-effect" data-type="delete-user" data-id="<?php echo $solo['id']; ?>" data-username="<?php echo $solo['username']; ?>" onclick="alertDesign(this);">DELETE</button></center></td>
                                             <?php } else { ?>
                                                 <td><center><button type="button" class="btn bg-red waves-effect" disabled>DELETE</button></center></td>
                                             <?php } ?>

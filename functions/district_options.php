@@ -4,23 +4,30 @@
 
         session_start();
         require 'connect.php';
+        require 'log.php';
         $database = new Database();
         $district = new District();
+        $log = new Log();
 
+		/*********************************************************************************************/
+		/***************************  District Functionalities -- Users  *****************************/
+		/*********************************************************************************************/
 
         if(isset($_GET['userDisable'])){
             
             $id = $_GET['id'];
+            $username = $_GET['username'];
 
-            $district->disableUser($database, $id);
+            $district->disableUser($database, $id, $username);
 
         }
 
         if(isset($_GET['userReactivate'])){
 
             $id = $_GET['id'];
+            $username = $_GET['username'];
 
-            $district->reactivateUser($database, $id);
+            $district->reactivateUser($database, $id, $username);
         }
 
         if(isset($_GET['addUser'])){
@@ -36,6 +43,29 @@
             $district->addUser($database, $firstname, $lastname, $role, $school, $username, $password, $email);
 
         }
+
+        if(isset($_GET['editUser'])){
+
+            $id = mysqli_real_escape_string($database->con, $_POST['id']);
+            $firstname = mysqli_real_escape_string($database->con, $_POST['firstname']);
+            $lastname = mysqli_real_escape_string($database->con, $_POST['lastname']);
+            $role = mysqli_real_escape_string($database->con, $_POST['role']);
+            $school = mysqli_real_escape_string($database->con, $_POST['school']);
+            $username = mysqli_real_escape_string($database->con, $_POST['username-hidden']);
+
+            $district->editUser($database, $firstname, $lastname, $role, $school, $id, $username);           
+
+        }
+
+		/*********************************************************************************************/
+		/*************************  District Functionalities -- Employment  **************************/
+		/*********************************************************************************************/
+
+
+
+		/*********************************************************************************************/
+		/***************************  District Functionalities -- Events  ****************************/
+		/*********************************************************************************************/
     }
 
 ?>

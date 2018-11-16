@@ -65,12 +65,6 @@
                         </a>
                     </li>
                     <li>
-                        <a href="district.php?page=schools">
-                            <i class="material-icons">school</i>
-                            <span>Schools</span>
-                        </a>
-                    </li>
-                    <li>
                         <a href="district.php?page=employment">
                             <i class="material-icons">work</i>
                             <span>Employment</span>

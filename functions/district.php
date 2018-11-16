@@ -66,8 +66,12 @@
 			
 		}
 
-		
-		public function disableUser($database, $id){			
+		/*********************************************************************************************/
+		/***************************  District Functionalities -- Users  *****************************/
+		/*********************************************************************************************/
+
+		public function disableUser($database, $id, $username){
+
 			$sql = "UPDATE users SET 
 					status = 'Inactive'
 					WHERE id = '$id'";
@@ -75,12 +79,17 @@
 			if(!$query){
 			    header("location:../cms/district.php?page=users&error=true");
 			} else {
+				global $log;
+				$info = "Disabled the user account for " . $username;
+				$log->logInput($database, $info);
+
 				header("location:../cms/district.php?page=users&disabled=true");
 			}	
 	
 		}
 
-		public function reactivateUser($database, $id){			
+		public function reactivateUser($database, $id, $username){	
+
 			$sql = "UPDATE users SET 
 					status = 'Active'
 					WHERE id = '$id'";
@@ -88,22 +97,60 @@
 			if(!$query){
 			    header("location:../cms/district.php?page=users&error=true");
 			} else {
+				global $log;
+				$info = "Reactivated the user account for " . $username;
+				$log->logInput($database, $info);
+
 				header("location:../cms/district.php?page=users&reactivated=true");
 			}	
 	
 		}
 
 		public function addUser($database, $firstname, $lastname, $role, $school, $username, $password, $email){
+
 			$sql = "INSERT INTO users
 					VALUES(null, '$username', '$firstname', '$lastname', '$email', md5('$password'), '$role', '$school',  'user.png', 'Active')";
 			$query = mysqli_query($database->con, $sql);
 			if(!$query){
 			    header("location:../cms/district.php?page=users&error=true");
 			} else {
-				header("location:../cms/district.php?page=users&reactivated=true");
+				global $log;
+				$info = "Added a new user account for " . $username;
+				$log->logInput($database, $info);
+
+				header("location:../cms/district.php?page=users&newUser=true");
 			}
 		}
 
+		public function editUser($database, $firstname, $lastname, $role, $school, $id, $username){
+			
+			$sql = "UPDATE users SET
+					firstname = '$firstname',
+					lastname = '$lastname',
+					user_type = '$role',
+					school = '$school'
+					WHERE id = '$id'";
+			$query = mysqli_query($database->con, $sql);
+			if(!$query){
+			    header("location:../cms/district.php?page=users&error=true");
+			} else {
+				global $log;
+				$info = "Modified the user account for " . $username;
+				$log->logInput($database, $info);
+				header("location:../cms/district.php?page=users&editUser=true");
+			}	
+
+		}
+
+		/*********************************************************************************************/
+		/*************************  District Functionalities -- Employment  **************************/
+		/*********************************************************************************************/
+
+
+
+		/*********************************************************************************************/
+		/***************************  District Functionalities -- Events  ****************************/
+		/*********************************************************************************************/
     }
 
     require 'district_options.php';

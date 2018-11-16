@@ -31,6 +31,7 @@
 <script src="../js/admin.js"></script>
 <script src="../js/demo.js"></script>
 <script src="../js/dialogs.js"></script>
+<script src="../js/edit.js"></script>
 
 <!-- Custom JS DataTable -->
 <script>

@@ -2,17 +2,18 @@
 function alertDesign(e){
         var type = $(e).data('type');
         var id = $(e).data('id');
+        var username = $(e).data('username');
         if(type === 'delete-user') {
-            showDisableUserConfirm(id);
+            showDisableUserConfirm(id, username);
         } else if(type === 'reactivate-user'){
-            showReactivateUserConfirm(id);
+            showReactivateUserConfirm(id, username);
         }
 }
 
-//These codes takes from http://t4t5.github.io/sweetalert/
+//These codes take from http://t4t5.github.io/sweetalert/
 
 //Warning for disabling user accounts
-function showDisableUserConfirm(id){
+function showDisableUserConfirm(id, username){
     swal({
         title: "Are you sure you want to disable this account?",
         text: "Only those with the Administrator role can reactivate the account",
@@ -25,14 +26,14 @@ function showDisableUserConfirm(id){
         closeOnCancel: true
     }, function(isConfirm){   
         if (isConfirm){   
-            window.location = "../functions/district.php?district=true&userDisable=true&id=" + id;
+            window.location = "../functions/district.php?district=true&userDisable=true&id=" + id + "&username=" + username;
         }
     
     });
 }
 
 //Warning for reactivating user accounts
-function showReactivateUserConfirm(id){
+function showReactivateUserConfirm(id, username){
     swal({
         title: "Are you sure you want to reactivate this account?",
         type: "warning",
@@ -44,7 +45,7 @@ function showReactivateUserConfirm(id){
         closeOnCancel: true
     }, function(isConfirm){   
         if (isConfirm){   
-            window.location = "../functions/district.php?district=true&userReactivate=true&id=" + id;
+            window.location = "../functions/district.php?district=true&userReactivate=true&id=" + id + "&username=" + username;
         }
     
     });
