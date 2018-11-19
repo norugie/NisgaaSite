@@ -10,20 +10,24 @@
 		$sql = "SELECT * FROM users WHERE username = '$user' AND password = md5('$pass')";
 		$query = mysqli_query($loginProcess->con, $sql);
 		if (!$query) {
-		    header("location: ../login.php?invalid=true");
+			header("location: ../login.php?error=true");
 		} else {
 			$loginInfo = mysqli_fetch_assoc($query);
-			if($loginInfo['status'] !== 'Inactive'){
-				if($loginInfo['user_type'] == 1){
-					$loginProcess->adminLogin($loginInfo);
-				} else if ($loginInfo['user_type'] == 2){
-					$loginProcess->editorLogin($loginInfo);
-				} else {
-					header("location:../login.php?error=true");
-				}
+			if(count($loginInfo) === 0){
+				header("location:../login.php?invalid=true");
 			} else {
-				header("location: ../login.php?invalid=true");
-            }
+				if($loginInfo['status'] !== 'Inactive'){
+					if($loginInfo['user_type'] == 1){
+						$loginProcess->adminLogin($loginInfo);
+					} else if ($loginInfo['user_type'] == 2){
+						$loginProcess->editorLogin($loginInfo);
+					} else {
+						header("location:../login.php?error=true");
+					}
+				} else {
+					header("location: ../login.php?inactive=true");
+				}
+			}
             
 		}
 	}

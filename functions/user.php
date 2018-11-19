@@ -19,13 +19,47 @@
 					WHERE users.id = '$u_id'";
 			$query = mysqli_query($database->con, $sql);
 			if(!$query){
-				header("location: ../index.php?error=true");
+				header("location: ../cms/index.php?error=true");
 			} else {
 				$userInfo = mysqli_fetch_assoc($query);
 				return $userInfo;
             }
             
-        }
+		}
+		
+		public function userEditProfile($database, $firstname, $lastname){
+			$id = $_SESSION['id'];
+			$username = $_SESSION['username'];
+			$sql = "UPDATE users SET
+						   firstname = '$firstname',
+						   lastname = '$lastname'
+					WHERE id = '$id'";
+			$query = mysqli_query($database->con, $sql);
+			if(!$query){
+				header("location:../cms/index.php?error=true");
+			} else {
+				global $log;
+				$info = "Modified the user account for " . $username;
+				$log->logInput($database, $info);
+				header("location:../cms/index.php?editProfile=true");
+			}	
+		}
+
+		public function userEditPassword($database, $new_password, $id){
+			$username = $_SESSION['username'];
+			$sql = "UPDATE users SET 
+					password = md5('$new_password')
+					WHERE id = '$id'";
+			$query = mysqli_query($database->con, $sql);
+			if(!$query){
+				header("location:../cms/index.php?error=true");
+			} else {
+				global $log;
+				$info = "Modified the user account for " . $username;
+				$log->logInput($database, $info);
+				header("location:../cms/index.php?editProfile=true");
+			}
+		}
         
     }
     
