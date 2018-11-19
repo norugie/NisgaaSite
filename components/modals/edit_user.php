@@ -20,53 +20,62 @@
                                     <input type="text" id="edit-username-hidden" name="username-hidden" hidden>
                                     <div class="row clearfix">
                                         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                            <label for="edit-firstname">First Name *</label>
                                             <div class="form-group">
                                                 <div class="form-line">
-                                                    <input type="text" id="edit-firstname" class="form-control" name="firstname" placeholder="First Name *" required>
+                                                    <input type="text" id="edit-firstname" class="form-control" name="firstname" required>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                        <label for="edit-lastname">Last Name *</label>
                                             <div class="form-group">
                                                 <div class="form-line">
-                                                    <input type="text" id="edit-lastname" class="form-control" name="lastname" placeholder="Last Name *" required>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row clearfix">
-                                        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                                            <div class="form-group">
-                                                <div class="form-line">
-                                                    <input type="text" id="edit-username" class="form-control" name="username" placeholder="Username *" disabled>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                                            <div class="form-group">
-                                                <div class="form-line">
-                                                    <input type="password" id="edit-password" class="form-control" name="password" placeholder="Password *" disabled>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                                            <div class="form-group">
-                                                <div class="form-line">
-                                                    <input type="text" id="edit-email" class="form-control" name="email" placeholder="Email Address *" disabled>
+                                                    <input type="text" id="edit-lastname" class="form-control" name="lastname" required>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="row clearfix">
                                         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                                            <select class="form-control show-tick" name="role">
+                                        <label for="edit-username">Username *</label>
+                                            <div class="form-group">
+                                                <div class="form-line">
+                                                    <input type="text" id="edit-username" class="form-control" name="username" disabled>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
+                                        <label for="edit-password">Password *</label>
+                                            <div class="form-group">
+                                                <div class="form-line">
+                                                    <input type="password" id="edit-password" class="form-control" name="password" disabled>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row clearfix">
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                        <label for="edit-email">Email Address *</label>
+                                            <div class="form-group">
+                                                <div class="form-line">
+                                                    <input type="text" id="edit-email" class="form-control" name="email" disabled>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row clearfix">
+                                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                            <label for="edit-role">Role *</label>
+                                            <select class="form-control show-tick" name="role" id="edit-role">
                                                 <?php foreach ($roles as $role): ?>
                                                     <option value="<?php echo $role['id']; ?>"><?php echo $role['role_desc']; ?></option>
                                                 <?php endforeach; ?>
                                             </select>
                                         </div>
                                         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                                            <select class="form-control show-tick" name="school">
+                                            <label for="edit-school">School *</label>
+                                            <select class="form-control show-tick" name="school" id="edit-school">
                                                 <?php foreach ($schools as $school): ?>
                                                     <option value="<?php echo $school['id']; ?>"><?php echo $school['school_abbv']; ?></option>
                                                 <?php endforeach; ?>

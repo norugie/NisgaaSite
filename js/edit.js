@@ -10,3 +10,4 @@ function editUser(userInfo){
     $("#edit-username-hidden").attr("value", user['username']);
 
 }
+

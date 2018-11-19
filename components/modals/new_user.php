@@ -14,6 +14,7 @@
                 <h4 class="modal-title" id="largeModalLabel">New User</h4>
             </div>
             <div class="modal-body">
+            <p class="font-12"><i><b>Note:</b> Fields marked with an asterisk are required</i></p><br>
                 <!-- Inline Layout -->
                 <div class="row clearfix">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -22,46 +23,54 @@
                                 <form action="../functions/district.php?district=true&addUser=true" method="POST">
                                     <div class="row clearfix">
                                         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                            <label for="firstname">First Name *</label>
                                             <div class="form-group">
                                                 <div class="form-line">
-                                                    <input type="text" class="form-control" name="firstname" placeholder="First Name *" required>
+                                                    <input type="text" class="form-control" id="firstname" name="firstname" required>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                            <label for="lastname">Last Name *</label>
                                             <div class="form-group">
                                                 <div class="form-line">
-                                                    <input type="text" class="form-control" name="lastname" placeholder="Last Name *" required>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row clearfix">
-                                        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                                            <div class="form-group">
-                                                <div class="form-line">
-                                                    <input type="text" class="form-control" name="username" placeholder="Username *" required>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                                            <div class="form-group">
-                                                <div class="form-line">
-                                                    <input type="password" class="form-control" name="password" placeholder="Password *" required>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                                            <div class="form-group">
-                                                <div class="form-line">
-                                                    <input type="text" class="form-control" name="email" placeholder="Email Address *" required>
+                                                    <input type="text" class="form-control" id="lastname" name="lastname" required>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="row clearfix">
                                         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                                            <select class="form-control show-tick" name="role">
+                                            <label for="username">Username *</label>
+                                            <div class="form-group">
+                                                <div class="form-line">
+                                                    <input type="text" class="form-control" id="username" name="username" required>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                            <label for="password">Password *</label>
+                                            <div class="form-group">
+                                                <div class="form-line">
+                                                    <input type="password" class="form-control" id="password" name="password" required>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row clearfix">
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                            <label for="email_add">Email Address *</label>
+                                            <div class="form-group">
+                                                <div class="form-line">
+                                                    <input type="text" class="form-control" id="email_add" name="email" required>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row clearfix">
+                                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                            <label for="role">Role *</label>
+                                            <select class="form-control show-tick" name="role" id="role">
                                                 <option selected hidden disabled>-- SELECT ROLE FOR THE USER --</option>
                                                 <?php foreach ($roles as $role): ?>
                                                     <option value="<?php echo $role['id']; ?>"><?php echo $role['role_desc']; ?></option>
@@ -69,7 +78,8 @@
                                             </select>
                                         </div>
                                         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                                            <select class="form-control show-tick" name="school">
+                                            <label for="school">School *</label>
+                                            <select class="form-control show-tick" name="school" id="school">
                                                 <option selected hidden disabled>-- SELECT SCHOOL FOR THE USER --</option>
                                                 <?php foreach ($schools as $school): ?>
                                                     <option value="<?php echo $school['id']; ?>"><?php echo $school['school_abbv']; ?></option>
