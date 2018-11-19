@@ -144,8 +144,9 @@
                                         <div class="col-lg-9 col-md-9 col-sm-8 col-xs-7">
                                             <div class="form-group">
                                                 <div class="form-line">
-                                                    <input type="password" id="r_password" name="r_password" class="form-control" placeholder="Confirm your new password" required>
+                                                    <input type="password" id="r_password" name="r_password" class="form-control" placeholder="Confirm your new password" onkeyup="checkPassword();" required>
                                                 </div>
+                                                <span id="text_validation"></span>
                                             </div>
                                         </div>
                                     </div>
@@ -166,3 +167,23 @@
         </div>
     </div>
 </div>
+
+<script>
+    function checkPassword(){
+        var password = document.getElementById('new_password').value;
+        var repeat_password = document.getElementById('r_password').value;
+        var password_validation = document.getElementById('text_validation');
+        var color = "";
+        var message = "";
+
+        if(password != repeat_password){
+            message = "Passwords do not match";
+            color = "#ff6666";
+			password_validation.innerHTML = message;
+			password_validation.style.color = color;
+        } else {
+            message = "";
+            password_validation.innerHTML = message;
+        }
+    }
+</script>
