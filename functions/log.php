@@ -9,7 +9,7 @@
 					VALUES(null, '$logId', '$log', '$userId', null)";
 			$query = mysqli_query($database->con, $sql);
 			if(!$query){
-                header("location:../cms/index.php?error=true&id=1");
+                header("location:../cms/index.php?error=true");
 			}
 
         }

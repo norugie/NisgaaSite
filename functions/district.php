@@ -2,6 +2,44 @@
 
     Class District {
 
+		public function roleList($database){
+			
+			$array = array();
+			$sql = "SELECT * FROM roles";
+			$query = mysqli_query($database->con, $sql);
+			if (!$query) {
+			    header("location: ../cms/index.php?error=true");
+			} else {
+				while($row = mysqli_fetch_array($query)){
+					$array[] = $row;
+				}
+            }
+            
+			return $array;
+
+		}
+
+		public function schoolList($database){
+			
+			$array = array();
+			$sql = "SELECT * FROM schools";
+			$query = mysqli_query($database->con, $sql);
+			if (!$query) {
+			    header("location: ../cms/index.php?error=true");
+			} else {
+				while($row = mysqli_fetch_array($query)){
+					$array[] = $row;
+				}
+            }
+            
+			return $array;
+			
+		}
+
+		/*********************************************************************************************/
+		/***************************  District Functionalities -- Users  *****************************/
+		/*********************************************************************************************/
+
         public function userList($database){
             
 			$array = array();
@@ -21,7 +59,7 @@
 					WHERE users.id != '$gid'";
 			$query = mysqli_query($database->con, $sql);
 			if (!$query) {
-			    header("location: ../index.php?error=true");
+			    header("location: ../cms/district.php?page=users&error=true");
 			} else {
 				while($row = mysqli_fetch_array($query)){
 					$array[] = $row;
@@ -31,44 +69,6 @@
 			return $array;
 
 		}
-
-		public function roleList($database){
-			
-			$array = array();
-			$sql = "SELECT * FROM roles";
-			$query = mysqli_query($database->con, $sql);
-			if (!$query) {
-			    header("location: ../index.php?error=true");
-			} else {
-				while($row = mysqli_fetch_array($query)){
-					$array[] = $row;
-				}
-            }
-            
-			return $array;
-
-		}
-
-		public function schoolList($database){
-			
-			$array = array();
-			$sql = "SELECT * FROM schools";
-			$query = mysqli_query($database->con, $sql);
-			if (!$query) {
-			    header("location: ../index.php?error=true");
-			} else {
-				while($row = mysqli_fetch_array($query)){
-					$array[] = $row;
-				}
-            }
-            
-			return $array;
-			
-		}
-
-		/*********************************************************************************************/
-		/***************************  District Functionalities -- Users  *****************************/
-		/*********************************************************************************************/
 
 		public function disableUser($database, $id, $username){
 
@@ -83,7 +83,7 @@
 				$info = "Disabled the user account for " . $username;
 				$log->logInput($database, $info);
 
-				header("location:../cms/district.php?page=users&disabled=true");
+				header("location:../cms/district.php?page=users&userDisabled=true");
 			}	
 	
 		}
@@ -101,7 +101,7 @@
 				$info = "Reactivated the user account for " . $username;
 				$log->logInput($database, $info);
 
-				header("location:../cms/district.php?page=users&reactivated=true");
+				header("location:../cms/district.php?page=users&userReactivated=true");
 			}	
 	
 		}
@@ -146,7 +146,68 @@
 		/*************************  District Functionalities -- Employment  **************************/
 		/*********************************************************************************************/
 
+        public function jobList($database){
+            
+			$array = array();
 
+			$sql = "SELECT jobs.*, 
+						   users.firstname, 
+						   users.lastname, 
+						   schools.school_abbv, 
+						   schools.school_name 
+					FROM jobs
+					LEFT JOIN users
+					ON (users.id = jobs.user)
+					LEFT JOIN schools
+					ON (schools.id = jobs.school)";
+			$query = mysqli_query($database->con, $sql);
+			if (!$query) {
+				header("location: ../cms/district.php?page=employment&error=true");
+			} else {
+				while($row = mysqli_fetch_array($query)){
+					$array[] = $row;
+				}
+            }
+            
+			return $array;
+
+		}
+
+		public function disableJob($database, $id, $title){
+
+			$sql = "UPDATE jobs SET 
+					status = 'Closed'
+					WHERE id = '$id'";
+			$query = mysqli_query($database->con, $sql);
+			if(!$query){
+			    header("location:../cms/district.php?page=employment&error=true");
+			} else {
+				global $log;
+				$info = "Closed the job posting for job ID:  " . $title;
+				$log->logInput($database, $info);
+
+				header("location:../cms/district.php?page=employment&jobDisable=true");
+			}	
+	
+		}
+
+		public function reopenJob($database, $id, $title){	
+
+			$sql = "UPDATE jobs SET 
+					status = 'Open'
+					WHERE id = '$id'";
+			$query = mysqli_query($database->con, $sql);
+			if(!$query){
+			    header("location:../cms/district.php?page=employment&error=true");
+			} else {
+				global $log;
+				$info = "Reopened the job posting for job ID: " . $title;
+				$log->logInput($database, $info);
+
+				header("location:../cms/district.php?page=employment&jobReopen=true");
+			}	
+	
+		}
 
 		/*********************************************************************************************/
 		/***************************  District Functionalities -- Events  ****************************/

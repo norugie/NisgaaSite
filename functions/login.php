@@ -33,7 +33,14 @@
 			//Might set folder names here in the future
 			$this->routerUser($info);
 
-        }
+		}
+		
+		public function hrLogin($info){
+			
+			//Might set folder names here in the future
+			$this->routerUser($info);
+			
+		}
     }
     
 	require 'login_options.php';

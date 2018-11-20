@@ -17,13 +17,20 @@
 				header("location:../login.php?invalid=true");
 			} else {
 				if($loginInfo['status'] !== 'Inactive'){
-					if($loginInfo['user_type'] == 1){
-						$loginProcess->adminLogin($loginInfo);
-					} else if ($loginInfo['user_type'] == 2){
-						$loginProcess->editorLogin($loginInfo);
-					} else {
-						header("location:../login.php?error=true");
-					}
+					// // // Use code once ready to set folders
+					//
+					// if($loginInfo['user_type'] == 1){
+					// 	$loginProcess->adminLogin($loginInfo);
+					// } else if ($loginInfo['user_type'] == 2){
+					// 	$loginProcess->editorLogin($loginInfo);
+					// } else if ($loginInfo['user_type'] == 3){
+					// 	$loginProcess->hrLogin($loginInfo);
+					// } else {
+					// 	header("location:../login.php?error=true");
+					// }
+					//
+					// // // Use code once ready to set folders
+					$loginProcess->routerUser($loginInfo);
 				} else {
 					header("location: ../login.php?inactive=true");
 				}

@@ -61,7 +61,22 @@
 		/*************************  District Functionalities -- Employment  **************************/
 		/*********************************************************************************************/
 
+        if(isset($_GET['jobDisable'])){
+            
+            $id = $_GET['id'];
+            $title = $_GET['job'];
 
+            $district->disableJob($database, $id, $title);
+
+        }
+
+        if(isset($_GET['jobReopen'])){
+
+            $id = $_GET['id'];
+            $title = $_GET['job'];
+
+            $district->reopenJob($database, $id, $title);
+        }
 
 		/*********************************************************************************************/
 		/***************************  District Functionalities -- Events  ****************************/
