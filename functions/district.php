@@ -135,7 +135,7 @@
 			    header("location:../cms/district.php?page=users&error=true");
 			} else {
 				global $log;
-				$info = "Modified the user account for " . $username;
+				$info = "Modified the user account information for " . $username;
 				$log->logInput($database, $info);
 				header("location:../cms/district.php?page=users&editUser=true");
 			}	

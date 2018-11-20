@@ -39,7 +39,7 @@
 				header("location:../cms/index.php?error=true");
 			} else {
 				global $log;
-				$info = "Modified the user account for " . $username;
+				$info = "Modified the user account information for " . $username;
 				$log->logInput($database, $info);
 				header("location:../cms/index.php?editProfile=true");
 			}	
@@ -55,9 +55,26 @@
 				header("location:../cms/index.php?error=true");
 			} else {
 				global $log;
-				$info = "Modified the user account for " . $username;
+				$info = "Modified the user account password for " . $username;
 				$log->logInput($database, $info);
 				header("location:../cms/index.php?editProfile=true");
+			}
+		}
+
+		public function userEditPicture($database, $filename){
+			$username = $_SESSION['username'];
+			$id = $_SESSION['id'];
+			$sql = "UPDATE users SET 
+					display_picture = '$filename'
+					WHERE id = '$id'";
+			$query = mysqli_query($database->con, $sql);
+			if(!$query){
+				header("location:../cms/index.php?error=true");
+			} else {
+				global $log;
+				$info = "Modified the user display image for " . $username;
+				$log->logInput($database, $info);
+				header("location:../cms/index.php?editProfilePicture=true");
 			}
 		}
         

@@ -15,8 +15,35 @@
 
             $user->userEditProfile($database, $firstname, $lastname);
         }
-        
+    
+
         if(isset($_GET['editPicture'])){
+
+            if(isset($_FILES['image'])){
+                $errors = 0;
+                $file_name = $_FILES['image']['name'];
+                $file_size = $_FILES['image']['size'];
+                $file_tmp = $_FILES['image']['tmp_name'];
+                $file_type = $_FILES['image']['type'];
+                $file_ext = strtolower(end(explode('.', $_FILES['image']['name'])));
+                
+                $expensions = array("jpeg","jpg","png");
+                
+                if(in_array($file_ext, $expensions) == false){
+                    $errors = 1;
+                }
+                
+                if($file_size > 2097152){
+                    $errors = 1;
+                }
+                
+                if($errors == 0){
+                    move_uploaded_file($file_tmp, "../images/profile/".$file_name);
+                    $user->userEditPicture($database, $file_name);
+                } else {
+                    header("location:../cms/index.php?error=true");
+                }
+            }
 
         }
         
@@ -36,12 +63,10 @@
                      if($new_password == $r_password){
                          $user->userEditPassword($database, $new_password, $id);
                      } else {
-                         //header("location: ../cms/index.php?incorrect=true");
-                         echo "wrong new password lol";
+                         header("location: ../cms/index.php?incorrect=true");
                      }
                 } else {
-                    //header("location: ../cms/index.php?incorrect=true");
-                    echo "wrong old password lol";
+                    header("location: ../cms/index.php?incorrect=true");
                 }
             }
 
