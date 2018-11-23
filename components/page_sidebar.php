@@ -113,7 +113,7 @@
             &copy; <b>2018 SD92-CMS</b> v1.0
         </div>
         <div class="copyright">
-            &copy; 2016 - 2017 <a href="javascript:void(0);">AdminBSB - Material Design</a>
+            Design by <b><a href="https://github.com/gurayyarar/AdminBSBMaterialDesign">Güray Yarar</a></b>
         </div>
     </div>
     <!-- #Footer -->
