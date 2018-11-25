@@ -8,7 +8,7 @@
 <div class="row clearfix">
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
         <div class="card">
-            <?php if($_SESSION['type'] == 3){ ?>
+            <?php if($_SESSION['type'] == 3 || $_SESSION['type'] == 1){ ?>
                 <div class="header">
                     <button type="button" class="btn bg-blue waves-effect" data-toggle="modal" data-target="#new-job-modal" style="float: right; margin-top: -5px;">ADD A JOB POSTING</button>
                     <br>
@@ -23,8 +23,8 @@
                                 <th>Title</th>
                                 <th>School</th>
                                 <th>Status</th>
-                                <?php if($_SESSION['type'] == 3){ ?><th>Modify</th><?php } ?>
-                                <th>Delete<?php if($_SESSION['type'] == 3) echo '/Reopen'; ?></th>
+                                <?php if($_SESSION['type'] == 3 || $_SESSION['type'] == 1){ ?><th>Modify</th><?php } ?>
+                                <th>Delete<?php if($_SESSION['type'] == 3 || $_SESSION['type'] == 1) echo '/Reopen'; ?></th>
                             </tr>
                         </thead>
                         <tfoot>
@@ -33,13 +33,13 @@
                                 <th>Title</th>
                                 <th>School</th>
                                 <th>Status</th>
-                                <?php if($_SESSION['type'] == 3){ ?><th>Modify</th><?php } ?>
-                                <th>Delete<?php if($_SESSION['type'] == 3) echo '/Reopen'; ?></th>
+                                <?php if($_SESSION['type'] == 3 || $_SESSION['type'] == 1){ ?><th>Modify</th><?php } ?>
+                                <th>Delete<?php if($_SESSION['type'] == 3 || $_SESSION['type'] == 1) echo '/Reopen'; ?></th>
                             </tr>
                         </tfoot>
                         <tbody>
                             <?php foreach($jobs as $job): ?>
-                                <?php if($_SESSION['type'] == 3){ ?>
+                                <?php if($_SESSION['type'] == 3 || $_SESSION['type'] == 1){ ?>
                                     <tr>
                                         <td><?php echo $job['job_id']; ?></td>
                                         <td><?php echo $job['title']; ?></td>
