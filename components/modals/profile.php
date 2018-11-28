@@ -153,7 +153,7 @@
                                     <br>
                                     <div class="row clearfix demo-button-sizes" style="float: right; margin-right: 12px;">
                                         <div>
-                                            <button type="submit" class="btn bg-blue-grey btn-block btn-lg waves-effect">SAVE CHANGES</button>
+                                            <button type="submit" class="btn bg-blue-grey btn-block btn-lg waves-effect" style="color:#fff;">SAVE CHANGES</button>
                                         </div>
                                     </div>
                                 </form>

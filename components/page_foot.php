@@ -27,6 +27,10 @@
 <!-- Select Plugin Js -->
 <script src="../plugins/bootstrap-select/js/bootstrap-select.js"></script>
 
+
+<!-- Bootstrap Datepicker Plugin Js -->
+<script src="../plugins/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+
 <!-- Custom Js -->
 <script src="../js/admin.js"></script>
 <script src="../js/demo.js"></script>
@@ -40,4 +44,14 @@
     	"lengthChange": false,
     	"iDisplayLength": 5
 	});
+</script>
+
+<!-- Custom JS Bootstrap DatePicker -->
+<script>
+$('#bs_datepicker_range_container').datepicker({
+	autoclose: true,
+	container: '#bs_datepicker_range_container',
+	todayHighlight: true,
+	startDate: '0d'
+});
 </script>

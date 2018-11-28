@@ -22,9 +22,11 @@
                                 <th>Job ID</th>
                                 <th>Title</th>
                                 <th>School</th>
+                                <th>Open Date</th>
+                                <th>Close Date</th>
                                 <th>Status</th>
                                 <?php if($_SESSION['type'] == 3 || $_SESSION['type'] == 1){ ?><th>Modify</th><?php } ?>
-                                <th>Delete<?php if($_SESSION['type'] == 3 || $_SESSION['type'] == 1) echo '/Reopen'; ?></th>
+                                <?php if($_SESSION['type'] == 3 || $_SESSION['type'] == 1){ ?><th>Delete/Reopen</th><?php } ?>
                             </tr>
                         </thead>
                         <tfoot>
@@ -32,20 +34,24 @@
                                 <th>Job ID</th>
                                 <th>Title</th>
                                 <th>School</th>
+                                <th>Open Date</th>
+                                <th>Close Date</th>
                                 <th>Status</th>
                                 <?php if($_SESSION['type'] == 3 || $_SESSION['type'] == 1){ ?><th>Modify</th><?php } ?>
-                                <th>Delete<?php if($_SESSION['type'] == 3 || $_SESSION['type'] == 1) echo '/Reopen'; ?></th>
+                                <?php if($_SESSION['type'] == 3 || $_SESSION['type'] == 1){ ?><th>Delete/Reopen</th><?php } ?>
                             </tr>
                         </tfoot>
                         <tbody>
                             <?php foreach($jobs as $job): ?>
                                 <?php if($_SESSION['type'] == 3 || $_SESSION['type'] == 1){ ?>
                                     <tr>
-                                        <td><?php echo $job['job_id']; ?></td>
+                                        <td><?php echo preg_replace('/[a-zA-Z]/', '', $job['job_id']); ?></td>
                                         <td><?php echo $job['title']; ?></td>
                                         <td><?php echo $job['school_name']; ?></td>
+                                        <td><?php echo date_format(date_create($job['open_date']), 'd M Y - l'); ?></td>
+                                        <td><?php echo date_format(date_create($job['close_date']), 'd M Y - l'); ?></td>
                                         <td><?php echo $job['status']; ?></td>
-                                        <td><center><button type="button" class="btn bg-green waves-effect" data-toggle="modal" data-target="#edit-job-modal" data-values="<?php echo htmlspecialchars(json_encode($job)); ?>" onclick="editUser(this);" <?php if($job['status'] == 'Closed') echo "disabled"; ?>>MODIFY</button></center></td>
+                                        <td><center><button type="button" class="btn bg-green waves-effect" data-toggle="modal" data-target="#edit-job-modal" data-values="<?php echo htmlspecialchars(json_encode($job)); ?>" onclick="editJob(this);" <?php if($job['status'] == 'Closed') echo "disabled"; ?>>MODIFY</button></center></td>
                                         <?php if($job['status'] == 'Open'){ ?>
                                             <td><center><button type="button" class="btn bg-red waves-effect" data-type="delete-job" data-id="<?php echo $job['id']; ?>" data-name="<?php echo $job['job_id']; ?>" onclick="alertDesign(this);">DELETE</button></center></td>
                                         <?php } else { ?>
@@ -55,12 +61,12 @@
                                 <?php } else { ?>
                                     <?php if($job['status'] !== 'Closed'){ ?>
                                         <tr>
-                                            <td><?php echo $job['job_id']; ?></td>
+                                            <td><?php echo preg_replace('/[a-zA-Z]/', '', $job['job_id']); ?></td>
                                             <td><?php echo $job['title']; ?></td>
                                             <td><?php echo $job['school_name']; ?></td>
+                                            <td><?php echo date_format(date_create($job['open_date']), 'd M Y - l'); ?></td>
+                                            <td><?php echo date_format(date_create($job['close_date']), 'd M Y - l'); ?></td>
                                             <td><?php echo $job['status']; ?></td>
-                                            <td><center><button type="button" class="btn bg-red waves-effect" data-type="delete-job" data-id="<?php echo $job['id']; ?>" data-name="<?php echo $job['job_id']; ?>" onclick="alertDesign(this);">DELETE</button></center></td>
-
                                         </tr>
                                     <?php } ?>
                                 <?php } ?>

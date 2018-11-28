@@ -18,6 +18,9 @@
 <!-- Animation Css -->
 <link href="../plugins/animate-css/animate.css" rel="stylesheet" />
 
+<!-- Bootstrap DatePicker Css -->
+<link href="../plugins/bootstrap-datepicker/css/bootstrap-datepicker.css" rel="stylesheet" />
+
 <!-- Sweetalert Css -->
 <link href="../plugins/sweetalert/sweetalert.css" rel="stylesheet" />
 
