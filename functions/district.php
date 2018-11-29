@@ -191,9 +191,11 @@
 	
 		}
 
-		public function reopenJob($database, $id, $title){	
+		public function reopenJob($database, $id, $title, $jobopen, $jobclose, $identifier){	
 
-			$sql = "UPDATE jobs SET 
+			$sql = "UPDATE jobs SET
+					open_date = '$jobopen',
+					close_date = '$jobclose', 
 					status = 'Open'
 					WHERE id = '$id'";
 			$query = mysqli_query($database->con, $sql);
@@ -201,12 +203,57 @@
 			    header("location:../cms/district.php?page=employment&error=true");
 			} else {
 				global $log;
-				$info = "Reopened the job posting for job ID: " . $title;
-				$log->logInput($database, $info);
+				$info;
+				if($identifier == 0){
+					$info = "Reopened the job posting for job ID: " . $title;
+					$log->logInput($database, $info);
+	
+					header("location:../cms/district.php?page=employment&jobReopen=true");
+				} else {
+					$info = "Modified the job posting for job ID: " . $title;
+					$log->logInput($database, $info);
 
-				header("location:../cms/district.php?page=employment&jobReopen=true");
+					header("location:../cms/district.php?page=employment&editJob=true");
+				}
+				
 			}	
 	
+		}
+
+		public function editJobFile($database, $id, $title, $file_name){	
+
+			$sql = "UPDATE jobs SET
+					file = '$file_name'
+					WHERE id = '$id'";
+			$query = mysqli_query($database->con, $sql);
+			if(!$query){
+			    header("location:../cms/district.php?page=employment&error=true");
+			} else {
+				global $log;
+				$info = "Modified the job posting for job ID: " . $title;
+				$log->logInput($database, $info);
+
+				header("location:../cms/district.php?page=employment&editJob=true");
+				
+			}	
+	
+		}
+
+		public function addJob($database, $id, $title, $jobdesc, $jobtype, $school, $jobopen, $jobclose, $file_name){
+			$user = $_SESSION['id'];
+			$sql = "INSERT INTO jobs
+					VALUES (null, '$id', '$school', '$title', '$jobdesc', '$user', '$jobopen', '$jobclose', '$jobtype', '$file_name', 'Open')";
+			$query = mysqli_query($database->con, $sql);
+			if(!$query){
+			    header("location:../cms/district.php?page=employment&error=true");
+			} else {
+				global $log;
+				$info = "Opened a job posting for job ID: " . $id;
+				$log->logInput($database, $info);
+
+				header("location:../cms/district.php?page=employment&newJob=true");
+			}
+
 		}
 
 		/*********************************************************************************************/

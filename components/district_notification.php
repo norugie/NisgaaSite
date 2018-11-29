@@ -37,10 +37,17 @@
 </div>
 <?php } ?>
 
-<?php if(isset($_GET['jobReopened'])){ ?>
+<?php if(isset($_GET['jobReopen'])){ ?>
 <div class="alert bg-green alert-dismissible" role="alert">
     <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
     The job posting has been <b>reopened</b> successfully!
+</div>
+<?php } ?>
+
+<?php if(isset($_GET['editJob'])){ ?>
+<div class="alert bg-green alert-dismissible" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    The job posting has been <b>modified</b> successfully!
 </div>
 <?php } ?>
 

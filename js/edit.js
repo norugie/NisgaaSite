@@ -24,3 +24,14 @@ function editJob(jobInfo){
     $("#edit-jobid-hidden").attr("value", job['job_id']);
 
 }
+
+function editJobDates(id, name, identifier){
+    $("#edit-job-id").attr("value", id);
+    $("#edit-job-name").attr("value", name);
+    $("#edit-job-identifier").attr("value", identifier);
+}
+
+function editJobFile(id, name){
+    $("#edit-job-id-file").attr("value", id);
+    $("#edit-job-name-file").attr("value", name);
+}

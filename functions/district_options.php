@@ -72,10 +72,92 @@
 
         if(isset($_GET['jobReopen'])){
 
-            $id = $_GET['id'];
-            $title = $_GET['job'];
+            $identifier = mysqli_real_escape_string($database->con, $_POST['identifier']);
 
-            $district->reopenJob($database, $id, $title);
+            $id = mysqli_real_escape_string($database->con, $_POST['jobid']);
+            $title = mysqli_real_escape_string($database->con, $_POST['jobid-name']);
+            
+            $open = mysqli_real_escape_string($database->con, $_POST['edit-job-open']);
+            $close = mysqli_real_escape_string($database->con, $_POST['edit-job-close']);
+
+            $jobopen = date('Y-m-d', strtotime($open));
+            $jobclose = date('Y-m-d', strtotime($close));
+
+            $district->reopenJob($database, $id, $title, $jobopen, $jobclose, $identifier);
+        }
+
+        if(isset($_GET['addJob'])){
+
+            $id = 'JOB' . mysqli_real_escape_string($database->con, $_POST['jobid']);
+            $title = mysqli_real_escape_string($database->con, $_POST['title']);
+            $jobdesc = mysqli_real_escape_string($database->con, $_POST['jobdesc']);
+            $jobtype = mysqli_real_escape_string($database->con, $_POST['jobtype']);
+            $school = mysqli_real_escape_string($database->con, $_POST['school']);
+            
+            $open = mysqli_real_escape_string($database->con, $_POST['job-open']);
+            $close = mysqli_real_escape_string($database->con, $_POST['job-close']);
+
+            $jobopen = date('Y-m-d', strtotime($open));
+            $jobclose = date('Y-m-d', strtotime($close));
+
+            if(isset($_FILES['jobfile'])){
+                $errors = 0;
+                $file_name = $_FILES['jobfile']['name'];
+                $file_size = $_FILES['jobfile']['size'];
+                $file_tmp = $_FILES['jobfile']['tmp_name'];
+                $file_type = $_FILES['jobfile']['type'];
+                $file_ext = strtolower(end(explode('.', $_FILES['jobfile']['name'])));
+                
+                $expensions = array("doc","docx","pdf");
+                
+                if(in_array($file_ext, $expensions) == false){
+                    $errors = 1;
+                }
+                
+                if($file_size > 2097152){
+                    $errors = 1;
+                }
+                
+                if($errors == 0){
+                    move_uploaded_file($file_tmp, "../jobs/".$file_name);
+                    $district->addJob($database, $id, $title, $jobdesc, $jobtype, $school, $jobopen, $jobclose, $file_name);
+                } else {
+                    header("location:../cms/district.php?page=employment&error=true");
+                }
+            }
+
+        }
+
+        if(isset($_GET['editJobFile'])){
+
+            $id = mysqli_real_escape_string($database->con, $_POST['jobid']);
+            $title = mysqli_real_escape_string($database->con, $_POST['jobid-name']);
+            
+            if(isset($_FILES['edit-jobfile'])){
+                $errors = 0;
+                $file_name = $_FILES['edit-jobfile']['name'];
+                $file_size = $_FILES['edit-jobfile']['size'];
+                $file_tmp = $_FILES['edit-jobfile']['tmp_name'];
+                $file_type = $_FILES['editjobfile']['type'];
+                $file_ext = strtolower(end(explode('.', $_FILES['edit-jobfile']['name'])));
+                
+                $expensions = array("doc","docx","pdf");
+                
+                if(in_array($file_ext, $expensions) == false){
+                    $errors = 1;
+                }
+                
+                if($file_size > 2097152){
+                    $errors = 1;
+                }
+                
+                if($errors == 0){
+                    move_uploaded_file($file_tmp, "../jobs/".$file_name);
+                    $district->editJobFile($database, $id, $title, $file_name);
+                } else {
+                    header("location:../cms/district.php?page=employment&error=true");
+                }
+            }           
         }
 
 		/*********************************************************************************************/

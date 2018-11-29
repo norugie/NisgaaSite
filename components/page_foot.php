@@ -48,10 +48,19 @@
 
 <!-- Custom JS Bootstrap DatePicker -->
 <script>
-$('#bs_datepicker_range_container').datepicker({
+$('#bs_datepicker_range_container_new').datepicker({
 	autoclose: true,
-	container: '#bs_datepicker_range_container',
+	container: '#bs_datepicker_range_container_new',
 	todayHighlight: true,
-	startDate: '0d'
+	startDate: '0d',
+	format: 'dd M yyyy'
+});
+
+$('#bs_datepicker_range_container_edit').datepicker({
+	autoclose: true,
+	container: '#bs_datepicker_range_container_edit',
+	todayHighlight: true,
+	startDate: '0d',
+	format: 'dd M yyyy'
 });
 </script>

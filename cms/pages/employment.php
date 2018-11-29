@@ -46,12 +46,26 @@
                                 <?php if($_SESSION['type'] == 3 || $_SESSION['type'] == 1){ ?>
                                     <tr>
                                         <td><?php echo preg_replace('/[a-zA-Z]/', '', $job['job_id']); ?></td>
-                                        <td><?php echo $job['title']; ?></td>
+                                        <td><a href="../jobs/<?php echo $job['file']; ?>" download><?php echo $job['title']; ?></a></td>
                                         <td><?php echo $job['school_name']; ?></td>
                                         <td><?php echo date_format(date_create($job['open_date']), 'd M Y - l'); ?></td>
                                         <td><?php echo date_format(date_create($job['close_date']), 'd M Y - l'); ?></td>
                                         <td><?php echo $job['status']; ?></td>
-                                        <td><center><button type="button" class="btn bg-green waves-effect" data-toggle="modal" data-target="#edit-job-modal" data-values="<?php echo htmlspecialchars(json_encode($job)); ?>" onclick="editJob(this);" <?php if($job['status'] == 'Closed') echo "disabled"; ?>>MODIFY</button></center></td>
+                                        <td>
+                                            <center>
+                                                <!-- <button type="button" class="btn bg-green waves-effect" data-toggle="modal" data-target="#edit-job-modal" data-values="<?php echo htmlspecialchars(json_encode($job)); ?>" onclick="editJob(this);" <?php if($job['status'] == 'Closed') echo "disabled"; ?>>MODIFY</button> -->
+                                                <div class="btn-group">
+                                                    <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" <?php if($job['status'] == 'Closed') echo "disabled"; ?>>
+                                                        MODIFY <span class="caret"></span>
+                                                    </button>
+                                                    <ul class="dropdown-menu">
+                                                        <li><a href="#" data-toggle="modal" data-target="#edit-job-modal" data-values="<?php echo htmlspecialchars(json_encode($job)); ?>" onclick="editJob(this);">Edit Job Details</a></li>
+                                                        <li><a href="#" data-toggle="modal" data-target="#edit-job-dates-modal" onclick="editJobDates(<?php echo htmlspecialchars(json_encode($job['id'])); ?>,<?php echo htmlspecialchars(json_encode($job['job_id'])); ?>, 1);">Edit Job Posing Dates</a></li>
+                                                        <li><a href="#" data-toggle="modal" data-target="#edit-job-file-modal" onclick="editJobFile(<?php echo htmlspecialchars(json_encode($job['id'])); ?>,<?php echo htmlspecialchars(json_encode($job['job_id'])); ?>);">Edit Job File</a></li>
+                                                    </ul>
+                                                </div>
+                                            </center>
+                                        </td>
                                         <?php if($job['status'] == 'Open'){ ?>
                                             <td><center><button type="button" class="btn bg-red waves-effect" data-type="delete-job" data-id="<?php echo $job['id']; ?>" data-name="<?php echo $job['job_id']; ?>" onclick="alertDesign(this);">DELETE</button></center></td>
                                         <?php } else { ?>

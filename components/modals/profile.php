@@ -104,7 +104,7 @@
                             <div role="tabpanel" class="tab-pane fade in active" id="profile_picture">
                                 <form action="../functions/user.php?userOpt=true&editPicture=true" method="POST" enctype="multipart/form-data">
                                     Select image to upload:
-                                    <input type="file" name="image" id="fileToUpload" accept="image/*" style="width: 300px;" required>
+                                    <input type="file" name="image" id="imageToUpload" accept="image/*" style="width: 300px;" required>
                                     <input type="submit" class="btn bg-blue-grey btn-lg" value="UPLOAD IMAGE" name="submit" style="float: right; margin-top: -37px;">
                                 </form>
                             </div>

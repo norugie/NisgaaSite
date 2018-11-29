@@ -10,7 +10,7 @@ function alertDesign(e){
             showReactivateUserConfirm(id, name);
         } else if(type === 'delete-job'){
             showDisableJobConfirm(id, name);
-        } else if(type === 'reopen-job'){
+         } else if(type === 'reopen-job'){
             showReopenJobConfirm(id, name);
         }
 }
@@ -85,11 +85,14 @@ function showReopenJobConfirm(id, name){
         confirmButtonColor: "#00BCD4",
         confirmButtonText: "CONFIRM",
         cancelButtonText: "CANCEL",
-        closeOnConfirm: false,
+        closeOnConfirm: true,
         closeOnCancel: true
     }, function(isConfirm){   
-        if (isConfirm){   
-            window.location = "../functions/district.php?district=true&jobReopen=true&id=" + id + "&job=" + name;
+        if (isConfirm){               
+            $('#edit-job-dates-modal').modal('show');
+            $('#edit-job-dates-modal').on('shown.bs.modal', function(){
+                editJobDates(id, name, 0);
+            });
         }
     
     });
