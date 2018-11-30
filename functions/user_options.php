@@ -43,6 +43,8 @@
                 } else {
                     header("location:../cms/index.php?error=true");
                 }
+            } else {
+                header("location:../cms/index.php?error=true");
             }
 
         }

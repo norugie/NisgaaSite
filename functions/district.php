@@ -73,7 +73,7 @@
 		public function disableUser($database, $id, $username){
 
 			$sql = "UPDATE users SET 
-					status = 'Inactive'
+						   status = 'Inactive'
 					WHERE id = '$id'";
 			$query = mysqli_query($database->con, $sql);
 			if(!$query){
@@ -91,7 +91,7 @@
 		public function reactivateUser($database, $id, $username){	
 
 			$sql = "UPDATE users SET 
-					status = 'Active'
+						   status = 'Active'
 					WHERE id = '$id'";
 			$query = mysqli_query($database->con, $sql);
 			if(!$query){
@@ -125,10 +125,10 @@
 		public function editUser($database, $firstname, $lastname, $role, $school, $id, $username){
 			
 			$sql = "UPDATE users SET
-					firstname = '$firstname',
-					lastname = '$lastname',
-					user_type = '$role',
-					school = '$school'
+						   firstname = '$firstname',
+						   lastname = '$lastname',
+						   user_type = '$role',
+						   school = '$school'
 					WHERE id = '$id'";
 			$query = mysqli_query($database->con, $sql);
 			if(!$query){
@@ -176,7 +176,7 @@
 		public function disableJob($database, $id, $title){
 
 			$sql = "UPDATE jobs SET 
-					status = 'Closed'
+						   status = 'Closed'
 					WHERE id = '$id'";
 			$query = mysqli_query($database->con, $sql);
 			if(!$query){
@@ -194,8 +194,8 @@
 		public function reopenJob($database, $id, $title, $jobopen, $jobclose, $identifier){	
 
 			$sql = "UPDATE jobs SET
-					open_date = '$jobopen',
-					close_date = '$jobclose', 
+						   open_date = '$jobopen',
+						   close_date = '$jobclose', 
 					status = 'Open'
 					WHERE id = '$id'";
 			$query = mysqli_query($database->con, $sql);
@@ -223,7 +223,7 @@
 		public function editJobFile($database, $id, $title, $file_name){	
 
 			$sql = "UPDATE jobs SET
-					file = '$file_name'
+						   file = '$file_name'
 					WHERE id = '$id'";
 			$query = mysqli_query($database->con, $sql);
 			if(!$query){
@@ -254,6 +254,28 @@
 				header("location:../cms/district.php?page=employment&newJob=true");
 			}
 
+		}
+
+		public function editJob($database, $id, $title, $jobtitle, $jobdesc, $jobtype, $school){
+
+			$sql = "UPDATE jobs SET
+						   job_id = '$job_id',
+						   title = '$jobtitle',
+						   job_desc = '$jobdesc',
+						   job_type = '$jobtype',
+						   school = '$school'
+					WHERE id = '$id'";
+			$query = mysqli_query($database->con, $sql);
+			if(!$query){
+			    header("location:../cms/district.php?page=employment&error=true");
+			} else {
+				global $log;
+				$info = "Modified the job posting for job ID: " . $title;
+				$log->logInput($database, $info);
+
+				header("location:../cms/district.php?page=employment&editJob=true");
+				
+			}				
 		}
 
 		/*********************************************************************************************/

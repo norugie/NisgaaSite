@@ -14,13 +14,9 @@ function editUser(userInfo){
 function editJob(jobInfo){
     job = $(jobInfo).data("values");
 
-    $("#edit-jobid").attr("value", job['job_id']);
-    $("#edit-school").attr("value", job['school']);
     $("#edit-title").attr("value", job['title']);
-    $("#edit-desc").attr("value", job['job_desc']);
-    $("#edit-open").attr("value", job['open_date']);
-    $("#edit-close").attr("value", job['close_date']);
-    $("#edit-job-id").attr("value", job['id']);
+    $("#edit-jobdesc").val(job['job_desc']);
+    $("#edit-job-id-num").attr("value", job['id']);
     $("#edit-jobid-hidden").attr("value", job['job_id']);
 
 }
