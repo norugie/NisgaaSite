@@ -25,7 +25,7 @@
                                 <th>Username</th>
                                 <th>Email</th>
                                 <?php if($_SESSION['type'] == 1){ ?><th>Modify</th><?php } ?>
-                                <th>Delete<?php if($_SESSION['type'] == 1) echo '/Reactivate'; ?></th>
+                                <?php if($_SESSION['type'] != 4){ ?><th>Delete<?php if($_SESSION['type'] == 1) echo '/Reactivate'; ?></th><?php } ?>
                             </tr>
                         </thead>
                         <tfoot>
@@ -36,7 +36,7 @@
                                 <th>Username</th>
                                 <th>Email</th>
                                 <?php if($_SESSION['type'] == 1){ ?><th>Modify</th><?php } ?>
-                                <th>Delete<?php if($_SESSION['type'] == 1) echo '/Reactivate'; ?></th>
+                                <?php if($_SESSION['type'] != 4){ ?><th>Delete<?php if($_SESSION['type'] == 1) echo '/Reactivate'; ?></th><?php } ?>
                             </tr>
                         </tfoot>
                         <tbody>
@@ -64,9 +64,9 @@
                                             <td><?php echo $solo['username']; ?></td>
                                             <td><?php echo $solo['email']; ?></td>
                                             <?php if($solo['user_type'] != 1){ ?>
-                                                <td><center><button type="button" class="btn bg-red waves-effect" data-type="delete-user" data-id="<?php echo $solo['id']; ?>" data-name="<?php echo $solo['username']; ?>" onclick="alertDesign(this);">DELETE</button></center></td>
+                                                <?php if($_SESSION['type'] != 4){ ?><td><center><button type="button" class="btn bg-red waves-effect" data-type="delete-user" data-id="<?php echo $solo['id']; ?>" data-name="<?php echo $solo['username']; ?>" onclick="alertDesign(this);">DELETE</button></center></td><?php } ?>
                                             <?php } else { ?>
-                                                <td><center><button type="button" class="btn bg-red waves-effect" disabled>DELETE</button></center></td>
+                                                <?php if($_SESSION['type'] != 4){ ?><td><center><button type="button" class="btn bg-red waves-effect" disabled>DELETE</button></center></td><?php } ?>
                                             <?php } ?>
                                         </tr>
                                     <?php } ?>

@@ -10,6 +10,7 @@
                 <h4 class="modal-title" id="largeModalLabel">Edit User Account</h4>
             </div>
             <div class="modal-body">
+            <p class="font-12"><i><b>Note:</b> Fields marked with an asterisk are required</i></p><br>
                 <!-- Inline Layout -->
                 <div class="row clearfix">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -66,8 +67,9 @@
                                     </div>
                                     <div class="row clearfix">
                                         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                                            <label for="edit-role">Role *</label>
+                                            <label for="edit-role">Role * </label>
                                             <select class="form-control show-tick" name="role" id="edit-role">
+                                                <option selected hidden disabled>-- SELECT ROLE FOR THE USER --</option>
                                                 <?php foreach ($roles as $role): ?>
                                                     <option value="<?php echo $role['id']; ?>"><?php echo $role['role_desc']; ?></option>
                                                 <?php endforeach; ?>
@@ -76,6 +78,7 @@
                                         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                                             <label for="edit-school">School *</label>
                                             <select class="form-control show-tick" name="school" id="edit-school">
+                                                <option selected hidden disabled>-- SELECT SCHOOL FOR THE USER --</option>
                                                 <?php foreach ($schools as $school): ?>
                                                     <option value="<?php echo $school['id']; ?>"><?php echo $school['school_abbv']; ?></option>
                                                 <?php endforeach; ?>

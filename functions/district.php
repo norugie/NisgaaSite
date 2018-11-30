@@ -240,6 +240,7 @@
 		}
 
 		public function addJob($database, $id, $title, $jobdesc, $jobtype, $school, $jobopen, $jobclose, $file_name){
+			
 			$user = $_SESSION['id'];
 			$sql = "INSERT INTO jobs
 					VALUES (null, '$id', '$school', '$title', '$jobdesc', '$user', '$jobopen', '$jobclose', '$jobtype', '$file_name', 'Open')";
