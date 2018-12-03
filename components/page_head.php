@@ -30,6 +30,12 @@
 <!-- JQuery DataTable Css -->
 <link href="../plugins/jquery-datatable/skin/bootstrap/css/dataTables.bootstrap.css" rel="stylesheet">
 
+<!-- FullCalendar Css -->
+<link href='../plugins/fullcalendar/fullcalendar.min.css' rel='stylesheet' />
+
 <!-- Custom Css -->
 <link href="../css/style.css" rel="stylesheet">
 <link href="../css/themes/theme-blue-grey.css" rel="stylesheet" />
+
+<!-- Jquery Core Js -->
+<script src="../plugins/jquery/jquery.min.js"></script>
