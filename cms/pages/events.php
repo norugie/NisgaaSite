@@ -76,6 +76,7 @@
                                         <th>Event Title</th>
                                         <th>School</th>
                                         <th>Status</th>
+                                        <th>Date and Start Time</th>
                                         <?php if($_SESSION['type'] !== 3){ ?><th>Modify</th><?php } ?>
                                         <?php if($_SESSION['type'] !== 3){ ?><th>Delete/Reopen</th><?php } ?>
                                     </tr>
@@ -85,6 +86,7 @@
                                         <th>Event Title</th>
                                         <th>School</th>
                                         <th>Status</th>
+                                        <th>Date and Start Time</th>
                                         <?php if($_SESSION['type'] !== 3){ ?><th>Modify</th><?php } ?>
                                         <?php if($_SESSION['type'] !== 3){ ?><th>Delete/Reopen</th><?php } ?>
                                     </tr>
@@ -96,6 +98,24 @@
                                                 <td><?php echo $event['event_name']; ?></td>
                                                 <td><?php echo $event['school_name']; ?></td>
                                                 <td><?php echo $event['status']; ?></td>
+                                                <td>
+                                                    <?php 
+                                                        $data_start = explode(',', $event['GROUP_CONCAT(event_days.event_date_day_start)']); 
+                                                        $data_time = explode(',', $event['GROUP_CONCAT(event_days.event_date_time)']);
+                                                        $data_end = explode(',', $event['GROUP_CONCAT(event_days.event_date_day_end)']); 
+                                                    ?>
+                                                    <?php 
+
+                                                        foreach($data_start as $key => $start):
+                    
+                                                        echo date_format(date_create($start), 'd M Y - l');
+                                                        if(!empty($data_end[$key])){ echo ' to ' . date_format(date_create($data_end[$key]), 'd M Y - l'); } 
+                                                        echo ' at ' . date_format(date_create($data_time[$key]), 'h:i A') . '<br>';
+                                                        
+                                                        
+                                                        endforeach; 
+                                                    ?>
+                                                </td>
                                                 <td></td>
                                                 <td></td>
                                             </tr>
