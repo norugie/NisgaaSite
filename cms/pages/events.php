@@ -1,7 +1,7 @@
 <?php 
 
     $events = $district->eventList($database);
-
+    
  ?>
 
 <link href='../plugins/fullcalendar/fullcalendar.min.css' rel='stylesheet' />
@@ -13,9 +13,9 @@
 
     $('#calendar').fullCalendar({
       header: {
-        left: 'prev,next today',
+        left: 'title',
         center: '',
-        right: 'title'
+        right: 'prev,next today'
       },
       defaultDate: new Date(),
       navLinks: false,
@@ -23,12 +23,19 @@
       eventLimit: true,
       events: [
         <?php foreach($events as $event): ?>
+            <?php 
+                $data_start = explode(',', $event['GROUP_CONCAT(event_days.event_date_day_start)']); 
+                $data_time = explode(',', $event['GROUP_CONCAT(event_days.event_date_time)']);
+                $data_end = explode(',', $event['GROUP_CONCAT(event_days.event_date_day_end)']); 
+            ?>
+            <?php foreach($data_start as $key => $start): ?>
             {
                 title: '<?php echo $event['event_shortname']; ?>',
                 color: '#<?php echo $event['event_color_code']; ?>',
-                start: '<?php echo $event['event_date_day_start'] . "T" . $event['event_date_time']; ?>'
-                <?php if(!empty($event['event_date_day_end'])){ ?>,end: '<?php echo $event['event_date_day_end'] . "T" . $event['event_date_time']; ?>' <?php }?>
+                start: '<?php echo $start . 'T' . $data_time[$key]; ?>'
+                <?php if(!empty($data_end[$key])){ ?>, end: '<?php echo $data_end[$key] . 'T' . $data_time[$key];; ?>'<?php } ?> 
             },
+            <?php endforeach; ?>
         <?php endforeach; ?>
       ]
     });
