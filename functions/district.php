@@ -281,6 +281,39 @@
 		/*********************************************************************************************/
 		/***************************  District Functionalities -- Events  ****************************/
 		/*********************************************************************************************/
+
+        public function eventList($database){
+            
+			$array = array();
+
+			$sql = "SELECT events.*, 
+						   users.firstname, 
+						   users.lastname, 
+						   schools.school_abbv, 
+						   schools.school_name,
+						   event_days.event_date_day_start,
+						   event_days.event_date_day_end,
+						   event_days.event_date_time 
+					FROM events
+					LEFT JOIN users
+					ON (users.id = events.user)
+					LEFT JOIN schools
+					ON (schools.id = events.school)
+					LEFT JOIN event_days
+					ON (event_days.event = events.id)";
+			$query = mysqli_query($database->con, $sql);
+			if (!$query) {
+				header("location: ../cms/district.php?page=employment&error=true");
+			} else {
+				while($row = mysqli_fetch_array($query)){
+					$array[] = $row;
+				}
+            }
+            
+			return $array;
+
+		}
+
     }
 
     require 'district_options.php';

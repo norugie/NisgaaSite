@@ -53,7 +53,6 @@
                                         <td><?php echo $job['status']; ?></td>
                                         <td>
                                             <center>
-                                                <!-- <button type="button" class="btn bg-green waves-effect" data-toggle="modal" data-target="#edit-job-modal" data-values="<?php echo htmlspecialchars(json_encode($job)); ?>" onclick="editJob(this);" <?php if($job['status'] == 'Closed') echo "disabled"; ?>>MODIFY</button> -->
                                                 <div class="btn-group">
                                                     <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" <?php if($job['status'] == 'Closed') echo "disabled"; ?>>
                                                         MODIFY <span class="caret"></span>
