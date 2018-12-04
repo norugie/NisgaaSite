@@ -1,18 +1,20 @@
 
 function alertDesign(e){
-        var type = $(e).data('type');
-        var id = $(e).data('id');
-        var name = $(e).data('name');
+    var type = $(e).data('type');
+    var id = $(e).data('id');
+    var name = $(e).data('name');
 
-        if(type === 'delete-user'){
-            showDisableUserConfirm(id, name);
-        } else if(type === 'reactivate-user'){
-            showReactivateUserConfirm(id, name);
-        } else if(type === 'delete-job'){
-            showDisableJobConfirm(id, name);
-         } else if(type === 'reopen-job'){
-            showReopenJobConfirm(id, name);
-        }
+    if(type === 'delete-user'){
+        showDisableUserConfirm(id, name);
+    } else if(type === 'reactivate-user'){
+        showReactivateUserConfirm(id, name);
+    } else if(type === 'delete-job'){
+        showDisableJobConfirm(id, name);
+    } else if(type === 'reopen-job'){
+        showReopenJobConfirm(id, name);
+    } else if(type === 'delete-event'){
+        showDisableEventConfirm(id, name);
+    }
 }
 
 //These codes take from http://t4t5.github.io/sweetalert/
@@ -60,7 +62,7 @@ function showReactivateUserConfirm(id, name){
 function showDisableJobConfirm(id, name){
     swal({
         title: "Are you sure you want to close this job posting?",
-        text: "Only those with the HR role can reopen the job posting",
+        text: "Only those with the HR and Administrator role can reopen the job posting",
         type: "warning",
         showCancelButton: true,
         confirmButtonColor: "#F44336",
@@ -93,6 +95,26 @@ function showReopenJobConfirm(id, name){
             $('#edit-job-dates-modal').on('shown.bs.modal', function(){
                 editJobDates(id, name, 0);
             });
+        }
+    
+    });
+}
+
+//Warning for cancelling event
+function showDisableEventConfirm(id, name){
+    swal({
+        title: "Are you sure you want to cancel this event?",
+        text: "You won't be able to reactivate this event after this",
+        type: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#F44336",
+        confirmButtonText: "CONFIRM",
+        cancelButtonText: "CANCEL",
+        closeOnConfirm: false,
+        closeOnCancel: true
+    }, function(isConfirm){   
+        if (isConfirm){   
+            window.location = "../functions/district.php?district=true&eventDisable=true&id=" + id + "&event=" + name;
         }
     
     });

@@ -24,18 +24,20 @@
       events: [
         <?php foreach($events as $event): ?>
             <?php 
-                $data_start = explode(',', $event['GROUP_CONCAT(event_days.event_date_day_start)']); 
-                $data_time = explode(',', $event['GROUP_CONCAT(event_days.event_date_time)']);
-                $data_end = explode(',', $event['GROUP_CONCAT(event_days.event_date_day_end)']); 
+                if($event['status'] == 'Active'){
+                    $data_start = explode(',', $event['GROUP_CONCAT(event_days.event_date_day_start)']); 
+                    $data_time = explode(',', $event['GROUP_CONCAT(event_days.event_date_time)']);
+                    $data_end = explode(',', $event['GROUP_CONCAT(event_days.event_date_day_end)']); 
             ?>
-            <?php foreach($data_start as $key => $start): ?>
-            {
-                title: '<?php echo $event['event_shortname']; ?>',
-                color: '#<?php echo $event['event_color_code']; ?>',
-                start: '<?php echo $start . 'T' . $data_time[$key]; ?>'
-                <?php if(!empty($data_end[$key])){ ?>, end: '<?php echo $data_end[$key] . 'T' . $data_time[$key];; ?>'<?php } ?> 
-            },
-            <?php endforeach; ?>
+                <?php foreach($data_start as $key => $start): ?>
+                {
+                    title: '<?php echo $event['event_shortname']; ?>',
+                    color: '#<?php echo $event['event_color_code']; ?>',
+                    start: '<?php echo $start . 'T' . $data_time[$key]; ?>'
+                    <?php if(!empty($data_end[$key])){ ?>, end: '<?php echo $data_end[$key] . 'T' . $data_time[$key];; ?>'<?php } ?> 
+                },
+                <?php endforeach; ?>
+            <?php } ?>
         <?php endforeach; ?>
       ]
     });
@@ -77,8 +79,8 @@
                                         <th>School</th>
                                         <th>Status</th>
                                         <th>Date and Start Time</th>
-                                        <?php if($_SESSION['type'] !== 3){ ?><th>Modify</th><?php } ?>
-                                        <?php if($_SESSION['type'] !== 3){ ?><th>Delete/Reopen</th><?php } ?>
+                                        <th>Modify</th>
+                                        <th>Delete/Reopen</th>
                                     </tr>
                                 </thead>
                                 <tfoot>
@@ -87,13 +89,12 @@
                                         <th>School</th>
                                         <th>Status</th>
                                         <th>Date and Start Time</th>
-                                        <?php if($_SESSION['type'] !== 3){ ?><th>Modify</th><?php } ?>
-                                        <?php if($_SESSION['type'] !== 3){ ?><th>Delete/Reopen</th><?php } ?>
+                                        <th>Modify</th>
+                                        <th>Delete/Reopen</th>
                                     </tr>
                                 </tfoot>
                                 <tbody>
                                     <?php foreach($events as $event): ?>
-                                        <?php if($_SESSION['type'] !== 3){ ?>
                                             <tr>
                                                 <td><?php echo $event['event_name']; ?></td>
                                                 <td><?php echo $event['school_name']; ?></td>
@@ -111,15 +112,26 @@
                                                         echo date_format(date_create($start), 'd M Y - l');
                                                         if(!empty($data_end[$key])){ echo ' to ' . date_format(date_create($data_end[$key]), 'd M Y - l'); } 
                                                         echo ' at ' . date_format(date_create($data_time[$key]), 'h:i A') . '<br>';
-                                                        
-                                                        
+                                                                          
                                                         endforeach; 
+                                                        
                                                     ?>
                                                 </td>
-                                                <td></td>
-                                                <td></td>
+                                                <td>
+                                                    <center>
+                                                        <div class="btn-group">
+                                                            <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" <?php if($event['status'] != 'Active') echo "disabled"; ?>>
+                                                                MODIFY <span class="caret"></span>
+                                                            </button>
+                                                            <ul class="dropdown-menu">
+                                                                <li><a href="#" data-toggle="modal" data-target="#edit-event-modal" data-values="<?php echo htmlspecialchars(json_encode($event)); ?>" onclick="editEvent(this);">Edit Event Details</a></li>
+                                                                <li><a href="#" data-toggle="modal" data-target="#edit-event-date-time-modal" onclick="editEventDateTime(<?php echo htmlspecialchars(json_encode($event)); ?>);">Edit Event Date(s) and Time</a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </center>
+                                                </td>
+                                                    <td><center><button type="button" class="btn bg-red waves-effect" data-type="delete-event" data-id="<?php echo $event['id']; ?>" data-name="<?php echo $event['event_shortname']; ?>" onclick="alertDesign(this);" <?php if($event['status'] != 'Active') echo "disabled"; ?>>CANCEL</button></center></td>
                                             </tr>
-                                        <?php } ?>
                                     <?php endforeach; ?>
                                 </tbody>
                             </table>

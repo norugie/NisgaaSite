@@ -304,7 +304,7 @@
 					GROUP BY event_days.event";
 			$query = mysqli_query($database->con, $sql);
 			if (!$query) {
-				header("location: ../cms/district.php?page=employment&error=true");
+				header("location: ../cms/district.php?page=events&error=true");
 			} else {
 				while($row = mysqli_fetch_array($query)){
 					$array[] = $row;
@@ -314,6 +314,25 @@
 			return $array;
 
 		}
+
+		public function disableEvent($database, $id, $title){
+
+			$sql = "UPDATE events SET 
+						   status = 'Cancelled'
+					WHERE id = '$id'";
+			$query = mysqli_query($database->con, $sql);
+			if(!$query){
+			    header("location:../cms/district.php?page=events&error=true");
+			} else {
+				global $log;
+				$info = "Cancelled the event:  " . $title;
+				$log->logInput($database, $info);
+
+				header("location:../cms/district.php?page=events&eventDisable=true");
+			}	
+	
+		}
+
 
     }
 
