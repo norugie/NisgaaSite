@@ -7,6 +7,7 @@
 
         require '../functions/district.php';
         $district = new District();
+        
         $roles = $district->roleList($database);
         $schools = $district->schoolList($database);
 ?>

@@ -3,8 +3,10 @@
     $jobs = $district->jobList($database);
 
  ?>
+
 <?php require '../components/modals/new_job.php'; ?>
 <?php require '../components/modals/edit_job.php'; ?>
+
 <div class="row clearfix">
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
         <div class="card">

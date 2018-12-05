@@ -1,7 +1,3 @@
-<?php 
-    $roles = $district->roleList($database);
-    $schools = $district->schoolList($database); 
-?>
 <!-- Add User Modal -->
 <div class="modal fade" id="new-user-modal" tabindex="-1" role="dialog">
     <div class="modal-dialog modal-lg" role="document">

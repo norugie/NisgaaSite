@@ -190,6 +190,12 @@
             $district->disableEvent($database, $id, $title, $post_id);
         }
 
+        if(isset($_GET['addEvent'])){
+
+            
+
+        }
+
     }
 
 ?>

@@ -1,8 +1,3 @@
-<?php 
-    $roles = $district->roleList($database);
-    $schools = $district->schoolList($database); 
-?>
-
 <!-- Add Job Modal -->
 <div class="modal fade" id="new-job-modal" tabindex="-1" role="dialog">
     <div class="modal-dialog modal-lg" role="document">

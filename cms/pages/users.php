@@ -3,8 +3,10 @@
     $users = $district->userList($database);
 
  ?>
+
 <?php require '../components/modals/new_user.php'; ?>
 <?php require '../components/modals/edit_user.php'; ?>
+
 <div class="row clearfix">
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
         <div class="card">
