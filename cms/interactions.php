@@ -3,7 +3,7 @@
     require '../functions/common_connector.php';
     if(isset($_SESSION['id']) && isset($_SESSION['type'])){
         $page_name = $_GET['page'];
-        $page = 'pages/' . $page_name . '.php';
+        $page_link = 'pages/' . $page_name . '.php';
 
         require '../functions/interaction.php';
         $interaction = new Interaction();
@@ -50,7 +50,7 @@
 
             <!-- Page Content -->
             
-            <?php include($page); ?>
+            <?php include($page_link); ?>
 
             <!-- #END# Page Content -->
 

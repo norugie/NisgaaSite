@@ -3,7 +3,7 @@
     require '../functions/common_connector.php';
     if(isset($_SESSION['id']) && isset($_SESSION['type'])){
         $page_name = $_GET['page'];
-        $page = 'pages/' . $page_name . '.php';
+        $page_link = 'pages/' . $page_name . '.php';
 
         require '../functions/district.php';
         $district = new District();
@@ -54,7 +54,7 @@
 
             <!-- Page Content -->
             
-            <?php include($page); ?>
+            <?php include($page_link); ?>
             
             <!-- #END# Page Content -->
 

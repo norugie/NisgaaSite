@@ -1,3 +1,30 @@
+<?php
+
+    if(!isset($_GET['tab']) && !isset($_GET['page'])){
+    ?>
+
+        <script>
+            $(document).ready(function(){
+                $('#dashboard').addClass('active');
+            });
+        </script>
+
+    <?php
+    } else {
+        $tab = $_GET['tab'];
+        $page = $_GET['page'];
+    ?>
+
+        <script>
+            $(document).ready(function(){
+                $('#<?php echo $tab; ?>').addClass('active');
+                $('#<?php echo $page; ?>').addClass('active');
+            });
+        </script>
+
+    <?php
+    }
+?>
 <aside id="leftsidebar" class="sidebar">
     <!-- User Info -->
     <div class="user-info">
@@ -14,90 +41,90 @@
     <div class="menu">
         <ul class="list">
             <li class="header">MAIN NAVIGATION</li>
-            <li>
+            <li id="dashboard">
                 <a href="index.php">
                     <i class="material-icons">dashboard</i>
                     <span>Dashboard</span>
                 </a>
             </li>
-            <li>
+            <li id="posts">
                 <a href="javascript:void(0);" class="menu-toggle">
                     <i class="material-icons">create</i>
                     <span>Posts</span>
                 </a>
                 <ul class="ml-menu">
-                    <li>
-                        <a href="posts.php?page=blog">
+                    <li id="blog">
+                        <a href="posts.php?tab=posts&page=blog">
                             <i class="material-icons">mode_comment</i>
                             <span>Blog Posts</span>
                         </a>
                     </li>
-                    <li>
-                        <a href="posts.php?page=links">
+                    <li id="links">
+                        <a href="posts.php?tab=posts&page=links">
                             <i class="material-icons">link</i>
                             <span>Links</span>
                         </a>
                     </li>
-                    <li>
-                        <a href="posts.php?page=categories">
+                    <li id="categories">
+                        <a href="posts.php?tab=posts&page=categories">
                             <i class="material-icons">widgets</i>
                             <span>Categories</span>
                         </a>
                     </li> 
-                    <li>
-                        <a href="posts.php?page=media">
+                    <li id="media">
+                        <a href="posts.php?tab=posts&page=media">
                             <i class="material-icons">photo_library</i>
                             <span>Media</span>
                         </a>
                     </li>  
                 </ul>
             </li>
-            <li>
+            <li id="sd">
                 <a href="javascript:void(0);" class="menu-toggle">
                     <i class="material-icons">business</i>
                     <span>School District</span>
                 </a>
                 <ul class="ml-menu">
-                    <li>
-                        <a href="district.php?page=users">
+                    <li id="users">
+                        <a href="district.php?tab=sd&page=users">
                             <i class="material-icons">people</i>
                             <span>Users</span>
                         </a>
                     </li>
-                    <li>
-                        <a href="district.php?page=employment">
+                    <li id="employment">
+                        <a href="district.php?tab=sd&page=employment">
                             <i class="material-icons">work</i>
                             <span>Employment</span>
                         </a>
                     </li>
-                    <li>
-                        <a href="district.php?page=events">
+                    <li id="events">
+                        <a href="district.php?tab=sd&page=events">
                             <i class="material-icons">event</i>
                             <span>Events</span>
                         </a>
                     </li>
                 </ul>
             </li>
-            <li>
+            <li id="web">
                 <a href="javascript:void(0);" class="menu-toggle">
                     <i class="material-icons">public</i>
                     <span>Web Interactions</span>
                 </a>
                 <ul class="ml-menu">
-                    <li>
-                        <a href="interactions.php?page=comments">
+                    <li id="comments">
+                        <a href="interactions.php?tab=web&page=comments">
                             <i class="material-icons">record_voice_over</i>
                             <span>Comments</span>
                         </a>
                     </li>
-                    <li>
-                        <a href="interactions.php?page=inquiries">
+                    <li id="inquiries">
+                        <a href="interactions.php?tab=web&page=inquiries">
                             <i class="material-icons">question_answer</i>
                             <span>Inquiries</span>
                         </a>
                     </li>
-                    <li>
-                        <a href="interactions.php?page=reports">
+                    <li id="reports">
+                        <a href="interactions.php?tab=web&page=reports">
                             <i class="material-icons">report</i>
                             <span>Reports</span>
                         </a>
