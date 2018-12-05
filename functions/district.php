@@ -270,7 +270,7 @@
 			    header("location:../cms/district.php?page=employment&error=true");
 			} else {
 				global $log;
-				$info = "Modified the job posting for job ID: " . $title;
+				$info = "Modified the job posting for job ID: " . preg_replace('/[a-zA-Z]/', '', $title);
 				$log->logInput($database, $info);
 
 				header("location:../cms/district.php?page=employment&editJob=true");
@@ -315,7 +315,7 @@
 
 		}
 
-		public function disableEvent($database, $id, $title){
+		public function disableEvent($database, $id, $title, $post_id){
 
 			$sql = "UPDATE events SET 
 						   status = 'Cancelled'
@@ -328,7 +328,16 @@
 				$info = "Cancelled the event:  " . $title;
 				$log->logInput($database, $info);
 
-				header("location:../cms/district.php?page=events&eventDisable=true");
+				$sql = "UPDATE posts SET 
+				status = 'Archived'
+						WHERE id = '$post_id'";
+				$query = mysqli_query($database->con, $sql);
+				if(!$query){
+					header("location:../cms/district.php?page=events&error=true");
+				} else {
+					header("location:../cms/district.php?page=events&eventDisable=true");
+				}	
+
 			}	
 	
 		}

@@ -5,6 +5,6 @@
 
     }
 
-    require 'interactions_options.php';
+    require 'interaction_options.php';
 
 ?>

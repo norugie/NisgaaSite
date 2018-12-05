@@ -185,8 +185,9 @@
             
             $id = $_GET['id'];
             $title = $_GET['event'];
+            $post_id = $_GET['post'];
 
-            $district->disableEvent($database, $id, $title);
+            $district->disableEvent($database, $id, $title, $post_id);
         }
 
     }

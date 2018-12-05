@@ -13,7 +13,8 @@ function alertDesign(e){
     } else if(type === 'reopen-job'){
         showReopenJobConfirm(id, name);
     } else if(type === 'delete-event'){
-        showDisableEventConfirm(id, name);
+        var post = $(e).data('post');
+        showDisableEventConfirm(id, name, post);
     }
 }
 
@@ -101,7 +102,7 @@ function showReopenJobConfirm(id, name){
 }
 
 //Warning for cancelling event
-function showDisableEventConfirm(id, name){
+function showDisableEventConfirm(id, name, post){
     swal({
         title: "Are you sure you want to cancel this event?",
         text: "You won't be able to reactivate this event after this",
@@ -114,7 +115,7 @@ function showDisableEventConfirm(id, name){
         closeOnCancel: true
     }, function(isConfirm){   
         if (isConfirm){   
-            window.location = "../functions/district.php?district=true&eventDisable=true&id=" + id + "&event=" + name;
+            window.location = "../functions/district.php?district=true&eventDisable=true&id=" + id + "&event=" + name + "&post=" + post;
         }
     
     });

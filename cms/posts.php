@@ -5,7 +5,7 @@
         $page_name = $_GET['page'];
         $page = 'pages/' . $page_name . '.php';
 
-        require '../functions/posts.php';
+        require '../functions/post.php';
         $post = new Post();
 ?>
 

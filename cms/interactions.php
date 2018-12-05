@@ -5,7 +5,7 @@
         $page_name = $_GET['page'];
         $page = 'pages/' . $page_name . '.php';
 
-        require '../functions/interactions.php';
+        require '../functions/interaction.php';
         $interaction = new Interaction();
 ?>
 
