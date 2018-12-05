@@ -42,7 +42,7 @@
         <ul class="list">
             <li class="header">MAIN NAVIGATION</li>
             <li id="dashboard">
-                <a href="index.php">
+                <a href="../cms/">
                     <i class="material-icons">dashboard</i>
                     <span>Dashboard</span>
                 </a>

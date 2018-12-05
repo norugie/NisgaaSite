@@ -4,9 +4,11 @@
 
         session_start();
         require 'connect.php';
+        require 'log.php';
         $database = new Database();
         $interaction = new Interaction();
-
+        $log = new Log();
+        
     }
 
 ?>
