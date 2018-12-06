@@ -39,3 +39,6 @@
 
 <!-- Jquery Core Js -->
 <script src="../plugins/jquery/jquery.min.js"></script>
+
+<!-- Jquery Validation Plugin Css -->
+<script src="../plugins/jquery-validation/jquery.validate.js"></script>

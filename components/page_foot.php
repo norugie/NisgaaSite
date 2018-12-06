@@ -61,3 +61,15 @@ $('#bs_datepicker_range_container_edit').datepicker({
 	format: 'dd M yyyy'
 });
 </script>
+
+<!-- Custom JQuery Validator -->
+<script>
+    $('.form_validate').validate({
+        unhighlight: function (input) {
+            $(input).parents('.form-line').removeClass('error');
+        },
+        errorPlacement: function (error, element) {
+            $(element).parents('.form-group').append(error);
+        }
+    });
+</script>

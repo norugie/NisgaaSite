@@ -13,23 +13,23 @@
             <p class="font-12"><i><b>Note:</b> Fields marked with an asterisk are required</i></p><br>
                 <!-- Inline Layout -->
 
-                    <form id="wizard_form" action="../functions/district.php?district=true&addEvent=true" method="POST">
+                    <form id="wizard_form" class="form_validate" action="../functions/district.php?district=true&addEvent=true" method="POST">
                         <h3>Event Information</h3>
                         <fieldset>
                             <div class="row clearfix">
-                                <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-                                    <label for="jobid">Job ID *</label>
+                                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                    <label for="event_shortname">Event Shortname *</label>
                                     <div class="form-group">
                                         <div class="form-line">
-                                            <input type="text" class="form-control" id="jobid" name="jobid" required>
+                                            <input type="text" class="form-control" id="event_shortname" name="event_shortname" required>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
-                                    <label for="title">Job Title *</label>
+                                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                    <label for="event_name">Event Name *</label>
                                     <div class="form-group">
                                         <div class="form-line">
-                                            <input type="text" class="form-control" id="title" name="title" required>
+                                            <input type="text" class="form-control" id="event_name" name="event_name" required>
                                         </div>
                                     </div>
                                 </div>

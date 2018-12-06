@@ -152,8 +152,6 @@
     </div>
 </div>
 
-
 <!-- JQuery Steps Plugin Js -->
-<script src="../plugins/jquery-validation/jquery.validate.js"></script>
 <script src="../plugins/jquery-steps/jquery.steps.js"></script>
 <script src="../js/form-wizard.js"></script>
