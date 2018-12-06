@@ -61,27 +61,14 @@ $('#bs_datepicker_range_container_edit').datepicker({
 	format: 'dd M yyyy'
 });
 
-$('#event_segmented_day_1').datepicker({
+$('#bs_datepicker_range_container_event').datepicker({
 	autoclose: true,
-	container: '#bs_datepicker_range_container_edit',
+	container: '#bs_datepicker_range_container_event',
 	todayHighlight: true,
 	startDate: '0d',
 	format: 'dd M yyyy'
 });
 
-<?php
-	if(isset($_GEt['page']) && $_GET['page'] == 'events'){
-?>
-$('#event_segmented_day_'+ctr).datepicker({
-	autoclose: true,
-	container: '#bs_datepicker_range_container_edit',
-	todayHighlight: true,
-	startDate: '0d',
-	format: 'dd M yyyy'
-});
-<?php
-	}
-?>
 </script>
 
 <!-- Custom JQuery Validator -->

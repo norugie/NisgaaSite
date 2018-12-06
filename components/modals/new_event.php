@@ -1,14 +1,3 @@
-<style>
-
-    .showDateSetup {
-        display: block;
-    }
-
-    .hideDateSteup {
-        display: none;
-    }
-
-</style>
 
 <!-- Add User Modal -->
 <div class="modal fade" id="new-event-modal" tabindex="-1" role="dialog">
@@ -106,7 +95,7 @@
                                         <label for="event_date_start_continuous_1">Event Date *</label>
                                         <div class="form-group">
                                             <div class="form-line">
-                                                <input type="text" class="form-control" id="event_date_start_continuous_1" name="event_date_start_continuous_1">
+                                                <input type="date" class="form-control" id="event_date_start_continuous_1" name="event_date_start_continuous_1" min="<?php echo date('Y-m-d');?>" onchange="dateChange(this);">
                                             </div>
                                         </div>
                                     </div>
@@ -114,7 +103,7 @@
                                         <label for="event_date_end_continuous_1">Event Date *</label>
                                         <div class="form-group">
                                             <div class="form-line">
-                                                <input type="text" class="form-control" id="event_date_end_continuous_1" name="event_date_end_continuous_1">
+                                                <input type="date" class="form-control" id="event_date_end_continuous_1" name="event_date_end_continuous_1" min="<?php echo date('Y-m-d');?>">
                                             </div>
                                         </div>
                                     </div>
@@ -205,5 +194,26 @@
             ctr--;
         }
     }
+
+
+    function dateChange(e){
+        var datearray1 = $(e).val().split("-");
+        var year1 = datearray1[0];
+        var month1 = datearray1[1];
+        var day1 = datearray1[2];
+        var minDate1 = (year1 +"-"+ month1 +"-"+ day1);
+
+        var datearray2 = $('#event_date_end_continuous_1').val().split("-");
+        var year2 = datearray2[0];
+        var month2 = datearray2[1];
+        var day2 = datearray2[2];
+        var minDate2 = (year2 +"-"+ month2 +"-"+ day2);
+
+        $('#event_date_end_continuous_1').attr('min',minDate1);
+
+        if(minDate2 < minDate1) 
+            $('#event_date_end_continuous_1').val(minDate1); 
+        }
+
 
 </script>
