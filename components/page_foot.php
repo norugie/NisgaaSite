@@ -60,6 +60,28 @@ $('#bs_datepicker_range_container_edit').datepicker({
 	startDate: '0d',
 	format: 'dd M yyyy'
 });
+
+$('#event_segmented_day_1').datepicker({
+	autoclose: true,
+	container: '#bs_datepicker_range_container_edit',
+	todayHighlight: true,
+	startDate: '0d',
+	format: 'dd M yyyy'
+});
+
+<?php
+	if(isset($_GEt['page']) && $_GET['page'] == 'events'){
+?>
+$('#event_segmented_day_'+ctr).datepicker({
+	autoclose: true,
+	container: '#bs_datepicker_range_container_edit',
+	todayHighlight: true,
+	startDate: '0d',
+	format: 'dd M yyyy'
+});
+<?php
+	}
+?>
 </script>
 
 <!-- Custom JQuery Validator -->
