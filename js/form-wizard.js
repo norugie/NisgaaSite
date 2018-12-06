@@ -1,12 +1,13 @@
 $(function () {
 
     var form = $('#wizard_form').show();
+
     form.steps({
-        headerTag: 'h3',
-        bodyTag: 'fieldset',
+        headerTag: "h3",
+        bodyTag: "fieldset",
         titleTemplate: "#title#",
         transitionEffect: 'slideLeft',
-        onInit: function (event, currentIndex) {
+        onInit: function (event) {
             $.AdminBSB.input.activate();
 
             //Set tab width
@@ -17,11 +18,19 @@ $(function () {
             //set button waves effect
             setButtonWavesEffect(event);
         },
-        onStepChanged: function (event, currentIndex, priorIndex) {
-            setButtonWavesEffect(event);
+        onStepChanging: function ()
+        {
+            form.validate().settings.ignore = ":disabled,:hidden";
+            return form.valid();
         },
-        onFinished: function (event, currentIndex) {
-            $('#wizard_form').submit();
+        onFinishing: function ()
+        {
+            form.validate().settings.ignore = ":disabled";
+            return form.valid();
+        },
+        onFinished: function ()
+        {
+            form.submit();
         }
     });
     

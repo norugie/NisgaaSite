@@ -1,8 +1,3 @@
-<style>
-    .wizard .steps .current a {
-        background-color: #607D8B!important;
-    }
-</style>
 <!-- Add User Modal -->
 <div class="modal fade" id="new-event-modal" tabindex="-1" role="dialog">
     <div class="modal-dialog modal-lg" role="document">
@@ -28,6 +23,11 @@
                         <fieldset>
 
                         </fieldset>
+
+                        <h3>Event Post</h3>
+                        <fieldset>
+
+                        </fieldset>
                     </form>
 
                 <!-- #END# Inline Layout -->
@@ -35,7 +35,3 @@
         </div>
     </div>
 </div>
-
-<!-- JQuery Steps Plugin Js -->
-<script src="../plugins/jquery-steps/jquery.steps.js"></script>
-<script src="../js/pages/forms/form-wizard.js"></script>

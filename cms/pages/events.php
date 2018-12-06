@@ -4,6 +4,16 @@
     
  ?>
 
+<style>
+    .wizard .steps .current a {
+        background-color: #607D8B!important;
+    }
+    #title-error {
+        color: red!important;
+        font-weight: lighter!important;
+    }
+</style>
+
 <link href='../plugins/fullcalendar/fullcalendar.min.css' rel='stylesheet' />
 <script src='../plugins/fullcalendar/lib/moment.min.js'></script>
 <script src='../plugins/fullcalendar/fullcalendar.min.js'></script>
@@ -145,3 +155,9 @@
         </div>
     </div>
 </div>
+
+
+<!-- JQuery Steps Plugin Js -->
+<script src="../plugins/jquery-validation/jquery.validate.js"></script>
+<script src="../plugins/jquery-steps/jquery.steps.js"></script>
+<script src="../js/form-wizard.js"></script>
