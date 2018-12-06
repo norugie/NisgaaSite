@@ -191,7 +191,8 @@
         }
 
         if(isset($_GET['addEvent'])){
-
+            $title = mysqli_real_escape_string($database->con, $_POST['title']);
+            echo $title;
             
 
         }

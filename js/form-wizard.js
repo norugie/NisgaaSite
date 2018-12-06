@@ -33,6 +33,15 @@ $(function () {
             form.submit();
         }
     });
+
+    form.validate({
+        unhighlight: function (input) {
+            $(input).parents('.form-line').removeClass('error');
+        },
+        errorPlacement: function (error, element) {
+            $(element).parents('.form-group').append(error);
+        }
+    });
     
 });
 

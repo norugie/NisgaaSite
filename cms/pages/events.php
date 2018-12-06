@@ -8,10 +8,6 @@
     .wizard .steps .current a {
         background-color: #607D8B!important;
     }
-    #title-error {
-        color: red!important;
-        font-weight: lighter!important;
-    }
 </style>
 
 <link href='../plugins/fullcalendar/fullcalendar.min.css' rel='stylesheet' />

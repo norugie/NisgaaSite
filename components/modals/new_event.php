@@ -16,7 +16,25 @@
                     <form id="wizard_form" action="../functions/district.php?district=true&addEvent=true" method="POST">
                         <h3>Event Information</h3>
                         <fieldset>
-                            <input type="text" class="form-control" id="title" name="title" required>
+                            <div class="row clearfix">
+                                <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                                    <label for="jobid">Job ID *</label>
+                                    <div class="form-group">
+                                        <div class="form-line">
+                                            <input type="text" class="form-control" id="jobid" name="jobid" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
+                                    <label for="title">Job Title *</label>
+                                    <div class="form-group">
+                                        <div class="form-line">
+                                            <input type="text" class="form-control" id="title" name="title" required>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        
                         </fieldset>
 
                         <h3>Event Date-Time Setup</h3>
