@@ -19,7 +19,7 @@
 					WHERE users.id = '$u_id'";
 			$query = mysqli_query($database->con, $sql);
 			if(!$query){
-				header("location: ../cms/index.php?error=true");
+				header("location: ../cms/?error=true");
 			} else {
 				$userInfo = mysqli_fetch_assoc($query);
 				return $userInfo;
@@ -36,12 +36,12 @@
 					WHERE id = '$id'";
 			$query = mysqli_query($database->con, $sql);
 			if(!$query){
-				header("location:../cms/index.php?error=true");
+				header("location:../cms/?error=true");
 			} else {
 				global $log;
 				$info = "Modified the user account information for " . $username;
 				$log->logInput($database, $info);
-				header("location:../cms/index.php?editProfile=true");
+				header("location:../cms/?editProfile=true");
 			}	
 		}
 
@@ -52,12 +52,12 @@
 					WHERE id = '$id'";
 			$query = mysqli_query($database->con, $sql);
 			if(!$query){
-				header("location:../cms/index.php?error=true");
+				header("location:../cms/?error=true");
 			} else {
 				global $log;
 				$info = "Modified the user account password for " . $username;
 				$log->logInput($database, $info);
-				header("location:../cms/index.php?editProfile=true");
+				header("location:../cms/?editProfile=true");
 			}
 		}
 
@@ -69,12 +69,12 @@
 					WHERE id = '$id'";
 			$query = mysqli_query($database->con, $sql);
 			if(!$query){
-				header("location:../cms/index.php?error=true");
+				header("location:../cms/?error=true");
 			} else {
 				global $log;
 				$info = "Modified the user display image for " . $username;
 				$log->logInput($database, $info);
-				header("location:../cms/index.php?editProfilePicture=true");
+				header("location:../cms/?editProfilePicture=true");
 			}
 		}
         

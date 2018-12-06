@@ -122,10 +122,10 @@
                     move_uploaded_file($file_tmp, "../jobs/".$file_name);
                     $district->addJob($database, $id, $title, $jobdesc, $jobtype, $school, $jobopen, $jobclose, $file_name);
                 } else {
-                    header("location:../cms/district.php?page=employment&error=true");
+                    header("location:../cms/district.php?tab=sd&page=employment&error=true");
                 }
             } else {
-                header("location:../cms/district.php?page=employment&error=true");
+                header("location:../cms/district.php?tab=sd&page=employment&error=true");
             }
 
         }
@@ -157,10 +157,10 @@
                     move_uploaded_file($file_tmp, "../jobs/".$file_name);
                     $district->editJobFile($database, $id, $title, $file_name);
                 } else {
-                    header("location:../cms/district.php?page=employment&error=true");
+                    header("location:../cms/district.php?tab=sd&page=employment&error=true");
                 }
             } else {
-                header("location:../cms/district.php?page=employment&error=true");
+                header("location:../cms/district.php?tab=sd&page=employment&error=true");
             }         
         }
 

@@ -41,10 +41,10 @@
                     move_uploaded_file($file_tmp, "../images/profile/".$file_name);
                     $user->userEditPicture($database, $file_name);
                 } else {
-                    header("location:../cms/index.php?error=true");
+                    header("location:../cms/?error=true");
                 }
             } else {
-                header("location:../cms/index.php?error=true");
+                header("location:../cms/?error=true");
             }
 
         }
@@ -55,7 +55,7 @@
             $sql = "SELECT password FROM users WHERE id = '$id'";
             $query = mysqli_query($database->con, $sql);
             if (!$query) {
-                header("location: ../cms/index.php?error=true");
+                header("location: ../cms/?error=true");
             } else {
                 $passwordInfo = mysqli_fetch_assoc($query);
                 $old_password = mysqli_real_escape_string($database->con, $_POST['old_password']);
@@ -65,10 +65,10 @@
                      if($new_password == $r_password){
                          $user->userEditPassword($database, $new_password, $id);
                      } else {
-                         header("location: ../cms/index.php?incorrect=true");
+                         header("location: ../cms/?incorrect=true");
                      }
                 } else {
-                    header("location: ../cms/index.php?incorrect=true");
+                    header("location: ../cms/?incorrect=true");
                 }
             }
 

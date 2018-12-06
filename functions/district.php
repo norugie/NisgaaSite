@@ -8,7 +8,7 @@
 			$sql = "SELECT * FROM roles";
 			$query = mysqli_query($database->con, $sql);
 			if (!$query) {
-			    header("location: ../cms/index.php?error=true");
+			    header("location: ../cms/?error=true");
 			} else {
 				while($row = mysqli_fetch_array($query)){
 					$array[] = $row;
@@ -25,7 +25,7 @@
 			$sql = "SELECT * FROM schools";
 			$query = mysqli_query($database->con, $sql);
 			if (!$query) {
-			    header("location: ../cms/index.php?error=true");
+			    header("location: ../cms/?error=true");
 			} else {
 				while($row = mysqli_fetch_array($query)){
 					$array[] = $row;
@@ -59,7 +59,7 @@
 					WHERE users.id != '$gid'";
 			$query = mysqli_query($database->con, $sql);
 			if (!$query) {
-			    header("location: ../cms/district.php?page=users&error=true");
+			    header("location: ../cms/district.php?tab=sd&page=users&error=true");
 			} else {
 				while($row = mysqli_fetch_array($query)){
 					$array[] = $row;
@@ -77,13 +77,13 @@
 					WHERE id = '$id'";
 			$query = mysqli_query($database->con, $sql);
 			if(!$query){
-			    header("location:../cms/district.php?page=users&error=true");
+			    header("location:../cms/district.php?tab=sd&page=users&error=true");
 			} else {
 				global $log;
 				$info = "Disabled the user account for " . $username;
 				$log->logInput($database, $info);
 
-				header("location:../cms/district.php?page=users&userDisabled=true");
+				header("location:../cms/district.php?tab=sd&page=users&userDisabled=true");
 			}	
 	
 		}
@@ -95,13 +95,13 @@
 					WHERE id = '$id'";
 			$query = mysqli_query($database->con, $sql);
 			if(!$query){
-			    header("location:../cms/district.php?page=users&error=true");
+			    header("location:../cms/district.php?tab=sd&page=users&error=true");
 			} else {
 				global $log;
 				$info = "Reactivated the user account for " . $username;
 				$log->logInput($database, $info);
 
-				header("location:../cms/district.php?page=users&userReactivated=true");
+				header("location:../cms/district.php?tab=sd&page=users&userReactivated=true");
 			}	
 	
 		}
@@ -112,13 +112,13 @@
 					VALUES(null, '$username', '$firstname', '$lastname', '$email', md5('$password'), '$role', '$school',  'user.png', 'Active')";
 			$query = mysqli_query($database->con, $sql);
 			if(!$query){
-			    header("location:../cms/district.php?page=users&error=true");
+			    header("location:../cms/district.php?tab=sd&page=users&error=true");
 			} else {
 				global $log;
 				$info = "Added a new user account for " . $username;
 				$log->logInput($database, $info);
 
-				header("location:../cms/district.php?page=users&newUser=true");
+				header("location:../cms/district.php?tab=sd&page=users&newUser=true");
 			}
 		}
 
@@ -132,12 +132,12 @@
 					WHERE id = '$id'";
 			$query = mysqli_query($database->con, $sql);
 			if(!$query){
-			    header("location:../cms/district.php?page=users&error=true");
+			    header("location:../cms/district.php?tab=sd&page=users&error=true");
 			} else {
 				global $log;
 				$info = "Modified the user account information for " . $username;
 				$log->logInput($database, $info);
-				header("location:../cms/district.php?page=users&editUser=true");
+				header("location:../cms/district.php?tab=sd&page=users&editUser=true");
 			}	
 
 		}
@@ -162,7 +162,7 @@
 					ON (schools.id = jobs.school)";
 			$query = mysqli_query($database->con, $sql);
 			if (!$query) {
-				header("location: ../cms/district.php?page=employment&error=true");
+				header("location: ../cms/district.php?tab=sd&page=employment&error=true");
 			} else {
 				while($row = mysqli_fetch_array($query)){
 					$array[] = $row;
@@ -180,13 +180,13 @@
 					WHERE id = '$id'";
 			$query = mysqli_query($database->con, $sql);
 			if(!$query){
-			    header("location:../cms/district.php?page=employment&error=true");
+			    header("location:../cms/district.php?tab=sd&page=employment&error=true");
 			} else {
 				global $log;
 				$info = "Closed the job posting for job ID:  " . $title;
 				$log->logInput($database, $info);
 
-				header("location:../cms/district.php?page=employment&jobDisable=true");
+				header("location:../cms/district.php?tab=sd&page=employment&jobDisable=true");
 			}	
 	
 		}
@@ -200,7 +200,7 @@
 					WHERE id = '$id'";
 			$query = mysqli_query($database->con, $sql);
 			if(!$query){
-			    header("location:../cms/district.php?page=employment&error=true");
+			    header("location:../cms/district.php?tab=sd&page=employment&error=true");
 			} else {
 				global $log;
 				$info;
@@ -208,12 +208,12 @@
 					$info = "Reopened the job posting for job ID: " . $title;
 					$log->logInput($database, $info);
 	
-					header("location:../cms/district.php?page=employment&jobReopen=true");
+					header("location:../cms/district.php?tab=sd&page=employment&jobReopen=true");
 				} else {
 					$info = "Modified the job posting for job ID: " . $title;
 					$log->logInput($database, $info);
 
-					header("location:../cms/district.php?page=employment&editJob=true");
+					header("location:../cms/district.php?tab=sd&page=employment&editJob=true");
 				}
 				
 			}	
@@ -227,13 +227,13 @@
 					WHERE id = '$id'";
 			$query = mysqli_query($database->con, $sql);
 			if(!$query){
-			    header("location:../cms/district.php?page=employment&error=true");
+			    header("location:../cms/district.php?tab=sd&page=employment&error=true");
 			} else {
 				global $log;
 				$info = "Modified the job posting for job ID: " . $title;
 				$log->logInput($database, $info);
 
-				header("location:../cms/district.php?page=employment&editJob=true");
+				header("location:../cms/district.php?tab=sd&page=employment&editJob=true");
 				
 			}	
 	
@@ -246,13 +246,13 @@
 					VALUES (null, '$id', '$school', '$title', '$jobdesc', '$user', '$jobopen', '$jobclose', '$jobtype', '$file_name', 'Open')";
 			$query = mysqli_query($database->con, $sql);
 			if(!$query){
-			    header("location:../cms/district.php?page=employment&error=true");
+			    header("location:../cms/district.php?tab=sd&page=employment&error=true");
 			} else {
 				global $log;
 				$info = "Opened a job posting for job ID: " . $id;
 				$log->logInput($database, $info);
 
-				header("location:../cms/district.php?page=employment&newJob=true");
+				header("location:../cms/district.php?tab=sd&page=employment&newJob=true");
 			}
 
 		}
@@ -267,13 +267,13 @@
 					WHERE id = '$id'";
 			$query = mysqli_query($database->con, $sql);
 			if(!$query){
-			    header("location:../cms/district.php?page=employment&error=true");
+			    header("location:../cms/district.php?tab=sd&page=employment&error=true");
 			} else {
 				global $log;
 				$info = "Modified the job posting for job ID: " . preg_replace('/[a-zA-Z]/', '', $title);
 				$log->logInput($database, $info);
 
-				header("location:../cms/district.php?page=employment&editJob=true");
+				header("location:../cms/district.php?tab=sd&page=employment&editJob=true");
 				
 			}				
 		}
@@ -304,7 +304,7 @@
 					GROUP BY event_days.event";
 			$query = mysqli_query($database->con, $sql);
 			if (!$query) {
-				header("location: ../cms/district.php?page=events&error=true");
+				header("location: ../cms/district.php?tab=sd&page=events&error=true");
 			} else {
 				while($row = mysqli_fetch_array($query)){
 					$array[] = $row;
@@ -322,7 +322,7 @@
 					WHERE id = '$id'";
 			$query = mysqli_query($database->con, $sql);
 			if(!$query){
-			    header("location:../cms/district.php?page=events&error=true");
+			    header("location:../cms/district.php?tab=sd&page=events&error=true");
 			} else {
 				global $log;
 				$info = "Cancelled the event:  " . $title;
@@ -333,9 +333,9 @@
 						WHERE id = '$post_id'";
 				$query = mysqli_query($database->con, $sql);
 				if(!$query){
-					header("location:../cms/district.php?page=events&error=true");
+					header("location:../cms/district.php?tab=sd&page=events&error=true");
 				} else {
-					header("location:../cms/district.php?page=events&eventDisable=true");
+					header("location:../cms/district.php?tab=sd&page=events&eventDisable=true");
 				}	
 
 			}	
