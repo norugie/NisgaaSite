@@ -1,7 +1,7 @@
 $(function () {
     //TinyMCE
     tinymce.init({
-        selector: "textarea#tinymce",
+        selector: "textarea#event_post_editor",
         theme: "modern",
         height: 300,
         plugins: [
@@ -10,7 +10,7 @@ $(function () {
             'insertdatetime media nonbreaking save table contextmenu directionality',
             'emoticons template paste textcolor colorpicker textpattern imagetools'
         ],
-        toolbar1: 'insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image',
+        toolbar1: 'insertfile undo redo | styleselect | fontsizeselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image',
         toolbar2: 'print preview media | forecolor backcolor emoticons',
         image_advtab: true
     });
