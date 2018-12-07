@@ -1,4 +1,5 @@
 
+
 <!-- Add User Modal -->
 <div class="modal fade" id="new-event-modal" tabindex="-1" role="dialog">
     <div class="modal-dialog modal-lg" role="document">
@@ -47,7 +48,7 @@
                             </div>
                             <div class="row clearfix">
                                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                                    <label for="event_type">Job Type *</label>
+                                    <label for="event_type">Event Type *</label>
                                     <select class="form-control show-tick" name="event_type" id="event_type" onchange="showDateTimeSetup(this);">
                                         <option selected hidden disabled>-- SELECT TYPE FOR THE EVENT --</option>
                                         <option value="Single">Single</option>
@@ -83,7 +84,7 @@
                                         <label for="event_time_single_1">Event Time *</label>
                                         <div class="form-group">
                                             <div class="form-line">
-                                                <input type="text" class="form-control" id="event_time_single_1" name="event_time_single_1">
+                                                <input type="time" class="form-control" id="event_time_single_1" name="event_time_single_1">
                                             </div>
                                         </div>
                                     </div>
@@ -150,7 +151,44 @@
 
                         <h3>Event Post</h3>
                         <fieldset>
-
+                            <div class="row clearfix">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <label for="post_title">Post Title *</label>
+                                    <div class="form-group">
+                                        <div class="form-line">
+                                            <input type="text" class="form-control" id="post_title" name="post_title">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row clearfix">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <label for="post_cat">Post Categories *</label>
+                                    <div class="form-group">
+                                        <div class="form-line">
+                                            <input type="text" class="form-control" id="post_cat" name="post_cat">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row clearfix">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <textarea id="tinymce">
+                                        <h2>WYSIWYG Editor</h2>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ullamcorper sapien non nisl facilisis bibendum in quis tellus. Duis in urna bibendum turpis pretium fringilla. Aenean neque velit, porta eget mattis ac, imperdiet quis nisi. Donec non dui et tortor vulputate luctus. Praesent consequat rhoncus velit, ut molestie arcu venenatis sodales.</p>
+                                        <h3>Lacinia</h3>
+                                        <ul>
+                                            <li>Suspendisse tincidunt urna ut velit ullamcorper fermentum.</li>
+                                            <li>Nullam mattis sodales lacus, in gravida sem auctor at.</li>
+                                            <li>Praesent non lacinia mi.</li>
+                                            <li>Mauris a ante neque.</li>
+                                            <li>Aenean ut magna lobortis nunc feugiat sagittis.</li>
+                                        </ul>
+                                        <h3>Pellentesque adipiscing</h3>
+                                        <p>Maecenas quis ante ante. Nunc adipiscing rhoncus rutrum. Pellentesque adipiscing urna mi, ut tempus lacus ultrices ac. Pellentesque sodales, libero et mollis interdum, dui odio vestibulum dolor, eu pellentesque nisl nibh quis nunc. Sed porttitor leo adipiscing venenatis vehicula. Aenean quis viverra enim. Praesent porttitor ut ipsum id ornare.</p>
+                                    </textarea>
+                                </div>
+                            </div>
                         </fieldset>
                     </form>
 

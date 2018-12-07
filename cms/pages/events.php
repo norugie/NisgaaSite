@@ -160,3 +160,7 @@
 <!-- JQuery Steps Plugin Js -->
 <script src="../plugins/jquery-steps/jquery.steps.js"></script>
 <script src="../js/form-wizard.js"></script>
+
+<!-- TinyMCE -->
+<script src="../plugins/tinymce/tinymce.js"></script>
+<script src="../js/editors.js"></script>
