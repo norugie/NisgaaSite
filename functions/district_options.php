@@ -204,9 +204,12 @@
 
             //Event Post
             $post_title = mysqli_real_escape_string($database->con, $_POST['post_title']);
-            $post_content = mysqli_real_escape_string($database->con, $_POST['post_content']);
+            $post_content = $_POST['post_content'];
 
-            $post_id = $district->addPostEvent($database);
+            $post_id = $district->addPostEvent($database, $post_title, $post_content);
+
+            echo $post_id; 
+            
             $event_id = $district->addEvent($database);
             
             $event_start;

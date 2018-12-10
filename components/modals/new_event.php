@@ -165,16 +165,6 @@
                             </div>
                             <div class="row clearfix">
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                    <label for="post_cat">Post Categories *</label>
-                                    <div class="form-group">
-                                        <div class="form-line">
-                                            <input type="text" class="form-control" id="post_cat" name="post_cat">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row clearfix">
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                     <label for="post_content" style="margin-bottom:10px;">Post Content *</label><br>
                                     <div class="form-group">
                                         <div class="form-line">

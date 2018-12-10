@@ -30,7 +30,6 @@ $(function () {
         },
         onFinished: function ()
         {   
-            console.log(ctr);
             $('#ctr_value_event').attr('value', ctr_event);
             form.submit();
         }

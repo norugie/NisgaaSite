@@ -342,12 +342,47 @@
 	
 		}
 
+		public function addPostEvent($database, $post_title, $post_content){
+			$id;
+			$post_id = 'PST' . rand(1111111,9999999);
+			$user = $_SESSION['id'];
+			$school = $_SESSION['school'];
+			$date = date('Y-m-d');
+
+
+			//echo $post_id . "<br>" . $user . "<br>" . $school . "<br>" . $date . "<br>" . $post_title . "<br>" . $post_content;
+			$sql = "INSERT INTO posts
+					VALUES (null, '$post_id', '$post_title', '$date', '$user', '$school', '$post_content', 'Active')";
+			$query = mysqli_query($database->con, $sql);
+			if(!$query){
+			    header("location:../cms/district.php?tab=sd&page=events&error=true");
+			} else {
+				$sql = "SELECT id FROM posts ORDER BY id DESC LIMIT 1";
+				$query = mysqli_query($database->con, $sql);
+				if (!$query) {
+					header("location: ../cms/?error=true");
+				} else {
+					$row = mysqli_fetch_assoc($query);
+					$id = $row['id'];
+
+					$sql = "INSERT INTO post_categories
+					VALUES (null, '$id','1')";
+					$query = mysqli_query($database->con, $sql);
+					if(!$query){
+						header("location:../cms/district.php?tab=sd&page=events&error=true");
+					}
+				}
+			}
+
+			return $id;				
+		}
+
 		public function addEvent($database){
 
 		}
 
 		public function addEventDays($database){
-			
+
 		}
 
 
