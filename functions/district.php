@@ -349,8 +349,6 @@
 			$school = $_SESSION['school'];
 			$date = date('Y-m-d');
 
-
-			//echo $post_id . "<br>" . $user . "<br>" . $school . "<br>" . $date . "<br>" . $post_title . "<br>" . $post_content;
 			$sql = "INSERT INTO posts
 					VALUES (null, '$post_id', '$post_title', '$date', '$user', '$school', '$post_content', 'Active')";
 			$query = mysqli_query($database->con, $sql);
@@ -360,7 +358,7 @@
 				$sql = "SELECT id FROM posts ORDER BY id DESC LIMIT 1";
 				$query = mysqli_query($database->con, $sql);
 				if (!$query) {
-					header("location: ../cms/?error=true");
+					header("location:../cms/district.php?tab=sd&page=events&error=true");
 				} else {
 					$row = mysqli_fetch_assoc($query);
 					$id = $row['id'];
@@ -377,14 +375,46 @@
 			return $id;				
 		}
 
-		public function addEvent($database){
+		public function addEvent($database, $event_name, $event_shortname, $event_desc, $event_type, $post){
+			$id;
+			$user = $_SESSION['id'];
+			$school = $_SESSION['school'];
+			$event_color_code = substr(md5(rand()), 0, 6);
 
+			$sql = "INSERT INTO events
+					VALUES (null, '$event_name', '$event_shortname', '$event_desc', '$event_type', '$event_color_code', '$school', '$user', '$post', 'Active')";
+			$query = mysqli_query($database->con, $sql);
+			if(!$query){
+				//header("location:../cms/district.php?tab=sd&page=events&error=true");
+				echo("Error description: " . mysqli_error($database->con));
+			} else {
+				$sql = "SELECT id, event_shortname FROM events ORDER BY id DESC LIMIT 1";
+				$query = mysqli_query($database->con, $sql);
+				if (!$query) {
+					header("location:../cms/district.php?tab=sd&page=events&error=true");
+				} else {
+					$row = mysqli_fetch_assoc($query);
+					$id = $row['id'];
+
+					global $log;
+					$info = "Created the event: " . $row['event_shortname'];
+					$log->logInput($database, $info);
+				}
+			}
+
+			return $id;	
 		}
 
-		public function addEventDays($database){
+		public function addEventDays($database, $event_start, $event_end, $event_time, $event_id){
 
+			$sql = "INSERT INTO event_days
+					VALUES (null, '$event_start', '$event_end', '$event_time', '$event_id')";
+			$query = mysqli_query($database->con, $sql);
+			if(!$query){
+			    header("location:../cms/district.php?tab=sd&page=employment&error=true");
+			}
+		
 		}
-
 
     }
 

@@ -192,9 +192,9 @@
 
         if(isset($_GET['addEvent'])){
 
-            // Counters
+            // Counter
             $ctr_event = mysqli_real_escape_string($database->con, $_POST['ctr_value_event']);
-            $ctr_post = mysqli_real_escape_string($database->con, $_POST['ctr_value_post']);
+            $i = 1;
 
             // Event Information
             $event_name = mysqli_real_escape_string($database->con, $_POST['event_name']);
@@ -207,11 +207,8 @@
             $post_content = $_POST['post_content'];
 
             $post_id = $district->addPostEvent($database, $post_title, $post_content);
+            $event_id = $district->addEvent($database, $event_name, $event_shortname, $event_desc, $event_type, $post_id);
 
-            echo $post_id; 
-            
-            $event_id = $district->addEvent($database);
-            
             $event_start;
             $event_end = '';
 
@@ -221,20 +218,30 @@
                     $event_start = mysqli_real_escape_string($database->con, $_POST['event_date_start_single_1']);
                     $event_time = mysqli_real_escape_string($database->con, $_POST['event_time_single_1']);
 
-                    $district->addEventDays($database);
+                    $district->addEventDays($database, $event_start, $event_end, $event_time, $event_id);
+                    if($i == $ctr_event){
+                        header("location:../cms/district.php?tab=sd&page=events&addEvent=true");
+                    }
                 } else {
                     $event_start = mysqli_real_escape_string($database->con, $_POST['event_date_start_continuous_1']);
                     $event_end = mysqli_real_escape_string($database->con, $_POST['event_date_end_continuous_1']);
                     $event_time = mysqli_real_escape_string($database->con, $_POST['event_time_continuous_1']);
 
-                    $district->addEventDays($database);
+                    $district->addEventDays($database, $event_start, $event_end, $event_time, $event_id);
+                    if($i == $ctr_event){
+                        header("location:../cms/district.php?tab=sd&page=events&addEvent=true");
+                    }
                 }
             } else {
-                for($i = 1; $i <= $ctr; $i++){
+                for($i = 1; $i <= $ctr_event; $i++){
                     $event_start = mysqli_real_escape_string($database->con, $_POST['event_date_start_segmented_'.$i]);
                     $event_time = mysqli_real_escape_string($database->con, $_POST['event_time_segmented_'.$i]);
 
-                    $district->addEventDays($database);
+                    $district->addEventDays($database, $event_start, $event_end, $event_time, $event_id);
+
+                    if($i == $ctr_event){
+                        header("location:../cms/district.php?tab=sd&page=events&addEvent=true");
+                    }
                 }
             }
 

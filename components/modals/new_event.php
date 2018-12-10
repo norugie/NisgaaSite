@@ -152,7 +152,6 @@
                         <h3>Event Post</h3>
                         <fieldset>
                             <input type="text" id="ctr_value_event" name="ctr_value_event">
-                            <input type="text" id="ctr_value_post" name="ctr_value_post">
                             <div class="row clearfix">
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                     <label for="post_title">Post Title *</label>
