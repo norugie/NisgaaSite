@@ -342,6 +342,14 @@
 	
 		}
 
+		public function addEvent($database){
+
+		}
+
+		public function addEventDays($database){
+			
+		}
+
 
     }
 

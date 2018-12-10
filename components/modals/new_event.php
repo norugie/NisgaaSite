@@ -76,7 +76,7 @@
                                         <label for="event_date_start_single_1">Event Date *</label>
                                         <div class="form-group">
                                             <div class="form-line">
-                                                <input type="text" class="form-control" id="event_date_start_single_1" name="event_date_start_single_1">
+                                                <input type="date" class="form-control" id="event_date_start_single_1" name="event_date_start_single_1" min="<?php echo date('Y-m-d');?>">
                                             </div>
                                         </div>
                                     </div>
@@ -151,6 +151,8 @@
 
                         <h3>Event Post</h3>
                         <fieldset>
+                            <input type="text" id="ctr_value_event" name="ctr_value_event">
+                            <input type="text" id="ctr_value_post" name="ctr_value_post">
                             <div class="row clearfix">
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                     <label for="post_title">Post Title *</label>
@@ -194,7 +196,7 @@
 
 <script>
 
-    var ctr = 1;
+    var ctr_event = 1;
 
     function showDateTimeSetup(e){
         var selectedType = $(e).children("option:selected").val();
@@ -203,27 +205,30 @@
             $('#single-type').removeAttr('hidden');
             $('#continuous-type').attr('hidden', true);
             $('#segmented-type').attr('hidden', true);
+            ctr_event = 1;
         } else if(selectedType === 'Continuous'){
             $('#continuous-type').removeAttr('hidden');
             $('#single-type').attr('hidden', true);
             $('#segmented-type').attr('hidden', true);
+            ctr_event = 1;
         } else {
             $('#segmented-type').removeAttr('hidden');
             $('#single-type').attr('hidden', true);
             $('#continuous-type').attr('hidden', true);
+            ctr_event = 1;
         }
     }
 
     function addDays(){
-        ctr++;
+        ctr_event++;
 
-        $("#segmented-type").append('<div class="row clearfix '+ctr+'-day"><div class="col-lg-6 col-md-6 col-sm-12 col-xs-12"><label for="event_date_start_segmented_'+ctr+'">Event Date: Day '+ctr+' *</label><div class="form-group"><div class="form-line"><input type="date" class="form-control" id="event_date_start_segmented_'+ctr+'" name="event_date_start_segmented_'+ctr+'" min="<?php echo date('Y-m-d');?>"></div></div></div><div class="col-lg-6 col-md-6 col-sm-12 col-xs-12"><label for="event_time_segmented_'+ctr+'">Event Time: Day '+ctr+' *</label><div class="form-group"><div class="form-line"><input type="text" class="form-control" id="event_time_segmented_'+ctr+'" name="event_time_segmented_'+ctr+'"></div></div></div></div>');
+        $("#segmented-type").append('<div class="row clearfix '+ctr_event+'-day"><div class="col-lg-6 col-md-6 col-sm-12 col-xs-12"><label for="event_date_start_segmented_'+ctr_event+'">Event Date: Day '+ctr_event+' *</label><div class="form-group"><div class="form-line"><input type="date" class="form-control" id="event_date_start_segmented_'+ctr_event+'" name="event_date_start_segmented_'+ctr_event+'" min="<?php echo date('Y-m-d');?>"></div></div></div><div class="col-lg-6 col-md-6 col-sm-12 col-xs-12"><label for="event_time_segmented_'+ctr_event+'">Event Time: Day '+ctr_event+' *</label><div class="form-group"><div class="form-line"><input type="text" class="form-control" id="event_time_segmented_'+ctr_event+'" name="event_time_segmented_'+ctr_event+'"></div></div></div></div>');
     }
 
     function removeDays(){
         if(ctr > 1){
-            $('.'+ctr+'-day').remove();
-            ctr--;
+            $('.'+ctr_event+'-day').remove();
+            ctr_event--;
         }
     }
 

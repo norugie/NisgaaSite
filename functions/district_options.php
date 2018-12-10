@@ -191,9 +191,49 @@
         }
 
         if(isset($_GET['addEvent'])){
-            $title = mysqli_real_escape_string($database->con, $_POST['title']);
-            echo $title;
+
+            // Counters
+            $ctr_event = mysqli_real_escape_string($database->con, $_POST['ctr_value_event']);
+            $ctr_post = mysqli_real_escape_string($database->con, $_POST['ctr_value_post']);
+
+            // Event Information
+            $event_name = mysqli_real_escape_string($database->con, $_POST['event_name']);
+            $event_shortname = mysqli_real_escape_string($database->con, $_POST['event_shortname']);
+            $event_desc = mysqli_real_escape_string($database->con, $_POST['event_desc']);
+            $event_type = mysqli_real_escape_string($database->con, $_POST['event_type']);
+
+            //Event Post
+            $post_title = mysqli_real_escape_string($database->con, $_POST['post_title']);
+            $post_content = mysqli_real_escape_string($database->con, $_POST['post_content']);
+
+            $post_id = $district->addPostEvent($database);
+            $event_id = $district->addEvent($database);
             
+            $event_start;
+            $event_end = '';
+
+            //Event Setup
+            if($event_type != 'Segmented'){
+                if($event_type == 'Single'){
+                    $event_start = mysqli_real_escape_string($database->con, $_POST['event_date_start_single_1']);
+                    $event_time = mysqli_real_escape_string($database->con, $_POST['event_time_single_1']);
+
+                    $district->addEventDays($database);
+                } else {
+                    $event_start = mysqli_real_escape_string($database->con, $_POST['event_date_start_continuous_1']);
+                    $event_end = mysqli_real_escape_string($database->con, $_POST['event_date_end_continuous_1']);
+                    $event_time = mysqli_real_escape_string($database->con, $_POST['event_time_continuous_1']);
+
+                    $district->addEventDays($database);
+                }
+            } else {
+                for($i = 1; $i <= $ctr; $i++){
+                    $event_start = mysqli_real_escape_string($database->con, $_POST['event_date_start_segmented_'.$i]);
+                    $event_time = mysqli_real_escape_string($database->con, $_POST['event_time_segmented_'.$i]);
+
+                    $district->addEventDays($database);
+                }
+            }
 
         }
 
