@@ -51,6 +51,22 @@
 </div>
 <?php } ?>
 
+<!--  District Notifications - Events  -->
+
+<?php if(isset($_GET['eventDisabled'])){ ?>
+<div class="alert bg-green alert-dismissible" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    The event has been <b>cancelled</b> successfully!
+</div>
+<?php } ?>
+
+<?php if(isset($_GET['newEvent'])){ ?>
+<div class="alert bg-green alert-dismissible" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    An event has been <b>created</b> successfully!
+</div>
+<?php } ?>
+
 <!--  Errors  -->
 
 <?php require 'error_notification.php'; ?>

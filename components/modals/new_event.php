@@ -23,7 +23,7 @@
                                     <label for="event_shortname">Event Shortname *</label>
                                     <div class="form-group">
                                         <div class="form-line">
-                                            <input type="text" class="form-control" id="event_shortname" name="event_shortname">
+                                            <input type="text" class="form-control" id="event_shortname" name="event_shortname" onkeypress="return validateEvent(event);">
                                         </div>
                                     </div>
                                 </div>
@@ -56,15 +56,17 @@
                                         <option value="Segmented">Multiple, Segmented</option>
                                     </select>
                                 </div>
-                                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                                    <label for="event_school">Hosting School *</label>
-                                    <select class="form-control show-tick" name="event_school" id="event_school">
-                                        <option selected hidden disabled>-- SELECT HOSTING SCHOOL FOR THE EVENT --</option>
-                                        <?php foreach ($schools as $school): ?>
-                                            <option value="<?php echo $school['id']; ?>"><?php echo $school['school_abbv']; ?></option>
-                                        <?php endforeach; ?>
-                                    </select>
-                                </div>
+                                <?php if($_SESSION['type'] == '1'){ ?>
+                                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                        <label for="event_school">Hosting School *</label>
+                                        <select class="form-control show-tick" name="event_school" id="event_school">
+                                            <option selected hidden disabled>-- SELECT HOSTING SCHOOL FOR THE EVENT --</option>
+                                            <?php foreach ($schools as $school): ?>
+                                                <option value="<?php echo $school['id']; ?>"><?php echo $school['school_abbv']; ?></option>
+                                            <?php endforeach; ?>
+                                        </select>
+                                    </div>
+                                <?php } ?>
                             </div>
                         </fieldset>
 
@@ -141,7 +143,7 @@
                                         <label for="event_time_segmented_1">Event Time: Day 1 *</label>
                                         <div class="form-group">
                                             <div class="form-line">
-                                                <input type="text" class="form-control" id="event_time_segmented_1" name="event_time_segmented_1">
+                                                <input type="time" class="form-control" id="event_time_segmented_1" name="event_time_segmented_1">
                                             </div>
                                         </div>
                                     </div>
@@ -211,11 +213,11 @@
     function addDays(){
         ctr_event++;
 
-        $("#segmented-type").append('<div class="row clearfix '+ctr_event+'-day"><div class="col-lg-6 col-md-6 col-sm-12 col-xs-12"><label for="event_date_start_segmented_'+ctr_event+'">Event Date: Day '+ctr_event+' *</label><div class="form-group"><div class="form-line"><input type="date" class="form-control" id="event_date_start_segmented_'+ctr_event+'" name="event_date_start_segmented_'+ctr_event+'" min="<?php echo date('Y-m-d');?>"></div></div></div><div class="col-lg-6 col-md-6 col-sm-12 col-xs-12"><label for="event_time_segmented_'+ctr_event+'">Event Time: Day '+ctr_event+' *</label><div class="form-group"><div class="form-line"><input type="text" class="form-control" id="event_time_segmented_'+ctr_event+'" name="event_time_segmented_'+ctr_event+'"></div></div></div></div>');
+        $("#segmented-type").append('<div class="row clearfix '+ctr_event+'-day"><div class="col-lg-6 col-md-6 col-sm-12 col-xs-12"><label for="event_date_start_segmented_'+ctr_event+'">Event Date: Day '+ctr_event+' *</label><div class="form-group"><div class="form-line"><input type="date" class="form-control" id="event_date_start_segmented_'+ctr_event+'" name="event_date_start_segmented_'+ctr_event+'" min="<?php echo date('Y-m-d');?>"></div></div></div><div class="col-lg-6 col-md-6 col-sm-12 col-xs-12"><label for="event_time_segmented_'+ctr_event+'">Event Time: Day '+ctr_event+' *</label><div class="form-group"><div class="form-line"><input type="time" class="form-control" id="event_time_segmented_'+ctr_event+'" name="event_time_segmented_'+ctr_event+'"></div></div></div></div>');
     }
 
     function removeDays(){
-        if(ctr > 1){
+        if(ctr_event > 1){
             $('.'+ctr_event+'-day').remove();
             ctr_event--;
         }
@@ -239,7 +241,16 @@
 
         if(minDate2 < minDate1) 
             $('#event_date_end_continuous_1').val(minDate1); 
+    }
+
+    function validateEvent(event) {
+        var regex = new RegExp("^[a-zA-Z ]");
+        var key = String.fromCharCode(event.charCode ? event.which : event.charCode);
+        if (!regex.test(key)) {
+            event.preventDefault();
+            return false;
         }
+    }       
 
 
 </script>

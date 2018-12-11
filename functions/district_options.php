@@ -201,13 +201,20 @@
             $event_shortname = mysqli_real_escape_string($database->con, $_POST['event_shortname']);
             $event_desc = mysqli_real_escape_string($database->con, $_POST['event_desc']);
             $event_type = mysqli_real_escape_string($database->con, $_POST['event_type']);
+            $event_school;
+
+            if(isset($_POST['event_school'])){
+                $event_school = mysqli_real_escape_string($database->con, $_POST['event_school']);
+            } else {
+                $event_school = $_SESSION['school'];
+            }
 
             //Event Post
             $post_title = mysqli_real_escape_string($database->con, $_POST['post_title']);
             $post_content = $_POST['post_content'];
 
             $post_id = $district->addPostEvent($database, $post_title, $post_content);
-            $event_id = $district->addEvent($database, $event_name, $event_shortname, $event_desc, $event_type, $post_id);
+            $event_id = $district->addEvent($database, $event_name, $event_shortname, $event_desc, $event_type, $post_id, $event_School);
 
             $event_start;
             $event_end = '';
@@ -220,7 +227,7 @@
 
                     $district->addEventDays($database, $event_start, $event_end, $event_time, $event_id);
                     if($i == $ctr_event){
-                        header("location:../cms/district.php?tab=sd&page=events&addEvent=true");
+                        header("location:../cms/district.php?tab=sd&page=events&newEvent=true");
                     }
                 } else {
                     $event_start = mysqli_real_escape_string($database->con, $_POST['event_date_start_continuous_1']);
@@ -229,7 +236,7 @@
 
                     $district->addEventDays($database, $event_start, $event_end, $event_time, $event_id);
                     if($i == $ctr_event){
-                        header("location:../cms/district.php?tab=sd&page=events&addEvent=true");
+                        header("location:../cms/district.php?tab=sd&page=events&newEvent=true");
                     }
                 }
             } else {
@@ -240,7 +247,7 @@
                     $district->addEventDays($database, $event_start, $event_end, $event_time, $event_id);
 
                     if($i == $ctr_event){
-                        header("location:../cms/district.php?tab=sd&page=events&addEvent=true");
+                        header("location:../cms/district.php?tab=sd&page=events&newEvent=true");
                     }
                 }
             }

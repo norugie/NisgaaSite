@@ -94,7 +94,7 @@
                                         <th>Status</th>
                                         <th>Date and Start Time</th>
                                         <th>Modify</th>
-                                        <th>Delete/Reopen</th>
+                                        <th>Cancel</th>
                                     </tr>
                                 </thead>
                                 <tfoot>
@@ -104,7 +104,7 @@
                                         <th>Status</th>
                                         <th>Date and Start Time</th>
                                         <th>Modify</th>
-                                        <th>Delete/Reopen</th>
+                                        <th>Cancel</th>
                                     </tr>
                                 </tfoot>
                                 <tbody>
@@ -124,7 +124,7 @@
                                                         foreach($data_start as $key => $start):
                     
                                                         echo date_format(date_create($start), 'd M Y - l');
-                                                        if(!empty($data_end[$key])){ echo ' to ' . date_format(date_create($data_end[$key]), 'd M Y - l'); } 
+                                                        if($data_end[$key] != '0000-00-00'){ echo ' to ' . date_format(date_create($data_end[$key]), 'd M Y - l'); } 
                                                         echo ' at ' . date_format(date_create($data_time[$key]), 'h:i A') . '<br>';
                                                                           
                                                         endforeach; 

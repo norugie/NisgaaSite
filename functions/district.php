@@ -335,7 +335,7 @@
 				if(!$query){
 					header("location:../cms/district.php?tab=sd&page=events&error=true");
 				} else {
-					header("location:../cms/district.php?tab=sd&page=events&eventDisable=true");
+					header("location:../cms/district.php?tab=sd&page=events&eventDisabled=true");
 				}	
 
 			}	
@@ -375,10 +375,9 @@
 			return $id;				
 		}
 
-		public function addEvent($database, $event_name, $event_shortname, $event_desc, $event_type, $post){
+		public function addEvent($database, $event_name, $event_shortname, $event_desc, $event_type, $post, $school){
 			$id;
 			$user = $_SESSION['id'];
-			$school = $_SESSION['school'];
 			$event_color_code = substr(md5(rand()), 0, 6);
 
 			$sql = "INSERT INTO events
