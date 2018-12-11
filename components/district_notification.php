@@ -67,6 +67,13 @@
 </div>
 <?php } ?>
 
+<?php if(isset($_GET['editEvent'])){ ?>
+<div class="alert bg-green alert-dismissible" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    The event has been <b>modified</b> successfully!
+</div>
+<?php } ?>
+
 <!--  Errors  -->
 
 <?php require 'error_notification.php'; ?>

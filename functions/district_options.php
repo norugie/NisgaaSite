@@ -217,6 +217,8 @@
             $post_id = $district->addPostEvent($database, $post_title, $post_content);
             $event_id = $district->addEvent($database, $event_name, $event_shortname, $event_desc, $event_type, $post_id, $event_school, $event_location);
 
+            //echo $event_id . "<br>" . $event_school . "<br>" . $event_location;
+
             $event_start;
             $event_end = '';
 
@@ -239,7 +241,7 @@
                     if($i == $ctr_event){
                         header("location:../cms/district.php?tab=sd&page=events&newEvent=true");
                     }
-                    //echo $event_id . "<br>" . $event_start . "<br>" . $event_end . "<br>" . $event_time . "<br>" . $event_type . "<br>" . $event_school;
+                    echo $event_id . "<br>" . $event_start . "<br>" . $event_end . "<br>" . $event_time . "<br>" . $event_type . "<br>" . $event_school;
                 }
             } else {
                 for($i = 1; $i <= $ctr_event; $i++){
@@ -254,6 +256,18 @@
                 }
             }
 
+        }
+
+        if(isset($_GET['editEventDetails'])){
+
+            $event_id_name = mysqli_real_escape_string($database->con, $_POST['edit_event_id_name']);
+            $event_name = mysqli_real_escape_string($database->con, $_POST['edit_event_name']);
+            $event_shortname = mysqli_real_escape_string($database->con, $_POST['edit_event_shortname']);
+            $event_desc = mysqli_real_escape_string($database->con, $_POST['edit_event_desc']);
+            $event_location = mysqli_real_escape_string($database->con, $_POST['edit_event_location']);
+            $event_id = mysqli_real_escape_string($database->con, $_POST['edit_event_id']);
+
+            $district->editEvent($database, $event_name, $event_shortname, $event_desc, $event_location, $event_id, $event_id_name);
         }
 
     }

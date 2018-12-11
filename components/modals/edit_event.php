@@ -15,6 +15,7 @@
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <form action="../functions/district.php?district=true&editEventDetails=true" method="POST">
                             <input type="text" id="edit_event_id" name="edit_event_id">
+                            <input type="text" id="edit_event_id_name" name="edit_event_id_name">
                             <!-- Inline Layout -->
                             <div class="row clearfix">
                                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">

@@ -270,7 +270,7 @@
 			    header("location:../cms/district.php?tab=sd&page=employment&error=true");
 			} else {
 				global $log;
-				$info = "Modified the job posting for job ID: " . preg_replace('/[a-zA-Z]/', '', $title);
+				$info = "Modified the job posting for job ID: " . $title;
 				$log->logInput($database, $info);
 
 				header("location:../cms/district.php?tab=sd&page=employment&editJob=true");
@@ -380,9 +380,10 @@
 			$id;
 			$user = $_SESSION['id'];
 			$event_color_code = substr(md5(rand()), 0, 6);
+			$event_id_name = 'EVNT' . rand(1111111,9999999);
 
 			$sql = "INSERT INTO events
-					VALUES (null, '$event_name', '$event_shortname', '$event_desc', '$event_type', '$event_color_code', '$location', '$school', '$user', '$post', 'Active')";
+					VALUES (null, '$event_id_name', '$event_name', '$event_shortname', '$event_desc', '$event_type', '$event_color_code', '$location', '$school', '$user', '$post', 'Active')";
 			$query = mysqli_query($database->con, $sql);
 			if(!$query){
 				//header("location:../cms/district.php?tab=sd&page=events&error=true");
@@ -414,6 +415,26 @@
 			    header("location:../cms/district.php?tab=sd&page=employment&error=true");
 			}
 		
+		}
+
+		public function editEvent($database, $event_name, $event_shortname, $event_desc, $event_location, $event_id, $event_id_name){
+			$sql = "UPDATE events SET 
+						   event_name = '$event_name',
+						   event_shortname = '$event_shortname',
+						   event_desc = '$event_desc',
+						   event_location = '$event_location'
+					WHERE id = '$event_id'";
+			$query = mysqli_query($database->con, $sql);
+			if(!$query){
+			    header("location:../cms/district.php?tab=sd&page=events&error=true");
+			} else {
+				global $log;
+				$info = "Modified the event information for event ID: " . $event_id_name;
+				$log->logInput($database, $info);
+
+				header("location:../cms/district.php?tab=sd&page=events&editEvent=true");
+
+			}	
 		}
 
     }
