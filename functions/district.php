@@ -301,6 +301,7 @@
 					ON (schools.id = events.school)
 					LEFT JOIN event_days
 					ON (event_days.event = events.id)
+					WHERE events.status != 'Done'
 					GROUP BY event_days.event";
 			$query = mysqli_query($database->con, $sql);
 			if (!$query) {
