@@ -31,3 +31,7 @@ function editJobFile(id, name){
     $("#edit-job-id-file").attr("value", id);
     $("#edit-job-name-file").attr("value", name);
 }
+
+function editEvent(eventInfo){
+    
+}

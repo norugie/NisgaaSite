@@ -132,17 +132,7 @@
                                                     ?>
                                                 </td>
                                                 <td>
-                                                    <center>
-                                                        <div class="btn-group">
-                                                            <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" <?php if($event['status'] != 'Active') echo "disabled"; ?>>
-                                                                MODIFY <span class="caret"></span>
-                                                            </button>
-                                                            <ul class="dropdown-menu">
-                                                                <li><a href="#" data-toggle="modal" data-target="#edit-event-modal" data-values="<?php echo htmlspecialchars(json_encode($event)); ?>" onclick="editEvent(this);">Edit Event Details</a></li>
-                                                                <li><a href="#" data-toggle="modal" data-target="#edit-event-date-time-modal" onclick="editEventDateTime(<?php echo htmlspecialchars(json_encode($event)); ?>);">Edit Event Date(s) and Time</a></li>
-                                                            </ul>
-                                                        </div>
-                                                    </center>
+                                                    <center><button type="button" class="btn bg-green waves-effect" data-toggle="modal" data-target="#edit-event-modal" data-values="<?php echo htmlspecialchars(json_encode($event)); ?>" onclick="editEvent(this);">MODIFY</button></center>
                                                 </td>
                                                     <td><center><button type="button" class="btn bg-red waves-effect" data-type="delete-event" data-id="<?php echo $event['id']; ?>" data-name="<?php echo $event['event_shortname']; ?>" data-post="<?php echo $event['post']; ?>" onclick="alertDesign(this);" <?php if($event['status'] != 'Active') echo "disabled"; ?>>CANCEL</button></center></td>
                                             </tr>

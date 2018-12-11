@@ -23,7 +23,7 @@
                                     <label for="event_shortname">Event Shortname *</label>
                                     <div class="form-group">
                                         <div class="form-line">
-                                            <input type="text" class="form-control" id="event_shortname" name="event_shortname" onkeypress="return validateEvent(event);">
+                                            <input type="text" class="form-control" id="event_shortname" name="event_shortname" onkeypress="return validateEvent(event);" required>
                                         </div>
                                     </div>
                                 </div>
@@ -31,7 +31,7 @@
                                     <label for="event_name">Event Name *</label>
                                     <div class="form-group">
                                         <div class="form-line">
-                                            <input type="text" class="form-control" id="event_name" name="event_name">
+                                            <input type="text" class="form-control" id="event_name" name="event_name" required>
                                         </div>
                                     </div>
                                 </div>
@@ -78,7 +78,7 @@
                                         <label for="event_date_start_single_1">Event Date *</label>
                                         <div class="form-group">
                                             <div class="form-line">
-                                                <input type="date" class="form-control" id="event_date_start_single_1" name="event_date_start_single_1" min="<?php echo date('Y-m-d');?>">
+                                                <input type="date" class="form-control" id="event_date_start_single_1" name="event_date_start_single_1" min="<?php echo date('Y-m-d');?>" required>
                                             </div>
                                         </div>
                                     </div>
@@ -86,7 +86,7 @@
                                         <label for="event_time_single_1">Event Time *</label>
                                         <div class="form-group">
                                             <div class="form-line">
-                                                <input type="time" class="form-control" id="event_time_single_1" name="event_time_single_1">
+                                                <input type="time" class="form-control" id="event_time_single_1" name="event_time_single_1" required>
                                             </div>
                                         </div>
                                     </div>
@@ -98,7 +98,7 @@
                                         <label for="event_date_start_continuous_1">Event Date *</label>
                                         <div class="form-group">
                                             <div class="form-line">
-                                                <input type="date" class="form-control" id="event_date_start_continuous_1" name="event_date_start_continuous_1" min="<?php echo date('Y-m-d');?>" onchange="dateChange(this);">
+                                                <input type="date" class="form-control" id="event_date_start_continuous_1" name="event_date_start_continuous_1" min="<?php echo date('Y-m-d');?>" onchange="dateChange(this);" required>
                                             </div>
                                         </div>
                                     </div>
@@ -106,7 +106,7 @@
                                         <label for="event_date_end_continuous_1">Event Date *</label>
                                         <div class="form-group">
                                             <div class="form-line">
-                                                <input type="date" class="form-control" id="event_date_end_continuous_1" name="event_date_end_continuous_1" min="<?php echo date('Y-m-d');?>">
+                                                <input type="date" class="form-control" id="event_date_end_continuous_1" name="event_date_end_continuous_1" min="<?php echo date('Y-m-d');?>" required>
                                             </div>
                                         </div>
                                     </div>
@@ -135,7 +135,7 @@
                                         <label for="event_date_start_segmented_1">Event Date: Day 1 *</label>
                                         <div class="form-group">
                                             <div class="form-line">
-                                                <input type="date" class="form-control" id="event_date_start_segmented_1" name="event_date_start_segmented_1" min="<?php echo date('Y-m-d');?>">
+                                                <input type="date" class="form-control" id="event_date_start_segmented_1" name="event_date_start_segmented_1" min="<?php echo date('Y-m-d');?>" required>
                                             </div>
                                         </div>
                                     </div>
@@ -143,7 +143,7 @@
                                         <label for="event_time_segmented_1">Event Time: Day 1 *</label>
                                         <div class="form-group">
                                             <div class="form-line">
-                                                <input type="time" class="form-control" id="event_time_segmented_1" name="event_time_segmented_1">
+                                                <input type="time" class="form-control" id="event_time_segmented_1" name="event_time_segmented_1" required>
                                             </div>
                                         </div>
                                     </div>
@@ -153,13 +153,13 @@
 
                         <h3>Event Post</h3>
                         <fieldset>
-                            <input type="text" id="ctr_value_event" name="ctr_value_event">
+                            <input type="text" id="ctr_value_event" name="ctr_value_event" hidden>
                             <div class="row clearfix">
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                     <label for="post_title">Post Title *</label>
                                     <div class="form-group">
                                         <div class="form-line">
-                                            <input type="text" class="form-control" id="post_title" name="post_title">
+                                            <input type="text" class="form-control" id="post_title" name="post_title" required>
                                         </div>
                                     </div>
                                 </div>
@@ -170,7 +170,7 @@
                                     <div class="form-group">
                                         <div class="form-line">
                                             <textarea id="event_post_editor" id="post_content" name="post_content">
-                                                <h2>hello darkness my old friend</h2>
+
                                             </textarea>
                                         </div>
                                     </div>
@@ -213,7 +213,7 @@
     function addDays(){
         ctr_event++;
 
-        $("#segmented-type").append('<div class="row clearfix '+ctr_event+'-day"><div class="col-lg-6 col-md-6 col-sm-12 col-xs-12"><label for="event_date_start_segmented_'+ctr_event+'">Event Date: Day '+ctr_event+' *</label><div class="form-group"><div class="form-line"><input type="date" class="form-control" id="event_date_start_segmented_'+ctr_event+'" name="event_date_start_segmented_'+ctr_event+'" min="<?php echo date('Y-m-d');?>"></div></div></div><div class="col-lg-6 col-md-6 col-sm-12 col-xs-12"><label for="event_time_segmented_'+ctr_event+'">Event Time: Day '+ctr_event+' *</label><div class="form-group"><div class="form-line"><input type="time" class="form-control" id="event_time_segmented_'+ctr_event+'" name="event_time_segmented_'+ctr_event+'"></div></div></div></div>');
+        $("#segmented-type").append('<div class="row clearfix '+ctr_event+'-day"><div class="col-lg-6 col-md-6 col-sm-12 col-xs-12"><label for="event_date_start_segmented_'+ctr_event+'">Event Date: Day '+ctr_event+' *</label><div class="form-group"><div class="form-line"><input type="date" class="form-control" id="event_date_start_segmented_'+ctr_event+'" name="event_date_start_segmented_'+ctr_event+'" min="<?php echo date('Y-m-d');?>" required></div></div></div><div class="col-lg-6 col-md-6 col-sm-12 col-xs-12"><label for="event_time_segmented_'+ctr_event+'">Event Time: Day '+ctr_event+' *</label><div class="form-group"><div class="form-line"><input type="time" class="form-control" id="event_time_segmented_'+ctr_event+'" name="event_time_segmented_'+ctr_event+'" required></div></div></div></div>');
     }
 
     function removeDays(){
