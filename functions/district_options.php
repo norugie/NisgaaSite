@@ -214,7 +214,7 @@
             $post_content = $_POST['post_content'];
 
             $post_id = $district->addPostEvent($database, $post_title, $post_content);
-            $event_id = $district->addEvent($database, $event_name, $event_shortname, $event_desc, $event_type, $post_id, $event_School);
+            $event_id = $district->addEvent($database, $event_name, $event_shortname, $event_desc, $event_type, $post_id, $event_school);
 
             $event_start;
             $event_end = '';
@@ -238,6 +238,7 @@
                     if($i == $ctr_event){
                         header("location:../cms/district.php?tab=sd&page=events&newEvent=true");
                     }
+                    //echo $event_id . "<br>" . $event_start . "<br>" . $event_end . "<br>" . $event_time . "<br>" . $event_type . "<br>" . $event_school;
                 }
             } else {
                 for($i = 1; $i <= $ctr_event; $i++){

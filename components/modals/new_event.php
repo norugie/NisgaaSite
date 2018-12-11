@@ -114,7 +114,7 @@
                                         <label for="event_time_continuous_1">Event Time *</label>
                                         <div class="form-group">
                                             <div class="form-line">
-                                                <input type="text" class="form-control" id="event_time_continuous_1" name="event_time_continuous_1">
+                                                <input type="time" class="form-control" id="event_time_continuous_1" name="event_time_continuous_1">
                                             </div>
                                         </div>
                                     </div>
