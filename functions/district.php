@@ -376,13 +376,13 @@
 			return $id;				
 		}
 
-		public function addEvent($database, $event_name, $event_shortname, $event_desc, $event_type, $post, $school){
+		public function addEvent($database, $event_name, $event_shortname, $event_desc, $event_type, $post, $school, $location){
 			$id;
 			$user = $_SESSION['id'];
 			$event_color_code = substr(md5(rand()), 0, 6);
 
 			$sql = "INSERT INTO events
-					VALUES (null, '$event_name', '$event_shortname', '$event_desc', '$event_type', '$event_color_code', '$school', '$user', '$post', 'Active')";
+					VALUES (null, '$event_name', '$event_shortname', '$event_desc', '$event_type', '$event_color_code', '$location', '$school', '$user', '$post', 'Active')";
 			$query = mysqli_query($database->con, $sql);
 			if(!$query){
 				//header("location:../cms/district.php?tab=sd&page=events&error=true");

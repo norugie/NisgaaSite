@@ -38,6 +38,16 @@
                             </div>
                             <div class="row clearfix">
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <label for="event_location">Event Location </label>
+                                    <div class="form-group">
+                                        <div class="form-line">
+                                            <input type="text" class="form-control" id="event_location" name="event_location" required>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row clearfix">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                     <label for="event_desc">Event Description </label>
                                     <div class="form-group">
                                         <div class="form-line">

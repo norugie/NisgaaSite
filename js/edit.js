@@ -33,5 +33,12 @@ function editJobFile(id, name){
 }
 
 function editEvent(eventInfo){
-    
+    event = $(eventInfo).data("values");
+
+    $("#edit_event_shortname").attr("value", event['event_shortname']);
+    $("#edit_event_desc").val(event['event_desc']);
+    $("#edit_event_name").attr("value", event['event_name']);
+    $("#edit_event_id").attr("value", event['id']);
+    $("#edit_event_location").attr("value", event['event_location']);
+
 }

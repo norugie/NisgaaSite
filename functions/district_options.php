@@ -201,6 +201,7 @@
             $event_shortname = mysqli_real_escape_string($database->con, $_POST['event_shortname']);
             $event_desc = mysqli_real_escape_string($database->con, $_POST['event_desc']);
             $event_type = mysqli_real_escape_string($database->con, $_POST['event_type']);
+            $event_location = mysqli_real_escape_string($database->con, $_POST['event_location']);
             $event_school;
 
             if(isset($_POST['event_school'])){
@@ -214,7 +215,7 @@
             $post_content = $_POST['post_content'];
 
             $post_id = $district->addPostEvent($database, $post_title, $post_content);
-            $event_id = $district->addEvent($database, $event_name, $event_shortname, $event_desc, $event_type, $post_id, $event_school);
+            $event_id = $district->addEvent($database, $event_name, $event_shortname, $event_desc, $event_type, $post_id, $event_school, $event_location);
 
             $event_start;
             $event_end = '';

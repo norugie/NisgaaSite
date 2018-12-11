@@ -90,7 +90,8 @@
                                 <thead>
                                     <tr>
                                         <th>Event Title</th>
-                                        <th>School</th>
+                                        <th>Hosting School</th>
+                                        <th>Event Location</th>
                                         <th>Status</th>
                                         <th>Date and Start Time</th>
                                         <th>Modify</th>
@@ -100,7 +101,8 @@
                                 <tfoot>
                                     <tr>
                                         <th>Event Title</th>
-                                        <th>School</th>
+                                        <th>Hosting School</th>
+                                        <th>Event Location</th>
                                         <th>Status</th>
                                         <th>Date and Start Time</th>
                                         <th>Modify</th>
@@ -111,7 +113,8 @@
                                     <?php foreach($events as $event): ?>
                                             <tr>
                                                 <td><?php echo $event['event_name']; ?></td>
-                                                <td><?php echo $event['school_name']; ?></td>
+                                                <td><?php echo $event['school_abbv']; ?></td>
+                                                <td><?php echo $event['event_location']; ?></td>
                                                 <td><?php echo $event['status']; ?></td>
                                                 <td>
                                                     <?php 
