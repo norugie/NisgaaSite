@@ -57,7 +57,7 @@
 				global $log;
 				$info = "Modified the user account password for " . $username;
 				$log->logInput($database, $info);
-				header("location:../cms/?editProfile=true");
+				header("location:../cms/?editPassword=true");
 			}
 		}
 
@@ -74,7 +74,7 @@
 				global $log;
 				$info = "Modified the user display image for " . $username;
 				$log->logInput($database, $info);
-				header("location:../cms/?editProfilePicture=true");
+				header("location:../cms/?editDisplayPicture=true");
 			}
 		}
         
