@@ -76,7 +76,7 @@
                             <i class="material-icons">view_list</i> EVENT LIST
                         </a>
                     </li>
-                    <button type="button" class="btn bg-blue waves-effect" data-toggle="modal" data-target="#new-event-modal" style="float: right;">ADD AN EVENT</button>
+                    <?php if($_SESSION['type'] != 3){ ?><button type="button" class="btn bg-blue waves-effect" data-toggle="modal" data-target="#new-event-modal" style="float: right;">ADD AN EVENT</button><?php } ?>
                 </ul>
                 <br>
                 <!-- Tab panes -->
@@ -138,6 +138,7 @@
                                                     <td>
                                                         <center><button type="button" class="btn bg-green waves-effect" data-toggle="modal" data-target="#edit-event-modal" data-values="<?php echo htmlspecialchars(json_encode($event)); ?>" onclick="editEvent(this);" <?php if($event['status'] != 'Active'){ echo "disabled"; }?>>MODIFY</button></center>
                                                     </td>
+                                                    <td>
                                                         <center><button type="button" class="btn bg-red waves-effect" data-type="delete-event" data-id="<?php echo $event['id']; ?>" data-name="<?php echo $event['event_shortname']; ?>" data-post="<?php echo $event['post']; ?>" onclick="alertDesign(this);" <?php if($event['status'] != 'Active') echo "disabled"; ?>>CANCEL</button></center>
                                                     </td>
                                                 <?php } ?>
