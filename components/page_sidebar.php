@@ -129,6 +129,12 @@
                             <span>Reports</span>
                         </a>
                     </li>
+                    <li id="content">
+                        <a href="interactions.php?tab=web&page=content">
+                            <i class="material-icons">view_day</i>
+                            <span>Web Content</span>
+                        </a>
+                    </li>
                 </ul>
             </li>
         </ul>

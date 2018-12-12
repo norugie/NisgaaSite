@@ -10,7 +10,9 @@
 			$query = mysqli_query($database->con, $sql);
 			if(!$query){
                 header("location:../cms/?error=true");
-			}
+			} else {
+                $_SESSION['alert'] = 'alerted';
+            }
 
         }
 

@@ -40,6 +40,7 @@
 
     <section class="content">
         <div class="container-fluid">
+            <?php require '../components/dashboard_notification.php'; ?>
             <div class="block-header">
                 <h2>DASHBOARD</h2>
             </div>

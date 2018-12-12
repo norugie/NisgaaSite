@@ -1,27 +1,27 @@
 <!--  District Notifications - Users  -->
 
-<?php if(isset($_GET['userDisabled'])){?>
+<?php if(isset($_GET['userDisabled']) && $_SESSION['alert'] == 'alerted'){?>
 <div class="alert bg-green alert-dismissible" role="alert">
     <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
     The account has been <b>disabled</b> successfully!
 </div>
 <?php } ?>
 
-<?php if(isset($_GET['userReactivated'])){ ?>
+<?php if(isset($_GET['userReactivated']) && $_SESSION['alert'] == 'alerted'){ ?>
 <div class="alert bg-green alert-dismissible" role="alert">
     <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
     The account has been <b>reactivated</b> successfully!
 </div>
 <?php } ?>
 
-<?php if(isset($_GET['newUser'])){ ?>
+<?php if(isset($_GET['newUser']) && $_SESSION['alert'] == 'alerted'){ ?>
 <div class="alert bg-green alert-dismissible" role="alert">
     <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
     A new account has been <b>created</b> successfully!
 </div>
 <?php } ?>
 
-<?php if(isset($_GET['editUser'])){ ?>
+<?php if(isset($_GET['editUser']) && $_SESSION['alert'] == 'alerted'){ ?>
 <div class="alert bg-green alert-dismissible" role="alert">
     <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
     The account has been <b>modified</b> successfully!
@@ -30,21 +30,21 @@
 
 <!--  District Notifications - Employment  -->
 
-<?php if(isset($_GET['jobDisabled'])){?>
+<?php if(isset($_GET['jobDisabled']) && $_SESSION['alert'] == 'alerted'){?>
 <div class="alert bg-green alert-dismissible" role="alert">
     <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
     The job posting has been <b>closed</b> successfully!
 </div>
 <?php } ?>
 
-<?php if(isset($_GET['jobReopen'])){ ?>
+<?php if(isset($_GET['jobReopen']) && $_SESSION['alert'] == 'alerted'){ ?>
 <div class="alert bg-green alert-dismissible" role="alert">
     <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
     The job posting has been <b>reopened</b> successfully!
 </div>
 <?php } ?>
 
-<?php if(isset($_GET['editJob'])){ ?>
+<?php if(isset($_GET['editJob']) && $_SESSION['alert'] == 'alerted'){ ?>
 <div class="alert bg-green alert-dismissible" role="alert">
     <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
     The job posting has been <b>modified</b> successfully!
@@ -53,21 +53,21 @@
 
 <!--  District Notifications - Events  -->
 
-<?php if(isset($_GET['eventDisabled'])){ ?>
+<?php if(isset($_GET['eventDisabled']) && $_SESSION['alert'] == 'alerted'){ ?>
 <div class="alert bg-green alert-dismissible" role="alert">
     <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
     The event has been <b>cancelled</b> successfully!
 </div>
 <?php } ?>
 
-<?php if(isset($_GET['newEvent'])){ ?>
+<?php if(isset($_GET['newEvent']) && $_SESSION['alert'] == 'alerted'){ ?>
 <div class="alert bg-green alert-dismissible" role="alert">
     <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
     An event has been <b>created</b> successfully!
 </div>
 <?php } ?>
 
-<?php if(isset($_GET['editEvent'])){ ?>
+<?php if(isset($_GET['editEvent']) && $_SESSION['alert'] == 'alerted'){ ?>
 <div class="alert bg-green alert-dismissible" role="alert">
     <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
     The event has been <b>modified</b> successfully!
@@ -77,3 +77,6 @@
 <!--  Errors  -->
 
 <?php require 'error_notification.php'; ?>
+
+<!-- Set alert session to unalerted -->
+<?php $_SESSION['alert'] = 'unalerted'; ?>
