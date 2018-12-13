@@ -44,8 +44,8 @@
                 {
                     title: '<?php echo $event['event_shortname']; ?>',
                     color: '#<?php echo $event['event_color_code']; ?>',
-                    start: '<?php $date_start_value = new DateTime($start); echo $date_start_value->format('Y-m-d') . 'T' . $data_time[$key]; ?>'
-                    <?php if(!empty($data_end[$key])){ ?>, end: '<?php $date_end_value = new DateTime($data_end[$key]); $date_end_value->modify('+1 day'); echo $date_end_value->format('Y-m-d') . 'T' . $data_time[$key];; ?>'<?php } ?> 
+                    start: '<?php $date_start_value = new DateTime($start); echo $date_start_value->format('Y-m-d') . 'T' . $data_time[$key]; ?>',
+                    end: '<?php echo $data_end[$key] . 'T' . $data_time[$key];; ?>'
                 },
                 <?php endforeach; ?>
             <?php } ?>

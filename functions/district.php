@@ -386,8 +386,7 @@
 					VALUES (null, '$event_id_name', '$event_name', '$event_shortname', '$event_desc', '$event_type', '$event_color_code', '$location', '$school', '$user', '$post', 'Active')";
 			$query = mysqli_query($database->con, $sql);
 			if(!$query){
-				//header("location:../cms/district.php?tab=sd&page=events&error=true");
-				echo("Error description: " . mysqli_error($database->con));
+				header("location:../cms/district.php?tab=sd&page=events&error=true");
 			} else {
 				$sql = "SELECT id, event_shortname FROM events ORDER BY id DESC LIMIT 1";
 				$query = mysqli_query($database->con, $sql);
@@ -412,7 +411,8 @@
 					VALUES (null, '$event_start', '$event_end', '$event_time', '$event_id')";
 			$query = mysqli_query($database->con, $sql);
 			if(!$query){
-			    header("location:../cms/district.php?tab=sd&page=employment&error=true");
+				//header("location:../cms/district.php?tab=sd&page=events&error=true");
+				echo("Error description: " . mysqli_error($database->con));
 			}
 		
 		}
