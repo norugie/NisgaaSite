@@ -212,9 +212,11 @@
 
             //Event Post
             $post_title = mysqli_real_escape_string($database->con, $_POST['post_title']);
-            $post_content = $_POST['post_content'];
+            $post_content = mysqli_real_escape_string($database->con, $_POST['post_content']);
 
             $post_id = $district->addPostEvent($database, $post_title, $post_content);
+
+            echo $post_title . "<br>" . $post_content . "<br>" . $post_id;
             $event_id = $district->addEvent($database, $event_name, $event_shortname, $event_desc, $event_type, $post_id, $event_school, $event_location);
 
             $event_start;
@@ -228,9 +230,9 @@
                     $event_time = mysqli_real_escape_string($database->con, $_POST['event_time_single_1']);
 
                     $district->addEventDays($database, $event_start, $event_end, $event_time, $event_id);
-                    // if($i == $ctr_event){
-                    //     header("location:../cms/district.php?tab=sd&page=events&newEvent=true");
-                    // }
+                    if($i == $ctr_event){
+                        header("location:../cms/district.php?tab=sd&page=events&newEvent=true");
+                    }
                 } else {
                     $event_start = mysqli_real_escape_string($database->con, $_POST['event_date_start_continuous_1']);
                     $event_end = mysqli_real_escape_string($database->con, $_POST['event_date_end_continuous_1']);

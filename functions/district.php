@@ -354,12 +354,14 @@
 					VALUES (null, '$post_id', '$post_title', '$date', '$user', '$school', '$post_content', 'Active')";
 			$query = mysqli_query($database->con, $sql);
 			if(!$query){
-			    header("location:../cms/district.php?tab=sd&page=events&error=true");
+				header("location:../cms/district.php?tab=sd&page=events&error=true");
+				// echo("Error description: " . mysqli_error($database->con));
 			} else {
 				$sql = "SELECT id FROM posts ORDER BY id DESC LIMIT 1";
 				$query = mysqli_query($database->con, $sql);
 				if (!$query) {
 					header("location:../cms/district.php?tab=sd&page=events&error=true");
+					// echo("Error description: " . mysqli_error($database->con));
 				} else {
 					$row = mysqli_fetch_assoc($query);
 					$id = $row['id'];
@@ -369,6 +371,7 @@
 					$query = mysqli_query($database->con, $sql);
 					if(!$query){
 						header("location:../cms/district.php?tab=sd&page=events&error=true");
+						// echo("Error description: " . mysqli_error($database->con));
 					}
 				}
 			}
@@ -387,11 +390,13 @@
 			$query = mysqli_query($database->con, $sql);
 			if(!$query){
 				header("location:../cms/district.php?tab=sd&page=events&error=true");
+				// echo("Error description: " . mysqli_error($database->con));
 			} else {
 				$sql = "SELECT id, event_shortname FROM events ORDER BY id DESC LIMIT 1";
 				$query = mysqli_query($database->con, $sql);
 				if (!$query) {
 					header("location:../cms/district.php?tab=sd&page=events&error=true");
+					// echo("Error description: " . mysqli_error($database->con));
 				} else {
 					$row = mysqli_fetch_assoc($query);
 					$id = $row['id'];
@@ -411,8 +416,8 @@
 					VALUES (null, '$event_start', '$event_end', '$event_time', '$event_id')";
 			$query = mysqli_query($database->con, $sql);
 			if(!$query){
-				//header("location:../cms/district.php?tab=sd&page=events&error=true");
-				echo("Error description: " . mysqli_error($database->con));
+				header("location:../cms/district.php?tab=sd&page=events&error=true");
+				// echo("Error description: " . mysqli_error($database->con));
 			}
 		
 		}
