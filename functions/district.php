@@ -351,7 +351,7 @@
 			$date = date('Y-m-d');
 
 			$sql = "INSERT INTO posts
-					VALUES (null, '$post_id', '$post_title', '$date', '$user', '$school', '$post_content', 'Active')";
+					VALUES (null, '$post_id', '$post_title', '$date', 'Post', '$user', '$school', '$post_content', 'Active')";
 			$query = mysqli_query($database->con, $sql);
 			if(!$query){
 				header("location:../cms/district.php?tab=sd&page=events&error=true");

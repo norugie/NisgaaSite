@@ -12,7 +12,7 @@
         <div class="card">
             <?php if($_SESSION['type'] == 1){ ?>
                 <div class="header">
-                    <button type="button" class="btn bg-blue waves-effect" data-toggle="modal" data-target="#new-category-modal" style="float: right; margin-top: -5px;">ADD NEW USER</button>
+                    <button type="button" class="btn bg-blue waves-effect" data-toggle="modal" data-target="#new-category-modal" style="float: right; margin-top: -5px;">ADD NEW CATEGORY</button>
                     <br>
                 </div>
             <?php } ?>
