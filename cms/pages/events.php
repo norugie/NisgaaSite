@@ -94,8 +94,8 @@
                                         <th>Event Location</th>
                                         <th>Status</th>
                                         <th>Date and Start Time</th>
-                                        <?php if($_SESSION['type'] != 3){ ?><th>Modify</th><?php } ?>
-                                        <?php if($_SESSION['type'] != 3){ ?><th>Cancel</th><?php } ?>
+                                        <th>Modify</th>
+                                        <th>Cancel</th>
                                     </tr>
                                 </thead>
                                 <tfoot>
@@ -105,8 +105,8 @@
                                         <th>Event Location</th>
                                         <th>Status</th>
                                         <th>Date and Start Time</th>
-                                        <?php if($_SESSION['type'] != 3){ ?><th>Modify</th><?php } ?>
-                                        <?php if($_SESSION['type'] != 3){ ?><th>Cancel</th><?php } ?>
+                                        <th>Modify</th>
+                                        <th>Cancel</th>
                                     </tr>
                                 </tfoot>
                                 <tbody>
@@ -134,14 +134,12 @@
                                                         
                                                     ?>
                                                 </td>
-                                                <?php if($_SESSION['type'] != 3){ ?>
                                                     <td>
-                                                        <center><button type="button" class="btn bg-green waves-effect" data-toggle="modal" data-target="#edit-event-modal" data-values="<?php echo htmlspecialchars(json_encode($event)); ?>" onclick="editEvent(this);" <?php if($event['status'] != 'Active'){ echo "disabled"; }?>>MODIFY</button></center>
+                                                        <center><button type="button" class="btn bg-green waves-effect" data-toggle="modal" data-target="#edit-event-modal" data-values="<?php echo htmlspecialchars(json_encode($event)); ?>" onclick="editEvent(this);" <?php if($event['status'] == 'Cancelled'){ echo "disabled"; }?> <?php if($_SESSION['type'] == 4 && $event['school'] != $_SESSION['school']){ echo "disabled"; }?>>MODIFY</button></center>
                                                     </td>
                                                     <td>
-                                                        <center><button type="button" class="btn bg-red waves-effect" data-type="delete-event" data-id="<?php echo $event['id']; ?>" data-name="<?php echo $event['event_shortname']; ?>" data-post="<?php echo $event['post']; ?>" onclick="alertDesign(this);" <?php if($event['status'] != 'Active') echo "disabled"; ?>>CANCEL</button></center>
+                                                        <center><button type="button" class="btn bg-red waves-effect" data-type="delete-event" data-id="<?php echo $event['id']; ?>" data-name="<?php echo $event['event_shortname']; ?>" data-post="<?php echo $event['post']; ?>" onclick="alertDesign(this);" <?php if($event['status'] != 'Active') echo "disabled"; ?> <?php if($_SESSION['type'] == 4 && $event['school'] != $_SESSION['school']){ echo "disabled"; }?>>CANCEL</button></center>
                                                     </td>
-                                                <?php } ?>
                                             </tr>
                                     <?php endforeach; ?>
                                 </tbody>

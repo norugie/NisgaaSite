@@ -7,6 +7,8 @@
 
         require '../functions/post.php';
         $post = new Post();
+
+        $schools = $post->schoolList($database);
 ?>
 
 <!DOCTYPE html>
