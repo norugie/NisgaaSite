@@ -49,15 +49,40 @@
 			
 		}
 
+		public function categoriesPerPostList($database, $post){
+			$array = array();
+			$sql = "SELECT categories.cat_desc
+					FROM categories 
+					LEFT JOIN post_categories
+					ON (categories.id = post_categories.cat_id)
+					WHERE post_categories.post_id = '$post'
+					AND categories.status = 'Active'";
+			$query = mysqli_query($database->con, $sql);
+			if (!$query) {
+				//header("location:../cms/post.php?tab=posts&page=categories&error=true");
+				echo("Error description: " . mysqli_error($database->con));
+			} else {
+				while($row = mysqli_fetch_array($query)){
+					$array[] = $row;
+				}
+            }
+            
+			return $array;
+		}
+
 		public function postsPerCategoryList($database, $category){
 			$array = array();
 			$sql = "SELECT posts.*,
-						   categories.cat_desc
+						   categories.cat_desc,
+						   users.firstname,
+						   users.lastname
 					FROM post_categories 
 					LEFT JOIN posts
 					ON (posts.id = post_categories.post_id)
 					LEFT JOIN categories
 					ON (categories.id = post_categories.cat_id)
+					LEFT JOIN users
+					ON (users.id = posts.post_author)
 					WHERE post_categories.cat_id = '$category'
 					AND posts.status = 'Active'";
 			$query = mysqli_query($database->con, $sql);
@@ -89,6 +114,25 @@
 			}
 
 		}
+
+		public function disableCategory($database, $id, $title){
+
+			$sql = "UPDATE categories SET 
+						   status = 'Inactive'
+					WHERE id = '$id'";
+			$query = mysqli_query($database->con, $sql);
+			if(!$query){
+			    header("location:../cms/post.php?tab=posts&page=categories&error=true");
+			} else {
+				global $log;
+				$info = "Disabled the category " . $title;
+				$log->logInput($database, $info);
+
+				header("location:../cms/post.php?tab=posts&page=categories&categoryDisabled=true");
+			}	
+	
+		}
+
         /*********************************************************************************************/
 		/***************************  Posts Functionalities -- Media Posts ***************************/
 		/*********************************************************************************************/

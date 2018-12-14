@@ -49,7 +49,7 @@
             <?php require '../components/post_notification.php'; ?>
 
             <div class="block-header">
-                <h2>POSTS - <?php echo strtoupper($page_name); ?></h2>
+                <h2>POSTS - <?php if($page_name == 'posts'){ echo 'CATEGORIES'; } else { echo strtoupper($page_name); } ?></h2>
             </div>
 
             <!-- Page Content -->

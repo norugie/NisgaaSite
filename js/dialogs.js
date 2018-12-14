@@ -15,6 +15,8 @@ function alertDesign(e){
     } else if(type === 'delete-event'){
         var post = $(e).data('post');
         showDisableEventConfirm(id, name, post);
+    } else if (type === 'delete-cat'){
+        showDisableCatConfirm(id, name);
     }
 }
 
@@ -116,6 +118,26 @@ function showDisableEventConfirm(id, name, post){
     }, function(isConfirm){   
         if (isConfirm){   
             window.location = "../functions/district.php?district=true&eventDisable=true&id=" + id + "&event=" + name + "&post=" + post;
+        }
+    
+    });
+}
+
+//Warning for disabling category
+function showDisableCatConfirm(id, name){
+    swal({
+        title: "Are you sure you want to disable this category?",
+        text: "You won't be able to reactivate this category after this",
+        type: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#F44336",
+        confirmButtonText: "CONFIRM",
+        cancelButtonText: "CANCEL",
+        closeOnConfirm: false,
+        closeOnCancel: true
+    }, function(isConfirm){   
+        if (isConfirm){   
+            window.location = "../functions/post.php?post=true&catDisable=true&id=" + id + "&cat=" + name;
         }
     
     });

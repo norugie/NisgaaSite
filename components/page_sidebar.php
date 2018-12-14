@@ -19,6 +19,9 @@
             $(document).ready(function(){
                 $('#<?php echo $tab; ?>').addClass('active');
                 $('#<?php echo $page; ?>').addClass('active');
+                <?php if($page == 'posts'){ ?>
+                    $('#categories').addClass('active');
+                <?php } ?>
             });
         </script>
 
@@ -47,7 +50,7 @@
                     <span>Dashboard</span>
                 </a>
             </li>
-            <li id="posts">
+            <li id="post">
                 <a href="javascript:void(0);" class="menu-toggle">
                     <i class="material-icons">create</i>
                     <span>Posts</span>
