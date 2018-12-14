@@ -156,7 +156,7 @@
                                     <input type="text" id="edit-job-name-file" name="jobid-name" hidden>
                                     <div class="row clearfix">
                                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                            <label for="jobfile">Job File Upload *</label>
+                                            <label for="edit-jobfile">Job File Upload *</label>
                                             <div class="form-group">
                                                 <div class="form-line">
                                                     <input type="file" name="edit-jobfile" id="fileToUploadEdit" accept="application/msword, application/vnd.openxmlformats-officedocument.wordprocessingml.document, application/pdf" required>

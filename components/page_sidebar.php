@@ -54,25 +54,25 @@
                 </a>
                 <ul class="ml-menu">
                     <li id="blog">
-                        <a href="posts.php?tab=posts&page=blog">
+                        <a href="post.php?tab=post&page=blog">
                             <i class="material-icons">mode_comment</i>
                             <span>Blog Posts</span>
                         </a>
                     </li>
                     <li id="links">
-                        <a href="posts.php?tab=posts&page=links">
+                        <a href="post.php?tab=post&page=links">
                             <i class="material-icons">link</i>
                             <span>Links</span>
                         </a>
                     </li>
                     <li id="categories">
-                        <a href="posts.php?tab=posts&page=categories">
+                        <a href="post.php?tab=post&page=categories">
                             <i class="material-icons">widgets</i>
                             <span>Categories</span>
                         </a>
                     </li> 
                     <li id="media">
-                        <a href="posts.php?tab=posts&page=media">
+                        <a href="post.php?tab=post&page=media">
                             <i class="material-icons">photo_library</i>
                             <span>Media</span>
                         </a>
@@ -112,25 +112,25 @@
                 </a>
                 <ul class="ml-menu">
                     <li id="comments">
-                        <a href="interactions.php?tab=web&page=comments">
+                        <a href="interaction.php?tab=web&page=comments">
                             <i class="material-icons">record_voice_over</i>
                             <span>Comments</span>
                         </a>
                     </li>
                     <li id="inquiries">
-                        <a href="interactions.php?tab=web&page=inquiries">
+                        <a href="interaction.php?tab=web&page=inquiries">
                             <i class="material-icons">question_answer</i>
                             <span>Inquiries</span>
                         </a>
                     </li>
                     <li id="reports">
-                        <a href="interactions.php?tab=web&page=reports">
+                        <a href="interaction.php?tab=web&page=reports">
                             <i class="material-icons">report</i>
                             <span>Reports</span>
                         </a>
                     </li>
                     <li id="content">
-                        <a href="interactions.php?tab=web&page=content">
+                        <a href="interaction.php?tab=web&page=content">
                             <i class="material-icons">view_day</i>
                             <span>Web Content</span>
                         </a>

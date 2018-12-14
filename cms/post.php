@@ -46,6 +46,8 @@
 
     <section class="content">
         <div class="container-fluid">
+            <?php require '../components/post_notification.php'; ?>
+
             <div class="block-header">
                 <h2>POSTS - <?php echo strtoupper($page_name); ?></h2>
             </div>

@@ -44,6 +44,8 @@
 
     <section class="content">
         <div class="container-fluid">
+        <?php require '../components/interaction_notification.php'; ?> 
+
             <div class="block-header">
                 <h2>INTERACTIONS - <?php echo strtoupper($page_name); ?></h2>
             </div>
