@@ -16,6 +16,7 @@
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
         <div class="card">
             <div class="header">
+                <?php if(isset($_GET['id'])){ echo "CATEGORY: " . $cat_name; } ?>
                 <button type="button" class="btn bg-blue waves-effect" data-toggle="modal" data-target="#new-post-modal" style="float: right; margin-top: -5px;">ADD NEW POST</button>
                 <br>
             </div>

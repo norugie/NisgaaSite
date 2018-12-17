@@ -306,6 +306,7 @@
 			$query = mysqli_query($database->con, $sql);
 			if (!$query) {
 				header("location: ../cms/district.php?tab=sd&page=events&error=true");
+				// echo("Error description: " . mysqli_error($database->con));
 			} else {
 				while($row = mysqli_fetch_array($query)){
 					$array[] = $row;

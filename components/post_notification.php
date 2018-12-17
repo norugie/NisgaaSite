@@ -1,3 +1,13 @@
+
+<!-- Post Notifications - Blog -->
+
+<?php if(isset($_GET['postDisabled']) && $_SESSION['alert'] == 'alerted'){ ?>
+<div class="alert bg-green alert-dismissible" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    A post has been <b>archived</b> successfully!
+</div>
+<?php } ?>
+
 <!-- Post Notifications - Categories -->
 
 <?php if(isset($_GET['newCategory']) && $_SESSION['alert'] == 'alerted'){ ?>
@@ -10,7 +20,7 @@
 <?php if(isset($_GET['categoryDisabled']) && $_SESSION['alert'] == 'alerted'){ ?>
 <div class="alert bg-green alert-dismissible" role="alert">
     <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-    A category has been <b>successfully</b> successfully!
+    A category has been <b>disabled</b> successfully!
 </div>
 <?php } ?>
 
