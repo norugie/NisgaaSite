@@ -45,8 +45,8 @@
                                 <tr>
                                     <td><?php echo $cat['cat_desc']; ?></td>
                                     <td><?php echo $cat['status']; ?></td>
-                                    <td><?php echo count($post->postsPerCategoryList($database, $cat['id'])); ?></td>
-                                    <td><center><a href="post.php?tab=post&page=posts&id=<?php echo $cat['id']; ?>"><button type="button" class="btn bg-cyan waves-effect">VIEW LIST</button></a></center></td>
+                                    <td><?php echo $countPosts = count($post->postsPerCategoryList($database, $cat['id'])); ?></td>
+                                    <td><center><a href="post.php?tab=post&page=blog&id=<?php echo $cat['id']; ?>"><button type="button" class="btn bg-cyan waves-effect" <?php if($countPosts == 0){ echo "disabled"; } ?>>VIEW LIST</button></a></center></td>
                                     <?php if($_SESSION['type'] == 1){ ?>
                                     <td><center><button type="button" class="btn bg-red waves-effect" data-type="delete-cat" data-id="<?php echo $cat['id']; ?>" data-name="<?php echo $cat['cat_desc']; ?>" onclick="alertDesign(this);" <?php if( $cat['id'] == 1){ echo "disabled"; } ?>>DELETE</button></center></td>
                                     <?php } ?>

@@ -262,14 +262,13 @@
 
         if(isset($_GET['editEventDetails'])){
 
-            $event_id_name = mysqli_real_escape_string($database->con, $_POST['edit_event_id_name']);
             $event_name = mysqli_real_escape_string($database->con, $_POST['edit_event_name']);
             $event_shortname = mysqli_real_escape_string($database->con, $_POST['edit_event_shortname']);
             $event_desc = mysqli_real_escape_string($database->con, $_POST['edit_event_desc']);
             $event_location = mysqli_real_escape_string($database->con, $_POST['edit_event_location']);
             $event_id = mysqli_real_escape_string($database->con, $_POST['edit_event_id']);
 
-            $district->editEvent($database, $event_name, $event_shortname, $event_desc, $event_location, $event_id, $event_id_name);
+            $district->editEvent($database, $event_name, $event_shortname, $event_desc, $event_location, $event_id);
         }
 
     }
