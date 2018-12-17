@@ -22,8 +22,6 @@ function alertDesign(e){
     }
 }
 
-//These codes take from http://t4t5.github.io/sweetalert/
-
 //Warning for disabling user accounts
 function showDisableUserConfirm(id, name){
     swal({

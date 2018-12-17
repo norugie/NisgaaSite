@@ -12,6 +12,9 @@
     }
  ?>
 
+<?php require '../components/modals/new_post.php'; ?>
+<?php require '../components/modals/edit_post.php'; ?>
+
 <div class="row clearfix">
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
         <div class="card">
