@@ -47,10 +47,11 @@ function editEvent(eventInfo){
 function viewPost(postInfo){
 
     post = $(postInfo).data("values");
+    post_date = formatDate(new Date(post['post_date']));
 
     $("#view-post-title").html(post['post_title']);
     $("#view-post-author").html(post['firstname']+" "+post['lastname']);
-    $("#view-post-date").html(post['post_date']);
+    $("#view-post-date").html(post_date);
     $("#view-post-content").html(post['post_text']);
 
 }

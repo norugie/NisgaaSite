@@ -14,7 +14,7 @@
                 <!-- Inline Layout -->
                 <div class="row clearfix">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <center><h3 id="view-post-title">Title here</h3>
+                        <center><h3 id="view-post-title"></h3>
                         <p class="small">By: <span id="view-post-author"></span> | Published Date: <span id="view-post-date"></span></p></center>
                         <hr>
                         <div id="view-post-content"></div>
