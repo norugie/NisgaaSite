@@ -37,7 +37,7 @@
 					WHERE posts.status = 'Active'";
 			$query = mysqli_query($database->con, $sql);
 			if (!$query) {
-			    header("location:../cms/post.php?tab=posts&page=blog&error=true");
+			    header("location:../cms/post.php?tab=post&page=blog&error=true");
 			} else {
 				while($row = mysqli_fetch_array($query)){
 					$array[] = $row;
@@ -67,7 +67,7 @@
 					AND posts.status = 'Active'";
 			$query = mysqli_query($database->con, $sql);
 			if (!$query) {
-			    header("location:../cms/post.php?tab=posts&page=blog&error=true");
+			    header("location:../cms/post.php?tab=post&page=blog&error=true");
 			} else {
 				while($row = mysqli_fetch_array($query)){
 					$array[] = $row;
@@ -84,7 +84,7 @@
 					WHERE id = '$id'";
 			$query = mysqli_query($database->con, $sql);
 			if(!$query){
-			    header("location:../cms/post.php?tab=posts&page=blog&error=true");
+			    header("location:../cms/post.php?tab=post&page=blog&error=true");
 			} else {
 				global $log;
 				$info = "Archived post ID: " . $title;
@@ -95,9 +95,9 @@
 						WHERE post = '$id'";
 				$query = mysqli_query($database->con, $sql);
 				if(!$query){
-					header("location:../cms/post.php?tab=posts&page=blog&error=true");
+					header("location:../cms/post.php?tab=post&page=blog&error=true");
 				} else {
-					header("location:../cms/post.php?tab=posts&page=blog&postDisabled=true");
+					header("location:../cms/post.php?tab=post&page=blog&postDisabled=true");
 				}	
 			}	
 	
@@ -111,13 +111,13 @@
 					WHERE id = '$id'";
 			$query = mysqli_query($database->con, $sql);
 			if(!$query){
-			    header("location:../cms/post.php?tab=posts&page=blog&error=true");
+			    header("location:../cms/post.php?tab=post&page=blog&error=true");
 			} else {
 				global $log;
 				$info = "Edited post ID: " . $post_title;
 				$log->logInput($database, $info);
 
-				header("location:../cms/post.php?tab=posts&page=blog&editPost=true");
+				header("location:../cms/post.php?tab=post&page=blog&editPost=true");
 
 			}			
 		}
@@ -137,7 +137,7 @@
 					WHERE status = 'Active'";
 			$query = mysqli_query($database->con, $sql);
 			if (!$query) {
-			    header("location: ../cms/post.php?tab=posts&page=categories&error=true");
+			    header("location: ../cms/post.php?tab=post&page=categories&error=true");
 			} else {
 				while($row = mysqli_fetch_array($query)){
 					$array[] = $row;
@@ -158,8 +158,8 @@
 					AND categories.status = 'Active'";
 			$query = mysqli_query($database->con, $sql);
 			if (!$query) {
-				//header("location:../cms/post.php?tab=posts&page=categories&error=true");
-				echo("Error description: " . mysqli_error($database->con));
+				header("location:../cms/post.php?tab=post&page=categories&error=true");
+				//echo("Error description: " . mysqli_error($database->con));
 			} else {
 				while($row = mysqli_fetch_array($query)){
 					$array[] = $row;
@@ -175,14 +175,14 @@
 					VALUES (null, '$cat_name', 'Active')";
 			$query = mysqli_query($database->con, $sql);
 			if(!$query){
-				//header("location:../cms/post.php?tab=posts&page=categories&error=true");
-				echo("Error description: " . mysqli_error($database->con));
+				header("location:../cms/post.php?tab=post&page=categories&error=true");
+				//echo("Error description: " . mysqli_error($database->con));
 			} else {
 				global $log;
 				$info = "Created a new category: " . $cat_name;
 				$log->logInput($database, $info);
 
-				header("location:../cms/post.php?tab=posts&page=categories&newCategory=true");
+				header("location:../cms/post.php?tab=post&page=categories&newCategory=true");
 			}
 
 		}
@@ -194,13 +194,13 @@
 					WHERE id = '$id'";
 			$query = mysqli_query($database->con, $sql);
 			if(!$query){
-			    header("location:../cms/post.php?tab=posts&page=categories&error=true");
+			    header("location:../cms/post.php?tab=post&page=categories&error=true");
 			} else {
 				global $log;
 				$info = "Disabled the category " . $title;
 				$log->logInput($database, $info);
 
-				header("location:../cms/post.php?tab=posts&page=categories&categoryDisabled=true");
+				header("location:../cms/post.php?tab=post&page=categories&categoryDisabled=true");
 			}	
 	
 		}

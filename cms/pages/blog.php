@@ -71,11 +71,17 @@
                                                 </button>
                                                 <ul class="dropdown-menu">
                                                     <li><a href="#" data-toggle="modal" data-target="#view-post-modal" data-values="<?php echo htmlspecialchars(json_encode($p)); ?>" onclick="viewPost(this);">View Post</a></li>
+                                                    
+                                                    <?php if($_SESSION['type'] == 1 || $_SESSION['type'] == 2 || $_SESSION['school'] == $p['post_school']){ ?>
                                                     <li role="separator" class="divider"></li>
                                                     <li><a href="#" data-toggle="modal" data-target="#edit-post-modal" data-values="<?php echo htmlspecialchars(json_encode($p)); ?>" onclick="editPost(this);">Edit Post Details</a></li>
                                                     <li><a href="#" data-toggle="modal" data-target="#edit-post-cats-modal" onclick="editPostCats(<?php echo htmlspecialchars(json_encode($p['id'])); ?>,<?php echo htmlspecialchars(json_encode($p['post_id'])); ?>, 1);">Edit Post Categories</a></li>
+                                                    <?php } ?>
+                                                    
+                                                    <?php if($_SESSION['type'] == 1){ ?>
                                                     <li role="separator" class="divider"></li>
                                                     <li><a href="#" data-type="delete-post" data-id="<?php echo $p['id']; ?>" data-name="<?php echo $p['post_id']; ?>" onclick="alertDesign(this);">Delete Post</a></li>
+                                                    <?php } ?>
                                                 </ul>
                                             </div>
                                         </center>
