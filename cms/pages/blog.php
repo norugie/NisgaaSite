@@ -14,6 +14,7 @@
 
 <?php require '../components/modals/new_post.php'; ?>
 <?php require '../components/modals/edit_post.php'; ?>
+<?php require '../components/modals/view_post.php'; ?>
 
 <div class="row clearfix">
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -72,7 +73,7 @@
                                                     <li><a href="#" data-toggle="modal" data-target="#view-post-modal" data-values="<?php echo htmlspecialchars(json_encode($p)); ?>" onclick="viewPost(this);">View Post</a></li>
                                                     <li role="separator" class="divider"></li>
                                                     <li><a href="#" data-toggle="modal" data-target="#edit-post-modal" data-values="<?php echo htmlspecialchars(json_encode($p)); ?>" onclick="editPost(this);">Edit Post Details</a></li>
-                                                    <li><a href="#" data-toggle="modal" data-target="#edit-post-cats-modal" onclick="editJobDates(<?php echo htmlspecialchars(json_encode($p['id'])); ?>,<?php echo htmlspecialchars(json_encode($p['post_id'])); ?>, 1);">Edit Post Categories</a></li>
+                                                    <li><a href="#" data-toggle="modal" data-target="#edit-post-cats-modal" onclick="editPostCats(<?php echo htmlspecialchars(json_encode($p['id'])); ?>,<?php echo htmlspecialchars(json_encode($p['post_id'])); ?>, 1);">Edit Post Categories</a></li>
                                                     <li role="separator" class="divider"></li>
                                                     <li><a href="#" data-type="delete-post" data-id="<?php echo $p['id']; ?>" data-name="<?php echo $p['post_id']; ?>" onclick="alertDesign(this);">Delete Post</a></li>
                                                 </ul>
@@ -89,3 +90,6 @@
     </div>
 </div>
 
+<!-- TinyMCE -->
+<script src="../plugins/tinymce/tinymce.js"></script>
+<script src="../js/editors.js"></script>

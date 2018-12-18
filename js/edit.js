@@ -43,3 +43,25 @@ function editEvent(eventInfo){
     $("#edit_event_location").attr("value", event['event_location']);
 
 }
+
+function viewPost(postInfo){
+
+    post = $(postInfo).data("values");
+
+    $("#view-post-title").html(post['post_title']);
+    $("#view-post-author").html(post['firstname']+" "+post['lastname']);
+    $("#view-post-date").html(post['post_date']);
+    $("#view-post-content").html(post['post_text']);
+
+}
+
+function editPost(postInfo){
+
+    post = $(postInfo).data("values");
+
+    $("#edit_post_id").attr("value", post['id']);
+    $("#edit_post_id_name").attr("value", post['post_id']);
+    $("#edit_post_title").attr("value", post['post_title']);
+    tinyMCE.get('event_post_editor').setContent(post['post_text']);
+
+}

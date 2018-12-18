@@ -19,7 +19,7 @@
                                 <form action="../functions/post.php?post=true&newCategory=true" method="POST">
                                     <div class="row clearfix">
                                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                            <label for="cat_name">Category Name</label>
+                                            <label for="cat_name">Category Name *</label>
                                             <div class="form-group">
                                                 <div class="form-line">
                                                     <input type="text" class="form-control" name="cat_name" id="cat_name" required>

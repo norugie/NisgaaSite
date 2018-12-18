@@ -176,10 +176,10 @@
                             </div>
                             <div class="row clearfix">
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                    <label for="post_content" style="margin-bottom:10px;">Post Content *</label><br>
+                                    <label for="event_post_editor" style="margin-bottom:10px;">Post Content *</label><br>
                                     <div class="form-group">
                                         <div class="form-line">
-                                            <textarea id="event_post_editor" id="post_content" name="post_content">
+                                            <textarea id="event_post_editor" name="post_content">
 
                                             </textarea>
                                         </div>
