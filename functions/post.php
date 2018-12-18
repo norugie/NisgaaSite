@@ -103,6 +103,25 @@
 	
 		}
 
+		public function editPost($database, $id, $post_id, $post_title, $post_content){
+
+			$sql = "UPDATE posts SET 
+						   post_title = '$post_title',
+						   post_text = '$post_content'
+					WHERE id = '$id'";
+			$query = mysqli_query($database->con, $sql);
+			if(!$query){
+			    header("location:../cms/post.php?tab=posts&page=blog&error=true");
+			} else {
+				global $log;
+				$info = "Edited post ID: " . $post_title;
+				$log->logInput($database, $info);
+
+				header("location:../cms/post.php?tab=posts&page=blog&editPost=true");
+
+			}			
+		}
+
         /*********************************************************************************************/
 		/***************************  Posts Functionalities -- Links  ********************************/
         /*********************************************************************************************/

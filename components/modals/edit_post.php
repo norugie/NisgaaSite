@@ -16,8 +16,8 @@
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 
                         <form action="../functions/post.php?post=true&editPost=true" method="POST">
-                            <input type="text" id="edit_post_id" name="edit_post_id">
-                            <input type="text" id="edit_post_id_name" name="edit_post_id_name">
+                            <input type="text" id="edit_post_id" name="edit_post_id" hidden>
+                            <input type="text" id="edit_post_id_name" name="edit_post_id_name" hidden>
                             <div class="row clearfix">
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                     <label for="edit_post_title">Post Title *</label>

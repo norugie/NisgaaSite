@@ -22,6 +22,17 @@
 
         }
 
+        if(isset($_GET['editPost'])){
+
+            $id = mysqli_real_escape_string($database->con, $_POST['edit_post_id']);
+            $post_id = mysqli_real_escape_string($database->con, $_POST['edit_post_id_name']);
+            $post_title = mysqli_real_escape_string($database->con, $_POST['edit_post_title']);
+            $post_content = mysqli_real_escape_string($database->con, $_POST['edit_post_content']);
+
+            $post->editPost($database, $id, $post_id, $post_title, $post_content);
+
+        }
+
         /*********************************************************************************************/
 		/***************************  Posts Functionalities -- Links  ********************************/
         /*********************************************************************************************/
