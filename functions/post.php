@@ -34,7 +34,8 @@
 					ON (users.id = posts.post_author)
 					LEFT JOIN schools
 					ON (schools.id = posts.post_school)
-					WHERE posts.status = 'Active'";
+					WHERE posts.post_type = 'Post' 
+					AND posts.status = 'Active'";
 			$query = mysqli_query($database->con, $sql);
 			if (!$query) {
 			    header("location:../cms/post.php?tab=post&page=blog&error=true");
@@ -64,6 +65,7 @@
 					LEFT JOIN schools
 					ON (schools.id = posts.post_school)
 					WHERE post_categories.cat_id = '$category'
+					AND posts.post_type = 'Post'
 					AND posts.status = 'Active'";
 			$query = mysqli_query($database->con, $sql);
 			if (!$query) {
@@ -148,6 +150,29 @@
 			
 		}
 
+		public function postsAndMediaPerCategoryCount($database, $category){
+			$array = array();
+			$sql = "SELECT posts.*,
+						   categories.cat_desc
+					FROM post_categories 
+					LEFT JOIN posts
+					ON (posts.id = post_categories.post_id)
+					LEFT JOIN categories
+					ON (categories.id = post_categories.cat_id)
+					WHERE post_categories.cat_id = '$category'
+					AND posts.status = 'Active'";
+			$query = mysqli_query($database->con, $sql);
+			if (!$query) {
+			    header("location:../cms/post.php?tab=post&page=blog&error=true");
+			} else {
+				while($row = mysqli_fetch_array($query)){
+					$array[] = $row;
+				}
+            }
+            
+			return $array;
+		}
+
 		public function categoriesPerPostList($database, $post){
 			$array = array();
 			$sql = "SELECT categories.cat_desc
@@ -208,6 +233,62 @@
         /*********************************************************************************************/
 		/***************************  Posts Functionalities -- Media Posts ***************************/
 		/*********************************************************************************************/
+
+		public function mediaPerCategoryList($database, $category){
+			$array = array();
+			$sql = "SELECT posts.*,
+						   categories.cat_desc,
+						   users.firstname,
+						   users.lastname,
+						   schools.school_abbv
+					FROM post_categories 
+					LEFT JOIN posts
+					ON (posts.id = post_categories.post_id)
+					LEFT JOIN categories
+					ON (categories.id = post_categories.cat_id)
+					LEFT JOIN users
+					ON (users.id = posts.post_author)
+					LEFT JOIN schools
+					ON (schools.id = posts.post_school)
+					WHERE post_categories.cat_id = '$category'
+					AND posts.post_type = 'Media'
+					AND posts.status = 'Active'";
+			$query = mysqli_query($database->con, $sql);
+			if (!$query) {
+			    header("location:../cms/post.php?tab=post&page=media&error=true");
+			} else {
+				while($row = mysqli_fetch_array($query)){
+					$array[] = $row;
+				}
+            }
+            
+			return $array;
+		}
+
+		public function mediaList($database){
+			$array = array();
+			$sql = "SELECT posts.*,
+						   users.firstname,
+						   users.lastname,
+						   schools.school_abbv
+					FROM posts
+					LEFT JOIN users
+					ON (users.id = posts.post_author)
+					LEFT JOIN schools
+					ON (schools.id = posts.post_school)
+					WHERE posts.post_type = 'Media' 
+					AND posts.status = 'Active'";
+			$query = mysqli_query($database->con, $sql);
+			if (!$query) {
+			    header("location:../cms/post.php?tab=post&page=media&error=true");
+			} else {
+				while($row = mysqli_fetch_array($query)){
+					$array[] = $row;
+				}
+            }
+            
+			return $array;			
+		}
 
     }
 

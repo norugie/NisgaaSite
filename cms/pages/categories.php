@@ -45,8 +45,22 @@
                                 <tr>
                                     <td><?php echo $cat['cat_desc']; ?></td>
                                     <td><?php echo $cat['status']; ?></td>
-                                    <td><?php echo $countPosts = count($post->postsPerCategoryList($database, $cat['id'])); ?></td>
-                                    <td><center><a href="post.php?tab=post&page=blog&id=<?php echo $cat['id']; ?>"><button type="button" class="btn bg-cyan waves-effect" <?php if($countPosts == 0){ echo "disabled"; } ?>>VIEW LIST</button></a></center></td>
+                                    <td><?php echo $countPosts = count($post->postsAndMediaPerCategoryCount($database, $cat['id'])); ?></td>
+                                    <td>
+                                    <!-- <center><a href="post.php?tab=post&page=blog&id=<?php echo $cat['id']; ?>"><button type="button" class="btn bg-cyan waves-effect" <?php if($countPosts == 0){ echo "disabled"; } ?>>VIEW LIST</button></a></center> -->
+
+                                    <center>
+                                            <div class="btn-group">
+                                                <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" <?php if($countPosts == 0){ echo "disabled"; } ?>>
+                                                    VIEW LIST <span class="caret"></span>
+                                                </button>
+                                                <ul class="dropdown-menu">
+                                                    <li><a href="post.php?tab=post&page=blog&id=<?php echo $cat['id']; ?>">View List (Posts)</a></li>
+                                                    <li><a href="post.php?tab=post&page=media&id=<?php echo $cat['id']; ?>">View List (Media)</a></li>
+                                                </ul>
+                                            </div>
+                                        </center>
+                                    </td>
                                     <?php if($_SESSION['type'] == 1){ ?>
                                     <td><center><button type="button" class="btn bg-red waves-effect" data-type="delete-cat" data-id="<?php echo $cat['id']; ?>" data-name="<?php echo $cat['cat_desc']; ?>" onclick="alertDesign(this);" <?php if( $cat['id'] == 1){ echo "disabled"; } ?>>DELETE</button></center></td>
                                     <?php } ?>

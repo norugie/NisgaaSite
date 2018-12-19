@@ -10,11 +10,13 @@
                 <h4 class="modal-title" id="largeModalLabel">New Post</h4>
             </div>
             <div class="modal-body">
-
+            <p class="font-12"><i><b>Note:</b> Fields marked with an asterisk are required</i></p><br>
                 <!-- Inline Layout -->
                 <div class="row clearfix">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-
+                        <form action="" method="">
+                            
+                        </form>
                     </div>
                 </div>
                 <!-- #END# Inline Layout -->
