@@ -157,5 +157,5 @@
 <script src="../js/form-wizard.js"></script>
 
 <!-- TinyMCE -->
-<script src="../plugins/tinymce/tinymce.js"></script>
+<script src="../plugins/tinymce/tinymce.min.js"></script>
 <script src="../js/editors.js"></script>

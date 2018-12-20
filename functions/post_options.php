@@ -49,7 +49,7 @@
 
         }
 
-        if(isset($_GET['cat'])){
+        if(isset($_GET['catDisable'])){
             
             $id = $_GET['id'];
             $title = $_GET['cat'];
@@ -61,6 +61,18 @@
         /*********************************************************************************************/
 		/***************************  Posts Functionalities -- Media Posts ***************************/
 		/*********************************************************************************************/
+
+        if(isset($_GET['editMedia'])){
+
+            $id = mysqli_real_escape_string($database->con, $_POST['edit_media_post_id']);
+            $media_id = mysqli_real_escape_string($database->con, $_POST['edit_media_post_id_name']);
+            $media_title = mysqli_real_escape_string($database->con, $_POST['edit_media_post_title']);
+            $media_content = mysqli_real_escape_string($database->con, $_POST['edit_media_post_content']);
+
+            $post->editMedia($database, $id, $media_id, $media_title, $media_content);       
+
+        }
+
     }
 
 ?>

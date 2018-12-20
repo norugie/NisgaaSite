@@ -31,6 +31,16 @@
 </div>
 <?php } ?>
 
+<!-- Post Notification - Media -->
+
+<?php if(isset($_GET['editMedia']) && $_SESSION['alert'] == 'alerted'){ ?>
+<div class="alert bg-green alert-dismissible" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    A media post has been <b>edited</b> successfully!
+</div>
+<?php } ?>
+
+
 <!--  Errors  -->
 
 <?php require 'error_notification.php'; ?>

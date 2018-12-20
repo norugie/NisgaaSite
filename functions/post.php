@@ -290,6 +290,25 @@
 			return $array;			
 		}
 
+		public function editMedia($database, $id, $media_id, $media_title, $media_content){
+
+			$sql = "UPDATE posts SET 
+						   post_title = '$media_title',
+						   post_text = '$media_content'
+					WHERE id = '$id'";
+			$query = mysqli_query($database->con, $sql);
+			if(!$query){
+			    header("location:../cms/post.php?tab=post&page=media&error=true");
+			} else {
+				global $log;
+				$info = "Edited media post ID: " . $post_title;
+				$log->logInput($database, $info);
+
+				header("location:../cms/post.php?tab=post&page=media&editMedia=true");
+
+			}			
+		}
+
     }
 
     require 'post_options.php';

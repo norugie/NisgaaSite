@@ -17,7 +17,7 @@
                         <center><h3 id="view-post-title"></h3>
                         <p class="small">By: <span id="view-post-author"></span> | Published Date: <span id="view-post-date"></span></p></center>
                         <hr>
-                        <div id="view-post-content"></div>
+                        <span id="view-post-content" style="display: -webkit-flex; -webkit-flex-direction: column;"></span>
                     </div>
                 </div>
                 <!-- #END# Inline Layout -->
