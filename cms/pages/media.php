@@ -21,7 +21,7 @@
         <div class="card">
             <div class="header">
                 <?php if(isset($_GET['id'])){ echo "CATEGORY: " . $cat_name; } ?>
-                <button type="button" class="btn bg-blue waves-effect" data-toggle="modal" data-target="#new-post-modal" style="float: right; margin-top: -5px;">ADD NEW MEDIA POST</button>
+                <button type="button" class="btn bg-blue waves-effect" data-toggle="modal" data-target="#new-media-modal" style="float: right; margin-top: -5px;">ADD NEW MEDIA POST</button>
                 <br>
             </div>
             <div class="body">
@@ -74,8 +74,8 @@
                                                     
                                                     <?php if($_SESSION['type'] == 1 || $_SESSION['type'] == 2 || $_SESSION['school'] == $m['post_school']){ ?>
                                                     <li role="separator" class="divider"></li>
-                                                    <li><a href="#" data-toggle="modal" data-target="#edit-media-modal" data-values="<?php echo htmlspecialchars(json_encode($m)); ?>" onclick="editPost(this);">Edit Media Post Details</a></li>
-                                                    <li><a href="#" data-toggle="modal" data-target="#edit-media-cats-modal" onclick="editPostCats(<?php echo htmlspecialchars(json_encode($m['id'])); ?>,<?php echo htmlspecialchars(json_encode($m['post_id'])); ?>, 1);">Edit Media Post Categories</a></li>
+                                                    <li><a href="#" data-toggle="modal" data-target="#edit-media-modal" data-values="<?php echo htmlspecialchars(json_encode($m)); ?>" onclick="editMedia(this);">Edit Media Post Details</a></li>
+                                                    <li><a href="#" data-toggle="modal" data-target="#edit-media-cats-modal" onclick="editMediaCats(<?php echo htmlspecialchars(json_encode($m['id'])); ?>,<?php echo htmlspecialchars(json_encode($m['post_id'])); ?>, 1);">Edit Media Post Categories</a></li>
                                                     <?php } ?>
                                                     
                                                     <?php if($_SESSION['type'] == 1){ ?>

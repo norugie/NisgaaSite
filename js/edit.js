@@ -66,3 +66,14 @@ function editPost(postInfo){
     tinyMCE.get('event_post_editor').setContent(post['post_text']);
 
 }
+
+function editMedia(mediaInfo){
+
+    media = $(mediaInfo).data("values");
+
+    $("#edit_media_post_id").attr("value", media['id']);
+    $("#edit_media_post_id_name").attr("value", media['post_id']);
+    $("#edit_media_post_title").attr("value", media['post_title']);
+    $("#edit_media_post_content").val(media['post_text']);
+
+}
