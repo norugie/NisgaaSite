@@ -56,8 +56,8 @@
     </div>
 </div>
 
-<!-- Edit Post Categories Modal -->
-<div class="modal fade" id="edit-post-cats-modal" tabindex="-1" role="dialog">
+<!-- Edit Media Post Categories Modal -->
+<div class="modal fade" id="edit-media-cats-modal" tabindex="-1" role="dialog">
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header" style="background-color: #607D8B; color: #fff; margin: 0; padding: 15px;">
@@ -65,7 +65,7 @@
                        <span aria-hidden="true">&times;</span>
                        <span class="sr-only">Close</span>
                 </button>
-                <h4 class="modal-title" id="largeModalLabel">Edit Post Categories</h4>
+                <h4 class="modal-title" id="largeModalLabel">Edit Media Post Categories</h4>
             </div>
             <div class="modal-body">
 

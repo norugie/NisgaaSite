@@ -77,3 +77,15 @@ function editMedia(mediaInfo){
     $("#edit_media_post_content").val(media['post_text']);
 
 }
+
+function viewMediaPost(mediaInfo){
+
+    media = $(mediaInfo).data("values");
+    media_date = formatDate(new Date(media['post_date']));
+
+    $("#view-media-title").html(media['post_title']);
+    $("#view-media-author").html(media['firstname']+" "+media['lastname']);
+    $("#view-media-date").html(media_date);
+    $("#view-media-content").html(media['post_text']);
+
+}
