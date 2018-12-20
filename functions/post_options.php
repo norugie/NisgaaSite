@@ -73,6 +73,15 @@
 
         }
 
+        if(isset($_GET['mediaDisable'])){
+            
+            $id = $_GET['id'];
+            $title = $_GET['mediaName'];
+
+            $post->disableMedia($database, $id, $title);
+
+        }
+
     }
 
 ?>

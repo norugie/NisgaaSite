@@ -309,6 +309,24 @@
 			}			
 		}
 
+		public function disableMedia($database, $id, $title){
+
+			$sql = "UPDATE posts SET 
+						   status = 'Archived'
+					WHERE id = '$id'";
+			$query = mysqli_query($database->con, $sql);
+			if(!$query){
+			    header("location:../cms/post.php?tab=post&page=media&error=true");
+			} else {
+				global $log;
+				$info = "Archived media post ID: " . $title;
+				$log->logInput($database, $info);
+
+				header("location:../cms/post.php?tab=post&page=media&mediaDisabled=true");
+			}	
+	
+		}
+
     }
 
     require 'post_options.php';

@@ -19,8 +19,11 @@ function alertDesign(e){
         showDisableCatConfirm(id, name);
     } else if (type === 'delete-post') {
         showDisablePostConfirm(id, name);
+    } else if (type === 'delete-media') {
+        showDisableMediaConfirm(id, name);
     }
 }
+
 
 //Warning for disabling user accounts
 function showDisableUserConfirm(id, name){
@@ -158,6 +161,26 @@ function showDisablePostConfirm(id, name){
     }, function(isConfirm){   
         if (isConfirm){   
             window.location = "../functions/post.php?post=true&postDisable=true&id=" + id + "&postName=" + name;
+        }
+    
+    });
+}
+
+//Warning for disabling media post
+function showDisableMediaConfirm(id, name){
+    swal({
+        title: "Are you sure you want to disable this media post?",
+        text: "You won't be able to reactivate this media post once archived",
+        type: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#F44336",
+        confirmButtonText: "CONFIRM",
+        cancelButtonText: "CANCEL",
+        closeOnConfirm: false,
+        closeOnCancel: true
+    }, function(isConfirm){   
+        if (isConfirm){   
+            window.location = "../functions/post.php?post=true&mediaDisable=true&id=" + id + "&mediaName=" + name;
         }
     
     });
