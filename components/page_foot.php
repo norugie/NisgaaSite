@@ -28,6 +28,9 @@
 <!-- Bootstrap Datepicker Plugin Js -->
 <script src="../plugins/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
 
+<!-- Validation Plugin Js -->
+<script src="../plugins/jquery-validation/jquery.validate.js"></script>
+
 <!-- Custom Js -->
 <script src="../js/admin.js"></script>
 <script src="../js/dialogs.js"></script>

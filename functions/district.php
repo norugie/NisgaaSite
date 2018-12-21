@@ -423,7 +423,7 @@
 		
 		}
 
-		public function editEvent($database, $event_name, $event_shortname, $event_desc, $event_location, $event_id, $event_id_name){
+		public function editEvent($database, $event_name, $event_shortname, $event_desc, $event_location, $event_id){
 			$sql = "UPDATE events SET 
 						   event_name = '$event_name',
 						   event_shortname = '$event_shortname',
