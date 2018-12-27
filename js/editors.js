@@ -1,7 +1,7 @@
 $(function () {
     //TinyMCE
     tinymce.init({
-        selector: "textarea#event_post_editor",
+        selector: ".tinymce_editor",
         theme: "modern",
         height: 300,
         plugins: [
