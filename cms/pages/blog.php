@@ -80,12 +80,18 @@
                                                     <?php if($_SESSION['type'] == 1 || $_SESSION['type'] == 2 || $_SESSION['school'] == $p['post_school']){ ?>
                                                     <li role="separator" class="divider"></li>
                                                     <li><a href="#" data-toggle="modal" data-target="#edit-post-modal" data-values="<?php echo htmlspecialchars(json_encode($p)); ?>" onclick="editPost(this);">Edit Post Details</a></li>
+                                                    <?php if($cats[0][0] != 'Event'){ ?>
                                                     <li><a href="#" data-toggle="modal" data-target="#edit-post-cats-modal" onclick="editPostCats(<?php echo htmlspecialchars(json_encode($p['id'])); ?>,<?php echo htmlspecialchars(json_encode($p['post_id'])); ?>, 1);">Edit Post Categories</a></li>
+                                                    <?php } ?>
                                                     <?php } ?>
                                                     
                                                     <?php if($_SESSION['type'] == 1){ ?>
                                                     <li role="separator" class="divider"></li>
-                                                    <li><a href="#" data-type="delete-post" data-id="<?php echo $p['id']; ?>" data-name="<?php echo $p['post_id']; ?>" onclick="alertDesign(this);">Delete Post</a></li>
+                                                    <?php if($cats[0][0] != 'Event'){ ?>
+                                                    <li><a href="#" data-type="delete-post" data-id="<?php echo $p['id']; ?>" data-name="<?php echo $p['post_id']; ?>" data-event="0" onclick="alertDesign(this);">Delete Post</a></li>
+                                                    <?php } else { ?>
+                                                    <li><a href="#" data-type="delete-post" data-id="<?php echo $p['id']; ?>" data-name="<?php echo $p['post_id']; ?>" data-event="1" onclick="alertDesign(this);">Delete Post</a></li>
+                                                    <?php } ?>
                                                     <?php } ?>
                                                 </ul>
                                             </div>

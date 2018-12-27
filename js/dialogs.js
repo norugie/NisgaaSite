@@ -18,7 +18,8 @@ function alertDesign(e){
     } else if (type === 'delete-cat'){
         showDisableCatConfirm(id, name);
     } else if (type === 'delete-post') {
-        showDisablePostConfirm(id, name);
+        var event = $(e).data('event');
+        showDisablePostConfirm(id, name, event);
     } else if (type === 'delete-media') {
         showDisableMediaConfirm(id, name);
     }
@@ -147,7 +148,7 @@ function showDisableCatConfirm(id, name){
 }
 
 //Warning for disabling post
-function showDisablePostConfirm(id, name){
+function showDisablePostConfirm(id, name, event){
     swal({
         title: "Are you sure you want to disable this post?",
         text: "You won't be able to reactivate this post once archived",
@@ -160,7 +161,13 @@ function showDisablePostConfirm(id, name){
         closeOnCancel: true
     }, function(isConfirm){   
         if (isConfirm){   
-            window.location = "../functions/post.php?post=true&postDisable=true&id=" + id + "&postName=" + name;
+            if(event === 1) {
+                window.location = "../functions/post.php?post=true&postDisableEvent=true&id=" + id + "&postName=" + name;
+            } else {
+                window.location = "../functions/post.php?post=true&postDisable=true&id=" + id + "&postName=" + name;
+            }
+            
+
         }
     
     });

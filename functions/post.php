@@ -79,6 +79,32 @@
 			return $array;
 		}
 
+		public function disablePostEvent($database, $id, $title){
+
+			$sql = "UPDATE posts SET 
+						   status = 'Archived'
+					WHERE id = '$id'";
+			$query = mysqli_query($database->con, $sql);
+			if(!$query){
+			    header("location:../cms/post.php?tab=post&page=blog&error=true");
+			} else {
+				global $log;
+				$info = "Archived event post ID: " . $title;
+				$log->logInput($database, $info);
+
+				$sql = "UPDATE events SET 
+							   status = 'Cancelled'
+						WHERE post = '$id'";
+				$query = mysqli_query($database->con, $sql);
+				if(!$query){
+					header("location:../cms/post.php?tab=post&page=blog&error=true");
+				} else {
+					header("location:../cms/post.php?tab=post&page=blog&postDisabled=true");
+				}	
+			}	
+	
+		}
+
 		public function disablePost($database, $id, $title){
 
 			$sql = "UPDATE posts SET 
@@ -92,15 +118,7 @@
 				$info = "Archived post ID: " . $title;
 				$log->logInput($database, $info);
 
-				$sql = "UPDATE events SET 
-							   status = 'Cancelled'
-						WHERE post = '$id'";
-				$query = mysqli_query($database->con, $sql);
-				if(!$query){
-					header("location:../cms/post.php?tab=post&page=blog&error=true");
-				} else {
-					header("location:../cms/post.php?tab=post&page=blog&postDisabled=true");
-				}	
+				header("location:../cms/post.php?tab=post&page=blog&postDisabled=true");
 			}	
 	
 		}

@@ -22,6 +22,15 @@
 
         }
 
+        if(isset($_GET['postDisableEvent'])){
+            
+            $id = $_GET['id'];
+            $title = $_GET['postName'];
+
+            $post->disablePostEvent($database, $id, $title);
+
+        }
+
         if(isset($_GET['editPost'])){
 
             $id = mysqli_real_escape_string($database->con, $_POST['edit_post_id']);
