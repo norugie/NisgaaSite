@@ -1,3 +1,24 @@
+<?php 
+
+    $categories = $post->categoryList($database); 
+    $cats =  json_encode($categories);
+    print_r($cats);
+?>
+
+<script type="text/javascript" src="../plugins/jquery-tokeninput/src/jquery.tokeninput.js"></script>
+
+<link rel="stylesheet" href="../plugins/jquery-tokeninput/styles/token-input.css" type="text/css" />
+<link rel="stylesheet" href="../plugins/jquery-tokeninput/styles/token-input-facebook.css" type="text/css" />
+
+<style>
+
+    div.token-input-dropdown-facebook {           
+        z-index: 9999!important;
+        width: 850px;
+    }
+
+</style>
+
 <!-- New Post Modal -->
 <div class="modal fade" id="new-post-modal" tabindex="-1" role="dialog">
     <div class="modal-dialog modal-lg" role="document">
@@ -29,9 +50,48 @@
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                     <label for="post_categories">Post Categories *</label>
                                     <div class="form-group">
+                                        <input type="text" value=""  name="post_categories_id">
                                         <div class="form-line">
                                             <input type="text" class="form-control" id="post_categories" name="post_categories" required>
                                         </div>
+                                        <script type="text/javascript">
+                                            
+                                            var categories = new Array();
+                                            
+                                            Array.prototype.remove = function() {
+                                                var what, a = arguments, L = a.length, ax;
+                                                while (L && this.length) {
+                                                    what = a[--L];
+                                                    while ((ax = this.indexOf(what)) !== -1) {
+                                                        this.splice(ax, 1);
+                                                    }
+                                                }
+                                                return this;
+                                            };
+                                            
+                                            $(document).ready(function() {
+                                                $("#post_categories").tokenInput(<?php echo $cats; ?>, {
+                                                        theme: "facebook",
+                                                        propertyToSearch: "cat_desc",
+                                                        resultsFormatter: function(item){ 
+                                                            return "<li>" + "<div style='display: inline-block; padding-left: 10px;'><div class='cat_desc'>" + item.cat_desc + "</div></div></li>" },
+                                                        tokenFormatter: function(item){ 
+                                                            return "<li><p>" + item.cat_desc + "</p></li>" },
+                                                        preventDuplicates: true,
+                                                        onAdd: function(item){
+                                                            categories.push(item.id);
+                                                            console.log(categories);
+                                                            $('input[name="post_categories_id"]').val(categories);
+                                                        },
+                                                        onDelete: function(item){
+                                                            categories.remove(item.id);
+                                                            console.log(categories);
+                                                            $('input[name="post_categories_id"]').val(categories);
+                                                        }
+                                                    });
+                                            });
+                                        </script>
+                                        
                                     </div>
                                 </div>
                             </div>
