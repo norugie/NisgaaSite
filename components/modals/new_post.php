@@ -2,7 +2,7 @@
 
     $categories = $post->categoryList($database); 
     $cats =  json_encode($categories);
-    print_r($cats);
+
 ?>
 
 <style>
@@ -45,7 +45,7 @@
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                     <label for="post_categories">Post Categories *</label>
                                     <div class="form-group">
-                                        <input type="text" value=""  name="post_categories_id">
+                                        <input type="text" value=""  name="post_categories_id" hidden>
                                         <div class="form-line">
                                             <input type="text" class="form-control" id="post_categories" name="post_categories" required>
                                         </div>
