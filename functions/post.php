@@ -142,6 +142,48 @@
 			}			
 		}
 
+		public function addPost($database, $post_title, $post_content){
+			$id;
+			$post_id = 'PST' . rand(1111111,9999999);
+			$user = $_SESSION['id'];
+			$school = $_SESSION['school'];
+			$date = date('Y-m-d');
+
+			$sql = "INSERT INTO posts
+					VALUES (null, '$post_id', '$post_title', '$date', 'Post', '$user', '$school', '$post_content', 'Active')";
+			$query = mysqli_query($database->con, $sql);
+			if(!$query){
+				header("location:../cms/post.php?tab=post&page=blog&error=true");
+				// echo("Error description: " . mysqli_error($database->con));
+			} else {
+				$sql = "SELECT id FROM posts ORDER BY id DESC LIMIT 1";
+				$query = mysqli_query($database->con, $sql);
+				if (!$query) {
+					header("location:../cms/post.php?tab=post&page=blog&error=true");
+					// echo("Error description: " . mysqli_error($database->con));
+				} else {
+					global $log;
+					$info = "Created a new post: " . $post_id;
+					$log->logInput($database, $info);
+
+					$row = mysqli_fetch_assoc($query);
+					$id = $row['id'];
+				}
+			}
+
+			return $id;	
+		}
+
+		public function addPostCategories($database, $post_id, $cat_id){
+			$sql = "INSERT INTO post_categories
+			VALUES (null, '$post_id','$cat_id')";
+			$query = mysqli_query($database->con, $sql);
+			if(!$query){
+				header("location:../cms/post.php?tab=post&page=blog&error=true");
+				// echo("Error description: " . mysqli_error($database->con));
+			}
+		}
+
         /*********************************************************************************************/
 		/***************************  Posts Functionalities -- Links  ********************************/
         /*********************************************************************************************/

@@ -42,6 +42,30 @@
 
         }
 
+        if(isset($_GET['addPost'])){
+
+            $post_title = mysqli_real_escape_string($database->con, $_POST['post_title']);
+            $post_content = mysqli_real_escape_string($database->con, $_POST['post_content']);
+            $post_categories = mysqli_real_escape_string($database->con, $_POST['post_categories_id']);
+
+            $post_id = $post->addPost($database, $post_title, $post_content);
+
+            echo $post_id;
+
+            $post_cats = explode(',', $post_categories);
+
+            for($i = 0; $i <= count($post_cats); $i++){
+
+                $post->addPostCategories($database, $post_id, $post_cats[$i]);
+
+                if($i == count($post_cats)){
+                    header("location:../cms/post.php?tab=post&page=blog&addPost=true");
+                }
+
+            }
+
+        }
+
         /*********************************************************************************************/
 		/***************************  Posts Functionalities -- Links  ********************************/
         /*********************************************************************************************/
