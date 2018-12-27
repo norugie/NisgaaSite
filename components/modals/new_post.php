@@ -5,11 +5,6 @@
     print_r($cats);
 ?>
 
-<script type="text/javascript" src="../plugins/jquery-tokeninput/src/jquery.tokeninput.js"></script>
-
-<link rel="stylesheet" href="../plugins/jquery-tokeninput/styles/token-input.css" type="text/css" />
-<link rel="stylesheet" href="../plugins/jquery-tokeninput/styles/token-input-facebook.css" type="text/css" />
-
 <style>
 
     div.token-input-dropdown-facebook {           
