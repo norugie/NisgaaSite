@@ -11,7 +11,7 @@
 <?php if(isset($_GET['editPost']) && $_SESSION['alert'] == 'alerted'){ ?>
 <div class="alert bg-green alert-dismissible" role="alert">
     <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-    A post has been <b>edited</b> successfully!
+    A post has been <b>modified</b> successfully!
 </div>
 <?php } ?>
 
@@ -38,6 +38,13 @@
 </div>
 <?php } ?>
 
+<?php if(isset($_GET['editLink']) && $_SESSION['alert'] == 'alerted'){ ?>
+<div class="alert bg-green alert-dismissible" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    A link has been <b>modified</b> successfully!
+</div>
+<?php } ?>
+
 <!-- Post Notifications - Categories -->
 
 <?php if(isset($_GET['newCategory']) && $_SESSION['alert'] == 'alerted'){ ?>
@@ -59,7 +66,7 @@
 <?php if(isset($_GET['editMedia']) && $_SESSION['alert'] == 'alerted'){ ?>
 <div class="alert bg-green alert-dismissible" role="alert">
     <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-    A media post has been <b>edited</b> successfully!
+    A media post has been <b>modified</b> successfully!
 </div>
 <?php } ?>
 

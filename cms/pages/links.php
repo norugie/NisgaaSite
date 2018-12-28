@@ -42,11 +42,11 @@
                         <tbody>
                             <?php foreach($links as $link): ?>
                                 <tr>
-                                    <td><a href="<?php if($link['link_type'] == 'File'){ echo "../"; } echo $link['link_content']; ?>" <?php if($link['link_type'] == 'Link'){?>target="_blank"<?php } else { ?> download <?php } ?>><?php echo $link['link_name']; ?></a></td>
+                                    <td><a href="<?php if($link['link_type'] == 'File'){ echo "../links/"; } echo $link['link_content']; ?>" <?php if($link['link_type'] == 'Link'){?>target="_blank"<?php } else { ?> download <?php } ?>><?php echo $link['link_name']; ?></a></td>
                                     <td><?php echo $link['link_type']; ?></td>
                                     <td><?php echo $link['link_tag']; ?></td>
                                     <td><?php echo $link['link_desc']; ?></td>
-                                    <td><center><button type="button" class="btn bg-green waves-effect" data-toggle="modal" data-target="#edit-link-<?php if($link['link_type'] == 'Link'){?>link<?php } else { ?>file<?php } ?>-modal" data-values="<?php echo htmlspecialchars(json_encode($link)); ?>" onclick="editUser(this);" <?php if($link['status'] == 'Inactive') echo "disabled"; ?>>MODIFY</button></center></td> 
+                                    <td><center><button type="button" class="btn bg-green waves-effect" data-toggle="modal" data-target="#edit-link-<?php if($link['link_type'] == 'Link'){?>link<?php } else { ?>file<?php } ?>-modal" data-values="<?php echo htmlspecialchars(json_encode($link)); ?>" onclick="editLink(this);" <?php if($link['status'] == 'Inactive') echo "disabled"; ?>>MODIFY</button></center></td> 
                                     <?php if($link['status'] == 'Active'){ ?>
                                         <td><center><button type="button" class="btn bg-red waves-effect" data-type="delete-link" data-id="<?php echo $link['id']; ?>" data-name="<?php echo $link['link_id']; ?>" onclick="alertDesign(this);">DELETE</button></center></td>
                                     <?php } else { ?>

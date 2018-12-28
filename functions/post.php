@@ -237,6 +237,24 @@
 			}
 		}
 
+		public function editLink($database, $id, $link_id, $link_name, $link_desc, $link_content){
+			$sql = "UPDATE links SET 
+						   link_name = '$link_name',
+						   link_desc = '$link_desc',
+						   link_content = '$link_content'
+					WHERE id = '$id'";
+			$query = mysqli_query($database->con, $sql);
+			if(!$query){
+			    header("location:../cms/post.php?tab=post&page=links&error=true");
+			} else {
+				global $log;
+				$info = "Modified link ID: " . $link_id;
+				$log->logInput($database, $info);
+
+				header("location:../cms/post.php?tab=post&page=links&editLink=true");
+			}
+		}
+
         /*********************************************************************************************/
 		/***************************  Posts Functionalities -- Categories  ***************************/
         /*********************************************************************************************/
