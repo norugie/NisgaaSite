@@ -187,7 +187,25 @@
         /*********************************************************************************************/
 		/***************************  Posts Functionalities -- Links  ********************************/
         /*********************************************************************************************/
-        
+		
+		public function linkList($database){
+			
+			$array = array();
+			$sql = "SELECT * FROM links
+					WHERE status = 'Active'";
+			$query = mysqli_query($database->con, $sql);
+			if (!$query) {
+			    header("location: ../cms/post.php?tab=post&page=links&error=true");
+			} else {
+				while($row = mysqli_fetch_array($query)){
+					$array[] = $row;
+				}
+            }
+            
+			return $array;
+			
+		}
+
         /*********************************************************************************************/
 		/***************************  Posts Functionalities -- Categories  ***************************/
         /*********************************************************************************************/
