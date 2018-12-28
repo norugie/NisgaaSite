@@ -191,8 +191,7 @@
 		public function linkList($database){
 			
 			$array = array();
-			$sql = "SELECT * FROM links
-					WHERE status = 'Active'";
+			$sql = "SELECT * FROM links";
 			$query = mysqli_query($database->con, $sql);
 			if (!$query) {
 			    header("location: ../cms/post.php?tab=post&page=links&error=true");
@@ -204,6 +203,38 @@
             
 			return $array;
 			
+		}
+
+		public function disableLink($database, $id, $title){
+			$sql = "UPDATE links SET 
+						   status = 'Inactive'
+					WHERE id = '$id'";
+			$query = mysqli_query($database->con, $sql);
+			if(!$query){
+			    header("location:../cms/post.php?tab=post&page=links&error=true");
+			} else {
+				global $log;
+				$info = "Disabled link ID: " . $title;
+				$log->logInput($database, $info);
+
+				header("location:../cms/post.php?tab=post&page=links&linkDisabled=true");
+			}
+		}
+
+		public function reactivateLink($database, $id, $title){
+			$sql = "UPDATE links SET 
+						   status = 'Active'
+					WHERE id = '$id'";
+			$query = mysqli_query($database->con, $sql);
+			if(!$query){
+			    header("location:../cms/post.php?tab=post&page=links&error=true");
+			} else {
+				global $log;
+				$info = "Reactivated link ID: " . $title;
+				$log->logInput($database, $info);
+
+				header("location:../cms/post.php?tab=post&page=links&linkReactivated=true");
+			}
 		}
 
         /*********************************************************************************************/

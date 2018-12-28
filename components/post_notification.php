@@ -22,6 +22,22 @@
 </div>
 <?php } ?>
 
+<!-- Post Notifications - Links -->
+
+<?php if(isset($_GET['linkDisabled']) && $_SESSION['alert'] == 'alerted'){ ?>
+<div class="alert bg-green alert-dismissible" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    A link has been <b>disabled</b> successfully!
+</div>
+<?php } ?>
+
+<?php if(isset($_GET['linkReactivated']) && $_SESSION['alert'] == 'alerted'){ ?>
+<div class="alert bg-green alert-dismissible" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    A link has been <b>reactivated</b> successfully!
+</div>
+<?php } ?>
+
 <!-- Post Notifications - Categories -->
 
 <?php if(isset($_GET['newCategory']) && $_SESSION['alert'] == 'alerted'){ ?>

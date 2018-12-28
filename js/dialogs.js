@@ -22,6 +22,10 @@ function alertDesign(e){
         showDisablePostConfirm(id, name, event);
     } else if (type === 'delete-media') {
         showDisableMediaConfirm(id, name);
+    } else if (type === 'delete-link'){
+        showDisableLinkConfirm(id, name);
+    } else if (type === 'reopen-link'){
+        showReactivateLinkConfirm(id, name);
     }
 }
 
@@ -188,6 +192,45 @@ function showDisableMediaConfirm(id, name){
     }, function(isConfirm){   
         if (isConfirm){   
             window.location = "../functions/post.php?post=true&mediaDisable=true&id=" + id + "&mediaName=" + name;
+        }
+    
+    });
+}
+
+//Warning for disabling link
+function showDisableLinkConfirm(id, name){
+    swal({
+        title: "Are you sure you want to disable this link?",
+        text: "You will be able to reactivate this media post once archived according to what your account privileges would allow",
+        type: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#F44336",
+        confirmButtonText: "CONFIRM",
+        cancelButtonText: "CANCEL",
+        closeOnConfirm: false,
+        closeOnCancel: true
+    }, function(isConfirm){   
+        if (isConfirm){   
+            window.location = "../functions/post.php?post=true&linkDisable=true&id=" + id + "&linkName=" + name;
+        }
+    
+    });
+}
+
+//Warning for reactivating link
+function showReactivateLinkConfirm(id, name){
+    swal({
+        title: "Are you sure you want to reactivate this link?",
+        type: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#00BCD4",
+        confirmButtonText: "CONFIRM",
+        cancelButtonText: "CANCEL",
+        closeOnConfirm: false,
+        closeOnCancel: true
+    }, function(isConfirm){   
+        if (isConfirm){   
+            window.location = "../functions/post.php?post=true&linkReactivate=true&id=" + id + "&linkName=" + name;
         }
     
     });
