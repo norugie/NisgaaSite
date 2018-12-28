@@ -1,6 +1,6 @@
 <?php 
 
-    $categories = $post->categoryList($database); 
+    $categories = $post->categoryListNoEvent($database); 
     $cats =  json_encode($categories);
 
 ?>

@@ -196,6 +196,24 @@
 			
 			$array = array();
 			$sql = "SELECT * FROM categories
+					WHERE status = 'Active'";
+			$query = mysqli_query($database->con, $sql);
+			if (!$query) {
+			    header("location: ../cms/post.php?tab=post&page=categories&error=true");
+			} else {
+				while($row = mysqli_fetch_array($query)){
+					$array[] = $row;
+				}
+            }
+            
+			return $array;
+			
+		}
+
+		public function categoryListNoEvent($database){
+			
+			$array = array();
+			$sql = "SELECT * FROM categories
 					WHERE status = 'Active'
 					AND id != '1'";
 			$query = mysqli_query($database->con, $sql);
