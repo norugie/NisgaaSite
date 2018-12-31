@@ -181,6 +181,18 @@
 		/***************************  District Functionalities -- Events  ****************************/
         /*********************************************************************************************/
 
+        if(isset($_GET['changeEventView'])){
+
+            if($_SESSION['event_view'] == 'CALENDAR'){
+                $_SESSION['event_view'] = 'LIST';
+            } else {
+                $_SESSION['event_view'] = 'CALENDAR';
+            }
+
+            header("location:../cms/district.php?tab=sd&page=events");
+
+        }
+
         if(isset($_GET['eventDisable'])){
             
             $id = $_GET['id'];

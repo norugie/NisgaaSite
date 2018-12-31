@@ -12,6 +12,7 @@
 			$_SESSION['username'] = $info['username'];
 			$_SESSION['school'] = $info['school'];
 			$_SESSION['alert'] = 'unalerted';
+			$_SESSION['event_view'] = 'LIST';
             
 			if($info['status'] == 'Active'){
                 header("location: ../cms/");
