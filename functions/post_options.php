@@ -104,8 +104,6 @@
 
             } else {
 
-                // Do file upload here
-
                 if(isset($_FILES['edit_link_content'])){
                     $errors = 0;
                     $file_name = $_FILES['edit_link_content']['name'];
