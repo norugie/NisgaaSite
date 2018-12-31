@@ -57,7 +57,7 @@
                                 </div>
                             </div>
                             <div class="row clearfix">
-                                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                     <label for="event_type">Event Type *</label>
                                     <select class="form-control show-tick" name="event_type" id="event_type" onchange="showDateTimeSetup(this);">
                                         <option selected hidden disabled>-- SELECT TYPE FOR THE EVENT --</option>
@@ -66,17 +66,6 @@
                                         <option value="Segmented">Multiple, Segmented</option>
                                     </select>
                                 </div>
-                                <?php if($_SESSION['type'] == '1'){ ?>
-                                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                                        <label for="event_school">Hosting School *</label>
-                                        <select class="form-control show-tick" name="event_school" id="event_school">
-                                            <option selected hidden disabled>-- SELECT HOSTING SCHOOL FOR THE EVENT --</option>
-                                            <?php foreach ($schools as $school): ?>
-                                                <option value="<?php echo $school['id']; ?>"><?php echo $school['school_abbv']; ?></option>
-                                            <?php endforeach; ?>
-                                        </select>
-                                    </div>
-                                <?php } ?>
                             </div>
                         </fieldset>
 
@@ -105,7 +94,7 @@
                             <div id="continuous-type" hidden>
                                 <div class="row clearfix">
                                     <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-                                        <label for="event_date_start_continuous_1">Event Date *</label>
+                                        <label for="event_date_start_continuous_1">Event Date Start *</label>
                                         <div class="form-group">
                                             <div class="form-line">
                                                 <input type="date" class="form-control" id="event_date_start_continuous_1" name="event_date_start_continuous_1" min="<?php echo date('Y-m-d');?>" onchange="dateChange(this);">
@@ -113,7 +102,7 @@
                                         </div>
                                     </div>
                                     <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-                                        <label for="event_date_end_continuous_1">Event Date *</label>
+                                        <label for="event_date_end_continuous_1">Event Date End *</label>
                                         <div class="form-group">
                                             <div class="form-line">
                                                 <input type="date" class="form-control" id="event_date_end_continuous_1" name="event_date_end_continuous_1" min="<?php echo date('Y-m-d');?>">

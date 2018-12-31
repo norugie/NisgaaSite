@@ -204,11 +204,11 @@
             $event_location = mysqli_real_escape_string($database->con, $_POST['event_location']);
             $event_school;
 
-            if(isset($_POST['event_school'])){
-                $event_school = mysqli_real_escape_string($database->con, $_POST['event_school']);
-            } else {
-                $event_school = $_SESSION['school'];
-            }
+			if($_SESSION['type'] == 4){
+				$event_school = $_SESSION['school'];
+			} else {
+				$event_school = 2;
+			}
 
             //Event Post
             $post_title = mysqli_real_escape_string($database->con, $_POST['post_title']);
