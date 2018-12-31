@@ -39,34 +39,6 @@
                                     </div>
                                     <div class="row clearfix">
                                         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                                        <label for="edit-username">Username *</label>
-                                            <div class="form-group">
-                                                <div class="form-line">
-                                                    <input type="text" id="edit-username" class="form-control" name="username" disabled>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
-                                        <label for="edit-password">Password *</label>
-                                            <div class="form-group">
-                                                <div class="form-line">
-                                                    <input type="password" id="edit-password" class="form-control" name="password" disabled>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row clearfix">
-                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                        <label for="edit-email">Email Address *</label>
-                                            <div class="form-group">
-                                                <div class="form-line">
-                                                    <input type="text" id="edit-email" class="form-control" name="email" disabled>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row clearfix">
-                                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                                             <label for="edit-role">Role * </label>
                                             <select class="form-control show-tick" name="role" id="edit-role">
                                                 <option selected hidden disabled>-- SELECT ROLE FOR THE USER --</option>

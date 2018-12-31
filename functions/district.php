@@ -45,7 +45,15 @@
 			$array = array();
 			$gid = $_SESSION['id'];
 
-			$sql = "SELECT users.*, 
+			$sql = "SELECT users.firstname,
+						   users.lastname,
+						   users.username,
+						   users.email,
+						   users.user_type,
+						   users.school,
+						   users.display_picture,
+						   users.status,
+						   users.id, 
 						   roles.role_abbv, 
 						   roles.role_desc, 
 						   schools.school_abbv, 
