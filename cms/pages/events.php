@@ -27,7 +27,7 @@
         <div class="card">
             <div class="header">
                 <button type="button" class="btn bg-blue waves-effect" data-toggle="modal" data-target="#new-event-modal" style="float: right; margin-top: -5px;">ADD AN EVENT</button>
-                <button type="button" class="btn bg-blue-grey waves-effect change-button" style="float: right; margin-top: -5px; margin-right: 10px;"><a href="../functions/district.php?district=true&changeEventView=true" style="color:#fff;">CHANGE VIEW (<?php if($_SESSION['event_view'] == 'LIST'){ echo "CALENDAR"; } else { echo "LIST"; }?>)</a></button>
+                <a href="../functions/district.php?district=true&changeEventView=true" style="color:#fff;"><button type="button" class="btn bg-blue-grey waves-effect change-button" style="float: right; margin-top: -5px; margin-right: 10px;"><?php if($_SESSION['event_view'] == 'LIST'){ echo "CALENDAR"; } else { echo "LIST"; }?> VIEW</button></a>
                 <br>
             </div>
             <div class="body">
