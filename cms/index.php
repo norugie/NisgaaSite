@@ -3,6 +3,8 @@
     require '../functions/common_connector.php';
     if(isset($_SESSION['id']) && isset($_SESSION['type'])){
 
+        require '../functions/dashboard.php';
+        $dashboard = new Dashboard();
 ?>
 
 <!DOCTYPE html>

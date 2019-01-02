@@ -38,57 +38,67 @@
 <div class="row">
     <div class="col-md-5ths col-xs-12 col-sm-6">
         <div class="info-box-3 bg-blue-grey hover-zoom-effect">
-            <div class="icon">
-                <i class="material-icons">face</i>
-            </div>
-            <div class="content">
-                <div class="text">USERS</div>
-                <div class="number">10</div>
-            </div>
+            <a href="district.php?tab=sd&page=users">
+                <div class="icon">
+                    <i class="material-icons">people</i>
+                </div>
+                <div class="content">
+                    <div class="text">USERS</div>
+                    <div class="number">10</div>
+                </div>
+            </a>
         </div>
     </div>
     <div class="col-md-5ths col-xs-12 col-sm-6">
         <div class="info-box-3 bg-blue-grey hover-zoom-effect">
-            <div class="icon">
-                <i class="material-icons">face</i>
-            </div>
-            <div class="content">
-                <div class="text">USERS</div>
-                <div class="number">10</div>
-            </div>
+            <a href="post.php?tab=post&page=blog">
+                <div class="icon">
+                    <i class="material-icons">mode_comment</i>
+                </div>
+                <div class="content">
+                    <div class="text">BLOG POSTS</div>
+                    <div class="number">10</div>
+                </div>
+            </a>
         </div>
     </div>
     <div class="col-md-5ths col-xs-12 col-sm-6">
         <div class="info-box-3 bg-blue-grey hover-zoom-effect">
-            <div class="icon">
-                <i class="material-icons">face</i>
-            </div>
-            <div class="content">
-                <div class="text">USERS</div>
-                <div class="number">10</div>
-            </div>
+            <a href="post.php?tab=post&page=media">
+                <div class="icon">
+                    <i class="material-icons">photo_library</i>
+                </div>
+                <div class="content">
+                    <div class="text">MEDIA POSTS</div>
+                    <div class="number">10</div>
+                </div>
+            </a>
         </div>
     </div>
     <div class="col-md-5ths col-xs-12 col-sm-6">
         <div class="info-box-3 bg-blue-grey hover-zoom-effect">
-            <div class="icon">
-                <i class="material-icons">face</i>
-            </div>
-            <div class="content">
-                <div class="text">USERS</div>
-                <div class="number">10</div>
-            </div>
+            <a href="district.php?tab=sd&page=employment"">
+                <div class="icon">
+                    <i class="material-icons">work</i>
+                </div>
+                <div class="content">
+                    <div class="text">JOBS</div>
+                    <div class="number">10</div>
+                </div>
+            </a>
         </div>
     </div>
     <div class="col-md-5ths col-xs-12 col-sm-6">
         <div class="info-box-3 bg-blue-grey hover-zoom-effect">
-            <div class="icon">
-                <i class="material-icons">face</i>
-            </div>
-            <div class="content">
-                <div class="text">USERS</div>
-                <div class="number">10</div>
-            </div>
+            <a href="district.php?tab=sd&page=events">
+                <div class="icon">
+                    <i class="material-icons">event</i>
+                </div>
+                <div class="content">
+                    <div class="text">EVENTS</div>
+                    <div class="number">10</div>
+                </div>
+            </a>
         </div>
     </div>
 </div>
