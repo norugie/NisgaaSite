@@ -10,12 +10,10 @@
 <div class="row clearfix">
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
         <div class="card">
-            <?php if($_SESSION['type'] == 1){ ?>
-                <div class="header">
-                    <button type="button" class="btn bg-blue waves-effect" data-toggle="modal" data-target="#new-link-modal" style="float: right; margin-top: -5px;">ADD NEW LINK</button>
-                    <br>
-                </div>
-            <?php } ?>
+            <div class="header">
+                <button type="button" class="btn bg-blue waves-effect" data-toggle="modal" data-target="#new-link-modal" style="float: right; margin-top: -5px;">ADD NEW LINK</button>
+                <br>
+            </div>
             <div class="body">
                 <div class="table-responsive">
                     <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
@@ -25,6 +23,7 @@
                                 <th>Link Type</th>
                                 <th>Link Tag</th>
                                 <th>Link Description</th>
+                                <th>School</th>
                                 <?php if($_SESSION['type'] != 3){ ?>
                                 <th>Modify</th>
                                 <th>Delete</th>
@@ -37,6 +36,7 @@
                                 <th>Link Type</th>
                                 <th>Link Tag</th>
                                 <th>Link Description</th>
+                                <th>School</th>
                                 <?php if($_SESSION['type'] != 3){ ?>
                                 <th>Modify</th>
                                 <th>Delete</th>
@@ -50,6 +50,7 @@
                                     <td><?php echo $link['link_type']; ?></td>
                                     <td><?php echo $link['link_tag']; ?></td>
                                     <td><?php echo $link['link_desc']; ?></td>
+                                    <td><?php echo $link['school_abbv']; ?></td>
                                     <?php if($_SESSION['type'] != 3){ ?>
                                         <td><center><button type="button" class="btn bg-green waves-effect" data-toggle="modal" data-target="#edit-link-<?php if($link['link_type'] == 'Link'){?>link<?php } else { ?>file<?php } ?>-modal" data-values="<?php echo htmlspecialchars(json_encode($link)); ?>" onclick="editLink(this);" <?php if($link['status'] == 'Inactive') echo "disabled"; ?>>MODIFY</button></center></td> 
                                         <?php if($link['status'] == 'Active'){ ?>

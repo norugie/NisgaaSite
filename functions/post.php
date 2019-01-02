@@ -198,7 +198,12 @@
 		public function linkList($database){
 			
 			$array = array();
-			$sql = "SELECT * FROM links";
+			$sql = "SELECT links.*,
+						   schools.school_abbv 
+					FROM links
+					LEFT JOIN schools
+					ON (schools.id = links.school)
+					WHERE status = 'Active'";
 			$query = mysqli_query($database->con, $sql);
 			if (!$query) {
 			    header("location: ../cms/post.php?tab=post&page=links&error=true");

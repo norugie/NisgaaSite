@@ -9,12 +9,10 @@
 <div class="row clearfix">
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
         <div class="card">
-            <?php if($_SESSION['type'] == 1){ ?>
                 <div class="header">
                     <button type="button" class="btn bg-blue waves-effect" data-toggle="modal" data-target="#new-category-modal" style="float: right; margin-top: -5px;">ADD NEW CATEGORY</button>
                     <br>
                 </div>
-            <?php } ?>
             <div class="body">
                 <div class="table-responsive">
                     <table class="table table-bordered table-striped table-hover js-basic-example dataTable">

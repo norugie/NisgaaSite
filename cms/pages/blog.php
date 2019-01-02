@@ -85,13 +85,11 @@
                                                     <?php } ?>
                                                     <?php } ?>
                                                     
-                                                    <?php if($_SESSION['type'] == 1){ ?>
                                                     <li role="separator" class="divider"></li>
                                                     <?php if($cats[0][0] != 'Event'){ ?>
                                                     <li><a href="#" data-type="delete-post" data-id="<?php echo $p['id']; ?>" data-name="<?php echo $p['post_id']; ?>" data-event="0" onclick="alertDesign(this);">Delete Post</a></li>
                                                     <?php } else { ?>
                                                     <li><a href="#" data-type="delete-post" data-id="<?php echo $p['id']; ?>" data-name="<?php echo $p['post_id']; ?>" data-event="1" onclick="alertDesign(this);">Delete Post</a></li>
-                                                    <?php } ?>
                                                     <?php } ?>
                                                 </ul>
                                             </div>
