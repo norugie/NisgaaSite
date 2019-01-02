@@ -55,8 +55,12 @@
                                                     VIEW LIST <span class="caret"></span>
                                                 </button>
                                                 <ul class="dropdown-menu">
+                                                    <?php if(count($post->postsPerCategoryList($database, $cat['id'])) > 0){ ?>
                                                     <li><a href="post.php?tab=post&page=blog&id=<?php echo $cat['id']; ?>">View List (Posts)</a></li>
+                                                    <?php } ?>
+                                                    <?php if(count($post->mediaPerCategoryList($database, $cat['id'])) > 0){ ?>
                                                     <li><a href="post.php?tab=post&page=media&id=<?php echo $cat['id']; ?>">View List (Media)</a></li>
+                                                    <?php } ?>
                                                 </ul>
                                             </div>
                                         </center>
