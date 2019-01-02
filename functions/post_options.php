@@ -112,8 +112,6 @@
                     $file_type = $_FILES['edit_link_content']['type'];
                     $file_ext = strtolower(end(explode('.', $_FILES['edit_link_content']['name'])));
                     
-                    $expensions = array("doc","docx","pdf");
-                    
                     if($file_size > 2097152){
                         $errors = 1;
                     }
@@ -122,6 +120,49 @@
                         move_uploaded_file($file_tmp, "../links/".$file_name);
                         $link_content = $file_name;
                         $post->editLink($database, $id, $link_id, $link_name, $link_desc, $link_content);
+                    } else {
+                        header("location:../cms/post.php?tab=sd&page=links&error=true");
+                    }
+                } else {
+                    header("location:../cms/post.php?tab=sd&page=links&error=true");
+                }   
+                
+            }
+
+        }
+
+        if(isset($_GET['addLink'])){
+
+            $link_name = mysqli_real_escape_string($database->con, $_POST['link_title']);
+            $link_desc = mysqli_real_escape_string($database->con, $_POST['link_desc']);
+            $link_type = mysqli_real_escape_string($database->con, $_POST['link_type']);
+            $link_tag = mysqli_real_escape_string($database->con, $_POST['link_tag']);
+            $link_content;
+
+            if(!file_exists($_FILES['link_content']['tmp_name']) || !is_uploaded_file($_FILES['link_content']['tmp_name'])){
+
+                $link_content = mysqli_real_escape_string($database->con, $_POST['link_content']);
+                
+                $post->addLink($database, $link_name, $link_desc, $link_content, $link_type, $link_tag);
+
+            } else {
+
+                if(isset($_FILES['link_content'])){
+                    $errors = 0;
+                    $file_name = $_FILES['link_content']['name'];
+                    $file_size = $_FILES['link_content']['size'];
+                    $file_tmp = $_FILES['link_content']['tmp_name'];
+                    $file_type = $_FILES['link_content']['type'];
+                    $file_ext = strtolower(end(explode('.', $_FILES['link_content']['name'])));
+                    
+                    if($file_size > 2097152){
+                        $errors = 1;
+                    }
+                    
+                    if($errors == 0){
+                        move_uploaded_file($file_tmp, "../links/".$file_name);
+                        $link_content = $file_name;
+                        $post->addLink($database, $link_name, $link_desc, $link_content, $link_type, $link_tag);
                     } else {
                         header("location:../cms/post.php?tab=sd&page=links&error=true");
                     }

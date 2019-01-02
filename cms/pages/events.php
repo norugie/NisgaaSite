@@ -11,7 +11,7 @@
 
     .wizard > .content {
         border: 0!important;
-        min-height: 450px!important;
+        min-height: 500px!important;
     }
 
     .change-button a:hover {

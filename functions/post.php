@@ -262,6 +262,31 @@
 			}
 		}
 
+		public function addLink($database, $link_name, $link_desc, $link_content, $link_type, $link_tag){
+			$link_id = 'LNK' . rand(1111111,9999999);
+			$user = $_SESSION['id'];
+			$school;
+
+			if($_SESSION['type'] == 4){
+				$school = $_SESSION['school'];
+			} else {
+				$school = 2;
+			}
+
+			$sql = "INSERT INTO links
+					VALUES (null, '$link_id', '$link_name', '$link_type', '$link_tag', '$link_desc', '$link_content', '$user', '$school', 'Active')";
+			$query = mysqli_query($database->con, $sql);
+			if(!$query){
+			    header("location:../cms/post.php?tab=post&page=links&error=true");
+			} else {
+				global $log;
+				$info = "Created a new link: " . $link_id;
+				$log->logInput($database, $info);
+
+				header("location:../cms/post.php?tab=post&page=links&addLink=true");
+			}			
+		}
+
         /*********************************************************************************************/
 		/***************************  Posts Functionalities -- Categories  ***************************/
         /*********************************************************************************************/

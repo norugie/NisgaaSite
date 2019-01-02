@@ -30,7 +30,7 @@
                             </div>
                             <div class="row clearfix">
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                    <label for="edit_link_desc_file">Link Description *</label>
+                                    <label for="edit_link_desc_file">Link Description</label>
                                     <div class="form-group">
                                         <div class="form-line">
                                             <textarea rows="2" class="form-control no-resize" id="edit_link_desc_file" name="edit_link_desc"></textarea>
@@ -86,7 +86,7 @@
                             <input type="text" id="edit_link_id_name_link" name="edit_link_id_name" hidden>
                             <div class="row clearfix">
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                    <label for="edit_link_title_link">Post Title *</label>
+                                    <label for="edit_link_title_link">Link Title *</label>
                                     <div class="form-group">
                                         <div class="form-line">
                                             <input type="text" class="form-control" id="edit_link_title_link" name="edit_link_title" required>
@@ -96,7 +96,7 @@
                             </div>
                             <div class="row clearfix">
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                    <label for="edit_link_desc_link">Link Description *</label>
+                                    <label for="edit_link_desc_link">Link Description</label>
                                     <div class="form-group">
                                         <div class="form-line">
                                             <textarea rows="2" class="form-control no-resize" id="edit_link_desc_link" name="edit_link_desc"></textarea>

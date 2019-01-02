@@ -14,7 +14,7 @@
                 <!-- Inline Layout -->
                 <div class="row clearfix">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <form action="../functions/post.php?post=true&addLink=true" method="POST" enctype="multipart/form-data">
+                        <form class="form_validate" action="../functions/post.php?post=true&addLink=true" method="POST" enctype="multipart/form-data">
                             <div class="row clearfix">
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                     <label for="link_title">Link Title *</label>
@@ -27,7 +27,7 @@
                             </div>
                             <div class="row clearfix">
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                    <label for="link_desc">Link Description *</label>
+                                    <label for="link_desc">Link Description</label>
                                     <div class="form-group">
                                         <div class="form-line">
                                             <textarea rows="2" class="form-control no-resize" id="link_desc" name="link_desc"></textarea>

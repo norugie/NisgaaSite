@@ -87,7 +87,19 @@
 
     <!-- Custom Js -->
     <script src="js/admin.js"></script>
-    <script src="js/pages/examples/sign-in.js"></script>
+    <script>
+        $(function () {
+            $('#sign_in').validate({
+                unhighlight: function (input) {
+                    $(input).parents('.form-line').removeClass('error');
+                },
+                errorPlacement: function (error, element) {
+                    $(element).parents('.input-group').append(error);
+                }
+            });
+        });
+    </script>
+
 </body>
 
 </html>
