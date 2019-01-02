@@ -108,6 +108,7 @@
                     </li>
                 </ul>
             </li>
+            <?php if($_SESSION['type'] != 3){ ?> 
             <li id="web">
                 <a href="javascript:void(0);" class="menu-toggle">
                     <i class="material-icons">public</i>
@@ -140,6 +141,7 @@
                     </li>
                 </ul>
             </li>
+            <?php } ?>
         </ul>
     </div>
     <!-- #Menu -->
