@@ -47,6 +47,8 @@
 
             <!-- Page Content -->
 
+                <?php require 'pages/dashboard.php'; ?>
+            
             <!-- #END# Page Content -->
 
         </div>
