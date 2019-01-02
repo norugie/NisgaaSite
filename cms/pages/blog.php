@@ -83,13 +83,13 @@
                                                     <?php if($cats[0][0] != 'Event'){ ?>
                                                     <li><a href="#" data-toggle="modal" data-target="#edit-post-cats-modal" onclick="editPostCats(<?php echo htmlspecialchars(json_encode($p['id'])); ?>,<?php echo htmlspecialchars(json_encode($p['post_id'])); ?>, 1);">Edit Post Categories</a></li>
                                                     <?php } ?>
-                                                    <?php } ?>
                                                     
                                                     <li role="separator" class="divider"></li>
                                                     <?php if($cats[0][0] != 'Event'){ ?>
                                                     <li><a href="#" data-type="delete-post" data-id="<?php echo $p['id']; ?>" data-name="<?php echo $p['post_id']; ?>" data-event="0" onclick="alertDesign(this);">Delete Post</a></li>
                                                     <?php } else { ?>
                                                     <li><a href="#" data-type="delete-post" data-id="<?php echo $p['id']; ?>" data-name="<?php echo $p['post_id']; ?>" data-event="1" onclick="alertDesign(this);">Delete Post</a></li>
+                                                    <?php } ?>
                                                     <?php } ?>
                                                 </ul>
                                             </div>

@@ -197,13 +197,21 @@
 		
 		public function linkList($database){
 			
+			$school;
+
+			if($_SESSION['type'] == 4){
+				$school = $_SESSION['school'];
+			} else {
+				$school = 2;
+			}
+
 			$array = array();
 			$sql = "SELECT links.*,
 						   schools.school_abbv 
 					FROM links
 					LEFT JOIN schools
 					ON (schools.id = links.school)
-					WHERE status = 'Active'";
+					WHERE links.school = '$school'";
 			$query = mysqli_query($database->con, $sql);
 			if (!$query) {
 			    header("location: ../cms/post.php?tab=post&page=links&error=true");

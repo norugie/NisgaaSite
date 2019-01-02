@@ -201,7 +201,7 @@ function showDisableMediaConfirm(id, name){
 function showDisableLinkConfirm(id, name){
     swal({
         title: "Are you sure you want to disable this link?",
-        text: "You will be able to reactivate this link once archived according to what your account privileges would allow",
+        text: "You will be able to reactivate this link once archived",
         type: "warning",
         showCancelButton: true,
         confirmButtonColor: "#F44336",
