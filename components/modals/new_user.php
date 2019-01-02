@@ -16,7 +16,7 @@
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <div>
                             <div>
-                                <form action="../functions/district.php?district=true&addUser=true" method="POST">
+                                <form class="new_form_validate" action="../functions/district.php?district=true&addUser=true" method="POST">
                                     <div class="row clearfix">
                                         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                                             <label for="firstname">First Name *</label>

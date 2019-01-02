@@ -31,7 +31,16 @@ $('#bs_datepicker_range_container_event').datepicker({
 });
 
 // Custom JQuery Validator
-$('.form_validate').validate({
+$('.edit_form_validate').validate({
+    unhighlight: function (input) {
+        $(input).parents('.form-line').removeClass('error');
+    },
+    errorPlacement: function (error, element) {
+        $(element).parents('.form-group').append(error);
+    }
+});
+
+$('.new_form_validate').validate({
     unhighlight: function (input) {
         $(input).parents('.form-line').removeClass('error');
     },

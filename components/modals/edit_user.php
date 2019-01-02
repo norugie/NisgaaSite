@@ -16,7 +16,7 @@
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <div>
                             <div>
-                                <form action="../functions/district.php?district=true&editUser=true" method="POST">
+                                <form class="edit_form_validate" action="../functions/district.php?district=true&editUser=true" method="POST">
                                     <input type="text" id="edit-id" name="id" hidden>
                                     <input type="text" id="edit-username-hidden" name="username-hidden" hidden>
                                     <div class="row clearfix">

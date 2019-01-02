@@ -81,7 +81,7 @@
                 <div class="row clearfix">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 
-                        <form action="../functions/post.php?post=true&editLink=true" method="POST">
+                        <form class="edit_form_validate" action="../functions/post.php?post=true&editLink=true" method="POST">
                             <input type="text" id="edit_link_id_link" name="edit_link_id" hidden>
                             <input type="text" id="edit_link_id_name_link" name="edit_link_id_name" hidden>
                             <div class="row clearfix">

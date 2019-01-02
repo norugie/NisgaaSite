@@ -30,7 +30,7 @@
                 <!-- Inline Layout -->
                 <div class="row clearfix">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <form action="../functions/post.php?post=true&addPost=true" method="POST">
+                        <form class="new_form_validate" action="../functions/post.php?post=true&addPost=true" method="POST">
                             <div class="row clearfix">
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                     <label for="post_title">Post Title *</label>

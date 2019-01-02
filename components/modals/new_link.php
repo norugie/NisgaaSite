@@ -14,7 +14,7 @@
                 <!-- Inline Layout -->
                 <div class="row clearfix">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <form class="form_validate" action="../functions/post.php?post=true&addLink=true" method="POST" enctype="multipart/form-data">
+                        <form class="new_form_validate" action="../functions/post.php?post=true&addLink=true" method="POST" enctype="multipart/form-data">
                             <div class="row clearfix">
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                     <label for="link_title">Link Title *</label>

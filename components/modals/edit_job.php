@@ -94,7 +94,7 @@
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <div>
                             <div>
-                                <form action="../functions/district.php?district=true&jobReopen=true" method="POST">
+                                <form class="edit_form_validate" action="../functions/district.php?district=true&jobReopen=true" method="POST">
                                     <input type="text" id="edit-job-id" name="jobid" hidden>
                                     <input type="text" id="edit-job-name" name="jobid-name" hidden>
                                     <input type="text" id="edit-job-identifier" name="identifier" hidden>

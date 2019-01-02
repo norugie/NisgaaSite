@@ -16,7 +16,7 @@
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <div>
                             <div>
-                                <form class="form_validate" action="../functions/post.php?post=true&newCategory=true" method="POST">
+                                <form class="new_form_validate" action="../functions/post.php?post=true&newCategory=true" method="POST">
                                     <div class="row clearfix">
                                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                             <label for="cat_name">Category Name *</label>
