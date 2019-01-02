@@ -47,9 +47,7 @@
                                     <td><?php echo $cat['status']; ?></td>
                                     <td><?php echo $countPosts = count($post->postsAndMediaPerCategoryCount($database, $cat['id'])); ?></td>
                                     <td>
-                                    <!-- <center><a href="post.php?tab=post&page=blog&id=<?php echo $cat['id']; ?>"><button type="button" class="btn bg-cyan waves-effect" <?php if($countPosts == 0){ echo "disabled"; } ?>>VIEW LIST</button></a></center> -->
-
-                                    <center>
+                                        <center>
                                             <div class="btn-group">
                                                 <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" <?php if($countPosts == 0){ echo "disabled"; } ?>>
                                                     VIEW LIST <span class="caret"></span>
