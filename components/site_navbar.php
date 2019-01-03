@@ -25,7 +25,7 @@
     <button type="button" data-toggle="collapse" data-target="#navigation" class="navbar-toggler btn-template-outlined"><span class="sr-only">Toggle navigation</span><i class="fa fa-align-justify"></i></button>
     <div id="navigation" class="navbar-collapse collapse">
         <ul class="nav navbar-nav ml-auto">
-        <li class="nav-item dropdown active"><a href="javascript: void(0)" data-toggle="dropdown" class="dropdown-toggle">Home <b class="caret"></b></a>
+        <li class="nav-item dropdown active"><a href="javascript: void(0)" data-toggle="dropdown" class="dropdown-toggle">Our District <b class="caret"></b></a>
             <ul class="dropdown-menu">
             <li class="dropdown-item"><a href="index.html" class="nav-link">Option 1: Default Page</a></li>
             <li class="dropdown-item"><a href="index2.html" class="nav-link">Option 2: Application</a></li>
@@ -34,12 +34,11 @@
             <li class="dropdown-item"><a href="index5.html" class="nav-link">Option 5: Portfolio</a></li>
             </ul>
         </li>
-        <li class="nav-item dropdown menu-large"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Features<b class="caret"></b></a>
+        <li class="nav-item dropdown menu-large"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Schools<b class="caret"></b></a>
             <ul class="dropdown-menu megamenu">
             <li>
                 <div class="row">
-                <div class="col-lg-6"><img src="img/template-easy-customize.png" alt="" class="img-fluid d-none d-lg-block"></div>
-                <div class="col-lg-3 col-md-6">
+                <div class="col-lg-6 col-md-6">
                     <h5>Shortcodes</h5>
                     <ul class="list-unstyled mb-3">
                     <li class="nav-item"><a href="template-accordions.html" class="nav-link">Accordions</a></li>
@@ -52,7 +51,7 @@
                     <li class="nav-item"><a href="template-typography.html" class="nav-link">Typography</a></li>
                     </ul>
                 </div>
-                <div class="col-lg-3 col-md-6">
+                <div class="col-lg-6 col-md-6">
                     <h5>Header variations</h5>
                     <ul class="list-unstyled mb-3">
                     <li class="nav-item"><a href="template-header-default.html" class="nav-link">Default sticky header</a></li>
@@ -64,7 +63,7 @@
             </li>
             </ul>
         </li>
-        <li class="nav-item dropdown menu-large"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Portfolio <b class="caret"></b></a>
+        <li class="nav-item dropdown menu-large"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Resources <b class="caret"></b></a>
             <ul class="dropdown-menu megamenu">
             <li>
                 <div class="row">
@@ -100,7 +99,7 @@
             </ul>
         </li>
         <!-- ========== FULL WIDTH MEGAMENU ==================-->
-        <li class="nav-item dropdown menu-large"><a href="#" data-toggle="dropdown" data-hover="dropdown" data-delay="200" class="dropdown-toggle">All Pages <b class="caret"></b></a>
+        <li class="nav-item dropdown menu-large"><a href="#" data-toggle="dropdown" data-hover="dropdown" data-delay="200" class="dropdown-toggle">Blog <b class="caret"></b></a>
             <ul class="dropdown-menu megamenu">
             <li>
                 <div class="row">
@@ -191,15 +190,8 @@
             </ul>
         </li>
         <!-- ========== FULL WIDTH MEGAMENU END ==================-->
-        <!-- ========== Contact dropdown ==================-->
-        <li class="nav-item dropdown"><a href="javascript: void(0)" data-toggle="dropdown" class="dropdown-toggle">Contact <b class="caret"></b></a>
-            <ul class="dropdown-menu">
-            <li class="dropdown-item"><a href="contact.html" class="nav-link">Contact option 1</a></li>
-            <li class="dropdown-item"><a href="contact2.html" class="nav-link">Contact option 2</a></li>
-            <li class="dropdown-item"><a href="contact3.html" class="nav-link">Contact option 3</a></li>
-            </ul>
-        </li>
-        <!-- ========== Contact dropdown end ==================-->
+        <li class="nav-item"><a href="javascript: void(0)">Employment</a></li>
+        <li class="nav-item"><a href="javascript: void(0)">Contact</a></li>
         </ul>
     </div>
     <div id="search" class="collapse clearfix">
