@@ -109,6 +109,8 @@
 
 <!-- Custom Javascript -->
 <script src="js/script.js"></script>
+<script src="js/front.js"></script>
+
 
 </body>
 </html>

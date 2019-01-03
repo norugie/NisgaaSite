@@ -18,7 +18,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-12 d-none d-sm-block" style="padding: 86px 0;"></div>
+            <div class="col-md-12 d-none d-sm-block" style="padding: 80px 0;"></div>
         </div>
         </div>
     </div>

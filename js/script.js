@@ -5,7 +5,7 @@ $(document).ready(function(){
         items: 1,
         loop: true,
         autoplay: true,
-        autoplayTimeout: 3000,
+        autoplayTimeout: 3500,
         dots: false
     });
 });
