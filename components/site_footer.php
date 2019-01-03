@@ -4,18 +4,61 @@
         <div class="row">
         <div class="col-lg-3">
             <h4 class="h6">SD92 (NISGA'A)</h4>
-            <p class="text-uppercase">13/25 New Avenue <br>Newtown upon River <br>45Y 73J <br>England <br><strong>Great Britain</strong></p>
+            <p class="text-uppercase">5002 Skateen Avenue <br>Gitlaxt'aamiks <br>British Columbia <br>V0J 1A0 <br>Canada </p>
             <hr class="d-block d-lg-none">
         </div>
-        <div class="col-lg-3">
+        <div class="col-lg-4">
             <h4 class="h6">Contact Us</h4>
-            <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+            <ul class="list-unstyled footer-blog-list">
+            <li class="d-flex align-items-center">
+                <div class="text">
+                <h5 class="mb-0">
+                <div class="row">
+                    <div class="col-lg-2">
+                        <i class="fa fa-phone fa-lg"></i>
+                    </div>
+                    <div class="col-lg-10">
+                        <a href="post.html">[school district phone]</a>
+                    </div>
+                </div>
+                </h5>
+                </div>
+            </li>
+            <li class="d-flex align-items-center">
+                <div class="text">
+                    <h5 class="mb-0">
+                    <div class="row">
+                        <div class="col-lg-2">
+                            <i class="fa fa-envelope fa-lg"></i>
+                        </div>
+                        <div class="col-lg-10">
+                            <a href="post.html">[school district email]</a>
+                        </div>
+                    </div>
+                    </h5>
+                </div>
+            </li>
+            <li class="d-flex align-items-center">
+                <div class="text">
+                    <h5 class="mb-0">
+                    <div class="row">
+                        <div class="col-lg-2">
+                            <i class="fa fa-facebook fa-lg"></i>
+                        </div>
+                        <div class="col-lg-10">
+                            <a href="post.html">[school district fb page]</a>
+                        </div>
+                    </div>
+                    </h5>
+                </div>
+            </li>
+            </ul>
             <hr>
             <a href="contact.html" class="btn btn-template-main">Go to contact page</a>
 
             <hr class="d-block d-lg-none">
         </div>
-        <div class="col-lg-3">
+        <div class="col-lg-5">
             <h4 class="h6">Recent Posts</h4>
             <ul class="list-unstyled footer-blog-list">
             <li class="d-flex align-items-center">
