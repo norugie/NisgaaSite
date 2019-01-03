@@ -25,14 +25,14 @@
     <button type="button" data-toggle="collapse" data-target="#navigation" class="navbar-toggler btn-template-outlined"><span class="sr-only">Toggle navigation</span><i class="fa fa-align-justify"></i></button>
     <div id="navigation" class="navbar-collapse collapse">
         <ul class="nav navbar-nav ml-auto">
-        <li class="nav-item dropdown menu-large active"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Our District <b class="caret"></b></a>
+        <li class="nav-item dropdown menu-large"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Our District <b class="caret"></b></a>
             <ul class="dropdown-menu megamenu">
             <li>
                 <div class="row">
                 <div class="col-lg-6">
                     <h5>District Information</h5>
                     <ul class="list-unstyled mb-3">
-                    <li class="nav-item"><a href="javascript: void(0)" class="nav-link">About Us</a></li>
+                    <li class="nav-item"><a href="javascript: void(0)" class="nav-link">About</a></li>
                     <li class="nav-item"><a href="javascript: void(0)" class="nav-link">Inquiries</a></li>
                     <li class="nav-item"><a href="javascript: void(0)" class="nav-link">Contact Us</a></li>
                     </ul>

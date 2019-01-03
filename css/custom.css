@@ -9,3 +9,7 @@
 .dark-mask.mask-primary {
     background: rgba(218, 77, 77, 0.65)!important;
 }
+
+.copyrights {
+    padding: 15px 0!important;
+}
