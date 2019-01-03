@@ -39,7 +39,7 @@
 <body class="login-page">
     <div class="login-box">
         <div class="logo">
-            <a href="javascript:void(0);">SD92<b>Nisga'a</b></a>
+            <a href="/">SD92<b>Nisga'a</b></a>
             <small>A Content Management System for SD92 (Nisga'a)</small>
         </div>
         <?php require 'components/error_notification.php'; ?>
