@@ -21,7 +21,7 @@
 <!-- Navbar Start-->
 <header class="nav-holder make-sticky">
 <div id="navbar" role="navigation" class="navbar navbar-expand-lg">
-    <div class="container"><a href="index.html" class="navbar-brand home"><img src="img/logo.png" alt="Universal logo" class="d-none d-md-inline-block"><img src="img/logo-small.png" alt="Universal logo" class="d-inline-block d-md-none"><span class="sr-only">Universal - go to homepage</span></a>
+    <div class="container"><a href="index.html" class="navbar-brand home"><img src="nisgaa-icon-banner.png" alt="Universal logo" class="d-none d-md-inline-block"><img src="nisgaa-icon.png" alt="Universal logo" class="d-inline-block d-md-none"><span class="sr-only">Universal - go to homepage</span></a>
     <button type="button" data-toggle="collapse" data-target="#navigation" class="navbar-toggler btn-template-outlined"><span class="sr-only">Toggle navigation</span><i class="fa fa-align-justify"></i></button>
     <div id="navigation" class="navbar-collapse collapse">
         <ul class="nav navbar-nav ml-auto">
