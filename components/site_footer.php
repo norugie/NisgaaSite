@@ -14,10 +14,10 @@
                 <div class="text">
                 <h5 class="mb-0">
                 <div class="row">
-                    <div class="col-lg-2">
+                    <div class="col-sm-2">
                         <i class="fa fa-phone fa-lg"></i>
                     </div>
-                    <div class="col-lg-10">
+                    <div class="col-sm-10">
                         <a href="post.html">[school district phone]</a>
                     </div>
                 </div>
@@ -28,10 +28,10 @@
                 <div class="text">
                     <h5 class="mb-0">
                     <div class="row">
-                        <div class="col-lg-2">
+                        <div class="col-sm-2">
                             <i class="fa fa-envelope fa-lg"></i>
                         </div>
-                        <div class="col-lg-10">
+                        <div class="col-sm-10">
                             <a href="post.html">[school district email]</a>
                         </div>
                     </div>
@@ -42,10 +42,10 @@
                 <div class="text">
                     <h5 class="mb-0">
                     <div class="row">
-                        <div class="col-lg-2">
+                        <div class="col-sm-2">
                             <i class="fa fa-facebook fa-lg"></i>
                         </div>
-                        <div class="col-lg-10">
+                        <div class="col-sm-10">
                             <a href="post.html">[school district fb page]</a>
                         </div>
                     </div>
