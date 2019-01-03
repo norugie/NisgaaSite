@@ -15,7 +15,10 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,700">
         <!-- Bootstrap Select-->
         <link rel="stylesheet" href="plugins/bootstrap-select/css/bootstrap-select.min.css">
-        <!-- theme stylesheet-->
+        <!-- Slick Carousel -->
+        <link rel="stylesheet" type="text/css" href="plugins/slick/slick.css"/>
+        <link rel="stylesheet" type="text/css" href="plugins/slick/slick-theme.css"/>
+        <!-- Theme stylesheet-->
         <link rel="stylesheet" href="css/themes/style.red.css" id="theme-stylesheet">
         <!-- Custom stylesheet - for your changes-->
         <link rel="stylesheet" href="css/custom.css">

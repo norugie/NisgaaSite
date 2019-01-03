@@ -104,6 +104,10 @@
 <script src="plugins/jquery/jquery.min.js"></script>
 <script src="plugins/bootstrap-v4/js/bootstrap.min.js"></script>
 <script src="plugins/bootstrap-select/js/bootstrap-select.min.js"></script>
+<script src="plugins/slick/slick/slick.min.js"></script>
+
+<!-- Custom Javascript -->
+<script src="js/script.js"></script>
 
 </body>
 </html>

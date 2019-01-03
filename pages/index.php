@@ -24,6 +24,7 @@
     </div>
 </section>
 <!-- JUMBOTRON END -->
+
 <!-- UPCOMING EVENTS -->
 <div class="get-it">
     <div class="container">
@@ -31,8 +32,22 @@
             <div class="col-lg-4 text-center p-3">
                 <h3>Upcoming Events:</h3>
             </div>
-            <div class="col-lg-8 text-center p-3"></div>
+            <div class="col-lg-8 text-center p-3">
+
+                <!-- Owl Carousel -->
+                <div class="events-carousel">
+                    <div> Your Content </div>
+                    <div> Your Content </div>
+                    <div> Your Content </div>
+                    <div> Your Content </div>
+                    <div> Your Content </div>
+                    <div> Your Content </div>
+                    <div> Your Content </div>
+                </div>
+
+            </div>
         </div>
     </div>
 </div>
+
 <!-- UPCOMING EVENTS END -->
