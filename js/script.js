@@ -1,5 +1,11 @@
-// Slick Carousel
+// Owl Carousel
 
 $(document).ready(function(){
-    $(".events-carousel").slick();
+    $(".owl-carousel").owlCarousel({
+        items: 1,
+        loop: true,
+        autoplay: true,
+        autoplayTimeout: 3000,
+        dots: false
+    });
 });

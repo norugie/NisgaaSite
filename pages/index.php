@@ -35,14 +35,35 @@
             <div class="col-lg-8 text-center p-3">
 
                 <!-- Owl Carousel -->
-                <div class="events-carousel">
-                    <div> Your Content </div>
-                    <div> Your Content </div>
-                    <div> Your Content </div>
-                    <div> Your Content </div>
-                    <div> Your Content </div>
-                    <div> Your Content </div>
-                    <div> Your Content </div>
+                <div class="owl-carousel">
+                    <!-- Carousel Items -->
+                    <div class="row">
+                        <div class="col-md-9">
+                            <h4 style="margin:0;">New Event</h4>
+                            <p class="text-uppercase" style="margin:0;">10 January 2018</p>
+                        </div>
+                        <div class="col-md-2">
+                            <a href="#" class="btn btn-template-outlined-white">Event Info</a>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-9">
+                            <h4 style="margin:0;">Another Event</h4>
+                            <p class="text-uppercase" style="margin:0;">13 January 2018</p>
+                        </div>
+                        <div class="col-md-2">
+                            <a href="#" class="btn btn-template-outlined-white">Event Info</a>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-9">
+                            <h4 style="margin:0;">New Another Event</h4>
+                            <p class="text-uppercase" style="margin:0;">15 January 2018</p>
+                        </div>
+                        <div class="col-md-2">
+                            <a href="#" class="btn btn-template-outlined-white">Event Info</a>
+                        </div>
+                    </div>
                 </div>
 
             </div>
@@ -51,3 +72,4 @@
 </div>
 
 <!-- UPCOMING EVENTS END -->
+
