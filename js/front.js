@@ -178,16 +178,6 @@ $(function () {
         }
     });
 
-
-    // ------------------------------------------------------- //
-    // jQuery Counter Up
-    // ------------------------------------------------------ //
-    $('.counter').counterUp({
-        delay: 10,
-        time: 1000
-    });
-
-
     // ------------------------------------------------------- //
     // click on the box activates the radio
     // ------------------------------------------------------ //
@@ -216,59 +206,6 @@ $(function () {
         dots: false,
         autoplay: true,
         thumbsPrerendered: true
-    });
-
-
-    // ------------------------------------------------------ //
-    // For demo purposes, can be deleted
-    // ------------------------------------------------------ //
-
-    var stylesheet = $('link#theme-stylesheet');
-    $("<link id='new-stylesheet' rel='stylesheet'>").insertAfter(stylesheet);
-    var alternateColour = $('link#new-stylesheet');
-
-    if ($.cookie("theme_csspath")) {
-        alternateColour.attr("href", $.cookie("theme_csspath"));
-    }
-
-    $("#colour").change(function () {
-
-        if ($(this).val() !== '') {
-
-            var theme_csspath = 'css/style.' + $(this).val() + '.css';
-
-            alternateColour.attr("href", theme_csspath);
-
-            $.cookie("theme_csspath", theme_csspath, {
-                expires: 365,
-                path: document.URL.substr(0, document.URL.lastIndexOf('/'))
-            });
-
-        }
-
-        return false;
-    });
-
-    if ($.cookie("theme_layout")) {
-        $('body').addClass($.cookie("theme_layout"));
-    }
-
-    $("#layout").change(function () {
-
-        if ($(this).val() !== '') {
-
-            var theme_layout = $(this).val();
-
-            $('body').removeClass('wide');
-            $('body').removeClass('boxed');
-
-            $('body').addClass(theme_layout);
-
-            $.cookie("theme_layout", theme_layout, {
-                expires: 365,
-                path: document.URL.substr(0, document.URL.lastIndexOf('/'))
-            });
-        }
     });
 
 });

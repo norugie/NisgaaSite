@@ -1,3 +1,5 @@
+/*-- HOME PAGE CUSTOM CSS --*/
+
 .social-custom {
     margin-left: 10px!important;
 }
@@ -16,4 +18,45 @@
 
 .get-it {
     padding: 25px 0!important;
+}
+
+.sidebar-jumbotron {
+    background: #da4d4d;
+    color: #fff;
+    padding: 15px;
+}
+
+.quick-links {
+    -webkit-column-count: 2; /* Chrome, Safari, Opera */
+    -moz-column-count: 2; /* Firefox */
+    column-count: 2;
+
+    -moz-column-fill: auto; /* Firefox */
+    column-fill: auto;
+}
+
+
+.an-items > p {
+    font-size: 14px;
+}
+
+@media screen and (min-width:768px){
+    .sidebar-jumbotron {
+        height: calc(100% + 128px);
+        margin-top: -64px;
+        margin-right: -33px;
+    }
+
+    .quick-links {
+        height: 230px; 
+    }
+
+    .announcements {
+        height: 150px;
+        overflow: scroll;
+    }
+
+    .daily-word {
+        margin-bottom: -35px;
+    }
 }
