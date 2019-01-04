@@ -9,13 +9,18 @@
                         <h1 class="text-uppercase">Welcome to SD92 (Nisga'a)</h1>
                         <h2 class="text-uppercase">Lorem ipsum dolor sit amet. Maecenas hendrerit, tortor eget varius tempor.</h2>
                     </div>
-                    <div class="row">
-                        <div class="col-md-4 hidden-xs hidden-sm"><img src="images/nisgaa_icon_big.png" alt="Nisga'a Logo" class="img-fluid"></div>
-                        <div class="col-md-8">
-                        <p class="text-uppercase text-bold">Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit</p>
-                        <p class="no-letter-spacing">Get to know us more!</p>
-                        <p><a href="#packages" class="scroll-to btn btn-template-outlined-white">ABOUT US</a></p>
-                        </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <img src="images/nisgaa_icon_big.png" alt="Nisga'a Logo" class="img-fluid">
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-md-12">
+                    <p class="text-uppercase text-bold">Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit</p>
+                    <p class="no-letter-spacing">Get to know us more!</p>
+                    <p><a href="#packages" class="scroll-to btn btn-template-outlined-white">ABOUT US</a></p>
                     </div>
                 </div>
             </div>
