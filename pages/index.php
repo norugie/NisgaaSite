@@ -66,7 +66,7 @@
                             <div class="col-md-12 daily-word">
                                 <h3>" WORD "</h3>
                                 <p class="no-letter-spacing">Word meaning</p>
-                                <h6 class="no-letter-spacing">LISTEN</h6>
+                                <h6 class="no-letter-spacing"><i class="fa fa-volume-up fa-lg"></i>&nbsp;&nbsp;&nbsp;LISTEN</h6>
                                 <a href="#" class="btn btn-template-outlined-white">View More</a>
                             </div>
                         </div>

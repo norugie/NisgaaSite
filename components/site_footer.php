@@ -1,5 +1,6 @@
 <!-- FOOTER -->
 <footer class="main-footer">
+    <div style="padding: 10px 25px;">
     <div class="row">
     <div class="col-lg-3 offset-md-1">
         <h4 class="h6">SD92 (NISGA'A)</h4>
@@ -83,7 +84,7 @@
     </div>
     <div class="col-md-1"></div>
     </div>
-
+</div>
     <div class="copyrights">
         <div class="row" style="padding-left: 25px; padding-right: 25px;">
             <div class="col-lg-4 text-center-md">
