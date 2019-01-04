@@ -1,13 +1,12 @@
 <!-- Top bar-->
 <div class="top-bar">
-<div class="container">
     <div class="row d-flex align-items-center">
     <div class="col-md-6 d-md-block d-none">
         <p>Contact us at [school district number] or [school district email].</p>
     </div>
     <div class="col-md-6">
         <div class="d-flex justify-content-md-end justify-content-between">
-        <div class="login"><a href="login.php" class="login-btn"><i class="fa fa-sign-in"></i><span class="d-none d-md-inline-block">Login</span></a></div>
+        <div class="login"><a href="login.php" class="login-btn"><i class="fa fa-sign-in"></i><span class="d-md-inline-block">Login</span></a></div>
         <ul class="social-custom list-inline">
             <li class="list-inline-item"><a href="#"><i class="fa fa-facebook"></i></a></li>
             <li class="list-inline-item"><a href="#"><i class="fa fa-envelope"></i></a></li>
@@ -16,12 +15,11 @@
     </div>
     </div>
 </div>
-</div>
 <!-- Top bar end-->
 <!-- Navbar Start-->
 <header class="nav-holder make-sticky">
 <div id="navbar" role="navigation" class="navbar navbar-expand-lg">
-    <div class="container"><a href="index.html" class="navbar-brand home"><img src="nisgaa-icon-banner.png" alt="Universal logo" class="d-none d-md-inline-block"><img src="nisgaa-icon.png" alt="Universal logo" class="d-inline-block d-md-none"><span class="sr-only">Universal - go to homepage</span></a>
+    <a href="index.html" class="navbar-brand home"><img src="nisgaa-icon-banner.png" alt="Universal logo" class="d-none d-md-inline-block"><img src="nisgaa-icon.png" alt="Universal logo" class="d-inline-block d-md-none"><span class="sr-only">Universal - go to homepage</span></a>
     <button type="button" data-toggle="collapse" data-target="#navigation" class="navbar-toggler btn-template-outlined"><span class="sr-only">Toggle navigation</span><i class="fa fa-align-justify"></i></button>
     <div id="navigation" class="navbar-collapse collapse">
         <ul class="nav navbar-nav ml-auto">
@@ -85,7 +83,6 @@
             <button type="submit" class="btn btn-template-main"><i class="fa fa-search"></i></button></span>
         </div>
         </form>
-    </div>
     </div>
 </div>
 </header>

@@ -1,5 +1,9 @@
 /*-- HOME PAGE CUSTOM CSS --*/
 
+.top-bar{
+    padding: 10px 25px!important;
+}
+
 .social-custom {
     margin-left: 10px!important;
 }
@@ -17,7 +21,7 @@
 }
 
 .get-it {
-    padding: 25px 0!important;
+    padding: 20px 0!important;
 }
 
 .sidebar-jumbotron {
