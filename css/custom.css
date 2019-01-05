@@ -30,15 +30,6 @@
     padding: 10px;
 }
 
-.quick-links {
-    -webkit-column-count: 2; /* Chrome, Safari, Opera */
-    -moz-column-count: 2; /* Firefox */
-    column-count: 2;
-
-    -moz-column-fill: auto; /* Firefox */
-    column-fill: auto;
-}
-
 
 .an-items > p {
     font-size: 14px;
@@ -53,6 +44,7 @@
 
     .quick-links {
         height: 230px; 
+        overflow: scroll;
     }
 
     .announcements {

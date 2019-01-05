@@ -3,7 +3,7 @@
     <div style="background: url('img/photogrid.jpg') center center repeat; background-size: cover;" class="jumbotron relative-positioned color-white text-md-center">
         <div class="dark-mask mask-primary"></div>
         <div class="row">
-            <div class="col-md-9 offset-md-1">
+            <div class="col-md-9">
                 <div class="row mb-small">
                     <div class="col-md-12">
                         <h1 class="text-uppercase">Welcome to SD92 (Nisga'a)</h1>
@@ -24,7 +24,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-2">
+            <div class="col-md-3">
                 <div class="sidebar-jumbotron">
                     <div class="container">
                         <div class="row">
