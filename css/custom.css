@@ -1,5 +1,9 @@
 /*-- HOME PAGE CUSTOM CSS --*/
 
+::-webkit-scrollbar {
+    display: none;
+}
+
 .top-bar{
     padding: 10px 25px!important;
 }
@@ -49,7 +53,7 @@
 
     .announcements {
         height: 150px;
-        overflow: scroll;
+        overflow-x: scroll;
     }
 
     .daily-word {
