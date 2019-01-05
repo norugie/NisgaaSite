@@ -1,8 +1,9 @@
 /*-- HOME PAGE CUSTOM CSS --*/
 
 ::-webkit-scrollbar {
-    display: none;
+    width: 10px;
 }
+
 
 .top-bar{
     padding: 10px 25px!important;
@@ -39,6 +40,10 @@
     font-size: 14px;
 }
 
+.daily-word > p {
+    font-size: 16px;
+}
+
 @media screen and (min-width:768px){
     .sidebar-jumbotron {
         height: calc(100% + 128px);
@@ -47,12 +52,12 @@
     }
 
     .quick-links {
-        height: 230px; 
+        height: 200px; 
         overflow: scroll;
     }
 
     .announcements {
-        height: 150px;
+        height: 200px;
         overflow-x: scroll;
     }
 
