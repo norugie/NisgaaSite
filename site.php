@@ -26,8 +26,29 @@
 
         if(file_exists('pages/' . $page_name . '.php')){
             
-            require 'pages/' . $page_name . '.php';
+            if($_GET['page'] != 'index'){
+
+                require 'components/site_breadcrumb.php';
         
+        ?>
+
+                <div class="container-no-center">
+
+                    <div class="row bar">
+
+                        <?php require 'pages/' . $page_name . '.php'; ?>
+                        <?php require 'components/site_sidebar.php'; ?>
+                    </div>
+
+                </div>
+
+        <?php
+            } else {
+
+                require 'pages/' . $page_name . '.php';
+                
+            }
+            
         } else {
 
             require 'pages/404.php';
