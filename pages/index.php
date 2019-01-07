@@ -121,6 +121,55 @@
         </div>
     </div>
 </div>
-
 <!-- UPCOMING EVENTS END -->
 
+<!-- RECENT BLOG POSTS -->
+<section class="bar background-white no-mb">
+    <div class="container">
+        <div class="col-md-12">
+        <div class="heading text-center">
+            <h2>From our blog</h2>
+        </div>
+        <p class="lead">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. <a href="blog.html">Check our blog!</a></p>
+        <div class="row">
+            <div class="col-lg-4">
+            <div class="home-blog-post">
+                <div class="image"><img src="img/portfolio-4.jpg" alt="..." class="img-fluid">
+                <div class="overlay d-flex align-items-center justify-content-center"><a href="#" class="btn btn-template-outlined-white"><i class="fa fa-chain"> </i> Read More</a></div>
+                </div>
+                <div class="text">
+                <h4><a href="#">Sample Blog Post 1</a></h4>
+                <p class="author-category">By John Smith
+                <p class="intro">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris finibus venenatis neque id sollicitudin. Phasellus lacus sapien, efficitur a neque eget, ultrices tempor risus.</p><a href="#" class="btn btn-template-outlined">Read More</a>
+                </div>
+            </div>
+            </div>
+            <div class="col-lg-4">
+            <div class="home-blog-post">
+                <div class="image"><img src="img/portfolio-5.jpg" alt="..." class="img-fluid">
+                <div class="overlay d-flex align-items-center justify-content-center"><a href="#" class="btn btn-template-outlined-white"><i class="fa fa-chain"> </i> Read More</a></div>
+                </div>
+                <div class="text">
+                <h4><a href="#">Sample Blog Post 2</a></h4>
+                <p class="author-category">By John Snow
+                <p class="intro">Cras porttitor vulputate felis, vitae malesuada diam. Aliquam aliquam est sit amet consequat molestie.</p><a href="#" class="btn btn-template-outlined">Read More</a>
+                </div>
+            </div>
+            </div>
+            <div class="col-lg-4">
+            <div class="home-blog-post">
+                <div class="image"><img src="img/portfolio-6.jpg" alt="..." class="img-fluid">
+                <div class="overlay d-flex align-items-center justify-content-center"><a href="#" class="btn btn-template-outlined-white"><i class="fa fa-chain"> </i> Read More</a></div>
+                </div>
+                <div class="text">
+                <h4><a href="#">Sample Blog Post 3</a></h4>
+                <p class="author-category">By John Doe
+                <p class="intro">Proin congue semper eros, ullamcorper tincidunt orci. Morbi rutrum, arcu ac pharetra placerat, dolor magna lobortis urna, sit amet volutpat turpis neque et enim.</p><a href="#" class="btn btn-template-outlined">Read More</a>
+                </div>
+            </div>
+            </div>
+        </div>
+        </div>
+    </div>
+</section>
+<!-- RECENT BLOG POSTS END -->

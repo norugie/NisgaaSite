@@ -4,6 +4,9 @@
     width: 10px;
 }
 
+::-webkit-scrollbar-track {
+    display: none;
+}
 
 .top-bar{
     padding: 10px 25px!important;
@@ -53,12 +56,12 @@
 
     .quick-links {
         height: 200px; 
-        overflow: scroll;
+        overflow-y: scroll;
     }
 
     .announcements {
         height: 200px;
-        overflow-x: scroll;
+        overflow-y: scroll;
     }
 
     .daily-word {

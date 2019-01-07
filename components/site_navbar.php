@@ -27,7 +27,7 @@
             <ul class="dropdown-menu megamenu">
             <li>
                 <div class="row">
-                <div class="col-lg-6">
+                <div class="col-lg-4">
                     <h5>District Information</h5>
                     <ul class="list-unstyled mb-3">
                     <li class="nav-item"><a href="javascript: void(0)" class="nav-link">About</a></li>
@@ -42,7 +42,15 @@
                     <li class="nav-item"><a href="javascript: void(0)" class="nav-link">Maintenance Office</a></li>
                     </ul>      
                 </div>
-                <div class="col-lg-6">
+                <div class="col-lg-4">
+                    <h5>Curriculum</h5>
+                    <ul class="list-unstyled mb-3">
+                    <li class="nav-item"><a href="javascript: void(0)" class="nav-link">K-12 Program</a></li>
+                    <li class="nav-item"><a href="javascript: void(0)" class="nav-link">Distant Learners Program</a></li>
+                    <li class="nav-item"><a href="javascript: void(0)" class="nav-link">Nisga'a Language and Culture</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4">
                     <h5>Governance</h5>
                     <ul class="list-unstyled mb-3">
                     <li class="nav-item"><a href="javascript: void(0)" class="nav-link">Board of Education</a></li>
