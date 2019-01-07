@@ -45,15 +45,15 @@
                 <div class="col-lg-4">
                     <h5>Curriculum</h5>
                     <ul class="list-unstyled mb-3">
-                    <li class="nav-item"><a href="javascript: void(0)" class="nav-link">K-12 Program</a></li>
-                    <li class="nav-item"><a href="javascript: void(0)" class="nav-link">Distant Learners Program</a></li>
-                    <li class="nav-item"><a href="javascript: void(0)" class="nav-link">Nisga'a Language and Culture</a></li>
+                    <li class="nav-item"><a href="site.php?page=k-12_program" class="nav-link">K-12 Program</a></li>
+                    <li class="nav-item"><a href="site.php?page=distant_learners_program" class="nav-link">Distant Learners Program</a></li>
+                    <li class="nav-item"><a href="site.php?page=language_and_culture" class="nav-link">Nisga'a Language and Culture</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-4">
                     <h5>Governance</h5>
                     <ul class="list-unstyled mb-3">
-                    <li class="nav-item"><a href="javascript: void(0)" class="nav-link">Board of Education</a></li>
+                    <li class="nav-item"><a href="site.php?page=board_of_education" class="nav-link">Board of Education</a></li>
                     <li class="nav-item"><a href="javascript: void(0)" class="nav-link">Nisga'a Lisims Government</a></li>
                     <li class="nav-item"><a href="javascript: void(0)" class="nav-link">Gitlaxt'aamiks</a></li>
                     <li class="nav-item"><a href="javascript: void(0)" class="nav-link">Gitwinksihlkw</a></li>
@@ -75,13 +75,13 @@
         </li>
         <li class="nav-item dropdown"><a href="javascript: void(0)" data-toggle="dropdown" class="dropdown-toggle">Resources <b class="caret"></b></a>
             <ul class="dropdown-menu">
-            <li class="dropdown-item"><a href="javascript: void(0)" class="nav-link">General Resources</a></li>
-            <li class="dropdown-item"><a href="javascript: void(0)" class="nav-link">Teacher Resources</a></li>
-            <li class="dropdown-item"><a href="javascript: void(0)" class="nav-link">Student Resources</a></li>
+            <li class="dropdown-item"><a href="site.php?page=general_resources" class="nav-link">General Resources</a></li>
+            <li class="dropdown-item"><a href="site.php?page=teacher_resources" class="nav-link">Teacher Resources</a></li>
+            <li class="dropdown-item"><a href="site.php?page=student_resources" class="nav-link">Student Resources</a></li>
             </ul>
         </li>
-        <li class="nav-item"><a href="/site.php?page=blog">Blog</a></li>
-        <li class="nav-item"><a href="javascript: void(0)">Careers</a></li>
+        <li class="nav-item"><a href="site.php?page=blog">Blog</a></li>
+        <li class="nav-item"><a href="site.php?page=careers">Careers</a></li>
         </ul>
     </div>
     <div id="search" class="collapse clearfix">
