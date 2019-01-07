@@ -100,7 +100,6 @@
 </div>
 
 <!-- Javascript files-->
-<script src="plugins/jquery/jquery.min.js"></script>
 <script src="plugins/bootstrap-v4/js/bootstrap.min.js"></script>
 <script src="plugins/bootstrap-select/js/bootstrap-select.min.js"></script>
 <script src="plugins/owl.carousel/owl.carousel.min.js"></script>

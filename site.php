@@ -38,6 +38,7 @@
 
                         <?php require 'pages/' . $page_name . '.php'; ?>
                         <?php require 'components/site_sidebar.php'; ?>
+                        
                     </div>
 
                 </div>
@@ -48,7 +49,7 @@
                 require 'pages/' . $page_name . '.php';
                 
             }
-            
+
         } else {
 
             require 'pages/404.php';
