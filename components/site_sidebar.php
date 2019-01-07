@@ -1,14 +1,6 @@
 <div class="col-md-3">
     <div class="panel panel-default sidebar-menu">
         <div class="panel-heading">
-            <h3 class="h4 panel-title">Text widget</h3>
-        </div>
-        <div class="panel-body text-widget">
-            <p>Improved own provided blessing may peculiar domestic. Sight house has never. No visited raising gravity outward subject my cottage mr be. Hold do at tore in park feet near my case.</p>
-        </div>
-    </div>
-    <div class="panel panel-default sidebar-menu">
-        <div class="panel-heading">
             <h3 class="h4 panel-title">Search</h3>
         </div>
         <div class="panel-body">
@@ -18,6 +10,23 @@
                 <button type="submit" class="btn btn-template-main"><i class="fa fa-search"></i></button></span>
             </div>
             </form>
+        </div>
+    </div>
+    <div class="panel panel-default sidebar-menu">
+        <div class="panel-heading">
+            <h3 class="h4 panel-title">Quick Links</h3>
+        </div>
+        <div class="panel-body">
+            <ul class="nav nav-pills flex-column text-sm">
+                <li class="nav-item"><a href="#" class="nav-link">Quick Link</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Quick Link</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Quick Link</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Quick Link</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Quick Link</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Quick Link</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Quick Link</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Quick Link</a></li>
+            </ul>
         </div>
     </div>
     <div class="panel sidebar-menu">
