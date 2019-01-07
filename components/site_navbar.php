@@ -30,9 +30,9 @@
                 <div class="col-lg-4">
                     <h5>District Information</h5>
                     <ul class="list-unstyled mb-3">
-                    <li class="nav-item"><a href="javascript: void(0)" class="nav-link">About</a></li>
-                    <li class="nav-item"><a href="javascript: void(0)" class="nav-link">Inquiries</a></li>
-                    <li class="nav-item"><a href="javascript: void(0)" class="nav-link">Contact Us</a></li>
+                    <li class="nav-item"><a href="site.php?page=about_us" class="nav-link">About</a></li>
+                    <li class="nav-item"><a href="site.php?page=inquiries" class="nav-link">Inquiries</a></li>
+                    <li class="nav-item"><a href="site.php?page=contact_us" class="nav-link">Contact Us</a></li>
                     </ul>
                     <h5>Departments</h5>
                     <ul class="list-unstyled mb-3">

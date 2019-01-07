@@ -4,7 +4,7 @@
     <div class="container-no-center">
         <div class="row d-flex align-items-center flex-wrap">
             <div class="col-md-7">
-                <h1 class="h2">Blog</h1>
+                <h1 class="h2"><?php echo $breadcrumb = str_replace('_', ' ', $_GET['page']); ?></h1>
             </div>
         </div>
     </div>
