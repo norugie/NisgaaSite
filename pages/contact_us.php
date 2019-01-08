@@ -8,7 +8,6 @@
                     <h2>We are here to help you</h2>
                 </div>
                 <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque commodo quam sed metus consectetur, non facilisis dui efficitur. Sed tempor, neque tempus sagittis varius, lorem nisl facilisis lorem, id rutrum nunc elit non arcu.</p>
-                <p class="text-sm">Feel free to contact us!</p>
             </div>
         </div>
     </section>
