@@ -36,6 +36,7 @@
 <!-- Custom Css -->
 <link href="../css/style.css" rel="stylesheet">
 <link href="../css/themes/theme-blue-grey.css" rel="stylesheet" />
+<link href="../css/custom-backend.css" rel="stylesheet">
 
 <!-- Jquery Core Js -->
 <script src="../plugins/jquery/jquery.min.js"></script>
