@@ -8,7 +8,6 @@
 <!-- Site Content -->
 
 <?php 
-    
     if(!isset($_GET['page']) || empty($_GET['page'])){ 
 
 ?>
