@@ -20,7 +20,7 @@
                     <div class="col-md-12">
                     <p class="text-uppercase text-bold">Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit</p>
                     <p class="no-letter-spacing">Get to know us more!</p>
-                    <p><a href="#packages" class="scroll-to btn btn-template-outlined-white">ABOUT US</a></p>
+                    <p><a href="site.php?page=about_us" class="btn btn-template-outlined-white">ABOUT US</a></p>
                     </div>
                 </div>
             </div>

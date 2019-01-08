@@ -86,24 +86,18 @@
     <!-- PAGINATION -->
 
         
-    <div class="pager list-unstyled d-flex align-items-center pagination pagination-lg">
-        <p class="page-item"><a href="#" class="page-link">First Page</a></p>
-        <p class="page-item active"><a href="#" class="page-link">1</a></p>
-        <p class="page-item"><a href="#" class="page-link">2</a></p>
-        <p class="page-item"><a href="#" class="page-link">3</a></p>
-        <p class="page-item"><a href="#" class="page-link">4</a></p>
-        <p class="page-item"><a href="#" class="page-link">5</a></p>
-        <p class="page-item"><a href="#" class="page-link">Last Page</a></p>
+    <div class="pages">
+        <nav aria-label="Page navigation example" class="d-flex justify-content-center">
+            <ul class="pagination">
+                <li class="page-item"><a href="#" class="page-link">First</a></li>
+                <li class="page-item active"><a href="#" class="page-link">1</a></li>
+                <li class="page-item"><a href="#" class="page-link">2</a></li>
+                <li class="page-item"><a href="#" class="page-link">3</a></li>
+                <li class="page-item"><a href="#" class="page-link">4</a></li>
+                <li class="page-item"><a href="#" class="page-link">5</a></li>
+                <li class="page-item"><a href="#" class="page-link">Last</a></li>
+            </ul>
+        </nav>
     </div>
-
-
-    <!-- <ul class="pager list-unstyled d-flex align-items-center justify-content-between mb-0 pagination pagination-lg">
-        <li class="previous"><a href="#" class="btn btn-template-outlined">← Older</a></li>
-        <li class="page-item"><a href="#">1</a></li>
-        <li class="page-item"><a href="#">2</a></li>
-        <li class="page-item"><a href="#">3</a></li>
-        <li class="page-item"><a href="#">4</a></li>
-        <li class="page-item"><a href="#">5</a></li>
-        <li class="next"><a href="#" class="btn btn-template-outlined">Newer →</a></li>
-    </ul> -->
+    <br>
 </div>
