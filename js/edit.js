@@ -15,6 +15,8 @@ function editJob(jobInfo){
 
     $("#edit-title").attr("value", job['title']);
     $("#edit-jobdesc").val(job['job_desc']);
+    $("#edit-school").selectpicker("val", job['school']);
+    $("#edit-jobtype").selectpicker("val", job['job_type']);
     $("#edit-job-id-num").attr("value", job['id']);
     $("#edit-jobid-hidden").attr("value", job['job_id']);
 

@@ -48,8 +48,7 @@
                                     <div class="row clearfix">
                                         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                                             <label for="jobtype">Job Type *</label>
-                                            <select class="form-control show-tick" name="jobtype" id="jobtype">
-                                                <option selected hidden disabled>-- SELECT JOB TYPE FOR THE POSTING --</option>
+                                            <select class="form-control show-tick" name="jobtype" id="jobtype" title="-- SELECT JOB TYPE FOR THE POSTING --">
                                                 <option value="Full-Time">Full-Time</option>
                                                 <option value="Part-Time">Part-Time</option>
                                                 <option value="Casual">Casual</option>
@@ -59,8 +58,7 @@
                                         </div>
                                         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                                             <label for="school">School *</label>
-                                            <select class="form-control show-tick" name="school" id="school">
-                                                <option selected hidden disabled>-- SELECT SCHOOL FOR THE JOB POSTING --</option>
+                                            <select class="form-control show-tick" name="school" id="school" title="-- SELECT SCHOOL FOR THE JOB POSTING --">
                                                 <?php foreach ($schools as $school): ?>
                                                     <option value="<?php echo $school['id']; ?>"><?php echo $school['school_abbv']; ?></option>
                                                 <?php endforeach; ?>
