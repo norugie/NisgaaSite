@@ -66,8 +66,7 @@
                                     <div class="row clearfix">
                                         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                                             <label for="role">Role *</label>
-                                            <select class="form-control show-tick" name="role" id="role">
-                                                <option selected hidden disabled>-- SELECT ROLE FOR THE USER --</option>
+                                            <select class="form-control show-tick" name="role" id="role" title="-- SELECT ROLE FOR THE USER --">
                                                 <?php foreach ($roles as $role): ?>
                                                     <option value="<?php echo $role['id']; ?>"><?php echo $role['role_desc']; ?></option>
                                                 <?php endforeach; ?>
@@ -75,8 +74,7 @@
                                         </div>
                                         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                                             <label for="school">School *</label>
-                                            <select class="form-control show-tick" name="school" id="school">
-                                                <option selected hidden disabled>-- SELECT SCHOOL FOR THE USER --</option>
+                                            <select class="form-control show-tick" name="school" id="school" title="-- SELECT SCHOOL FOR THE USER --">
                                                 <?php foreach ($schools as $school): ?>
                                                     <option value="<?php echo $school['id']; ?>"><?php echo $school['school_abbv']; ?></option>
                                                 <?php endforeach; ?>

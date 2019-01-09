@@ -3,6 +3,8 @@ function editUser(userInfo){
 
     $("#edit-firstname").attr("value", user['firstname']);
     $("#edit-lastname").attr("value", user['lastname']);
+    $("#edit-role").selectpicker("val", user['user_type']);
+    $("#edit-school").selectpicker("val", user['school']);
     $("#edit-id").attr("value", user['id']);
     $("#edit-username-hidden").attr("value", user['username']);
     
