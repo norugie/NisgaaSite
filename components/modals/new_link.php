@@ -38,16 +38,14 @@
                             <div class="row clearfix">
                                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                                     <label for="link_type">Link Type *</label>
-                                    <select class="form-control show-tick" name="link_type" id="link_type" onchange="inputType(this);">
-                                        <option selected hidden disabled>-- SELECT TYPE FOR THE LINK --</option>
+                                    <select class="form-control show-tick" name="link_type" id="link_type" onchange="inputType(this);" title="-- SELECT TYPE FOR THE LINK --">
                                         <option value="Link">Link</option>
                                         <option value="File">File</option>
                                     </select>
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                                     <label for="link_tag">Link Tag *</label>
-                                    <select class="form-control show-tick" name="link_tag" id="link_tag">
-                                        <option selected hidden disabled>-- SELECT TAG FOR THE LINK --</option>
+                                    <select class="form-control show-tick" name="link_tag" id="link_tag" title="-- SELECT TAG FOR THE LINK --<">
                                         <option value="Quick Links">Quick Links</option>
                                         <option value="Finance">Finance</option>
                                         <option value="Learning Resources">Learning Resources</option>
