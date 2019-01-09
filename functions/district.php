@@ -352,7 +352,7 @@
 	
 		}
 
-		public function addPostEvent($database, $post_title, $post_content){
+		public function addPostEvent($database, $post_title, $post_content, $post_thumbnail){
 			$id;
 			$post_id = 'PST' . rand(1111111,9999999);
 			$user = $_SESSION['id'];
@@ -360,7 +360,7 @@
 			$date = date('Y-m-d');
 
 			$sql = "INSERT INTO posts
-					VALUES (null, '$post_id', '$post_title', '$date', 'Post', '$user', '$school', '$post_content', 'Active')";
+					VALUES (null, '$post_id', '$post_title', '$date', 'Post', '$user', '$school', '$post_content', '$post_thumbnail', 'Active')";
 			$query = mysqli_query($database->con, $sql);
 			if(!$query){
 				header("location:../cms/district.php?tab=sd&page=events&error=true");

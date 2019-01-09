@@ -30,7 +30,7 @@
                 <!-- Inline Layout -->
                 <div class="row clearfix">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <form class="new_form_validate" action="../functions/post.php?post=true&addPost=true" method="POST">
+                        <form class="new_form_validate" action="../functions/post.php?post=true&addPost=true" method="POST" enctype="multipart/form-data">
                             <div class="row clearfix">
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                     <label for="post_title">Post Title *</label>
@@ -87,6 +87,16 @@
                                             });
                                         </script>
                                         
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row clearfix">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <label for="post_thumbnail">Post Thumbnail</label>
+                                    <div class="form-group">
+                                        <div class="form-line">
+                                            <input type="file" name="post_thumbnail" id="post_thumbnail" accept="image/*">
+                                        </div>
                                     </div>
                                 </div>
                             </div>

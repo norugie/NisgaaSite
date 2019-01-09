@@ -15,7 +15,7 @@
             <p class="font-12"><i><b>Note:</b> Fields marked with an asterisk are required</i></p><br>
                 <!-- Inline Layout -->
 
-                    <form id="wizard_form" class="form_validate" action="../functions/district.php?district=true&addEvent=true" method="POST">
+                    <form id="wizard_form" class="form_validate" action="../functions/district.php?district=true&addEvent=true" method="POST" enctype="multipart/form-data">
                         <h3>Event Information</h3>
                         <fieldset>
                             <div class="row clearfix">
@@ -159,6 +159,16 @@
                                     <div class="form-group">
                                         <div class="form-line">
                                             <input type="text" class="form-control" id="post_title" name="post_title" required>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row clearfix">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <label for="post_thumbnail">Post Thumbnail</label>
+                                    <div class="form-group">
+                                        <div class="form-line">
+                                            <input type="file" name="post_thumbnail" id="post_thumbnail" accept="image/*">
                                         </div>
                                     </div>
                                 </div>

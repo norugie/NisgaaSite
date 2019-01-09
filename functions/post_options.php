@@ -47,10 +47,41 @@
             $post_title = mysqli_real_escape_string($database->con, $_POST['post_title']);
             $post_content = mysqli_real_escape_string($database->con, $_POST['post_content']);
             $post_categories = mysqli_real_escape_string($database->con, $_POST['post_categories_id']);
+            $post_thumbnail; 
+            $post_id;
 
-            $post_id = $post->addPost($database, $post_title, $post_content);
+            if(!file_exists($_FILES['post_thumbnail']['tmp_name']) || !is_uploaded_file($_FILES['post_thumbnail']['tmp_name'])){
 
-            echo $post_id;
+                $post_thumbnail = "post_thumbnail.jpg";
+                
+                $post_id = $post->addPost($database, $post_title, $post_content, $post_thumbnail);
+
+            } else {
+
+                if(isset($_FILES['post_thumbnail'])){
+                    $errors = 0;
+                    $file_name = $_FILES['post_thumbnail']['name'];
+                    $file_size = $_FILES['post_thumbnail']['size'];
+                    $file_tmp = $_FILES['post_thumbnail']['tmp_name'];
+                    $file_type = $_FILES['post_thumbnail']['type'];
+                    $file_ext = strtolower(end(explode('.', $_FILES['post_thumbnail']['name'])));
+                    
+                    if($file_size > 2097152){
+                        $errors = 1;
+                    }
+                    
+                    if($errors == 0){
+                        move_uploaded_file($file_tmp, "../images/thumbnails/".$file_name);
+                        $post_thumbnail = $file_name;
+                        $post_id = $post->addPost($database, $post_title, $post_content, $post_thumbnail);
+                    } else {
+                        header("location:../cms/post.php?tab=sd&page=blog&error=true");
+                    }
+                } else {
+                    header("location:../cms/post.php?tab=sd&page=blog&error=true");
+                }   
+                
+            }
 
             $post_cats = explode(',', $post_categories);
 
