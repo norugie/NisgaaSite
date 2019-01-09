@@ -36,6 +36,16 @@
                                 </div>
                             </div>
                             <div class="row clearfix">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <label for="link_thumbnail">Link Thumbnail</label>
+                                    <div class="form-group">
+                                        <div class="form-line">
+                                            <input type="file" name="link_thumbnail" id="link_thumbnail" accept="image/*">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row clearfix">
                                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                                     <label for="link_type">Link Type *</label>
                                     <select class="form-control show-tick" name="link_type" id="link_type" onchange="inputType(this);" title="-- SELECT TYPE FOR THE LINK --">
