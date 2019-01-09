@@ -101,11 +101,13 @@ function editLink(linkInfo){
     $("#edit_link_title_link").attr("value", link['link_name']);
     $("#edit_link_desc_link").val(link['link_desc']);
     $("#edit_link_content_link").attr("value", link['link_content']);
+    $("#edit_link_tag_link").selectpicker("val", link['link_tag']);
 
     // Link type: File
     $("#edit_link_id_file").attr("value", link['id']);
     $("#edit_link_id_name_file").attr("value", link['link_id']);
     $("#edit_link_title_file").attr("value", link['link_name']);
     $("#edit_link_desc_file").val(link['link_desc']);
+    $("#edit_link_tag_file").selectpicker("val", link['link_tag']);
 
 }

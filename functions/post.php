@@ -257,10 +257,11 @@
 			}
 		}
 
-		public function editLink($database, $id, $link_id, $link_name, $link_desc, $link_content){
+		public function editLink($database, $id, $link_id, $link_name, $link_desc, $link_content, $link_tag){
 			$sql = "UPDATE links SET 
 						   link_name = '$link_name',
 						   link_desc = '$link_desc',
+						   link_tag  = '$link_tag',
 						   link_content = '$link_content'
 					WHERE id = '$id'";
 			$query = mysqli_query($database->con, $sql);

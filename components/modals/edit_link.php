@@ -40,6 +40,19 @@
                             </div>
                             <div class="row clearfix">
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <label for="edit_link_tag_file">Link Tag *</label>
+                                    <select class="form-control show-tick" name="edit_link_tag" id="edit_link_tag_file" title="-- SELECT TAG FOR THE LINK --<">
+                                        <option value="Quick Links">Quick Links</option>
+                                        <option value="Finance">Finance</option>
+                                        <option value="Learning Resources">Learning Resources</option>
+                                        <option value="Teacher Resources">Teacher Resources</option>
+                                        <option value="Web Media Resources">Web Media Resources</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="row clearfix">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                     <label for="edit_link_content_file">Link Content *</label>
                                     <div class="form-group">
                                         <div class="form-line">
@@ -104,6 +117,19 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="row clearfix">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <label for="edit_link_tag_link">Link Tag *</label>
+                                    <select class="form-control show-tick" name="edit_link_tag" id="edit_link_tag_link" title="-- SELECT TAG FOR THE LINK --<">
+                                        <option value="Quick Links">Quick Links</option>
+                                        <option value="Finance">Finance</option>
+                                        <option value="Learning Resources">Learning Resources</option>
+                                        <option value="Teacher Resources">Teacher Resources</option>
+                                        <option value="Web Media Resources">Web Media Resources</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <br>
                             <div class="row clearfix">
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                     <label for="edit_link_content_link">Link Content *</label>
