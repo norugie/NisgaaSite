@@ -59,8 +59,7 @@
                             <div class="row clearfix">
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                     <label for="event_type">Event Type *</label>
-                                    <select class="form-control show-tick" name="event_type" id="event_type" onchange="showDateTimeSetup(this);">
-                                        <option selected hidden disabled>-- SELECT TYPE FOR THE EVENT --</option>
+                                    <select class="form-control show-tick" name="event_type" id="event_type" onchange="showDateTimeSetup(this);" title="-- SELECT TYPE FOR THE EVENT --">
                                         <option value="Single">Single</option>
                                         <option value="Continuous">Multiple, Continuous</option>
                                         <option value="Segmented">Multiple, Segmented</option>
