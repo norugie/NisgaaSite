@@ -66,24 +66,24 @@
                                             
                                             $(document).ready(function() {
                                                 $("#post_categories").tokenInput(<?php echo $cats; ?>, {
-                                                        theme: "facebook",
-                                                        propertyToSearch: "cat_desc",
-                                                        resultsFormatter: function(item){ 
-                                                            return "<li>" + "<div style='display: inline-block; padding-left: 10px;'><div class='cat_desc'>" + item.cat_desc + "</div></div></li>" },
-                                                        tokenFormatter: function(item){ 
-                                                            return "<li><p>" + item.cat_desc + "</p></li>" },
-                                                        preventDuplicates: true,
-                                                        onAdd: function(item){
-                                                            categories.push(item.id);
-                                                            console.log(categories);
-                                                            $('input[name="post_categories_id"]').val(categories);
-                                                        },
-                                                        onDelete: function(item){
-                                                            categories.remove(item.id);
-                                                            console.log(categories);
-                                                            $('input[name="post_categories_id"]').val(categories);
-                                                        }
-                                                    });
+                                                    theme: "facebook",
+                                                    propertyToSearch: "cat_desc",
+                                                    resultsFormatter: function(item){ 
+                                                        return "<li>" + "<div style='display: inline-block; padding-left: 10px;'><div class='cat_desc'>" + item.cat_desc + "</div></div></li>" },
+                                                    tokenFormatter: function(item){ 
+                                                        return "<li><p>" + item.cat_desc + "</p></li>" },
+                                                    preventDuplicates: true,
+                                                    onAdd: function(item){
+                                                        categories.push(item.id);
+                                                        console.log(categories);
+                                                        $('input[name="post_categories_id"]').val(categories);
+                                                    },
+                                                    onDelete: function(item){
+                                                        categories.remove(item.id);
+                                                        console.log(categories);
+                                                        $('input[name="post_categories_id"]').val(categories);
+                                                    }
+                                                });
                                             });
                                         </script>
                                         
