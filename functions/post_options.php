@@ -170,12 +170,11 @@
             $link_type = mysqli_real_escape_string($database->con, $_POST['link_type']);
             $link_tag = mysqli_real_escape_string($database->con, $_POST['link_tag']);
             $link_content;
+            $link_thumbnail;
 
             if(!file_exists($_FILES['link_content']['tmp_name']) || !is_uploaded_file($_FILES['link_content']['tmp_name'])){
 
                 $link_content = mysqli_real_escape_string($database->con, $_POST['link_content']);
-                
-                $post->addLink($database, $link_name, $link_desc, $link_content, $link_type, $link_tag);
 
             } else {
 
@@ -194,7 +193,39 @@
                     if($errors == 0){
                         move_uploaded_file($file_tmp, "../links/".$file_name);
                         $link_content = $file_name;
-                        $post->addLink($database, $link_name, $link_desc, $link_content, $link_type, $link_tag);
+                    } else {
+                        header("location:../cms/post.php?tab=sd&page=links&error=true");
+                    }
+                } else {
+                    header("location:../cms/post.php?tab=sd&page=links&error=true");
+                }   
+                
+            }
+
+            if(!file_exists($_FILES['link_thumbnail']['tmp_name']) || !is_uploaded_file($_FILES['link_thumbnail']['tmp_name'])){
+
+                $link_thumbnail = "post_thumbnail.jpg";
+                
+                $post->addLink($database, $link_name, $link_desc, $link_content, $link_type, $link_tag, $link_thumbnail);
+
+            } else {
+
+                if(isset($_FILES['link_thumbnail'])){
+                    $errors = 0;
+                    $file_name = $_FILES['link_thumbnail']['name'];
+                    $file_size = $_FILES['link_thumbnail']['size'];
+                    $file_tmp = $_FILES['link_thumbnail']['tmp_name'];
+                    $file_type = $_FILES['link_thumbnail']['type'];
+                    $file_ext = strtolower(end(explode('.', $_FILES['link_thumbnail']['name'])));
+                    
+                    if($file_size > 2097152){
+                        $errors = 1;
+                    }
+                    
+                    if($errors == 0){
+                        move_uploaded_file($file_tmp, "../images/thumbnails/".$file_name);
+                        $link_thumbnail = $file_name;
+                        $post->addLink($database, $link_name, $link_desc, $link_content, $link_type, $link_tag, $link_thumbnail);
                     } else {
                         header("location:../cms/post.php?tab=sd&page=links&error=true");
                     }

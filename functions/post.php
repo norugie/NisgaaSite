@@ -276,7 +276,7 @@
 			}
 		}
 
-		public function addLink($database, $link_name, $link_desc, $link_content, $link_type, $link_tag){
+		public function addLink($database, $link_name, $link_desc, $link_content, $link_type, $link_tag, $link_thumbnail){
 			$link_id = 'LNK' . rand(1111111,9999999);
 			$user = $_SESSION['id'];
 			$school;
@@ -288,7 +288,7 @@
 			}
 
 			$sql = "INSERT INTO links
-					VALUES (null, '$link_id', '$link_name', '$link_type', '$link_tag', '$link_desc', '$link_content', '$user', '$school', 'Active')";
+					VALUES (null, '$link_id', '$link_name', '$link_type', '$link_tag', '$link_desc', '$link_content', '$link_thumbnail', '$user', '$school', 'Active')";
 			$query = mysqli_query($database->con, $sql);
 			if(!$query){
 			    header("location:../cms/post.php?tab=post&page=links&error=true");
