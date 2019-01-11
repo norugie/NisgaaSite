@@ -74,6 +74,12 @@ $('.profile_name').validate({
 });
 
 $('.profile_password').validate({
+    rules: {
+        'r_password': {
+            required: true,
+            equalTo: '#new_password'
+        }
+    },
     unhighlight: function (input) {
         $(input).parents('.form-line').removeClass('error');
     },

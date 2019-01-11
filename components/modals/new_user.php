@@ -42,7 +42,6 @@
                                                 <div class="form-line">
                                                     <input type="text" class="form-control" id="username" name="username" required>
                                                 </div>
-                                                <span id="text_validation_username"></span>
                                             </div>
                                         </div>
                                         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
