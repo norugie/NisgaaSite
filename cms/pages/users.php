@@ -1,6 +1,7 @@
 <?php 
 
     $users = $district->userList($database);
+    $usernames = $district->usernameList($database);
 
  ?>
 

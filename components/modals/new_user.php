@@ -16,7 +16,7 @@
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <div>
                             <div>
-                                <form class="new_form_validate" action="../functions/district.php?district=true&addUser=true" method="POST">
+                                <form class="new_user_validate" action="../functions/district.php?district=true&addUser=true" method="POST">
                                     <div class="row clearfix">
                                         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                                             <label for="firstname">First Name *</label>
@@ -42,6 +42,7 @@
                                                 <div class="form-line">
                                                     <input type="text" class="form-control" id="username" name="username" required>
                                                 </div>
+                                                <span id="text_validation_username"></span>
                                             </div>
                                         </div>
                                         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
@@ -58,7 +59,7 @@
                                             <label for="email_add">Email Address *</label>
                                             <div class="form-group">
                                                 <div class="form-line">
-                                                    <input type="text" class="form-control" id="email_add" name="email" required>
+                                                    <input type="email" class="form-control" id="email_add" name="email" required>
                                                 </div>
                                             </div>
                                         </div>
@@ -95,3 +96,14 @@
         </div>
     </div>
 </div>
+
+<script>
+    var usernames = '<?php echo json_encode($usernames); ?>';
+
+    $(document).ready(function(){
+        $.validator.addMethod('alreadyExists', function(value, element) {
+            return usernames.indexOf(value) == -1;
+        }, "Username already exists");
+    });
+
+</script>

@@ -146,7 +146,7 @@
                                                 <div class="form-line">
                                                     <input type="password" id="r_password" name="r_password" class="form-control" placeholder="Confirm your new password" onkeyup="checkPassword();" required>
                                                 </div>
-                                                <span id="text_validation" class="text-sm"></span>
+                                                <span id="text_validation"></span>
                                             </div>
                                         </div>
                                     </div>

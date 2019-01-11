@@ -49,6 +49,21 @@ $('.new_form_validate').validate({
     }
 });
 
+$('.new_user_validate').validate({
+    rules: {
+        'username': {
+            required: true,
+            alreadyExists: true
+        }
+    },
+    unhighlight: function (input) {
+        $(input).parents('.form-line').removeClass('error');
+    },
+    errorPlacement: function (error, element) {
+        $(element).parents('.form-group').append(error);
+    }
+});
+
 $('.profile_name').validate({
     unhighlight: function (input) {
         $(input).parents('.form-line').removeClass('error');

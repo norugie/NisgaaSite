@@ -78,6 +78,21 @@
 
 		}
 
+		public function usernameList($database){
+			$array = array();
+			$sql = "SELECT username FROM users";
+			$query = mysqli_query($database->con, $sql);
+			if (!$query) {
+			    header("location: ../cms/?error=true");
+			} else {
+				while($row = mysqli_fetch_array($query)){
+					$array[] = $row['username'];
+				}
+            }
+            
+			return $array;			
+		}
+
 		public function disableUser($database, $id, $username){
 
 			$sql = "UPDATE users SET 
