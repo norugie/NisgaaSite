@@ -210,7 +210,7 @@
 					AND posts.status = 'Active'";
 			$query = mysqli_query($database->con, $sql);
 			if (!$query) {
-			    header("location:../cms/post.php?tab=post&page=announcements&error=true");
+				header("location:../cms/post.php?tab=post&page=announcements&error=true");
 			} else {
 				while($row = mysqli_fetch_array($query)){
 					$array[] = $row;
@@ -218,6 +218,23 @@
             }
             
 			return $array;			
+		}
+
+		public function disableAnnouncement($database, $id, $title){
+			$sql = "UPDATE posts SET 
+						   status = 'Archived'
+					WHERE id = '$id'";
+			$query = mysqli_query($database->con, $sql);
+			if(!$query){
+				header("location:../cms/post.php?tab=post&page=announcements&error=true");
+				//echo("Error description: " . mysqli_error($database->con));
+			} else {
+				global $log;
+				$info = "Disabled announcement ID: " . $title;
+				$log->logInput($database, $info);
+
+				header("location:../cms/post.php?tab=post&page=announcements&announcementDisabled=true");
+			}
 		}
 
         /*********************************************************************************************/

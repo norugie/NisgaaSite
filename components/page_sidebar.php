@@ -64,7 +64,7 @@
                     </li>
                     <li id="announcements">
                         <a href="post.php?tab=post&page=announcements">
-                            <i class="material-icons">add_alert</i>
+                            <i class="material-icons">announcement</i>
                             <span>Announcements</span>
                         </a>
                     </li>
