@@ -62,6 +62,12 @@
                             <span>Blog Posts</span>
                         </a>
                     </li>
+                    <li id="announcements">
+                        <a href="post.php?tab=post&page=announcements">
+                            <i class="material-icons">add_alert</i>
+                            <span>Announcements</span>
+                        </a>
+                    </li>
                     <li id="links">
                         <a href="post.php?tab=post&page=links">
                             <i class="material-icons">link</i>
