@@ -192,6 +192,35 @@
 		}
 
         /*********************************************************************************************/
+		/***********************  Posts Functionalities -- Announcements Posts ***********************/
+        /*********************************************************************************************/
+
+		public function announcementList($database){
+			$array = array();
+			$sql = "SELECT posts.*,
+						   users.firstname,
+						   users.lastname,
+						   schools.school_abbv
+					FROM posts
+					LEFT JOIN users
+					ON (users.id = posts.post_author)
+					LEFT JOIN schools
+					ON (schools.id = posts.post_school)
+					WHERE posts.post_type = 'Announcement' 
+					AND posts.status = 'Active'";
+			$query = mysqli_query($database->con, $sql);
+			if (!$query) {
+			    header("location:../cms/post.php?tab=post&page=announcements&error=true");
+			} else {
+				while($row = mysqli_fetch_array($query)){
+					$array[] = $row;
+				}
+            }
+            
+			return $array;			
+		}
+
+        /*********************************************************************************************/
 		/***************************  Posts Functionalities -- Links  ********************************/
         /*********************************************************************************************/
 		

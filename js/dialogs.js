@@ -26,6 +26,8 @@ function alertDesign(e){
         showDisableLinkConfirm(id, name);
     } else if (type === 'reopen-link'){
         showReactivateLinkConfirm(id, name);
+    } else if (type === 'delete-announcement'){
+        showDisableAnnouncementConfirm(id, name);
     }
 }
 
@@ -231,6 +233,26 @@ function showReactivateLinkConfirm(id, name){
     }, function(isConfirm){   
         if (isConfirm){   
             window.location = "../functions/post.php?post=true&linkReactivate=true&id=" + id + "&linkName=" + name;
+        }
+    
+    });
+}
+
+//Warning for disabling announcement
+function showDisableAnnouncementConfirm(id, name){
+    swal({
+        title: "Are you sure you want to disable this announcement post?",
+        text: "You won't be able to reactivate this announcement post once archived",
+        type: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#F44336",
+        confirmButtonText: "CONFIRM",
+        cancelButtonText: "CANCEL",
+        closeOnConfirm: false,
+        closeOnCancel: true
+    }, function(isConfirm){   
+        if (isConfirm){   
+            window.location = "../functions/post.php?post=true&announcementDisable=true&id=" + id + "&announcementName=" + name;
         }
     
     });

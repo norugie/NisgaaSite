@@ -111,3 +111,9 @@ function editLink(linkInfo){
     $("#edit_link_tag_file").selectpicker("val", link['link_tag']);
 
 }
+
+function editAnnouncement(announcementInfo){
+
+    announcement = $(announcementInfo).data("values");
+
+}
