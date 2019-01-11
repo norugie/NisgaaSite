@@ -45,7 +45,7 @@
                                 <div>
                                     <div class="body">
                                         <p class="font-12"><i><b>Note:</b> Fields marked with an asterisk are required</i></p>
-                                        <form class="form-horizontal" action="../functions/user.php?userOpt=true&editProfile=true" method="POST">
+                                        <form class="form-horizontal profile_name" action="../functions/user.php?userOpt=true&editProfile=true" method="POST">
                                             <div class="row clearfix">
                                                 <div class="col-lg-3 col-md-3 col-sm-4 col-xs-5 form-control-label">
                                                     <label for="first_name">First Name *</label>
@@ -110,7 +110,7 @@
                             </div>
                             <div role="tabpanel" class="tab-pane fade" id="change_password">
                                 <p class="font-12"><i><b>Note:</b> Fields marked with an asterisk are required</i></p>
-                                <form class="form-horizontal" action="../functions/user.php?userOpt=true&editPassword=true" method="POST">
+                                <form class="form-horizontal profile_password" action="../functions/user.php?userOpt=true&editPassword=true" method="POST">
                                     <div class="row clearfix">
                                         <div class="col-lg-3 col-md-3 col-sm-4 col-xs-5 form-control-label">
                                             <label for="old_password">Old Password *</label>
@@ -146,7 +146,7 @@
                                                 <div class="form-line">
                                                     <input type="password" id="r_password" name="r_password" class="form-control" placeholder="Confirm your new password" onkeyup="checkPassword();" required>
                                                 </div>
-                                                <span id="text_validation"></span>
+                                                <span id="text_validation" class="text-sm"></span>
                                             </div>
                                         </div>
                                     </div>

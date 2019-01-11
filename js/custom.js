@@ -48,3 +48,21 @@ $('.new_form_validate').validate({
         $(element).parents('.form-group').append(error);
     }
 });
+
+$('.profile_name').validate({
+    unhighlight: function (input) {
+        $(input).parents('.form-line').removeClass('error');
+    },
+    errorPlacement: function (error, element) {
+        $(element).parents('.form-group').append(error);
+    }
+});
+
+$('.profile_password').validate({
+    unhighlight: function (input) {
+        $(input).parents('.form-line').removeClass('error');
+    },
+    errorPlacement: function (error, element) {
+        $(element).parents('.form-group').append(error);
+    }
+});
