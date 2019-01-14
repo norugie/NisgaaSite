@@ -62,7 +62,7 @@
                                         </center>
                                     </td>
                                     <?php if($_SESSION['type'] == 1){ ?>
-                                    <td><center><button type="button" class="btn bg-red waves-effect" data-type="delete-cat" data-id="<?php echo $cat['id']; ?>" data-name="<?php echo $cat['cat_desc']; ?>" onclick="alertDesign(this);" <?php if( $cat['id'] == 1){ echo "disabled"; } ?>>DELETE</button></center></td>
+                                    <td><center><button type="button" class="btn bg-red waves-effect" data-type="delete-cat" data-id="<?php echo $cat['id']; ?>" data-name="<?php echo $cat['cat_desc']; ?>" onclick="alertDesign(this);" <?php if( $cat['id'] == 1 || $cat['id'] == 2){ echo "disabled"; } ?>>DELETE</button></center></td>
                                     <?php } ?>
                                 </tr>
                             <?php endforeach; ?>
