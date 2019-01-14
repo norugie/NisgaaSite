@@ -48,7 +48,16 @@
                             ?>
                         </td>
                             <td>
-                                <center><button type="button" class="btn bg-green waves-effect" data-toggle="modal" data-target="#edit-event-modal" data-values="<?php echo htmlspecialchars(json_encode($event)); ?>" onclick="editEvent(this);" <?php if($event['status'] == 'Cancelled'){ echo "disabled"; }?> <?php if($_SESSION['type'] == 4 && $event['school'] != $_SESSION['school']){ echo "disabled"; }?>>MODIFY</button></center>
+                                <center><button type="button" class="btn bg-green waves-effect" data-toggle="modal" data-target="#edit-event-modal" 
+                                data-values='{
+                                    "id":               <?php echo json_encode($event['id']); ?>,
+                                    "event_id":         <?php echo json_encode($event['event_id']); ?>,
+                                    "event_name":       <?php echo json_encode($event['event_name']); ?>,
+                                    "event_shortname":  <?php echo json_encode($event['event_shortname']); ?>,
+                                    "event_location":   <?php echo json_encode($event['event_location']); ?>,
+                                    "event_desc":       <?php echo json_encode($event['event_desc']); ?>
+                                }'
+                                onclick="editEvent(this);" <?php if($event['status'] == 'Cancelled'){ echo "disabled"; }?> <?php if($_SESSION['type'] == 4 && $event['school'] != $_SESSION['school']){ echo "disabled"; }?>>MODIFY</button></center>
                             </td>
                             <td>
                                 <center><button type="button" class="btn bg-red waves-effect" data-type="delete-event" data-id="<?php echo $event['id']; ?>" data-name="<?php echo $event['event_shortname']; ?>" data-post="<?php echo $event['post']; ?>" onclick="alertDesign(this);" <?php if($event['status'] != 'Active') echo "disabled"; ?> <?php if($_SESSION['type'] == 4 && $event['school'] != $_SESSION['school']){ echo "disabled"; }?>>CANCEL</button></center>

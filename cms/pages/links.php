@@ -52,7 +52,16 @@
                                     <td><?php echo $link['link_desc']; ?></td>
                                     <td><?php echo $link['school_abbv']; ?></td>
                                     <?php if($_SESSION['type'] != 3){ ?>
-                                        <td><center><button type="button" class="btn bg-green waves-effect" data-toggle="modal" data-target="#edit-link-<?php if($link['link_type'] == 'Link'){?>link<?php } else { ?>file<?php } ?>-modal" data-values="<?php echo htmlspecialchars(json_encode($link)); ?>" onclick="editLink(this);" <?php if($link['status'] == 'Inactive') echo "disabled"; ?>>MODIFY</button></center></td> 
+                                        <td><center><button type="button" class="btn bg-green waves-effect" data-toggle="modal" data-target="#edit-link-<?php if($link['link_type'] == 'Link'){?>link<?php } else { ?>file<?php } ?>-modal" 
+                                        data-values='{
+                                            "id":           <?php echo json_encode($link['id']); ?>,
+                                            "link_id":      <?php echo json_encode($link['link_id']); ?>,
+                                            "link_name":    <?php echo json_encode($link['link_name']); ?>,
+                                            "link_tag":     <?php echo json_encode($link['link_tag']); ?>,
+                                            "link_desc":    <?php echo json_encode($link['link_desc']); ?>,
+                                            "link_content": <?php echo json_encode($link['link_content']); ?>
+                                        }' 
+                                        onclick="editLink(this);" <?php if($link['status'] == 'Inactive') echo "disabled"; ?>>MODIFY</button></center></td> 
                                         <?php if($link['status'] == 'Active'){ ?>
                                             <td><center><button type="button" class="btn bg-red waves-effect" data-type="delete-link" data-id="<?php echo $link['id']; ?>" data-name="<?php echo $link['link_id']; ?>" onclick="alertDesign(this);">DELETE</button></center></td>
                                         <?php } else { ?>

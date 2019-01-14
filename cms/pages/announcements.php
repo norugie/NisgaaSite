@@ -49,7 +49,15 @@
                                     <td><?php echo $a['school_abbv']; ?></td>
                                     <td><?php echo date_format(date_create($a['a_date']), 'd M Y - l'); ?></td>
                                     <td><?php echo date_format(date_create($a['a_date_long']), 'd M Y - l'); ?></td>
-                                    <td><center><button type="button" class="btn bg-green waves-effect" data-toggle="modal" data-target="#edit-announcement-modal" data-values="<?php echo htmlspecialchars(json_encode($a)); ?>" onclick="editAnnouncement(this);" <?php if($a['status'] == 'Inactive') echo "disabled"; ?>>MODIFY</button></center></td> 
+                                    <td><center><button type="button" class="btn bg-green waves-effect" data-toggle="modal" data-target="#edit-announcement-modal" 
+                                    data-values='{
+                                        "id":           <?php echo json_encode($a['id']); ?>,
+                                        "a_id":         <?php echo json_encode($a['a_id']); ?>,
+                                        "a_title":      <?php echo json_encode($a['a_title']); ?>,
+                                        "a_text":       <?php echo json_encode($a['a_text']); ?>,
+                                        "a_date_long":  <?php echo json_encode($a['a_date_long']); ?>
+                                    }' 
+                                    onclick="editAnnouncement(this);" <?php if($a['status'] == 'Inactive') echo "disabled"; ?>>MODIFY</button></center></td> 
                                     <td><center><button type="button" class="btn bg-red waves-effect" data-type="delete-announcement" data-id="<?php echo $a['id']; ?>" data-name="<?php echo $a['post_id']; ?>" onclick="alertDesign(this);">DELETE</button></center></td>
                                 </tr>
                             <?php endforeach; ?>

@@ -60,7 +60,15 @@
                                                         MODIFY <span class="caret"></span>
                                                     </button>
                                                     <ul class="dropdown-menu">
-                                                        <li><a href="#" data-toggle="modal" data-target="#edit-job-modal" data-values="<?php echo htmlspecialchars(json_encode($job)); ?>" onclick="editJob(this);">Edit Job Details</a></li>
+                                                        <li><a href="#" data-toggle="modal" data-target="#edit-job-modal" data-values='{
+                                                            "id":       <?php echo json_encode($job['id']); ?>,
+                                                            "job_id":   <?php echo json_encode($job['job_id']); ?>,
+                                                            "title":    <?php echo json_encode($job['title']); ?>,
+                                                            "school":   <?php echo json_encode($job['school']); ?>,
+                                                            "job_type": <?php echo json_encode($job['job_type']); ?>,
+                                                            "job_desc": <?php echo json_encode($job['job_desc']); ?>
+                                                        }' 
+                                                        onclick="editJob(this);">Edit Job Details</a></li>
                                                         <li><a href="#" data-toggle="modal" data-target="#edit-job-dates-modal" onclick="editJobDates(<?php echo htmlspecialchars(json_encode($job['id'])); ?>,<?php echo htmlspecialchars(json_encode($job['job_id'])); ?>, 1);">Edit Job Posting Dates</a></li>
                                                         <li><a href="#" data-toggle="modal" data-target="#edit-job-file-modal" onclick="editJobFile(<?php echo htmlspecialchars(json_encode($job['id'])); ?>,<?php echo htmlspecialchars(json_encode($job['job_id'])); ?>);">Edit Job File</a></li>
                                                     </ul>
