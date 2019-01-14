@@ -31,15 +31,6 @@ $('#bs_datepicker_range_container_event').datepicker({
 });
 
 // Custom JQuery Validator
-$('.edit_form_validate').validate({
-    unhighlight: function (input) {
-        $(input).parents('.form-line').removeClass('error');
-    },
-    errorPlacement: function (error, element) {
-        $(element).parents('.form-group').append(error);
-    }
-});
-
 $('.new_form_validate').validate({
     unhighlight: function (input) {
         $(input).parents('.form-line').removeClass('error');
@@ -49,6 +40,16 @@ $('.new_form_validate').validate({
     }
 });
 
+$('.edit_form_validate').validate({
+    unhighlight: function (input) {
+        $(input).parents('.form-line').removeClass('error');
+    },
+    errorPlacement: function (error, element) {
+        $(element).parents('.form-group').append(error);
+    }
+});
+
+// Custom JQuery Validator for Users page
 $('.new_user_validate').validate({
     rules: {
         'username': {
@@ -70,6 +71,26 @@ $('.new_user_validate').validate({
     }
 });
 
+// Custom JQuery Validator for Employment page
+$('.edit_form_validate_job_dates').validate({
+    unhighlight: function (input) {
+        $(input).parents('.form-line').removeClass('error');
+    },
+    errorPlacement: function (error, element) {
+        $(element).parents('.form-group').append(error);
+    }
+});
+
+$('.edit_form_validate_job_file').validate({
+    unhighlight: function (input) {
+        $(input).parents('.form-line').removeClass('error');
+    },
+    errorPlacement: function (error, element) {
+        $(element).parents('.form-group').append(error);
+    }
+});
+
+// Custom JQuery Validator for Profile
 $('.profile_name').validate({
     unhighlight: function (input) {
         $(input).parents('.form-line').removeClass('error');

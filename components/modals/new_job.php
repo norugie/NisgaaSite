@@ -48,21 +48,25 @@
                                     <div class="row clearfix">
                                         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                                             <label for="jobtype">Job Type *</label>
-                                            <select class="form-control show-tick" name="jobtype" id="jobtype" title="-- SELECT JOB TYPE FOR THE POSTING --">
-                                                <option value="Full-Time">Full-Time</option>
-                                                <option value="Part-Time">Part-Time</option>
-                                                <option value="Casual">Casual</option>
-                                                <option value="Remote">Remote</option>
-                                                <option value="Seasonal">Seasonal</option>
-                                            </select>
+                                            <div class="form-group">
+                                                <select class="form-control show-tick" name="jobtype" id="jobtype" title="Select job type for the posting" required>
+                                                    <option value="Full-Time">Full-Time</option>
+                                                    <option value="Part-Time">Part-Time</option>
+                                                    <option value="Casual">Casual</option>
+                                                    <option value="Remote">Remote</option>
+                                                    <option value="Seasonal">Seasonal</option>
+                                                </select>                                           
+                                            </div>
                                         </div>
                                         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                                             <label for="school">School *</label>
-                                            <select class="form-control show-tick" name="school" id="school" title="-- SELECT SCHOOL FOR THE JOB POSTING --">
-                                                <?php foreach ($schools as $school): ?>
-                                                    <option value="<?php echo $school['id']; ?>"><?php echo $school['school_abbv']; ?></option>
-                                                <?php endforeach; ?>
-                                            </select>
+                                            <div class="form-group">
+                                                <select class="form-control show-tick" name="school" id="school" title="Select school for the job posting" required>
+                                                    <?php foreach ($schools as $school): ?>
+                                                        <option value="<?php echo $school['id']; ?>"><?php echo $school['school_abbv']; ?></option>
+                                                    <?php endforeach; ?>
+                                                </select>
+                                            </div>
                                         </div>
                                     </div>
                                     <br><br>

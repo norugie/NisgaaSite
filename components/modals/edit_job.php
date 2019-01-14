@@ -16,9 +16,9 @@
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <div>
                             <div>
-                                <form action="../functions/district.php?district=true&editJobDetails=true" method="POST">
-                                <input type="text" id="edit-job-id-num" name="job-id" hidden>
-                                <input type="text" id="edit-jobid-hidden" name="jobid-name" hidden>
+                                <form class="edit_form_validate" action="../functions/district.php?district=true&editJobDetails=true" method="POST">
+                                    <input type="text" id="edit-job-id-num" name="job-id" hidden>
+                                    <input type="text" id="edit-jobid-hidden" name="jobid-name" hidden>
                                     <div class="row clearfix">
                                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                             <label for="edit-title">Job Title *</label>
@@ -42,21 +42,25 @@
                                     <div class="row clearfix">
                                         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                                             <label for="edit-jobtype">Job Type *</label>
-                                            <select class="form-control show-tick" name="jobtype" id="edit-jobtype" title="-- SELECT JOB TYPE FOR THE POSTING --">
-                                                <option value="Full-Time">Full-Time</option>
-                                                <option value="Part-Time">Part-Time</option>
-                                                <option value="Casual">Casual</option>
-                                                <option value="Remote">Remote</option>
-                                                <option value="Seasonal">Seasonal</option>
-                                            </select>
+                                            <div class="form-group">
+                                                <select class="form-control show-tick" name="jobtype" id="edit-jobtype" title="Select job type for posting" required>
+                                                    <option value="Full-Time">Full-Time</option>
+                                                    <option value="Part-Time">Part-Time</option>
+                                                    <option value="Casual">Casual</option>
+                                                    <option value="Remote">Remote</option>
+                                                    <option value="Seasonal">Seasonal</option>
+                                                </select>
+                                            </div>
                                         </div>
                                         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                                             <label for="edit-school">School *</label>
-                                            <select class="form-control show-tick" name="school" id="edit-school" title="-- SELECT SCHOOL FOR THE JOB POSTING --">
-                                                <?php foreach ($schools as $school): ?>
-                                                    <option value="<?php echo $school['id']; ?>"><?php echo $school['school_abbv']; ?></option>
-                                                <?php endforeach; ?>
-                                            </select>
+                                            <div class="form-group">
+                                                <select class="form-control show-tick" name="school" id="edit-school" title="Select school for the job posting" required>
+                                                    <?php foreach ($schools as $school): ?>
+                                                        <option value="<?php echo $school['id']; ?>"><?php echo $school['school_abbv']; ?></option>
+                                                    <?php endforeach; ?>
+                                                </select>
+                                            </div>
                                         </div>
                                     </div>
                                     <br>
@@ -92,7 +96,7 @@
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <div>
                             <div>
-                                <form class="edit_form_validate" action="../functions/district.php?district=true&jobReopen=true" method="POST">
+                                <form class="edit_form_validate_job_dates" action="../functions/district.php?district=true&jobReopen=true" method="POST">
                                     <input type="text" id="edit-job-id" name="jobid" hidden>
                                     <input type="text" id="edit-job-name" name="jobid-name" hidden>
                                     <input type="text" id="edit-job-identifier" name="identifier" hidden>
@@ -149,7 +153,7 @@
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <div>
                             <div>
-                                <form action="../functions/district.php?district=true&editJobFile=true" method="POST" enctype="multipart/form-data">
+                                <form class="edit_form_validate_job_file" action="../functions/district.php?district=true&editJobFile=true" method="POST" enctype="multipart/form-data">
                                     <input type="text" id="edit-job-id-file" name="jobid" hidden>
                                     <input type="text" id="edit-job-name-file" name="jobid-name" hidden>
                                     <div class="row clearfix">
