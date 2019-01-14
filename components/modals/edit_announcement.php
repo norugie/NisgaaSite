@@ -38,7 +38,7 @@
                             </div>
                             <div class="row clearfix">
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                    <label for="edit_announcement_desc">Announcement Description</label>
+                                    <label for="edit_announcement_desc">Announcement Description *</label>
                                     <div class="form-group">
                                         <div class="form-line">
                                             <textarea rows="2" class="form-control no-resize" id="edit_announcement_desc" name="edit_announcement_desc"></textarea>

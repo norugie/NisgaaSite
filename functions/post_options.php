@@ -123,6 +123,16 @@
 
         }
 
+        if(isset($_GET['addAnnouncement'])){
+
+            $a_title = mysqli_real_escape_string($database->con, $_POST['announcement_title']);
+            $a_date = mysqli_real_escape_string($database->con, $_POST['announcement_date']);
+            $a_desc = mysqli_real_escape_string($database->con, $_POST['announcement_desc']);
+
+            $post->addAnnouncement($database, $a_title, $a_date, $a_desc);
+
+        }
+
         /*********************************************************************************************/
 		/***************************  Posts Functionalities -- Links  ********************************/
         /*********************************************************************************************/

@@ -236,8 +236,31 @@
 			}
 		}
 
-		public function addAnnouncement(){
+		public function addAnnouncement($database, $a_title, $a_date, $a_desc){
+			$a_id = 'ANN' . rand(1111111,9999999);
+			$user = $_SESSION['id'];
+			$date = date('Y-m-d');
+			$school;
 
+			if($_SESSION['type'] == 4){
+				$school = $_SESSION['school'];
+			} else {
+				$school = 2;
+			}
+
+			$sql = "INSERT INTO announcements
+					VALUES (null, '$a_id', '$a_title', '$date', '$a_date', '$user', '$school', '$a_desc', 'Active')";
+			$query = mysqli_query($database->con, $sql);
+			if(!$query){
+				header("location:../cms/post.php?tab=post&page=announcements&error=true");
+				//echo("Error description: " . mysqli_error($database->con));
+			} else {
+				global $log;
+				$info = "Created a new announcement post: " . $a_id;
+				$log->logInput($database, $info);
+
+				header("location:../cms/post.php?tab=post&page=announcements&addAnnouncement=true");
+			}
 		}
 
 		public function editAnnouncement($database, $id, $title, $a_title, $a_date, $a_desc){
