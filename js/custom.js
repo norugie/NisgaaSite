@@ -90,6 +90,25 @@ $('.edit_form_validate_job_file').validate({
     }
 });
 
+// Custom JQuery Validator for Links page
+$('.edit_form_validate_link').validate({
+    unhighlight: function (input) {
+        $(input).parents('.form-line').removeClass('error');
+    },
+    errorPlacement: function (error, element) {
+        $(element).parents('.form-group').append(error);
+    }
+});
+
+$('.edit_form_validate_file').validate({
+    unhighlight: function (input) {
+        $(input).parents('.form-line').removeClass('error');
+    },
+    errorPlacement: function (error, element) {
+        $(element).parents('.form-group').append(error);
+    }
+});
+
 // Custom JQuery Validator for Profile
 $('.profile_name').validate({
     unhighlight: function (input) {

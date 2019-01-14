@@ -15,7 +15,7 @@
                 <div class="row clearfix">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 
-                    <form action="../functions/post.php?post=true&editLink=true" method="POST" enctype="multipart/form-data">
+                    <form class="edit_form_validate_file" action="../functions/post.php?post=true&editLink=true" method="POST" enctype="multipart/form-data">
                             <input type="text" id="edit_link_id_file" name="edit_link_id" hidden>
                             <input type="text" id="edit_link_id_name_file" name="edit_link_id_name" hidden>
                             <div class="row clearfix">
@@ -41,13 +41,15 @@
                             <div class="row clearfix">
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                     <label for="edit_link_tag_file">Link Tag *</label>
-                                    <select class="form-control show-tick" name="edit_link_tag" id="edit_link_tag_file" title="-- SELECT TAG FOR THE LINK --<">
-                                        <option value="Quick Links">Quick Links</option>
-                                        <option value="Finance">Finance</option>
-                                        <option value="Learning Resources">Learning Resources</option>
-                                        <option value="Teacher Resources">Teacher Resources</option>
-                                        <option value="Web Media Resources">Web Media Resources</option>
-                                    </select>
+                                    <div class="form-group">
+                                        <select class="form-control show-tick" name="edit_link_tag" id="edit_link_tag_file" title="Select link tag" required>
+                                            <option value="Quick Links">Quick Links</option>
+                                            <option value="Finance">Finance</option>
+                                            <option value="Learning Resources">Learning Resources</option>
+                                            <option value="Teacher Resources">Teacher Resources</option>
+                                            <option value="Web Media Resources">Web Media Resources</option>
+                                        </select>
+                                    </div>
                                 </div>
                             </div>
                             <br>
@@ -94,7 +96,7 @@
                 <div class="row clearfix">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 
-                        <form class="edit_form_validate" action="../functions/post.php?post=true&editLink=true" method="POST">
+                        <form class="edit_form_validate_link" action="../functions/post.php?post=true&editLink=true" method="POST">
                             <input type="text" id="edit_link_id_link" name="edit_link_id" hidden>
                             <input type="text" id="edit_link_id_name_link" name="edit_link_id_name" hidden>
                             <div class="row clearfix">
@@ -120,13 +122,15 @@
                             <div class="row clearfix">
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                     <label for="edit_link_tag_link">Link Tag *</label>
-                                    <select class="form-control show-tick" name="edit_link_tag" id="edit_link_tag_link" title="-- SELECT TAG FOR THE LINK --<">
-                                        <option value="Quick Links">Quick Links</option>
-                                        <option value="Finance">Finance</option>
-                                        <option value="Learning Resources">Learning Resources</option>
-                                        <option value="Teacher Resources">Teacher Resources</option>
-                                        <option value="Web Media Resources">Web Media Resources</option>
-                                    </select>
+                                    <div class="form-group">
+                                        <select class="form-control show-tick" name="edit_link_tag" id="edit_link_tag_link" title="Select link tag" required>
+                                            <option value="Quick Links">Quick Links</option>
+                                            <option value="Finance">Finance</option>
+                                            <option value="Learning Resources">Learning Resources</option>
+                                            <option value="Teacher Resources">Teacher Resources</option>
+                                            <option value="Web Media Resources">Web Media Resources</option>
+                                        </select>
+                                    </div>
                                 </div>
                             </div>
                             <br>
