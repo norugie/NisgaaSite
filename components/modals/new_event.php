@@ -15,7 +15,7 @@
             <p class="font-12"><i><b>Note:</b> Fields marked with an asterisk are required</i></p><br>
                 <!-- Inline Layout -->
 
-                    <form id="wizard_form" class="form_validate" action="../functions/district.php?district=true&addEvent=true" method="POST" enctype="multipart/form-data">
+                    <form id="wizard_form" class="new_form_validate" action="../functions/district.php?district=true&addEvent=true" method="POST" enctype="multipart/form-data">
                         <h3>Event Information</h3>
                         <fieldset>
                             <div class="row clearfix">
@@ -59,11 +59,13 @@
                             <div class="row clearfix">
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                     <label for="event_type">Event Type *</label>
-                                    <select class="form-control show-tick" name="event_type" id="event_type" onchange="showDateTimeSetup(this);" title="-- SELECT TYPE FOR THE EVENT --">
-                                        <option value="Single">Single</option>
-                                        <option value="Continuous">Multiple, Continuous</option>
-                                        <option value="Segmented">Multiple, Segmented</option>
-                                    </select>
+                                    <div class="form-group">
+                                        <select class="form-control show-tick" name="event_type" id="event_type" onchange="showDateTimeSetup(this);" title="Select event type" required>
+                                            <option value="Single">Single</option>
+                                            <option value="Continuous">Multiple, Continuous</option>
+                                            <option value="Segmented">Multiple, Segmented</option>
+                                        </select>
+                                    </div>
                                 </div>
                             </div>
                         </fieldset>
