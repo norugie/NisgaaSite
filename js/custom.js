@@ -7,27 +7,27 @@ $('.js-basic-example').DataTable({
 
 // Custom JS Bootstrap DatePicker
 $('#bs_datepicker_range_container_new').datepicker({
-	autoclose: true,
-	container: '#bs_datepicker_range_container_new',
-	todayHighlight: true,
-	startDate: '0d',
-	format: 'dd M yyyy'
+    autoclose: true,
+    container: '#bs_datepicker_range_container_new',
+    todayHighlight: true,
+    startDate: '0d',
+    format: 'dd M yyyy'
 });
 
 $('#bs_datepicker_range_container_edit').datepicker({
-	autoclose: true,
-	container: '#bs_datepicker_range_container_edit',
-	todayHighlight: true,
-	startDate: '0d',
-	format: 'dd M yyyy'
+    autoclose: true,
+    container: '#bs_datepicker_range_container_edit',
+    todayHighlight: true,
+    startDate: '0d',
+    format: 'dd M yyyy'
 });
 
 $('#bs_datepicker_range_container_event').datepicker({
-	autoclose: true,
-	container: '#bs_datepicker_range_container_event',
-	todayHighlight: true,
-	startDate: '0d',
-	format: 'dd M yyyy'
+    autoclose: true,
+    container: '#bs_datepicker_range_container_event',
+    todayHighlight: true,
+    startDate: '0d',
+    format: 'dd M yyyy'
 });
 
 // Custom JQuery Validator
@@ -54,6 +54,12 @@ $('.new_user_validate').validate({
         'username': {
             required: true,
             alreadyExists: true
+        },
+        'role': {
+            required: true
+        },
+        'school': {
+            required: true
         }
     },
     unhighlight: function (input) {

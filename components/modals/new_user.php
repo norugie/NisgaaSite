@@ -66,19 +66,23 @@
                                     <div class="row clearfix">
                                         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                                             <label for="role">Role *</label>
-                                            <select class="form-control show-tick" name="role" id="role" title="-- SELECT ROLE FOR THE USER --">
-                                                <?php foreach ($roles as $role): ?>
-                                                    <option value="<?php echo $role['id']; ?>"><?php echo $role['role_desc']; ?></option>
-                                                <?php endforeach; ?>
-                                            </select>
+                                            <div class="form-group">
+                                                <select class="form-control show-tick" name="role" id="role" title="Select role for the user" required>
+                                                    <?php foreach ($roles as $role): ?>
+                                                        <option value="<?php echo $role['id']; ?>"><?php echo $role['role_desc']; ?></option>
+                                                    <?php endforeach; ?>
+                                                </select>
+                                            </div>
                                         </div>
                                         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                                             <label for="school">School *</label>
-                                            <select class="form-control show-tick" name="school" id="school" title="-- SELECT SCHOOL FOR THE USER --">
-                                                <?php foreach ($schools as $school): ?>
-                                                    <option value="<?php echo $school['id']; ?>"><?php echo $school['school_abbv']; ?></option>
-                                                <?php endforeach; ?>
-                                            </select>
+                                            <div class="form-group">
+                                                <select class="form-control show-tick" name="school" id="school" title="Select school for the user" required>
+                                                    <?php foreach ($schools as $school): ?>
+                                                        <option value="<?php echo $school['id']; ?>"><?php echo $school['school_abbv']; ?></option>
+                                                    <?php endforeach; ?>
+                                                </select>
+                                            </div>
                                         </div>
                                     </div>
                                     <br>
