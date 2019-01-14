@@ -25,6 +25,7 @@
                                 <th>Author</th>
                                 <th>School</th>
                                 <th>Published Date</th>
+                                <th>Expiry Date</th>
                                 <th>Modify</th>
                                 <th>Delete</th>
                             </tr>
@@ -35,6 +36,7 @@
                                 <th>Author</th>
                                 <th>School</th>
                                 <th>Published Date</th>
+                                <th>Expiry Date</th>
                                 <th>Modify</th>
                                 <th>Delete</th>
                             </tr>
@@ -42,10 +44,11 @@
                         <tbody>
                             <?php foreach($announcements as $a): ?>
                                 <tr>
-                                    <td><?php echo $a['post_title']; ?></td>
+                                    <td><?php echo $a['a_title']; ?></td>
                                     <td><?php echo $a['firstname'] . " " . $a['lastname']; ?></td>
                                     <td><?php echo $a['school_abbv']; ?></td>
-                                    <td><?php echo date_format(date_create($a['post_date']), 'd M Y - l'); ?></td>
+                                    <td><?php echo date_format(date_create($a['a_date']), 'd M Y - l'); ?></td>
+                                    <td><?php echo date_format(date_create($a['a_date_long']), 'd M Y - l'); ?></td>
                                     <td><center><button type="button" class="btn bg-green waves-effect" data-toggle="modal" data-target="#edit-announcement-modal" data-values="<?php echo htmlspecialchars(json_encode($a)); ?>" onclick="editAnnouncement(this);" <?php if($a['status'] == 'Inactive') echo "disabled"; ?>>MODIFY</button></center></td> 
                                     <td><center><button type="button" class="btn bg-red waves-effect" data-type="delete-announcement" data-id="<?php echo $a['id']; ?>" data-name="<?php echo $a['post_id']; ?>" onclick="alertDesign(this);">DELETE</button></center></td>
                                 </tr>

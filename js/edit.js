@@ -1,4 +1,4 @@
-function editUser(userInfo){
+function editUser(userInfo) {
     user = $(userInfo).data("values");
 
     $("#edit-firstname").attr("value", user['firstname']);
@@ -7,10 +7,10 @@ function editUser(userInfo){
     $("#edit-school").selectpicker("val", user['school']);
     $("#edit-id").attr("value", user['id']);
     $("#edit-username-hidden").attr("value", user['username']);
-    
+
 }
 
-function editJob(jobInfo){
+function editJob(jobInfo) {
     job = $(jobInfo).data("values");
 
     $("#edit-title").attr("value", job['title']);
@@ -22,18 +22,18 @@ function editJob(jobInfo){
 
 }
 
-function editJobDates(id, name, identifier){
+function editJobDates(id, name, identifier) {
     $("#edit-job-id").attr("value", id);
     $("#edit-job-name").attr("value", name);
     $("#edit-job-identifier").attr("value", identifier);
 }
 
-function editJobFile(id, name){
+function editJobFile(id, name) {
     $("#edit-job-id-file").attr("value", id);
     $("#edit-job-name-file").attr("value", name);
 }
 
-function editEvent(eventInfo){
+function editEvent(eventInfo) {
     event = $(eventInfo).data("values");
 
     $("#edit_event_shortname").attr("value", event['event_shortname']);
@@ -45,19 +45,19 @@ function editEvent(eventInfo){
 
 }
 
-function viewPost(postInfo){
+function viewPost(postInfo) {
 
     post = $(postInfo).data("values");
     post_date = formatDate(new Date(post['post_date']));
 
     $("#view-post-title").html(post['post_title']);
-    $("#view-post-author").html(post['firstname']+" "+post['lastname']);
+    $("#view-post-author").html(post['firstname'] + " " + post['lastname']);
     $("#view-post-date").html(post_date);
     $("#view-post-content").html(post['post_text']);
 
 }
 
-function editPost(postInfo){
+function editPost(postInfo) {
 
     post = $(postInfo).data("values");
 
@@ -68,7 +68,7 @@ function editPost(postInfo){
 
 }
 
-function editMedia(mediaInfo){
+function editMedia(mediaInfo) {
 
     media = $(mediaInfo).data("values");
 
@@ -79,19 +79,19 @@ function editMedia(mediaInfo){
 
 }
 
-function viewMediaPost(mediaInfo){
+function viewMediaPost(mediaInfo) {
 
     media = $(mediaInfo).data("values");
     media_date = formatDate(new Date(media['post_date']));
 
     $("#view-media-title").html(media['post_title']);
-    $("#view-media-author").html(media['firstname']+" "+media['lastname']);
+    $("#view-media-author").html(media['firstname'] + " " + media['lastname']);
     $("#view-media-date").html(media_date);
     $("#view-media-content").html(media['post_text']);
 
 }
 
-function editLink(linkInfo){
+function editLink(linkInfo) {
 
     link = $(linkInfo).data("values");
 
@@ -112,8 +112,17 @@ function editLink(linkInfo){
 
 }
 
-function editAnnouncement(announcementInfo){
+function editAnnouncement(announcementInfo) {
 
     announcement = $(announcementInfo).data("values");
+
+    date = new Date(announcement['a_date_long']).toISOString().substring(0, 10);
+    datefield = document.querySelector('#edit_announcement_date');
+    datefield.value = date;
+
+    $("#edit_announcement_id").attr("value", announcement['id']);
+    $("#edit_announcement_name").attr("value", announcement['a_id']);
+    $("#edit_announcement_title").attr("value", announcement['a_title']);
+    $("#edit_announcement_desc").val(announcement['a_text']);
 
 }

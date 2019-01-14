@@ -197,17 +197,16 @@
 
 		public function announcementList($database){
 			$array = array();
-			$sql = "SELECT posts.*,
+			$sql = "SELECT announcements.*,
 						   users.firstname,
 						   users.lastname,
 						   schools.school_abbv
-					FROM posts
+					FROM announcements
 					LEFT JOIN users
-					ON (users.id = posts.post_author)
+					ON (users.id = announcements.a_author)
 					LEFT JOIN schools
-					ON (schools.id = posts.post_school)
-					WHERE posts.post_type = 'Announcement' 
-					AND posts.status = 'Active'";
+					ON (schools.id = announcements.a_school)
+					WHERE announcements.status = 'Active'";
 			$query = mysqli_query($database->con, $sql);
 			if (!$query) {
 				header("location:../cms/post.php?tab=post&page=announcements&error=true");
@@ -221,7 +220,7 @@
 		}
 
 		public function disableAnnouncement($database, $id, $title){
-			$sql = "UPDATE posts SET 
+			$sql = "UPDATE announcements SET 
 						   status = 'Archived'
 					WHERE id = '$id'";
 			$query = mysqli_query($database->con, $sql);
@@ -235,6 +234,14 @@
 
 				header("location:../cms/post.php?tab=post&page=announcements&announcementDisabled=true");
 			}
+		}
+
+		public function addAnnouncement(){
+
+		}
+
+		public function editAnnouncement(){
+
 		}
 
         /*********************************************************************************************/
