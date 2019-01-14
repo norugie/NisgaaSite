@@ -240,8 +240,23 @@
 
 		}
 
-		public function editAnnouncement(){
+		public function editAnnouncement($database, $id, $title, $a_title, $a_date, $a_desc){
+			$sql = "UPDATE announcements SET 
+						   a_title = '$a_title',
+						   a_date_long = '$a_date',
+						   a_text = '$a_desc'
+					WHERE id = '$id'";
+			$query = mysqli_query($database->con, $sql);
+			if(!$query){
+				header("location:../cms/post.php?tab=post&page=announcements&error=true");
+				//echo("Error description: " . mysqli_error($database->con));
+			} else {
+				global $log;
+				$info = "Modified announcement ID: " . $title;
+				$log->logInput($database, $info);
 
+				header("location:../cms/post.php?tab=post&page=announcements&editAnnouncement=true");
+			}
 		}
 
         /*********************************************************************************************/

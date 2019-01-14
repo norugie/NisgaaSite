@@ -31,6 +31,13 @@
 </div>
 <?php } ?>
 
+<?php if(isset($_GET['editAnnouncement']) && $_SESSION['alert'] == 'alerted'){ ?>
+<div class="alert bg-green alert-dismissible" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    An announcement has been <b>modified</b> successfully!
+</div>
+<?php } ?>
+
 <!-- Post Notifications - Links -->
 
 <?php if(isset($_GET['linkDisabled']) && $_SESSION['alert'] == 'alerted'){ ?>
