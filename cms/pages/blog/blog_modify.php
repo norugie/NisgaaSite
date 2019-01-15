@@ -8,7 +8,7 @@
     <div class="row clearfix">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 
-            <?php if($_GEt['modify'] == 'details'){ ?>
+            <?php if($_GET['modify'] == 'details'){ ?>
                 <!-- Modify details here -->
 
                 <form class="edit_form_validate" action="../functions/post.php?post=true&editPost=true" method="POST">
