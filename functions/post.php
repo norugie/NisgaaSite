@@ -244,6 +244,28 @@
 			return $array;			
 		}
 
+		public function announcementInformation($database, $id){
+			$array;
+			$sql = "SELECT announcements.*,
+						   users.firstname,
+						   users.lastname,
+						   schools.school_abbv
+					FROM announcements
+					LEFT JOIN users
+					ON (users.id = announcements.a_author)
+					LEFT JOIN schools
+					ON (schools.id = announcements.a_school)
+					WHERE announcements.id = '$id'";
+			$query = mysqli_query($database->con, $sql);
+			if (!$query) {
+			    header("location:../cms/post.php?tab=post&page=blog&error=true");
+			} else {
+				$array = mysqli_fetch_assoc($query);
+            }
+            
+			return $array;
+		}
+
 		public function disableAnnouncement($database, $id, $title){
 			$sql = "UPDATE announcements SET 
 						   status = 'Archived'
