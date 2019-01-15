@@ -576,7 +576,9 @@
 
 		public function mediaList($database){
 			$array = array();
-			$sql = "SELECT posts.*,
+			$sql = "SELECT posts.post_title,
+						   posts.post_date,
+						   posts.id,
 						   users.firstname,
 						   users.lastname,
 						   schools.school_abbv
