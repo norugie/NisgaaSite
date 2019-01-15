@@ -57,13 +57,6 @@ function viewPost(postInfo) {
 
 }
 
-function editPost() {
-
-    // post = '<?php echo json_encode($post_info["post_text"]); ?>';
-    // tinyMCE.get('edit_post_content').setContent(post);
-
-}
-
 function editMedia(mediaInfo) {
 
     media = $(mediaInfo).data("values");

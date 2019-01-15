@@ -34,16 +34,16 @@
             <?php
 
                 if(!isset($_GET['blog_option']) || empty($_GET['blog_option'])){
-                    require 'blog_list.php';
+                    require 'blog/blog_list.php';
                 } else {
                     if($_GET['blog_option'] == 'create'){
-                        require 'blog_create.php';
+                        require 'blog/blog_create.php';
                     } else if($_GET['blog_option'] == 'modify'){
-                        require 'blog_modify.php';
+                        require 'blog/blog_modify.php';
                     } else if($_GET['blog_option'] == 'view'){
-                        require 'blog_view.php';
+                        require 'blog/blog_view.php';
                     } else {
-                        require 'blog_list.php';
+                        require 'blog/blog_list.php';
                     }
                 }
             ?>
