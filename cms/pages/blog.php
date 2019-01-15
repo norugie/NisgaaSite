@@ -10,6 +10,16 @@
     } else {
         $posts = $post->postList($database);
     }
+
+    if(isset($_GET['post_id'])){
+        if(isset($_GET['event'])){
+            $event_indicator = $_GET['event'];
+        }
+
+        $post_id = $_GET['post_id'];
+        $post_info = $post->postInformation($database, $post_id);
+       
+    }
  ?>
 
 <script type="text/javascript" src="../plugins/jquery-tokeninput/src/jquery.tokeninput.js"></script>

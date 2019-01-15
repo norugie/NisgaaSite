@@ -48,6 +48,29 @@
 			return $array;			
 		}
 
+		public function postInformation($database, $id){
+			$array;
+			$sql = "SELECT posts.*,
+						   users.firstname,
+						   users.lastname,
+						   schools.school_abbv
+					FROM posts
+					LEFT JOIN users
+					ON (users.id = posts.post_author)
+					LEFT JOIN schools
+					ON (schools.id = posts.post_school)
+					WHERE posts.post_type = 'Post' 
+					AND posts.id = '$id'";
+			$query = mysqli_query($database->con, $sql);
+			if (!$query) {
+			    header("location:../cms/post.php?tab=post&page=blog&error=true");
+			} else {
+				$array = mysqli_fetch_assoc($query);
+            }
+            
+			return $array;
+		}
+
 		public function postsPerCategoryList($database, $category){
 			$array = array();
 			$sql = "SELECT posts.*,

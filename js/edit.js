@@ -57,14 +57,10 @@ function viewPost(postInfo) {
 
 }
 
-function editPost(postInfo) {
+function editPost() {
 
-    post = $(postInfo).data("values");
-
-    $("#edit_post_id").attr("value", post['id']);
-    $("#edit_post_id_name").attr("value", post['post_id']);
-    $("#edit_post_title").attr("value", post['post_title']);
-    tinyMCE.get('edit_post_content').setContent(post['post_text']);
+    // post = '<?php echo json_encode($post_info["post_text"]); ?>';
+    // tinyMCE.get('edit_post_content').setContent(post);
 
 }
 

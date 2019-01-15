@@ -49,7 +49,7 @@
                                         OPTIONS <span class="caret"></span>
                                     </button>
                                     <ul class="dropdown-menu">
-                                        <li><a href="post.php?tab=post&page=blog&blog_option=view&post_id=<?php echo $p['id']; ?>">View Post</a></li>
+                                        <li><a href="post.php?tab=post&page=blog&blog_option=view&post_id=<?php echo $p['id']; ?>&event=<?php if($cats[0][0] != 'Event'){ echo "0"; } else { echo "1"; } ?>">View Post</a></li>
                                         
                                         <?php if($_SESSION['type'] == 1 || $_SESSION['type'] == 2 || $_SESSION['school'] == $p['post_school']){ ?>
                                         <li role="separator" class="divider"></li>
