@@ -34,9 +34,9 @@
                 <?php
                 
                     if($_SESSION['event_view'] == 'CALENDAR'){
-                        require 'event_calendar.php';
+                        require 'events/event_calendar.php';
                     } else {
-                        require 'event_list.php';
+                        require 'events/event_list.php';
                     }
 
                 ?>
