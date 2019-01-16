@@ -36,6 +36,19 @@
     </div>
 </div>
 
+<!-- TinyMCE -->
+<script src="../plugins/tinymce/tinymce.min.js"></script>
+<script src="../js/editors.js"></script>
+
+<!-- Prevent Bootstrap dialog from blocking focusin -->
+<script>
+$(document).on('focusin', function(e) {
+    if ($(e.target).closest(".mce-window").length) {
+      e.stopImmediatePropagation();
+    }
+});
+</script>
+
 <!-- Date Format -->
 <script>
 
