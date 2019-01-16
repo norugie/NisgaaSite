@@ -13,3 +13,8 @@
         display: none;
     }
 }
+
+.dropdown-menu {
+    margin-left: -100% !important;
+    margin-top: -55px !important;
+}

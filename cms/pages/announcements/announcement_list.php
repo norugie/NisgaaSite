@@ -1,6 +1,5 @@
 <div class="header">
-    <?php if(isset($_GET['id'])){ echo "CATEGORY: " . $cat_name; } ?>
-    <button type="button" class="btn bg-blue waves-effect" data-toggle="modal" data-target="#new-announcement-modal" style="float: right; margin-top: -5px;">ADD NEW ANNOUNCEMENT POST</button>
+    <button type="button" class="btn bg-blue waves-effect" onclick="window.location.href='post.php?tab=post&page=announcements&announcement_option=create'" style="float: right; margin-top: -5px;">ADD NEW ANNOUNCEMENT POST</button>
     <br>
 </div>
 <div class="body">
@@ -13,8 +12,7 @@
                     <th>School</th>
                     <th>Published Date</th>
                     <th>Expiry Date</th>
-                    <th>Modify</th>
-                    <th>Delete</th>
+                    <th>Options</th>
                 </tr>
             </thead>
             <tfoot>
@@ -24,8 +22,7 @@
                     <th>School</th>
                     <th>Published Date</th>
                     <th>Expiry Date</th>
-                    <th>Modify</th>
-                    <th>Delete</th>
+                    <th>Options</th>
                 </tr>
             </tfoot>
             <tbody>
@@ -36,8 +33,22 @@
                         <td><?php echo $a['school_abbv']; ?></td>
                         <td><?php echo date_format(date_create($a['a_date']), 'd M Y - l'); ?></td>
                         <td><?php echo date_format(date_create($a['a_date_long']), 'd M Y - l'); ?></td>
-                        <td><center><button type="button" class="btn bg-green waves-effect" <?php if($a['status'] == 'Inactive') echo "disabled"; ?>>MODIFY</button></center></td> 
-                        <td><center><button type="button" class="btn bg-red waves-effect" data-type="delete-announcement" data-id="<?php echo $a['id']; ?>" data-name="<?php echo $a['a_id']; ?>" onclick="alertDesign(this);">DELETE</button></center></td>
+                        <td>                            
+                            <center>
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        OPTIONS <span class="caret"></span>
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="post.php?tab=post&page=announcements&announcement_option=view&a_id=<?php echo $a['id']; ?>">View Announcement</a></li>
+                                        <li role="separator" class="divider"></li>
+                                        <li><a href="post.php?tab=post&page=announcements&announcement_option=modify&a_id=<?php echo $a['id']; ?>">Edit Announcement Details</a></li>
+                                        <li role="separator" class="divider"></li>
+                                        <li><a href="#" data-type="delete-announcement" data-id="<?php echo $a['id']; ?>" data-name="<?php echo $a['a_id']; ?>" onclick="alertDesign(this);">Delete Announcement</a></li>
+                                    </ul>
+                                </div>
+                            </center>
+                        </td> 
                     </tr>
                 <?php endforeach; ?>
             </tbody>
