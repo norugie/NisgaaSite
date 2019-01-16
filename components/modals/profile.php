@@ -72,9 +72,9 @@
                                                 </div>
                                             </div>
                                             <br>
-                                            <div class="row clearfix demo-button-sizes" style="float: right; margin-right: 12px;">
-                                                <div>
-                                                    <button type="submit" class="btn bg-blue-grey btn-block btn-lg waves-effect">SAVE CHANGES</button>
+                                            <div class="row clearfix">
+                                                <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12" style="float: right;">
+                                                    <button type="submit" class="btn bg-blue-grey btn-block btn-lg waves-effect">SAVE</button>  
                                                 </div>
                                             </div>
                                         </form>
@@ -89,12 +89,12 @@
                         <ul class="nav nav-tabs tab-col-blue-grey" role="tablist">
                             <li role="presentation" class="active">
                                 <a href="#profile_picture" data-toggle="tab">
-                                    CHANGE PROFILE PICTURE
+                                    PROFILE PICTURE
                                 </a>
                             </li>
                             <li role="presentation">
                                 <a href="#change_password" data-toggle="tab">
-                                    CHANGE PASSWORD
+                                    PASSWORD
                                 </a>
                             </li>
                         </ul>
@@ -150,9 +150,9 @@
                                         </div>
                                     </div>
                                     <br>
-                                    <div class="row clearfix demo-button-sizes" style="float: right; margin-right: 12px;">
-                                        <div>
-                                            <button type="submit" class="btn bg-blue-grey btn-block btn-lg waves-effect" style="color:#fff;">SAVE CHANGES</button>
+                                    <div class="row clearfix">
+                                        <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12" style="float: right;">
+                                            <button type="submit" class="btn bg-blue-grey btn-block btn-lg waves-effect">SAVE</button>  
                                         </div>
                                     </div>
                                 </form>

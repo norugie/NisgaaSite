@@ -80,7 +80,7 @@
                                 </div>
                             </div>
                             <div class="row clearfix">
-                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" style="float: right; margin-right: 12px;">
+                                <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12" style="float: right;">
                                     <button type="submit" class="btn bg-blue-grey btn-block btn-lg waves-effect">SAVE</button>  
                                 </div>
                             </div>
