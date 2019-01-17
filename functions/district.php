@@ -458,7 +458,7 @@
 			    header("location:../cms/district.php?tab=sd&page=events&error=true");
 			} else {
 				global $log;
-				$info = "Modified the event information for event: " . $event_shortname;
+				$info = "Modified the event information for: " . $event_shortname;
 				$log->logInput($database, $info);
 
 				header("location:../cms/district.php?tab=sd&page=events&editEvent=true");

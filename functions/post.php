@@ -159,7 +159,7 @@
 			    header("location:../cms/post.php?tab=post&page=blog&error=true");
 			} else {
 				global $log;
-				$info = "Edited post ID: " . $post_title;
+				$info = "Modified post: " . $post_title;
 				$log->logInput($database, $info);
 
 				header("location:../cms/post.php?tab=post&page=blog&editPost=true");
@@ -195,7 +195,7 @@
 					// echo("Error description: " . mysqli_error($database->con));
 				} else {
 					global $log;
-					$info = "Created a new post: " . $post_id;
+					$info = "Created a new post: " . $post_title;
 					$log->logInput($database, $info);
 
 					$row = mysqli_fetch_assoc($query);
@@ -303,7 +303,7 @@
 				//echo("Error description: " . mysqli_error($database->con));
 			} else {
 				global $log;
-				$info = "Created a new announcement post: " . $a_id;
+				$info = "Created a new announcement post: " . $a_title;
 				$log->logInput($database, $info);
 
 				header("location:../cms/post.php?tab=post&page=announcements&addAnnouncement=true");
@@ -322,7 +322,7 @@
 				//echo("Error description: " . mysqli_error($database->con));
 			} else {
 				global $log;
-				$info = "Modified announcement ID: " . $title;
+				$info = "Modified announcement: " . $a_title;
 				$log->logInput($database, $info);
 
 				header("location:../cms/post.php?tab=post&page=announcements&editAnnouncement=true");
@@ -407,7 +407,7 @@
 			    header("location:../cms/post.php?tab=post&page=links&error=true");
 			} else {
 				global $log;
-				$info = "Modified link ID: " . $link_id;
+				$info = "Modified link: " . $link_name;
 				$log->logInput($database, $info);
 
 				header("location:../cms/post.php?tab=post&page=links&editLink=true");
@@ -432,7 +432,7 @@
 			    header("location:../cms/post.php?tab=post&page=links&error=true");
 			} else {
 				global $log;
-				$info = "Created a new link: " . $link_id;
+				$info = "Created a new link: " . $link_name;
 				$log->logInput($database, $info);
 
 				header("location:../cms/post.php?tab=post&page=links&addLink=true");
@@ -526,9 +526,9 @@
 		}
 
 		public function addCategory($database, $cat_name){
-			
+			$cat_id = 'CAT' . rand(1111111,9999999);
 			$sql = "INSERT INTO categories
-					VALUES (null, '$cat_name', 'Active')";
+					VALUES (null, '$cat_id','$cat_name', 'Active')";
 			$query = mysqli_query($database->con, $sql);
 			if(!$query){
 				header("location:../cms/post.php?tab=post&page=categories&error=true");
@@ -553,7 +553,7 @@
 			    header("location:../cms/post.php?tab=post&page=categories&error=true");
 			} else {
 				global $log;
-				$info = "Disabled the category " . $title;
+				$info = "Disabled the category ID:" . $title;
 				$log->logInput($database, $info);
 
 				header("location:../cms/post.php?tab=post&page=categories&categoryDisabled=true");
@@ -657,7 +657,7 @@
 			    header("location:../cms/post.php?tab=post&page=media&error=true");
 			} else {
 				global $log;
-				$info = "Edited media post ID: " . $post_title;
+				$info = "Edited media post: " . $media_title;
 				$log->logInput($database, $info);
 
 				header("location:../cms/post.php?tab=post&page=media&editMedia=true");
