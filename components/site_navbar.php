@@ -95,3 +95,10 @@
 </div>
 </header>
 <!-- Navbar End-->
+
+<!-- Site Backend Connection Initialization -->
+<?php
+
+    require 'functions/site.php';
+
+?>

@@ -4,7 +4,6 @@
 
         public function logList($database){
 			$array = array();
-			$gid = $_SESSION['id'];
 
 			$sql = "SELECT logs.*,
                            users.firstname,
