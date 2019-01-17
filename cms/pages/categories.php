@@ -9,10 +9,18 @@
 <div class="row clearfix">
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
         <div class="card">
-                <div class="header">
-                    <button type="button" class="btn bg-blue waves-effect" data-toggle="modal" data-target="#new-category-modal" style="float: right; margin-top: -5px;">ADD NEW CATEGORY</button>
-                    <br>
+            <div class="header">
+                <div class="row clearfix">
+                    <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 text-xs-sm-center">
+                        <h4>CATEGORY LIST</h4>      
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                        <center>
+                            <button type="button" class="btn bg-blue waves-effect" data-toggle="modal" data-target="#new-category-modal" style="display: inline-block;">ADD NEW CATEGORY</button>
+                        </center>
+                    </div>
                 </div>
+            </div>
             <div class="body">
                 <div class="table-responsive">
                     <table class="table table-bordered table-striped table-hover js-basic-example dataTable">

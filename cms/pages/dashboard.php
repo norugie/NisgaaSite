@@ -90,14 +90,14 @@
         <div class="card">
             <div class="header">
                 <div class="row" style="padding:0 20px;">
-                    <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12 text-xs-sm-center">
+                    <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 text-xs-sm-center">
                         <h4>LOGS</h4>     
                     </div>
-                    <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+                    <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
                         <center>
-                            <button type="button" class="btn bg-red waves-effect" style="display: inline-block; margin-top: 4px; margin-left: 5px;"><i class="material-icons">delete</i></button>
-                            <button type="button" class="btn btn-default waves-effect" style="display: inline-block; margin-top: 4px; margin-left: 5px;"><i class="material-icons">print</i></button>
-                            <button type="button" class="btn btn-default waves-effect" style="display: inline-block; margin-top: 4px; margin-left: 5px;"><i class="material-icons">assignment</i></button>
+                            <button type="button" class="btn bg-red waves-effect" style="display: inline-block; margin-top: 5px; margin-left: 5px;"><i class="material-icons">delete</i></button>
+                            <button type="button" class="btn btn-default waves-effect" style="display: inline-block; margin-top: 5px; margin-left: 5px;"><i class="material-icons">print</i></button>
+                            <button type="button" class="btn btn-default waves-effect" style="display: inline-block; margin-top: 5px; margin-left: 5px;"><i class="material-icons">assignment</i></button>
                         </center>
                     </div>
                 </div>

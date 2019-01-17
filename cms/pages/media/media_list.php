@@ -5,9 +5,16 @@
     }
 </style>
 <div class="header">
-    <?php if(isset($_GET['id'])){ echo "CATEGORY: " . $cat_name; } ?>
-    <button type="button" class="btn bg-blue waves-effect" style="float: right; margin-top: -5px;" onclick="window.location.href='post.php?tab=post&page=media&media_option=create'">ADD NEW MEDIA POST</button>
-    <br>
+    <div class="row clearfix">
+        <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 text-xs-sm-center">
+            <h4><?php if(isset($_GET['id'])){ echo "CATEGORY: " . $cat_name; } else { echo "MEDIA LIST"; } ?></h4>      
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+            <center>
+                <button type="button" class="btn bg-blue waves-effect" style="display: inline-block;" onclick="window.location.href='post.php?tab=post&page=media&media_option=create'">ADD NEW MEDIA POST</button>
+            </center>
+        </div>
+    </div> 
 </div>
 <div class="body">
     <div class="table-responsive">

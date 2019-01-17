@@ -1,6 +1,14 @@
 <div class="header">
-    MODIFY MEDIA POST
-    <button type="button" class="btn bg-blue waves-effect" style="float: right; margin-top: -5px;" onclick="window.location.href='post.php?tab=post&page=media'">MEDIA LIST</button>
+    <div class="row clearfix">
+        <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 text-xs-sm-center">
+            <h4>MODIFY MEDIA POST</h4>      
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+            <center>
+                <button type="button" class="btn bg-blue waves-effect" style="display: inline-block;" onclick="window.location.href='post.php?tab=post&page=media'">MEDIA LIST</button>
+            </center>
+        </div>
+    </div> 
 </div>
 <div class="body">
     <p class="font-12"><i><b>Note:</b> Fields marked with an asterisk are required</i></p><br>

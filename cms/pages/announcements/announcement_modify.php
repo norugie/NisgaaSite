@@ -1,6 +1,14 @@
 <div class="header">
-    MODIFY ANNOUNCEMENT
-    <button type="button" class="btn bg-blue waves-effect" style="float: right; margin-top: -5px;" onclick="window.location.href='post.php?tab=post&page=announcements'">ANNOUNCEMENT LIST</button>
+    <div class="row clearfix">
+        <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 text-xs-sm-center">
+            <h4>MODIFY ANNOUNCEMENT POST</h4>      
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+            <center>
+                <button type="button" class="btn bg-blue waves-effect" style="display: inline-block;" onclick="window.location.href='post.php?tab=post&page=announcements'">ANNOUNCEMENT LIST</button>
+            </center>
+        </div>
+    </div>     
 </div>
 <div class="body">
     <p class="font-12"><i><b>Note:</b> Fields marked with an asterisk are required</i></p><br>
@@ -42,7 +50,7 @@
                     </div>
                 </div>
                 <div class="row clearfix">
-                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" style="float: right; margin-right: 12px;">
+                    <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12" style="float: right;">
                         <button type="submit" class="btn bg-blue-grey btn-block btn-lg waves-effect">SAVE</button>  
                     </div>
                 </div>

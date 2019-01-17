@@ -26,9 +26,17 @@
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
         <div class="card">
             <div class="header">
-                <button type="button" class="btn bg-blue waves-effect" data-toggle="modal" data-target="#new-event-modal" style="float: right; margin-top: -5px;">ADD AN EVENT</button>
-                <a href="../functions/district.php?district=true&changeEventView=true" style="color:#fff;"><button type="button" class="btn bg-blue-grey waves-effect change-button" style="float: right; margin-top: -5px; margin-right: 10px;"><?php if($_SESSION['event_view'] == 'LIST'){ echo "CALENDAR"; } else { echo "LIST"; }?> VIEW</button></a>
-                <br>
+                <div class="row clearfix">
+                    <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 text-xs-sm-center">
+                        <h4>EVENT LIST</h4>      
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                        <center>
+                            <button type="button" class="btn bg-blue waves-effect" data-toggle="modal" data-target="#new-event-modal" style="display: inline-block;">ADD AN EVENT</button>
+                            <a href="../functions/district.php?district=true&changeEventView=true" style="color:#fff;"><button type="button" class="btn bg-blue-grey waves-effect change-button" style="margin-right: 10px;"><?php if($_SESSION['event_view'] == 'LIST'){ echo "CALENDAR"; } else { echo "LIST"; }?> VIEW</button></a>
+                        </center>
+                    </div>
+                </div>
             </div>
             <div class="body">
                 <?php

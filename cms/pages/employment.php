@@ -10,12 +10,20 @@
 <div class="row clearfix">
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
         <div class="card">
-            <?php if($_SESSION['type'] == 3 || $_SESSION['type'] == 1){ ?>
-                <div class="header">
-                    <button type="button" class="btn bg-blue waves-effect" data-toggle="modal" data-target="#new-job-modal" style="float: right; margin-top: -5px;">ADD A JOB POSTING</button>
-                    <br>
+            <div class="header">
+                <div class="row clearfix">
+                    <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 text-xs-sm-center">
+                        <h4>JOB LIST</h4>      
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                        <?php if($_SESSION['type'] == 3 || $_SESSION['type'] == 1){ ?>
+                            <center>
+                                <button type="button" class="btn bg-blue waves-effect" data-toggle="modal" data-target="#new-job-modal" style="display: inline-block;">ADD A JOB POSTING</button>
+                            </center>
+                        <?php } ?>
+                    </div>
                 </div>
-            <?php } ?>
+            </div>
             <div class="body">
                 <div class="table-responsive">
                     <table class="table table-bordered table-striped table-hover js-basic-example dataTable">

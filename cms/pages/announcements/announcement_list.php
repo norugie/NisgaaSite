@@ -5,8 +5,16 @@
     }
 </style>
 <div class="header">
-    <button type="button" class="btn bg-blue waves-effect" onclick="window.location.href='post.php?tab=post&page=announcements&announcement_option=create'" style="float: right; margin-top: -5px;">ADD NEW ANNOUNCEMENT POST</button>
-    <br>
+    <div class="row clearfix">
+        <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 text-xs-sm-center">
+            <h4>ANNOUNCEMENT LIST</h4>      
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+            <center>
+                <button type="button" class="btn bg-blue waves-effect" onclick="window.location.href='post.php?tab=post&page=announcements&announcement_option=create'" style="display: inline-block;">ADD NEW ANNOUNCEMENT POST</button>
+            </center>
+        </div>
+    </div> 
 </div>
 <div class="body">
     <div class="table-responsive">
