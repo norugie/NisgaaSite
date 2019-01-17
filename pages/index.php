@@ -1,6 +1,6 @@
 <?php
 
-    $blog_posts = $site->blogList($database, 2);
+    $blog_posts = $site->blogListIndex($database, 2);
 
 ?>
 <!-- JUMBOTRON -->
