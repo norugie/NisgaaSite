@@ -1,3 +1,9 @@
+<style>
+    .dropdown-menu {
+        margin-left: -80% !important;
+        margin-top: -50px !important;
+    }
+</style>
 <div class="header">
     <?php if(isset($_GET['id'])){ echo "CATEGORY: " . $cat_name; } ?>
     <button type="button" class="btn bg-blue waves-effect" style="float: right; margin-top: -5px;" onclick="window.location.href='post.php?tab=post&page=blog&blog_option=create'">ADD NEW POST</button>

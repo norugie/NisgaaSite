@@ -1,3 +1,9 @@
+<style>
+    .dropdown-menu {
+        margin-left: -100% !important;
+        margin-top: -35px !important;
+    }
+</style>
 <div class="header">
     <button type="button" class="btn bg-blue waves-effect" onclick="window.location.href='post.php?tab=post&page=announcements&announcement_option=create'" style="float: right; margin-top: -5px;">ADD NEW ANNOUNCEMENT POST</button>
     <br>
