@@ -10,7 +10,7 @@ $(function () {
             'insertdatetime media nonbreaking save table contextmenu directionality',
             'emoticons template paste textcolor colorpicker textpattern imagetools'
         ],
-        toolbar1: 'insertfile undo redo | styleselect | fontsizeselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image',
+        toolbar1: 'insertfile undo redo | styleselect | fontselect | fontsizeselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image',
         toolbar2: 'print preview | forecolor backcolor emoticons',
         image_advtab: true,
         images_upload_url: '../functions/upload.php',
@@ -45,6 +45,23 @@ $(function () {
             formData.append('file', blobInfo.blob(), blobInfo.filename());
 
             xhr.send(formData);
-        }
+        },
+        style_formats: [{
+                title: 'Image Left',
+                selector: 'img',
+                styles: {
+                    'float': 'left',
+                    'padding': '10px'
+                }
+            },
+            {
+                title: 'Image Right',
+                selector: 'img',
+                styles: {
+                    'float': 'right',
+                    'padding': '10px'
+                }
+            }
+        ]
     });
 });
