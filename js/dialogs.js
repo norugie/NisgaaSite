@@ -1,39 +1,40 @@
-
-function alertDesign(e){
+function alertDesign(e) {
     var type = $(e).data('type');
     var id = $(e).data('id');
     var name = $(e).data('name');
 
-    if(type === 'delete-user'){
+    if (type === 'delete-user') {
         showDisableUserConfirm(id, name);
-    } else if(type === 'reactivate-user'){
+    } else if (type === 'reactivate-user') {
         showReactivateUserConfirm(id, name);
-    } else if(type === 'delete-job'){
+    } else if (type === 'delete-job') {
         showDisableJobConfirm(id, name);
-    } else if(type === 'reopen-job'){
+    } else if (type === 'reopen-job') {
         showReopenJobConfirm(id, name);
-    } else if(type === 'delete-event'){
+    } else if (type === 'delete-event') {
         var post = $(e).data('post');
         showDisableEventConfirm(id, name, post);
-    } else if (type === 'delete-cat'){
+    } else if (type === 'delete-cat') {
         showDisableCatConfirm(id, name);
     } else if (type === 'delete-post') {
         var event = $(e).data('event');
         showDisablePostConfirm(id, name, event);
     } else if (type === 'delete-media') {
         showDisableMediaConfirm(id, name);
-    } else if (type === 'delete-link'){
+    } else if (type === 'delete-link') {
         showDisableLinkConfirm(id, name);
-    } else if (type === 'reopen-link'){
+    } else if (type === 'reopen-link') {
         showReactivateLinkConfirm(id, name);
-    } else if (type === 'delete-announcement'){
+    } else if (type === 'delete-announcement') {
         showDisableAnnouncementConfirm(id, name);
+    } else if (type === 'delete-logs') {
+        showDeleteLogsConfirm();
     }
 }
 
 
 //Warning for disabling user accounts
-function showDisableUserConfirm(id, name){
+function showDisableUserConfirm(id, name) {
     swal({
         title: "Are you sure you want to disable this account?",
         text: "Only those with the Administrator role can reactivate the account",
@@ -44,16 +45,16 @@ function showDisableUserConfirm(id, name){
         cancelButtonText: "CANCEL",
         closeOnConfirm: false,
         closeOnCancel: true
-    }, function(isConfirm){   
-        if (isConfirm){   
+    }, function (isConfirm) {
+        if (isConfirm) {
             window.location = "../functions/district.php?district=true&userDisable=true&id=" + id + "&username=" + name;
         }
-    
+
     });
 }
 
 //Warning for reactivating user accounts
-function showReactivateUserConfirm(id, name){
+function showReactivateUserConfirm(id, name) {
     swal({
         title: "Are you sure you want to reactivate this account?",
         type: "warning",
@@ -63,16 +64,16 @@ function showReactivateUserConfirm(id, name){
         cancelButtonText: "CANCEL",
         closeOnConfirm: false,
         closeOnCancel: true
-    }, function(isConfirm){   
-        if (isConfirm){   
+    }, function (isConfirm) {
+        if (isConfirm) {
             window.location = "../functions/district.php?district=true&userReactivate=true&id=" + id + "&username=" + name;
         }
-    
+
     });
 }
 
 //Warning for closing job posting
-function showDisableJobConfirm(id, name){
+function showDisableJobConfirm(id, name) {
     swal({
         title: "Are you sure you want to close this job posting?",
         text: "Only those with the HR and Administrator role can reopen the job posting",
@@ -83,16 +84,16 @@ function showDisableJobConfirm(id, name){
         cancelButtonText: "CANCEL",
         closeOnConfirm: false,
         closeOnCancel: true
-    }, function(isConfirm){   
-        if (isConfirm){   
+    }, function (isConfirm) {
+        if (isConfirm) {
             window.location = "../functions/district.php?district=true&jobDisable=true&id=" + id + "&job=" + name;
         }
-    
+
     });
 }
 
 //Warning for reopening job posting
-function showReopenJobConfirm(id, name){
+function showReopenJobConfirm(id, name) {
     swal({
         title: "Are you sure you want to reopen this job posting?",
         type: "warning",
@@ -102,19 +103,19 @@ function showReopenJobConfirm(id, name){
         cancelButtonText: "CANCEL",
         closeOnConfirm: true,
         closeOnCancel: true
-    }, function(isConfirm){   
-        if (isConfirm){               
+    }, function (isConfirm) {
+        if (isConfirm) {
             $('#edit-job-dates-modal').modal('show');
-            $('#edit-job-dates-modal').on('shown.bs.modal', function(){
+            $('#edit-job-dates-modal').on('shown.bs.modal', function () {
                 editJobDates(id, name, 0);
             });
         }
-    
+
     });
 }
 
 //Warning for cancelling event
-function showDisableEventConfirm(id, name, post){
+function showDisableEventConfirm(id, name, post) {
     swal({
         title: "Are you sure you want to cancel this event?",
         text: "You won't be able to reactivate this event after this",
@@ -125,16 +126,16 @@ function showDisableEventConfirm(id, name, post){
         cancelButtonText: "CANCEL",
         closeOnConfirm: false,
         closeOnCancel: true
-    }, function(isConfirm){   
-        if (isConfirm){   
+    }, function (isConfirm) {
+        if (isConfirm) {
             window.location = "../functions/district.php?district=true&eventDisable=true&id=" + id + "&event=" + name + "&post=" + post;
         }
-    
+
     });
 }
 
 //Warning for disabling category
-function showDisableCatConfirm(id, name){
+function showDisableCatConfirm(id, name) {
     swal({
         title: "Are you sure you want to disable this category?",
         text: "You won't be able to reactivate this category after this",
@@ -145,16 +146,16 @@ function showDisableCatConfirm(id, name){
         cancelButtonText: "CANCEL",
         closeOnConfirm: false,
         closeOnCancel: true
-    }, function(isConfirm){   
-        if (isConfirm){   
+    }, function (isConfirm) {
+        if (isConfirm) {
             window.location = "../functions/post.php?post=true&catDisable=true&id=" + id + "&cat=" + name;
         }
-    
+
     });
 }
 
 //Warning for disabling post
-function showDisablePostConfirm(id, name, event){
+function showDisablePostConfirm(id, name, event) {
     swal({
         title: "Are you sure you want to disable this post?",
         text: "You won't be able to reactivate this post once archived",
@@ -165,22 +166,22 @@ function showDisablePostConfirm(id, name, event){
         cancelButtonText: "CANCEL",
         closeOnConfirm: false,
         closeOnCancel: true
-    }, function(isConfirm){   
-        if (isConfirm){   
-            if(event === 1) {
+    }, function (isConfirm) {
+        if (isConfirm) {
+            if (event === 1) {
                 window.location = "../functions/post.php?post=true&postDisableEvent=true&id=" + id + "&postName=" + name;
             } else {
                 window.location = "../functions/post.php?post=true&postDisable=true&id=" + id + "&postName=" + name;
             }
-            
+
 
         }
-    
+
     });
 }
 
 //Warning for disabling media post
-function showDisableMediaConfirm(id, name){
+function showDisableMediaConfirm(id, name) {
     swal({
         title: "Are you sure you want to disable this media post?",
         text: "You won't be able to reactivate this media post once archived",
@@ -191,16 +192,16 @@ function showDisableMediaConfirm(id, name){
         cancelButtonText: "CANCEL",
         closeOnConfirm: false,
         closeOnCancel: true
-    }, function(isConfirm){   
-        if (isConfirm){   
+    }, function (isConfirm) {
+        if (isConfirm) {
             window.location = "../functions/post.php?post=true&mediaDisable=true&id=" + id + "&mediaName=" + name;
         }
-    
+
     });
 }
 
 //Warning for disabling link
-function showDisableLinkConfirm(id, name){
+function showDisableLinkConfirm(id, name) {
     swal({
         title: "Are you sure you want to disable this link?",
         text: "You will be able to reactivate this link once archived",
@@ -211,16 +212,16 @@ function showDisableLinkConfirm(id, name){
         cancelButtonText: "CANCEL",
         closeOnConfirm: false,
         closeOnCancel: true
-    }, function(isConfirm){   
-        if (isConfirm){   
+    }, function (isConfirm) {
+        if (isConfirm) {
             window.location = "../functions/post.php?post=true&linkDisable=true&id=" + id + "&linkName=" + name;
         }
-    
+
     });
 }
 
 //Warning for reactivating link
-function showReactivateLinkConfirm(id, name){
+function showReactivateLinkConfirm(id, name) {
     swal({
         title: "Are you sure you want to reactivate this link?",
         type: "warning",
@@ -230,16 +231,16 @@ function showReactivateLinkConfirm(id, name){
         cancelButtonText: "CANCEL",
         closeOnConfirm: false,
         closeOnCancel: true
-    }, function(isConfirm){   
-        if (isConfirm){   
+    }, function (isConfirm) {
+        if (isConfirm) {
             window.location = "../functions/post.php?post=true&linkReactivate=true&id=" + id + "&linkName=" + name;
         }
-    
+
     });
 }
 
 //Warning for disabling announcement
-function showDisableAnnouncementConfirm(id, name){
+function showDisableAnnouncementConfirm(id, name) {
     swal({
         title: "Are you sure you want to disable this announcement post?",
         text: "You won't be able to reactivate this announcement post once archived",
@@ -250,10 +251,30 @@ function showDisableAnnouncementConfirm(id, name){
         cancelButtonText: "CANCEL",
         closeOnConfirm: false,
         closeOnCancel: true
-    }, function(isConfirm){   
-        if (isConfirm){   
+    }, function (isConfirm) {
+        if (isConfirm) {
             window.location = "../functions/post.php?post=true&announcementDisable=true&id=" + id + "&announcementName=" + name;
         }
-    
+
+    });
+}
+
+//Warning for disabling announcement
+function showDeleteLogsConfirm() {
+    swal({
+        title: "Are you sure you want to delete all logs?",
+        text: "You won't be able to recover the deleted logs",
+        type: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#F44336",
+        confirmButtonText: "CONFIRM",
+        cancelButtonText: "CANCEL",
+        closeOnConfirm: false,
+        closeOnCancel: true
+    }, function (isConfirm) {
+        if (isConfirm) {
+            window.location = "../functions/dashboard.php?dashboard=true&logDelete=true";
+        }
+
     });
 }

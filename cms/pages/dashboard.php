@@ -84,20 +84,26 @@
     </div>
 </div>
 
+<?php
+
+    $logs = $dashboard->logList($database);
+
+?>
+
 <!-- Logs -->
 <div class="row clearfix">
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
         <div class="card">
             <div class="header">
-                <div class="row" style="padding:0 20px;">
+                <div class="row clearfix">
                     <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 text-xs-sm-center">
                         <h4>LOGS</h4>     
                     </div>
                     <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
                         <center>
-                            <button type="button" class="btn bg-red waves-effect" style="display: inline-block; margin-top: 5px; margin-left: 5px;"><i class="material-icons">delete</i></button>
-                            <button type="button" class="btn btn-default waves-effect" style="display: inline-block; margin-top: 5px; margin-left: 5px;"><i class="material-icons">print</i></button>
-                            <button type="button" class="btn btn-default waves-effect" style="display: inline-block; margin-top: 5px; margin-left: 5px;"><i class="material-icons">assignment</i></button>
+                            <button type="button" class="btn btn-default waves-effect" style="display: inline-block; margin-left: 5px;"><i class="material-icons">print</i></button>
+                            <button type="button" class="btn btn-default waves-effect" style="display: inline-block; margin-left: 5px;"><i class="material-icons">assignment</i></button>
+                            <button type="button" class="btn bg-red waves-effect" style="display: inline-block; margin-left: 5px;" data-type="delete-logs" data-id="0" data-name="0" onclick="alertDesign(this);"><i class="material-icons">delete</i></button>
                         </center>
                     </div>
                 </div>
@@ -110,8 +116,7 @@
                                 <th>Log ID</th>
                                 <th>User</th>
                                 <th>Activity</th>
-                                <th>Time</th>
-                                <th>Date</th>
+                                <th>Date and Time</th>
                             </tr>
                         </thead>
                         <tfoot>
@@ -119,18 +124,18 @@
                                 <th>Log ID</th>
                                 <th>User</th>
                                 <th>Activity</th>
-                                <th>Time</th>
-                                <th>Date</th>
+                                <th>Date and Time</th>
                             </tr>
                         </tfoot>
                         <tbody>
-                            <tr>
-                                <th></th>
-                                <th></th>
-                                <th></th>
-                                <th></th>
-                                <th></th>
-                            </tr>
+                            <?php foreach($logs as $log): ?>
+                                <tr>
+                                    <td><?php echo $log['log_id']; ?></td>
+                                    <td><?php echo $log['firstname'] . " " . $log['lastname']; ?></td>
+                                    <td><?php echo $log['log_desc']; ?></td>
+                                    <td><?php echo date_format(date_create($log['date']), 'd M Y - l h:i A'); ?></td>
+                                </tr>
+                            <?php endforeach; ?>
                         </tbody>
                     </table>
                 </div>

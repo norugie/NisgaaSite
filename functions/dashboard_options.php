@@ -1,6 +1,6 @@
 <?php
 
-    if(isset($_GET['district'])){
+    if(isset($_GET['dashboard'])){
 
         session_start();
         require 'connect.php';
@@ -8,6 +8,12 @@
         $database = new Database();
         $dashboard = new Dashboard();
         $log = new Log();
+
+        if(isset($_GET['logDelete'])){
+
+            $dashboard->deleteLogs($database);
+
+        }
 
     }
 

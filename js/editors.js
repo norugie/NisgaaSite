@@ -49,6 +49,7 @@ $(function () {
         style_formats: [{
                 title: 'Image Left',
                 selector: 'img',
+                classes: 'img-responsive',
                 styles: {
                     'float': 'left',
                     'padding': '10px'
@@ -57,8 +58,20 @@ $(function () {
             {
                 title: 'Image Right',
                 selector: 'img',
+                classes: 'img-responsive',
                 styles: {
                     'float': 'right',
+                    'padding': '10px'
+                }
+            },
+            {
+                title: 'Image Center',
+                selector: 'img',
+                classes: 'img-responsive',
+                styles: {
+                    'display': 'block',
+                    'margin-left': 'auto',
+                    'margin-right': 'auto',
                     'padding': '10px'
                 }
             }
