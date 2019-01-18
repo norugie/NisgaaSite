@@ -1,3 +1,8 @@
+<?php
+
+    $categories = $site->categoryList($database);
+
+?>
 <div class="col-md-3">
     <div class="panel panel-default sidebar-menu">
         <div class="panel-heading">
@@ -5,14 +10,9 @@
         </div>
         <div class="panel-body">
             <ul class="nav nav-pills flex-column text-sm">
-                <li class="nav-item"><a href="#" class="nav-link">Quick Link</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">Quick Link</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">Quick Link</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">Quick Link</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">Quick Link</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">Quick Link</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">Quick Link</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">Quick Link</a></li>
+                <?php foreach($quick_links as $ql): ?>
+                    <li class="nav-item"><a href="<?php if($ql['link_type'] == 'File'){ echo "../links/"; } echo $ql['link_content']; ?>" class="nav-link" <?php if($ql['link_type'] == 'Link'){?>target="_blank"<?php } else { ?> download <?php } ?>><?php echo $ql['link_name']; ?></a></li>
+                <?php endforeach; ?>
             </ul>
         </div>
     </div>
@@ -22,12 +22,9 @@
         </div>
         <div class="panel-body">
             <ul class="nav nav-pills flex-column text-sm">
-                <li class="nav-item"><a href="#" class="nav-link">Announcement Post</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">Announcement Post</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">Announcement Post</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">Announcement Post</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">Announcement Post</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">Announcement Post</a></li>
+                <?php foreach($announcements as $a): ?>
+                    <li class="nav-item"><a href="#" class="nav-link"><?php echo $a['a_title']; ?></a></li>
+                <?php endforeach; ?>
             </ul>
         </div>
     </div>
@@ -37,12 +34,9 @@
         </div>
         <div class="panel-body">
             <ul class="tag-cloud list-inline">
-            <li class="list-inline-item"><a href="#"><i class="fa fa-tags"></i> NEWS</a></li>
-            <li class="list-inline-item"><a href="#"><i class="fa fa-tags"></i> EVENTS</a></li>
-            <li class="list-inline-item"><a href="#"><i class="fa fa-tags"></i> ANNOUNCEMENTS</a></li>
-            <li class="list-inline-item"><a href="#"><i class="fa fa-tags"></i> ENTERTAINMENT</a></li>
-            <li class="list-inline-item"><a href="#"><i class="fa fa-tags"></i> MEDIA</a></li>
-            <li class="list-inline-item"><a href="#"><i class="fa fa-tags"></i> HOLIDAYS</a></li>
+                <?php foreach($categories as $cat): ?>
+                    <li class="list-inline-item"><a href="#"><i class="fa fa-tags"></i> <?php echo $cat['cat_desc']; ?></a></li>
+                <?php endforeach; ?>
             </ul>
         </div>
     </div>

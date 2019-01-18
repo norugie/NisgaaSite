@@ -76,6 +76,70 @@
 			return $array;            
         }
 
+        public function categoryList($database){
+			$array = array();
+
+			$sql = "SELECT cat_id, cat_desc 
+                    FROM categories
+                    WHERE status = 'Active'";
+			$query = mysqli_query($database->con, $sql);
+			if (!$query) {
+			    header("location: ../site.php?page=index&error=true");
+			} else {
+				while($row = mysqli_fetch_array($query)){
+					$array[] = $row;
+				}
+            }
+            
+			return $array;
+        }
+
+        public function announcementList($database, $school){
+			$array = array();
+
+            $sql =  "SELECT announcements.a_title
+                    FROM announcements
+                    LEFT JOIN schools
+                    ON (announcements.a_school = schools.id)
+                    WHERE announcements.a_school = '$school'
+                    AND announcements.status = 'Active'";
+			$query = mysqli_query($database->con, $sql);
+			if (!$query) {
+			    header("location: ../site.php?page=index&error=true");
+			} else {
+				while($row = mysqli_fetch_array($query)){
+					$array[] = $row;
+				}
+            }
+            
+			return $array;            
+        }
+
+        public function linkList($database, $tag, $school){
+			$array = array();
+
+            $sql =  "SELECT links.link_name,
+                            links.link_type,
+                            links.link_content,
+                            links.link_thumbnail
+                    FROM links
+                    LEFT JOIN schools
+                    ON (links.school = schools.id)
+                    WHERE links.link_tag = '$tag'
+                    AND links.school = '$school'
+                    AND links.status = 'Active'";
+			$query = mysqli_query($database->con, $sql);
+			if (!$query) {
+			    header("location: ../site.php?page=index&error=true");
+			} else {
+				while($row = mysqli_fetch_array($query)){
+					$array[] = $row;
+				}
+            }
+            
+			return $array;
+        }
+
     }
 
     require 'site_options.php';

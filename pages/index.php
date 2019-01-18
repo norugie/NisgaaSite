@@ -31,17 +31,9 @@
                             <div class="col-md-12"><h4>QUICK LINKS</h4></div>
                             <div class="col-md-12 quick-links">
                                     <div class="col-md-12 qa-items" style="text-align:left;">
-                                        <h6>link</h6>
-                                        <h6>link</h6>
-                                        <h6>link</h6>
-                                        <h6>link</h6>
-                                        <h6>link</h6>
-                                        <h6>link</h6>
-                                        <h6>link</h6>
-                                        <h6>link</h6>
-                                        <h6>link</h6>
-                                        <h6>link</h6>
-                                        <h6>link</h6>
+                                        <?php foreach($quick_links as $ql): ?>
+                                            <h5><a href="<?php if($ql['link_type'] == 'File'){ echo "../links/"; } echo $ql['link_content']; ?>" <?php if($ql['link_type'] == 'Link'){?>target="_blank"<?php } else { ?> download <?php } ?>><?php echo $ql['link_name']; ?></a></h5>
+                                        <?php endforeach; ?>
                                     </div>
                             </div>
                         </div>
@@ -50,13 +42,9 @@
                             <div class="col-md-12"><h4>ANNOUNCEMENTS</h4></div>
                             <div class="col-md-12 announcements">
                                     <div class="col-md-12 an-items" style="text-align:left;">
-                                        <p class="no-letter-spacing">Announcement Title</p>
-                                        <p class="no-letter-spacing">Announcement Title</p>
-                                        <p class="no-letter-spacing">Announcement Title</p>
-                                        <p class="no-letter-spacing">Announcement Title</p>
-                                        <p class="no-letter-spacing">Announcement Title</p>
-                                        <p class="no-letter-spacing">Announcement Title</p>
-                                        <p class="no-letter-spacing">Announcement Title</p>
+                                        <?php foreach($announcements as $a): ?>
+                                            <p class="no-letter-spacing"><a href="#" class="nav-link"><?php echo $a['a_title']; ?></a></p>
+                                        <?php endforeach; ?>
                                     </div>
                             </div>
                         </div>                        
