@@ -16,7 +16,7 @@
     <div class="row clearfix">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 
-            <?php if($_GET['media'] == 'details'){ ?>
+            <?php if($_GET['modify'] == 'details'){ ?>
                 <!-- Media details here -->
                 <form class="edit_form_validate" action="../functions/post.php?post=true&editMedia=true" method="POST">
                     <input type="text" id="edit_media_post_id" name="edit_media_post_id" value="<?php echo $media_info['id']; ?>" hidden>

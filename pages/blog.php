@@ -15,6 +15,7 @@
                         <p class="author-category">By <?php echo $blog['firstname'] . " " . $blog['lastname']; ?></p>
                         <p class="date-comments"><a href="blog-post.html"><i class="fa fa-calendar-o"></i><?php echo date_format(date_create($blog['post_date']), 'd M Y'); ?></a></p>
                     </div>
+                    <p class="intro"><?php echo $blog['post_desc']; ?></p>
                     <a href="blog-post.html">Read More →</a>
                 </div>
             </div>
@@ -24,7 +25,7 @@
     <!-- PAGINATION -->
 
         
-    <div class="pages">
+    <!-- <div class="pages">
         <nav aria-label="Page navigation example" class="d-flex justify-content-center">
             <ul class="pagination">
                 <li class="page-item"><a href="#" class="page-link">First</a></li>
@@ -36,6 +37,10 @@
                 <li class="page-item"><a href="#" class="page-link">Last</a></li>
             </ul>
         </nav>
-    </div>
+    </div> -->
+    <ul class="pager list-unstyled d-flex align-items-center justify-content-between">
+        <li class="previous"><a href="#" class="btn btn-template-outlined">← Older</a></li>
+        <li class="next disabled"><a href="#" class="btn btn-template-outlined">Newer →</a></li>
+    </ul>
     <br>
 </div>

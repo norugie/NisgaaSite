@@ -37,8 +37,14 @@
             $post_id = mysqli_real_escape_string($database->con, $_POST['edit_post_id_name']);
             $post_title = mysqli_real_escape_string($database->con, $_POST['edit_post_title']);
             $post_content = mysqli_real_escape_string($database->con, $_POST['edit_post_content']);
+            $post_desc;
+            if(isset($_POST['edit_post_desc']) || !empty($_POST['edit_post_desc'])){
+                $post_desc = mysqli_real_escape_string($database->con, $_POST['edit_post_desc']);
+            } else {
+                $post_desc = "No description given.";
+            }
 
-            $post->editPost($database, $id, $post_id, $post_title, $post_content);
+            $post->editPost($database, $id, $post_id, $post_title, $post_content, $post_desc);
 
         }
 
@@ -47,14 +53,21 @@
             $post_title = mysqli_real_escape_string($database->con, $_POST['post_title']);
             $post_content = mysqli_real_escape_string($database->con, $_POST['post_content']);
             $post_categories = mysqli_real_escape_string($database->con, $_POST['post_categories_id']);
-            $post_thumbnail; 
+            $post_thumbnail;
+            $post_desc;
+            if(isset($_POST['post_desc']) || !empty($_POST['post_desc'])){
+                $post_desc = mysqli_real_escape_string($database->con, $_POST['post_desc']);
+            } else {
+                $post_desc = "No description given.";
+            }
+
             $post_id;
 
             if(!file_exists($_FILES['post_thumbnail']['tmp_name']) || !is_uploaded_file($_FILES['post_thumbnail']['tmp_name'])){
 
                 $post_thumbnail = "post_thumbnail.jpg";
                 
-                $post_id = $post->addPost($database, $post_title, $post_content, $post_thumbnail);
+                $post_id = $post->addPost($database, $post_title, $post_content, $post_thumbnail, $post_desc);
 
             } else {
 
@@ -73,7 +86,7 @@
                     if($errors == 0){
                         move_uploaded_file($file_tmp, "../images/thumbnails/".$file_name);
                         $post_thumbnail = $file_name;
-                        $post_id = $post->addPost($database, $post_title, $post_content, $post_thumbnail);
+                        $post_id = $post->addPost($database, $post_title, $post_content, $post_thumbnail, $post_desc);
                     } else {
                         header("location:../cms/post.php?tab=sd&page=blog&error=true");
                     }
@@ -304,8 +317,9 @@
             $media_id = mysqli_real_escape_string($database->con, $_POST['edit_media_post_id_name']);
             $media_title = mysqli_real_escape_string($database->con, $_POST['edit_media_post_title']);
             $media_content = mysqli_real_escape_string($database->con, $_POST['edit_media_post_content']);
+            $media_desc = mysqli_real_escape_string($database->con, $_POST['edit_media_post_content']);
 
-            $post->editMedia($database, $id, $media_id, $media_title, $media_content);      
+            $post->editMedia($database, $id, $media_id, $media_title, $media_content, $media_desc);      
 
         }
 

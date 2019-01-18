@@ -34,6 +34,16 @@
                     </div>
                     <div class="row clearfix">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <label for="edit_post_desc">Post Description </label>
+                            <div class="form-group">
+                                <div class="form-line">
+                                    <textarea rows="2" class="form-control no-resize" id="edit_post_desc" name="edit_post_desc"><?php echo $post_info['post_desc']; ?></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row clearfix">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                             <label for="edit_post_content" style="margin-bottom:10px;">Post Content *</label><br>
                             <div class="form-group">
                                 <div class="form-line">
