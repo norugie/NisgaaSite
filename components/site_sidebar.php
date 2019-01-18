@@ -1,19 +1,6 @@
 <div class="col-md-3">
     <div class="panel panel-default sidebar-menu">
         <div class="panel-heading">
-            <h3 class="h4 panel-title">Search</h3>
-        </div>
-        <div class="panel-body">
-            <form role="search">
-            <div class="input-group">
-                <input type="text" placeholder="Search" class="form-control"><span class="input-group-btn">
-                <button type="submit" class="btn btn-template-main"><i class="fa fa-search"></i></button></span>
-            </div>
-            </form>
-        </div>
-    </div>
-    <div class="panel panel-default sidebar-menu">
-        <div class="panel-heading">
             <h3 class="h4 panel-title">Quick Links</h3>
         </div>
         <div class="panel-body">
@@ -26,6 +13,21 @@
                 <li class="nav-item"><a href="#" class="nav-link">Quick Link</a></li>
                 <li class="nav-item"><a href="#" class="nav-link">Quick Link</a></li>
                 <li class="nav-item"><a href="#" class="nav-link">Quick Link</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="panel panel-default sidebar-menu">
+        <div class="panel-heading">
+            <h3 class="h4 panel-title">Announcements</h3>
+        </div>
+        <div class="panel-body">
+            <ul class="nav nav-pills flex-column text-sm">
+                <li class="nav-item"><a href="#" class="nav-link">Announcement Post</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Announcement Post</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Announcement Post</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Announcement Post</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Announcement Post</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Announcement Post</a></li>
             </ul>
         </div>
     </div>

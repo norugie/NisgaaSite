@@ -371,7 +371,14 @@
 			$id;
 			$post_id = 'PST' . rand(1111111,9999999);
 			$user = $_SESSION['id'];
-			$school = $_SESSION['school'];
+			$school;
+
+			if($_SESSION['type'] == 4){
+				$school = $_SESSION['school'];
+			} else {
+				$school = 2;
+			}
+			
 			$date = date('Y-m-d');
 
 			$sql = "INSERT INTO posts

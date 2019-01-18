@@ -60,6 +60,21 @@
 			return $array;
         }
 
+        public function siteInformationSD92($database){
+
+			$array;
+
+			$sql = "SELECT * FROM schools WHERE id = '8'";
+			$query = mysqli_query($database->con, $sql);
+			if (!$query) {
+			    header("location: ../site.php?page=index&error=true");
+			} else {
+                    $array = mysqli_fetch_assoc($query);
+            }
+            
+			return $array;            
+        }
+
     }
 
     require 'site_options.php';

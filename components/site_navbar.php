@@ -1,8 +1,17 @@
+<!-- Site Backend Connection Initialization -->
+<?php
+
+    require 'functions/site.php';
+    $info = $site->siteInformationSD92($database);
+    $blog_posts = $site->blogListIndex($database, 2);
+
+?>
+
 <!-- Top bar-->
 <div class="top-bar">
     <div class="row d-flex align-items-center">
     <div class="col-md-6 d-md-block d-none">
-        <p>Contact us at [school district number] or [school district email].</p>
+        <p>Contact us at <?php echo $info['school_phone']; ?> or [school district email].</p>
     </div>
     <div class="col-md-6">
         <div class="d-flex justify-content-md-end justify-content-between">
@@ -82,23 +91,9 @@
         </li>
         <li class="nav-item"><a href="site.php?page=blog">Blog</a></li>
         <li class="nav-item"><a href="site.php?page=careers">Careers</a></li>
+        <li class="nav-item"><a href="#"><i class="fa fa-search fa-lg"></i><span class="d-inline-block d-md-none"> Search</span></a></li>
         </ul>
-    </div>
-    <div id="search" class="collapse clearfix">
-        <form role="search" class="navbar-form">
-        <div class="input-group">
-            <input type="text" placeholder="Search" class="form-control"><span class="input-group-btn">
-            <button type="submit" class="btn btn-template-main"><i class="fa fa-search"></i></button></span>
-        </div>
-        </form>
     </div>
 </div>
 </header>
 <!-- Navbar End-->
-
-<!-- Site Backend Connection Initialization -->
-<?php
-
-    require 'functions/site.php';
-
-?>

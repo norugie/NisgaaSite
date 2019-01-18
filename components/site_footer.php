@@ -4,30 +4,20 @@
     <div class="row">
     <div class="col-lg-3 offset-md-1">
         <h4 class="h6">SD92 (NISGA'A)</h4>
-        <p class="text-uppercase">5002 Skateen Avenue <br>Gitlaxt'aamiks <br>British Columbia <br>V0J 1A0 <br>Canada </p>
+        <p class="text-uppercase"><?php echo $addr = str_replace(',', '<br>', $info['school_addr']); ?></p>
         <hr class="d-block d-lg-none">
     </div>
     <div class="col-lg-4">
-        <h4 class="h6">Recent Posts</h4>
+        <h4 class="h6">Recent Blog Posts</h4>
         <ul class="list-unstyled footer-blog-list">
-        <li class="d-flex align-items-center">
-            <div class="image"><img src="img/detailsquare.jpg" alt="..." class="img-fluid"></div>
-            <div class="text">
-            <h5 class="mb-0"> <a href="post.html">Blog post name</a></h5>
-            </div>
-        </li>
-        <li class="d-flex align-items-center">
-            <div class="image"><img src="img/detailsquare.jpg" alt="..." class="img-fluid"></div>
-            <div class="text">
-            <h5 class="mb-0"> <a href="post.html">Blog post name</a></h5>
-            </div>
-        </li>
-        <li class="d-flex align-items-center">
-            <div class="image"><img src="img/detailsquare.jpg" alt="..." class="img-fluid"></div>
-            <div class="text">
-            <h5 class="mb-0"> <a href="post.html">Very very long blog post name</a></h5>
-            </div>
-        </li>
+            <?php foreach($blog_posts as $recent_post): ?>
+                <li class="d-flex align-items-center">
+                    <div class="image"><img src="images/thumbnails/<?php echo $recent_post['post_thumbnail']; ?>" alt="..." class="img-fluid"></div>
+                    <div class="text">
+                    <h5 class="mb-0"> <a href="post.html"><?php echo $recent_post['post_title']; ?></a></h5>
+                    </div>
+                </li>
+            <?php endforeach; ?>
         </ul>
         <hr class="d-block d-lg-none">
     </div>
@@ -42,7 +32,7 @@
                     <i class="fa fa-phone fa-lg"></i>
                 </div>
                 <div class="col-sm-10">
-                    <a href="post.html">[school district phone]</a>
+                    <?php echo $info['school_phone']; ?>
                 </div>
             </div>
             </h5>

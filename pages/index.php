@@ -1,8 +1,3 @@
-<?php
-
-    $blog_posts = $site->blogListIndex($database, 2);
-
-?>
 <!-- JUMBOTRON -->
 <section class="no-mb relative-positioned">
     <div style="background: url('img/photogrid.jpg') center center repeat; background-size: cover;" class="jumbotron relative-positioned color-white text-md-center">
@@ -137,16 +132,16 @@
             </div>
             <p class="lead">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. <a href="site.php?page=blog">Check our blog!</a></p>
             <div class="row">
-                <?php foreach($blog_posts as $blog): ?>
+                <?php foreach($blog_posts as $recent_post): ?>
                     <div class="col-lg-4">
                         <div class="home-blog-post">
-                            <div class="image"><img src="images/thumbnails/<?php echo $blog['post_thumbnail']; ?>" alt="..." class="img-fluid">
+                            <div class="image"><img src="images/thumbnails/<?php echo $recent_post['post_thumbnail']; ?>" alt="..." class="img-fluid">
                             <div class="overlay d-flex align-items-center justify-content-center"><a href="#" class="btn btn-template-outlined-white"><i class="fa fa-chain"> </i> Read More</a></div>
                             </div>
                             <div class="text">
-                            <h4><a href="#"><?php echo $blog['post_title']; ?></a></h4>
-                            <p class="author-category">By <?php echo $blog['firstname'] . " " . $blog['lastname']; ?></p>
-                            <p class="author-category"><?php echo date_format(date_create($blog['post_date']), 'd M Y'); ?></p>
+                            <h4><a href="#"><?php echo $recent_post['post_title']; ?></a></h4>
+                            <p class="author-category">By <?php echo $recent_post['firstname'] . " " . $recent_post['lastname']; ?></p>
+                            <p class="author-category"><?php echo date_format(date_create($recent_post['post_date']), 'd M Y'); ?></p>
                             </div>
                         </div>
                     </div>

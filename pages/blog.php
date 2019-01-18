@@ -1,9 +1,9 @@
 <!-- BLOG LIST -->
 
-<?php $blog_posts = $site->blogList($database, 2); ?>
+<?php $blog_list = $site->blogList($database, 2); ?>
 
 <div id="blog-listing-medium" class="col-md-9">
-    <?php foreach($blog_posts as $blog): ?>
+    <?php foreach($blog_list as $blog): ?>
         <section class="post">
             <div class="row">
                 <div class="col-md-3">
