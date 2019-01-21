@@ -14,7 +14,7 @@
     <!-- ON SITE OPENED JOBS CONTENT -->
     <section>
         <div id="customer-orders">
-            <p class="lead">If you have any questions, please feel free to <a href="site.php?page=contact_us">contact us</a>.</p>
+            <p class="lead">If you have any questions, please feel free to <a href="index.php?page=contact_us">contact us</a>.</p>
             <div class="box">
                 <div class="table-responsive">
                     <table class="table table-hover">

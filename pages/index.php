@@ -118,7 +118,7 @@
             <div class="heading text-center">
                 <h2>From our blog</h2>
             </div>
-            <p class="lead">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. <a href="site.php?page=blog">Check our blog!</a></p>
+            <p class="lead">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. <a href="index.php?page=blog">Check our blog!</a></p>
             <div class="row">
                 <?php foreach($blog_posts as $recent_post): ?>
                     <div class="col-lg-4">
