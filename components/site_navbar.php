@@ -30,7 +30,7 @@
 <!-- Navbar Start-->
 <header class="nav-holder make-sticky">
 <div id="navbar" role="navigation" class="navbar navbar-expand-lg">
-    <a href="index.php?page=index" class="navbar-brand home"><img src="nisgaa-icon-banner.png" alt="Nisga'a SD92 Icon" class="d-none d-md-inline-block"><img src="nisgaa-icon.png" alt="Nisga'a SD92 Icon" class="d-inline-block d-md-none"><span class="sr-only">Nisga'a - go to homepage</span></a>
+    <a href="/?page=index" class="navbar-brand home"><img src="nisgaa-icon-banner.png" alt="Nisga'a SD92 Icon" class="d-none d-md-inline-block"><img src="nisgaa-icon.png" alt="Nisga'a SD92 Icon" class="d-inline-block d-md-none"><span class="sr-only">Nisga'a - go to homepage</span></a>
     <button type="button" data-toggle="collapse" data-target="#navigation" class="navbar-toggler btn-template-outlined"><span class="sr-only">Toggle navigation</span><i class="fa fa-align-justify"></i></button>
     <div id="navigation" class="navbar-collapse collapse">
         <ul class="nav navbar-nav ml-auto">
@@ -41,9 +41,9 @@
                 <div class="col-lg-4">
                     <h5>District Information</h5>
                     <ul class="list-unstyled mb-3">
-                    <li class="nav-item"><a href="index.php?page=about_us" class="nav-link">About</a></li>
-                    <li class="nav-item"><a href="index.php?page=inquiries" class="nav-link">Inquiries</a></li>
-                    <li class="nav-item"><a href="index.php?page=contact_us" class="nav-link">Contact Us</a></li>
+                    <li class="nav-item"><a href="/?page=about_us" class="nav-link">About</a></li>
+                    <li class="nav-item"><a href="/?page=inquiries" class="nav-link">Inquiries</a></li>
+                    <li class="nav-item"><a href="/?page=contact_us" class="nav-link">Contact Us</a></li>
                     </ul>
                     <h5>Departments</h5>
                     <ul class="list-unstyled mb-3">
@@ -56,15 +56,15 @@
                 <div class="col-lg-4">
                     <h5>Curriculum</h5>
                     <ul class="list-unstyled mb-3">
-                    <li class="nav-item"><a href="index.php?page=k-12_program" class="nav-link">K-12 Program</a></li>
-                    <li class="nav-item"><a href="index.php?page=distant_learners_program" class="nav-link">Distant Learners Program</a></li>
-                    <li class="nav-item"><a href="index.php?page=language_and_culture" class="nav-link">Nisga'a Language and Culture</a></li>
+                    <li class="nav-item"><a href="/?page=k-12_program" class="nav-link">K-12 Program</a></li>
+                    <li class="nav-item"><a href="/?page=distant_learners_program" class="nav-link">Distant Learners Program</a></li>
+                    <li class="nav-item"><a href="/?page=language_and_culture" class="nav-link">Nisga'a Language and Culture</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-4">
                     <h5>Governance</h5>
                     <ul class="list-unstyled mb-3">
-                    <li class="nav-item"><a href="index.php?page=board_of_education" class="nav-link">Board of Education</a></li>
+                    <li class="nav-item"><a href="/?page=board_of_education" class="nav-link">Board of Education</a></li>
                     <li class="nav-item"><a href="javascript: void(0)" class="nav-link">Nisga'a Lisims Government</a></li>
                     <li class="nav-item"><a href="javascript: void(0)" class="nav-link">Gitlaxt'aamiks</a></li>
                     <li class="nav-item"><a href="javascript: void(0)" class="nav-link">Gitwinksihlkw</a></li>
@@ -86,14 +86,14 @@
         </li>
         <li class="nav-item dropdown"><a href="javascript: void(0)" data-toggle="dropdown" class="dropdown-toggle">Resources <b class="caret"></b></a>
             <ul class="dropdown-menu">
-            <li class="dropdown-item"><a href="index.php?page=general_resources" class="nav-link">General Resources</a></li>
-            <li class="dropdown-item"><a href="index.php?page=teacher_resources" class="nav-link">Teacher Resources</a></li>
-            <li class="dropdown-item"><a href="index.php?page=student_resources" class="nav-link">Student Resources</a></li>
+            <li class="dropdown-item"><a href="/?page=general_resources" class="nav-link">General Resources</a></li>
+            <li class="dropdown-item"><a href="/?page=teacher_resources" class="nav-link">Teacher Resources</a></li>
+            <li class="dropdown-item"><a href="/?page=student_resources" class="nav-link">Student Resources</a></li>
             </ul>
         </li>
-        <li class="nav-item"><a href="index.php?page=blog">Blog</a></li>
-        <li class="nav-item"><a href="index.php?page=careers">Careers</a></li>
-        <li class="nav-item"><a href="#"><i class="fa fa-search fa-lg"></i><span class="d-inline-block d-md-none"> Search</span></a></li>
+        <li class="nav-item"><a href="/?page=blog">Blog</a></li>
+        <li class="nav-item"><a href="/?page=careers">Careers</a></li>
+        <li class="nav-item"><a href="#"><i class="fa fa-search fa-lg"></i><span class="d-inline-block d-md-none">&nbsp;&nbsp;Search</span></a></li>
         </ul>
     </div>
 </div>

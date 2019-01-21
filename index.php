@@ -14,7 +14,7 @@
 
         <script>
             
-            window.location = "site.php?page=index";
+            window.location = "/?page=index";
 
         </script>
 

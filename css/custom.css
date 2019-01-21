@@ -2,9 +2,12 @@ html {
     overflow: scroll;
     overflow-x: hidden;
 }
+
 ::-webkit-scrollbar {
-    width: 0px;  /* remove scrollbar space */
-    background: transparent;  /* optional: just make scrollbar invisible */
+    width: 0px;
+    /* remove scrollbar space */
+    background: transparent;
+    /* optional: just make scrollbar invisible */
 }
 
 .container-no-center {
@@ -19,28 +22,28 @@ html {
 
 /*-- HOME PAGE CUSTOM CSS --*/
 
-.top-bar{
-    padding: 10px 25px!important;
+.top-bar {
+    padding: 10px 25px !important;
 }
 
 .social-custom {
-    margin-left: 10px!important;
+    margin-left: 10px !important;
 }
 
 .login-btn {
-    margin-right:0px!important;
+    margin-right: 0px !important;
 }
 
 .dark-mask.mask-primary {
-    background: rgba(218, 77, 77, 0.65)!important;
+    background: rgba(218, 77, 77, 0.65) !important;
 }
 
 .copyrights {
-    padding: 15px 0!important;
+    padding: 15px 0 !important;
 }
 
 .get-it {
-    padding: 20px 0!important;
+    padding: 20px 0 !important;
 }
 
 .sidebar-jumbotron {
@@ -50,15 +53,15 @@ html {
 }
 
 
-.an-items > p {
+.an-items>p {
     font-size: 14px;
 }
 
-.daily-word > p {
+.daily-word>p {
     font-size: 16px;
 }
 
-@media screen and (min-width:768px){
+@media screen and (min-width:768px) {
     .sidebar-jumbotron {
         height: calc(100% + 128px);
         margin-top: -64px;
@@ -66,7 +69,7 @@ html {
     }
 
     .quick-links {
-        height: 200px; 
+        height: 200px;
         overflow-y: scroll;
     }
 
@@ -77,6 +80,12 @@ html {
 
     .daily-word {
         margin-bottom: -35px;
+    }
+}
+
+@media screen and (max-width:990px) {
+    .text-xs-sm-center {
+        text-align: center !important;
     }
 }
 
