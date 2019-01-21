@@ -1,3 +1,5 @@
+<?php $jobs = $site->jobList($database); ?>
+
 <div class="col-md-9">
     <!-- ON SITE OPENED JOBS INTRO CONTENT -->
     <section>
@@ -28,27 +30,15 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>17-598</td>
-                                <td><a href="#">Temporary Nisga’a Language Teacher (GES)</a></td>
-                                <td>GES</td>
-                                <td>12 December 2019</td>
-                                <td><a href="#" class="btn btn-template-outlined btn-sm">View</a>&nbsp;<a href="#" class="btn btn-template-main btn-sm">Apply Now!</a></td>
-                            </tr>
-                            <tr>
-                                <td>17-595</td>
-                                <td><a href="#">Custodian</a></td>
-                                <td>NESS</td>
-                                <td>18 February 2019</td>
-                                <td><a href="customer-order.html" class="btn btn-template-outlined btn-sm">View</a>&nbsp;<a href="#" class="btn btn-template-main btn-sm">Apply Now!</a></td>
-                            </tr>
-                            <tr>
-                                <td>17-600</td>
-                                <td><a href="#">Temporary Nisga’a Language & Culture Assistant</a></td>
-                                <td>District Wide</td>
-                                <td>20 March 2019</td>
-                                <td><a href="customer-order.html" class="btn btn-template-outlined btn-sm">View</a>&nbsp;<a href="#" class="btn btn-template-main btn-sm">Apply Now!</a></td>
-                            </tr>
+                            <?php foreach($jobs as $job): ?>
+                                <tr>
+                                    <td><?php echo preg_replace('/[a-zA-Z]/', '', $job['job_id']); ?></td>
+                                    <td><a href="jobs/<?php echo $job['file']; ?>" download><?php echo $job['title']; ?></a></td>
+                                    <td><?php echo $job['school_abbv']; ?></td>
+                                    <td><?php echo date_format(date_create($job['close_date']), 'd M Y'); ?></td>
+                                    <td><a href="#" class="btn btn-template-outlined btn-sm">View</a>&nbsp;<a href="#" class="btn btn-template-main btn-sm">Apply Now!</a></td>
+                                </tr>
+                            <?php endforeach;?>
                         </tbody>
                     </table>
                 </div>

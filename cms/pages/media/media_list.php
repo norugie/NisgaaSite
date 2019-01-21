@@ -11,7 +11,9 @@
         </div>
         <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
             <center>
-                <button type="button" class="btn bg-blue waves-effect" style="display: inline-block;" onclick="window.location.href='post.php?tab=post&page=media&media_option=create'">ADD NEW MEDIA POST</button>
+                <?php if($_SESSION['type'] != 3){ ?>
+                    <button type="button" class="btn bg-blue waves-effect" style="display: inline-block;" onclick="window.location.href='post.php?tab=post&page=media&media_option=create'">ADD NEW MEDIA POST</button>
+                <?php } ?>
             </center>
         </div>
     </div> 

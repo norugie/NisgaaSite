@@ -27,6 +27,7 @@
 			$array = array();
 			$sql = "SELECT posts.post_title,
 						   posts.post_date,
+						   posts.post_school,
 						   posts.id,
 						   users.firstname,
 						   users.lastname,
@@ -75,7 +76,10 @@
 
 		public function postsPerCategoryList($database, $category){
 			$array = array();
-			$sql = "SELECT posts.*,
+			$sql = "SELECT posts.post_title,
+						   posts.post_date,
+						   posts.post_school,
+						   posts.id,
 						   categories.cat_desc,
 						   users.firstname,
 						   users.lastname,
@@ -568,7 +572,10 @@
 
 		public function mediaPerCategoryList($database, $category){
 			$array = array();
-			$sql = "SELECT posts.*,
+			$sql = "SELECT posts.post_title,
+						   posts.post_date,
+						   posts.post_school,
+						   posts.id,
 						   categories.cat_desc,
 						   users.firstname,
 						   users.lastname,
@@ -601,6 +608,7 @@
 			$array = array();
 			$sql = "SELECT posts.post_title,
 						   posts.post_date,
+						   posts.post_school,
 						   posts.id,
 						   users.firstname,
 						   users.lastname,

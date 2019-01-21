@@ -11,7 +11,9 @@
         </div>
         <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
             <center>
-                <button type="button" class="btn bg-blue waves-effect" onclick="window.location.href='post.php?tab=post&page=announcements&announcement_option=create'" style="display: inline-block;">ADD NEW ANNOUNCEMENT POST</button>
+                <?php if($_SESSION['type'] != 3){ ?>
+                    <button type="button" class="btn bg-blue waves-effect" onclick="window.location.href='post.php?tab=post&page=announcements&announcement_option=create'" style="display: inline-block;">ADD NEW ANNOUNCEMENT POST</button>
+                <?php } ?>
             </center>
         </div>
     </div> 
@@ -55,10 +57,14 @@
                                     </button>
                                     <ul class="dropdown-menu">
                                         <li><a href="post.php?tab=post&page=announcements&announcement_option=view&a_id=<?php echo $a['id']; ?>">View Announcement</a></li>
-                                        <li role="separator" class="divider"></li>
-                                        <li><a href="post.php?tab=post&page=announcements&announcement_option=modify&a_id=<?php echo $a['id']; ?>">Edit Announcement Details</a></li>
-                                        <li role="separator" class="divider"></li>
-                                        <li><a href="#" data-type="delete-announcement" data-id="<?php echo $a['id']; ?>" data-name="<?php echo $a['a_id']; ?>" onclick="alertDesign(this);">Delete Announcement</a></li>
+                                        <?php if($_SESSION['type'] != 3){ ?>
+                                            <?php if($_SESSION['type'] == 1 || $_SESSION['type'] == 2 || $_SESSION['school'] == $p['post_school']){ ?>
+                                                <li role="separator" class="divider"></li>
+                                                <li><a href="post.php?tab=post&page=announcements&announcement_option=modify&a_id=<?php echo $a['id']; ?>">Edit Announcement Details</a></li>
+                                                <li role="separator" class="divider"></li>
+                                                <li><a href="#" data-type="delete-announcement" data-id="<?php echo $a['id']; ?>" data-name="<?php echo $a['a_id']; ?>" onclick="alertDesign(this);">Delete Announcement</a></li>
+                                            <?php } ?>
+                                        <?php } ?>
                                     </ul>
                                 </div>
                             </center>

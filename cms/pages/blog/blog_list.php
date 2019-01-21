@@ -11,7 +11,9 @@
         </div>
         <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
             <center>
-                <button type="button" class="btn bg-blue waves-effect" style="display: inline-block;" onclick="window.location.href='post.php?tab=post&page=blog&blog_option=create'">ADD NEW POST</button>
+                <?php if($_SESSION['type'] != 3){ ?>
+                    <button type="button" class="btn bg-blue waves-effect" style="display: inline-block;" onclick="window.location.href='post.php?tab=post&page=blog&blog_option=create'">ADD NEW POST</button>
+                <?php } ?>
             </center>
         </div>
     </div>
@@ -63,20 +65,21 @@
                                     </button>
                                     <ul class="dropdown-menu">
                                         <li><a href="post.php?tab=post&page=blog&blog_option=view&post_id=<?php echo $p['id']; ?>&event=<?php if($cats[0][0] != 'Event'){ echo "0"; } else { echo "1"; } ?>">View Post</a></li>
-                                        
-                                        <?php if($_SESSION['type'] == 1 || $_SESSION['type'] == 2 || $_SESSION['school'] == $p['post_school']){ ?>
-                                        <li role="separator" class="divider"></li>
-                                        <li><a href="post.php?tab=post&page=blog&blog_option=modify&modify=details&post_id=<?php echo $p['id']; ?>">Edit Post Details</a></li>
-                                        <?php if($cats[0][0] != 'Event' || $cats[0][0] != 'Announcement'){ ?>
-                                        <li><a href="post.php?tab=post&page=blog&blog_option=modify&modify=categories&post_id=<?php echo $p['id']; ?>">Edit Post Categories</a></li>
-                                        <?php } ?>
-                                        
-                                        <li role="separator" class="divider"></li>
-                                        <?php if($cats[0][0] != 'Event'){ ?>
-                                        <li><a href="#" data-type="delete-post" data-id="<?php echo $p['id']; ?>" data-name="<?php echo $p['post_id']; ?>" data-event="0" onclick="alertDesign(this);">Delete Post</a></li>
-                                        <?php } else { ?>
-                                        <li><a href="#" data-type="delete-post" data-id="<?php echo $p['id']; ?>" data-name="<?php echo $p['post_id']; ?>" data-event="1" onclick="alertDesign(this);">Delete Post</a></li>
-                                        <?php } ?>
+                                        <?php if($_SESSION['type'] != 3){ ?>
+                                            <?php if($_SESSION['type'] == 1 || $_SESSION['type'] == 2 || $_SESSION['school'] == $p['post_school']){ ?>
+                                                <li role="separator" class="divider"></li>
+                                                <li><a href="post.php?tab=post&page=blog&blog_option=modify&modify=details&post_id=<?php echo $p['id']; ?>">Edit Post Details</a></li>
+                                                <?php if($cats[0][0] != 'Event' || $cats[0][0] != 'Announcement'){ ?>
+                                                    <li><a href="post.php?tab=post&page=blog&blog_option=modify&modify=categories&post_id=<?php echo $p['id']; ?>">Edit Post Categories</a></li>
+                                                <?php } ?>
+                                            
+                                            <li role="separator" class="divider"></li>
+                                                <?php if($cats[0][0] != 'Event'){ ?>
+                                                    <li><a href="#" data-type="delete-post" data-id="<?php echo $p['id']; ?>" data-name="<?php echo $p['post_id']; ?>" data-event="0" onclick="alertDesign(this);">Delete Post</a></li>
+                                                <?php } else { ?>
+                                                    <li><a href="#" data-type="delete-post" data-id="<?php echo $p['id']; ?>" data-name="<?php echo $p['post_id']; ?>" data-event="1" onclick="alertDesign(this);">Delete Post</a></li>
+                                                <?php } ?>
+                                            <?php } ?>
                                         <?php } ?>
                                     </ul>
                                 </div>

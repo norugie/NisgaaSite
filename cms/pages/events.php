@@ -32,7 +32,9 @@
                     </div>
                     <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                         <center>
-                            <button type="button" class="btn bg-blue waves-effect" data-toggle="modal" data-target="#new-event-modal" style="display: inline-block;">ADD AN EVENT</button>
+                            <?php if($_SESSION['type'] != 3){ ?>
+                                <button type="button" class="btn bg-blue waves-effect" data-toggle="modal" data-target="#new-event-modal" style="display: inline-block;">ADD AN EVENT</button>
+                            <?php } ?>
                             <a href="../functions/district.php?district=true&changeEventView=true" style="color:#fff;"><button type="button" class="btn bg-blue-grey waves-effect change-button" style="margin-right: 10px;"><?php if($_SESSION['event_view'] == 'LIST'){ echo "CALENDAR"; } else { echo "LIST"; }?> VIEW</button></a>
                         </center>
                     </div>

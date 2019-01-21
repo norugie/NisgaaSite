@@ -1,10 +1,10 @@
-@media screen and (min-width:768px) {
+@media screen and (min-width:769px) {
     .table-responsive {
         overflow-x: hidden !important;
     }
 }
 
-@media screen and (max-width: 520px) {
+@media screen and (max-width: 768px) {
     .text-xs-sm-center {
         text-align: center !important;
     }

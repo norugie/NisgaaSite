@@ -6,9 +6,13 @@
         </div>
         <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
             <center>
-                <button type="button" class="btn bg-blue waves-effect" style="display: inline-block; margin-top: 5px;" onclick="window.location.href='post.php?tab=post&page=announcements'"><i class="material-icons">list</i></button>
-                <button type="button" class="btn bg-green waves-effect" style="display: inline-block; margin-top: 5px; margin-left: 5px;" onclick="window.location.href='post.php?tab=post&page=announcements&announcement_option=modify&a_id=<?php echo $a_info['id']; ?>'"><i class="material-icons">mode_edit</i></button>
-                <button type="button" class="btn bg-red waves-effect" style="display: inline-block; margin-top: 5px; margin-left: 5px;" data-type="delete-announcement" data-id="<?php echo $a_info['id']; ?>" data-name="<?php echo $a_info['a_id']; ?>" onclick="alertDesign(this);"><i class="material-icons">delete</i></button>
+                <button type="button" class="btn bg-blue waves-effect" style="display: inline-block; margin-top: 5px;" onclick="window.location.href='post.php?tab=post&page=announcements'"><i class="material-icons">list</i><span>LIST</span></button>
+                <?php if($_SESSION['type'] != 3){ ?>
+                    <?php if($_SESSION['type'] == 1 || $_SESSION['type'] == 2 || $_SESSION['school'] == $p['post_school']){ ?>
+                        <button type="button" class="btn bg-green waves-effect" style="display: inline-block; margin-top: 5px; margin-left: 5px;" onclick="window.location.href='post.php?tab=post&page=announcements&announcement_option=modify&a_id=<?php echo $a_info['id']; ?>'"><i class="material-icons">mode_edit</i></button>
+                        <button type="button" class="btn bg-red waves-effect" style="display: inline-block; margin-top: 5px; margin-left: 5px;" data-type="delete-announcement" data-id="<?php echo $a_info['id']; ?>" data-name="<?php echo $a_info['a_id']; ?>" onclick="alertDesign(this);"><i class="material-icons">delete</i></button>
+                    <?php } ?>
+                <?php } ?>
             </center>
         </div>
     </div>

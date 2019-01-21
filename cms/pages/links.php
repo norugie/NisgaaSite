@@ -17,7 +17,9 @@
                     </div>
                     <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
                         <center>
-                            <button type="button" class="btn bg-blue waves-effect" data-toggle="modal" data-target="#new-link-modal" style="display: inline-block;">ADD NEW LINK</button>
+                            <?php if($_SESSION['type'] != 3){ ?>
+                                <button type="button" class="btn bg-blue waves-effect" data-toggle="modal" data-target="#new-link-modal" style="display: inline-block;">ADD NEW LINK</button>
+                            <?php } ?>
                         </center>
                     </div>
                 </div>

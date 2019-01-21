@@ -21,7 +21,7 @@
                     ORDER BY posts.id DESC";
 			$query = mysqli_query($database->con, $sql);
 			if (!$query) {
-			    header("location: ../site.php?page=index&error=true");
+			    header("location: ../?page=index&error=true");
 			} else {
 				while($row = mysqli_fetch_array($query)){
 					$array[] = $row;
@@ -50,7 +50,7 @@
                     LIMIT 3";
 			$query = mysqli_query($database->con, $sql);
 			if (!$query) {
-                 //header("location: ../site.php?page=index&error=true");
+                 //header("location: ../?page=index&error=true");
                 return ("Error description: " . mysqli_error($database->con));
 			} else {
 				while($row = mysqli_fetch_array($query)){
@@ -68,7 +68,7 @@
 			$sql = "SELECT * FROM schools WHERE id = '8'";
 			$query = mysqli_query($database->con, $sql);
 			if (!$query) {
-			    header("location: ../site.php?page=index&error=true");
+			    header("location: ../?page=index&error=true");
 			} else {
                     $array = mysqli_fetch_assoc($query);
             }
@@ -84,7 +84,7 @@
                     WHERE status = 'Active'";
 			$query = mysqli_query($database->con, $sql);
 			if (!$query) {
-			    header("location: ../site.php?page=index&error=true");
+			    header("location: ../?page=index&error=true");
 			} else {
 				while($row = mysqli_fetch_array($query)){
 					$array[] = $row;
@@ -105,7 +105,7 @@
                     AND announcements.status = 'Active'";
 			$query = mysqli_query($database->con, $sql);
 			if (!$query) {
-			    header("location: ../site.php?page=index&error=true");
+			    header("location: ../?page=index&error=true");
 			} else {
 				while($row = mysqli_fetch_array($query)){
 					$array[] = $row;
@@ -130,7 +130,7 @@
                     AND links.status = 'Active'";
 			$query = mysqli_query($database->con, $sql);
 			if (!$query) {
-			    header("location: ../site.php?page=index&error=true");
+			    header("location: ../?page=index&error=true");
 			} else {
 				while($row = mysqli_fetch_array($query)){
 					$array[] = $row;
@@ -138,6 +138,30 @@
             }
             
 			return $array;
+        }
+
+        public function jobList($database){
+            $array = array();
+
+            $sql =  "SELECT jobs.job_id,
+                            jobs.title,
+                            jobs.close_date,
+                            jobs.file,
+                            schools.school_abbv
+                    FROM jobs
+                    LEFT JOIN schools
+                    ON (jobs.school = schools.id)
+                    WHERE jobs.status = 'Open'";
+			$query = mysqli_query($database->con, $sql);
+			if (!$query) {
+			    header("location: ../?page=index&error=true");
+			} else {
+				while($row = mysqli_fetch_array($query)){
+					$array[] = $row;
+				}
+            }
+            
+			return $array;           
         }
 
     }
