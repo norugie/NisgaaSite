@@ -3,7 +3,7 @@
     if($_GET['page'] == 'blog' && isset($_GET['id']) && !empty($_GET['id'])){
         $categories = $site->categoryListPerPost($database, $post_info['id']);
     } else {
-        //$categories = $site->categoryList($database);
+        $categories = $site->categoryList($database);
     }
 ?>
 <div class="col-md-3">

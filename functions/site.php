@@ -216,8 +216,7 @@
 					ON (users.id = posts.post_author)
 					LEFT JOIN schools
 					ON (schools.id = posts.post_school)
-					WHERE posts.post_type = 'Post' 
-					AND posts.post_id = '$post_id'";
+					WHERE posts.post_id = '$post_id'";
 			$query = mysqli_query($database->con, $sql);
 			if (!$query) {
 			    header("location: ../?page=index&error=true");
