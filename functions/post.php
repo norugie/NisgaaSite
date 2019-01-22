@@ -174,7 +174,7 @@
 
 		public function addPost($database, $post_title, $post_content, $post_thumbnail, $post_desc){
 			$id;
-			$post_id = 'PST' . rand(1111111,9999999);
+			$post_id = 'PST' . rand(1111111111,9999999999);
 			$user = $_SESSION['id'];
 			$school;
 

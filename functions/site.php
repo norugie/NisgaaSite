@@ -8,6 +8,7 @@
 			$sql = "SELECT posts.post_title,
                            posts.post_date,
                            posts.post_desc,
+                           posts.post_id,
                            posts.post_thumbnail,
                            users.firstname,
 						   users.lastname
@@ -110,6 +111,30 @@
 			return $array;
         }
 
+        public function categoryListPerPost($database, $post_id){
+            $array = array();
+
+			$sql = "SELECT categories.cat_id,
+                           categories.cat_desc 
+                    FROM post_categories
+                    LEFT JOIN categories
+                    ON (post_categories.cat_id = categories.id)
+                    LEFT JOIN posts
+                    ON (post_categories.post_id = posts.id)
+                    WHERE categories.status = 'Active'
+                    AND post_categories.post_id = '$post_id'";
+			$query = mysqli_query($database->con, $sql);
+			if (!$query) {
+			    header("location: ../?page=index&error=true");
+			} else {
+				while($row = mysqli_fetch_array($query)){
+					$array[] = $row;
+				}
+            }
+            
+			return $array;           
+        }
+
         public function announcementList($database, $school){
 			$array = array();
 
@@ -179,6 +204,29 @@
             
 			return $array;           
         }
+
+		public function postInformation($database, $id){
+            $array;
+            $post_id = 'PST' . $id;
+			$sql = "SELECT posts.*,
+						   users.firstname,
+						   users.lastname
+					FROM posts
+					LEFT JOIN users
+					ON (users.id = posts.post_author)
+					LEFT JOIN schools
+					ON (schools.id = posts.post_school)
+					WHERE posts.post_type = 'Post' 
+					AND posts.post_id = '$post_id'";
+			$query = mysqli_query($database->con, $sql);
+			if (!$query) {
+			    header("location: ../?page=index&error=true");
+			} else {
+				$array = mysqli_fetch_assoc($query);
+            }
+            
+			return $array;
+		}
 
     }
 

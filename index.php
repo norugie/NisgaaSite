@@ -34,8 +34,13 @@
                 <div class="container-no-center">
 
                     <div class="row bar">
-
-                        <?php require 'pages/' . $page_name . '.php'; ?>
+                        <?php
+                            if($_GET['page'] == 'blog' && isset($_GET['id']) && !empty($_GET['id'])){
+                                require 'pages/read.php';
+                            } else {
+                                require 'pages/' . $page_name . '.php';
+                            }
+                        ?>
                         <?php require 'components/site_sidebar.php'; ?>
                         
                     </div>
@@ -45,7 +50,7 @@
         <?php
             } else {
 
-                require 'pages/' . $page_name . '.php';
+                require 'pages/index.php';
                 
             }
 
