@@ -77,33 +77,33 @@
             <!-- Owl Carousel -->
             <div class="owl-carousel">
                 <!-- Carousel Items -->
-                <div class="row">
-                    <div class="col-md-6">
-                        <h4 style="margin:0;">New Event</h4>
-                        <p class="text-uppercase" style="margin:0;">10 January 2018</p>
+                <?php foreach($events as $event):?>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h4 style="margin:0;"><?php echo $event['event_name']; ?></h4>
+                            <p class="text-uppercase" style="margin:0;">
+                                <?php 
+                                    $data_start = explode(',', $event['GROUP_CONCAT(event_days.event_date_day_start)']); 
+                                    $data_time = explode(',', $event['GROUP_CONCAT(event_days.event_date_time)']);
+                                    $data_end = explode(',', $event['GROUP_CONCAT(event_days.event_date_day_end)']); 
+                                ?>
+                                <?php 
+
+                                    foreach($data_start as $key => $start):
+
+                                        echo date_format(date_create($start), 'd M Y');
+                                        if($data_end[$key] != $start){ echo ' to ' . date_format(date_create($data_end[$key]), 'd M Y'); } 
+                                                        
+                                    endforeach; 
+                                    
+                                ?>
+                            </p>
+                        </div>
+                        <div class="col-md-6">
+                            <a href="/?page=blog&id=<?php echo preg_replace('/[a-zA-Z]/', '', $event['post_id']); ?>" class="btn btn-template-outlined-white">Event Info</a>
+                        </div>
                     </div>
-                    <div class="col-md-6">
-                        <a href="#" class="btn btn-template-outlined-white">Event Info</a>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6">
-                        <h4 style="margin:0;">Another Event</h4>
-                        <p class="text-uppercase" style="margin:0;">13 January 2018</p>
-                    </div>
-                    <div class="col-md-6">
-                        <a href="#" class="btn btn-template-outlined-white">Event Info</a>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6">
-                        <h4 style="margin:0;">New Another Event</h4>
-                        <p class="text-uppercase" style="margin:0;">15 January 2018</p>
-                    </div>
-                    <div class="col-md-6">
-                        <a href="#" class="btn btn-template-outlined-white">Event Info</a>
-                    </div>
-                </div>
+                <?php endforeach; ?>
             </div>
 
         </div>

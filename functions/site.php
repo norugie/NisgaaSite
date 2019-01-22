@@ -78,6 +78,40 @@
 			return $array;
         }
 
+        public function eventList($database, $school){
+            
+			$array = array();
+
+			$sql = "SELECT events.event_name,
+                           posts.post_id, 
+						   GROUP_CONCAT(event_days.event_date_day_start),
+						   GROUP_CONCAT(event_days.event_date_day_end),
+						   GROUP_CONCAT(event_days.event_date_time)
+					FROM events
+					LEFT JOIN posts
+					ON (posts.id = events.post)
+					LEFT JOIN schools
+					ON (schools.id = events.school)
+					LEFT JOIN event_days
+					ON (event_days.event = events.id)
+					WHERE events.status = 'Active'
+                    AND events.school = '$school'
+                    GROUP BY event_days.event
+                    LIMIT 3";
+			$query = mysqli_query($database->con, $sql);
+			if (!$query) {
+				header("location: ../?page=index&error=true");
+				// echo("Error description: " . mysqli_error($database->con));
+			} else {
+				while($row = mysqli_fetch_array($query)){
+					$array[] = $row;
+				}
+            }
+
+			return $array;
+
+		}
+
         public function siteInformationSD92($database){
 
 			$array;
