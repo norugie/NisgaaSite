@@ -2,7 +2,7 @@
 
     Class Site {
 
-        public function blogList($database, $school){
+        public function blogList($database, $school, $limit, $sheet_index){
 			$array = array();
 
 			$sql = "SELECT posts.post_title,
@@ -18,7 +18,8 @@
                     ON (schools.id = posts.post_school)
                     WHERE posts.post_school = '$school'
                     AND posts.status = 'Active'
-                    ORDER BY posts.id DESC";
+                    ORDER BY posts.id DESC
+                    LIMIT $sheet_index, $limit";
 			$query = mysqli_query($database->con, $sql);
 			if (!$query) {
 			    header("location: ../?page=index&error=true");
@@ -29,6 +30,21 @@
             }
             
 			return $array;
+        }
+
+        public function blogListCount($database, $school){
+			$count;
+
+            $sql = "SELECT COUNT(*) FROM posts WHERE post_school = '$school' AND status = 'Active'";
+			$query = mysqli_query($database->con, $sql);
+			if (!$query) {
+			    header("location: ../?page=index&error=true");
+			} else {
+				$row = mysqli_fetch_array($query);
+                $count = $row[0];
+            }
+            
+			return $count;
         }
 
         public function blogListIndex($database, $school){
