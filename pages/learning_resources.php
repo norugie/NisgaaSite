@@ -1,6 +1,6 @@
-<?php $links = $site->linkList($database, 'Teacher Resources', 2); ?>
+<?php $links = $site->linkList($database, 'Learning Resources', 2); ?>
 <div class="col-md-9">
-    <!-- TEACHER RESOURCE INFO CONTENT -->
+    <!-- LEARNING RESOURCE INFO CONTENT -->
     <section>
         <div class="row">
             <div class="col-md-12">
@@ -9,7 +9,7 @@
         </div>
     </section>
     
-    <!-- TEACHER RESOURCE CONTENT -->
+    <!-- LEARNING RESOURCE CONTENT -->
     <section>
         <div class="row">
             <div class="col-md-12">

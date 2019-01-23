@@ -89,7 +89,7 @@
             <ul class="dropdown-menu">
             <li class="dropdown-item"><a href="/?page=general_resources" class="nav-link">General Resources</a></li>
             <li class="dropdown-item"><a href="/?page=teacher_resources" class="nav-link">Teacher Resources</a></li>
-            <li class="dropdown-item"><a href="/?page=student_resources" class="nav-link">Student Resources</a></li>
+            <li class="dropdown-item"><a href="/?page=learning_resources" class="nav-link">Learning Resources</a></li>
             </ul>
         </li>
         <li class="nav-item"><a href="/?page=blog">Blog</a></li>

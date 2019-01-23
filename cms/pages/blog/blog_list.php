@@ -69,7 +69,7 @@
                                             <?php if($_SESSION['type'] == 1 || $_SESSION['type'] == 2 || $_SESSION['school'] == $p['post_school']){ ?>
                                                 <li role="separator" class="divider"></li>
                                                 <li><a href="post.php?tab=post&page=blog&blog_option=modify&modify=details&post_id=<?php echo $p['id']; ?>">Edit Post Details</a></li>
-                                                <?php if($cats[0][0] != 'Event' || $cats[0][0] != 'Announcement'){ ?>
+                                                <?php if($cats[0][0] != 'Event'){ ?>
                                                     <li><a href="post.php?tab=post&page=blog&blog_option=modify&modify=categories&post_id=<?php echo $p['id']; ?>">Edit Post Categories</a></li>
                                                 <?php } ?>
                                             
