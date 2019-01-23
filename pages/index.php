@@ -91,7 +91,7 @@
 
                                     foreach($data_start as $key => $start):
 
-                                        echo date_format(date_create($start), 'd M Y');
+                                        echo " " . date_format(date_create($start), 'd M Y') . " ";
                                         if($data_end[$key] != $start){ echo ' to ' . date_format(date_create($data_end[$key]), 'd M Y'); } 
                                                         
                                     endforeach; 

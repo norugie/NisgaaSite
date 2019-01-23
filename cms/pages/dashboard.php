@@ -101,7 +101,7 @@
                     </div>
                     <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
                         <center>
-                            <?php if($_SESSION['type'] === 1){ ?>
+                            <?php if($_SESSION['type'] == 1){ ?>
                                 <button type="button" class="btn btn-default waves-effect" style="display: inline-block; margin-left: 5px;"><i class="material-icons">print</i></button>
                                 <button type="button" class="btn btn-default waves-effect" style="display: inline-block; margin-left: 5px;"><i class="material-icons">assignment</i></button>
                                 <button type="button" class="btn bg-red waves-effect" style="display: inline-block; margin-left: 5px;" data-type="delete-logs" data-id="0" data-name="0" onclick="alertDesign(this);"><i class="material-icons">delete</i></button>
