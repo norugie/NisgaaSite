@@ -1,3 +1,4 @@
+<?php $blog_recent = $site->blogRecent($database, 2); ?>
 <!-- JUMBOTRON -->
 <section class="no-mb relative-positioned">
     <div style="background: url('images/site/photogrid.jpg') center center repeat; background-size: cover;" class="jumbotron relative-positioned color-white text-md-center">
@@ -113,27 +114,45 @@
 
 <!-- RECENT BLOG POSTS -->
 <section class="bar background-white no-mb">
-    <div class="container">
+    <div class="container-no-center">
         <div class="col-md-12">
             <div class="heading text-center">
                 <h2>From our blog</h2>
             </div>
             <p class="lead">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. <a href="/?page=blog">Check our blog!</a></p>
             <div class="row">
-                <?php foreach($blog_posts as $recent_post): ?>
-                    <div class="col-lg-4">
-                        <div class="home-blog-post">
-                            <div class="image"><img src="images/thumbnails/<?php echo $recent_post['post_thumbnail']; ?>" alt="..." class="img-fluid">
-                            <div class="overlay d-flex align-items-center justify-content-center"><a href="/?page=blog&id=<?php echo preg_replace('/[a-zA-Z]/', '', $recent_post['post_id']); ?>" class="btn btn-template-outlined-white"><i class="fa fa-chain"> </i> Read More</a></div>
+                <div class="col-lg-9">
+                    <div class="row">
+                        <?php foreach($blog_posts as $recent_post): ?>
+                            <div class="col-lg-4">
+                                <div class="home-blog-post">
+                                    <div class="image"><img src="images/thumbnails/<?php echo $recent_post['post_thumbnail']; ?>" alt="..." class="img-fluid">
+                                    <div class="overlay d-flex align-items-center justify-content-center"><a href="/?page=blog&id=<?php echo preg_replace('/[a-zA-Z]/', '', $recent_post['post_id']); ?>" class="btn btn-template-outlined-white"><i class="fa fa-chain"> </i> Read More</a></div>
+                                    </div>
+                                    <div class="text">
+                                    <h4><a href="/?page=blog&id=<?php echo preg_replace('/[a-zA-Z]/', '', $recent_post['post_id']); ?>"><?php echo $recent_post['post_title']; ?></a></h4>
+                                    <p class="author-category">By <?php echo $recent_post['firstname'] . " " . $recent_post['lastname']; ?></p>
+                                    <p class="author-category"><?php echo date_format(date_create($recent_post['post_date']), 'd M Y'); ?></p>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="text">
-                            <h4><a href="/?page=blog&id=<?php echo preg_replace('/[a-zA-Z]/', '', $recent_post['post_id']); ?>"><?php echo $recent_post['post_title']; ?></a></h4>
-                            <p class="author-category">By <?php echo $recent_post['firstname'] . " " . $recent_post['lastname']; ?></p>
-                            <p class="author-category"><?php echo date_format(date_create($recent_post['post_date']), 'd M Y'); ?></p>
-                            </div>
+                        <?php endforeach; ?>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="panel panel-default sidebar-menu">
+                        <div class="panel-heading">
+                            <h3 class="h4 panel-title">RECENT POSTS</h3>
+                        </div>
+                        <div class="panel-body">
+                            <ul class="nav nav-pills flex-column text-sm">
+                                <?php foreach($blog_recent as $rp): ?>
+                                    <li class="nav-item"><a href="/?page=blog&id=<?php echo preg_replace('/[a-zA-Z]/', '', $rp['post_id']); ?>" class="nav-link"><?php echo $rp['post_title']; ?></a></li>
+                                <?php endforeach; ?>
+                            </ul>
                         </div>
                     </div>
-                <?php endforeach; ?>
+                </div>
             </div>
         </div>
     </div>

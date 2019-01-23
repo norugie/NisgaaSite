@@ -46,7 +46,28 @@
             }
             
 			return $count;
-        }
+		}
+		
+		public function blogRecent($database, $school){
+			$array = array();
+
+			$sql = "SELECT post_title, post_id 
+                    FROM posts
+					WHERE status = 'Active'
+					AND post_school = '$school'
+					ORDER BY id DESC
+					LIMIT 3, 7";
+			$query = mysqli_query($database->con, $sql);
+			if (!$query) {
+			    header("location: ../?page=index&error=true");
+			} else {
+				while($row = mysqli_fetch_array($query)){
+					$array[] = $row;
+				}
+            }
+            
+			return $array;			
+		}
 
         public function blogListIndex($database, $school){
 			$array = array();
