@@ -17,7 +17,7 @@
                     <?php foreach($links as $link): ?>
                         <div class="col-lg-3 col-md-6">
                             <div class="product">
-                                <div class="image"><a href="<?php if($link['link_type'] == 'File'){ echo "../links/"; } echo $link['link_content']; ?>" <?php if($link['link_type'] == 'Link'){?>target="_blank"<?php } else { ?> download <?php } ?>><img src="img/product1.jpg" alt="" class="img-fluid image1"></a></div>
+                                <div class="image"><a href="<?php if($link['link_type'] == 'File'){ echo "../links/"; } echo $link['link_content']; ?>" <?php if($link['link_type'] == 'Link'){?>target="_blank"<?php } else { ?> download <?php } ?>><img src="images/thumbnails/<?php echo $link['link_thumbnail']; ?>" alt="" class="img-fluid image1"></a></div>
                                 <div class="text">
                                     <h3 class="h5"><a href="<?php if($link['link_type'] == 'File'){ echo "../links/"; } echo $link['link_content']; ?>" <?php if($link['link_type'] == 'Link'){?>target="_blank"<?php } else { ?> download <?php } ?>><?php echo $link['link_name']; ?></a></h3>
                                 </div>
