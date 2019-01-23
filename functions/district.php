@@ -382,17 +382,17 @@
 			$date = date('Y-m-d');
 
 			$sql = "INSERT INTO posts
-					VALUES (null, '$post_id', '$post_title', '$date', 'Post', '$user', '$school', '$post_content', '$post_thumbnail', 'Active')";
+					VALUES (null, '$post_id', '$post_title', '$date', 'Post', '$user', '$school', '$post_content', '$post_thumbnail', 'Event Post', 'Active')";
 			$query = mysqli_query($database->con, $sql);
 			if(!$query){
 				header("location:../cms/district.php?tab=sd&page=events&error=true");
-				// echo("Error description: " . mysqli_error($database->con));
+				 //echo("Error description: " . mysqli_error($database->con));
 			} else {
 				$sql = "SELECT id FROM posts ORDER BY id DESC LIMIT 1";
 				$query = mysqli_query($database->con, $sql);
 				if (!$query) {
 					header("location:../cms/district.php?tab=sd&page=events&error=true");
-					// echo("Error description: " . mysqli_error($database->con));
+					//echo("Error description: " . mysqli_error($database->con));
 				} else {
 					$row = mysqli_fetch_assoc($query);
 					$id = $row['id'];
@@ -402,7 +402,7 @@
 					$query = mysqli_query($database->con, $sql);
 					if(!$query){
 						header("location:../cms/district.php?tab=sd&page=events&error=true");
-						// echo("Error description: " . mysqli_error($database->con));
+						//echo("Error description: " . mysqli_error($database->con));
 					}
 				}
 			}
@@ -420,14 +420,14 @@
 					VALUES (null, '$event_id_name', '$event_name', '$event_shortname', '$event_desc', '$event_type', '$event_color_code', '$location', '$school', '$user', '$post', 'Active')";
 			$query = mysqli_query($database->con, $sql);
 			if(!$query){
-				header("location:../cms/district.php?tab=sd&page=events&error=true");
-				// echo("Error description: " . mysqli_error($database->con));
+				//header("location:../cms/district.php?tab=sd&page=events&error=true");
+				echo("Error description: " . mysqli_error($database->con));
 			} else {
 				$sql = "SELECT id, event_shortname FROM events ORDER BY id DESC LIMIT 1";
 				$query = mysqli_query($database->con, $sql);
 				if (!$query) {
 					header("location:../cms/district.php?tab=sd&page=events&error=true");
-					// echo("Error description: " . mysqli_error($database->con));
+					//echo("Error description: " . mysqli_error($database->con));
 				} else {
 					$row = mysqli_fetch_assoc($query);
 					$id = $row['id'];
@@ -448,7 +448,7 @@
 			$query = mysqli_query($database->con, $sql);
 			if(!$query){
 				header("location:../cms/district.php?tab=sd&page=events&error=true");
-				// echo("Error description: " . mysqli_error($database->con));
+				//echo("Error description: " . mysqli_error($database->con));
 			}
 		
 		}

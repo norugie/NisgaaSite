@@ -1,6 +1,6 @@
 <!-- JUMBOTRON -->
 <section class="no-mb relative-positioned">
-    <div style="background: url('img/photogrid.jpg') center center repeat; background-size: cover;" class="jumbotron relative-positioned color-white text-md-center">
+    <div style="background: url('images/site/photogrid.jpg') center center repeat; background-size: cover;" class="jumbotron relative-positioned color-white text-md-center">
         <div class="dark-mask mask-primary"></div>
         <div class="row">
             <div class="col-md-9">
@@ -124,10 +124,10 @@
                     <div class="col-lg-4">
                         <div class="home-blog-post">
                             <div class="image"><img src="images/thumbnails/<?php echo $recent_post['post_thumbnail']; ?>" alt="..." class="img-fluid">
-                            <div class="overlay d-flex align-items-center justify-content-center"><a href="#" class="btn btn-template-outlined-white"><i class="fa fa-chain"> </i> Read More</a></div>
+                            <div class="overlay d-flex align-items-center justify-content-center"><a href="/?page=blog&id=<?php echo preg_replace('/[a-zA-Z]/', '', $recent_post['post_id']); ?>" class="btn btn-template-outlined-white"><i class="fa fa-chain"> </i> Read More</a></div>
                             </div>
                             <div class="text">
-                            <h4><a href="#"><?php echo $recent_post['post_title']; ?></a></h4>
+                            <h4><a href="/?page=blog&id=<?php echo preg_replace('/[a-zA-Z]/', '', $recent_post['post_id']); ?>"><?php echo $recent_post['post_title']; ?></a></h4>
                             <p class="author-category">By <?php echo $recent_post['firstname'] . " " . $recent_post['lastname']; ?></p>
                             <p class="author-category"><?php echo date_format(date_create($recent_post['post_date']), 'd M Y'); ?></p>
                             </div>
