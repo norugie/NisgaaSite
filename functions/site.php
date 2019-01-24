@@ -194,7 +194,7 @@
         public function announcementList($database, $school){
 			$array = array();
 
-            $sql =  "SELECT announcements.a_title
+            $sql =  "SELECT announcements.a_title, announcements.a_id
                     FROM announcements
                     LEFT JOIN schools
                     ON (announcements.a_school = schools.id)
@@ -273,6 +273,28 @@
 					LEFT JOIN schools
 					ON (schools.id = posts.post_school)
 					WHERE posts.post_id = '$post_id'";
+			$query = mysqli_query($database->con, $sql);
+			if (!$query) {
+			    header("location: ../?page=index&error=true");
+			} else {
+				$array = mysqli_fetch_assoc($query);
+            }
+            
+			return $array;
+		}
+
+		public function announcementInformation($database, $id){
+            $array;
+            $a_id = 'ANN' . $id;
+			$sql = "SELECT announcements.*,
+						   users.firstname,
+						   users.lastname
+					FROM announcements
+					LEFT JOIN users
+					ON (users.id = announcements.a_author)
+					LEFT JOIN schools
+					ON (schools.id = announcements.a_school)
+					WHERE announcements.a_id = '$a_id'";
 			$query = mysqli_query($database->con, $sql);
 			if (!$query) {
 			    header("location: ../?page=index&error=true");

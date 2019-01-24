@@ -44,7 +44,7 @@
                             <div class="col-md-12 announcements">
                                     <div class="col-md-12 an-items" style="text-align:left;">
                                         <?php foreach($announcements as $a): ?>
-                                            <p class="no-letter-spacing"><a href="#" class="nav-link"><?php echo $a['a_title']; ?></a></p>
+                                            <p class="no-letter-spacing"><a href="/?page=announcements&id=<?php echo preg_replace('/[a-zA-Z]/', '', $a['a_id']); ?>" class="nav-link"><?php echo $a['a_title']; ?></a></p>
                                         <?php endforeach; ?>
                                     </div>
                             </div>
