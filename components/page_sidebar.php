@@ -13,12 +13,15 @@
     } else {
         $tab = $_GET['tab'];
         $page = $_GET['page'];
+        $subtab;
+        if(isset($_GET['subtab'])){ $subtab = $_GET['subtab']; }
     ?>
 
         <script>
             $(document).ready(function(){
                 $('#<?php echo $tab; ?>').addClass('active');
                 $('#<?php echo $page; ?>').addClass('active');
+                <?php if(isset($_GET['subtab'])){ ?> $('#<?php echo $subtab; ?>').addClass('active'); <?php } ?>
                 <?php if($page == 'posts'){ ?>
                     $('#categories').addClass('active');
                 <?php } ?>
@@ -121,16 +124,87 @@
                     <span>Web Interactions</span>
                 </a>
                 <ul class="ml-menu">
-                    <li id="inquiries">
-                        <a href="interaction.php?tab=web&page=inquiries">
-                            <i class="material-icons">question_answer</i>
-                            <span>Inquiries</span>
-                        </a>
-                    </li>
                     <li id="content">
-                        <a href="interaction.php?tab=web&page=content">
+                        <a href="javascript:void(0);" class="menu-toggle">
                             <i class="material-icons">view_day</i>
                             <span>Web Content</span>
+                        </a>
+                        <ul class="ml-menu">
+                            <li id="about">
+                                <a href="interaction.php?tab=web&subtab=content&page=about">
+                                    <i class="material-icons">info</i>
+                                    <span>About</span>
+                                </a>
+                            </li>
+                            <li id="inquiries">
+                                <a href="interaction.php?tab=web&subtab=content&page=inquiries">
+                                    <i class="material-icons">question_answer</i>
+                                    <span>Inquiries</span>
+                                </a>
+                            </li>
+                            <li id="contacts">
+                                <a href="interaction.php?tab=web&subtab=content&page=contacts">
+                                    <i class="material-icons">contacts</i>
+                                    <span>Contact</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li id="curriculum">
+                        <a href="javascript:void(0);" class="menu-toggle">
+                            <i class="material-icons">local_library</i>
+                            <span>Curriculum</span>
+                        </a>
+                        <ul class="ml-menu">
+                            <li id="k12">
+                                <a href="interaction.php?tab=web&subtab=curriculum&page=k12">
+                                    <span>K-12 Program</span>
+                                </a>
+                            </li>
+                            <li id="dl">
+                                <a href="interaction.php?tab=web&subtab=curriculum&page=dl">
+                                    <span>Distant Learners Program</span>
+                                </a>
+                            </li>
+                            <li id="nlc">
+                                <a href="interaction.php?tab=web&subtab=curriculum&page=nlc">
+                                    <span>Nisga'a Language and Culture</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li id="department">
+                        <a href="javascript:void(0);" class="menu-toggle">
+                            <i class="material-icons">device_hub</i>
+                            <span>Departments</span>
+                        </a>
+                        <ul class="ml-menu">
+                            <li id="sdo">
+                                <a href="interaction.php?tab=web&subtab=department&page=sdo">
+                                    <span>School District Office</span>
+                                </a>
+                            </li>
+                            <li id="sss">
+                                <a href="interaction.php?tab=web&subtab=department&page=sss">
+                                    <span>Student Support Services</span>
+                                </a>
+                            </li>
+                            <li id="tech">
+                                <a href="interaction.php?tab=web&subtab=department&page=tech">
+                                    <span>Tech Office</span>
+                                </a>
+                            </li>
+                            <li id="maintenance">
+                                <a href="interaction.php?tab=web&subtab=department&page=maintenance">
+                                    <span>Maintenance Office</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li id="boe">
+                        <a href="interaction.php?tab=web&page=boe">
+                            <i class="material-icons">group_work</i>
+                            <span>Board of Education</span>
                         </a>
                     </li>
                 </ul>
