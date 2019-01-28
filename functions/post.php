@@ -29,6 +29,7 @@
 						   posts.post_date,
 						   posts.post_school,
 						   posts.id,
+						   posts.post_id,
 						   users.firstname,
 						   users.lastname,
 						   schools.school_abbv
