@@ -121,22 +121,10 @@
                     <span>Web Interactions</span>
                 </a>
                 <ul class="ml-menu">
-                    <li id="comments">
-                        <a href="interaction.php?tab=web&page=comments">
-                            <i class="material-icons">record_voice_over</i>
-                            <span>Comments</span>
-                        </a>
-                    </li>
                     <li id="inquiries">
                         <a href="interaction.php?tab=web&page=inquiries">
                             <i class="material-icons">question_answer</i>
                             <span>Inquiries</span>
-                        </a>
-                    </li>
-                    <li id="reports">
-                        <a href="interaction.php?tab=web&page=reports">
-                            <i class="material-icons">report</i>
-                            <span>Reports</span>
                         </a>
                     </li>
                     <li id="content">
