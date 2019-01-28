@@ -216,7 +216,7 @@
     <!-- Footer -->
     <div class="legal">
         <div class="version">
-            &copy; <b>2018. SD92 (Nisga'a)</b> v1.0
+            &copy; <b>2018. SD92 (Nisga'a)</b> v1.5
         </div>
         <div class="copyright">
             Design Template by <b><a href="https://github.com/gurayyarar/AdminBSBMaterialDesign">Güray Yarar</a></b>
