@@ -53,10 +53,10 @@
                                 data-values='{
                                     "id":               <?php echo json_encode($event['id']); ?>,
                                     "event_id":         <?php echo json_encode($event['event_id']); ?>,
-                                    "event_name":       <?php echo json_encode($event['event_name']); ?>,
+                                    "event_name":       <?php echo json_encode(str_replace("'", "&apos;", $event['event_name'])); ?>,
                                     "event_shortname":  <?php echo json_encode($event['event_shortname']); ?>,
-                                    "event_location":   <?php echo json_encode($event['event_location']); ?>,
-                                    "event_desc":       <?php echo json_encode($event['event_desc']); ?>
+                                    "event_location":   <?php echo json_encode(str_replace("'", "&apos;", $event['event_location'])); ?>,
+                                    "event_desc":       <?php echo json_encode(str_replace("'", "&apos;",$event['event_desc'])); ?>
                                 }'
                                 onclick="editEvent(this);" <?php if($event['status'] == 'Cancelled'){ echo "disabled"; }?> <?php if($_SESSION['type'] == 4 && $event['school'] != $_SESSION['school']){ echo "disabled"; }?>>MODIFY</button></center>
                             </td>
