@@ -124,6 +124,4 @@ function editAboutPrograms(aboutProgramsInfo) {
     $("#edit_about_programs_name").attr("value", abtprg['web_id']);
     $("#edit_field_name").val(abtprg['web_desc']);
 
-    console.log(abtprg);
-
 }

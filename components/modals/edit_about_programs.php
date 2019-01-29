@@ -17,14 +17,14 @@
                         <div>
                             <div>
                                 <form class="edit_form_validate" action="../functions/interaction.php?interaction=true&editAboutProgram=true" method="POST">
-                                <input type="text" id="edit_about_programs_id" name="about_programs_id">
-                                    <input type="text" id="edit_about_programs_name" name="about_programs_name">
+                                <input type="text" id="edit_about_programs_id" name="about_programs_id" hidden>
+                                    <input type="text" id="edit_about_programs_name" name="about_programs_name" hidden>
                                     <div class="row clearfix">
                                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                             <label for="edit_field_name">Page Information *</label>
                                             <div class="form-group">
                                                 <div class="form-line">
-                                                <textarea rows="2" class="form-control no-resize" id="edit_field_name" name="edit_field_name"></textarea>
+                                                <textarea rows="2" class="form-control" id="edit_field_name" name="edit_field_name"></textarea>
                                                 </div>
                                             </div>
                                         </div>
