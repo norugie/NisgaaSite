@@ -1,6 +1,6 @@
 <!-- Edit About-Program Modal -->
 <div class="modal fade" id="edit-about-programs-modal" tabindex="-1" role="dialog">
-    <div class="modal-dialog" role="document">
+    <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header" style="background-color: #607D8B; color: #fff; margin: 0; padding: 15px;">
                 <button type="button" class="close" data-dismiss="modal">
@@ -24,7 +24,7 @@
                                             <label for="edit_field_name">Page Information *</label>
                                             <div class="form-group">
                                                 <div class="form-line">
-                                                <textarea rows="2" class="form-control" id="edit_field_name" name="edit_field_name"></textarea>
+                                                <textarea rows="5" class="form-control no-resize" id="edit_field_name" name="edit_field_name"></textarea>
                                                 </div>
                                             </div>
                                         </div>
