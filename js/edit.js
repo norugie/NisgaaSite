@@ -115,3 +115,15 @@ function editAnnouncement(announcementInfo) {
     $("#edit_announcement_desc").val(announcement['a_text']);
 
 }
+
+function editAboutPrograms(aboutProgramsInfo) {
+
+    abtprg = $(aboutProgramsInfo).data("values");
+
+    $("#edit_about_programs_id").attr("value", abtprg['id']);
+    $("#edit_about_programs_name").attr("value", abtprg['web_id']);
+    $("#edit_field_name").val(abtprg['web_desc']);
+
+    console.log(abtprg);
+
+}
