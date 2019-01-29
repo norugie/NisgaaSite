@@ -71,10 +71,10 @@
                                                         <li><a href="#" data-toggle="modal" data-target="#edit-job-modal" data-values='{
                                                             "id":       <?php echo json_encode($job['id']); ?>,
                                                             "job_id":   <?php echo json_encode($job['job_id']); ?>,
-                                                            "title":    <?php echo json_encode($job['title']); ?>,
+                                                            "title":    <?php echo json_encode(str_replace("'", "&apos;", $job['title'])); ?>,
                                                             "school":   <?php echo json_encode($job['school']); ?>,
                                                             "job_type": <?php echo json_encode($job['job_type']); ?>,
-                                                            "job_desc": <?php echo json_encode($job['job_desc']); ?>
+                                                            "job_desc": <?php echo json_encode(str_replace("'", "&apos;", $job['job_desc'])); ?>
                                                         }' 
                                                         onclick="editJob(this);">Edit Job Details</a></li>
                                                         <li><a href="#" data-toggle="modal" data-target="#edit-job-dates-modal" onclick="editJobDates(<?php echo htmlspecialchars(json_encode($job['id'])); ?>,<?php echo htmlspecialchars(json_encode($job['job_id'])); ?>, 1);">Edit Job Posting Dates</a></li>
