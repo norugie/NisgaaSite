@@ -1,2 +1,2 @@
 # NisgaaSite
-New CMS for School District No. 92 (Nisga'a).
+New CMS for School District No. 92 (Nisga'a). 
