@@ -1,5 +1,5 @@
 <?php 
-
+ 
     require '../functions/common_connector.php';
     if(isset($_SESSION['id']) && isset($_SESSION['type'])){
         $page_name = $_GET['page'];
