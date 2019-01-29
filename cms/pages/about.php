@@ -19,7 +19,7 @@
                                 data-values='{
                                     "id":           <?php echo json_encode($about['id']); ?>,
                                     "web_id":       <?php echo json_encode($about['web_id']); ?>,
-                                    "web_desc":     <?php echo json_encode($about['web_desc']); ?>
+                                    "web_desc":     <?php echo json_encode(str_replace("'", "&apos;", $about['web_desc'])); ?>
                                 }' 
                                 onclick="editAboutPrograms(this);"><i class="material-icons">mode_edit</i><span>MODIFY</span></button>
                         </center>
@@ -51,7 +51,7 @@
                                 data-values='{
                                     "id":           <?php echo json_encode($programs['id']); ?>,
                                     "web_id":       <?php echo json_encode($programs['web_id']); ?>,
-                                    "web_desc":     <?php echo json_encode($programs['web_desc']); ?>
+                                    "web_desc":     <?php echo json_encode(str_replace("'", "&apos;", $about['web_desc'])); ?>
                                 }' 
                                 onclick="editAboutPrograms(this);"><i class="material-icons">mode_edit</i><span>MODIFY</span></button>
                         </center>

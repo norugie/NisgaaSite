@@ -62,8 +62,21 @@
 			return $array;
         }
 
-        public function editAbout($database, $id, $web_desc){
+        public function editAboutProgram($database, $id, $web_id, $web_desc){
+			$sql = "UPDATE web_content SET 
+						   web_desc = '$web_desc'
+					WHERE id = '$id'";
+			$query = mysqli_query($database->con, $sql);
+			if(!$query){
+			    header("location: ../cms/interaction.php?tab=web&subtab=content&page=about&error=true");
+			} else {
+				global $log;
+				$info = "Modified the page information for web content ID: " . $web_id;
+				$log->logInput($database, $info);
 
+				header("location: ../cms/interaction.php?tab=web&subtab=content&page=about&editPageInfo=true");
+
+			}
         }
 
     }
