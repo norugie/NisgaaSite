@@ -51,7 +51,7 @@
                                     </td>
                                     <td>
                                         <center>
-                                            <button type="button" class="btn bg-red waves-effect">DELETE</button>
+                                            <button type="button" class="btn bg-red waves-effect" data-type="delete-faq" data-id="<?php echo $faq['id']; ?>" data-name="<?php echo $faq['faq_id']; ?>" onclick="alertDesign(this);">DELETE</button>
                                         </center>
                                     </td>
                                 </tr>

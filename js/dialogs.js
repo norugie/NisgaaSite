@@ -29,6 +29,8 @@ function alertDesign(e) {
         showDisableAnnouncementConfirm(id, name);
     } else if (type === 'delete-logs') {
         showDeleteLogsConfirm();
+    } else if (type === 'delete-faq'){
+        showDeleteInquiryConfirm(id, name);
     }
 }
 
@@ -274,6 +276,26 @@ function showDeleteLogsConfirm() {
     }, function (isConfirm) {
         if (isConfirm) {
             window.location = "../functions/dashboard.php?dashboard=true&logDelete=true";
+        }
+
+    });
+}
+
+//Warning for disabling announcement
+function showDeleteInquiryConfirm(id, name) {
+    swal({
+        title: "Are you sure you want to disable this inquiry information?",
+        text: "You won't be able to undo this action once archived",
+        type: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#F44336",
+        confirmButtonText: "CONFIRM",
+        cancelButtonText: "CANCEL",
+        closeOnConfirm: false,
+        closeOnCancel: true
+    }, function (isConfirm) {
+        if (isConfirm) {
+            window.location = "../functions/interaction.php?interaction=true&inquiryDisable=true&id=" + id + "&inquiryName=" + name;
         }
 
     });
