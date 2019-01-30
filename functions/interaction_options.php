@@ -24,6 +24,15 @@
             $interaction->addInquiry($database, $faq_question, $faq_answer);
         }
 
+        if(isset($_GET['editInquiry'])){
+            $id = mysqli_real_escape_string($database->con, $_POST['faq_id']);
+            $faq_id = mysqli_real_escape_string($database->con, $_POST['faq_name']);
+            $faq_question = mysqli_real_escape_string($database->con, $_POST['faq_question']);
+            $faq_answer = mysqli_real_escape_string($database->con, $_POST['faq_answer']);
+        
+            $interaction->editInquiry($database, $id, $faq_id, $faq_question, $faq_answer);
+        }
+
     }
 
 ?>
