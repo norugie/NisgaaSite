@@ -152,7 +152,25 @@
 				$info = "Modified inquiry information: " . $faq_id;
 				$log->logInput($database, $info);
 
-				header("location: ../cms/interaction.php?tab=web&subtab=content&page=inquiries&edtInquiry=true");
+				header("location: ../cms/interaction.php?tab=web&subtab=content&page=inquiries&editInquiry=true");
+
+			}			
+		}
+
+		public function disableInquiry($database, $id, $faq_id){
+
+			$sql = "UPDATE faqs SET 
+						   status = 'Inactive'
+					WHERE id = '$id'";
+			$query = mysqli_query($database->con, $sql);
+			if(!$query){
+			    header("location: ../cms/interaction.php?tab=web&subtab=content&page=inquiries&error=true");
+			} else {
+				global $log;
+				$info = "Disabled inquiry information: " . $faq_id;
+				$log->logInput($database, $info);
+
+				header("location: ../cms/interaction.php?tab=web&subtab=content&page=inquiries&disableInquiry=true");
 
 			}			
 		}

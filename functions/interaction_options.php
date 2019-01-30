@@ -33,6 +33,13 @@
             $interaction->editInquiry($database, $id, $faq_id, $faq_question, $faq_answer);
         }
 
+        if(isset($_GET['inquiryDisable'])){
+            $id = $_GET['id'];
+            $faq_id = $_GET['faq_id'];
+
+            $interaction->disableInquiry($database, $id, $faq_id);
+        }
+
     }
 
 ?>
