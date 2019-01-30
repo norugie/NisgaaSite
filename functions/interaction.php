@@ -170,7 +170,7 @@
 				$info = "Disabled inquiry information: " . $faq_id;
 				$log->logInput($database, $info);
 
-				header("location: ../cms/interaction.php?tab=web&subtab=content&page=inquiries&disableInquiry=true");
+				header("location: ../cms/interaction.php?tab=web&subtab=content&page=inquiries&inquiryDisabled=true");
 
 			}			
 		}
