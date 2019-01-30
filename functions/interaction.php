@@ -108,7 +108,35 @@
             }
             
 			return $array;
-        }
+		}
+		
+		public function addInquiry($database, $faq_question, $faq_answer){
+			$faq_id = 'FAQ' . rand(1111111,9999999);
+			$user = $_SESSION['id'];
+			$school;
+
+			if($_SESSION['type'] == 4){
+				$school = $_SESSION['school'];
+			} else {
+				$school = 2;
+			}
+
+			$sql = "INSERT INTO faqs
+					VALUES (null, '$faq_id', '$faq_question', '$faq_answer', '$user', '$school', 'Active')";
+			$query = mysqli_query($database->con, $sql);
+			if(!$query){
+				header("location: ../cms/interaction.php?tab=web&subtab=content&page=inquiries&error=true");
+				// echo("Error description: " . mysqli_error($database->con));
+			} else {
+
+				global $log;
+				$info = "Added a new inquiry information: " . $faq_id;
+				$log->logInput($database, $info);
+
+				header("location: ../cms/interaction.php?tab=web&subtab=content&page=inquiries&newInquiry=true");
+			}
+
+		}
 
     }
 
