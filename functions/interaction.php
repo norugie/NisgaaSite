@@ -3,7 +3,7 @@
     Class Interaction {
 
         /*********************************************************************************************/
-		/***************************  Interaction Functionalities -- About  **************************/
+		/***************************  Interaction Functionalities -- Web Content  ********************/
         /*********************************************************************************************/
 
         public function aboutList($database){
@@ -77,6 +77,37 @@
 				header("location: ../cms/interaction.php?tab=web&subtab=content&page=about&editPageInfo=true");
 
 			}
+		}
+
+        public function faqList($database){
+            $array = array();
+			$school;
+
+			if($_SESSION['type'] == 4){
+				$school = $_SESSION['school'];
+			} else {
+				$school = 2;
+			}
+
+			$sql = "SELECT faqs.id,
+                           faqs.faq_id, 
+						   faqs.faq_question,
+						   faqs.faq_answer
+					FROM faqs
+					LEFT JOIN schools
+                    ON (schools.id = faqs.school)
+                    WHERE faqs.school = '$school'
+                    AND faqs.status = 'Active'";
+			$query = mysqli_query($database->con, $sql);
+			if (!$query) {
+				header("location: ../cms/interaction.php?tab=web&subtab=content&page=inquiries&error=true");
+			} else {
+				while($row = mysqli_fetch_array($query)){
+					$array[] = $row;
+				}
+            }
+            
+			return $array;
         }
 
     }
