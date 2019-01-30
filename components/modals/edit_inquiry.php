@@ -17,6 +17,8 @@
                         <div>
                             <div>
                                 <form class="edit_form_validate" action="../functions/interaction.php?interaction=true&editInquiry=true" method="POST">
+                                    <input type="text" id="edit_faq_id" name="faq_id" hidden>
+                                    <input type="text" id="edit_faq_name" name="faq_name" hidden>
                                     <div class="row clearfix">
                                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                             <label for="edit_faq_question">Inquiry *</label>

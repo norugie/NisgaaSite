@@ -44,7 +44,9 @@
                                     <td><?php echo $faq['faq_answer']; ?></td>
                                     <td>
                                         <center>
-                                            <button type="button" class="btn bg-green waves-effect">MODIFY</button>
+                                            <button type="button" class="btn bg-green waves-effect" data-toggle="modal" data-target="#edit-inquiry-modal" 
+                                data-values='<?php echo json_encode(str_replace("'", "&apos;", $faq)); ?>' 
+                                onclick="editInquiry(this);">MODIFY</button>
                                         </center>
                                     </td>
                                     <td>

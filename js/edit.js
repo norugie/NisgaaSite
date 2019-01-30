@@ -125,3 +125,14 @@ function editAboutPrograms(aboutProgramsInfo) {
     $("#edit_field_name").val(abtprg['web_desc']);
 
 }
+
+function editInquiry(inquiryInfo) {
+
+    inquiry = $(inquiryInfo).data("values");
+
+    $("#edit_faq_id").attr("value", inquiry['id']);
+    $("#edit_faq_name").attr("value", inquiry['faq_id']);
+    $("#edit_faq_question").val(inquiry['faq_question']);
+    $("#edit_faq_answer").val(inquiry['faq_answer']);
+
+}

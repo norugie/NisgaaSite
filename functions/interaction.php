@@ -138,6 +138,25 @@
 
 		}
 
+		public function editInquiry($database, $id, $faq_id, $faq_question, $faq_answer){
+
+			$sql = "UPDATE faqs SET 
+						   faq_question = '$faq_question',
+						   faq_answer = '$faq_answer'
+					WHERE id = '$id'";
+			$query = mysqli_query($database->con, $sql);
+			if(!$query){
+			    header("location: ../cms/interaction.php?tab=web&subtab=content&page=inquiries&error=true");
+			} else {
+				global $log;
+				$info = "Modified inquiry information: " . $faq_id;
+				$log->logInput($database, $info);
+
+				header("location: ../cms/interaction.php?tab=web&subtab=content&page=inquiries&edtInquiry=true");
+
+			}			
+		}
+
     }
 
     require 'interaction_options.php';
