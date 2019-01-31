@@ -305,6 +305,48 @@
 			return $array;
 		}
 
+		public function aboutList($database, $school){
+            $array = array();
+
+			$sql = "SELECT web_content.id,
+                           web_content.web_id, 
+						   web_content.web_desc
+					FROM web_content
+					LEFT JOIN schools
+                    ON (schools.id = web_content.school)
+                    WHERE web_content.school = '$school'
+                    AND web_content.web_type = 'About'";
+			$query = mysqli_query($database->con, $sql);
+			if (!$query) {
+				header("location: ../?page=index&error=true");
+			} else {
+				$array = mysqli_fetch_assoc($query);
+            }
+            
+			return $array;
+        }
+
+        public function programList($database, $school){
+            $array = array();
+
+			$sql = "SELECT web_content.id,
+                           web_content.web_id, 
+						   web_content.web_desc
+					FROM web_content
+					LEFT JOIN schools
+                    ON (schools.id = web_content.school)
+                    WHERE web_content.school = '$school'
+                    AND web_content.web_type = 'Programs'";
+			$query = mysqli_query($database->con, $sql);
+			if (!$query) {
+				header("location: ../?page=index&error=true");
+			} else {
+				$array = mysqli_fetch_assoc($query);
+            }
+            
+			return $array;
+        }
+
     }
 
     require 'site_options.php';
