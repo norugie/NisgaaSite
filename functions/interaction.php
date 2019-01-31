@@ -175,6 +175,27 @@
 			}			
 		}
 
+        public function schoolInfo($database){
+            $array = array();
+			$school;
+
+			if($_SESSION['type'] == 4){
+				$school = $_SESSION['school'];
+			} else {
+				$school = 8;
+			}
+
+			$sql = "SELECT * FROM schools WHERE id = '$school'";
+			$query = mysqli_query($database->con, $sql);
+			if (!$query) {
+				header("location: ../cms/interaction.php?tab=web&subtab=content&page=contacts&error=true");
+			} else {
+				$array = mysqli_fetch_assoc($query);
+            }
+            
+			return $array;
+        }
+
     }
 
     require 'interaction_options.php';
