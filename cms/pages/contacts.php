@@ -1,4 +1,5 @@
 <?php $school = $interaction->schoolInfo($database); ?>
+<?php  require '../components/modals/edit_school.php'; ?>
 <div class="row clearfix">
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
         <div class="card">
@@ -9,7 +10,8 @@
                     </div>
                     <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
                         <center>
-                            <button type="button" class="btn bg-green waves-effect" style="display: inline-block;"><i class="material-icons">edit</i><span>MODIFY</span></button>
+                            <button type="button" data-toggle="modal" data-target="#edit-school-modal" class="btn bg-green waves-effect" style="display: inline-block;" 
+                            data-values='<?php echo json_encode(str_replace("'", "&apos;", $school)); ?>' onclick="editSchool(this);"><i class="material-icons">edit</i><span>MODIFY</span></button>
                         </center>
                     </div>
                 </div>
