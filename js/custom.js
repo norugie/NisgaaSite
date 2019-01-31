@@ -133,3 +133,13 @@ $('.profile_password').validate({
         $(element).parents('.form-group').append(error);
     }
 });
+
+// Custom JQuery Validator for School Information
+$('.school_info').validate({
+    unhighlight: function (input) {
+        $(input).parents('.form-line').removeClass('error');
+    },
+    errorPlacement: function (error, element) {
+        $(element).parents('.form-group').append(error);
+    }
+});
