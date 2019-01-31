@@ -16,7 +16,7 @@
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <div>
                             <div>
-                                <form class="school_info" action="../functions/interaction.php?interaction=true&editSchool=true" method="POST">
+                                <form class="school_info" action="../functions/interaction.php?interaction=true&editSchoolInfo=true" method="POST">
                                     <input type="text" id="edit_school_id" name="school_id" hidden>
                                     <input type="text" id="edit_school_id_name" name="school_id_name" hidden>
                                     <div class="row clearfix">
@@ -52,7 +52,7 @@
                                             <label for="edit_school_abbv">School Abbreviation *</label>
                                             <div class="form-group">
                                                 <div class="form-line">
-                                                    <input type="text" class="form-control" id="edit_school_abbv" name="school_name" required>
+                                                    <input type="text" class="form-control" id="edit_school_abbv" name="school_abbv" required>
                                                 </div>
                                             </div>
                                         </div>

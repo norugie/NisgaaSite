@@ -194,7 +194,28 @@
             }
             
 			return $array;
-        }
+		}
+
+		public function editSchool($database, $id, $school_name_id, $school_name, $school_addr, $school_abbv, $school_email, $school_phone) {
+			$sql = "UPDATE schools SET 
+						   school_abbv = '$school_abbv',
+						   school_name = '$school_name',
+						   school_addr = '$school_addr',
+						   school_email = '$school_email',
+						   school_phone = '$school_phone'
+					WHERE id = '$id'";
+			$query = mysqli_query($database->con, $sql);
+			if(!$query){
+			    header("location: ../cms/interaction.php?tab=web&subtab=content&page=contacts&error=true");
+			} else {
+				global $log;
+				$info = "Modified the schoold information for: " . $school_name_id;
+				$log->logInput($database, $info);
+
+				header("location: ../cms/interaction.php?tab=web&subtab=content&page=contacts&editSchool=true");
+
+			}			
+		}
 
     }
 
