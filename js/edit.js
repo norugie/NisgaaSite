@@ -153,7 +153,3 @@ function editSchool(schoolInfo) {
 
 
 }
-
-function editPage(pageInfo) {
-
-}
