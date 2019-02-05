@@ -2,7 +2,7 @@
 <footer class="main-footer">
     <div style="padding: 10px 25px;">
     <div class="row">
-    <div class="col-lg-3 offset-md-1">
+    <div class="col-lg-3 text-xs-sm-center">
         <h4 class="h6">SD92 (NISGA'A)</h4>
         <p class="text-uppercase"><?php echo $addr = str_replace(',', '<br>', $info['school_addr']); ?></p>
         <hr class="d-block d-lg-none">
