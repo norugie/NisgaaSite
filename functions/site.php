@@ -345,7 +345,29 @@
             }
             
 			return $array;
-        }
+		}
+
+		public function faqList($database, $school){
+            $array = array();
+
+			$sql = "SELECT faqs.faq_question,
+						   faqs.faq_answer
+					FROM faqs
+					LEFT JOIN schools
+                    ON (schools.id = faqs.school)
+                    WHERE faqs.school = '$school'
+                    AND faqs.status = 'Active'";
+			$query = mysqli_query($database->con, $sql);
+			if (!$query) {
+				header("location: ../?page=index&error=true");
+			} else {
+				while($row = mysqli_fetch_array($query)){
+					$array[] = $row;
+				}
+            }
+            
+			return $array;
+		}
 
     }
 
