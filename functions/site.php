@@ -134,11 +134,11 @@
 
 		}
 
-        public function siteInformationSD92($database){
+        public function siteInformation($database, $school){
 
 			$array;
 
-			$sql = "SELECT * FROM schools WHERE id = '8'";
+			$sql = "SELECT * FROM schools WHERE id = '$school'";
 			$query = mysqli_query($database->con, $sql);
 			if (!$query) {
 			    header("location: ../?page=index&error=true");
@@ -369,6 +369,56 @@
 			return $array;
 		}
 
+		public function curriculumInformation($database, $page){
+            $array = array();
+			$page = strtoupper($page); 
+
+			$sql = "SELECT id,
+                           web_id, 
+						   web_desc
+					FROM web_content
+                    WHERE web_type = '$page'";
+			$query = mysqli_query($database->con, $sql);
+			if (!$query) {
+				header("location: ../?page=index&error=true");
+			} else {
+				$array = mysqli_fetch_assoc($query);
+            }
+            
+			return $array;
+		}
+
+		public function departmentInformation($database, $page){
+            $array = array();
+			$school;
+			
+			if($page == 'sdo'){
+				$school = 2;
+			} else if($page == 'sss'){
+				$school = 9;
+			} else if($page == 'tech'){
+				$school = 1;
+			} else if($page == 'maintenance'){
+				$school = 7;
+			} else {
+				$school = 8;
+			}
+
+			$sql = "SELECT id,
+                           web_id, 
+						   web_desc
+					FROM web_content
+					WHERE web_type = 'Page'
+					AND school = '$school'";
+			$query = mysqli_query($database->con, $sql);
+			if (!$query) {
+				header("location: ../?page=index&error=true");
+			} else {
+				$array = mysqli_fetch_assoc($query);
+            }
+            
+			return $array;
+		}
     }
 
     require 'site_options.php';

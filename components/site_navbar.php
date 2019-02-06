@@ -2,7 +2,7 @@
 <?php
 
     require 'functions/site.php';
-    $info = $site->siteInformationSD92($database);
+    $info = $site->siteInformation($database, 8);
     $blog_posts = $site->blogListIndex($database, 2);
     $quick_links = $site->linkList($database, 'Quick Links', 2);
     $announcements = $site->announcementList($database, 2);
@@ -49,18 +49,18 @@
                     </ul>
                     <h5>Departments</h5>
                     <ul class="list-unstyled mb-3">
-                    <li class="nav-item"><a href="javascript: void(0)" class="nav-link">School District Office</a></li>
-                    <li class="nav-item"><a href="javascript: void(0)" class="nav-link">Student Support Services</a></li>
-                    <li class="nav-item"><a href="javascript: void(0)" class="nav-link">Tech Office</a></li>
-                    <li class="nav-item"><a href="javascript: void(0)" class="nav-link">Maintenance Office</a></li>
+                    <li class="nav-item"><a href="/?page=department&content=sdo" class="nav-link">School District Office</a></li>
+                    <li class="nav-item"><a href="/?page=department&content=sss" class="nav-link">Student Support Services</a></li>
+                    <li class="nav-item"><a href="/?page=department&content=tech" class="nav-link">Tech Office</a></li>
+                    <li class="nav-item"><a href="/?page=department&content=maintenance" class="nav-link">Maintenance Office</a></li>
                     </ul>      
                 </div>
                 <div class="col-lg-4">
                     <h5>Curriculum</h5>
                     <ul class="list-unstyled mb-3">
-                    <li class="nav-item"><a href="/?page=k-12_program" class="nav-link">K-12 Program</a></li>
-                    <li class="nav-item"><a href="/?page=distant_learners_program" class="nav-link">Distant Learners Program</a></li>
-                    <li class="nav-item"><a href="/?page=language_and_culture" class="nav-link">Nisga'a Language and Culture</a></li>
+                    <li class="nav-item"><a href="/?page=curriculum&content=k12" class="nav-link">K-12 Program</a></li>
+                    <li class="nav-item"><a href="/?page=curriculum&content=dl" class="nav-link">Distant Learners Program</a></li>
+                    <li class="nav-item"><a href="/?page=curriculum&content=nlc" class="nav-link">Nisga'a Language and Culture</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-4">
