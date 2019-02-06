@@ -217,6 +217,48 @@
 			}			
 		}
 
+		public function pageInformation($database, $page, $subtab){
+            $array = array();
+			$type;
+			$school;
+
+			if($subtab == 'curriculum'){
+				$school = 2;
+				$type = strtoupper($page);
+			} else {
+				$type = 'Page';
+				if($page == 'sdo'){
+					$school = 2;
+				} else if($page == 'sss'){
+					$school = 9;
+				} else if($page == 'tech'){
+					$school = 1;
+				} else if($page == 'maintenance'){
+					$school = 7;
+				} else {
+					$school = 8;
+				}
+			}
+
+			$sql = "SELECT web_content.id,
+                           web_content.web_id, 
+						   web_content.web_desc
+					FROM web_content
+					LEFT JOIN schools
+                    ON (schools.id = web_content.school)
+					WHERE web_content.web_type = '$type'
+					AND web_content.school = '$school'";
+			$query = mysqli_query($database->con, $sql);
+			if (!$query) {
+				header("location: ../cms/interaction.php?tab=web&subtab=". $subtab ."&page=". $page ."&error=true");
+				//echo("Error description: " . mysqli_error($database->con));
+			} else {
+				$array = mysqli_fetch_assoc($query);
+            }
+            
+			return $array;
+        }
+
     }
 
     require 'interaction_options.php';
