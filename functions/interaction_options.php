@@ -56,6 +56,17 @@
             $interaction->editSchool($database, $id, $school_name_id, $school_name, $school_addr, $school_abbv, $school_email, $school_phone);
         }
 
+        if(isset($_GET['editPageInformation'])){
+            $page = $_GET['page'];
+            $subtab = $_GET['subtab'];
+
+            $id = mysqli_real_escape_string($database->con, $_POST['curdept_id']);
+            $curdept_name = mysqli_real_escape_string($database->con, $_POST['curdept_name']);
+            $curdept_desc = mysqli_real_escape_string($database->con, $_POST['curdept_desc']);
+
+            $interaction->editPageInformation($database, $id, $curdept_name, $curdept_desc, $page, $subtab);
+        }
+
     }
 
 ?>
