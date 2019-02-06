@@ -1,3 +1,4 @@
+<?php $page_info = $interaction->pageInformation($database, $_GET['page'], $_GET['subtab']); ?>
 <div class="header">
     <div class="row clearfix">
         <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 text-xs-sm-center">

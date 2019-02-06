@@ -259,6 +259,42 @@
 			return $array;
         }
 
+		public function pageInformationModify($database, $page, $subtab, $id){
+            $array = array();
+
+			$sql = "SELECT id,
+                           web_id, 
+						   web_desc
+					FROM web_content
+					WHERE id = '$id'";
+			$query = mysqli_query($database->con, $sql);
+			if (!$query) {
+				header("location: ../cms/interaction.php?tab=web&subtab=". $subtab ."&page=". $page ."&error=true");
+				//echo("Error description: " . mysqli_error($database->con));
+			} else {
+				$array = mysqli_fetch_assoc($query);
+            }
+            
+			return $array;
+		}
+
+		public function editPageInformation($database, $id, $curdept_name, $curdept_desc, $page, $subtab){
+
+			$sql = "UPDATE web_content SET 
+						   web_desc = '$curdept_desc'
+					WHERE id = '$id'";
+			$query = mysqli_query($database->con, $sql);
+			if(!$query){
+			    header("location: ../cms/interaction.php?tab=web&subtab=". $subtab ."&page=". $page ."&error=true");
+			} else {
+				global $log;
+				$info = "Modified page information for: " . $page;
+				$log->logInput($database, $info);
+
+				header("location: ../cms/interaction.php?tab=web&subtab=". $subtab ."&page=". $page ."&editPageInformation=true");
+
+			}			
+		}
     }
 
     require 'interaction_options.php';
