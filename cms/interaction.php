@@ -3,9 +3,14 @@
     require '../functions/common_connector.php';
     if(isset($_SESSION['id']) && isset($_SESSION['type'])){
         $page_name = $_GET['page'];
-        $page_link = 'pages/' . $page_name . '.php';
+        $page_link;
+        if(isset($_GET['subtab']) && !empty($_GET['subtab'])){
+            $page_link = 'pages/curdept.php';
+        } else {
+            $page_link = 'pages/' . $page_name . '.php';
+        }
 
-        require '../functions/interaction.php';
+        require '../functions/get_interaction.php';
         $interaction = new Interaction();
 ?>
 
