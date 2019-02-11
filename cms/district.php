@@ -5,7 +5,7 @@
         $page_name = $_GET['page'];
         $page_link = 'pages/' . $page_name . '.php';
 
-        require '../functions/district.php';
+        require '../functions/get_district.php';
         $district = new District();
         
         $roles = $district->roleList($database);
