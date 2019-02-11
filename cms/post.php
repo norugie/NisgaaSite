@@ -5,7 +5,7 @@
         $page_name = $_GET['page'];
         $page_link = 'pages/' . $page_name . '.php';
 
-        require '../functions/post.php';
+        require '../functions/get_post.php';
         $post = new Post();
 
         $schools = $post->schoolList($database);
