@@ -4076,6 +4076,51 @@ section.content {
 .bootstrap-select.btn-group.show-tick .dropdown-menu li.selected a span.check-mark {
   margin-top: 9px; }
 
+/* Profile Page ================================ */
+.profile-card .profile-header {
+  background-color: #607D8B;
+  padding: 42px 0; }
+
+.profile-card .profile-body .image-area {
+  text-align: center;
+  margin-top: -64px; }
+  .profile-card .profile-body .image-area img {
+    border: 2px solid #fff;
+    padding: 2px;
+    margin: 2px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    border-radius: 50%; }
+
+.profile-card .profile-body .content-area {
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 15px; }
+  .profile-card .profile-body .content-area p {
+    margin-bottom: 0; }
+    .profile-card .profile-body .content-area p:last-child {
+      font-weight: 600;
+      color: #607D8B;
+      margin-top: 5px; }
+
+.profile-card .profile-footer {
+  padding: 15px; }
+  .profile-card .profile-footer ul {
+    margin: 0;
+    padding: 0;
+    list-style: none; }
+    .profile-card .profile-footer ul li {
+      border-bottom: 1px solid #eee;
+      padding: 10px 0; }
+      .profile-card .profile-footer ul li:last-child {
+        border-bottom: none;
+        margin-bottom: 15px; }
+      .profile-card .profile-footer ul li span:first-child {
+        font-weight: bold; }
+      .profile-card .profile-footer ul li span:last-child {
+        float: right; }
+
 /* Tooltip & Popovers ========================== */
 .tooltip {
   font-size: 13px; }
