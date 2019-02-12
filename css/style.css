@@ -4088,6 +4088,7 @@ section.content {
     border: 2px solid #fff;
     padding: 2px;
     margin: 2px;
+    max-height: 135px;
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
     -ms-border-radius: 50%;
