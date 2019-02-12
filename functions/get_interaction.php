@@ -179,6 +179,55 @@
 			return $array;
 		}
 
+        /*********************************************************************************************/
+		/***************************  Interaction Functionalities -- BOE  ****************************/
+        /*********************************************************************************************/
+
+        public function chairInformation($database){
+            $array = array();
+
+			$sql = "SELECT * FROM contacts WHERE type = 'BOE' AND position = 'Board Chairperson'";
+			$query = mysqli_query($database->con, $sql);
+			if (!$query) {
+				header("location: ../cms/interaction.php?tab=web&page=boe&error=true");
+			} else {
+				$array = mysqli_fetch_assoc($query);
+            }
+            
+			return $array;
+		}
+
+        public function vchairInformation($database){
+            $array = array();
+
+			$sql = "SELECT * FROM contacts WHERE type = 'BOE' AND position = 'Board Vice-Chairperson'";
+			$query = mysqli_query($database->con, $sql);
+			if (!$query) {
+				header("location: ../cms/interaction.php?tab=web&page=boe&error=true");
+			} else {
+				$array = mysqli_fetch_assoc($query);
+            }
+            
+			return $array;
+		}
+		
+		public function trusteeInformation($database){
+			
+			$array = array();
+			$sql = "SELECT * FROM contacts WHERE type = 'BOE' AND position = 'Board Trustee'";
+			$query = mysqli_query($database->con, $sql);
+			if (!$query) {
+			    header("location: ../cms/interaction.php?tab=web&page=boe&error=true");
+			} else {
+				while($row = mysqli_fetch_array($query)){
+					$array[] = $row;
+				}
+            }
+            
+			return $array;
+
+		}
+
     }
 
 ?>
