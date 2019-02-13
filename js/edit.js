@@ -126,6 +126,22 @@ function editAboutPrograms(aboutProgramsInfo) {
 
 }
 
+function editBOE(boeInfo) {
+
+    boe = $(boeInfo).data("values");
+
+    $("#edit_boe_id").attr("value", boe['id']);
+    $("#edit_boe_name").attr("value", boe['position']);
+    $("#edit_boe_firstname").attr("value", boe['firstname']);
+    $("#edit_boe_lastname").attr("value", boe['lastname']);
+    $("#edit_boe_email").attr("value", boe['email']);
+    $("#edit_boe_phone").attr("value", boe['phone']);
+    $("#edit_boe_trustee_for").attr("value", boe['position_specifics']);
+    $("#edit_boe_previous_photo").attr("value", boe['photo']);
+    $("#edit_boe_writeup").val(boe['contact_desc']);
+
+}
+
 function editInquiry(inquiryInfo) {
 
     inquiry = $(inquiryInfo).data("values");

@@ -37,7 +37,8 @@
                         <li style="margin: 0;"></li>
                 </ul>
                 <p><?php echo $chairperson['contact_desc']; ?></p>
-                <button class="btn bg-green btn-lg waves-effect btn-block" data-toggle="modal" data-target="#edit-boe-modal"><i class="material-icons">edit</i><span>MODIFY</span></button>
+                <button class="btn bg-green btn-lg waves-effect btn-block" data-toggle="modal" data-target="#edit-boe-modal" data-values='<?php echo json_encode(str_replace("'", "&apos;", $chairperson)); ?>' 
+                                onclick="editBOE(this);"><i class="material-icons">edit</i><span>MODIFY</span></button>
             </div>
         </div>
     </div>
@@ -70,7 +71,8 @@
                         <li style="margin: 0;"></li>
                 </ul>
                 <p><?php echo $vchairperson['contact_desc']; ?></p>
-                <button class="btn bg-green btn-lg waves-effect btn-block" data-toggle="modal" data-target="#edit-boe-modal"><i class="material-icons">edit</i><span>MODIFY</span></button>
+                <button class="btn bg-green btn-lg waves-effect btn-block" data-toggle="modal" data-target="#edit-boe-modal" data-values='<?php echo json_encode(str_replace("'", "&apos;", $vchairperson)); ?>' 
+                                onclick="editBOE(this);"><i class="material-icons">edit</i><span>MODIFY</span></button>
             </div>
         </div>
     </div>
@@ -106,7 +108,8 @@
                             <li style="margin: 0;"></li>
                     </ul>
                     <p><?php echo $trustee['contact_desc']; ?></p>
-                    <button class="btn bg-green btn-lg waves-effect btn-block" data-toggle="modal" data-target="#edit-boe-modal"><i class="material-icons">edit</i><span>MODIFY</span></button>
+                    <button class="btn bg-green btn-lg waves-effect btn-block" data-toggle="modal" data-target="#edit-boe-modal" data-values='<?php echo json_encode(str_replace("'", "&apos;", $trustee)); ?>' 
+                                onclick="editBOE(this);"><i class="material-icons">edit</i><span>MODIFY</span></button>
                 </div>
             </div>
         </div>
