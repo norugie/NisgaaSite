@@ -7,7 +7,7 @@
                        <span aria-hidden="true">&times;</span>
                        <span class="sr-only">Close</span>
                 </button>
-                <h4 class="modal-title" id="largeModalLabel"></h4>
+                <h4 class="modal-title" id="largeModalLabel">Edit Board Member Information</h4>
             </div>
             <div class="modal-body">
                 <p class="font-12"><i><b>Note:</b> Fields marked with an asterisk are required</i></p><br>
