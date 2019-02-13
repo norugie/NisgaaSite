@@ -130,6 +130,33 @@
 
 			}			
 		}
+
+        /*********************************************************************************************/
+		/***************************  Interaction Functionalities -- Page Information  ***************/
+		/*********************************************************************************************/
+		
+		public function editBOE($database, $id, $position, $firstname, $lastname, $email, $phone, $position_specifics, $writeup, $photo){
+			$sql = "UPDATE contacts SET 
+						   firstname = '$firstname',
+						   lastname = '$lastname',
+						   email = '$email',
+						   phone = '$phone',
+						   position_specifics = '$position_specifics',
+						   contact_desc = '$writeup',
+						   photo = '$photo'
+					WHERE id = '$id'";
+			$query = mysqli_query($database->con, $sql);
+			if(!$query){
+			    header("location: ../cms/interaction.php?tab=web&&page=boe&error=true");
+			} else {
+				global $log;
+				$info = "Modified information for a " . $position;
+				$log->logInput($database, $info);
+
+				header("location: ../cms/interaction.php?tab=web&page=boe&editBOEInformation=true");
+
+			}
+		}
     }
 
     require 'interaction_options.php';

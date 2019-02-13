@@ -82,7 +82,7 @@
             $lastname = mysqli_real_escape_string($database->con, $_POST['boe_lastname']);
             $email = mysqli_real_escape_string($database->con, $_POST['boe_email']);
             $phone = mysqli_real_escape_string($database->con, $_POST['boe_phone']);
-            $position_specific = mysqli_real_escape_string($database->con, $_POST['boe_trustee_for']);
+            $position_specifics = mysqli_real_escape_string($database->con, $_POST['boe_trustee_for']);
             $photo; 
             $writeup;
 
@@ -122,7 +122,7 @@
                 
             }
 
-            echo $id . "<br>" . $position . "<br>" . $firstname . " " . $lastname . "<br>" . $email . "<br>" . $phone . "<br>" . $position_specific . "<br>" . $writeup . "<br>" . $photo;
+            $interaction->editBOE($database, $id, $position, $firstname, $lastname, $email, $phone, $position_specifics, $writeup, $photo);
         }
 
     }
