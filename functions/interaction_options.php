@@ -56,6 +56,10 @@
             $interaction->editSchool($database, $id, $school_name_id, $school_name, $school_addr, $school_abbv, $school_email, $school_phone);
         }
 
+        /*********************************************************************************************/
+		/***************************  Interaction Functionalities -- Page Information  ***************/
+        /*********************************************************************************************/
+
         if(isset($_GET['editPageInformation'])){
             $page = $_GET['page'];
             $subtab = $_GET['subtab'];
@@ -65,6 +69,60 @@
             $curdept_desc = mysqli_real_escape_string($database->con, $_POST['curdept_desc']);
 
             $interaction->editPageInformation($database, $id, $curdept_name, $curdept_desc, $page, $subtab);
+        }
+
+        /*********************************************************************************************/
+		/***************************  Interaction Functionalities -- BOE *****************************/
+        /*********************************************************************************************/
+
+        if(isset($_GET['editBOE'])){
+            $id = mysqli_real_escape_string($database->con, $_POST['boe_id']);
+            $position = mysqli_real_escape_string($database->con, $_POST['boe_name']);
+            $firstname = mysqli_real_escape_string($database->con, $_POST['boe_firstname']);
+            $lastname = mysqli_real_escape_string($database->con, $_POST['boe_lastname']);
+            $email = mysqli_real_escape_string($database->con, $_POST['boe_email']);
+            $phone = mysqli_real_escape_string($database->con, $_POST['boe_phone']);
+            $position_specific = mysqli_real_escape_string($database->con, $_POST['boe_trustee_for']);
+            $photo; 
+            $writeup;
+
+            if(isset($_POST['boe_writeup']) && !empty($_POST['boe_writeup'])){
+                $writeup = mysqli_real_escape_string($database->con, $_POST['boe_writeup']);
+            } else {
+                $writeup = "No description given for this trustee.";
+            }
+
+            if(!file_exists($_FILES['boe_photo']['tmp_name']) || !is_uploaded_file($_FILES['boe_photo']['tmp_name'])){
+
+                $photo = mysqli_real_escape_string($database->con, $_POST['boe_previous_photo']);
+
+            } else {
+
+                if(isset($_FILES['boe_photo'])){
+                    $errors = 0;
+                    $file_name = $_FILES['boe_photo']['name'];
+                    $file_size = $_FILES['boe_photo']['size'];
+                    $file_tmp = $_FILES['boe_photo']['tmp_name'];
+                    $file_type = $_FILES['boe_photo']['type'];
+                    $file_ext = strtolower(end(explode('.', $_FILES['boe_photo']['name'])));
+                    
+                    if($file_size > 2097152){
+                        $errors = 1;
+                    }
+                    
+                    if($errors == 0){
+                        move_uploaded_file($file_tmp, "../images/contacts/".$file_name);
+                        $photo = $file_name;
+                    } else {
+                        header("location: ../cms/interaction.php?tab=web&page=boe&error=true");
+                    }
+                } else {
+                    header("location: ../cms/interaction.php?tab=web&page=boe&error=true");
+                }   
+                
+            }
+
+            echo $id . "<br>" . $position . "<br>" . $firstname . " " . $lastname . "<br>" . $email . "<br>" . $phone . "<br>" . $position_specific . "<br>" . $writeup . "<br>" . $photo;
         }
 
     }

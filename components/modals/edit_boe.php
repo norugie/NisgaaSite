@@ -25,7 +25,7 @@
                                             <label for="edit_boe_firstname">First Name *</label>
                                             <div class="form-group">
                                                 <div class="form-line">
-                                                    <input type="text" class="form-control" id="edit_boe_firstname" name="boe_firstnamee" required>
+                                                    <input type="text" class="form-control" id="edit_boe_firstname" name="boe_firstname" required>
                                                 </div>
                                             </div>
                                         </div>
@@ -33,7 +33,7 @@
                                             <label for="edit_boe_lastname">Last Name *</label>
                                             <div class="form-group">
                                                 <div class="form-line">
-                                                    <input type="text" class="form-control" id="edit_boe_lastname" name="boe_lastnamee" required>
+                                                    <input type="text" class="form-control" id="edit_boe_lastname" name="boe_lastname" required>
                                                 </div>
                                             </div>
                                         </div>
@@ -51,7 +51,7 @@
                                             <label for="edit_boe_phone">Phone Number *</label>
                                             <div class="form-group">
                                                 <div class="form-line">
-                                                    <input type="email" class="form-control" id="edit_boe_phone" name="boe_phone" onkeypress="return validateEvent(event);" required>
+                                                    <input type="text" class="form-control" id="edit_boe_phone" name="boe_phone" onkeypress="return validateEvent(event);" required>
                                                 </div>
                                             </div>
                                         </div>
