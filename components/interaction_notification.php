@@ -35,10 +35,21 @@
 </div>
 <?php } ?>
 
+<!--  Interaction Notifications - Page Information  -->
+
 <?php if(isset($_GET['editPageInformation']) && $_SESSION['alert'] == 'alerted'){?>
 <div class="alert bg-green alert-dismissible" role="alert">
     <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
     The page information has been <b>modified</b> successfully!
+</div>
+<?php } ?>
+
+<!--  Interaction Notifications - BOE Information  -->
+
+<?php if(isset($_GET['editBOEInformation']) && $_SESSION['alert'] == 'alerted'){?>
+<div class="alert bg-green alert-dismissible" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    The information for a Board Member has been <b>modified</b> successfully!
 </div>
 <?php } ?>
 
