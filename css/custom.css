@@ -52,7 +52,6 @@ html {
     padding: 10px;
 }
 
-
 .an-items>p {
     font-size: 14px;
 }
@@ -93,4 +92,28 @@ html {
 
 .intro {
     text-align: justify;
+}
+
+/*-- BOE PAGE CUSTOM CSS --*/
+
+.text p {
+    color: #000 !important;
+}
+
+.team-member p.role-main {
+    font-size: 1.0rem !important;
+    font-weight: 600 !important;
+    color: #da4d4d !important;
+}
+
+.team-member p.role-contact {
+    font-size: 0.9rem !important;
+    font-weight: 600 !important;
+    color: #000 !important;
+}
+
+.team-member p.role {
+    font-size: 0.9rem;
+    font-weight: 450;
+    color: #000;
 }
