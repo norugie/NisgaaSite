@@ -1,3 +1,5 @@
+<!-- School Information -->
+
 <?php $school = $interaction->schoolInfo($database); ?>
 <?php  require '../components/modals/edit_school.php'; ?>
 <div class="row clearfix">
@@ -41,6 +43,11 @@
     </div>
 </div>
 
+
+<!-- Contacts -->
+
+<?php $contacts = $interaction->contactList($database); ?>
+
 <div class="row clearfix">
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
         <div class="card">
@@ -57,7 +64,39 @@
                 </div>
             </div>
             <div class="body">
-
+                <div class="table-responsive">
+                    <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
+                        <thead>
+                            <tr>
+                                <th>Contact Name</th>
+                                <th>Position</th>
+                                <th>School</th>
+                                <th>Email Address</th>
+                                <th>Phone Number</th>
+                            </tr>
+                        </thead>
+                        <tfoot>
+                            <tr>
+                                <th>Contact Name</th>
+                                <th>Position</th>
+                                <th>School</th>
+                                <th>Email Address</th>
+                                <th>Phone Number</th>
+                            </tr>
+                        </tfoot>
+                        <tbody>
+                            <?php foreach($contacts as $contact): ?>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            <?php endforeach; ?>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </div>
