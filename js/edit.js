@@ -167,5 +167,8 @@ function editSchool(schoolInfo) {
     $("#edit_school_email").attr("value", school['school_email']);
     $("#edit_school_phone").attr("value", school['school_phone']);
 
+}
+
+function editContact(contactInfo) {
 
 }

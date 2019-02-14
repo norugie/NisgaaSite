@@ -131,6 +131,7 @@
 						   contacts.phone,
 						   contacts.email,
 						   contacts.photo,
+						   contacts.status,
 						   schools.school_abbv
 					FROM contacts
 					LEFT JOIN schools
