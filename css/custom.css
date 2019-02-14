@@ -97,7 +97,7 @@ html {
 /*-- BOE PAGE CUSTOM CSS --*/
 
 .text p {
-    color: #000 !important;
+    font-size: 0.9rem !important;
 }
 
 .team-member p.role-main {
