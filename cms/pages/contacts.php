@@ -87,11 +87,11 @@
                         <tbody>
                             <?php foreach($contacts as $contact): ?>
                                 <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
+                                    <td><?php echo $contact['firstname'] . " " . $contact['lastname'];?></td>
+                                    <td><?php echo $contact['position'];?></td>
+                                    <td><?php echo $contact['school_abbv'];?></td>
+                                    <td><?php echo $contact['email'];?></td>
+                                    <td><?php echo $contact['phone'];?></td>
                                 </tr>
                             <?php endforeach; ?>
                         </tbody>
