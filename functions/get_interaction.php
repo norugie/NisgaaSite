@@ -112,6 +112,42 @@
             }
             
 			return $array;
+		}
+		
+		public function contactList($database){
+            $array = array();
+			$school;
+
+			if($_SESSION['type'] == 4){
+				$school = $_SESSION['school'];
+			} else {
+				$school = 2;
+			}
+
+			$sql = "SELECT contacts.id,
+						   contacts.firstname,
+						   contacts.lastname,
+						   contacts.position,
+						   contacts.phone,
+						   contacts.email,
+						   contacts.photo,
+						   schools.school_abbv
+					FROM contacts
+					LEFT JOIN schools
+                    ON (schools.id = contacts.school)
+                    WHERE contacts.school = '$school'
+					AND contacts.type = 'Contact'
+                    AND contacts.status = 'Active'";
+			$query = mysqli_query($database->con, $sql);
+			if (!$query) {
+				header("location: ../cms/interaction.php?tab=web&subtab=content&page=contacts&error=true");
+			} else {
+				while($row = mysqli_fetch_array($query)){
+					$array[] = $row;
+				}
+            }
+            
+			return $array;
         }
 
         /*********************************************************************************************/

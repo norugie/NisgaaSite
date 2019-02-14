@@ -4,7 +4,7 @@
     if(isset($_SESSION['id']) && isset($_SESSION['type'])){
         $page_name = $_GET['page'];
         $page_link;
-        if(isset($_GET['subtab']) && !empty($_GET['subtab'])){
+        if(isset($_GET['subtab']) && !empty($_GET['subtab']) && $_GET['subtab'] != 'content'){
             $page_link = 'pages/curdept.php';
         } else {
             $page_link = 'pages/' . $page_name . '.php';

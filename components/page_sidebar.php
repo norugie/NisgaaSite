@@ -144,7 +144,7 @@
                             <li id="contacts">
                                 <a href="interaction.php?tab=web&subtab=content&page=contacts">
                                     <i class="material-icons">contacts</i>
-                                    <span>Contact</span>
+                                    <span>Contacts</span>
                                 </a>
                             </li>
                         </ul>
