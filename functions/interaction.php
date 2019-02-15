@@ -126,6 +126,23 @@
 			}
 		}
 
+		public function reactivateContact($database, $id, $contact_role){
+			$sql = "UPDATE contacts SET 
+						   status = 'Active'
+					WHERE id = '$id'";
+			$query = mysqli_query($database->con, $sql);
+			if(!$query){
+			    header("location: ../cms/interaction.php?tab=web&subtab=content&page=contacts&error=true");
+			} else {
+				global $log;
+				$info = "Reactivated contact entry for " . $contact_role;
+				$log->logInput($database, $info);
+
+				header("location: ../cms/interaction.php?tab=web&subtab=content&page=contacts&contactReactivated=true");
+
+			}
+		}
+
         /*********************************************************************************************/
 		/***************************  Interaction Functionalities -- Page Information  ***************/
         /*********************************************************************************************/

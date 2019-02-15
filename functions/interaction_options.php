@@ -65,6 +65,15 @@
 
         }
 
+        if(isset($_GET['contactReactivate'])){
+            
+            $id = $_GET['id'];
+            $contact_role = str_replace('%20', ' ', $_GET['contactRole']);
+
+            $interaction->reactivateContact($database, $id, $contact_role);
+
+        }
+
         /*********************************************************************************************/
 		/***************************  Interaction Functionalities -- Page Information  ***************/
         /*********************************************************************************************/
