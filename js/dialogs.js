@@ -33,6 +33,8 @@ function alertDesign(e) {
         showDeleteInquiryConfirm(id, name);
     } else if (type === 'delete-contact'){
         showDeleteContactConfirm(id, name);
+    } else if(type === 'reactivate-contact'){
+        showReactivateContactConirm(id, name);
     }
 }
 
@@ -306,7 +308,7 @@ function showDeleteInquiryConfirm(id, name) {
 //Warning for disabling contact
 function showDeleteContactConfirm(id, name) {
     swal({
-        title: "Are you sure you want to disable this contact?",
+        title: "Are you sure you want to disable this contact entry?",
         text: "You can reactivate this contact entry later",
         type: "warning",
         showCancelButton: true,
@@ -318,6 +320,25 @@ function showDeleteContactConfirm(id, name) {
     }, function (isConfirm) {
         if (isConfirm) {
             window.location = "../functions/interaction.php?interaction=true&contactDisable=true&id=" + id + "&contactRole=" + name;
+        }
+
+    });
+}
+
+//Warning for reactivating contact
+function showReactivateContactConirm(id, name) {
+    swal({
+        title: "Are you sure you want to reactivate this contact entry?",
+        type: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#00BCD4",
+        confirmButtonText: "CONFIRM",
+        cancelButtonText: "CANCEL",
+        closeOnConfirm: false,
+        closeOnCancel: true
+    }, function (isConfirm) {
+        if (isConfirm) {
+            window.location = "../functions/interaction.php?interaction=true&contactReactivate=true&id=" + id + "&contactRole=" + name;
         }
 
     });
