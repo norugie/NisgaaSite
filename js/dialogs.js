@@ -31,6 +31,8 @@ function alertDesign(e) {
         showDeleteLogsConfirm();
     } else if (type === 'delete-faq'){
         showDeleteInquiryConfirm(id, name);
+    } else if (type === 'delete-contact'){
+        showDeleteContactConfirm(id, name);
     }
 }
 
@@ -296,6 +298,26 @@ function showDeleteInquiryConfirm(id, name) {
     }, function (isConfirm) {
         if (isConfirm) {
             window.location = "../functions/interaction.php?interaction=true&inquiryDisable=true&id=" + id + "&inquiryName=" + name;
+        }
+
+    });
+}
+
+//Warning for disabling contact
+function showDeleteContactConfirm(id, name) {
+    swal({
+        title: "Are you sure you want to disable this contact?",
+        text: "You can reactivate this contact entry later",
+        type: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#F44336",
+        confirmButtonText: "CONFIRM",
+        cancelButtonText: "CANCEL",
+        closeOnConfirm: false,
+        closeOnCancel: true
+    }, function (isConfirm) {
+        if (isConfirm) {
+            window.location = "../functions/interaction.php?interaction=true&contactDisable=true&id=" + id + "&contactRole=" + name;
         }
 
     });
