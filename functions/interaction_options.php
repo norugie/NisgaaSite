@@ -56,6 +56,15 @@
             $interaction->editSchool($database, $id, $school_name_id, $school_name, $school_addr, $school_abbv, $school_email, $school_phone);
         }
 
+        if(isset($_GET['contactDisable'])){
+            
+            $id = $_GET['id'];
+            $contact_role = str_replace('%20', ' ', $_GET['contactRole']);
+
+            $interaction->disableContact($database, $id, $contact_role);
+
+        }
+
         /*********************************************************************************************/
 		/***************************  Interaction Functionalities -- Page Information  ***************/
         /*********************************************************************************************/

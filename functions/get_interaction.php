@@ -137,8 +137,7 @@
 					LEFT JOIN schools
                     ON (schools.id = contacts.school)
                     WHERE contacts.school = '$school'
-					AND contacts.type = 'Contact'
-                    AND contacts.status = 'Active'";
+					AND contacts.type = 'Contact'";
 			$query = mysqli_query($database->con, $sql);
 			if (!$query) {
 				header("location: ../cms/interaction.php?tab=web&subtab=content&page=contacts&error=true");

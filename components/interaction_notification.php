@@ -35,6 +35,13 @@
 </div>
 <?php } ?>
 
+<?php if(isset($_GET['contactDisabled']) && $_SESSION['alert'] == 'alerted'){?>
+<div class="alert bg-green alert-dismissible" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    A contact entry has been <b>disabled</b> successfully!
+</div>
+<?php } ?>
+
 <!--  Interaction Notifications - Page Information  -->
 
 <?php if(isset($_GET['editPageInformation']) && $_SESSION['alert'] == 'alerted'){?>
