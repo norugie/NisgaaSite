@@ -47,6 +47,8 @@
 <!-- Contacts -->
 
 <?php $contacts = $interaction->contactList($database); ?>
+<?php require '../components/modals/new_contact.php'; ?>
+<?php require '../components/modals/edit_contact.php'; ?>
 
 <div class="row clearfix">
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -58,7 +60,7 @@
                     </div>
                     <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
                         <center>
-                            <button type="button" class="btn bg-blue waves-effect" style="display: inline-block;">NEW CONTACT</button>
+                            <button type="button" class="btn bg-blue waves-effect" data-toggle="modal" data-target="#new-contact-modal" style="display: inline-block;">NEW CONTACT</button>
                         </center>
                     </div>
                 </div>
