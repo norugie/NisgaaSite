@@ -12,7 +12,7 @@
         <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
             <center>
                 <?php if($_SESSION['type'] != 3){ ?>
-                    <button type="button" class="btn bg-blue waves-effect" style="display: inline-block;" onclick="window.location.href='post.php?tab=post&page=blog&blog_option=create'">ADD NEW POST</button>
+                    <button type="button" class="btn bg-blue waves-effect" style="display: inline-block;" onclick="window.location.href='post.php?tab=post&page=blog&blog_option=create'"><i class="material-icons">add</i><span>NEW POST</span></button>
                 <?php } ?>
             </center>
         </div>
