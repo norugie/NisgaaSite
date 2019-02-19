@@ -52,8 +52,8 @@
                         <td>                            
                             <center>
                                 <div class="btn-group">
-                                    <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        OPTIONS <span class="caret"></span>
+                                    <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="material-icons">more_horiz</i>
+                                        <span>OPTIONS</span> <span class="caret"></span>
                                     </button>
                                     <ul class="dropdown-menu">
                                         <li><a href="post.php?tab=post&page=announcements&announcement_option=view&a_id=<?php echo $a['id']; ?>">View Announcement</a></li>

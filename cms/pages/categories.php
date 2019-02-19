@@ -16,7 +16,7 @@
                     </div>
                     <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
                         <center>
-                            <button type="button" class="btn bg-blue waves-effect" data-toggle="modal" data-target="#new-category-modal" style="display: inline-block;">ADD NEW CATEGORY</button>
+                            <button type="button" class="btn bg-blue waves-effect" data-toggle="modal" data-target="#new-category-modal" style="display: inline-block;"><i class="material-icons">add</i><span>NEW CATEGORY</span></button>
                         </center>
                     </div>
                 </div>
@@ -55,8 +55,8 @@
                                     <td>
                                         <center>
                                             <div class="btn-group">
-                                                <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" <?php if($countPosts == 0){ echo "disabled"; } ?>>
-                                                    VIEW LIST <span class="caret"></span>
+                                                <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" <?php if($countPosts == 0){ echo "disabled"; } ?>><i class="material-icons">more_horiz</i>
+                                                    <span>LIST</span> <span class="caret"></span>
                                                 </button>
                                                 <ul class="dropdown-menu">
                                                     <?php if(count($post->postsPerCategoryList($database, $cat['id'])) > 0){ ?>
@@ -70,7 +70,7 @@
                                         </center>
                                     </td>
                                     <?php if($_SESSION['type'] == 1){ ?>
-                                    <td><center><button type="button" class="btn bg-red waves-effect" data-type="delete-cat" data-id="<?php echo $cat['id']; ?>" data-name="<?php echo $cat['cat_id']; ?>" onclick="alertDesign(this);" <?php if( $cat['id'] == 1 || $cat['id'] == 2){ echo "disabled"; } ?>>DELETE</button></center></td>
+                                    <td><center><button type="button" class="btn bg-red waves-effect" data-type="delete-cat" data-id="<?php echo $cat['id']; ?>" data-name="<?php echo $cat['cat_id']; ?>" onclick="alertDesign(this);" <?php if( $cat['id'] == 1 || $cat['id'] == 2){ echo "disabled"; } ?>><i class="material-icons">clear</i><span>DELETE</span></button></center></td>
                                     <?php } ?>
                                 </tr>
                             <?php endforeach; ?>
