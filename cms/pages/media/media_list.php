@@ -12,7 +12,7 @@
         <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
             <center>
                 <?php if($_SESSION['type'] != 3){ ?>
-                    <button type="button" class="btn bg-blue waves-effect" style="display: inline-block;" onclick="window.location.href='post.php?tab=post&page=media&media_option=create'">ADD NEW MEDIA POST</button>
+                    <button type="button" class="btn bg-blue waves-effect" style="display: inline-block;" onclick="window.location.href='post.php?tab=post&page=media&media_option=create'"><i class="material-icons">add</i><span>NEW MEDIA</span></button>
                 <?php } ?>
             </center>
         </div>
@@ -60,8 +60,8 @@
                         <td>
                             <center>
                                 <div class="btn-group">
-                                    <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        OPTIONS <span class="caret"></span>
+                                    <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="material-icons">more_horiz</i>
+                                        <span>OPTIONS</span> <span class="caret"></span>
                                     </button>
                                     <ul class="dropdown-menu">
                                         <li><a href="post.php?tab=post&page=media&media_option=view&media_id=<?php echo $m['id']; ?>">View Media Post</a></li>
