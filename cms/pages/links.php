@@ -18,7 +18,7 @@
                     <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
                         <center>
                             <?php if($_SESSION['type'] != 3){ ?>
-                                <button type="button" class="btn bg-blue waves-effect" data-toggle="modal" data-target="#new-link-modal" style="display: inline-block;">ADD NEW LINK</button>
+                                <button type="button" class="btn bg-blue waves-effect" data-toggle="modal" data-target="#new-link-modal" style="display: inline-block;"><i class="material-icons">add</i><span>NEW LINK</span></button>
                             <?php } ?>
                         </center>
                     </div>
@@ -71,11 +71,11 @@
                                             "link_desc":    <?php echo json_encode(str_replace("'", "&apos;", $link['link_desc'])); ?>,
                                             "link_content": <?php echo json_encode($link['link_content']); ?>
                                         }' 
-                                        onclick="editLink(this);" <?php if($link['status'] == 'Inactive') echo "disabled"; ?>>MODIFY</button></center></td> 
+                                        onclick="editLink(this);" <?php if($link['status'] == 'Inactive') echo "disabled"; ?>><i class="material-icons">mode_edit</i><span>MODIFY</span></button></center></td> 
                                         <?php if($link['status'] == 'Active'){ ?>
-                                            <td><center><button type="button" class="btn bg-red waves-effect" data-type="delete-link" data-id="<?php echo $link['id']; ?>" data-name="<?php echo $link['link_id']; ?>" onclick="alertDesign(this);">DELETE</button></center></td>
+                                            <td><center><button type="button" class="btn bg-red waves-effect" data-type="delete-link" data-id="<?php echo $link['id']; ?>" data-name="<?php echo $link['link_id']; ?>" onclick="alertDesign(this);"><i class="material-icons">clear</i><span>DELETE</span></button></center></td>
                                         <?php } else { ?>
-                                            <td><center><button type="button" class="btn bg-cyan waves-effect" data-type="reopen-link" data-id="<?php echo $link['id']; ?>" data-name="<?php echo $link['link_id']; ?>" onclick="alertDesign(this);">REACTIVATE</button></center></td>
+                                            <td><center><button type="button" class="btn bg-cyan waves-effect" data-type="reopen-link" data-id="<?php echo $link['id']; ?>" data-name="<?php echo $link['link_id']; ?>" onclick="alertDesign(this);"><i class="material-icons">check</i><span>REACTIVATE</span></button></center></td>
                                         <?php } ?>
                                     <?php } ?>
                                 </tr>
