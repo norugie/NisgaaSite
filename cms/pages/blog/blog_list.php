@@ -60,8 +60,8 @@
                         <td>
                             <center>
                                 <div class="btn-group">
-                                    <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        OPTIONS <span class="caret"></span>
+                                    <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="material-icons">more_horiz</i>
+                                        <span>OPTIONS</span> <span class="caret"></span>
                                     </button>
                                     <ul class="dropdown-menu">
                                         <li><a href="post.php?tab=post&page=blog&blog_option=view&post_id=<?php echo $p['id']; ?>&event=<?php if($cats[0][0] != 'Event'){ echo "0"; } else { echo "1"; } ?>">View Post</a></li>
