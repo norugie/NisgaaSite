@@ -22,7 +22,7 @@
                                             <label for="contact_firstname">First Name *</label>
                                             <div class="form-group">
                                                 <div class="form-line">
-                                                    <input type="text" class="form-control" id="contact_firstname" name="boe_firstname" required>
+                                                    <input type="text" class="form-control" id="contact_firstname" name="contact_firstname" required>
                                                 </div>
                                             </div>
                                         </div>
@@ -30,7 +30,7 @@
                                             <label for="contact_lastname">Last Name *</label>
                                             <div class="form-group">
                                                 <div class="form-line">
-                                                    <input type="text" class="form-control" id="contact_lastname" name="boe_lastname" required>
+                                                    <input type="text" class="form-control" id="contact_lastname" name="contact_lastname" required>
                                                 </div>
                                             </div>
                                         </div>
@@ -40,7 +40,7 @@
                                             <label for="contact_email">Email Address *</label>
                                             <div class="form-group">
                                                 <div class="form-line">
-                                                    <input type="email" class="form-control" id="contact_email" name="boe_email" required>
+                                                    <input type="email" class="form-control" id="contact_email" name="contact_email" required>
                                                 </div>
                                             </div>
                                         </div>
@@ -48,7 +48,17 @@
                                             <label for="contact_phone">Phone Number *</label>
                                             <div class="form-group">
                                                 <div class="form-line">
-                                                    <input type="text" class="form-control" id="contact_phone" name="boe_phone" onkeypress="return validateEvent(event);" required>
+                                                    <input type="text" class="form-control" id="contact_phone" name="contact_phone" onkeypress="return validateEvent(event);" required>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row clearfix">
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                            <label for="contact_position">Position *</label>
+                                            <div class="form-group">
+                                                <div class="form-line">
+                                                    <input type="text" class="form-control" id="contact_position" name="contact_position" required>
                                                 </div>
                                             </div>
                                         </div>
@@ -58,7 +68,7 @@
                                             <label for="contact_photo">Contact Photo</label>
                                             <div class="form-group">
                                                 <div class="form-line">
-                                                    <input type="file" class="form-control" id="contact_photo" name="boe_photo">
+                                                    <input type="file" class="form-control" id="contact_photo" name="contact_photo">
                                                 </div>
                                             </div>
                                         </div>

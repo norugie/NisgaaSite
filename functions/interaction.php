@@ -143,6 +143,30 @@
 			}
 		}
 
+		public function addContact($database, $position, $firstname, $lastname, $email, $phone, $photo){
+			$school;
+
+			if($_SESSION['type'] == 4){
+				$school = $_SESSION['school'];
+			} else {
+				$school = 2;
+			}
+
+			$sql = "INSERT INTO contacts
+					VALUES(null, '$firstname', '$lastname', '$position', null, 'Contact', '$phone', '$email', null, '$school', '$photo', 'Active')";
+			$query = mysqli_query($database->con, $sql);
+			if(!$query){
+			header("location: ../cms/interaction.php?tab=web&subtab=content&page=contacts&error=true");
+			} else {
+			global $log;
+			$info = "Added new contact: " . $firstname . " " . $lastname ;
+			$log->logInput($database, $info);
+
+			header("location: ../cms/interaction.php?tab=web&subtab=content&page=contacts&newContact=true");
+
+			}
+		}
+
         /*********************************************************************************************/
 		/***************************  Interaction Functionalities -- Page Information  ***************/
         /*********************************************************************************************/
