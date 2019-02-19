@@ -159,10 +159,32 @@
 			header("location: ../cms/interaction.php?tab=web&subtab=content&page=contacts&error=true");
 			} else {
 			global $log;
-			$info = "Added new contact: " . $firstname . " " . $lastname ;
+			$info = "Added new contact: " . $firstname . " " . $lastname;
 			$log->logInput($database, $info);
 
 			header("location: ../cms/interaction.php?tab=web&subtab=content&page=contacts&newContact=true");
+
+			}
+		}
+
+		public function editContact($database, $id, $position, $firstname, $lastname, $email, $phone, $photo){
+			$sql = "UPDATE contacts SET 
+						   firstname = '$firstname',
+						   lastname = '$lastname',
+						   email = '$email',
+						   phone = '$phone',
+						   photo = '$photo',
+						   position = '$position'
+					WHERE id = '$id'";
+			$query = mysqli_query($database->con, $sql);
+			if(!$query){
+			    header("location: ../cms/interaction.php?tab=web&subtab=content&page=contacts&error=true");
+			} else {
+				global $log;
+				$info = "Modified information for " . $firstname . " " . $lastname;
+				$log->logInput($database, $info);
+
+				header("location: ../cms/interaction.php?tab=web&subtab=content&page=contacts&editContactInformation=true");
 
 			}
 		}

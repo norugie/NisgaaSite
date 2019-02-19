@@ -99,7 +99,7 @@
                                     <td><?php echo $contact['email'];?></td>
                                     <td><?php echo $contact['phone'];?></td>
                                     <td><center><button type="button" class="btn bg-green waves-effect" data-toggle="modal" data-target="#edit-contact-modal" 
-                                        data-values=''
+                                    data-values='<?php echo json_encode(str_replace("'", "&apos;", $contact)); ?>'
                                         onclick="editContact(this);" <?php if($contact['status'] == 'Inactive') echo "disabled"; ?>>MODIFY</button></center></td>
                                     <?php if($contact['status'] == 'Active'){ ?>
                                         <td><center><button type="button" class="btn bg-red waves-effect" data-type="delete-contact" data-id="<?php echo $contact['id']; ?>" data-name="<?php echo str_replace(' ', '%20', $contact['position']); ?>" onclick="alertDesign(this);">DELETE</button></center></td>
