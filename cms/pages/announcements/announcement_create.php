@@ -5,7 +5,7 @@
         </div>
         <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
             <center>
-                <button type="button" class="btn bg-blue waves-effect" style="display: inline-block;" onclick="window.location.href='post.php?tab=post&page=announcements'">ANNOUNCEMENT LIST</button>
+                <button type="button" class="btn bg-blue waves-effect" style="display: inline-block;" onclick="window.location.href='post.php?tab=post&page=announcements'"><i class="material-icons">list</i><span>LIST</span></button>
             </center>
         </div>
     </div> 

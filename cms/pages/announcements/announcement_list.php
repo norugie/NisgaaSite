@@ -12,7 +12,7 @@
         <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
             <center>
                 <?php if($_SESSION['type'] != 3){ ?>
-                    <button type="button" class="btn bg-blue waves-effect" onclick="window.location.href='post.php?tab=post&page=announcements&announcement_option=create'" style="display: inline-block;">ADD NEW ANNOUNCEMENT POST</button>
+                    <button type="button" class="btn bg-blue waves-effect" onclick="window.location.href='post.php?tab=post&page=announcements&announcement_option=create'" style="display: inline-block;"><i class="material-icons">add</i><span>NEW ANNOUNCEMENT</span></button>
                 <?php } ?>
             </center>
         </div>
