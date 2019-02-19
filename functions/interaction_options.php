@@ -74,6 +74,49 @@
 
         }
 
+        if(isset($_GET['addContact'])){
+        
+            $position = mysqli_real_escape_string($database->con, $_POST['contact_name']);
+            $firstname = mysqli_real_escape_string($database->con, $_POST['contact_firstname']);
+            $lastname = mysqli_real_escape_string($database->con, $_POST['contact_lastname']);
+            $email = mysqli_real_escape_string($database->con, $_POST['contact_email']);
+            $phone = mysqli_real_escape_string($database->con, $_POST['contact_phone']);
+            $photo; 
+
+            if(!file_exists($_FILES['contact_photo']['tmp_name']) || !is_uploaded_file($_FILES['contact_photo']['tmp_name'])){
+
+                $photo = "user.png";
+
+            } else {
+
+                if(isset($_FILES['contact_photo'])){
+                    $errors = 0;
+                    $file_name = $_FILES['contact_photo']['name'];
+                    $file_size = $_FILES['contact_photo']['size'];
+                    $file_tmp = $_FILES['contact_photo']['tmp_name'];
+                    $file_type = $_FILES['contact_photo']['type'];
+                    $file_ext = strtolower(end(explode('.', $_FILES['contact_photo']['name'])));
+                    
+                    if($file_size > 2097152){
+                        $errors = 1;
+                    }
+                    
+                    if($errors == 0){
+                        move_uploaded_file($file_tmp, "../images/contacts/".$file_name);
+                        $photo = $file_name;
+                    } else {
+                        header("location: ../cms/interaction.php?tab=web&page=boe&error=true");
+                    }
+                } else {
+                    header("location: ../cms/interaction.php?tab=web&page=boe&error=true");
+                }   
+                
+            }
+
+            $interaction->addContact($database, $position, $firstname, $lastname, $email, $phone, $photo);
+        
+        }
+
         /*********************************************************************************************/
 		/***************************  Interaction Functionalities -- Page Information  ***************/
         /*********************************************************************************************/
@@ -141,6 +184,7 @@
             }
 
             $interaction->editBOE($database, $id, $position, $firstname, $lastname, $email, $phone, $position_specifics, $writeup, $photo);
+        
         }
 
     }
