@@ -17,15 +17,14 @@
                         <div>
                             <div>
                                 <form class="edit_form_validate" action="../functions/interaction.php?interaction=true&editContact=true" method="POST" enctype="multipart/form-data">
-                                    <input type="text" id="edit_contact_id" name="contact_id">
-                                    <input type="text" id="edit_contact_name" name="contact_name">
-                                    <input type="text" id="edit_contact_previous_photo" name="contact_previous_photo">
+                                    <input type="text" id="edit_contact_id" name="contact_id" hidden>
+                                    <input type="text" id="edit_contact_previous_photo" name="contact_previous_photo" hidden>
                                     <div class="row clearfix">
                                         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                                             <label for="edit_contact_firstname">First Name *</label>
                                             <div class="form-group">
                                                 <div class="form-line">
-                                                    <input type="text" class="form-control" id="edit_contact_firstname" name="boe_firstname" required>
+                                                    <input type="text" class="form-control" id="edit_contact_firstname" name="contact_firstname" required>
                                                 </div>
                                             </div>
                                         </div>
@@ -33,7 +32,7 @@
                                             <label for="edit_contact_lastname">Last Name *</label>
                                             <div class="form-group">
                                                 <div class="form-line">
-                                                    <input type="text" class="form-control" id="edit_contact_lastname" name="boe_lastname" required>
+                                                    <input type="text" class="form-control" id="edit_contact_lastname" name="contact_lastname" required>
                                                 </div>
                                             </div>
                                         </div>
@@ -43,7 +42,7 @@
                                             <label for="edit_contact_email">Email Address *</label>
                                             <div class="form-group">
                                                 <div class="form-line">
-                                                    <input type="email" class="form-control" id="edit_contact_email" name="boe_email" required>
+                                                    <input type="email" class="form-control" id="edit_contact_email" name="contact_email" required>
                                                 </div>
                                             </div>
                                         </div>
@@ -51,7 +50,17 @@
                                             <label for="edit_contact_phone">Phone Number *</label>
                                             <div class="form-group">
                                                 <div class="form-line">
-                                                    <input type="text" class="form-control" id="edit_contact_phone" name="boe_phone" onkeypress="return validateEvent(event);" required>
+                                                    <input type="text" class="form-control" id="edit_contact_phone" name="contact_phone" required>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row clearfix">
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                            <label for="edit_contact_position">Position *</label>
+                                            <div class="form-group">
+                                                <div class="form-line">
+                                                    <input type="text" class="form-control" id="edit_contact_position" name="contact_position" required>
                                                 </div>
                                             </div>
                                         </div>
@@ -61,7 +70,7 @@
                                             <label for="edit_contact_photo">Contact Photo</label>
                                             <div class="form-group">
                                                 <div class="form-line">
-                                                    <input type="file" class="form-control" id="edit_contact_photo" name="boe_photo">
+                                                    <input type="file" class="form-control" id="edit_contact_photo" name="contact_photo">
                                                 </div>
                                             </div>
                                         </div>

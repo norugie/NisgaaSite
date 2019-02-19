@@ -170,5 +170,13 @@ function editSchool(schoolInfo) {
 }
 
 function editContact(contactInfo) {
+    contact = $(contactInfo).data("values");
 
+    $("#edit_contact_id").attr("value", contact['id']);
+    $("#edit_contact_firstname").attr("value", contact['firstname']);
+    $("#edit_contact_lastname").attr("value", contact['lastname']);
+    $("#edit_contact_email").attr("value", contact['email']);
+    $("#edit_contact_phone").attr("value", contact['phone']);
+    $("#edit_contact_previous_photo").attr("value", contact['photo']);
+    $("#edit_contact_position").attr("value", contact['position']);
 }

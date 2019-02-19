@@ -48,7 +48,7 @@
                                             <label for="contact_phone">Phone Number *</label>
                                             <div class="form-group">
                                                 <div class="form-line">
-                                                    <input type="text" class="form-control" id="contact_phone" name="contact_phone" onkeypress="return validateEvent(event);" required>
+                                                    <input type="text" class="form-control" id="contact_phone" name="contact_phone" required>
                                                 </div>
                                             </div>
                                         </div>
