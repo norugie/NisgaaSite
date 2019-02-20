@@ -13,7 +13,7 @@
                     </div>
                     <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
                         <center>
-                            <button type="button" class="btn bg-blue waves-effect" data-toggle="modal" data-target="#new-inquiry-modal" style="display: inline-block;">ADD NEW INQUIRY</button>
+                            <button type="button" class="btn bg-blue waves-effect" data-toggle="modal" data-target="#new-inquiry-modal" style="display: inline-block;"><i class="material-icons">add</i><span>NEW INQUIRY</span></button>
                         </center>
                     </div>
                 </div>
@@ -46,12 +46,12 @@
                                         <center>
                                             <button type="button" class="btn bg-green waves-effect" data-toggle="modal" data-target="#edit-inquiry-modal" 
                                 data-values='<?php echo json_encode(str_replace("'", "&apos;", $faq)); ?>' 
-                                onclick="editInquiry(this);">MODIFY</button>
+                                onclick="editInquiry(this);"><i class="material-icons">mode_edit</i><span>MODIFY</span></button>
                                         </center>
                                     </td>
                                     <td>
                                         <center>
-                                            <button type="button" class="btn bg-red waves-effect" data-type="delete-faq" data-id="<?php echo $faq['id']; ?>" data-name="<?php echo $faq['faq_id']; ?>" onclick="alertDesign(this);">DELETE</button>
+                                            <button type="button" class="btn bg-red waves-effect" data-type="delete-faq" data-id="<?php echo $faq['id']; ?>" data-name="<?php echo $faq['faq_id']; ?>" onclick="alertDesign(this);"><i class="material-icons">clear</i><span>DELETE</span></button>
                                         </center>
                                     </td>
                                 </tr>
