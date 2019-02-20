@@ -33,9 +33,9 @@
                     <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                         <center>
                             <?php if($_SESSION['type'] != 3){ ?>
-                                <button type="button" class="btn bg-blue waves-effect" data-toggle="modal" data-target="#new-event-modal" style="display: inline-block;">ADD AN EVENT</button>
+                                <button type="button" class="btn bg-blue waves-effect" data-toggle="modal" data-target="#new-event-modal" style="display: inline-block;"><i class="material-icons">add</i><span>NEW EVENT</span></button>
                             <?php } ?>
-                            <a href="../functions/district.php?district=true&changeEventView=true" style="color:#fff;"><button type="button" class="btn bg-blue-grey waves-effect change-button" style="margin-right: 10px;"><?php if($_SESSION['event_view'] == 'LIST'){ echo "CALENDAR"; } else { echo "LIST"; }?> VIEW</button></a>
+                            <a href="../functions/district.php?district=true&changeEventView=true" style="color:#fff;"><button type="button" class="btn bg-blue-grey waves-effect change-button" style="margin-right: 10px;"><i class="material-icons"><?php if($_SESSION['event_view'] == 'LIST'){ echo "event"; } else { echo "list"; }?></i><span><?php if($_SESSION['event_view'] == 'LIST'){ echo "CALENDAR"; } else { echo "LIST"; }?></span></button></a>
                         </center>
                     </div>
                 </div>
