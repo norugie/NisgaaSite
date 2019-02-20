@@ -19,7 +19,7 @@
                         <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
                             <?php if($_SESSION['type'] == 1){ ?>
                                 <center>
-                                    <button type="button" class="btn bg-blue waves-effect" data-toggle="modal" data-target="#new-user-modal" style="display: inline-block;">ADD NEW USER</button>
+                                    <button type="button" class="btn bg-blue waves-effect" data-toggle="modal" data-target="#new-user-modal" style="display: inline-block;"><i class="material-icons">add</i><span>NEW USER</span></button>
                                 </center>
                             <?php } ?>
                         </div>
@@ -68,11 +68,11 @@
                                                 "user_type":    <?php echo json_encode($solo['user_type']); ?>,
                                                 "school":       <?php echo json_encode($solo['school']); ?>
                                             }' 
-                                        onclick="editUser(this);" <?php if($solo['status'] == 'Inactive') echo "disabled"; ?>>MODIFY</button></center></td>
+                                        onclick="editUser(this);" <?php if($solo['status'] == 'Inactive') echo "disabled"; ?>><i class="material-icons">mode_edit</i><span>MODIFY</span></button></center></td>
                                         <?php if($solo['status'] == 'Active'){ ?>
-                                            <td><center><button type="button" class="btn bg-red waves-effect" data-type="delete-user" data-id="<?php echo $solo['id']; ?>" data-name="<?php echo $solo['username']; ?>" onclick="alertDesign(this);">DELETE</button></center></td>
+                                            <td><center><button type="button" class="btn bg-red waves-effect" data-type="delete-user" data-id="<?php echo $solo['id']; ?>" data-name="<?php echo $solo['username']; ?>" onclick="alertDesign(this);"><i class="material-icons">clear</i><span>DELETE</span></button></center></td>
                                         <?php } else { ?>
-                                            <td><center><button type="button" class="btn bg-cyan waves-effect" data-type="reactivate-user" data-id="<?php echo $solo['id']; ?>" data-name="<?php echo $solo['username']; ?>" onclick="alertDesign(this);">REACTIVATE</button></center></td>
+                                            <td><center><button type="button" class="btn bg-cyan waves-effect" data-type="reactivate-user" data-id="<?php echo $solo['id']; ?>" data-name="<?php echo $solo['username']; ?>" onclick="alertDesign(this);"><i class="material-icons">check</i><span>REACTIVATE</span></button></center></td>
                                         <?php } ?>                                       
                                     </tr>
                                 <?php } else { ?>
