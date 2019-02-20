@@ -18,7 +18,7 @@
                     <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
                         <?php if($_SESSION['type'] == 3 || $_SESSION['type'] == 1){ ?>
                             <center>
-                                <button type="button" class="btn bg-blue waves-effect" data-toggle="modal" data-target="#new-job-modal" style="display: inline-block;">ADD A JOB POSTING</button>
+                                <button type="button" class="btn bg-blue waves-effect" data-toggle="modal" data-target="#new-job-modal" style="display: inline-block;"><i class="material-icons">add</i><span>NEW JOB</span></button>
                             </center>
                         <?php } ?>
                     </div>
@@ -65,7 +65,7 @@
                                             <center>
                                                 <div class="btn-group">
                                                     <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" <?php if($job['status'] == 'Closed') echo "disabled"; ?>>
-                                                        MODIFY <span class="caret"></span>
+                                                        <i class="material-icons">mode_edit</i><span>MODIFY</span> <span class="caret"></span>
                                                     </button>
                                                     <ul class="dropdown-menu">
                                                         <li><a href="#" data-toggle="modal" data-target="#edit-job-modal" data-values='{
@@ -84,9 +84,9 @@
                                             </center>
                                         </td>
                                         <?php if($job['status'] == 'Open'){ ?>
-                                            <td><center><button type="button" class="btn bg-red waves-effect" data-type="delete-job" data-id="<?php echo $job['id']; ?>" data-name="<?php echo $job['job_id']; ?>" onclick="alertDesign(this);">DELETE</button></center></td>
+                                            <td><center><button type="button" class="btn bg-red waves-effect" data-type="delete-job" data-id="<?php echo $job['id']; ?>" data-name="<?php echo $job['job_id']; ?>" onclick="alertDesign(this);"><i class="material-icons">clear</i><span>DELETE</span></button></center></td>
                                         <?php } else { ?>
-                                            <td><center><button type="button" class="btn bg-cyan waves-effect" data-type="reopen-job" data-id="<?php echo $job['id']; ?>" data-name="<?php echo $job['job_id']; ?>" onclick="alertDesign(this);">REOPEN</button></center></td>
+                                            <td><center><button type="button" class="btn bg-cyan waves-effect" data-type="reopen-job" data-id="<?php echo $job['id']; ?>" data-name="<?php echo $job['job_id']; ?>" onclick="alertDesign(this);"><i class="material-icons">check</i><span>REACTIVATE</span></button></center></td>
                                         <?php } ?>                                       
                                     </tr>
                                 <?php } else { ?>
