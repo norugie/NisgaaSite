@@ -84,9 +84,9 @@
                                             <td><?php echo $solo['username']; ?></td>
                                             <td><?php echo $solo['email']; ?></td>
                                             <?php if($solo['user_type'] != 1){ ?>
-                                                <?php if($_SESSION['type'] != 4){ ?><td><center><button type="button" class="btn bg-red waves-effect" data-type="delete-user" data-id="<?php echo $solo['id']; ?>" data-name="<?php echo $solo['username']; ?>" onclick="alertDesign(this);">DELETE</button></center></td><?php } ?>
+                                                <?php if($_SESSION['type'] != 4){ ?><td><center><button type="button" class="btn bg-red waves-effect" data-type="delete-user" data-id="<?php echo $solo['id']; ?>" data-name="<?php echo $solo['username']; ?>" onclick="alertDesign(this);"><i class="material-icons">clear</i><span>DELETE</span></button></center></td><?php } ?>
                                             <?php } else { ?>
-                                                <?php if($_SESSION['type'] != 4){ ?><td><center><button type="button" class="btn bg-red waves-effect" disabled>DELETE</button></center></td><?php } ?>
+                                                <?php if($_SESSION['type'] != 4){ ?><td><center><button type="button" class="btn bg-red waves-effect" disabled><i class="material-icons">clear</i><span>DELETE</span></button></center></td><?php } ?>
                                             <?php } ?>
                                         </tr>
                                     <?php } ?>
