@@ -34,7 +34,12 @@
 
             $firstname = mysqli_real_escape_string($database->con, $_POST['firstname']);
             $lastname = mysqli_real_escape_string($database->con, $_POST['lastname']);
-            $role = mysqli_real_escape_string($database->con, $_POST['role']);
+            $role; 
+            if($_POST['school'] != 3 && $_POST['school'] != 4 && $_POST['school'] != 5 && $_POST['school'] != 6){
+                $role = mysqli_real_escape_string($database->con, $_POST['role']);
+            } else {
+                $role = 4;
+            }
             $school = mysqli_real_escape_string($database->con, $_POST['school']);
             $username = mysqli_real_escape_string($database->con, $_POST['username']);
             $password = mysqli_real_escape_string($database->con, $_POST['password']);
@@ -49,7 +54,12 @@
             $id = mysqli_real_escape_string($database->con, $_POST['id']);
             $firstname = mysqli_real_escape_string($database->con, $_POST['firstname']);
             $lastname = mysqli_real_escape_string($database->con, $_POST['lastname']);
-            $role = mysqli_real_escape_string($database->con, $_POST['role']);
+            $role; 
+            if($_POST['school'] != 3 && $_POST['school'] != 4 && $_POST['school'] != 5 && $_POST['school'] != 6){
+                $role = mysqli_real_escape_string($database->con, $_POST['role']);
+            } else {
+                $role = 4;
+            }
             $school = mysqli_real_escape_string($database->con, $_POST['school']);
             $username = mysqli_real_escape_string($database->con, $_POST['username-hidden']);
 
