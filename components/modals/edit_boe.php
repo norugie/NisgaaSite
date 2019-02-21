@@ -17,9 +17,9 @@
                         <div>
                             <div>
                                 <form class="edit_form_validate" action="../functions/interaction.php?interaction=true&editBOE=true" method="POST" enctype="multipart/form-data">
-                                    <input type="text" id="edit_boe_id" name="boe_id">
-                                    <input type="text" id="edit_boe_name" name="boe_name">
-                                    <input type="text" id="edit_boe_previous_photo" name="boe_previous_photo">
+                                    <input type="text" id="edit_boe_id" name="boe_id" hidden>
+                                    <input type="text" id="edit_boe_name" name="boe_name" hidden>
+                                    <input type="text" id="edit_boe_previous_photo" name="boe_previous_photo" hidden>
                                     <div class="row clearfix">
                                         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                                             <label for="edit_boe_firstname">First Name *</label>
