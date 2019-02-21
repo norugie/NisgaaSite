@@ -411,7 +411,8 @@
 
 		public function mediaList($database){
 			$array = array();
-			$sql = "SELECT posts.post_title,
+			$sql;
+			$sqlquery = "SELECT posts.post_title,
 						   posts.post_date,
 						   posts.post_school,
 						   posts.id,
@@ -426,6 +427,21 @@
 					ON (schools.id = posts.post_school)
 					WHERE posts.post_type = 'Media' 
 					AND posts.status = 'Active'";
+			
+			/*  Content Filter  */
+			if($_SESSION['type'] != 1){
+				$school;
+				if($_SESSION['school'] != 3 && $_SESSION['school'] != 4 && $_SESSION['school'] != 5 && $_SESSION['school'] != 6){
+					$school = 2;
+				} else {
+					$school = $_SESSION['school'];
+				}
+				$sql = $sqlquery . " AND posts.post_school = '$school'";
+			} else {
+				$sql = $sqlquery;
+			}
+			/*  END Content Filter  */
+
 			$query = mysqli_query($database->con, $sql);
 			if (!$query) {
 			    header("location:../cms/post.php?tab=post&page=media&error=true");
