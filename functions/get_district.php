@@ -65,6 +65,7 @@
 					LEFT JOIN schools
 					ON (users.school = schools.id)
 					WHERE users.id != '$gid'";
+
 			$query = mysqli_query($database->con, $sql);
 			if (!$query) {
 			    header("location: ../cms/district.php?tab=sd&page=users&error=true");
@@ -131,8 +132,8 @@
         public function eventList($database){
             
 			$array = array();
-
-			$sql = "SELECT events.*, 
+			$sql;
+			$sqlquery = "SELECT events.*, 
 						   users.firstname, 
 						   users.lastname, 
 						   schools.school_abbv, 
@@ -147,8 +148,22 @@
 					ON (schools.id = events.school)
 					LEFT JOIN event_days
 					ON (event_days.event = events.id)
-					WHERE events.status != 'Done'
-					GROUP BY event_days.event";
+					WHERE events.status != 'Done'";
+			
+			/*  Content Filter  */
+			if($_SESSION['type'] != 1){
+				$school;
+				if($_SESSION['school'] != 3 && $_SESSION['school'] != 4 && $_SESSION['school'] != 5 && $_SESSION['school'] != 6){
+					$school = 2;
+				} else {
+					$school = $_SESSION['school'];
+				}
+				$sql = $sqlquery . " AND events.school = '$school' GROUP BY event_days.event";
+			} else {
+				$sql = $sqlquery . " GROUP BY event_days.event";
+			}
+			/*  END Content Filter  */
+
 			$query = mysqli_query($database->con, $sql);
 			if (!$query) {
 				header("location: ../cms/district.php?tab=sd&page=events&error=true");
