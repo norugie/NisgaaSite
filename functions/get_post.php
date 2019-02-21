@@ -25,7 +25,8 @@
 
 		public function postList($database){
 			$array = array();
-			$sql = "SELECT posts.post_title,
+			$sql;
+			$sqlquery = "SELECT posts.post_title,
 						   posts.post_date,
 						   posts.post_school,
 						   posts.id,
@@ -40,9 +41,25 @@
 					ON (schools.id = posts.post_school)
 					WHERE posts.post_type = 'Post' 
 					AND posts.status = 'Active'";
+
+			/*  Content Filter  */
+			if($_SESSION['type'] != 1){
+				$school;
+				if($_SESSION['school'] != 3 && $_SESSION['school'] != 4 && $_SESSION['school'] != 5 && $_SESSION['school'] != 6){
+					$school = 2;
+				} else {
+					$school = $_SESSION['school'];
+				}
+				$sql = $sqlquery . " AND posts.post_school = '$school'";
+			} else {
+				$sql = $sqlquery;
+			}
+			/*  END Content Filter  */
+
 			$query = mysqli_query($database->con, $sql);
 			if (!$query) {
-			    header("location:../cms/post.php?tab=post&page=blog&error=true");
+				//header("location:../cms/post.php?tab=post&page=blog&error=true");
+				echo("Error description: " . mysqli_error($database->con));
 			} else {
 				while($row = mysqli_fetch_array($query)){
 					$array[] = $row;
@@ -77,7 +94,8 @@
 
 		public function postsPerCategoryList($database, $category){
 			$array = array();
-			$sql = "SELECT posts.post_title,
+			$sql;
+			$sqlquery = "SELECT posts.post_title,
 						   posts.post_date,
 						   posts.post_school,
 						   posts.id,
@@ -98,6 +116,21 @@
 					WHERE post_categories.cat_id = '$category'
 					AND posts.post_type = 'Post'
 					AND posts.status = 'Active'";
+
+			/*  Content Filter  */
+			if($_SESSION['type'] != 1){
+				$school;
+				if($_SESSION['school'] != 3 && $_SESSION['school'] != 4 && $_SESSION['school'] != 5 && $_SESSION['school'] != 6){
+					$school = 2;
+				} else {
+					$school = $_SESSION['school'];
+				}
+				$sql = $sqlquery . " AND posts.post_school = '$school'";
+			} else {
+				$sql = $sqlquery;
+			}
+			/*  END Content Filter  */
+
 			$query = mysqli_query($database->con, $sql);
 			if (!$query) {
 			    header("location:../cms/post.php?tab=post&page=blog&error=true");
@@ -116,7 +149,8 @@
 
 		public function announcementList($database){
 			$array = array();
-			$sql = "SELECT announcements.*,
+			$sql;
+			$sqlquery = "SELECT announcements.*,
 						   users.firstname,
 						   users.lastname,
 						   schools.school_abbv
@@ -126,6 +160,21 @@
 					LEFT JOIN schools
 					ON (schools.id = announcements.a_school)
 					WHERE announcements.status = 'Active'";
+
+			/*  Content Filter  */
+			if($_SESSION['type'] != 1){
+				$school;
+				if($_SESSION['school'] != 3 && $_SESSION['school'] != 4 && $_SESSION['school'] != 5 && $_SESSION['school'] != 6){
+					$school = 2;
+				} else {
+					$school = $_SESSION['school'];
+				}
+				$sql = $sqlquery . " AND announcements.a_school = '$school'";
+			} else {
+				$sql = $sqlquery;
+			}
+			/*  END Content Filter  */
+
 			$query = mysqli_query($database->con, $sql);
 			if (!$query) {
 				header("location:../cms/post.php?tab=post&page=announcements&error=true");
@@ -160,27 +209,34 @@
 			return $array;
         }
 
-                /*********************************************************************************************/
+        /*********************************************************************************************/
 		/***************************  Posts Functionalities -- Links  ********************************/
         /*********************************************************************************************/
 		
 		public function linkList($database){
-			
-			$school;
-
-			if($_SESSION['type'] == 4){
-				$school = $_SESSION['school'];
-			} else {
-				$school = 2;
-			}
 
 			$array = array();
-			$sql = "SELECT links.*,
+			$sql;
+			$sqlquery = "SELECT links.*,
 						   schools.school_abbv 
 					FROM links
 					LEFT JOIN schools
-					ON (schools.id = links.school)
-					WHERE links.school = '$school'";
+					ON (schools.id = links.school)";
+			
+			/*  Content Filter  */
+			if($_SESSION['type'] != 1){
+				$school;
+				if($_SESSION['school'] != 3 && $_SESSION['school'] != 4 && $_SESSION['school'] != 5 && $_SESSION['school'] != 6){
+					$school = 2;
+				} else {
+					$school = $_SESSION['school'];
+				}
+				$sql = $sqlquery . " WHERE links.school = '$school'";
+			} else {
+				$sql = $sqlquery;
+			}
+			/*  END Content Filter  */
+
 			$query = mysqli_query($database->con, $sql);
 			if (!$query) {
 			    header("location: ../cms/post.php?tab=post&page=links&error=true");
@@ -221,8 +277,7 @@
 			$array = array();
 			$sql = "SELECT * FROM categories
 					WHERE status = 'Active'
-					AND id != '1'
-					AND id != '2'";
+					AND id != '1'";
 			$query = mysqli_query($database->con, $sql);
 			if (!$query) {
 			    header("location: ../cms/post.php?tab=post&page=categories&error=true");
@@ -238,18 +293,37 @@
 
 		public function postsAndMediaPerCategoryCount($database, $category){
 			$array = array();
-			$sql = "SELECT posts.*,
+			$sql;
+			$sqlquery = "SELECT posts.*,
 						   categories.cat_desc
 					FROM post_categories 
 					LEFT JOIN posts
 					ON (posts.id = post_categories.post_id)
 					LEFT JOIN categories
 					ON (categories.id = post_categories.cat_id)
+					LEFT JOIN schools
+					ON (posts.post_school = schools.id)
 					WHERE post_categories.cat_id = '$category'
 					AND posts.status = 'Active'";
+			
+			/*  Content Filter  */
+			if($_SESSION['type'] != 1){
+				$school;
+				if($_SESSION['school'] != 3 && $_SESSION['school'] != 4 && $_SESSION['school'] != 5 && $_SESSION['school'] != 6){
+					$school = 2;
+				} else {
+					$school = $_SESSION['school'];
+				}
+				$sql = $sqlquery . " AND posts.post_school = '$school'";
+			} else {
+				$sql = $sqlquery;
+			}
+			/*  END Content Filter  */
+
 			$query = mysqli_query($database->con, $sql);
 			if (!$query) {
-			    header("location:../cms/post.php?tab=post&page=blog&error=true");
+				//header("location:../cms/post.php?tab=post&page=blog&error=true");
+				echo("Error description: " . mysqli_error($database->con));
 			} else {
 				while($row = mysqli_fetch_array($query)){
 					$array[] = $row;
@@ -286,7 +360,8 @@
 
 		public function mediaPerCategoryList($database, $category){
 			$array = array();
-			$sql = "SELECT posts.post_title,
+			$sql;
+			$sqlquery = "SELECT posts.post_title,
 						   posts.post_date,
 						   posts.post_school,
 						   posts.id,
@@ -307,6 +382,21 @@
 					WHERE post_categories.cat_id = '$category'
 					AND posts.post_type = 'Media'
 					AND posts.status = 'Active'";
+
+			/*  Content Filter  */
+			if($_SESSION['type'] != 1){
+				$school;
+				if($_SESSION['school'] != 3 && $_SESSION['school'] != 4 && $_SESSION['school'] != 5 && $_SESSION['school'] != 6){
+					$school = 2;
+				} else {
+					$school = $_SESSION['school'];
+				}
+				$sql = $sqlquery . " AND posts.post_school = '$school'";
+			} else {
+				$sql = $sqlquery;
+			}
+			/*  END Content Filter  */
+
 			$query = mysqli_query($database->con, $sql);
 			if (!$query) {
 			    header("location:../cms/post.php?tab=post&page=media&error=true");
