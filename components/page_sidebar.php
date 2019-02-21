@@ -149,7 +149,7 @@
                             </li>
                         </ul>
                     </li>
-                    <?php if($_SESSION['type'] != 4){ ?> 
+                    <?php if($_SESSION['school'] != 3 && $_SESSION['school'] != 4 && $_SESSION['school'] != 5 && $_SESSION['school'] != 6){ ?> 
                     <li id="curriculum">
                         <a href="javascript:void(0);" class="menu-toggle">
                             <i class="material-icons">local_library</i>
