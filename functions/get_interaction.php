@@ -64,23 +64,31 @@
 
         public function faqList($database){
             $array = array();
-			$school;
-
-			if($_SESSION['type'] == 4){
-				$school = $_SESSION['school'];
-			} else {
-				$school = 2;
-			}
-
-			$sql = "SELECT faqs.id,
+			$sql;
+			$sqlquery = "SELECT faqs.id,
                            faqs.faq_id, 
 						   faqs.faq_question,
-						   faqs.faq_answer
+						   faqs.faq_answer,
+						   schools.school_abbv
 					FROM faqs
 					LEFT JOIN schools
                     ON (schools.id = faqs.school)
-                    WHERE faqs.school = '$school'
-                    AND faqs.status = 'Active'";
+                    WHERE faqs.status = 'Active'";
+					
+			/*  Content Filter  */
+			if($_SESSION['type'] != 1){
+				$school;
+				if($_SESSION['school'] != 3 && $_SESSION['school'] != 4 && $_SESSION['school'] != 5 && $_SESSION['school'] != 6){
+					$school = 2;
+				} else {
+					$school = $_SESSION['school'];
+				}
+				$sql = $sqlquery . " AND faqs.school = '$school'";
+			} else {
+				$sql = $sqlquery;
+			}
+			/*  END Content Filter  */
+
 			$query = mysqli_query($database->con, $sql);
 			if (!$query) {
 				header("location: ../cms/interaction.php?tab=web&subtab=content&page=inquiries&error=true");
@@ -116,15 +124,8 @@
 		
 		public function contactList($database){
             $array = array();
-			$school;
-
-			if($_SESSION['type'] == 4){
-				$school = $_SESSION['school'];
-			} else {
-				$school = 2;
-			}
-
-			$sql = "SELECT contacts.id,
+			$sql;
+			$sqlquery = "SELECT contacts.id,
 						   contacts.firstname,
 						   contacts.lastname,
 						   contacts.position,
@@ -136,8 +137,22 @@
 					FROM contacts
 					LEFT JOIN schools
                     ON (schools.id = contacts.school)
-                    WHERE contacts.school = '$school'
-					AND contacts.type = 'Contact'";
+                    WHERE contacts.type = 'Contact'";
+
+			/*  Content Filter  */
+			if($_SESSION['type'] != 1){
+				$school;
+				if($_SESSION['school'] != 3 && $_SESSION['school'] != 4 && $_SESSION['school'] != 5 && $_SESSION['school'] != 6){
+					$school = 2;
+				} else {
+					$school = $_SESSION['school'];
+				}
+				$sql = $sqlquery . " AND contacts.school = '$school'";
+			} else {
+				$sql = $sqlquery;
+			}
+			/*  END Content Filter  */
+
 			$query = mysqli_query($database->con, $sql);
 			if (!$query) {
 				header("location: ../cms/interaction.php?tab=web&subtab=content&page=contacts&error=true");

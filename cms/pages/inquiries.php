@@ -25,6 +25,7 @@
                             <tr>
                                 <th>Question</th>
                                 <th>Answer</th>
+                                <th>School</th>
                                 <th>Modify</th>
                                 <th>Delete</th>
                             </tr>
@@ -33,6 +34,7 @@
                             <tr>
                                 <th>Question</th>
                                 <th>Answer</th>
+                                <th>School</th>
                                 <th>Modify</th>
                                 <th>Delete</th>
                             </tr>
@@ -42,6 +44,7 @@
                                 <tr>
                                     <td><?php echo $faq['faq_question']; ?></td>
                                     <td><?php echo $faq['faq_answer']; ?></td>
+                                    <td><?php echo $faq['school_abbv']; ?></td>
                                     <td>
                                         <center>
                                             <button type="button" class="btn bg-green waves-effect" data-toggle="modal" data-target="#edit-inquiry-modal" 
