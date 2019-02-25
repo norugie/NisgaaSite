@@ -43,6 +43,7 @@
                             <div class="col-md-12"><h4>ANNOUNCEMENTS</h4></div>
                             <div class="col-md-12 announcements">
                                     <div class="col-md-12 an-items" style="text-align:left;">
+                                    <?php if(count($announcements) < 1){ ?><p class="no-letter-spacing">No posted announcements available</p><?php } ?>
                                         <?php foreach($announcements as $a): ?>
                                             <p class="no-letter-spacing"><a href="/?page=announcements&id=<?php echo preg_replace('/[a-zA-Z]/', '', $a['a_id']); ?>" class="nav-link"><?php echo $a['a_title']; ?></a></p>
                                         <?php endforeach; ?>
@@ -55,8 +56,6 @@
                             <div class="col-md-12 daily-word">
                                 <h3>" WORD "</h3>
                                 <p class="no-letter-spacing">Word meaning</p>
-                                <h6 class="no-letter-spacing"><i class="fa fa-volume-up fa-lg"></i>&nbsp;&nbsp;&nbsp;LISTEN</h6>
-                                <a href="#" class="btn btn-template-outlined-white">View More</a>
                             </div>
                         </div>
                     </div>
@@ -74,7 +73,13 @@
             <h3>Upcoming Events:</h3>
         </div>
         <div class="col-lg-8 text-center p-3">
-
+            <?php if(count($events) < 1){ ?>
+                <div class="row">
+                    <div class="col-md-8">
+                        <h4 style="margin:0;">No upcoming events</h4>
+                    </div>
+                </div>
+            <?php } ?>
             <!-- Owl Carousel -->
             <div class="owl-carousel">
                 <!-- Carousel Items -->
