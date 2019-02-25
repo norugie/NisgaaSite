@@ -8,7 +8,7 @@
                 </div>
                 <div class="content">
                     <div class="text">USERS</div>
-                    <div class="number">10</div>
+                    <div class="number"><?php echo count($dashboard->userCount($database)); ?></div>
                 </div>
             </a>
         </div>
@@ -21,7 +21,7 @@
                 </div>
                 <div class="content">
                     <div class="text">JOBS</div>
-                    <div class="number">10</div>
+                    <div class="number"><?php echo count($dashboard->jobCount($database)); ?></div>
                 </div>
             </a>
         </div>
@@ -34,7 +34,7 @@
                 </div>
                 <div class="content">
                     <div class="text">EVENTS</div>
-                    <div class="number">10</div>
+                    <div class="number"><?php echo count($dashboard->eventCount($database)); ?></div>
                 </div>
             </a>
         </div>
@@ -51,7 +51,7 @@
                 </div>
                 <div class="content">
                     <div class="text">ANNOUNCEMENTS</div>
-                    <div class="number">10</div>
+                    <div class="number"><?php echo count($dashboard->announcementCount($database)); ?></div>
                 </div>
             </a>
         </div>
@@ -64,7 +64,7 @@
                 </div>
                 <div class="content">
                     <div class="text">BLOG POSTS</div>
-                    <div class="number">10</div>
+                    <div class="number"><?php echo count($dashboard->blogCount($database)); ?></div>
                 </div>
             </a>
         </div>
@@ -77,7 +77,7 @@
                 </div>
                 <div class="content">
                     <div class="text">MEDIA POSTS</div>
-                    <div class="number">10</div>
+                    <div class="number"><?php echo count($dashboard->mediaCount($database)); ?></div>
                 </div>
             </a>
         </div>
@@ -116,6 +116,7 @@
                         <thead>
                             <tr>
                                 <th>Log ID</th>
+                                <?php if($_SESSION['type'] == 1){ ?><th>School</th><?php } ?>
                                 <th>User</th>
                                 <th>Activity</th>
                                 <th>Date and Time</th>
@@ -124,6 +125,7 @@
                         <tfoot>
                             <tr>
                                 <th>Log ID</th>
+                                <?php if($_SESSION['type'] == 1){ ?><th>School</th><?php } ?>
                                 <th>User</th>
                                 <th>Activity</th>
                                 <th>Date and Time</th>
@@ -133,6 +135,7 @@
                             <?php foreach($logs as $log): ?>
                                 <tr>
                                     <td><?php echo $log['log_id']; ?></td>
+                                    <?php if($_SESSION['type'] == 1){ ?><td><?php echo $log['school_abbv']; ?></td><?php } ?>
                                     <td><?php echo $log['firstname'] . " " . $log['lastname']; ?></td>
                                     <td><?php echo $log['log_desc']; ?></td>
                                     <td><?php echo date_format(date_create($log['date']), 'd M Y - l h:i A'); ?></td>
