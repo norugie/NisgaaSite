@@ -3,7 +3,7 @@
     require '../functions/common_connector.php';
     if(isset($_SESSION['id']) && isset($_SESSION['type'])){
 
-        require '../functions/dashboard.php';
+        require '../functions/get_dashboard.php';
         $dashboard = new Dashboard();
 ?>
 
