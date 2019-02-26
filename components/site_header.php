@@ -36,4 +36,7 @@
 
     </head>
     <body>
+        <!-- Page Loader -->
+        <?php require 'components/page_loader.php'; ?>
+        <!-- #END# Page Loader -->
         <div id="all" style ="overflow-x: hidden;">
