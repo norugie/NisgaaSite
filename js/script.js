@@ -9,3 +9,9 @@ $(document).ready(function(){
         dots: false
     });
 });
+
+// Page Loader
+
+$(document).ready(function(){
+    setTimeout(function () { $('.page-loader-wrapper').fadeOut(); }, 50);
+});
