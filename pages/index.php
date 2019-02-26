@@ -45,7 +45,7 @@
                                     <div class="col-md-12 an-items" style="text-align:left;">
                                     <?php if(count($announcements) < 1){ ?><p class="no-letter-spacing">No posted announcements available</p><?php } ?>
                                         <?php foreach($announcements as $a): ?>
-                                            <p class="no-letter-spacing"><a href="/?page=announcements&id=<?php echo preg_replace('/[a-zA-Z]/', '', $a['a_id']); ?>" class="nav-link"><?php echo $a['a_title']; ?></a></p>
+                                            <h5><a href="/?page=announcements&id=<?php echo preg_replace('/[a-zA-Z]/', '', $a['a_id']); ?>" class="nav-link"><?php echo $a['a_title']; ?></a></h5>
                                         <?php endforeach; ?>
                                     </div>
                             </div>
