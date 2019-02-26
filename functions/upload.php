@@ -1,7 +1,7 @@
 <?php
 
     // Allowed origins to upload images. Add necessary origins ones site is in production
-    $accepted_origins = array("http://webdev.nisgaa.bc.ca"); // Change origin URL once site is online
+    $accepted_origins = array("https://webdev.nisgaa.bc.ca"); // Change origin URL once site is online
 
     // Images upload path
     $imageFolder = "../images/posts/";
