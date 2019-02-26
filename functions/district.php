@@ -218,7 +218,7 @@
 	
 		}
 
-		public function addPostEvent($database, $post_title, $post_content, $post_thumbnail){
+		public function addPostEvent($database, $post_title, $post_content, $event_desc, $post_thumbnail){
 			$id;
 			$post_id = 'PST' . rand(1111111111,9999999999);
 			$user = $_SESSION['id'];
@@ -233,7 +233,7 @@
 			$date = date('Y-m-d');
 
 			$sql = "INSERT INTO posts
-					VALUES (null, '$post_id', '$post_title', '$date', 'Post', '$user', '$school', '$post_content', '$post_thumbnail', 'Event Post', 'Active')";
+					VALUES (null, '$post_id', '$post_title', '$date', 'Post', '$user', '$school', '$post_content', '$post_thumbnail', '$event_desc', 'Active')";
 			$query = mysqli_query($database->con, $sql);
 			if(!$query){
 				header("location:../cms/district.php?tab=sd&page=events&error=true");
@@ -292,10 +292,10 @@
 			return $id;	
 		}
 
-		public function addEventDays($database, $event_start, $event_end, $event_time, $event_id){
+		public function addEventDays($database, $event_start, $event_end, $event_final, $event_time, $event_id){
 
 			$sql = "INSERT INTO event_days
-					VALUES (null, '$event_start', '$event_end', '$event_time', '$event_id')";
+					VALUES (null, '$event_start', '$event_end', '$event_final', '$event_time', '$event_id')";
 			$query = mysqli_query($database->con, $sql);
 			if(!$query){
 				header("location:../cms/district.php?tab=sd&page=events&error=true");

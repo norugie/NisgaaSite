@@ -243,7 +243,7 @@
 
                 $post_thumbnail = "post_thumbnail.jpg";
                 
-                $post_id = $district->addPostEvent($database, $post_title, $post_content, $post_thumbnail);
+                $post_id = $district->addPostEvent($database, $post_title, $post_content, $event_desc, $post_thumbnail);
 
             } else {
 
@@ -262,7 +262,7 @@
                     if($errors == 0){
                         move_uploaded_file($file_tmp, "../images/thumbnails/".$file_name);
                         $post_thumbnail = $file_name;
-                        $post_id = $district->addPostEvent($database, $post_title, $post_content, $post_thumbnail);
+                        $post_id = $district->addPostEvent($database, $post_title, $post_content, $event_desc, $post_thumbnail);
                     } else {
                         header("location:../cms/district.php?tab=sd&page=events&error=true");
                     }
@@ -282,18 +282,20 @@
                 if($event_type == 'Single'){
                     $event_start = mysqli_real_escape_string($database->con, $_POST['event_date_start_single_1']);
                     $event_end = mysqli_real_escape_string($database->con, $_POST['event_date_start_single_1']);
+                    $event_final = mysqli_real_escape_string($database->con, $_POST['event_date_start_single_1']);
                     $event_time = mysqli_real_escape_string($database->con, $_POST['event_time_single_1']);
 
-                    $district->addEventDays($database, $event_start, $event_end, $event_time, $event_id);
+                    $district->addEventDays($database, $event_start, $event_end, $event_final, $event_time, $event_id);
                     if($i == $ctr_event){
                         header("location:../cms/district.php?tab=sd&page=events&newEvent=true");
                     }
                 } else {
                     $event_start = mysqli_real_escape_string($database->con, $_POST['event_date_start_continuous_1']);
                     $event_end = mysqli_real_escape_string($database->con, $_POST['event_date_end_continuous_1']);
+                    $event_final = mysqli_real_escape_string($database->con, $_POST['event_date_end_continuous_1']);
                     $event_time = mysqli_real_escape_string($database->con, $_POST['event_time_continuous_1']);
 
-                    $district->addEventDays($database, $event_start, $event_end, $event_time, $event_id);
+                    $district->addEventDays($database, $event_start, $event_end, $event_final, $event_time, $event_id);
                     if($i == $ctr_event){
                         header("location:../cms/district.php?tab=sd&page=events&newEvent=true");
                     }
@@ -303,9 +305,10 @@
                 for($i = 1; $i <= $ctr_event; $i++){
                     $event_start = mysqli_real_escape_string($database->con, $_POST['event_date_start_segmented_'.$i]);
                     $event_end = mysqli_real_escape_string($database->con, $_POST['event_date_start_segmented_'.$i]);
+                    $event_final = mysqli_real_escape_string($database->con, $_POST['event_date_start_segmented_'.$ctr_event]);
                     $event_time = mysqli_real_escape_string($database->con, $_POST['event_time_segmented_'.$i]);
 
-                    $district->addEventDays($database, $event_start, $event_end, $event_time, $event_id);
+                    $district->addEventDays($database, $event_start, $event_end, $event_final, $event_time, $event_id);
 
                     if($i == $ctr_event){
                         header("location:../cms/district.php?tab=sd&page=events&newEvent=true");
