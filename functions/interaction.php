@@ -15,7 +15,7 @@
 			    header("location: ../cms/interaction.php?tab=web&subtab=content&page=about&error=true");
 			} else {
 				global $log;
-				$info = "Modified the page information for web content ID: " . $web_id;
+				$info = "Modified the page information for About page";
 				$log->logInput($database, $info);
 
 				header("location: ../cms/interaction.php?tab=web&subtab=content&page=about&editPageInfo=true");
@@ -230,7 +230,7 @@
 			    header("location: ../cms/interaction.php?tab=web&&page=boe&error=true");
 			} else {
 				global $log;
-				$info = "Modified information for a " . $position;
+				$info = "Modified information for " . $firstname . " " . $lastname;
 				$log->logInput($database, $info);
 
 				header("location: ../cms/interaction.php?tab=web&page=boe&editBOEInformation=true");
