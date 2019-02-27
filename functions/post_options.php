@@ -326,7 +326,7 @@
         if(isset($_GET['mediaDisable'])){
             
             $id = $_GET['id'];
-            $title = $_GET['mediaName'];
+            $title = str_replace('%20', ' ', $_GET['mediaName']);
 
             $post->disableMedia($database, $id, $title);
 

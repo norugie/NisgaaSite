@@ -322,7 +322,7 @@
 			    header("location:../cms/post.php?tab=post&page=media&error=true");
 			} else {
 				global $log;
-				$info = "Edited media post: " . $media_title;
+				$info = "Modified media post: " . $media_title;
 				$log->logInput($database, $info);
 
 				header("location:../cms/post.php?tab=post&page=media&editMedia=true");
@@ -340,7 +340,7 @@
 			    header("location:../cms/post.php?tab=post&page=media&error=true");
 			} else {
 				global $log;
-				$info = "Archived media post ID: " . $title;
+				$info = "Archived media post: " . $title;
 				$log->logInput($database, $info);
 
 				header("location:../cms/post.php?tab=post&page=media&mediaDisabled=true");

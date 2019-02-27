@@ -72,7 +72,7 @@
                                         <li><a href="post.php?tab=post&page=media&media_option=modify&modify=categories&media_id=<?php echo $m['id']; ?>">Edit Media Categories</a></li>
                                         
                                         <li role="separator" class="divider"></li>
-                                        <li><a href="#" data-type="delete-media" data-id="<?php echo $m['id']; ?>" data-name="<?php echo $m['post_id']; ?>" onclick="alertDesign(this);">Delete Media Post</a></li>
+                                        <li><a href="#" data-type="delete-media" data-id="<?php echo $m['id']; ?>" data-name="<?php echo str_replace(' ', '%20', $m['post_title']); ?>" onclick="alertDesign(this);">Delete Media Post</a></li>
                                         <?php } ?>
                                     </ul>
                                 </div>
