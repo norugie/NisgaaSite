@@ -153,7 +153,7 @@
         if(isset($_GET['linkDisable'])){
             
             $id = $_GET['id'];
-            $title = $_GET['linkName'];
+            $title = str_replace('%20', ' ', $_GET['linkName']);
 
             $post->disableLink($database, $id, $title);
 
@@ -162,7 +162,7 @@
         if(isset($_GET['linkReactivate'])){
             
             $id = $_GET['id'];
-            $title = $_GET['linkName'];
+            $title = str_replace('%20', ' ', $_GET['linkName']);
 
             $post->reactivateLink($database, $id, $title);
 

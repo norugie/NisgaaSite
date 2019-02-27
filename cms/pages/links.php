@@ -73,9 +73,9 @@
                                         }' 
                                         onclick="editLink(this);" <?php if($link['status'] == 'Inactive') echo "disabled"; ?>><i class="material-icons">mode_edit</i><span>MODIFY</span></button></center></td> 
                                         <?php if($link['status'] == 'Active'){ ?>
-                                            <td><center><button type="button" class="btn bg-red waves-effect" data-type="delete-link" data-id="<?php echo $link['id']; ?>" data-name="<?php echo $link['link_id']; ?>" onclick="alertDesign(this);"><i class="material-icons">clear</i><span>DELETE</span></button></center></td>
+                                            <td><center><button type="button" class="btn bg-red waves-effect" data-type="delete-link" data-id="<?php echo $link['id']; ?>" data-name="<?php echo str_replace(' ', '%20', $link['link_name']); ?>" onclick="alertDesign(this);"><i class="material-icons">clear</i><span>DELETE</span></button></center></td>
                                         <?php } else { ?>
-                                            <td><center><button type="button" class="btn bg-cyan waves-effect" data-type="reopen-link" data-id="<?php echo $link['id']; ?>" data-name="<?php echo $link['link_id']; ?>" onclick="alertDesign(this);"><i class="material-icons">check</i><span>REACTIVATE</span></button></center></td>
+                                            <td><center><button type="button" class="btn bg-cyan waves-effect" data-type="reopen-link" data-id="<?php echo $link['id']; ?>" data-name="<?php echo str_replace(' ', '%20', $link['link_name']); ?>" onclick="alertDesign(this);"><i class="material-icons">check</i><span>REACTIVATE</span></button></center></td>
                                         <?php } ?>
                                     <?php } ?>
                                 </tr>

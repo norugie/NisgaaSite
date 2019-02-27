@@ -199,7 +199,7 @@
 			    header("location:../cms/post.php?tab=post&page=links&error=true");
 			} else {
 				global $log;
-				$info = "Disabled link ID: " . $title;
+				$info = "Disabled link: " . $title;
 				$log->logInput($database, $info);
 
 				header("location:../cms/post.php?tab=post&page=links&linkDisabled=true");
@@ -215,7 +215,7 @@
 			    header("location:../cms/post.php?tab=post&page=links&error=true");
 			} else {
 				global $log;
-				$info = "Reactivated link ID: " . $title;
+				$info = "Reactivated link: " . $title;
 				$log->logInput($database, $info);
 
 				header("location:../cms/post.php?tab=post&page=links&linkReactivated=true");
