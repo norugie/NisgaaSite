@@ -137,7 +137,7 @@
     </div>
 </div>
 
-<!-- Edit Job Dates Modal -->
+<!-- Edit Job Files Modal -->
 <div class="modal fade" id="edit-job-file-modal" tabindex="-1" role="dialog">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
