@@ -16,7 +16,7 @@
         if(isset($_GET['userDisable'])){
             
             $id = $_GET['id'];
-            $username = $_GET['username'];
+            $username = str_replace('%20', ' ', $_GET['username']);
 
             $district->disableUser($database, $id, $username);
 

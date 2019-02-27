@@ -54,7 +54,7 @@
                             <?php foreach($users as $solo): ?>
                                 <?php if($_SESSION['type'] == 1){ ?>
                                     <tr>
-                                        <td><?php echo $solo['firstname'] . " " . $solo['lastname']; ?></td>
+                                        <td><?php echo $uname = $solo['firstname'] . " " . $solo['lastname']; ?></td>
                                         <td><?php echo $solo['role_desc']; ?></td>
                                         <td><?php echo $solo['school_abbv']; ?></td>
                                         <td><?php echo $solo['username']; ?></td>
@@ -70,9 +70,9 @@
                                             }' 
                                         onclick="editUser(this);" <?php if($solo['status'] == 'Inactive') echo "disabled"; ?>><i class="material-icons">mode_edit</i><span>MODIFY</span></button></center></td>
                                         <?php if($solo['status'] == 'Active'){ ?>
-                                            <td><center><button type="button" class="btn bg-red waves-effect" data-type="delete-user" data-id="<?php echo $solo['id']; ?>" data-name="<?php echo $solo['username']; ?>" onclick="alertDesign(this);"><i class="material-icons">clear</i><span>DELETE</span></button></center></td>
+                                            <td><center><button type="button" class="btn bg-red waves-effect" data-type="delete-user" data-id="<?php echo $solo['id']; ?>" data-name="<?php echo str_replace(' ', '%20', $uname); ?>" onclick="alertDesign(this);"><i class="material-icons">clear</i><span>DELETE</span></button></center></td>
                                         <?php } else { ?>
-                                            <td><center><button type="button" class="btn bg-cyan waves-effect" data-type="reactivate-user" data-id="<?php echo $solo['id']; ?>" data-name="<?php echo $solo['username']; ?>" onclick="alertDesign(this);"><i class="material-icons">check</i><span>REACTIVATE</span></button></center></td>
+                                            <td><center><button type="button" class="btn bg-cyan waves-effect" data-type="reactivate-user" data-id="<?php echo $solo['id']; ?>" data-name="<?php echo str_replace(' ', '%20', $uname); ?>" onclick="alertDesign(this);"><i class="material-icons">check</i><span>REACTIVATE</span></button></center></td>
                                         <?php } ?>                                       
                                     </tr>
                                 <?php } else { ?>

@@ -51,7 +51,7 @@
 			    header("location:../cms/district.php?tab=sd&page=users&error=true");
 			} else {
 				global $log;
-				$info = "Added a new user account for " . $username;
+				$info = "Added a new user account for " . $firstname . " " . $lastname;
 				$log->logInput($database, $info);
 
 				header("location:../cms/district.php?tab=sd&page=users&newUser=true");
@@ -71,7 +71,7 @@
 			    header("location:../cms/district.php?tab=sd&page=users&error=true");
 			} else {
 				global $log;
-				$info = "Modified the user account information for " . $username;
+				$info = "Modified the user account information for " . $firstname . " " . $lastname;
 				$log->logInput($database, $info);
 				header("location:../cms/district.php?tab=sd&page=users&editUser=true");
 			}	
