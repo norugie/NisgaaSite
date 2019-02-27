@@ -62,7 +62,7 @@
                                                 <li role="separator" class="divider"></li>
                                                 <li><a href="post.php?tab=post&page=announcements&announcement_option=modify&a_id=<?php echo $a['id']; ?>">Edit Announcement Details</a></li>
                                                 <li role="separator" class="divider"></li>
-                                                <li><a href="#" data-type="delete-announcement" data-id="<?php echo $a['id']; ?>" data-name="<?php echo $a['a_id']; ?>" onclick="alertDesign(this);">Delete Announcement</a></li>
+                                                <li><a href="#" data-type="delete-announcement" data-id="<?php echo $a['id']; ?>" data-name="<?php echo str_replace(' ', '%20', $a['a_title']); ?>" onclick="alertDesign(this);">Delete Announcement</a></li>
                                             <?php } ?>
                                         <?php } ?>
                                     </ul>

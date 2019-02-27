@@ -117,7 +117,7 @@
         if(isset($_GET['announcementDisable'])){
             
             $id = $_GET['id'];
-            $title = $_GET['announcementName'];
+            $title = str_replace('%20', ' ', $_GET['announcementName']);
 
             $post->disableAnnouncement($database, $id, $title);
 

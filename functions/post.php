@@ -42,7 +42,7 @@
 			    header("location:../cms/post.php?tab=post&page=blog&error=true");
 			} else {
 				global $log;
-				$info = "Archived post: " . $title;
+				$info = "Archived blog post: " . $title;
 				$log->logInput($database, $info);
 
 				header("location:../cms/post.php?tab=post&page=blog&postDisabled=true");
@@ -62,7 +62,7 @@
 			    header("location:../cms/post.php?tab=post&page=blog&error=true");
 			} else {
 				global $log;
-				$info = "Modified post: " . $post_title;
+				$info = "Modified blog post: " . $post_title;
 				$log->logInput($database, $info);
 
 				header("location:../cms/post.php?tab=post&page=blog&editPost=true");
@@ -98,7 +98,7 @@
 					// echo("Error description: " . mysqli_error($database->con));
 				} else {
 					global $log;
-					$info = "Created a new post: " . $post_title;
+					$info = "Created a new blog post: " . $post_title;
 					$log->logInput($database, $info);
 
 					$row = mysqli_fetch_assoc($query);
@@ -133,7 +133,7 @@
 				//echo("Error description: " . mysqli_error($database->con));
 			} else {
 				global $log;
-				$info = "Disabled announcement ID: " . $title;
+				$info = "Disabled announcement post: " . $title;
 				$log->logInput($database, $info);
 
 				header("location:../cms/post.php?tab=post&page=announcements&announcementDisabled=true");
@@ -179,7 +179,7 @@
 				//echo("Error description: " . mysqli_error($database->con));
 			} else {
 				global $log;
-				$info = "Modified announcement: " . $a_title;
+				$info = "Modified announcement post: " . $a_title;
 				$log->logInput($database, $info);
 
 				header("location:../cms/post.php?tab=post&page=announcements&editAnnouncement=true");
