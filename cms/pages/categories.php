@@ -70,7 +70,7 @@
                                         </center>
                                     </td>
                                     <?php if($_SESSION['type'] == 1){ ?>
-                                    <td><center><button type="button" class="btn bg-red waves-effect" data-type="delete-cat" data-id="<?php echo $cat['id']; ?>" data-name="<?php echo $cat['cat_id']; ?>" onclick="alertDesign(this);" <?php if( $cat['id'] == 1 || $cat['id'] == 2){ echo "disabled"; } ?>><i class="material-icons">clear</i><span>DELETE</span></button></center></td>
+                                    <td><center><button type="button" class="btn bg-red waves-effect" data-type="delete-cat" data-id="<?php echo $cat['id']; ?>" data-name="<?php echo str_replace(' ', '%20', $cat['cat_desc']); ?>" onclick="alertDesign(this);" <?php if( $cat['id'] == 1 || $cat['id'] == 2){ echo "disabled"; } ?>><i class="material-icons">clear</i><span>DELETE</span></button></center></td>
                                     <?php } ?>
                                 </tr>
                             <?php endforeach; ?>

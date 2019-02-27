@@ -301,7 +301,7 @@
         if(isset($_GET['catDisable'])){
             
             $id = $_GET['id'];
-            $title = $_GET['cat'];
+            $title = str_replace('%20', ' ', $_GET['cat']);
 
             $post->disableCategory($database, $id, $title);
 

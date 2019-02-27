@@ -298,7 +298,7 @@
 			    header("location:../cms/post.php?tab=post&page=categories&error=true");
 			} else {
 				global $log;
-				$info = "Disabled the category ID:" . $title;
+				$info = "Disabled the category: " . $title;
 				$log->logInput($database, $info);
 
 				header("location:../cms/post.php?tab=post&page=categories&categoryDisabled=true");
