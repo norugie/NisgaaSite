@@ -230,7 +230,7 @@
 			    header("location: ../cms/interaction.php?tab=web&&page=boe&error=true");
 			} else {
 				global $log;
-				$info = "Modified information for " . $firstname . " " . $lastname;
+				$info = "Modified BOE information for " . $firstname . " " . $lastname;
 				$log->logInput($database, $info);
 
 				header("location: ../cms/interaction.php?tab=web&page=boe&editBOEInformation=true");
