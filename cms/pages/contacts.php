@@ -93,7 +93,7 @@
                         <tbody>
                             <?php foreach($contacts as $contact): ?>
                                 <tr>
-                                    <td><?php echo $contact['firstname'] . " " . $contact['lastname'];?></td>
+                                    <td><?php echo $name = $contact['firstname'] . " " . $contact['lastname'];?></td>
                                     <td><?php echo $contact['position'];?></td>
                                     <td><?php echo $contact['school_abbv'];?></td>
                                     <td><?php echo $contact['email'];?></td>
@@ -102,9 +102,9 @@
                                     data-values='<?php echo json_encode(str_replace("'", "&apos;", $contact)); ?>'
                                         onclick="editContact(this);" <?php if($contact['status'] == 'Inactive') echo "disabled"; ?>><i class="material-icons">mode_edit</i><span>MODIFY</span></button></center></td>
                                     <?php if($contact['status'] == 'Active'){ ?>
-                                        <td><center><button type="button" class="btn bg-red waves-effect" data-type="delete-contact" data-id="<?php echo $contact['id']; ?>" data-name="<?php echo str_replace(' ', '%20', $contact['position']); ?>" onclick="alertDesign(this);"><i class="material-icons">clear</i><span>DELETE</span></button></center></td>
+                                        <td><center><button type="button" class="btn bg-red waves-effect" data-type="delete-contact" data-id="<?php echo $contact['id']; ?>" data-name="<?php echo str_replace(' ', '%20', $name); ?>" onclick="alertDesign(this);"><i class="material-icons">clear</i><span>DELETE</span></button></center></td>
                                     <?php } else { ?>
-                                        <td><center><button type="button" class="btn bg-cyan waves-effect" data-type="reactivate-contact" data-id="<?php echo $contact['id']; ?>" data-name="<?php echo str_replace(' ', '%20', $contact['position']); ?>" onclick="alertDesign(this);"><i class="material-icons">check</i><span>REACTIVATE</span></button></center></td>
+                                        <td><center><button type="button" class="btn bg-cyan waves-effect" data-type="reactivate-contact" data-id="<?php echo $contact['id']; ?>" data-name="<?php echo str_replace(' ', '%20', $name); ?>" onclick="alertDesign(this);"><i class="material-icons">check</i><span>REACTIVATE</span></button></center></td>
                                     <?php } ?>   
                                 </tr>
                             <?php endforeach; ?>

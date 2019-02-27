@@ -75,9 +75,9 @@
                                             
                                             <li role="separator" class="divider"></li>
                                                 <?php if($cats[0][0] != 'Event'){ ?>
-                                                    <li><a href="#" data-type="delete-post" data-id="<?php echo $p['id']; ?>" data-name="<?php echo $p['post_id']; ?>" data-event="0" onclick="alertDesign(this);">Delete Post</a></li>
+                                                    <li><a href="#" data-type="delete-post" data-id="<?php echo $p['id']; ?>" data-name="<?php echo str_replace(' ', '%20', $p['post_title']); ?>" data-event="0" onclick="alertDesign(this);">Delete Post</a></li>
                                                 <?php } else { ?>
-                                                    <li><a href="#" data-type="delete-post" data-id="<?php echo $p['id']; ?>" data-name="<?php echo $p['post_id']; ?>" data-event="1" onclick="alertDesign(this);">Delete Post</a></li>
+                                                    <li><a href="#" data-type="delete-post" data-id="<?php echo $p['id']; ?>" data-name="<?php echo str_replace(' ', '%20', $p['post_title']); ?>" data-event="1" onclick="alertDesign(this);">Delete Post</a></li>
                                                 <?php } ?>
                                             <?php } ?>
                                         <?php } ?>

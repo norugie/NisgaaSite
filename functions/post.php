@@ -16,7 +16,7 @@
 			    header("location:../cms/post.php?tab=post&page=blog&error=true");
 			} else {
 				global $log;
-				$info = "Archived event post ID: " . $title;
+				$info = "Archived event post: " . $title;
 				$log->logInput($database, $info);
 
 				$sql = "UPDATE events SET 
@@ -42,7 +42,7 @@
 			    header("location:../cms/post.php?tab=post&page=blog&error=true");
 			} else {
 				global $log;
-				$info = "Archived post ID: " . $title;
+				$info = "Archived post: " . $title;
 				$log->logInput($database, $info);
 
 				header("location:../cms/post.php?tab=post&page=blog&postDisabled=true");

@@ -16,7 +16,7 @@
         if(isset($_GET['postDisable'])){
             
             $id = $_GET['id'];
-            $title = $_GET['postName'];
+            $title = str_replace('%20', ' ', $_GET['postName']);
 
             $post->disablePost($database, $id, $title);
 
@@ -25,7 +25,7 @@
         if(isset($_GET['postDisableEvent'])){
             
             $id = $_GET['id'];
-            $title = $_GET['postName'];
+            $title = str_replace('%20', ' ', $_GET['postName']);
 
             $post->disablePostEvent($database, $id, $title);
 
