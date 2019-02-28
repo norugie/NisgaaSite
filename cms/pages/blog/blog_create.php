@@ -9,7 +9,7 @@
 
     div.token-input-dropdown-facebook {           
         z-index: 9999!important;
-        width: 850px;
+        width: 1020px;
     }
 
 </style>
