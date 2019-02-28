@@ -6,8 +6,10 @@
         </div>
         <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
             <center>
-                <button type="button" class="btn bg-green waves-effect" style="display: inline-block;" 
-                onclick="window.location.href='interaction.php?tab=web&subtab=<?php echo $_GET['subtab']; ?>&page=<?php echo $_GET['page']; ?>&option=modify&id=<?php echo $page_info['id']; ?>'"><i class="material-icons">edit</i><span>MODIFY</span></button>
+                <?php if($_SESSION['type'] != 3){ ?>
+                    <button type="button" class="btn bg-green waves-effect" style="display: inline-block;" 
+                    onclick="window.location.href='interaction.php?tab=web&subtab=<?php echo $_GET['subtab']; ?>&page=<?php echo $_GET['page']; ?>&option=modify&id=<?php echo $page_info['id']; ?>'"><i class="material-icons">edit</i><span>MODIFY</span></button>
+                <?php } ?>
             </center>
         </div>
     </div>
