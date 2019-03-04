@@ -465,8 +465,40 @@
 
 		}
 
-		public function searchResults($database, $keyword, $school){
-			
+		public function blogSearchResults($database, $keyword, $school){
+			$array = array();
+
+			$sql = "SELECT posts.post_title,
+                           posts.post_date,
+						   posts.post_id,
+						   posts.post_desc,
+                           posts.post_thumbnail,
+                           users.firstname,
+						   users.lastname
+					FROM posts
+					LEFT JOIN users
+                    ON (users.id = posts.post_author)
+                    LEFT JOIN schools
+                    ON (schools.id = posts.post_school)
+                    WHERE posts.post_school = '$school'
+                    AND posts.status = 'Active'
+					AND (
+						posts.post_title LIKE '%$keyword%'
+						OR users.firstname LIKE '%$keyword%'
+						OR users.lastname LIKE '%$keyword%'
+					)
+                    ORDER BY posts.id DESC";
+			$query = mysqli_query($database->con, $sql);
+			if (!$query) {
+                 //header("location: ../?page=index&error=true");
+                return ("Error description: " . mysqli_error($database->con));
+			} else {
+				while($row = mysqli_fetch_array($query)){
+					$array[] = $row;
+				}
+            }
+            
+			return $array;
 		}
     }
 
