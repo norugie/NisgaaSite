@@ -464,6 +464,10 @@
 			return $array;
 
 		}
+
+		public function searchResults($database, $keyword, $school){
+			
+		}
     }
 
     require 'site_options.php';
