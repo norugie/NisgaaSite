@@ -95,9 +95,21 @@
         </li>
         <li class="nav-item"><a href="/?page=blog">Blog</a></li>
         <li class="nav-item"><a href="/?page=careers">Careers</a></li>
-        <li class="nav-item"><a href="#"><i class="fa fa-search fa-lg"></i><span class="d-inline-block d-md-none">&nbsp;&nbsp;Search</span></a></li>
+        <li class="nav-item"><a href="#search"><i class="fa fa-search fa-lg"></i><span class="d-inline-block d-md-none">&nbsp;&nbsp;Search</span></a></li>
         </ul>
     </div>
 </div>
 </header>
 <!-- Navbar End-->
+
+<!-- Search Page -->
+
+<div id="search">
+    <button type="button" class="close">×</button>
+    <form >
+        <input type="search" value="" placeholder="Search keyword(s)" />
+        <button type="submit" class="btn btn-lg btn-primary">Search</button>
+    </form>
+</div>
+
+<!-- Search Page End -->
