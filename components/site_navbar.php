@@ -62,6 +62,11 @@
                     <li class="nav-item"><a href="/?page=curriculum&content=dl" class="nav-link">Distant Learners Program</a></li>
                     <li class="nav-item"><a href="/?page=curriculum&content=nlc" class="nav-link">Nisga'a Language and Culture</a></li>
                     </ul>
+                    <h5>Miscellaneous</h5>
+                    <ul class="list-unstyled mb-3">
+                    <li class="nav-item"><a href="/?page=nisgaa_corner" class="nav-link">Nisga'a Corner</a></li>
+                    <li class="nav-item"><a href="/?page=forms" class="nav-link">District Forms</a></li>
+                    </ul> 
                 </div>
                 <div class="col-lg-4">
                     <h5>Governance</h5>

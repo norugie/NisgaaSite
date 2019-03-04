@@ -11,6 +11,7 @@
                 <div class="heading">
                     <h2>Blog</h2>
                 </div>
+                <?php if(count($blogs) < 1){ ?><p class="lead">No blog posts found for keyword: <?php echo $keyword; ?></p><?php } ?>
                 <div class="row">
                     <?php foreach($blogs as $blog): ?>
                         <div class="col-lg-3">
