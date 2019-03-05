@@ -517,7 +517,35 @@
 					AND (
 						links.link_tag != 'Quick Links'
 						AND links.link_tag != 'Finance'
+						AND links.link_tag != 'District Forms'
 					)";
+			$query = mysqli_query($database->con, $sql);
+			if (!$query) {
+				 //header("location: ../?page=index&error=true");
+				return ("Error description: " . mysqli_error($database->con));
+			} else {
+				while($row = mysqli_fetch_array($query)){
+					$array[] = $row;
+				}
+			}
+			
+			return $array;
+		}
+
+		public function formsSearchResults($database, $keyword, $school){
+			$array = array();
+	
+			$sql = "SELECT links.link_name,
+							links.link_type,
+							links.link_content,
+							links.link_thumbnail
+					FROM links
+					LEFT JOIN schools
+					ON (links.school = schools.id)
+					WHERE links.school = '$school'
+					AND links.status = 'Active'
+					AND links.link_name LIKE '%$keyword%'
+					AND links.link_tag = 'District Forms'";
 			$query = mysqli_query($database->con, $sql);
 			if (!$query) {
 				 //header("location: ../?page=index&error=true");
