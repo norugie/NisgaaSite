@@ -2,6 +2,7 @@
     $keyword = mysqli_real_escape_string($database->con, $_POST['search']);
     $school = 2;
     $blogs = $site->blogSearchResults($database, $keyword, $school);
+    $resources = $site->resourcesSearchResults($database, $keyword, $school);
 ?>
 <div class="col-md-9">
     <!-- BLOG RESULTS CONTENT -->
@@ -39,7 +40,19 @@
                 <div class="heading">
                     <h2>Resources</h2>
                 </div>
-                
+                <?php if(count($resources) < 1){ ?><p class="lead">No resources found for keyword: <?php echo $keyword; ?></p><?php } ?>
+                <div class="row products products-big">
+                    <?php foreach($resources as $resource): ?>
+                        <div class="col-lg-3 col-md-6">
+                            <div class="product">
+                                <div class="image"><a href="<?php if($resource['link_type'] == 'File'){ echo "../links/"; } echo $resource['link_content']; ?>" <?php if($resource['link_type'] == 'Link'){?>target="_blank"<?php } else { ?> download <?php } ?>><img src="images/thumbnails/<?php echo $resource['link_thumbnail']; ?>" alt="" class="img-fluid image1"></a></div>
+                                <div class="text">
+                                    <h3 class="h5"><a href="<?php if($resource['link_type'] == 'File'){ echo "../links/"; } echo $resource['link_content']; ?>" <?php if($resource['link_type'] == 'Link'){?>target="_blank"<?php } else { ?> download <?php } ?>><?php echo $resource['link_name']; ?></a></h3>
+                                </div>
+                            </div>
+                        </div>
+                    <?php endforeach; ?>
+                </div>
             </div>
         </div>
     </section>
