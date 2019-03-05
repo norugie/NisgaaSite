@@ -3,6 +3,7 @@
     $school = 2;
     $blogs = $site->blogSearchResults($database, $keyword, $school);
     $resources = $site->resourcesSearchResults($database, $keyword, $school);
+    $forms = $site->formsSearchResults($database, $keyword, $school);
 ?>
 <div class="col-md-9">
     <!-- BLOG RESULTS CONTENT -->
@@ -64,7 +65,18 @@
                 <div class="heading">
                     <h2>Files</h2>
                 </div>
-                
+                <?php if(count($forms) < 1){ ?><p class="lead">No forms found for keyword: <?php echo $keyword; ?></p><?php } ?>
+                <div class="row products products-big">
+                    <?php foreach($forms as $form): ?>
+                        <div class="col-lg-3 col-md-6">
+                            <div class="product">
+                                <div class="image"><a href="<?php if($form['link_type'] == 'File'){ echo "../links/"; } echo $form['link_content']; ?>" <?php if($form['link_type'] == 'Link'){?>target="_blank"<?php } else { ?> download <?php } ?>><img src="images/thumbnails/<?php echo $form['link_thumbnail']; ?>" alt="" class="img-fluid image1"></a></div>
+                                <div class="text">
+                                    <h3 class="h5"><a href="<?php if($form['link_type'] == 'File'){ echo "../links/"; } echo $form['link_content']; ?>" <?php if($form['link_type'] == 'Link'){?>target="_blank"<?php } else { ?> download <?php } ?>><?php echo $form['link_name']; ?></a></h3>
+                                </div>
+                            </div>
+                        </div>
+                    <?php endforeach; ?>
             </div>
         </div>
     </section>

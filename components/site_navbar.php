@@ -64,7 +64,7 @@
                     </ul>
                     <h5>Miscellaneous</h5>
                     <ul class="list-unstyled mb-3">
-                    <li class="nav-item"><a href="/?page=nisgaa_corner" class="nav-link">Nisga'a Corner</a></li>
+                    <li class="nav-item"><a href="/?page=culture_corner" class="nav-link">Nisga'a Corner</a></li>
                     <li class="nav-item"><a href="/?page=forms" class="nav-link">District Forms</a></li>
                     </ul> 
                 </div>
