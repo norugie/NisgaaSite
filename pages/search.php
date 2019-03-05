@@ -1,4 +1,11 @@
 <?php
+
+    if(!isset($_POST['search'])){
+?>
+    <script>window.location = "/?page=index";</script>
+<?php
+    }
+
     $keyword = mysqli_real_escape_string($database->con, $_POST['search']);
     $school = 2;
     $blogs = $site->blogSearchResults($database, $keyword, $school);
