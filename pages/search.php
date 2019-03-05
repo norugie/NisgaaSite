@@ -1,5 +1,5 @@
 <?php
-    $keyword = str_replace('%20', ' ', $_GET['keyword']);
+    $keyword = mysqli_real_escape_string($database->con, $_POST['search']);
     $school = 2;
     $blogs = $site->blogSearchResults($database, $keyword, $school);
 ?>

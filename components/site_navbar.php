@@ -111,7 +111,7 @@
 
 <div id="search">
     <button type="button" class="close">×</button>
-    <form action="functions/site.php?search=true" method="POST">
+    <form action="/?page=search" method="POST">
         <input type="search" name="search" placeholder="Search for..." autocomplete="off" required>
         <button type="submit" class="btn btn-lg btn-primary">Search</button>
     </form>
