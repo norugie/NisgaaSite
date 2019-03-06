@@ -58,26 +58,19 @@
         </div>
     </section>
     
-    <!-- FILES RESULTS CONTENT -->
+    <!-- FORMS RESULTS CONTENT -->
     <section>
         <div class="row">
             <div class="col-md-12">
                 <div class="heading">
-                    <h2>Files</h2>
+                    <h2>District Forms</h2>
                 </div>
                 <?php if(count($forms) < 1){ ?><p class="lead">No forms found for keyword: <?php echo $keyword; ?></p><?php } ?>
-                <div class="row products products-big">
+                <ul>
                     <?php foreach($forms as $form): ?>
-                        <div class="col-lg-3 col-md-6">
-                            <div class="product">
-                                <div class="image"><a href="<?php if($form['link_type'] == 'File'){ echo "../links/"; } echo $form['link_content']; ?>" <?php if($form['link_type'] == 'Link'){?>target="_blank"<?php } else { ?> download <?php } ?>><img src="images/thumbnails/<?php echo $form['link_thumbnail']; ?>" alt="" class="img-fluid image1"></a></div>
-                                <div class="text">
-                                    <h3 class="h5"><a href="<?php if($form['link_type'] == 'File'){ echo "../links/"; } echo $form['link_content']; ?>" <?php if($form['link_type'] == 'Link'){?>target="_blank"<?php } else { ?> download <?php } ?>><?php echo $form['link_name']; ?></a></h3>
-                                </div>
-                            </div>
-                        </div>
+                        <li class="lead mb-0"><a href="<?php if($form['link_type'] == 'File'){ echo "../links/"; } echo $form['link_content']; ?>" <?php if($form['link_type'] == 'Link'){?>target="_blank"<?php } else { ?> download <?php } ?>><?php echo $form['link_name']; ?></a></li>
                     <?php endforeach; ?>
-            </div>
+                </ul>
         </div>
     </section>
 </div>
