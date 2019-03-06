@@ -212,7 +212,7 @@
 		}
 
         /*********************************************************************************************/
-		/***************************  Interaction Functionalities -- Page Information  ***************/
+		/***************************  Interaction Functionalities -- BOE  ****************************/
 		/*********************************************************************************************/
 		
 		public function editBOE($database, $id, $position, $firstname, $lastname, $email, $phone, $position_specifics, $writeup, $photo){
