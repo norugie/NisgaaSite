@@ -180,3 +180,7 @@ function editContact(contactInfo) {
     $("#edit_contact_previous_photo").attr("value", contact['photo']);
     $("#edit_contact_position").attr("value", contact['position']);
 }
+
+function editForm(formInfo){
+    
+}
