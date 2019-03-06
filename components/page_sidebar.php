@@ -207,6 +207,18 @@
                             <span>Board of Education</span>
                         </a>
                     </li>
+                    <li id="culture">
+                        <a href="interaction.php?tab=web&page=culture">
+                            <i class="material-icons">nature_people</i>
+                            <span>Culture Corner</span>
+                        </a>
+                    </li>
+                    <li id="forms">
+                        <a href="interaction.php?tab=web&page=forms">
+                            <i class="material-icons">picture_as_pdf</i>
+                            <span>District Forms</span>
+                        </a>
+                    </li>
                     <?php } ?>
                 </ul>
             </li>
