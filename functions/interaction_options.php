@@ -230,6 +230,19 @@
         
         }
 
+        /*********************************************************************************************/
+		/***************************  Interaction Functionalities -- Culture Corner  *****************/
+        /*********************************************************************************************/
+
+        if(isset($_GET['editCulture'])){
+            
+            $id = mysqli_real_escape_string($database->con, $_POST['culture_id']);
+            $culture_name = mysqli_real_escape_string($database->con, $_POST['culture_name']);
+            $culture_desc = mysqli_real_escape_string($database->con, $_POST['culture_desc']);
+
+            $interaction->editCultureCorner($database, $id, $culture_name, $culture_desc);
+        }
+
     }
 
 ?>
