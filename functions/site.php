@@ -420,6 +420,24 @@
 			return $array;
 		}
 
+		public function cultureInformation($database){
+            $array = array();
+
+			$sql = "SELECT id,
+                           web_id, 
+						   web_desc
+					FROM web_content
+					WHERE web_type = 'Culture'";
+			$query = mysqli_query($database->con, $sql);
+			if (!$query) {
+				header("location: ../?page=index&error=true");
+			} else {
+				$array = mysqli_fetch_assoc($query);
+            }
+            
+			return $array;
+		}
+
 		public function chairInformation($database){
             $array = array();
 
