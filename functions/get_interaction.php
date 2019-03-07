@@ -282,26 +282,6 @@
             
 			return $array;
 		}
-		
-		/*********************************************************************************************/
-		/***************************  Interaction Functionalities -- District Forms  *****************/
-        /*********************************************************************************************/
-
-		public function formList($database){
-            $array = array();
-
-			$sql = "SELECT id, link_id, link_desc, link_name, link_content, status FROM links WHERE status = 'Active' AND link_tag = 'District Forms'";
-			$query = mysqli_query($database->con, $sql);
-			if (!$query) {
-			    header("location: ../cms/post.php?tab=post&page=links&error=true");
-			} else {
-				while($row = mysqli_fetch_array($query)){
-					$array[] = $row;
-				}
-            }
-            
-			return $array;
-        }
 
     }
 

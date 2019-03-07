@@ -44,7 +44,7 @@
                                     <div class="form-group">
                                         <select class="form-control show-tick" name="edit_link_tag" id="edit_link_tag_file" title="Select link tag" required>
                                             <option value="Quick Links">Quick Links</option>
-                                            <option value="Finance">Finance</option>
+                                            <option value="District Forms">District Forms</option>
                                             <option value="Learning Resources">Learning Resources</option>
                                             <option value="Teacher Resources">Teacher Resources</option>
                                             <option value="Web Media Resources">Web Media Resources</option>

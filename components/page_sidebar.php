@@ -213,12 +213,6 @@
                             <span>Culture Corner</span>
                         </a>
                     </li>
-                    <li id="forms">
-                        <a href="interaction.php?tab=web&page=forms">
-                            <i class="material-icons">picture_as_pdf</i>
-                            <span>District Forms</span>
-                        </a>
-                    </li>
                     <?php } ?>
                 </ul>
             </li>

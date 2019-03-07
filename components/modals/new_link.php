@@ -60,7 +60,7 @@
                                     <div class="form-group">
                                         <select class="form-control show-tick" name="link_tag" id="link_tag" title="Select link tag" required>
                                             <option value="Quick Links">Quick Links</option>
-                                            <option value="Finance">Finance</option>
+                                            <option value="District Forms">District Forms</option>
                                             <option value="Learning Resources">Learning Resources</option>
                                             <option value="Teacher Resources">Teacher Resources</option>
                                             <option value="General Resources">General Resources</option>
