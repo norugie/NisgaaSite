@@ -7,21 +7,12 @@
         </div>
         <div class="collapse navbar-collapse" id="navbar-collapse">
             <ul class="nav navbar-nav navbar-right">
-                <!-- Call Search -->
-                <li><a href="javascript:void(0);" class="js-search" data-close="true"><i class="material-icons">search</i></a></li>
-                <!-- #END# Call Search -->
-                <!-- Tasks -->
-                <li class="dropdown">
-                    <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button">
-                        <i class="material-icons">keyboard_arrow_down</i>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#" data-toggle="modal" data-target="#profile-modal"><i class="material-icons">person</i>Profile</a></li>
-                        <li role="separator" class="divider"></li>
-                        <li><a href="../functions/logout.php"><i class="material-icons">input</i>Sign Out</a></li>
-                    </ul>
-                </li>
-                <!-- #END# Tasks -->
+                <!-- Call Profile Modal -->
+                <li><a href="#" data-toggle="modal" data-target="#profile-modal"><i class="material-icons">person</i></a></li>
+                <!-- #END# Profile Modal -->
+                <!-- Logout -->
+                <li><a href="../functions/logout.php"><i class="material-icons">input</i></a></li>
+                <!-- #END# Logout -->
             </ul>
         </div>
     </div>
