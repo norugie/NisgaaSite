@@ -33,7 +33,7 @@ function alertDesign(e) {
         showDeleteInquiryConfirm(id, name);
     } else if (type === 'delete-contact'){
         showDeleteContactConfirm(id, name);
-    } else if(type === 'reactivate-contact'){
+    } else if (type === 'reactivate-contact'){
         showReactivateContactConirm(id, name);
     }
 }
