@@ -65,7 +65,7 @@
                     </div>
                     <div class="row">
                         <div class="col-lg-12">
-                            <button class="btn btn-block bg-blue-grey waves-effect" type="submit">SIGN IN</button>
+                            <button class="btn btn-block bg-blue-grey waves-effect" type="submit"><i class="material-icons">input</i><span>SIGN IN</span></button>
                         </div>
                     </div>
                 </form>
