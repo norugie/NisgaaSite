@@ -44,7 +44,7 @@
                                     <div class="form-group">
                                         <select class="form-control show-tick" name="edit_link_tag" id="edit_link_tag_file" title="Select link tag" required>
                                             <option value="Quick Links">Quick Links</option>
-                                            <option value="District Forms">District Forms</option>
+                                            <?php if($_SESSION['school'] == 2){ ?><option value="District Forms">District Forms</option><?php } ?>
                                             <option value="Learning Resources">Learning Resources</option>
                                             <option value="Teacher Resources">Teacher Resources</option>
                                             <option value="Web Media Resources">Web Media Resources</option>
