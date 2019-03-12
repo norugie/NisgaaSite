@@ -83,6 +83,8 @@
                 </style>
 
                 <form action="../functions/post.php?post=true&editPostCategories=true" method="POST">
+                    <input type="text" id="edit_post_cat_id" name="edit_post_cat_id" value="<?php echo $post_info['id']; ?>" hidden>
+                    <input type="text" id="edit_post_cat_id_name" name="edit_post_cat_id_name" value="<?php echo $post_info['post_title']; ?>" hidden>
                     <div class="row clearfix">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                             <label for="edit_post_categories">Post Categories *</label>
@@ -94,13 +96,13 @@
                                         array_push($post_cats_values, $cat['id']);
                                     endforeach;
                                 ?>
-                                <input type="text" value="<?php echo implode(',', $post_cats_values); ?>"  name="edit_post_categories_id">
+                                <input type="text" value="<?php echo implode(',', $post_cats_values); ?>"  name="edit_post_categories_id" hidden>
                                 <div class="form-line">
                                     <input type="text" class="form-control" id="edit_post_categories" name="edit_post_categories" required>
                                 </div>
                                 <script type="text/javascript">
                                     
-                                    var categories = new Array(<?php echo implode(',', $post_cats_values); ?>);
+                                    var categories = new Array();
                                     
                                     Array.prototype.remove = function() {
                                         var what, a = arguments, L = a.length, ax;
@@ -146,6 +148,11 @@
                                 </script>
                                 
                             </div>
+                        </div>
+                    </div>
+                    <div class="row clearfix">
+                        <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12" style="float: right;">
+                            <button type="submit" class="btn bg-blue-grey btn-block btn-lg waves-effect">SAVE</button>  
                         </div>
                     </div>
                 </form>
