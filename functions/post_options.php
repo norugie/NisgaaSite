@@ -346,6 +346,29 @@
 
         }
 
+        if(isset($_GET['editMediaCategories'])){
+            $id = mysqli_real_escape_string($database->con, $_POST['edit_media_cat_id']);
+            $title = mysqli_real_escape_string($database->con, $_POST['edit_media_cat_id_name']);
+            $categories = mysqli_real_escape_string($database->con, $_POST['edit_media_categories']);
+
+            $post->deleteAllMediaCategories($database, $id);
+
+            $post_cats = explode(',', $categories);
+
+            for($i = 0; $i <= count($post_cats); $i++){
+
+                $post->addMediaCategories($database, $id, $post_cats[$i]);
+
+                if($i == count($post_cats)){
+                    global $log;
+					$info = "Modified media post categories: " . $title;
+					$log->logInput($database, $info);
+                    header("location:../cms/post.php?tab=post&page=media&editMediaCategories=true");
+                }
+
+            }
+        }
+
         if(isset($_GET['mediaDisable'])){
             
             $id = $_GET['id'];
