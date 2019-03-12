@@ -66,6 +66,89 @@
             <?php } else { ?>
                 <!-- Modify categories here -->
                 
+                <?php 
+
+                    $categories = $post->categoryListNoEventNoAnnouncement($database); 
+                    $cats =  json_encode($categories);
+
+                ?>
+
+                <style>
+
+                    div.token-input-dropdown-facebook {           
+                        z-index: 9999!important;
+                        width: 1020px;
+                    }
+
+                </style>
+
+                <form action="../functions/post.php?post=true&editPostCategories=true" method="POST">
+                    <div class="row clearfix">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <label for="edit_post_categories">Post Categories *</label>
+                            <div class="form-group">
+                                <?php
+                                    $post_cats_values = array();
+                                    $post_cats = $post->categoriesPerPostList($database, $post_info['id']);
+                                    foreach($post_cats as $cat):
+                                        array_push($post_cats_values, $cat['id']);
+                                    endforeach;
+                                ?>
+                                <input type="text" value="<?php echo implode(',', $post_cats_values); ?>"  name="edit_post_categories_id">
+                                <div class="form-line">
+                                    <input type="text" class="form-control" id="edit_post_categories" name="edit_post_categories" required>
+                                </div>
+                                <script type="text/javascript">
+                                    
+                                    var categories = new Array(<?php echo implode(',', $post_cats_values); ?>);
+                                    
+                                    Array.prototype.remove = function() {
+                                        var what, a = arguments, L = a.length, ax;
+                                        while (L && this.length) {
+                                            what = a[--L];
+                                            while ((ax = this.indexOf(what)) !== -1) {
+                                                this.splice(ax, 1);
+                                            }
+                                        }
+                                        return this;
+                                    };
+                                    
+                                    $(document).ready(function() {
+                                        $("#edit_post_categories").tokenInput(<?php echo $cats; ?>, {
+                                            theme: "facebook",
+                                            propertyToSearch: "cat_desc",
+                                            prePopulate: [
+                                                <?php
+                                                foreach($post_cats as $cat):
+                                                ?>
+                                                 {id: <?php echo $cat['id']; ?>, cat_desc: "<?php echo $cat['cat_desc']; ?>"},
+                                                <?php
+                                                endforeach;    
+                                                ?>
+                                            ],
+                                            resultsFormatter: function(item){ 
+                                                return "<li>" + "<div style='display: inline-block; padding-left: 10px;'><div class='cat_desc'>" + item.cat_desc + "</div></div></li>" },
+                                            tokenFormatter: function(item){ 
+                                                return "<li><p>" + item.cat_desc + "</p></li>" },
+                                            preventDuplicates: true,
+                                            onAdd: function(item){
+                                                categories.push(item.id);
+                                                console.log(categories);
+                                                $('input[name="edit_post_categories_id"]').val(categories);
+                                            },
+                                            onDelete: function(item){
+                                                categories.remove(item.id);
+                                                console.log(categories);
+                                                $('input[name="edit_post_categories_id"]').val(categories);
+                                            }
+                                        });
+                                    });
+                                </script>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </form>
             <?php } ?>
         </div>
     </div>

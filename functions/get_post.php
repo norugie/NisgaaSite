@@ -335,7 +335,8 @@
 
 		public function categoriesPerPostList($database, $post){
 			$array = array();
-			$sql = "SELECT categories.cat_desc
+			$sql = "SELECT categories.cat_desc,
+						   categories.id
 					FROM categories 
 					LEFT JOIN post_categories
 					ON (categories.id = post_categories.cat_id)
