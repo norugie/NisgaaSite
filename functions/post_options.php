@@ -110,6 +110,29 @@
 
         }
 
+        if(isset($_GET['editPostCategories'])){
+            $id = mysqli_real_escape_string($database->con, $_POST['edit_post_cat_id']);
+            $title = mysqli_real_escape_string($database->con, $_POST['edit_post_cat_id_name']);
+            $categories = mysqli_real_escape_string($database->con, $_POST['edit_post_categories']);
+
+            $post->deleteAllPostCategories($database, $id);
+
+            $post_cats = explode(',', $categories);
+
+            for($i = 0; $i <= count($post_cats); $i++){
+
+                $post->addPostCategories($database, $id, $post_cats[$i]);
+
+                if($i == count($post_cats)){
+                    global $log;
+					$info = "Modified blog post categories: " . $title;
+					$log->logInput($database, $info);
+                    header("location:../cms/post.php?tab=post&page=blog&editPostCategories=true");
+                }
+
+            }
+        }
+
         /*********************************************************************************************/
 		/***********************  Posts Functionalities -- Announcements Posts ***********************/
         /*********************************************************************************************/
