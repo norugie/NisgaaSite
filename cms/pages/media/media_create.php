@@ -14,14 +14,6 @@
 
 </style>
 
-
-<link rel="stylesheet" href="../plugins/dropzone/dropzone.css" type="text/css" />
-<script type="text/javascript" src="../plugins/dropzone/dropzone.js"></script>
-
-<script>
-
-</script>
-
 <div class="header">
     <div class="row clearfix">
         <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 text-xs-sm-center">
@@ -115,20 +107,6 @@
                         <div class="form-group">
                             <div class="form-line">
                                 <textarea rows="2" class="form-control no-resize" id="media_content" name="media_content" required></textarea>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row clearfix">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <label for="media_content_photos">Media Photos *</label><br>
-                        <div class="form-group">
-                            <div class="body">
-                                <form action="/file-upload" class="dropzone">
-                                    <div class="fallback">
-                                        <input name="file" type="file" multiple />
-                                    </div>
-                                </form>
                             </div>
                         </div>
                     </div>
