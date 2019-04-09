@@ -39,6 +39,8 @@
                         require 'media/media_modify.php';
                     } else if($_GET['media_option'] == 'view'){
                         require 'media/media_view.php';
+                    } else if($_GET['media_option'] == 'upload'){
+                        require 'media/media_upload.php';
                     } else {
                         require 'media/media_list.php';
                     }
