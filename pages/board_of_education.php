@@ -12,7 +12,7 @@
             <div class="row text-center">
                 <div class="col-md-6">
                     <div data-animate="fadeInUp" class="team-member">
-                        <div class="image"><img src="images/contacts/<?php echo $chairperson['photo']; ?>" alt="" class="img-fluid rounded-circle" style="max-width: 300px;"></div>
+                        <div class="image"><img src="images/contacts/<?php echo $chairperson['photo']; ?>" alt="" class="img-fluid rounded-circle boe-page"></div>
                         <h3><?php echo $chairperson['firstname'] . " " . $chairperson['lastname']; ?></h3>
                         <p class="role role-main"><?php echo $chairperson['position']; ?></p>
                         <p class="role"><?php echo $chairperson['position_specifics']; ?></p>
@@ -24,7 +24,7 @@
                 </div>
                 <div class="col-md-6">
                     <div data-animate="fadeInUp" class="team-member">
-                        <div class="image"><img src="images/contacts/<?php echo $vchairperson['photo']; ?>" alt="" class="img-fluid rounded-circle" style="max-width: 300px;"></div>
+                        <div class="image"><img src="images/contacts/<?php echo $vchairperson['photo']; ?>" alt="" class="img-fluid rounded-circle boe-page"></div>
                         <h3><?php echo $vchairperson['firstname'] . " " . $vchairperson['lastname']; ?></h3>
                         <p class="role role-main"><?php echo $vchairperson['position']; ?></p>
                         <p class="role"><?php echo $vchairperson['position_specifics']; ?></p>
@@ -39,7 +39,7 @@
                 <?php foreach($trustees as $trustee): ?>
                     <div class="col-md-4">
                         <div data-animate="fadeInUp" class="team-member">
-                            <div class="image"><img src="images/contacts/<?php echo $trustee['photo']; ?>" alt="" class="img-fluid rounded-circle" style="max-width: 300px;"></div>
+                            <div class="image"><img src="images/contacts/<?php echo $trustee['photo']; ?>" alt="" class="img-fluid rounded-circle boe-page"></div>
                             <h3><?php echo $trustee['firstname'] . " " . $trustee['lastname']; ?></h3>
                             <p class="role role-main"><?php echo $trustee['position']; ?></p>
                             <p class="role"><?php echo $trustee['position_specifics']; ?></p>

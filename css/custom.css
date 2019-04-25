@@ -480,3 +480,9 @@ html {
     font-weight: 450;
     color: #000;
 }
+
+.boe-page {
+  max-width: 300px; 
+  max-height: 300px; 
+  object-fit: cover;
+}

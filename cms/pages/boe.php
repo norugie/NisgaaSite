@@ -13,7 +13,7 @@
             <div class="profile-header">&nbsp;</div>
             <div class="profile-body">
                 <div class="image-area">
-                    <img src="../images/contacts/<?php echo $chairperson['photo']; ?>" alt="AdminBSB - Profile Image" />
+                    <img src="../images/contacts/<?php echo $chairperson['photo']; ?>" alt="BOE Image" style="height: 135px; width: 135px; object-fit: cover;" />
                 </div>
                 <div class="content-area">
                     <h3><?php echo $chairperson['firstname'] . " " . $chairperson['lastname']; ?></h3>
@@ -49,7 +49,7 @@
             <div class="profile-header">&nbsp;</div>
             <div class="profile-body">
                 <div class="image-area">
-                    <img src="../images/contacts/<?php echo $vchairperson['photo']; ?>" alt="AdminBSB - Profile Image" />
+                    <img src="../images/contacts/<?php echo $vchairperson['photo']; ?>" alt="BOE Image" style="height: 135px; width: 135px; object-fit: cover;" />
                 </div>
                 <div class="content-area">
                     <h3><?php echo $vchairperson['firstname'] . " " . $vchairperson['lastname']; ?></h3>
@@ -88,7 +88,7 @@
                 <div class="profile-header">&nbsp;</div>
                 <div class="profile-body">
                     <div class="image-area">
-                        <img src="../images/contacts/<?php echo $trustee['photo']; ?>" alt="AdminBSB - Profile Image" />
+                        <img src="../images/contacts/<?php echo $trustee['photo']; ?>" alt="BOE Image" style="height: 135px; width: 135px; object-fit: cover;" />
                     </div>
                     <div class="content-area">
                         <h3><?php echo $trustee['firstname'] . " " . $trustee['lastname']; ?></h3>
