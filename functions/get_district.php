@@ -178,6 +178,33 @@
 
 		}
 
+        /*********************************************************************************************/
+		/***************************  District Functionalities -- Forms  *****************************/
+        /*********************************************************************************************/
+		
+		public function formList($database){
+
+			$array = array();
+			$sql = "SELECT links.*,
+						   schools.school_abbv 
+					FROM links
+					LEFT JOIN schools
+					ON (schools.id = links.school)
+					WHERE links.link_tag = 'District Forms'";
+
+			$query = mysqli_query($database->con, $sql);
+			if (!$query) {
+			    header("location: ../cms/post.php?tab=sd&page=forms&error=true");
+			} else {
+				while($row = mysqli_fetch_array($query)){
+					$array[] = $row;
+				}
+            }
+            
+			return $array;
+			
+        }
+
     }
 
 ?>
