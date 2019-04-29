@@ -329,6 +329,28 @@
             $district->editEvent($database, $event_name, $event_shortname, $event_desc, $event_location, $event_id);
         }
 
+        /*********************************************************************************************/
+		/***************************  District Functionalities -- Forms  *****************************/
+        /*********************************************************************************************/
+        
+        if(isset($_GET['formDisable'])){
+            
+            $id = $_GET['id'];
+            $title = str_replace('%20', ' ', $_GET['formName']);
+
+            $district->disableForm($database, $id, $title);
+
+        }
+
+        if(isset($_GET['formReactivate'])){
+            
+            $id = $_GET['id'];
+            $title = str_replace('%20', ' ', $_GET['formName']);
+
+            $district->reactivateForm($database, $id, $title);
+
+        }
+
     }
 
 ?>

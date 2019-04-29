@@ -324,6 +324,42 @@
 			}	
 		}
 
+        /*********************************************************************************************/
+		/***************************  District Functionalities -- Forms  *****************************/
+        /*********************************************************************************************/
+
+		public function disableForm($database, $id, $title){
+			$sql = "UPDATE links SET 
+						   status = 'Inactive'
+					WHERE id = '$id'";
+			$query = mysqli_query($database->con, $sql);
+			if(!$query){
+			    header("location:../cms/district.php?tab=sd&page=forms&error=true");
+			} else {
+				global $log;
+				$info = "Disabled form: " . $title;
+				$log->logInput($database, $info);
+
+				header("location:../cms/district.php?tab=sd&page=forms&formDisabled=true");
+			}
+		}
+
+		public function reactivateForm($database, $id, $title){
+			$sql = "UPDATE links SET 
+						   status = 'Active'
+					WHERE id = '$id'";
+			$query = mysqli_query($database->con, $sql);
+			if(!$query){
+			    header("location:../cms/district.php?tab=sd&page=forms&error=true");
+			} else {
+				global $log;
+				$info = "Reactivated form: " . $title;
+				$log->logInput($database, $info);
+
+				header("location:../cms/district.php?tab=sd&page=forms&formReactivated=true");
+			}
+		}
+
     }
 
     require 'district_options.php';

@@ -35,6 +35,10 @@ function alertDesign(e) {
         showDeleteContactConfirm(id, name);
     } else if (type === 'reactivate-contact'){
         showReactivateContactConirm(id, name);
+    } else if (type === 'delete-form'){
+        showDisableFormConfirm(id, name);
+    } else if (type === 'reopen-form'){
+        showReactivateFormConfirm(id, name);
     }
 }
 
@@ -339,6 +343,45 @@ function showReactivateContactConirm(id, name) {
     }, function (isConfirm) {
         if (isConfirm) {
             window.location = "../functions/interaction.php?interaction=true&contactReactivate=true&id=" + id + "&contactRole=" + name;
+        }
+
+    });
+}
+
+//Warning for disabling form
+function showDisableFormConfirm(id, name) {
+    swal({
+        title: "Are you sure you want to disable this form?",
+        text: "You will be able to reactivate this form once archived",
+        type: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#F44336",
+        confirmButtonText: "CONFIRM",
+        cancelButtonText: "CANCEL",
+        closeOnConfirm: false,
+        closeOnCancel: true
+    }, function (isConfirm) {
+        if (isConfirm) {
+            window.location = "../functions/district.php?district=true&formDisable=true&id=" + id + "&formName=" + name;
+        }
+
+    });
+}
+
+//Warning for reactivating form
+function showReactivateFormConfirm(id, name) {
+    swal({
+        title: "Are you sure you want to reactivate this form?",
+        type: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#00BCD4",
+        confirmButtonText: "CONFIRM",
+        cancelButtonText: "CANCEL",
+        closeOnConfirm: false,
+        closeOnCancel: true
+    }, function (isConfirm) {
+        if (isConfirm) {
+            window.location = "../functions/district.php?district=true&formReactivate=true&id=" + id + "&formName=" + name;
         }
 
     });
