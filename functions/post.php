@@ -401,8 +401,8 @@
 			VALUES (null, '$post_id','$cat_id')";
 			$query = mysqli_query($database->con, $sql);
 			if(!$query){
-				// header("location:../cms/post.php?tab=post&page=media&error=true");
-				 echo("Error description: " . mysqli_error($database->con));
+				header("location:../cms/post.php?tab=post&page=media&error=true");
+				// echo("Error description: " . mysqli_error($database->con));
 			}
 		}
 
@@ -410,8 +410,8 @@
 			$sql = "DELETE FROM post_categories WHERE post_id = '$id'";
 			$query = mysqli_query($database->con, $sql);
 			if(!$query){
-				//header("location:../cms/post.php?tab=post&page=media&error=true");
-				 echo("Error description: " . mysqli_error($database->con));
+				header("location:../cms/post.php?tab=post&page=media&error=true");
+				// echo("Error description: " . mysqli_error($database->con));
 			}
 		}
 

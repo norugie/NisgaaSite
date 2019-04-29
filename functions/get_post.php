@@ -221,7 +221,8 @@
 						   schools.school_abbv 
 					FROM links
 					LEFT JOIN schools
-					ON (schools.id = links.school)";
+					ON (schools.id = links.school)
+					WHERE links.link_tag != 'District Forms'";
 			
 			/*  Content Filter  */
 			if($_SESSION['type'] != 1){
