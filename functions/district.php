@@ -360,6 +360,25 @@
 			}
 		}
 
+		public function addForm($database, $link_name, $link_desc, $link_content, $link_type, $link_tag, $link_thumbnail){
+			$link_id = 'LNK' . rand(1111111,9999999);
+			$user = $_SESSION['id'];
+			$school = 2;
+
+			$sql = "INSERT INTO links
+					VALUES (null, '$link_id', '$link_name', '$link_type', '$link_tag', '$link_desc', '$link_content', '$link_thumbnail', '$user', '$school', 'Active')";
+			$query = mysqli_query($database->con, $sql);
+			if(!$query){
+			    header("location:../cms/district.php?tab=sd&page=forms&error=true");
+			} else {
+				global $log;
+				$info = "Created a new form: " . $link_name;
+				$log->logInput($database, $info);
+
+				header("location:../cms/district.php?tab=sd&page=forms&addForm=true");
+			}			
+		}
+
     }
 
     require 'district_options.php';
