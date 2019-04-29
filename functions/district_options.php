@@ -351,20 +351,21 @@
 
         }
 
-        if(isset($_GET['editLink'])){
+        if(isset($_GET['editForm'])){
 
             $id = mysqli_real_escape_string($database->con, $_POST['edit_link_id']);
             $link_id = mysqli_real_escape_string($database->con, $_POST['edit_link_id_name']);
             $link_name = mysqli_real_escape_string($database->con, $_POST['edit_link_title']);
             $link_desc = mysqli_real_escape_string($database->con, $_POST['edit_link_desc']);
-            $link_tag = mysqli_real_escape_string($database->con, $_POST['edit_link_tag']);
+            $link_tag = "District Forms";
             $link_content;
 
             if(!file_exists($_FILES['edit_link_content']['tmp_name']) || !is_uploaded_file($_FILES['edit_link_content']['tmp_name'])){
 
                 $link_content = mysqli_real_escape_string($database->con, $_POST['edit_link_content']);
                 
-                $post->editLink($database, $id, $link_id, $link_name, $link_desc, $link_content, $link_tag);
+                $district->editForm($database, $id, $link_id, $link_name, $link_desc, $link_content, $link_tag);
+                echo "Test";
 
             } else {
 
@@ -383,7 +384,7 @@
                     if($errors == 0){
                         move_uploaded_file($file_tmp, "../links/".$file_name);
                         $link_content = $file_name;
-                        $post->editLink($database, $id, $link_id, $link_name, $link_desc, $link_content, $link_tag);
+                        $district->editForm($database, $id, $link_id, $link_name, $link_desc, $link_content, $link_tag);
                     } else {
                         header("location:../cms/post.php?tab=sd&page=links&error=true");
                     }
@@ -426,8 +427,7 @@
                     if($errors == 0){
                         move_uploaded_file($file_tmp, "../links/".$file_name);
                         $link_content = $file_name;
-                        //$district->addForm($database, $link_name, $link_desc, $link_content, $link_type, $link_tag, $link_thumbnail);
-                        echo "Test link file";
+                        $district->addForm($database, $link_name, $link_desc, $link_content, $link_type, $link_tag, $link_thumbnail);
                     } else {
                         header("location:../cms/district.php?tab=sd&page=forms&error=true");
                     }

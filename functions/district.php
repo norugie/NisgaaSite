@@ -379,6 +379,25 @@
 			}			
 		}
 
+		public function editForm($database, $id, $link_id, $link_name, $link_desc, $link_content, $link_tag){
+			$sql = "UPDATE links SET 
+						   link_name = '$link_name',
+						   link_desc = '$link_desc',
+						   link_tag  = '$link_tag',
+						   link_content = '$link_content'
+					WHERE id = '$id'";
+			$query = mysqli_query($database->con, $sql);
+			if(!$query){
+			    header("location:../cms/district.php?tab=sd&page=forms&error=true");
+			} else {
+				global $log;
+				$info = "Modified form: " . $link_name;
+				$log->logInput($database, $info);
+
+				header("location:../cms/district.php?tab=sd&page=forms&editForm=true");
+			}
+		}
+
     }
 
     require 'district_options.php';

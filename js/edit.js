@@ -181,7 +181,7 @@ function editContact(contactInfo) {
     $("#edit_contact_position").attr("value", contact['position']);
 }
 
-function editLink(formInfo) {
+function editForm(formInfo) {
 
     form = $(formInfo).data("values");
 
