@@ -115,6 +115,14 @@
                             <span>Events</span>
                         </a>
                     </li>
+                    <?php if($_SESSION['school'] != 3 && $_SESSION['school'] != 4 && $_SESSION['school'] != 5 && $_SESSION['school'] != 6){ ?> 
+                    <li id="forms">
+                        <a href="district.php?tab=sd&page=forms">
+                            <i class="material-icons">library_books</i>
+                            <span>District Forms</span>
+                        </a>
+                    </li>
+                    <?php } ?>
                 </ul>
             </li>
             <li id="web">
