@@ -181,6 +181,21 @@ function editContact(contactInfo) {
     $("#edit_contact_position").attr("value", contact['position']);
 }
 
-function editForm(formInfo){
-    
+function editLink(formInfo) {
+
+    form = $(formInfo).data("values");
+
+    // Form type: Link
+    $("#edit_form_id_link").attr("value", form['id']);
+    $("#edit_form_id_name_link").attr("value", form['link_id']);
+    $("#edit_form_title_link").attr("value", form['link_name']);
+    $("#edit_form_desc_link").val(form['link_desc']);
+    $("#edit_form_content_link").attr("value", form['link_content']);
+
+    // Form type: File
+    $("#edit_form_id_file").attr("value", form['id']);
+    $("#edit_form_id_name_file").attr("value", form['link_id']);
+    $("#edit_form_title_file").attr("value", form['link_name']);
+    $("#edit_form_desc_file").val(form['link_desc']);
+
 }
