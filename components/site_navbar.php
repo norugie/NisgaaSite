@@ -99,7 +99,7 @@
             <li class="dropdown-item"><a href="/?page=media_resources" class="nav-link">Media Resources</a></li>
             </ul>
         </li>
-        <li class="nav-item"><a href="/?page=blog">Blog</a></li>
+        <li class="nav-item"><a href="/?page=news">District News</a></li>
         <li class="nav-item"><a href="/?page=careers">Careers</a></li>
         <li class="nav-item"><a href="#search"><i class="fa fa-search fa-lg"></i><span class="d-inline-block d-md-none">&nbsp;&nbsp;Search</span></a></li>
         </ul>

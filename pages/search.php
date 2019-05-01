@@ -26,10 +26,10 @@
                         <div class="col-lg-3">
                             <div class="home-blog-post">
                                 <div class="image"><img src="images/thumbnails/<?php echo $blog['post_thumbnail']; ?>" alt="..." class="img-fluid">
-                                <div class="overlay d-flex align-items-center justify-content-center"><a href="/?page=blog&id=<?php echo preg_replace('/[a-zA-Z]/', '', $blog['post_id']); ?>" class="btn btn-template-outlined-white"><i class="fa fa-chain"> </i> Read More</a></div>
+                                <div class="overlay d-flex align-items-center justify-content-center"><a href="/?page=news&id=<?php echo preg_replace('/[a-zA-Z]/', '', $blog['post_id']); ?>" class="btn btn-template-outlined-white"><i class="fa fa-chain"> </i> Read More</a></div>
                                 </div>
                                 <div class="text">
-                                    <h4><a href="/?page=blog&id=<?php echo preg_replace('/[a-zA-Z]/', '', $blog['post_id']); ?>"><?php echo $blog['post_title']; ?></a></h4>
+                                    <h4><a href="/?page=news&id=<?php echo preg_replace('/[a-zA-Z]/', '', $blog['post_id']); ?>"><?php echo $blog['post_title']; ?></a></h4>
                                     <p class="author-category">By <?php echo $blog['firstname'] . " " . $blog['lastname']; ?></p>
                                     <p class="author-category"><?php echo date_format(date_create($blog['post_date']), 'd M Y'); ?></p>
                                 </div>
