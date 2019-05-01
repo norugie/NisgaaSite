@@ -35,7 +35,7 @@
 
                     <div class="row bar">
                         <?php
-                            if($_GET['page'] == 'blog' && isset($_GET['id']) && !empty($_GET['id'])){
+                            if($_GET['page'] == 'news' && isset($_GET['id']) && !empty($_GET['id'])){
                                 require 'pages/read.php';
                             } else if($_GET['page'] == 'announcements' && isset($_GET['id']) && !empty($_GET['id'])){
                                 require 'pages/read.php';

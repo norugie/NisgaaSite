@@ -14,7 +14,7 @@
                 <li class="d-flex align-items-center">
                     <div class="image"><img src="images/thumbnails/<?php echo $recent_post['post_thumbnail']; ?>" alt="..." class="img-fluid"></div>
                     <div class="text">
-                    <h5 class="mb-0"> <a href="/?page=blog&id=<?php echo preg_replace('/[a-zA-Z]/', '', $recent_post['post_id']); ?>"><?php echo $recent_post['post_title']; ?></a></h5>
+                    <h5 class="mb-0"> <a href="/?page=news&id=<?php echo preg_replace('/[a-zA-Z]/', '', $recent_post['post_id']); ?>"><?php echo $recent_post['post_title']; ?></a></h5>
                     </div>
                 </li>
             <?php endforeach; ?>
@@ -78,7 +78,7 @@
     <div class="copyrights">
         <div class="row" style="padding-left: 25px; padding-right: 25px;">
             <div class="col-lg-4 text-center-md">
-            <p>&copy; 2018. SD92 (Nisga'a)</p>
+            <p>&copy; 2018-2019. SD92 (Nisga'a)</p>
             </div>
             <div class="col-lg-8 text-right text-center-md">
             <p>Template design by <a href="https://bootstrapious.com/free-templates">Bootstrapious Templates </a></p>

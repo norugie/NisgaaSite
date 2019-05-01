@@ -21,16 +21,16 @@
         <section class="post">
             <div class="row">
                 <div class="col-md-3">
-                    <div class="image"><a href="/?page=blog&id=<?php echo preg_replace('/[a-zA-Z]/', '', $blog['post_id']); ?>"><img src="images/thumbnails/<?php echo $blog['post_thumbnail']; ?>" alt="..." class="img-fluid"></a></div>
+                    <div class="image"><a href="/?page=news&id=<?php echo preg_replace('/[a-zA-Z]/', '', $blog['post_id']); ?>"><img src="images/thumbnails/<?php echo $blog['post_thumbnail']; ?>" alt="..." class="img-fluid"></a></div>
                 </div>
                 <div class="col-md-9">
-                    <h2 class="h3 mt-0"><a href="/?page=blog&id=<?php echo preg_replace('/[a-zA-Z]/', '', $blog['post_id']); ?>"><?php echo $blog['post_title']; ?></a></h2>
+                    <h2 class="h3 mt-0"><a href="/?page=news&id=<?php echo preg_replace('/[a-zA-Z]/', '', $blog['post_id']); ?>"><?php echo $blog['post_title']; ?></a></h2>
                     <div class="d-flex flex-wrap justify-content-between text-xs">
                         <p class="author-category">By <?php echo $blog['firstname'] . " " . $blog['lastname']; ?></p>
                         <p class="date-comments"><i class="fa fa-calendar-o"></i><?php echo date_format(date_create($blog['post_date']), 'd M Y'); ?></p>
                     </div>
                     <p class="intro"><?php echo $blog['post_desc']; ?></p>
-                    <a href="/?page=blog&id=<?php echo preg_replace('/[a-zA-Z]/', '', $blog['post_id']); ?>">Read More →</a>
+                    <a href="/?page=news&id=<?php echo preg_replace('/[a-zA-Z]/', '', $blog['post_id']); ?>">Read More →</a>
                 </div>
             </div>
         </section>
