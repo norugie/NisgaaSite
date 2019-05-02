@@ -17,7 +17,7 @@
                 <div class="box-simple">
                     <div class="icon-outlined"><i class="fa fa-map-marker"></i></div>
                     <h3 class="h4">Address</h3>
-                    <p>5002 Skateen Avenue<br>Gitlaxt'aamiks<br>British Columbia, <strong>Canada</strong><br>V0J 1A0</p>
+                    <p><?php echo $addr = str_replace(',', '<br>', $info['school_addr']); ?></p>
                 </div>
             </div>
             <div class="col-md-4">
@@ -26,7 +26,7 @@
                     <h3 class="h4">Contact Information</h3>
                     <p>
                         <strong>Email Address: </strong><a href="mailto:">fakemail@nisgaa.bc.ca</a><br>
-                        <strong>Phone: </strong>+33 555 444 333<br>
+                        <strong>Phone: </strong><?php echo $info['school_phone']; ?><br>
                         <strong>Fax: </strong>+33 555 444 333<br>
                     </p>
                 </div>
@@ -39,6 +39,46 @@
                     <ul class="list-unstyled text-sm">
                         <li><strong><a href="https://facebook.com/fakepage">https://facebook.com/fakepage</a></strong></li>
                     </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT PERSON -->
+    <section>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="heading">
+                    <h2>Contacts</h2>
+                </div>
+                <div class="row text-center">
+                    <div class="col-md-4">
+                        <div class="box-simple">
+                            <h3 class="h4">Contact Person 1<br><span style="font-size:15px;">Contact Person 1 Position</span></h3>
+                            <p>
+                                <strong>Email Address: </strong><a href="mailto:">fakemail@nisgaa.bc.ca</a><br>
+                                <strong>Phone Number: </strong> +1-111-111-1111
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="box-simple">
+                            <h3 class="h4">Contact Person 2<br><span style="font-size:15px;">Contact Person 2 Position</span></h3>
+                            <p>
+                                <strong>Email Address: </strong><a href="mailto:">fakemail@nisgaa.bc.ca</a><br>
+                                <strong>Phone Number: </strong> +1-111-111-1111
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="box-simple">
+                            <h3 class="h4">Contact Person 3<br><span style="font-size:15px;">Contact Person 3 Position</span></h3>
+                            <p>
+                                <strong>Email Address: </strong><a href="mailto:">fakemail@nisgaa.bc.ca</a><br>
+                                <strong>Phone Number: </strong> +1-111-111-1111
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

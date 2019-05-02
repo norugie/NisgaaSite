@@ -7,7 +7,7 @@
         <p class="text-uppercase"><?php echo $addr = str_replace(',', '<br>', $info['school_addr']); ?></p>
         <hr class="d-block d-lg-none">
     </div>
-    <div class="col-lg-4">
+    <!-- <div class="col-lg-4">
         <h4 class="h6">Recent Blog Posts</h4>
         <ul class="list-unstyled footer-blog-list">
             <?php foreach($blog_posts as $recent_post): ?>
@@ -20,7 +20,7 @@
             <?php endforeach; ?>
         </ul>
         <hr class="d-block d-lg-none">
-    </div>
+    </div> -->
     <div class="col-lg-3">
         <h4 class="h6">Contact Us</h4>
         <ul class="list-unstyled footer-blog-list">
