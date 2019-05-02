@@ -84,6 +84,61 @@
         </div>
     </section>
 
+    <!-- SCHOOLS -->
+    <section>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="heading">
+                    <h2>Schools</h2>
+                </div>
+                <div class="row text-center">
+                    <div class="col-md-6">
+                        <div class="box-simple">
+                            <h3 class="h4">School 1</h3>
+                            <p>Address</p>
+                            <p>
+                                <strong>Email Address: </strong><a href="mailto:">fakemail@nisgaa.bc.ca</a><br>
+                                <strong>Phone Number: </strong> +1-111-111-1111
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="box-simple">
+                            <h3 class="h4">School 2</h3>
+                            <p>Address</p>
+                            <p>
+                                <strong>Email Address: </strong><a href="mailto:">fakemail@nisgaa.bc.ca</a><br>
+                                <strong>Phone Number: </strong> +1-111-111-1111
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row text-center">
+                    <div class="col-md-6">
+                        <div class="box-simple">
+                            <h3 class="h4">School 3</h3>
+                            <p>Address</p>
+                            <p>
+                                <strong>Email Address: </strong><a href="mailto:">fakemail@nisgaa.bc.ca</a><br>
+                                <strong>Phone Number: </strong> +1-111-111-1111
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="box-simple">
+                            <h3 class="h4">School 4</h3>
+                            <p>Address</p>
+                            <p>
+                                <strong>Email Address: </strong><a href="mailto:">fakemail@nisgaa.bc.ca</a><br>
+                                <strong>Phone Number: </strong> +1-111-111-1111
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- GMAPS -->
     <section>
         <div class="row">
