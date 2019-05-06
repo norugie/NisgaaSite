@@ -10,6 +10,7 @@
             $_SESSION['id'] = $info['id'];
 			$_SESSION['type'] = $info['user_type'];
 			$_SESSION['username'] = $info['username'];
+			$_SESSION['firstname'] = $info['firstname'];
 			$_SESSION['school'] = $info['school'];
 			$_SESSION['alert'] = 'unalerted';
 			$_SESSION['event_view'] = 'LIST';
