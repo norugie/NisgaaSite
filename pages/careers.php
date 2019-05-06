@@ -1,6 +1,5 @@
 <?php 
     $jobs = $joblist; 
-    $cjobs = $site->cjobList($database);
 ?>
 
 <div class="col-md-9">
@@ -57,7 +56,7 @@
             </div>
         </div>
     </section>
-        <!-- ON SITE CLOSED JOBS CONTENT -->
+    <!-- ON SITE CLOSED JOBS CONTENT -->
     <section>
         <div class="row">
             <div class="col-md-12">
@@ -73,15 +72,13 @@
         </div>
         <div class="row">
             <div class="col-md-12">
-                <div class="row">
-                    <ul>
-                        <?php foreach($cjobs as $cjob): ?>
-                            <li class="lead mb-0"><a href="jobs/<?php echo $cjob['file']; ?>" download><?php echo $cjob['title']; ?></li>
-                        <?php endforeach; ?>
-                    </ul>
-                </div>
+                <ul>
+                    <?php $cjobs = $site->cjobList($database); ?>
+                    <?php foreach($cjobs as $cjob): ?>
+                        <li class="lead mb-0"><a href="jobs/<?php echo $cjob['file']; ?>" download><?php echo $cjob['title']; ?></a></li>
+                    <?php endforeach; ?>
+                </ul>
             </div>
         </div>
     </section>
-    <br><br>
 </div>

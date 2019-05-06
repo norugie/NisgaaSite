@@ -1,5 +1,6 @@
 
 function nisgaaMap() {
+    var school_address = "<?php $info['school_addr'] ?>";
     var mapProp= {
     center: new google.maps.LatLng(55.2044247,-129.0706727),
     zoom: 16,
@@ -16,7 +17,7 @@ function nisgaaMap() {
     marker.setAnimation(google.maps.Animation.BOUNCE);
 
     infowindow = new google.maps.InfoWindow({
-        content: "5002 Skateen Avenue, Gitlaxt'aamiks, BC, CA V0J 1A0"
+        content: "We're here!"
     });
 
     google.maps.event.addListener(marker, "click", function(){
