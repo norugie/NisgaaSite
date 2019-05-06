@@ -259,6 +259,31 @@
             }
             
 			return $array;           
+		}
+		
+		public function cjobList($database){
+            $array = array();
+
+            $sql =  "SELECT jobs.job_id,
+                            jobs.title,
+                            jobs.close_date,
+                            jobs.file,
+                            schools.school_abbv
+                    FROM jobs
+                    LEFT JOIN schools
+                    ON (jobs.school = schools.id)
+					WHERE jobs.status = 'Closed'
+					AND jobs.close_date >= CURRENT_DATE()";
+			$query = mysqli_query($database->con, $sql);
+			if (!$query) {
+			    header("location: ../?page=index&error=true");
+			} else {
+				while($row = mysqli_fetch_array($query)){
+					$array[] = $row;
+				}
+            }
+            
+			return $array;           
         }
 
 		public function postInformation($database, $id){

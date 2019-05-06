@@ -1,4 +1,7 @@
-<?php $jobs = $joblist; ?>
+<?php 
+    $jobs = $joblist; 
+    $cjobs = $site->cjobList($database);
+?>
 
 <div class="col-md-9">
     <!-- ON SITE OPENED JOBS INTRO CONTENT -->
@@ -50,6 +53,32 @@
                             <?php endforeach;?>
                         </tbody>
                     </table>
+                </div>
+            </div>
+        </div>
+    </section>
+        <!-- ON SITE CLOSED JOBS CONTENT -->
+    <section>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="heading">
+                    <h3>Closed Job Postings</h3>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <p class="lead">The following job postings have already been filled before their listed closing date.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="row">
+                    <ul>
+                        <?php foreach($cjobs as $cjob): ?>
+                            <li class="lead mb-0"><a href="jobs/<?php echo $cjob['file']; ?>" download><?php echo $cjob['title']; ?></li>
+                        <?php endforeach; ?>
+                    </ul>
                 </div>
             </div>
         </div>
