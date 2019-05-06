@@ -9,7 +9,7 @@
 <div class="col-md-9">
     <div class="row">
         <div class="col-md-12">
-            <div class="row text-center">
+            <!-- <div class="row text-center">
                 <div class="col-md-6">
                     <div data-animate="fadeInUp" class="team-member">
                         <div class="image"><img src="images/contacts/<?php echo $chairperson['photo']; ?>" alt="" class="img-fluid rounded-circle boe-page"></div>
@@ -50,6 +50,10 @@
                         </div>
                     </div>
                 <?php endforeach; ?>
+            </div> -->
+
+            <div class="row text-center">
+            
             </div>
         </div>
     </div>
