@@ -7,7 +7,7 @@
                 <div class="heading">
                     <h2>We are here to help you</h2>
                 </div>
-                <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque commodo quam sed metus consectetur, non facilisis dui efficitur. Sed tempor, neque tempus sagittis varius, lorem nisl facilisis lorem, id rutrum nunc elit non arcu.</p>
+                <p class="lead">We're here to provide you with more information and answer any question you may have. You can reach us through any of the contact means below:</p>
             </div>
         </div>
     </section>
@@ -25,9 +25,9 @@
                     <div class="icon-outlined"><i class="fa fa-phone"></i></div>
                     <h3 class="h4">Contact Information</h3>
                     <p>
-                        <strong>Email Address: </strong><a href="mailto:">fakemail@nisgaa.bc.ca</a><br>
-                        <strong>Phone: </strong><?php echo $info['school_phone']; ?><br>
-                        <strong>Fax: </strong>+33 555 444 333<br>
+                        <strong>Email Address: </strong><a href="mailto:"><?php echo $info['school_email']; ?></a><br>
+                        <strong>Phone Number: </strong><?php echo $info['school_phone']; ?><br>
+                        <strong>Fax Number: </strong><?php echo $info['school_fax']; ?><br>
                     </p>
                 </div>
             </div>
@@ -45,6 +45,7 @@
     </section>
 
     <!-- CONTACT PERSON -->
+    <?php $contacts = $site->contactList($database, 2); ?>
     <section>
         <div class="row">
             <div class="col-md-12">
@@ -52,39 +53,24 @@
                     <h2>Contacts</h2>
                 </div>
                 <div class="row text-center">
-                    <div class="col-md-4">
-                        <div class="box-simple">
-                            <h3 class="h4">Contact Person 1<br><span style="font-size:15px;">Contact Person 1 Position</span></h3>
-                            <p>
-                                <strong>Email Address: </strong><a href="mailto:">fakemail@nisgaa.bc.ca</a><br>
-                                <strong>Phone Number: </strong> +1-111-111-1111
-                            </p>
+                    <?php foreach($contacts as $contact): ?>
+                        <div class="col-md-4">
+                            <div class="box-simple">
+                                <h3 class="h4"><?php echo $contact['firstname'] . " " . $contact['lastname']; ?><br><span style="font-size:15px;"><?php echo $contact['position']?></span></h3>
+                                <p>
+                                    <strong>Email Address: </strong><a href="mailto:"><?php echo $contact['email']; ?></a><br>
+                                    <strong>Phone Number: </strong> <?php echo $contact['phone']; ?>
+                                </p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="box-simple">
-                            <h3 class="h4">Contact Person 2<br><span style="font-size:15px;">Contact Person 2 Position</span></h3>
-                            <p>
-                                <strong>Email Address: </strong><a href="mailto:">fakemail@nisgaa.bc.ca</a><br>
-                                <strong>Phone Number: </strong> +1-111-111-1111
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="box-simple">
-                            <h3 class="h4">Contact Person 3<br><span style="font-size:15px;">Contact Person 3 Position</span></h3>
-                            <p>
-                                <strong>Email Address: </strong><a href="mailto:">fakemail@nisgaa.bc.ca</a><br>
-                                <strong>Phone Number: </strong> +1-111-111-1111
-                            </p>
-                        </div>
-                    </div>
+                    <?php endforeach; ?>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- SCHOOLS -->
+    <?php $schools = $site->schoolList($database); ?>
     <section>
         <div class="row">
             <div class="col-md-12">
@@ -92,48 +78,19 @@
                     <h2>Schools</h2>
                 </div>
                 <div class="row text-center">
-                    <div class="col-md-6">
-                        <div class="box-simple">
-                            <h3 class="h4">School 1</h3>
-                            <p>Address</p>
-                            <p>
-                                <strong>Email Address: </strong><a href="mailto:">fakemail@nisgaa.bc.ca</a><br>
-                                <strong>Phone Number: </strong> +1-111-111-1111
-                            </p>
+                    <?php foreach($schools as $school): ?>
+                        <div class="col-md-6">
+                            <div class="box-simple">
+                                <h3 class="h4"><?php echo $school['school_name']; ?></h3>
+                                <p><?php echo $school['school_addr']; ?></p>
+                                <p>
+                                    <strong>Email Address: </strong><a href="mailto:"><?php echo $school['school_email']; ?></a><br>
+                                    <strong>Phone Number: </strong><?php echo $school['school_phone']; ?><br>
+                                    <strong>Fax Number: </strong><?php echo $school['school_fax']; ?>
+                                </p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="box-simple">
-                            <h3 class="h4">School 2</h3>
-                            <p>Address</p>
-                            <p>
-                                <strong>Email Address: </strong><a href="mailto:">fakemail@nisgaa.bc.ca</a><br>
-                                <strong>Phone Number: </strong> +1-111-111-1111
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="row text-center">
-                    <div class="col-md-6">
-                        <div class="box-simple">
-                            <h3 class="h4">School 3</h3>
-                            <p>Address</p>
-                            <p>
-                                <strong>Email Address: </strong><a href="mailto:">fakemail@nisgaa.bc.ca</a><br>
-                                <strong>Phone Number: </strong> +1-111-111-1111
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="box-simple">
-                            <h3 class="h4">School 4</h3>
-                            <p>Address</p>
-                            <p>
-                                <strong>Email Address: </strong><a href="mailto:">fakemail@nisgaa.bc.ca</a><br>
-                                <strong>Phone Number: </strong> +1-111-111-1111
-                            </p>
-                        </div>
-                    </div>
+                    <?php endforeach; ?>
                 </div>
             </div>
         </div>

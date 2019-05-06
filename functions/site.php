@@ -210,6 +210,28 @@
             }
             
 			return $array;            
+		}
+		
+		public function contactList($database, $school){
+			$array = array();
+
+            $sql =  "SELECT contacts.*
+                    FROM contacts
+                    LEFT JOIN schools
+                    ON (contacts.school = schools.id)
+                    WHERE contacts.school = '$school'
+					AND contacts.type = 'Contact'
+                    AND contacts.status = 'Active'";
+			$query = mysqli_query($database->con, $sql);
+			if (!$query) {
+			    header("location: ../?page=index&error=true");
+			} else {
+				while($row = mysqli_fetch_array($query)){
+					$array[] = $row;
+				}
+            }
+            
+			return $array;            
         }
 
         public function linkList($database, $tag, $school){
@@ -284,7 +306,23 @@
             }
             
 			return $array;           
-        }
+		}
+		
+		public function schoolList($database){
+            $array = array();
+
+            $sql =  "SELECT * FROM schools WHERE id NOT IN (1, 2, 7, 8, 9)";
+			$query = mysqli_query($database->con, $sql);
+			if (!$query) {
+			    header("location: ../?page=index&error=true");
+			} else {
+				while($row = mysqli_fetch_array($query)){
+					$array[] = $row;
+				}
+            }
+            
+			return $array;           
+		}
 
 		public function postInformation($database, $id){
             $array;
