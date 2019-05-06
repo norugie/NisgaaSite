@@ -34,7 +34,7 @@
                                         <i class="fa fa-envelope fa-lg"></i>
                                     </div>
                                     <div class="col-sm-10">
-                                        <a href="post.html">[school district email]</a>
+                                        <a href="post.html"><?php echo $info['school_email']; ?></a>
                                     </div>
                                 </div>
                             </h5>
