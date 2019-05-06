@@ -42,8 +42,8 @@
     ?>
 
     <ul class="pager list-unstyled d-flex align-items-center justify-content-between">
-        <li class="previous <?php if($sheet == $total_pages){ ?>disabled<?php } ?>"><a href="<?php if($sheet == $total_pages){ ?> javascript:void(0);<?php } else { ?>/?page=blog&sheet=<?php echo $sheet+1; } ?>" class="btn btn-template-outlined">← Older</a></li>
-        <li class="next <?php if($sheet == 1){ ?>disabled<?php } ?>"><a href="<?php if($sheet == 1){ ?> javascript:void(0);<?php } else { ?>/?page=blog&sheet=<?php echo $sheet-1; } ?>" class="btn btn-template-outlined">Newer →</a></li>
+        <li class="previous <?php if($sheet == $total_pages){ ?>disabled<?php } ?>"><a href="<?php if($sheet == $total_pages){ ?> javascript:void(0);<?php } else { ?>/?page=news&sheet=<?php echo $sheet+1; } ?>" class="btn btn-template-outlined">← Older</a></li>
+        <li class="next <?php if($sheet == 1){ ?>disabled<?php } ?>"><a href="<?php if($sheet == 1){ ?> javascript:void(0);<?php } else { ?>/?page=news&sheet=<?php echo $sheet-1; } ?>" class="btn btn-template-outlined">Newer →</a></li>
     </ul>
     <br>
 </div>
