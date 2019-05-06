@@ -34,6 +34,19 @@
     </div>
     <div class="panel panel-default sidebar-menu">
         <div class="panel-heading">
+            <h3 class="h4 panel-title">Career Opportunities</h3>
+        </div>
+        <div class="panel-body">
+            <ul class="nav nav-pills flex-column text-sm">
+                <?php if(count($joblist) < 1){ ?><li class="nav-item">No job postings available</li><?php } ?>
+                <?php foreach($joblist as $j): ?>
+                    <li class="nav-item"><a href="jobs/<?php echo $j['file']; ?>" download class="nav-link"><?php echo $j['title']; ?></a></li>
+                <?php endforeach; ?>
+            </ul>
+        </div>
+    </div>
+    <div class="panel panel-default sidebar-menu">
+        <div class="panel-heading">
             <h3 class="h4 panel-title">Upcoming Events</h3>
         </div>
         <div class="panel-body">

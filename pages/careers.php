@@ -1,4 +1,4 @@
-<?php $jobs = $site->jobList($database); ?>
+<?php $jobs = $joblist; ?>
 
 <div class="col-md-9">
     <!-- ON SITE OPENED JOBS INTRO CONTENT -->
