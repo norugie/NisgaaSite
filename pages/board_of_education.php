@@ -1,8 +1,10 @@
 <?php
 
-    $chairperson = $site->chairInformation($database);
-    $vchairperson = $site->vchairInformation($database);
-    $trustees = $site->trusteeInformation($database);
+    // $chairperson = $site->chairInformation($database);
+    // $vchairperson = $site->vchairInformation($database);
+    // $trustees = $site->trusteeInformation($database);
+
+    $boe = $site->boeInformation($database);
 
 ?>
 
@@ -52,8 +54,14 @@
                 <?php endforeach; ?>
             </div> -->
 
-            <div class="row text-center">
-            
+            <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ut scelerisque quam, tincidunt tempor arcu. Nullam sed est vel erat molestie molestie. Integer lacus orci, tempor a finibus non, commodo quis ante. Duis id posuere sem. Phasellus non rhoncus tellus, vel tincidunt quam.</p>
+        </div>
+        <div class="col-md-12 text-center">
+            <div class="box-image-text">
+                <div class="image"><img src="images/contacts/boe-banner.jpg" alt="BOE Banner" class="img-fluid"></div>
+                <div class="content">
+                    <p class="lead"><?php echo "From left to right: "; $boe_count = count($boe); foreach($boe as $b): echo $b['firstname'] . " " . $b['lastname']; if($boe_count > 1){ echo ", "; } $boe_count--; endforeach; ?></p>
+                </div>
             </div>
         </div>
     </div>
