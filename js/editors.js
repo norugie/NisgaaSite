@@ -10,7 +10,7 @@ $(function () {
             'insertdatetime media nonbreaking save table contextmenu directionality',
             'emoticons template paste textcolor colorpicker textpattern imagetools'
         ],
-        toolbar1: 'insertfile undo redo | styleselect | fontselect | fontsizeselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image',
+        toolbar1: 'insertfile undo redo | styleselect | template | fontselect | fontsizeselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image',
         toolbar2: 'print preview | forecolor backcolor emoticons',
         image_advtab: true,
         images_upload_url: '../functions/upload.php',
@@ -46,6 +46,9 @@ $(function () {
 
             xhr.send(formData);
         },
+        templates: [
+            {title: 'Magazine Template 1', description: 'Two column magazine-like template', url: '../components/templates/magazine1.html'}
+        ],
         style_formats: [{
                 title: 'Image Left',
                 selector: 'img',

@@ -232,7 +232,7 @@
 				} else {
 					$school = $_SESSION['school'];
 				}
-				$sql = $sqlquery . " WHERE links.school = '$school'";
+				$sql = $sqlquery . " AND links.school = '$school'";
 			} else {
 				$sql = $sqlquery;
 			}
@@ -240,7 +240,8 @@
 
 			$query = mysqli_query($database->con, $sql);
 			if (!$query) {
-			    header("location: ../cms/post.php?tab=post&page=links&error=true");
+				// echo("Error description: " . mysqli_error($database->con));
+				header("location: ../cms/post.php?tab=post&page=links&error=true");
 			} else {
 				while($row = mysqli_fetch_array($query)){
 					$array[] = $row;
