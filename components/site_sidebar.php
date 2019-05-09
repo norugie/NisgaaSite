@@ -58,7 +58,7 @@
             </ul>
         </div>
     </div>
-    <div class="panel panel-default sidebar-menu">
+    <!-- <div class="panel panel-default sidebar-menu">
         <div class="panel-heading">
             <h3 class="h4 panel-title">Recent District News</h3>
         </div>
@@ -70,7 +70,7 @@
                 <?php endforeach; ?>
             </ul>
         </div>
-    </div>
+    </div> -->
     <div class="panel sidebar-menu">
         <div class="panel-heading">
             <h3 class="h4 panel-title">Categories</h3>
