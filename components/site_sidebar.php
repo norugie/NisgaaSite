@@ -40,7 +40,7 @@
             <ul class="nav nav-pills flex-column text-sm">
                 <?php if(count($joblist) < 1){ ?><li class="nav-item">No job postings available</li><?php } ?>
                 <?php foreach($joblist as $j): ?>
-                    <li class="nav-item"><a href="jobs/<?php echo $j['file']; ?>" download class="nav-link"><?php echo $j['title']; ?></a></li>
+                    <li class="nav-item"><a href="/?page=careers&id=<?php echo preg_replace('/[a-zA-Z]/', '', $j['job_id']); ?>" class="nav-link"><?php echo $j['title']; ?></a></li>
                 <?php endforeach; ?>
             </ul>
         </div>

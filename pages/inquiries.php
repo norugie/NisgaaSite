@@ -7,8 +7,8 @@
                 <div class="heading">
                     <h2>FREQUENTLY ASKED QUESTIONS</h2>
                 </div>
-                <p class="lead">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
-                <p class="lead">If you have any questions, please feel free to <a href="index.php?page=contact_us">contact us</a>.</p>
+                <p class="lead">Need some help? We've put together some commonly asked questions to give you more information about School District no. 92 (Nisga’a).</p>
+                <p class="lead">If you have a question that you can't find the answer to, please feel free to <a href="index.php?page=contact_us">contact us</a>.</p>
             </div>
         </div>
     </section>
