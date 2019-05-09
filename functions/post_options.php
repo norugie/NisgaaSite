@@ -55,7 +55,7 @@
             $post_categories = mysqli_real_escape_string($database->con, $_POST['post_categories_id']);
             $post_thumbnail;
             $post_desc;
-            if(isset($_POST['post_desc']) || !empty($_POST['post_desc'])){
+            if(isset($_POST['post_desc']) && !empty($_POST['post_desc'])){
                 $post_desc = mysqli_real_escape_string($database->con, $_POST['post_desc']);
             } else {
                 $post_desc = "No description given.";
