@@ -351,8 +351,8 @@ function showReactivateContactConirm(id, name) {
 //Warning for disabling form
 function showDisableFormConfirm(id, name) {
     swal({
-        title: "Are you sure you want to disable this form?",
-        text: "You will be able to reactivate this form once archived",
+        title: "Are you sure you want to disable this file?",
+        text: "You will be able to reactivate this file once archived",
         type: "warning",
         showCancelButton: true,
         confirmButtonColor: "#F44336",
@@ -371,7 +371,7 @@ function showDisableFormConfirm(id, name) {
 //Warning for reactivating form
 function showReactivateFormConfirm(id, name) {
     swal({
-        title: "Are you sure you want to reactivate this form?",
+        title: "Are you sure you want to reactivate this file?",
         type: "warning",
         showCancelButton: true,
         confirmButtonColor: "#00BCD4",

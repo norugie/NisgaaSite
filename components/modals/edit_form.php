@@ -7,7 +7,7 @@
                        <span aria-hidden="true">&times;</span>
                        <span class="sr-only">Close</span>
                 </button>
-                <h4 class="modal-title" id="largeModalLabel">Edit Form (Form Type: File)</h4>
+                <h4 class="modal-title" id="largeModalLabel">Edit File (File Type: File)</h4>
             </div>
             <div class="modal-body">
                 <p class="font-12"><i><b>Note:</b> Fields marked with an asterisk are required</i></p><br>
@@ -20,7 +20,7 @@
                             <input type="text" id="edit_form_id_name_file" name="edit_link_id_name" hidden>
                             <div class="row clearfix">
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                    <label for="edit_form_title_file">Form Title *</label>
+                                    <label for="edit_form_title_file">File Title *</label>
                                     <div class="form-group">
                                         <div class="form-line">
                                             <input type="text" class="form-control" id="edit_form_title_file" name="edit_link_title" required>
@@ -30,7 +30,7 @@
                             </div>
                             <div class="row clearfix">
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                    <label for="edit_form_desc_file">Form Description</label>
+                                    <label for="edit_form_desc_file">File Description</label>
                                     <div class="form-group">
                                         <div class="form-line">
                                             <textarea rows="2" class="form-control no-resize" id="edit_form_desc_file" name="edit_link_desc"></textarea>
@@ -41,7 +41,7 @@
                             <br>
                             <div class="row clearfix">
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                    <label for="edit_form_content_file">Form Content *</label>
+                                    <label for="edit_form_content_file">File Content *</label>
                                     <div class="form-group">
                                         <div class="form-line">
                                             <input type="file" class="form-control" id="edit_form_content_file" name="edit_link_content" required>
@@ -74,7 +74,7 @@
                        <span aria-hidden="true">&times;</span>
                        <span class="sr-only">Close</span>
                 </button>
-                <h4 class="modal-title" id="largeModalLabel">Edit Form (Form Type: Link)</h4>
+                <h4 class="modal-title" id="largeModalLabel">Edit File (File Type: Link)</h4>
             </div>
             <div class="modal-body">
                 <p class="font-12"><i><b>Note:</b> Fields marked with an asterisk are required</i></p><br>
@@ -87,7 +87,7 @@
                             <input type="text" id="edit_form_id_name_link" name="edit_link_id_name" hidden>
                             <div class="row clearfix">
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                    <label for="edit_form_title_link">Form Title *</label>
+                                    <label for="edit_form_title_link">File Title *</label>
                                     <div class="form-group">
                                         <div class="form-line">
                                             <input type="text" class="form-control" id="edit_form_title_link" name="edit_link_title" required>
@@ -97,7 +97,7 @@
                             </div>
                             <div class="row clearfix">
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                    <label for="edit_form_desc_link">Form Description</label>
+                                    <label for="edit_form_desc_link">File Description</label>
                                     <div class="form-group">
                                         <div class="form-line">
                                             <textarea rows="2" class="form-control no-resize" id="edit_form_desc_link" name="edit_link_desc"></textarea>
