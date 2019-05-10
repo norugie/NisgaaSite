@@ -365,7 +365,6 @@
                 $link_content = mysqli_real_escape_string($database->con, $_POST['edit_link_content']);
                 
                 $district->editForm($database, $id, $link_id, $link_name, $link_desc, $link_content, $link_tag);
-                echo "Test";
 
             } else {
 
@@ -377,7 +376,7 @@
                     $file_type = $_FILES['edit_link_content']['type'];
                     $file_ext = strtolower(end(explode('.', $_FILES['edit_link_content']['name'])));
                     
-                    if($file_size > 2097152){
+                    if($file_size > 20971520){
                         $errors = 1;
                     }
                     
@@ -420,7 +419,7 @@
                     $file_type = $_FILES['link_content']['type'];
                     $file_ext = strtolower(end(explode('.', $_FILES['link_content']['name'])));
                     
-                    if($file_size > 2097152){
+                    if($file_size > 20971520){
                         $errors = 1;
                     }
                     
