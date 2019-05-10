@@ -1,11 +1,3 @@
-<?php
-    $categories;
-    if($_GET['page'] == 'blog' && isset($_GET['id']) && !empty($_GET['id'])){
-        $categories = $site->categoryListPerPost($database, $post_info['id']);
-    } else {
-        $categories = $site->categoryList($database);
-    }
-?>
 <div class="col-md-3">
     <div class="panel panel-default sidebar-menu">
         <div class="panel-heading">
@@ -71,16 +63,4 @@
             </ul>
         </div>
     </div> -->
-    <div class="panel sidebar-menu">
-        <div class="panel-heading">
-            <h3 class="h4 panel-title">Categories</h3>
-        </div>
-        <div class="panel-body">
-            <ul class="tag-cloud list-inline">
-                <?php foreach($categories as $cat): ?>
-                    <li class="list-inline-item"><a href="#"><i class="fa fa-tags"></i> <?php echo $cat['cat_desc']; ?></a></li>
-                <?php endforeach; ?>
-            </ul>
-        </div>
-    </div>
 </div>

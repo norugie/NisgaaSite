@@ -31,6 +31,13 @@
                     </div>
                     <p class="intro"><?php echo $blog['post_desc']; ?></p>
                     <a href="/?page=news&id=<?php echo preg_replace('/[a-zA-Z]/', '', $blog['post_id']); ?>">Read More →</a>
+                    <hr>
+                    <ul class="tag-cloud list-inline">
+                        <?php $cats = $site->categoryListPerPost($database, $blog['id']);?>
+                        <?php foreach($cats as $cat): ?>
+                            <li class="list-inline-item"><a href="#"><i class="fa fa-tags"></i> <?php echo $cat['cat_desc']; ?></a></li>
+                        <?php endforeach; ?>
+                    </ul>
                 </div>
             </div>
         </section>
