@@ -8,6 +8,7 @@
 			$sql = "SELECT posts.post_title,
                            posts.post_date,
                            posts.post_desc,
+						   posts.id,
                            posts.post_id,
                            posts.post_thumbnail,
                            users.firstname,
