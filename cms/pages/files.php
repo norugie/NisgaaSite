@@ -13,12 +13,12 @@
             <div class="header">
                 <div class="row clearfix">
                     <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 text-xs-sm-center">
-                        <h4>DISTRICT FORM LIST</h4>      
+                        <h4>DISTRICT FILE LIST</h4>      
                     </div>
                     <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
                         <center>
                             <?php if($_SESSION['type'] != 3){ ?>
-                                <button type="button" class="btn bg-blue waves-effect" data-toggle="modal" data-target="#new-form-modal" style="display: inline-block;"><i class="material-icons">add</i><span>NEW FORM</span></button>
+                                <button type="button" class="btn bg-blue waves-effect" data-toggle="modal" data-target="#new-form-modal" style="display: inline-block;"><i class="material-icons">add</i><span>NEW FILE</span></button>
                             <?php } ?>
                         </center>
                     </div>
@@ -29,9 +29,9 @@
                     <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
                         <thead>
                             <tr>
-                                <th>Form Title</th>
-                                <th>Form Type</th>
-                                <th>Form Description</th>
+                                <th>File Title</th>
+                                <th>File Type</th>
+                                <th>File Description</th>
                                 <?php if($_SESSION['type'] != 3){ ?>
                                 <th>Modify</th>
                                 <th>Delete</th>
@@ -40,9 +40,9 @@
                         </thead>
                         <tfoot>
                             <tr>
-                                <th>Form Title</th>
-                                <th>Form Type</th>
-                                <th>Form Description</th>
+                                <th>File Title</th>
+                                <th>File Type</th>
+                                <th>File Description</th>
                                 <?php if($_SESSION['type'] != 3){ ?>
                                 <th>Modify</th>
                                 <th>Delete</th>

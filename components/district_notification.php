@@ -80,33 +80,33 @@
 </div>
 <?php } ?>
 
-<!--  District Notifications - Forms  -->
+<!--  District Notifications - Files  -->
 
 <?php if(isset($_GET['formDisabled']) && $_SESSION['alert'] == 'alerted'){ ?>
 <div class="alert bg-green alert-dismissible" role="alert">
     <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-    A form has been <b>disabled</b> successfully!
+    A file has been <b>disabled</b> successfully!
 </div>
 <?php } ?>
 
 <?php if(isset($_GET['formReactivated']) && $_SESSION['alert'] == 'alerted'){ ?>
 <div class="alert bg-green alert-dismissible" role="alert">
     <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-    A form has been <b>reactivated</b> successfully!
+    A file has been <b>reactivated</b> successfully!
 </div>
 <?php } ?>
 
 <?php if(isset($_GET['addForm']) && $_SESSION['alert'] == 'alerted'){ ?>
 <div class="alert bg-green alert-dismissible" role="alert">
     <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-    A new form has been <b>created</b> successfully!
+    A new file has been <b>created</b> successfully!
 </div>
 <?php } ?>
 
 <?php if(isset($_GET['editForm']) && $_SESSION['alert'] == 'alerted'){ ?>
 <div class="alert bg-green alert-dismissible" role="alert">
     <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-    The form has been <b>modified</b> successfully!
+    The file has been <b>modified</b> successfully!
 </div>
 <?php } ?>
 

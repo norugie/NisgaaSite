@@ -7,7 +7,7 @@
                        <span aria-hidden="true">&times;</span>
                        <span class="sr-only">Close</span>
                 </button>
-                <h4 class="modal-title" id="largeModalLabel">New Form</h4>
+                <h4 class="modal-title" id="largeModalLabel">New File</h4>
             </div>
             <div class="modal-body">
                 <p class="font-12"><i><b>Note:</b> Fields marked with an asterisk are required</i></p><br>
@@ -17,7 +17,7 @@
                         <form class="new_form_validate" action="../functions/district.php?district=true&addForm=true" method="POST" enctype="multipart/form-data">
                             <div class="row clearfix">
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                    <label for="link_title">Form Title *</label>
+                                    <label for="link_title">File Title *</label>
                                     <div class="form-group">
                                         <div class="form-line">
                                             <input type="text" class="form-control" id="link_title" name="link_title" required>
@@ -27,7 +27,7 @@
                             </div>
                             <div class="row clearfix">
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                    <label for="link_desc">Form Description</label>
+                                    <label for="link_desc">File Description</label>
                                     <div class="form-group">
                                         <div class="form-line">
                                             <textarea rows="2" class="form-control no-resize" id="link_desc" name="link_desc"></textarea>
@@ -37,7 +37,7 @@
                             </div>
                             <div class="row clearfix">
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                    <label for="link_type">Form Type *</label>
+                                    <label for="link_type">File Type *</label>
                                     <div class="form-group">
                                         <select class="form-control show-tick" name="link_type" id="link_type" onchange="inputType(this);" title="Select form type" required>
                                             <option value="Link">Link</option>
@@ -49,7 +49,7 @@
                             <br>
                             <div class="row clearfix">
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                    <label for="link_content">Form Content *</label>
+                                    <label for="link_content">File Content *</label>
                                     <div class="form-group">
                                         <div class="form-line" id="input-field">
                                             <!-- Insert input onchange here -->

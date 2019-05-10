@@ -334,13 +334,13 @@
 					WHERE id = '$id'";
 			$query = mysqli_query($database->con, $sql);
 			if(!$query){
-			    header("location:../cms/district.php?tab=sd&page=forms&error=true");
+			    header("location:../cms/district.php?tab=sd&page=files&error=true");
 			} else {
 				global $log;
-				$info = "Disabled form: " . $title;
+				$info = "Disabled file: " . $title;
 				$log->logInput($database, $info);
 
-				header("location:../cms/district.php?tab=sd&page=forms&formDisabled=true");
+				header("location:../cms/district.php?tab=sd&page=files&formDisabled=true");
 			}
 		}
 
@@ -350,13 +350,13 @@
 					WHERE id = '$id'";
 			$query = mysqli_query($database->con, $sql);
 			if(!$query){
-			    header("location:../cms/district.php?tab=sd&page=forms&error=true");
+			    header("location:../cms/district.php?tab=sd&page=files&error=true");
 			} else {
 				global $log;
-				$info = "Reactivated form: " . $title;
+				$info = "Reactivated file: " . $title;
 				$log->logInput($database, $info);
 
-				header("location:../cms/district.php?tab=sd&page=forms&formReactivated=true");
+				header("location:../cms/district.php?tab=sd&page=files&formReactivated=true");
 			}
 		}
 
@@ -369,13 +369,13 @@
 					VALUES (null, '$link_id', '$link_name', '$link_type', '$link_tag', '$link_desc', '$link_content', '$link_thumbnail', '$user', '$school', 'Active')";
 			$query = mysqli_query($database->con, $sql);
 			if(!$query){
-			    header("location:../cms/district.php?tab=sd&page=forms&error=true");
+			    header("location:../cms/district.php?tab=sd&page=files&error=true");
 			} else {
 				global $log;
-				$info = "Created a new form: " . $link_name;
+				$info = "Created a new file: " . $link_name;
 				$log->logInput($database, $info);
 
-				header("location:../cms/district.php?tab=sd&page=forms&addForm=true");
+				header("location:../cms/district.php?tab=sd&page=files&addForm=true");
 			}			
 		}
 
@@ -388,13 +388,13 @@
 					WHERE id = '$id'";
 			$query = mysqli_query($database->con, $sql);
 			if(!$query){
-			    header("location:../cms/district.php?tab=sd&page=forms&error=true");
+			    header("location:../cms/district.php?tab=sd&page=files&error=true");
 			} else {
 				global $log;
 				$info = "Modified form: " . $link_name;
 				$log->logInput($database, $info);
 
-				header("location:../cms/district.php?tab=sd&page=forms&editForm=true");
+				header("location:../cms/district.php?tab=sd&page=files&editForm=true");
 			}
 		}
 
