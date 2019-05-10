@@ -308,6 +308,26 @@
             
 			return $array;           
 		}
+
+		public function jobInformation($database, $id){
+            $array;
+            $job_id = 'JOB' . $id;
+			$sql = "SELECT jobs.*,
+						   schools.school_name	    
+					FROM jobs 
+					LEFT JOIN schools
+					ON (schools.id = jobs.school)
+					WHERE jobs.job_id = '$job_id'";
+			$query = mysqli_query($database->con, $sql);
+			if (!$query) {
+				// header("location: ../?page=index&error=true");
+				return ("Error description: " . mysqli_error($database->con));
+			} else {
+				$array = mysqli_fetch_assoc($query);
+            }
+            
+			return $array;
+		}
 		
 		public function schoolList($database){
             $array = array();

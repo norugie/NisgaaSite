@@ -488,3 +488,9 @@ html {
   height: 250px; 
   object-fit: cover;
 }
+
+@media (min-width: 992px) {
+  .modal-xl {
+    max-width: 1200px;
+  }
+}
