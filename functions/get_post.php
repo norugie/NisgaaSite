@@ -40,7 +40,8 @@
 					LEFT JOIN schools
 					ON (schools.id = posts.post_school)
 					WHERE posts.post_type = 'Post' 
-					AND posts.status = 'Active'";
+					AND posts.status = 'Active'
+					ORDER BY posts.post_date DESC";
 
 			/*  Content Filter  */
 			if($_SESSION['type'] != 1){
@@ -115,7 +116,8 @@
 					ON (schools.id = posts.post_school)
 					WHERE post_categories.cat_id = '$category'
 					AND posts.post_type = 'Post'
-					AND posts.status = 'Active'";
+					AND posts.status = 'Active'
+					ORDER BY posts.post_date DESC";
 
 			/*  Content Filter  */
 			if($_SESSION['type'] != 1){
@@ -384,7 +386,8 @@
 					ON (schools.id = posts.post_school)
 					WHERE post_categories.cat_id = '$category'
 					AND posts.post_type = 'Media'
-					AND posts.status = 'Active'";
+					AND posts.status = 'Active'
+					ORDER BY posts.post_date DESC";
 
 			/*  Content Filter  */
 			if($_SESSION['type'] != 1){
@@ -429,7 +432,8 @@
 					LEFT JOIN schools
 					ON (schools.id = posts.post_school)
 					WHERE posts.post_type = 'Media' 
-					AND posts.status = 'Active'";
+					AND posts.status = 'Active'
+					ORDER BY posts.post_date DESC";
 			
 			/*  Content Filter  */
 			if($_SESSION['type'] != 1){

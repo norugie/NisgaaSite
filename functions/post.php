@@ -82,10 +82,8 @@
 				$school = 2;
 			}
 
-			$date = date('Y-m-d');
-
 			$sql = "INSERT INTO posts
-					VALUES (null, '$post_id', '$post_title', '$date', 'Post', '$user', '$school', '$post_content', '$post_thumbnail', '$post_desc', 'Active')";
+					VALUES (null, '$post_id', '$post_title', NOW(), 'Post', '$user', '$school', '$post_content', '$post_thumbnail', '$post_desc', 'Active')";
 			$query = mysqli_query($database->con, $sql);
 			if(!$query){
 				header("location:../cms/post.php?tab=post&page=blog&error=true");
