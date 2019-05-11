@@ -26,6 +26,10 @@ $breadcrumb;
 
 if($_GET['page'] == 'news'){
     $breadcrumb = "District News";
+} else if($_GET['page'] == 'packages'){
+    $breadcrumb = "Board Meeting Packages";
+} else if($_GET['page'] == 'boe'){
+    $breadcrumb = "Board of Education";
 } else {
     $breadcrumb = str_replace('_', ' ', $_GET['page']);
 }

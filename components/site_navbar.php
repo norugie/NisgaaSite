@@ -70,7 +70,8 @@
                 <div class="col-lg-4">
                     <h5>Governance</h5>
                     <ul class="list-unstyled mb-3">
-                    <li class="nav-item"><a href="/?page=board_of_education" class="nav-link">Board of Education</a></li>
+                    <li class="nav-item"><a href="/?page=boe" class="nav-link">Board of Education</a></li>
+                    <li class="nav-item"><a href="/?page=packages" class="nav-link">Board Meeting Packages</a></li>
                     </ul>
                     <h5>External Links</h5>
                     <ul class="list-unstyled mb-3">
