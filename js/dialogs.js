@@ -39,6 +39,10 @@ function alertDesign(e) {
         showDisableFormConfirm(id, name);
     } else if (type === 'reopen-form'){
         showReactivateFormConfirm(id, name);
+    } else if (type === 'delete-package'){
+        showDisablePackageConfirm(id, name);
+    } else if (type === 'reopen-package'){
+        showReactivatePackageConfirm(id, name);
     }
 }
 
@@ -382,6 +386,45 @@ function showReactivateFormConfirm(id, name) {
     }, function (isConfirm) {
         if (isConfirm) {
             window.location = "../functions/district.php?district=true&formReactivate=true&id=" + id + "&formName=" + name;
+        }
+
+    });
+}
+
+//Warning for disabling package
+function showDisablePackageConfirm(id, name) {
+    swal({
+        title: "Are you sure you want to disable this Board Meeting package?",
+        text: "You will be able to reactivate this Board Meeting package once archived",
+        type: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#F44336",
+        confirmButtonText: "CONFIRM",
+        cancelButtonText: "CANCEL",
+        closeOnConfirm: false,
+        closeOnCancel: true
+    }, function (isConfirm) {
+        if (isConfirm) {
+            window.location = "../functions/district.php?district=true&packageDisable=true&id=" + id + "&packageName=" + name;
+        }
+
+    });
+}
+
+//Warning for reactivating package
+function showReactivatePackageConfirm(id, name) {
+    swal({
+        title: "Are you sure you want to reactivate this Board Meeting package?",
+        type: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#00BCD4",
+        confirmButtonText: "CONFIRM",
+        cancelButtonText: "CANCEL",
+        closeOnConfirm: false,
+        closeOnCancel: true
+    }, function (isConfirm) {
+        if (isConfirm) {
+            window.location = "../functions/district.php?district=true&packageReactivate=true&id=" + id + "&packageName=" + name;
         }
 
     });

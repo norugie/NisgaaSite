@@ -122,6 +122,12 @@
                             <span>District Files</span>
                         </a>
                     </li>
+                    <li id="packages">
+                        <a href="district.php?tab=sd&page=packages">
+                            <i class="material-icons">archive</i>
+                            <span>Board Meeting Packages</span>
+                        </a>
+                    </li>
                     <?php } ?>
                 </ul>
             </li>

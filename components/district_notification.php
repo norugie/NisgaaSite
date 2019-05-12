@@ -110,6 +110,36 @@
 </div>
 <?php } ?>
 
+<!--  District Notifications - Packages  -->
+
+<?php if(isset($_GET['packageDisabled']) && $_SESSION['alert'] == 'alerted'){ ?>
+<div class="alert bg-green alert-dismissible" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    A Board Meeting package has been <b>disabled</b> successfully!
+</div>
+<?php } ?>
+
+<?php if(isset($_GET['packageReactivated']) && $_SESSION['alert'] == 'alerted'){ ?>
+<div class="alert bg-green alert-dismissible" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    A Board Meeting package has been <b>reactivated</b> successfully!
+</div>
+<?php } ?>
+
+<?php if(isset($_GET['addPackage']) && $_SESSION['alert'] == 'alerted'){ ?>
+<div class="alert bg-green alert-dismissible" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    A new Board Meeting package has been <b>created</b> successfully!
+</div>
+<?php } ?>
+
+<?php if(isset($_GET['editPackage']) && $_SESSION['alert'] == 'alerted'){ ?>
+<div class="alert bg-green alert-dismissible" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    The Board Meeting package has been <b>modified</b> successfully!
+</div>
+<?php } ?>
+
 <!--  Errors  -->
 <?php require 'error_notification.php'; ?>
 

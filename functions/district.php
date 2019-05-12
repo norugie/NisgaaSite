@@ -398,6 +398,81 @@
 			}
 		}
 
+        /*********************************************************************************************/
+		/***************************  District Functionalities -- Packages  **************************/
+        /*********************************************************************************************/
+
+		public function disablePackage($database, $id, $title){
+			$sql = "UPDATE links SET 
+						   status = 'Inactive'
+					WHERE id = '$id'";
+			$query = mysqli_query($database->con, $sql);
+			if(!$query){
+			    header("location:../cms/district.php?tab=sd&page=packages&error=true");
+			} else {
+				global $log;
+				$info = "Disabled board meeting package: " . $title;
+				$log->logInput($database, $info);
+
+				header("location:../cms/district.php?tab=sd&page=packages&packageDisabled=true");
+			}
+		}
+
+		public function reactivatePackage($database, $id, $title){
+			$sql = "UPDATE links SET 
+						   status = 'Active'
+					WHERE id = '$id'";
+			$query = mysqli_query($database->con, $sql);
+			if(!$query){
+			    header("location:../cms/district.php?tab=sd&page=packages&error=true");
+			} else {
+				global $log;
+				$info = "Reactivated Board Meeting Package: " . $title;
+				$log->logInput($database, $info);
+
+				header("location:../cms/district.php?tab=sd&page=packages&packageReactivated=true");
+			}
+		}
+
+		public function addPackage($database, $link_name, $link_desc, $link_content, $link_type, $link_tag, $link_thumbnail){
+			$link_id = 'LNK' . rand(1111111,9999999);
+			$user = $_SESSION['id'];
+			$school = 2;
+
+			$sql = "INSERT INTO links
+					VALUES (null, '$link_id', '$link_name', '$link_type', '$link_tag', '$link_desc', '$link_content', '$link_thumbnail', '$user', '$school', 'Active')";
+			$query = mysqli_query($database->con, $sql);
+			if(!$query){
+			    header("location:../cms/district.php?tab=sd&page=packages&error=true");
+			} else {
+				global $log;
+				$info = "Created a new Board Meeting Package: " . $link_name;
+				$log->logInput($database, $info);
+
+				header("location:../cms/district.php?tab=sd&page=packages&addPackage=true");
+			}			
+		}
+
+		public function editPackage($database, $id, $link_id, $link_name, $link_desc, $link_content, $link_tag){
+			$sql = "UPDATE links SET 
+						   link_name = '$link_name',
+						   link_desc = '$link_desc',
+						   link_tag  = '$link_tag',
+						   link_content = '$link_content'
+					WHERE id = '$id'";
+			$query = mysqli_query($database->con, $sql);
+			if(!$query){
+			    header("location:../cms/district.php?tab=sd&page=packages&error=true");
+			} else {
+				global $log;
+				$info = "Modified form: " . $link_name;
+				$log->logInput($database, $info);
+
+				header("location:../cms/district.php?tab=sd&page=packages&editPackage=true");
+			}
+		}
+
+
     }
 
     require 'district_options.php';
