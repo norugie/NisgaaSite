@@ -438,6 +438,115 @@
 
         }
 
+        /*********************************************************************************************/
+		/***************************  District Functionalities -- Packages  **************************/
+        /*********************************************************************************************/
+        
+        if(isset($_GET['packageDisable'])){
+            
+            $id = $_GET['id'];
+            $title = str_replace('%20', ' ', $_GET['packageName']);
+
+            $district->disablePackage($database, $id, $title);
+
+        }
+
+        if(isset($_GET['packageReactivate'])){
+            
+            $id = $_GET['id'];
+            $title = str_replace('%20', ' ', $_GET['packageName']);
+
+            $district->reactivatePackage($database, $id, $title);
+
+        }
+
+        if(isset($_GET['editPackage'])){
+
+            $id = mysqli_real_escape_string($database->con, $_POST['edit_link_id']);
+            $link_id = mysqli_real_escape_string($database->con, $_POST['edit_link_id_name']);
+            $link_name = mysqli_real_escape_string($database->con, $_POST['edit_link_title']);
+            $link_desc = mysqli_real_escape_string($database->con, $_POST['edit_link_desc']);
+            $link_tag = "Board Meeting Packages";
+            $link_content;
+
+            if(!file_exists($_FILES['edit_link_content']['tmp_name']) || !is_uploaded_file($_FILES['edit_link_content']['tmp_name'])){
+
+                $link_content = mysqli_real_escape_string($database->con, $_POST['edit_link_content']);
+                
+                $district->editPackage($database, $id, $link_id, $link_name, $link_desc, $link_content, $link_tag);
+
+            } else {
+
+                if(isset($_FILES['edit_link_content'])){
+                    $errors = 0;
+                    $file_name = $_FILES['edit_link_content']['name'];
+                    $file_size = $_FILES['edit_link_content']['size'];
+                    $file_tmp = $_FILES['edit_link_content']['tmp_name'];
+                    $file_type = $_FILES['edit_link_content']['type'];
+                    $file_ext = strtolower(end(explode('.', $_FILES['edit_link_content']['name'])));
+                    
+                    if($file_size > 20971520){
+                        $errors = 1;
+                    }
+                    
+                    if($errors == 0){
+                        move_uploaded_file($file_tmp, "../links/".$file_name);
+                        $link_content = $file_name;
+                        $district->editPackage($database, $id, $link_id, $link_name, $link_desc, $link_content, $link_tag);
+                    } else {
+                        header("location:../cms/post.php?tab=sd&page=packages&error=true");
+                    }
+                } else {
+                    header("location:../cms/post.php?tab=sd&page=packages&error=true");
+                }   
+                
+            }
+
+        }
+
+        if(isset($_GET['addPackage'])){
+
+            $link_name = mysqli_real_escape_string($database->con, $_POST['link_title']);
+            $link_desc = mysqli_real_escape_string($database->con, $_POST['link_desc']);
+            $link_type = mysqli_real_escape_string($database->con, $_POST['link_type']);
+            $link_tag = "Board Meeting Packages";
+            $link_content;
+            $link_thumbnail = "post_thumbnail.jpg";
+
+            if(!file_exists($_FILES['link_content']['tmp_name']) || !is_uploaded_file($_FILES['link_content']['tmp_name'])){
+
+                $link_content = mysqli_real_escape_string($database->con, $_POST['link_content']);
+                $district->addPackage($database, $link_name, $link_desc, $link_content, $link_type, $link_tag, $link_thumbnail);
+
+            } else {
+
+                if(isset($_FILES['link_content'])){
+                    $errors = 0;
+                    $file_name = $_FILES['link_content']['name'];
+                    $file_size = $_FILES['link_content']['size'];
+                    $file_tmp = $_FILES['link_content']['tmp_name'];
+                    $file_type = $_FILES['link_content']['type'];
+                    $file_ext = strtolower(end(explode('.', $_FILES['link_content']['name'])));
+                    
+                    if($file_size > 20971520){
+                        $errors = 1;
+                    }
+                    
+                    if($errors == 0){
+                        move_uploaded_file($file_tmp, "../links/".$file_name);
+                        $link_content = $file_name;
+                        $district->addPackage($database, $link_name, $link_desc, $link_content, $link_type, $link_tag, $link_thumbnail);
+                    } else {
+                        header("location:../cms/district.php?tab=sd&page=packages&error=true");
+                    }
+                } else {
+                    header("location:../cms/district.php?tab=sd&page=packages&error=true");
+                }   
+                
+            }
+
+        }
+
     }
 
 ?>
