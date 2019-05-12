@@ -18,9 +18,9 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="heading">
-                    <h2>Blog</h2>
+                    <h2>District News</h2>
                 </div>
-                <?php if(count($blogs) < 1){ ?><p class="lead">No blog posts found for keyword: <?php echo $keyword; ?></p><?php } ?>
+                <?php if(count($blogs) < 1){ ?><p class="lead">No district news posts found for keyword: <?php echo $keyword; ?></p><?php } ?>
                 <div class="row">
                     <?php foreach($blogs as $blog): ?>
                         <div class="col-lg-3">
@@ -70,9 +70,9 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="heading">
-                    <h2>District Forms</h2>
+                    <h2>District Files</h2>
                 </div>
-                <?php if(count($forms) < 1){ ?><p class="lead">No forms found for keyword: <?php echo $keyword; ?></p><?php } ?>
+                <?php if(count($forms) < 1){ ?><p class="lead">No district files found for keyword: <?php echo $keyword; ?></p><?php } ?>
                 <ul>
                     <?php foreach($forms as $form): ?>
                         <li class="lead mb-0"><a href="<?php if($form['link_type'] == 'File'){ echo "../links/"; } echo $form['link_content']; ?>" <?php if($form['link_type'] == 'Link'){?>target="_blank"<?php } else { ?> download <?php } ?>><?php echo $form['link_name']; ?></a></li>

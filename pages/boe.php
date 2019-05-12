@@ -54,7 +54,7 @@
                 <?php endforeach; ?>
             </div> -->
 
-            <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ut scelerisque quam, tincidunt tempor arcu. Nullam sed est vel erat molestie molestie. Integer lacus orci, tempor a finibus non, commodo quis ante. Duis id posuere sem. Phasellus non rhoncus tellus, vel tincidunt quam.</p>
+            <p class="lead">The Board of Education is a corporate unit vested with authority and responsibility to govern the public education of the Nisga’a Nation. As members of the Board, trustees are accountable to the public for the decisions mandated by the Board as a corporate body, and for the quality and the delivery of educational services.</p>
         </div>
         <?php require 'components/modals/site_boe.php'; ?>
         <div class="col-md-12 text-center">
@@ -62,7 +62,7 @@
                 <div class="image"><img src="images/contacts/boe-banner.jpg" alt="BOE Banner" class="img-fluid"></div>
                 <div class="content">
                     <p class="lead">
-                        <?php echo "From left to right: "; ?>
+                        <?php echo "The current elected Board members, from left to right: "; ?>
                         <?php $boe_count = count($boe); foreach($boe as $b): ?> 
                             <a href="#" data-toggle="modal" data-target="#boe-modal" data-values='<?php echo json_encode(str_replace("'", "&apos;", $b)); ?>' onclick="boeInfo(this);"><?php echo $b['firstname'] . " " . $b['lastname'];?></a><?php if($boe_count > 1){ echo ", "; } $boe_count--; ?>
                         <?php endforeach; ?>
