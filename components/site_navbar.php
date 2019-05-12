@@ -99,7 +99,6 @@
             <li class="dropdown-item"><a href="/?page=general_resources" class="nav-link">General Resources</a></li>
             <li class="dropdown-item"><a href="/?page=teacher_resources" class="nav-link">Teacher Resources</a></li>
             <li class="dropdown-item"><a href="/?page=learning_resources" class="nav-link">Learning Resources</a></li>
-            <li class="dropdown-item"><a href="/?page=media_resources" class="nav-link">Media Resources</a></li>
             </ul>
         </li>
         <li class="nav-item"><a href="/?page=news">District News</a></li>

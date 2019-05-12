@@ -64,7 +64,6 @@
                                             <option value="Learning Resources">Learning Resources</option>
                                             <option value="Teacher Resources">Teacher Resources</option>
                                             <option value="General Resources">General Resources</option>
-                                            <option value="Web Media Resources">Web Media Resources</option>
                                         </select>
                                     </div>
                                 </div>

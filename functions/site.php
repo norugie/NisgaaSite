@@ -239,6 +239,7 @@
 			$array = array();
 			$sql;
             $sqlquery =  "SELECT links.link_name,
+							links.link_desc,
                             links.link_type,
                             links.link_content,
                             links.link_thumbnail

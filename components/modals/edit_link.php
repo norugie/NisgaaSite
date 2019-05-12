@@ -47,7 +47,7 @@
                                             <?php if($_SESSION['school'] == 2){ ?><option value="District Forms">District Forms</option><?php } ?>
                                             <option value="Learning Resources">Learning Resources</option>
                                             <option value="Teacher Resources">Teacher Resources</option>
-                                            <option value="Web Media Resources">Web Media Resources</option>
+                                            <option value="General Resources">General Resources</option>
                                         </select>
                                     </div>
                                 </div>
@@ -129,7 +129,6 @@
                                             <option value="Learning Resources">Learning Resources</option>
                                             <option value="Teacher Resources">Teacher Resources</option>
                                             <option value="General Resources">General Resources</option>
-                                            <option value="Web Media Resources">Web Media Resources</option>
                                         </select>
                                     </div>
                                 </div>
