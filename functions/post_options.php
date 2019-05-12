@@ -257,7 +257,7 @@
                     $file_type = $_FILES['link_content']['type'];
                     $file_ext = strtolower(end(explode('.', $_FILES['link_content']['name'])));
                     
-                    if($file_size > 2097152){
+                    if($file_size > 20971520){
                         $errors = 1;
                     }
                     
