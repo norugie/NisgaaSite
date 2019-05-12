@@ -237,8 +237,8 @@
 
         public function linkList($database, $tag, $school){
 			$array = array();
-
-            $sql =  "SELECT links.link_name,
+			$sql;
+            $sqlquery =  "SELECT links.link_name,
                             links.link_type,
                             links.link_content,
                             links.link_thumbnail
@@ -247,7 +247,16 @@
                     ON (links.school = schools.id)
                     WHERE links.link_tag = '$tag'
                     AND links.school = '$school'
-                    AND links.status = 'Active'";
+					AND links.status = 'Active'";
+
+			if($tag == 'Board Meeting Packages'){
+				$sql = $sqlquery . " ORDER BY links.id DESC";
+			} else if($tag == 'District Forms') {
+				$sql = $sqlquery . "ORDER BY links.link_name ASC";
+			} else {
+				$sql = $sqlquery;
+			}
+
 			$query = mysqli_query($database->con, $sql);
 			if (!$query) {
 			    header("location: ../?page=index&error=true");
