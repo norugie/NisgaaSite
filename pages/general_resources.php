@@ -4,7 +4,7 @@
     <section>
         <div class="row">
             <div class="col-md-12">
-                <p class="lead">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante.</p>
+                <p class="lead">The following are resources that anyone from the district can use for general purposes:</p>
             </div>
         </div>
     </section>
@@ -17,9 +17,10 @@
                     <?php foreach($links as $link): ?>
                         <div class="col-lg-3 col-md-6">
                             <div class="product">
-                                <div class="image"><a href="<?php if($link['link_type'] == 'File'){ echo "../links/"; } echo $link['link_content']; ?>" <?php if($link['link_type'] == 'Link'){?>target="_blank"<?php } else { ?> download <?php } ?>><img src="images/thumbnails/<?php echo $link['link_thumbnail']; ?>" alt="" class="img-fluid image1"></a></div>
+                                <div class="image"><a href="<?php if($link['link_type'] == 'File'){ echo "../links/"; } echo $link['link_content']; ?>" <?php if($link['link_type'] == 'Link'){?>target="_blank"<?php } else { ?> download <?php } ?>><img src="images/thumbnails/<?php echo $link['link_thumbnail']; ?>" alt="" class="img-fluid image1" style="max-width: 80% !important;"></a></div>
                                 <div class="text">
-                                    <h3 class="h5"><a href="<?php if($link['link_type'] == 'File'){ echo "../links/"; } echo $link['link_content']; ?>" <?php if($link['link_type'] == 'Link'){?>target="_blank"<?php } else { ?> download <?php } ?>><?php echo $link['link_name']; ?></a></h3>
+                                    <h5><a href="<?php if($link['link_type'] == 'File'){ echo "../links/"; } echo $link['link_content']; ?>" <?php if($link['link_type'] == 'Link'){?>target="_blank"<?php } else { ?> download <?php } ?>><?php echo $link['link_name']; ?></a></h5>
+                                    <p class="lead mb-0"><?php echo $link['link_desc']; ?></p>
                                 </div>
                             </div>
                         </div>
