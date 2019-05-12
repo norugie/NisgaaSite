@@ -30,6 +30,12 @@ if($_GET['page'] == 'news'){
     $breadcrumb = "Board Meeting Packages";
 } else if($_GET['page'] == 'boe'){
     $breadcrumb = "Board of Education";
+} else if($_GET['page'] == 'about'){
+    $breadcrumb = "About us";
+} else if($_GET['page'] == 'contacts'){
+    $breadcrumb = "Contact us";
+} else if($_GET['page'] == 'files'){
+    $breadcrumb = "District Files";
 } else {
     $breadcrumb = str_replace('_', ' ', $_GET['page']);
 }
