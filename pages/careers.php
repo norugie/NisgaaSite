@@ -62,11 +62,11 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="heading">
-                    <h3>Closed Job Postings</h3>
+                    <h3>Archived Career Opportunities</h3>
                 </div>
                 <div class="row">
                     <div class="col-md-12">
-                        <p class="lead">The following job postings have already been filled before their listed closing date.</p>
+                        <p class="lead">The following job postings have been closed before their listed closing date:</p>
                     </div>
                 </div>
             </div>
