@@ -4,7 +4,7 @@
     <section>
         <div class="row">
             <div class="col-md-12">
-                <p class="lead">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante.</p>
+                <p class="lead">Below is the list of files relevant to School District No. 92 (Nisga’a), arranged alphabetically: </p>
             </div>
         </div>
     </section>

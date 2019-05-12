@@ -4,7 +4,7 @@
     <section>
         <div class="row">
             <div class="col-md-12">
-                <p class="lead">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante.</p>
+                <p class="lead">Below is are the archived agendas from the past conducted board meetings, arranged by recency:</p>
             </div>
         </div>
     </section>
