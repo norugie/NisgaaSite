@@ -203,7 +203,6 @@
             if(!file_exists($_FILES['edit_link_content']['tmp_name']) || !is_uploaded_file($_FILES['edit_link_content']['tmp_name'])){
 
                 $link_content = mysqli_real_escape_string($database->con, $_POST['edit_link_content']);
-                
                 $post->editLink($database, $id, $link_id, $link_name, $link_desc, $link_content, $link_tag);
 
             } else {
@@ -216,7 +215,7 @@
                     $file_type = $_FILES['edit_link_content']['type'];
                     $file_ext = strtolower(end(explode('.', $_FILES['edit_link_content']['name'])));
                     
-                    if($file_size > 2097152){
+                    if($file_size > 20971520){
                         $errors = 1;
                     }
                     
@@ -290,7 +289,7 @@
                     $file_type = $_FILES['link_thumbnail']['type'];
                     $file_ext = strtolower(end(explode('.', $_FILES['link_thumbnail']['name'])));
                     
-                    if($file_size > 2097152){
+                    if($file_size > 20971520){
                         $errors = 1;
                     }
                     
