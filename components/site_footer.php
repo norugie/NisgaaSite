@@ -56,7 +56,7 @@
                     </li>
                 </ul>
                 <hr>
-                <a href="/?page=contact_us" class="btn btn-template-main">Go to contact page</a>
+                <a href="/?page=contacts" class="btn btn-template-main">Go to contact page</a>
 
                 <hr class="d-block d-lg-none">
             </div>
