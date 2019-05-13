@@ -567,3 +567,12 @@ p.owl-caption {
   padding: 25px 0 !important;
 }
 
+/* Vertical Border */
+
+.vertical-border:not(:last-child) {
+	border-bottom: 2px solid #ccc;
+}
+
+.with-border:not(:last-child) {
+	border-right: 2px solid #ccc;
+}

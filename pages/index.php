@@ -10,7 +10,7 @@
                                 <h2 class="owl-title d-none d-md-block">Image 1</h2>
                                 <p class="owl-caption d-none d-md-block lead mb-0">This is a test caption for Image 1.</p>
                             </div>
-                            <img class="owl-img" src="images/carousel/ca-1.jpg">
+                            <img class="owl-img" src="images/carousel/ca-6.jpg">
                         </div>
                         <div>
                             <div class="owl-text-overlay d-none d-sm-block">
@@ -86,8 +86,8 @@
 <!-- INFORMATION BAR -->
 <footer class="bar bg-primary no-mb color-white main-footer">
     <div class="container-no-center">
-        <div class="row">
-            <div class="col-lg-3">
+        <div class="row vertical-border">
+            <div class="col-lg-3 with-border">
                 <h4 class="h5 text-center">RECENT NEWS</h4>
                 <?php $blog_posts = $site->blogListIndex($database, 2); ?>
                 <ul class="list-unstyled footer-blog-list">
@@ -102,7 +102,7 @@
                 </ul>
               <hr class="d-block d-lg-none">
             </div>
-            <div class="col-lg-3">
+            <div class="col-lg-3 with-border">
                 <h4 class="h5 text-center">CAREER OPPORTUNITIES</h4>
                 <ul class="list-unstyled footer-blog-list">
                 <?php if(count($joblist) < 1){ ?><li class="d-flex align-items-center"><div class="text"><h5 class="mb-0">No job postings available</h5></div></li><?php } ?>
@@ -116,7 +116,7 @@
                 </ul>
               <hr class="d-block d-lg-none">
             </div>
-            <div class="col-lg-3">
+            <div class="col-lg-3 with-border">
                 <h4 class="h5 text-center">ANNOUNCEMENTS</h4>
                 <ul class="list-unstyled footer-blog-list">
                 <?php if(count($announcements) < 1){ ?><li class="d-flex align-items-center"><div class="text"><h5 class="mb-0">No posted announcements available</h5></div></li><?php } ?>
@@ -130,7 +130,7 @@
                 </ul>
               <hr class="d-block d-lg-none">
             </div>
-            <div class="col-lg-3">
+            <div class="col-lg-3 with-border">
                 <h4 class="h5 text-center">UPCOMING EVENTS</h4>
                 <ul class="list-unstyled footer-blog-list">
                 <?php if(count($events) < 1){ ?><li class="d-flex align-items-center"><div class="text"><h5 class="mb-0">No upcoming events</h5></div></li><?php } ?>
