@@ -806,12 +806,12 @@ header.nav-holder.sticky {
 
 #navbar .navbar-nav>li>a {
   margin: 0;
-  padding: 1.8rem 1rem 1.8rem 1rem;
+  padding: 1.82rem 0.9rem 1.82rem 0.9rem;
   color: #555;
-  font-weight: 600;
+  font-weight: 570;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
-  font-size: 0.9rem;
+  letter-spacing: 0.085em;
+  font-size: 0.8rem;
   text-decoration: none;
   border-top: .3rem solid transparent;
 }
