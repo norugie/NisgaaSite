@@ -8,42 +8,42 @@
                         <div>
                             <div class="owl-text-overlay d-none d-sm-block">
                                 <h2 class="owl-title d-none d-md-block">Image 1</h2>
-                                <p class="owl-caption d-none d-md-block lead mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent iaculis purus vel enim suscipit, vitae volutpat ante scelerisque. Pellentesque blandit malesuada dui, sed aliquet risus molestie non.</p>
+                                <p class="owl-caption d-none d-md-block lead mb-0">This is a test caption for Image 1.</p>
                             </div>
                             <img class="owl-img" src="images/carousel/ca-1.jpg">
                         </div>
                         <div>
                             <div class="owl-text-overlay d-none d-sm-block">
                                 <h2 class="owl-title d-none d-md-block">Image 2</h2>
-                                <p class="owl-caption d-none d-md-block lead mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent iaculis purus vel enim suscipit, vitae volutpat ante scelerisque. Pellentesque blandit malesuada dui, sed aliquet risus molestie non.</p>
+                                <p class="owl-caption d-none d-md-block lead mb-0">This is a test caption for Image 2.</p>
                             </div>
                             <img class="owl-img" src="images/carousel/ca-2.jpg">
                         </div>
                         <div>
                             <div class="owl-text-overlay d-none d-sm-block">
                                 <h2 class="owl-title d-none d-md-block">Image 3</h2>
-                                <p class="owl-caption d-none d-md-block lead mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent iaculis purus vel enim suscipit, vitae volutpat ante scelerisque. Pellentesque blandit malesuada dui, sed aliquet risus molestie non.</p>
+                                <p class="owl-caption d-none d-md-block lead mb-0">This is a test caption for Image 3</p>
                             </div>
                             <img class="owl-img" src="images/carousel/ca-3.jpg">
                         </div>
                         <div>
                             <div class="owl-text-overlay d-none d-sm-block">
                                 <h2 class="owl-title d-none d-md-block">Image 4</h2>
-                                <p class="owl-caption d-none d-md-block lead mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent iaculis purus vel enim suscipit, vitae volutpat ante scelerisque. Pellentesque blandit malesuada dui, sed aliquet risus molestie non.</p>
+                                <p class="owl-caption d-none d-md-block lead mb-0">This is a test caption for Image 4.</p>
                             </div>
                             <img class="owl-img" src="images/carousel/ca-4.jpg">
                         </div>
                         <div>
                             <div class="owl-text-overlay d-none d-sm-block">
                                 <h2 class="owl-title d-none d-md-block">Image 5</h2>
-                                <p class="owl-caption d-none d-md-block lead mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent iaculis purus vel enim suscipit, vitae volutpat ante scelerisque. Pellentesque blandit malesuada dui, sed aliquet risus molestie non.</p>
+                                <p class="owl-caption d-none d-md-block lead mb-0">This is a test caption for Image 5.</p>
                             </div>
                             <img class="owl-img" src="images/carousel/ca-5.jpg">
                         </div>
                         <div>
                             <div class="owl-text-overlay d-none d-sm-block">
                                 <h2 class="owl-title d-none d-md-block">Image 6</h2>
-                                <p class="owl-caption d-none d-md-block lead mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent iaculis purus vel enim suscipit, vitae volutpat ante scelerisque. Pellentesque blandit malesuada dui, sed aliquet risus molestie non.</p>
+                                <p class="owl-caption d-none d-md-block lead mb-0">This is a test caption for Image 6.</p>
                             </div>
                             <img class="owl-img" src="images/carousel/ca-6.jpg">
                         </div>
@@ -53,8 +53,8 @@
             <div class="col-md-3 jumbotron-right">
 
                 <nav id="myTab" role="tablist" class="nav nav-tabs nav-justified">
-                    <a id="tab4-1-tab" data-toggle="tab" href="#tab4-1" role="tab" aria-controls="tab4-1" aria-selected="true" class="nav-item nav-link active my-auto" style="border:none;">Quick Links</a>
-                    <a id="tab4-2-tab" data-toggle="tab" href="#tab4-2" role="tab" aria-controls="tab4-2" aria-selected="false" class="nav-item nav-link my-auto" style="border:none;">Nisga’a Phrase of the Week</a>
+                    <a id="tab4-1-tab" data-toggle="tab" href="#tab4-1" role="tab" aria-controls="tab4-1" aria-selected="true" class="nav-item nav-link active my-auto" style="border:none;font-weight:bold;font-size:1rem;">QUICK LINKS</a>
+                    <a id="tab4-2-tab" data-toggle="tab" href="#tab4-2" role="tab" aria-controls="tab4-2" aria-selected="false" class="nav-item nav-link my-auto" style="border:none;font-weight:bold;font-size:1rem;">NISGA’A PHRASE</a>
                 </nav>
                 <div id="nav-tabContent" class="tab-content" style="border:none;">
                     <div id="tab4-1" role="tabpanel" aria-labelledby="tab4-1-tab" class="tab-pane fade show active">
@@ -69,7 +69,13 @@
                         </div>
                     </div>
                     <div id="tab4-2" role="tabpanel" aria-labelledby="tab4-2-tab" class="tab-pane fade">
-                        This is tab two.
+                        <div class="heading text-center">
+                            <h4>Phrase of the Week</h4>
+                        </div>
+                        <h2 class="text-center" style="color:#da4d4d;">Dim huxw ga’ay̓ n̓iin</h2>
+                        <p class="lead text-center mb-0">"I will see you again"</p>
+                        <p class="intro text-center"><i>Singular</i></p>
+                        <center><img src="images/nisgaa_icon_big.png" alt="" class="img-fluid" style="height:150px;min-height:150px;"></center>
                     </div>
                 </div>
             </div>
@@ -78,14 +84,66 @@
 </section>
 <!-- JUMBOTRON END -->
 <!-- INFORMATION BAR -->
-<section class="bar bg-primary no-mb color-white">
-    <div class="container">
+<footer class="bar bg-primary no-mb color-white main-footer">
+    <div class="container-no-center">
         <div class="row">
-        <div class="col-md-12">
-            <h1>Block with primary background</h1>
-            <p class="lead mb-0">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
-        </div>
+            <div class="col-lg-3">
+                <h4 class="h5 text-center">RECENT NEWS</h4>
+                <?php $blog_posts = $site->blogListIndex($database, 2); ?>
+                <ul class="list-unstyled footer-blog-list">
+                    <?php foreach($blog_posts as $blog): ?>
+                        <li class="d-flex align-items-center">
+                            <div class="image"><img src="images/thumbnails/<?php echo $blog['post_thumbnail']; ?>" alt="..." class="img-fluid"></div>
+                            <div class="text">
+                                <h5 class="mb-0"> <a href="/?page=news&id=<?php echo preg_replace('/[a-zA-Z]/', '', $blog['post_id']); ?>"><?php echo $blog['post_title']; ?></a></h5>
+                            </div>
+                        </li>
+                    <?php endforeach; ?>
+                </ul>
+              <hr class="d-block d-lg-none">
+            </div>
+            <div class="col-lg-3">
+                <h4 class="h5 text-center">CAREER OPPORTUNITIES</h4>
+                <ul class="list-unstyled footer-blog-list">
+                <?php if(count($joblist) < 1){ ?><li class="d-flex align-items-center"><div class="text"><h5 class="mb-0">No job postings available</h5></div></li><?php } ?>
+                    <?php foreach($joblist as $j): ?>
+                        <li class="d-flex align-items-center">
+                            <div class="text">
+                                <h5 class="mb-0"> <a href="/?page=careers&id=<?php echo preg_replace('/[a-zA-Z]/', '', $j['job_id']); ?>"><?php echo $j['title']; ?></a></h5>
+                            </div>
+                        </li>
+                    <?php endforeach; ?>
+                </ul>
+              <hr class="d-block d-lg-none">
+            </div>
+            <div class="col-lg-3">
+                <h4 class="h5 text-center">ANNOUNCEMENTS</h4>
+                <ul class="list-unstyled footer-blog-list">
+                <?php if(count($announcements) < 1){ ?><li class="d-flex align-items-center"><div class="text"><h5 class="mb-0">No posted announcements available</h5></div></li><?php } ?>
+                    <?php foreach($announcements as $a): ?>
+                        <li class="d-flex align-items-center">
+                            <div class="text">
+                                <h5 class="mb-0"> <a href="/?page=announcements&id=<?php echo preg_replace('/[a-zA-Z]/', '', $a['a_id']); ?>"><?php echo $a['a_title']; ?></a></h5>
+                            </div>
+                        </li>
+                    <?php endforeach; ?>
+                </ul>
+              <hr class="d-block d-lg-none">
+            </div>
+            <div class="col-lg-3">
+                <h4 class="h5 text-center">UPCOMING EVENTS</h4>
+                <ul class="list-unstyled footer-blog-list">
+                <?php if(count($events) < 1){ ?><li class="d-flex align-items-center"><div class="text"><h5 class="mb-0">No upcoming events</h5></div></li><?php } ?>
+                    <?php foreach($events as $e): ?>
+                        <li class="d-flex align-items-center">
+                            <div class="text">
+                                <h5 class="mb-0"> <a href="/?page=blog&id=<?php echo preg_replace('/[a-zA-Z]/', '', $e['post_id']); ?>"><?php echo $e['event_name']; ?></h5>
+                            </div>
+                        </li>
+                    <?php endforeach; ?>
+                </ul>
+            </div>
         </div>
     </div>
-</section>
+</footer>
 <!-- INFORMATION BAR END -->

@@ -512,13 +512,18 @@ html {
   width: 100%;
 }
 
-@media (min-width:890px){
+@media (min-width:767px){
   .owl-img {
     height: 450px;
     min-height: 450px;
     object-fit: cover;
   }
   
+  .jumbotron-new {
+    height: 450px;
+    min-height:450px;
+  }
+
   #nav-tabContent {
     height: 450px;
     min-height: 450px;
@@ -527,18 +532,10 @@ html {
   }
 }
 
-@media (min-width:890px) and (max-width:1354px){
-  .jumbotron-new {
-    height: 450px;
-    min-height:450px;
-  }
-
-}
-
 .owl-text-overlay {
   position: absolute;
-  width: 550px;
-  top: 30%;
+  width: 450px;
+  top: 20%;
   transform: translateY(-50%);
   background-color: rgba(255, 255, 255, 0.7);
   background: rgba(255, 255, 255, 0.7);
@@ -563,3 +560,10 @@ p.owl-caption {
 .owl-theme .owl-controls .owl-page span:active {
   background: #fff !important;
 }
+
+/* HOME CUSTOM CSS */
+
+.bar {
+  padding: 25px 0 !important;
+}
+

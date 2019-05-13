@@ -86,7 +86,7 @@
                     ON (schools.id = posts.post_school)
                     WHERE posts.post_school = '$school'
                     AND posts.status = 'Active'
-                    ORDER BY posts.id DESC
+                    ORDER BY posts.post_date DESC
                     LIMIT 3";
 			$query = mysqli_query($database->con, $sql);
 			if (!$query) {
