@@ -18,7 +18,7 @@
         </div>
         <hr>
         <div class="row">
-            <div class="col-md-6 text-center mb-3"><a href="jobs/<?php echo $career['file']; ?>" download class="btn btn-outline-primary">Download job posting</a></div>
+            <div class="col-md-6 text-center mb-3"><a href="jobs/<?php echo $career['file']; ?>" <?php if(pathinfo($career['file'], PATHINFO_EXTENSION) == 'pdf'){?>target="_blank"<?php } else { ?> download <?php } ?> class="btn btn-outline-primary">Download job posting</a></div>
             <div class="col-md-6 text-center"><a  href="#" data-toggle="modal" data-target="#apply-modal" data-values='<?php echo json_encode(str_replace("'", "&apos;", $career)); ?>' onclick="applyInfo(this);" class="btn btn-template-main">Apply for this job</a></div>
         </div>
     </div>
