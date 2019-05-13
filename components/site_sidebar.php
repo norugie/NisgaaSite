@@ -6,7 +6,7 @@
         <div class="panel-body">
             <ul class="nav nav-pills flex-column text-sm">
                 <?php foreach($quick_links as $ql): ?>
-                    <li class="nav-item"><a href="<?php if($ql['link_type'] == 'File'){ echo "../links/"; } echo $ql['link_content']; ?>" class="nav-link" <?php if($ql['link_type'] == 'Link'){?>target="_blank"<?php } else { ?> download <?php } ?>><?php echo $ql['link_name']; ?></a></li>
+                    <li class="nav-item"><a href="<?php if($ql['link_type'] == 'File'){ echo "../links/"; } echo $ql['link_content']; ?>" class="nav-link" <?php if($ql['link_type'] == 'Link' || pathinfo($ql['link_content'], PATHINFO_EXTENSION) == 'pdf){?>target="_blank"<?php } else { ?> download <?php } ?>><?php echo $ql['link_name']; ?></a></li>
                 <?php endforeach; ?>
             </ul>
         </div>
@@ -50,17 +50,4 @@
             </ul>
         </div>
     </div>
-    <!-- <div class="panel panel-default sidebar-menu">
-        <div class="panel-heading">
-            <h3 class="h4 panel-title">Recent District News</h3>
-        </div>
-        <div class="panel-body">
-            <ul class="nav nav-pills flex-column text-sm">
-                <?php if(count($blog_posts) < 1){ ?><li class="nav-item">No available district news</li><?php } ?>
-                <?php foreach($blog_posts as $recent_post): ?>
-                    <li class="nav-item"><a href="/?page=news&id=<?php echo preg_replace('/[a-zA-Z]/', '', $recent_post['post_id']); ?>" class="nav-link"><?php echo $recent_post['post_title']; ?></a></li>
-                <?php endforeach; ?>
-            </ul>
-        </div>
-    </div> -->
 </div>

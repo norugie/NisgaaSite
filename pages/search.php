@@ -53,9 +53,9 @@
                     <?php foreach($resources as $resource): ?>
                         <div class="col-lg-3 col-md-6">
                             <div class="product">
-                                <div class="image"><a href="<?php if($resource['link_type'] == 'File'){ echo "../links/"; } echo $resource['link_content']; ?>" <?php if($resource['link_type'] == 'Link'){?>target="_blank"<?php } else { ?> download <?php } ?>><img src="images/thumbnails/<?php echo $resource['link_thumbnail']; ?>" alt="" class="img-fluid image1"></a></div>
+                                <div class="image"><a href="<?php if($resource['link_type'] == 'File'){ echo "../links/"; } echo $resource['link_content']; ?>" <?php if($resource['link_type'] == 'Link' || pathinfo($resource['link_content'], PATHINFO_EXTENSION) == 'pdf'){?>target="_blank"<?php } else { ?> download <?php } ?>><img src="images/thumbnails/<?php echo $resource['link_thumbnail']; ?>" alt="" class="img-fluid image1"></a></div>
                                 <div class="text">
-                                    <h3 class="h5"><a href="<?php if($resource['link_type'] == 'File'){ echo "../links/"; } echo $resource['link_content']; ?>" <?php if($resource['link_type'] == 'Link'){?>target="_blank"<?php } else { ?> download <?php } ?>><?php echo $resource['link_name']; ?></a></h3>
+                                    <h3 class="h5"><a href="<?php if($resource['link_type'] == 'File'){ echo "../links/"; } echo $resource['link_content']; ?>" <?php if($resource['link_type'] == 'Link' || pathinfo($resource['link_content'], PATHINFO_EXTENSION) == 'pdf'){?>target="_blank"<?php } else { ?> download <?php } ?>><?php echo $resource['link_name']; ?></a></h3>
                                 </div>
                             </div>
                         </div>
@@ -75,7 +75,7 @@
                 <?php if(count($forms) < 1){ ?><p class="lead">No district files found for keyword: <?php echo $keyword; ?></p><?php } ?>
                 <ul>
                     <?php foreach($forms as $form): ?>
-                        <li class="lead mb-0"><a href="<?php if($form['link_type'] == 'File'){ echo "../links/"; } echo $form['link_content']; ?>" <?php if($form['link_type'] == 'Link'){?>target="_blank"<?php } else { ?> download <?php } ?>><?php echo $form['link_name']; ?></a></li>
+                        <li class="lead mb-0"><a href="<?php if($form['link_type'] == 'File'){ echo "../links/"; } echo $form['link_content']; ?>" <?php if($form['link_type'] == 'Link' || pathinfo($form['link_content'], PATHINFO_EXTENSION) == 'pdf'){?>target="_blank"<?php } else { ?> download <?php } ?>><?php echo $form['link_name']; ?></a></li>
                     <?php endforeach; ?>
                 </ul>
         </div>

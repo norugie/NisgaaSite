@@ -76,7 +76,7 @@
                 <ul>
                     <?php $cjobs = $site->cjobList($database); ?>
                     <?php foreach($cjobs as $cjob): ?>
-                        <li class="lead mb-0"><a href="jobs/<?php echo $cjob['file']; ?>" download><?php echo $cjob['title']; ?></a></li>
+                        <li class="lead mb-0"><a href="jobs/<?php echo $cjob['file']; ?>" <?php if(pathinfo($cjob['file'], PATHINFO_EXTENSION) == 'pdf'){?>target="_blank"<?php } else { ?> download <?php } ?>><?php echo $cjob['title']; ?></a></li>
                     <?php endforeach; ?>
                 </ul>
             </div>
