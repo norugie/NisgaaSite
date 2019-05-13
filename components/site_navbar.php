@@ -75,7 +75,7 @@
                     </ul>
                     <h5>External Links</h5>
                     <ul class="list-unstyled mb-3">
-                    <li class="nav-item"><a href="javascript: void(0)" class="nav-link">Nisga'a Lisims Government</a></li>
+                    <li class="nav-item"><a href="https://www.nisgaanation.ca/" class="nav-link" target="_blank">Nisga'a Lisims Government</a></li>
                     <li class="nav-item"><a href="javascript: void(0)" class="nav-link">Gitlaxt'aamiks</a></li>
                     <li class="nav-item"><a href="javascript: void(0)" class="nav-link">Gitwinksihlkw</a></li>
                     <li class="nav-item"><a href="javascript: void(0)" class="nav-link">Laxgaltsap</a></li>

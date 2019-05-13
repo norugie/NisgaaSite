@@ -4,6 +4,8 @@ $(document).ready(function(){
     $(".owl-carousel").owlCarousel({
         items: 1,
         loop: true,
+        animateIn: 'fadeIn',
+        animateOut: 'fadeOut',
         autoplay: true,
         autoplayTimeout: 3500,
         dots: false
