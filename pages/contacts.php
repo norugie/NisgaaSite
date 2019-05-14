@@ -5,41 +5,9 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="heading">
-                    <h2>We are here to help you</h2>
+                    <h2>We are here to help</h2>
                 </div>
                 <p class="lead">We're here to provide you with more information and answer any question you may have. You can reach us through any of the contact means below:</p>
-            </div>
-        </div>
-    </section>
-    <section>
-        <div class="row text-center">
-            <div class="col-md-4">
-                <div class="box-simple">
-                    <div class="icon-outlined"><i class="fa fa-map-marker"></i></div>
-                    <h3 class="h4">Address</h3>
-                    <p><?php echo $addr = str_replace(',', '<br>', $info['school_addr']); ?></p>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="box-simple">
-                    <div class="icon-outlined"><i class="fa fa-phone"></i></div>
-                    <h3 class="h4">Contact Information</h3>
-                    <p>
-                        <!-- <strong>Email Address: </strong><a href="mailto:"><?php echo $info['school_email']; ?></a><br> -->
-                        <strong>Phone Number: </strong><?php echo $info['school_phone']; ?><br>
-                        <strong>Fax Number: </strong><?php echo $info['school_fax']; ?><br>
-                    </p>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="box-simple">
-                    <div class="icon-outlined"><i class="fa fa-facebook"></i></div>
-                    <h3 class="h4">Facebook</h3>
-                    <p>Visit our Facebook page!</p>
-                    <ul class="list-unstyled text-sm">
-                        <li><strong><a href="https://facebook.com/fakepage">https://facebook.com/fakepage</a></strong></li>
-                    </ul>
-                </div>
             </div>
         </div>
     </section>
@@ -50,7 +18,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="heading">
-                    <h2>Contacts</h2>
+                    <h2>School Board Office Contacts</h2>
                 </div>
                 <div class="row text-center">
                     <?php foreach($contacts as $contact): ?>
@@ -91,6 +59,33 @@
                                     <strong>Phone Number: </strong><?php echo $school['school_phone']; ?><br>
                                     <strong>Fax Number: </strong><?php echo $school['school_fax']; ?><br>
                                     <strong>Principal: </strong><?php echo $school['school_principal']; ?>
+                                </p>
+                            </div>
+                        </div>
+                    <?php endforeach; ?>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DEPARTMENTS -->
+    <?php $departments = $site->departmentList($database); ?>
+    <section>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="heading">
+                    <h2>DEPARTMENTS</h2>
+                </div>
+                <div class="row text-center">
+                    <?php foreach($departments as $department): ?>
+                        <div class="col-md-6">
+                            <div class="box-simple">
+                                <h3 class="h4"><?php echo $department['school_name']; ?></h3>
+                                <p>
+                                    <strong>Email Address: </strong><a href="mailto:"><?php echo $department['school_email']; ?></a><br>
+                                    <strong>Phone Number: </strong><?php echo $department['school_phone']; ?><br>
+                                    <strong>Fax Number: </strong><?php echo $department['school_fax']; ?><br>
+                                    <strong>Contact Person: </strong><?php echo $department['school_principal']; ?>
                                 </p>
                             </div>
                         </div>

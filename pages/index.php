@@ -8,49 +8,42 @@
                         <div>
                             <div class="owl-text-overlay d-none d-sm-block">
                                 <h2 class="owl-title d-none d-md-block">Image 1</h2>
-                                <p class="owl-caption d-none d-md-block lead mb-0">This is a test caption for Image 1.</p>
                             </div>
                             <img class="owl-img" src="images/carousel/ca-6.jpg">
                         </div>
                         <div>
                             <div class="owl-text-overlay d-none d-sm-block">
                                 <h2 class="owl-title d-none d-md-block">Image 2</h2>
-                                <p class="owl-caption d-none d-md-block lead mb-0">This is a test caption for Image 2.</p>
                             </div>
                             <img class="owl-img" src="images/carousel/ca-2.jpg">
                         </div>
                         <div>
                             <div class="owl-text-overlay d-none d-sm-block">
                                 <h2 class="owl-title d-none d-md-block">Image 3</h2>
-                                <p class="owl-caption d-none d-md-block lead mb-0">This is a test caption for Image 3</p>
                             </div>
                             <img class="owl-img" src="images/carousel/ca-3.jpg">
                         </div>
                         <div>
                             <div class="owl-text-overlay d-none d-sm-block">
                                 <h2 class="owl-title d-none d-md-block">Image 4</h2>
-                                <p class="owl-caption d-none d-md-block lead mb-0">This is a test caption for Image 4.</p>
                             </div>
                             <img class="owl-img" src="images/carousel/ca-4.jpg">
                         </div>
                         <div>
                             <div class="owl-text-overlay d-none d-sm-block">
                                 <h2 class="owl-title d-none d-md-block">Image 5</h2>
-                                <p class="owl-caption d-none d-md-block lead mb-0">This is a test caption for Image 5.</p>
                             </div>
                             <img class="owl-img" src="images/carousel/ca-5.jpg">
                         </div>
                         <div>
                             <div class="owl-text-overlay d-none d-sm-block">
                                 <h2 class="owl-title d-none d-md-block">Image 6</h2>
-                                <p class="owl-caption d-none d-md-block lead mb-0">This is a test caption for Image 6.</p>
                             </div>
                             <img class="owl-img" src="images/carousel/ca-6.jpg">
                         </div>
                         <div>
                             <div class="owl-text-overlay d-none d-sm-block">
-                                <h2 class="owl-title d-none d-md-block">Image 7</h2>
-                                <p class="owl-caption d-none d-md-block lead mb-0">This is a test caption for Image 6.</p>
+                                <h2 class="owl-title d-none d-md-block">Jewelry Making</h2>
                             </div>
                             <img class="owl-img" src="images/carousel/ca-7.jpg">
                         </div>

@@ -48,8 +48,8 @@
                     </ul>
                     <h5>Departments</h5>
                     <ul class="list-unstyled mb-3">
-                    <li class="nav-item"><a href="/?page=department&content=sdo" class="nav-link">School District Office</a></li>
-                    <li class="nav-item"><a href="/?page=department&content=sss" class="nav-link">Student Support Services</a></li>
+                    <li class="nav-item"><a href="/?page=department&content=finance" class="nav-link">Finance</a></li>
+                    <li class="nav-item"><a href="/?page=department&content=sss" class="nav-link">Student Data Support Services</a></li>
                     <li class="nav-item"><a href="/?page=department&content=tech" class="nav-link">Tech Office</a></li>
                     <li class="nav-item"><a href="/?page=department&content=maintenance" class="nav-link">Maintenance Office</a></li>
                     </ul>      
