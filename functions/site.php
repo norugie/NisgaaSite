@@ -342,7 +342,23 @@
 		public function schoolList($database){
             $array = array();
 
-            $sql =  "SELECT * FROM schools WHERE id NOT IN (1, 2, 7, 8, 9)";
+            $sql =  "SELECT * FROM schools WHERE id NOT IN (1, 2, 7, 8, 9, 10)";
+			$query = mysqli_query($database->con, $sql);
+			if (!$query) {
+			    header("location: ../?page=index&error=true");
+			} else {
+				while($row = mysqli_fetch_array($query)){
+					$array[] = $row;
+				}
+            }
+            
+			return $array;           
+		}
+
+		public function departmentList($database){
+            $array = array();
+
+            $sql =  "SELECT * FROM schools WHERE id NOT IN (2, 3, 4, 5, 6, 8) ORDER BY id DESC";
 			$query = mysqli_query($database->con, $sql);
 			if (!$query) {
 			    header("location: ../?page=index&error=true");
