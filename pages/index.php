@@ -47,6 +47,13 @@
                             </div>
                             <img class="owl-img" src="images/carousel/ca-6.jpg">
                         </div>
+                        <div>
+                            <div class="owl-text-overlay d-none d-sm-block">
+                                <h2 class="owl-title d-none d-md-block">Image 7</h2>
+                                <p class="owl-caption d-none d-md-block lead mb-0">This is a test caption for Image 6.</p>
+                            </div>
+                            <img class="owl-img" src="images/carousel/ca-7.jpg">
+                        </div>
                     </div>
                 </section>
             </div>
