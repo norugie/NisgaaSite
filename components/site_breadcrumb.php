@@ -1,18 +1,18 @@
 <!-- BREADCRUMB -->
 <?php
 
-if($_GET['page'] == 'curriculum' || $_GET['page'] == 'department'){
-    $content_breadcrumb = $_GET['content'];
+if($page_name == 'curriculum' || $page_name == 'department'){
+    $content_breadcrumb = $url[1];
     if($content_breadcrumb == 'k12'){
         $content_breadcrumb = 'K-12 PROGRAM';
     } else if($content_breadcrumb == 'dl'){
         $content_breadcrumb = 'DISTANCE LEARNERS PROGRAM';
     } else if($content_breadcrumb == 'nlc'){
         $content_breadcrumb = 'LANGUAGE AND CULTURE';
-    } else if($content_breadcrumb == 'sdo'){
-        $content_breadcrumb = 'SCHOOL DISTRICT OFFICE';
+    } else if($content_breadcrumb == 'finane'){
+        $content_breadcrumb = 'FINANCE';
     } else if($content_breadcrumb == 'sss'){
-        $content_breadcrumb = 'STUDENT SUPPORT SERVICES';
+        $content_breadcrumb = 'STUDENT DATA SUPPORT SERVICES';
     } else if($content_breadcrumb == 'tech'){
         $content_breadcrumb = 'TECH OFFICE';
     } else if($content_breadcrumb == 'maintenance'){
@@ -24,20 +24,20 @@ if($_GET['page'] == 'curriculum' || $_GET['page'] == 'department'){
 
 $breadcrumb;
 
-if($_GET['page'] == 'news'){
+if($page_name == 'news'){
     $breadcrumb = "District News";
-} else if($_GET['page'] == 'packages'){
+} else if($page_name == 'packages'){
     $breadcrumb = "Board Meeting Packages";
-} else if($_GET['page'] == 'boe'){
+} else if($page_name == 'boe'){
     $breadcrumb = "Board of Education";
-} else if($_GET['page'] == 'about'){
+} else if($page_name == 'about'){
     $breadcrumb = "About us";
-} else if($_GET['page'] == 'contacts'){
+} else if($page_name == 'contacts'){
     $breadcrumb = "Contact us";
-} else if($_GET['page'] == 'files'){
+} else if($page_name == 'files'){
     $breadcrumb = "District Files";
 } else {
-    $breadcrumb = str_replace('_', ' ', $_GET['page']);
+    $breadcrumb = str_replace('_', ' ', $page_name);
 }
 
 ?>

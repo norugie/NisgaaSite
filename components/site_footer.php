@@ -1,3 +1,4 @@
+</div></div>
 <!-- FOOTER -->
 <footer class="main-footer">
     <div style="padding: 10px 25px;">
@@ -77,14 +78,14 @@
 </div>
 
 <!-- Javascript files-->
-<script src="plugins/bootstrap-v4/js/bootstrap.min.js"></script>
-<script src="plugins/bootstrap-select/js/bootstrap-select.min.js"></script>
-<script src="plugins/owl.carousel/owl.carousel.min.js"></script>
-<script src="plugins/owl.carousel2.thumbs/owl.carousel2.thumbs.min.js"></script>
+<script src="/plugins/bootstrap-v4/js/bootstrap.min.js"></script>
+<script src="/plugins/bootstrap-select/js/bootstrap-select.min.js"></script>
+<script src="/plugins/owl.carousel/owl.carousel.min.js"></script>
+<script src="/plugins/owl.carousel2.thumbs/owl.carousel2.thumbs.min.js"></script>
 
 <!-- Custom Javascript -->
-<script src="js/script.js"></script>
-<script src="js/front.js"></script>
+<script src="/js/script.js"></script>
+<script src="/js/front.js"></script>
 
 
 </body>
