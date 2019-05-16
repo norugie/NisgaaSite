@@ -7,63 +7,44 @@
 <!-- ************************************************************** -->
 <!-- Site Content -->
 
-<?php 
-    if(!isset($_GET['page']) || empty($_GET['page'])){ 
-
+<?php
+    $url = explode("/", $_SERVER['QUERY_STRING']);
+    $page_name = $url[0];
 ?>
 
-        <script>
-            
-            window.location = "/?page=index";
-
-        </script>
 
 <?php
+    if($page_name == "" || $page_name == "/"){
+
+        require 'pages/index.php';
 
     } else {
-        $page_name = $_GET['page'];
 
         if(file_exists('pages/' . $page_name . '.php')){
-            
-            if($_GET['page'] != 'index'){
+            require 'components/site_breadcrumb.php';
 
-                require 'components/site_breadcrumb.php';
-        
         ?>
+        <div class="container-no-center">
 
-                <div class="container-no-center">
-
-                    <div class="row bar">
-                        <?php
-                            if(($_GET['page'] == 'news' || $_GET['page'] == 'announcements' || $_GET['page'] == 'careers') && isset($_GET['id']) && !empty($_GET['id'])){
-                                require 'pages/read.php';
-                            } else {
-                                require 'pages/' . $page_name . '.php';
-                            }
-                        ?>
-                        <?php require 'components/site_sidebar.php'; ?>
-                        
-                    </div>
-
-                </div>
-
+            <div class="row bar">
         <?php
-            } else {
 
-                require 'pages/index.php';
-                
+            if(($page_name == 'news' || $page_name == 'announcements' || $page_name == 'careers') && isset($url[1]) && !empty($url[1])){
+                require 'pages/read.php';
+            } else {
+                require 'pages/' . $page_name . '.php';
             }
+            
+            require 'components/site_sidebar.php';
 
         } else {
 
             require 'pages/404.php';
 
         }
-        
-
     }
-    
  ?>
+
 <!-- ************************************************************** -->
 
 <!-- Site Footer -->

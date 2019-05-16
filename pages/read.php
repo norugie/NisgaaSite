@@ -1,12 +1,12 @@
 <?php 
-    if($_GET['page'] == 'news' && isset($_GET['id']) && !empty($_GET['id'])){
-        $post_info = $site->postInformation($database, $_GET['id']);
+    if($page_name == 'news' && isset($url[1]) && !empty($url[1])){
+        $post_info = $site->postInformation($database, $url[1]);
         require 'news_read.php';
-    } else if($_GET['page'] == 'announcements' && isset($_GET['id']) && !empty($_GET['id'])){
-        $post_info = $site->announcementInformation($database, $_GET['id']);
+    } else if($page_name == 'announcements' && isset($url[1]) && !empty($url[1])){
+        $post_info = $site->announcementInformation($database, $url[1]);
         require 'announcements.php';
-    } else if($_GET['page'] == 'careers' && isset($_GET['id']) && !empty($_GET['id'])){
-        $career = $site->jobInformation($database, $_GET['id']);
+    } else if($page_name == 'careers' && isset($url[1]) && !empty($url[1])){
+        $career = $site->jobInformation($database, $url[1]);
         require 'career_read.php';
     }
 ?>
