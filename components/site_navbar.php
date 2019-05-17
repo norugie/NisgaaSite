@@ -4,7 +4,6 @@
     require 'functions/site.php';
     $info = $site->siteInformation($database, 8);
     $quick_links = $site->linkList($database, 'Quick Links', 2);
-    $announcements = $site->announcementList($database, 2);
     $events = $site->eventList($database, 2);
     $joblist = $site->jobList($database);
 ?>

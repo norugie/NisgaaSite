@@ -1,4 +1,3 @@
-</div></div>
 <!-- FOOTER -->
 <footer class="main-footer">
     <div style="padding: 10px 25px;">
@@ -35,7 +34,7 @@
                                         <i class="fa fa-envelope fa-lg"></i>
                                     </div>
                                     <div class="col-sm-10">
-                                        <a href="post.html"><?php echo $info['school_email']; ?></a>
+                                        <a href="mailto:"><?php echo $info['school_email']; ?></a>
                                     </div>
                                 </div>
                             </h5>
@@ -57,7 +56,7 @@
                     </li>
                 </ul>
                 <hr>
-                <a href="/?page=contacts" class="btn btn-template-main">Go to contact page</a>
+                <a href="/contacts" class="btn btn-template-main">Go to contact page</a>
 
                 <hr class="d-block d-lg-none">
             </div>

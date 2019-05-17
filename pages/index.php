@@ -9,19 +9,19 @@
                             <div class="owl-text-overlay d-none d-sm-block">
                                 <h2 class="owl-title d-none d-md-block">Image 1</h2>
                             </div>
-                            <img class="owl-img" src="images/carousel/ca-6.jpg">
+                            <img class="owl-img" src="/images/carousel/ca-6.jpg">
                         </div>
                         <div>
                             <div class="owl-text-overlay d-none d-sm-block">
                                 <h2 class="owl-title d-none d-md-block">Image 2</h2>
                             </div>
-                            <img class="owl-img" src="images/carousel/ca-2.jpg">
+                            <img class="owl-img" src="/images/carousel/ca-2.jpg">
                         </div>
                         <div>
                             <div class="owl-text-overlay d-none d-sm-block">
                                 <h2 class="owl-title d-none d-md-block">Image 3</h2>
                             </div>
-                            <img class="owl-img" src="images/carousel/ca-3.jpg">
+                            <img class="owl-img" src="/images/carousel/ca-3.jpg">
                         </div>
                         <div>
                             <div class="owl-text-overlay d-none d-sm-block">
@@ -33,28 +33,26 @@
                             <div class="owl-text-overlay d-none d-sm-block">
                                 <h2 class="owl-title d-none d-md-block">Image 5</h2>
                             </div>
-                            <img class="owl-img" src="images/carousel/ca-5.jpg">
+                            <img class="owl-img" src="/images/carousel/ca-5.jpg">
                         </div>
                         <div>
                             <div class="owl-text-overlay d-none d-sm-block">
                                 <h2 class="owl-title d-none d-md-block">Image 6</h2>
                             </div>
-                            <img class="owl-img" src="images/carousel/ca-6.jpg">
+                            <img class="owl-img" src="/images/carousel/ca-6.jpg">
                         </div>
                         <div>
                             <div class="owl-text-overlay d-none d-sm-block">
                                 <h2 class="owl-title d-none d-md-block">Jewelry Making</h2>
                             </div>
-                            <img class="owl-img" src="images/carousel/ca-7.jpg">
+                            <img class="owl-img" src="/images/carousel/ca-7.jpg">
                         </div>
                     </div>
                 </section>
             </div>
             <div class="col-md-3 jumbotron-right">
-
                 <nav id="myTab" role="tablist" class="nav nav-tabs nav-justified">
                     <a id="tab4-1-tab" data-toggle="tab" href="#tab4-1" role="tab" aria-controls="tab4-1" aria-selected="true" class="nav-item nav-link active my-auto" style="border:none;font-weight:bold;font-size:1rem;">QUICK LINKS</a>
-                    <a id="tab4-2-tab" data-toggle="tab" href="#tab4-2" role="tab" aria-controls="tab4-2" aria-selected="false" class="nav-item nav-link my-auto" style="border:none;font-weight:bold;font-size:1rem;">NISGA’A PHRASE</a>
                 </nav>
                 <div id="nav-tabContent" class="tab-content" style="border:none;">
                     <div id="tab4-1" role="tabpanel" aria-labelledby="tab4-1-tab" class="tab-pane fade show active">
@@ -67,15 +65,6 @@
                                 </ul>
                             </div>
                         </div>
-                    </div>
-                    <div id="tab4-2" role="tabpanel" aria-labelledby="tab4-2-tab" class="tab-pane fade">
-                        <div class="heading text-center">
-                            <h4>Phrase of the Week</h4>
-                        </div>
-                        <h2 class="text-center" style="color:#da4d4d;">Dim huxw ga’ay̓ n̓iin</h2>
-                        <p class="lead text-center mb-0">"I will see you again"</p>
-                        <p class="intro text-center"><i>Singular</i></p>
-                        <center><img src="images/nisgaa_icon_big.png" alt="" class="img-fluid" style="height:150px;min-height:150px;"></center>
                     </div>
                 </div>
             </div>
@@ -93,9 +82,9 @@
                 <ul class="list-unstyled footer-blog-list">
                     <?php foreach($blog_posts as $blog): ?>
                         <li class="d-flex align-items-center">
-                            <div class="image"><img src="images/thumbnails/<?php echo $blog['post_thumbnail']; ?>" alt="..." class="img-fluid"></div>
+                            <div class="image"><img src="/images/thumbnails/<?php echo $blog['post_thumbnail']; ?>" alt="..." class="img-fluid"></div>
                             <div class="text">
-                                <h5 class="mb-0"> <a href="/?page=news&id=<?php echo preg_replace('/[a-zA-Z]/', '', $blog['post_id']); ?>"><?php echo $blog['post_title']; ?></a></h5>
+                                <h5 class="mb-0"> <a href="/news/read/<?php echo preg_replace('/[a-zA-Z]/', '', $blog['post_id']); ?>"><?php echo $blog['post_title']; ?></a></h5>
                             </div>
                         </li>
                     <?php endforeach; ?>
@@ -109,21 +98,7 @@
                     <?php foreach($joblist as $j): ?>
                         <li class="d-flex align-items-center">
                             <div class="text">
-                                <h5 class="mb-0"> <a href="/?page=careers&id=<?php echo preg_replace('/[a-zA-Z]/', '', $j['job_id']); ?>"><?php echo $j['title']; ?></a></h5>
-                            </div>
-                        </li>
-                    <?php endforeach; ?>
-                </ul>
-              <hr class="d-block d-lg-none">
-            </div>
-            <div class="col-lg-3 with-border">
-                <h4 class="h5 text-center">ANNOUNCEMENTS</h4>
-                <ul class="list-unstyled footer-blog-list">
-                <?php if(count($announcements) < 1){ ?><li class="d-flex align-items-center"><div class="text"><h5 class="mb-0">No posted announcements available</h5></div></li><?php } ?>
-                    <?php foreach($announcements as $a): ?>
-                        <li class="d-flex align-items-center">
-                            <div class="text">
-                                <h5 class="mb-0"> <a href="/?page=announcements&id=<?php echo preg_replace('/[a-zA-Z]/', '', $a['a_id']); ?>"><?php echo $a['a_title']; ?></a></h5>
+                                <h5 class="mb-0"> <a href="/careers/read/<?php echo preg_replace('/[a-zA-Z]/', '', $j['job_id']); ?>"><?php echo $j['title']; ?></a></h5>
                             </div>
                         </li>
                     <?php endforeach; ?>
@@ -137,11 +112,21 @@
                     <?php foreach($events as $e): ?>
                         <li class="d-flex align-items-center">
                             <div class="text">
-                                <h5 class="mb-0"> <a href="/?page=blog&id=<?php echo preg_replace('/[a-zA-Z]/', '', $e['post_id']); ?>"><?php echo $e['event_name']; ?></h5>
+                                <h5 class="mb-0"> <a href="/news/read/<?php echo preg_replace('/[a-zA-Z]/', '', $e['post_id']); ?>"><?php echo $e['event_name']; ?></h5>
                             </div>
                         </li>
                     <?php endforeach; ?>
                 </ul>
+              <hr class="d-block d-lg-none">
+            </div>
+            <div class="col-lg-3 with-border">
+                <h4 class="h5 text-center">NISGA'A PHRASE OF THE WEEK </h4>
+                <hr>
+                <h4 class="text-center">Dim huxw ga’ay̓ n̓iin</h4>
+                <hr>
+                <p class="lead text-center mb-0">"I will see you again"</p>
+                <p class="intro text-center"><i>Singular</i></p>
+                <!-- <center><img src="images/nisgaa_icon_big.png" alt="" class="img-fluid" style="height:150px;min-height:150px;"></center> -->
             </div>
         </div>
     </div>
