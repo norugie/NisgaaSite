@@ -19,7 +19,7 @@
             <ul class="nav nav-pills flex-column text-sm">
                 <?php if(count($joblist) < 1){ ?><li class="nav-item">No job postings available</li><?php } ?>
                 <?php foreach($joblist as $j): ?>
-                    <li class="nav-item"><a href="/?page=careers&id=<?php echo preg_replace('/[a-zA-Z]/', '', $j['job_id']); ?>" class="nav-link"><?php echo $j['title']; ?></a></li>
+                    <li class="nav-item"><a href="/careers/read/<?php echo preg_replace('/[a-zA-Z]/', '', $j['job_id']); ?>" class="nav-link"><?php echo $j['title']; ?></a></li>
                 <?php endforeach; ?>
             </ul>
         </div>
@@ -32,7 +32,7 @@
             <ul class="nav nav-pills flex-column text-sm">
                 <?php if(count($events) < 1){ ?><li class="nav-item">No upcoming events</li><?php } ?>
                 <?php foreach($events as $e): ?>
-                    <li class="nav-item"><a href="/?page=blog&id=<?php echo preg_replace('/[a-zA-Z]/', '', $e['post_id']); ?>" class="nav-link"><?php echo $e['event_name']; ?></a></li>
+                    <li class="nav-item"><a href="/news/read/<?php echo preg_replace('/[a-zA-Z]/', '', $e['post_id']); ?>" class="nav-link"><?php echo $e['event_name']; ?></a></li>
                 <?php endforeach; ?>
             </ul>
         </div>

@@ -9,7 +9,7 @@ if($page_name == 'curriculum' || $page_name == 'department'){
         $content_breadcrumb = 'DISTANCE LEARNERS PROGRAM';
     } else if($content_breadcrumb == 'nlc'){
         $content_breadcrumb = 'LANGUAGE AND CULTURE';
-    } else if($content_breadcrumb == 'finane'){
+    } else if($content_breadcrumb == 'finance'){
         $content_breadcrumb = 'FINANCE';
     } else if($content_breadcrumb == 'sss'){
         $content_breadcrumb = 'STUDENT DATA SUPPORT SERVICES';
