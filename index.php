@@ -29,14 +29,18 @@
             <div class="row bar">
         <?php
 
-            if(($page_name == 'news' || $page_name == 'announcements' || $page_name == 'careers') && isset($url[1]) && !empty($url[1])){
+            if(($page_name == 'news' || $page_name == 'announcements' || $page_name == 'careers') && isset($url[1]) && !empty($url[1]) && $url[1] == 'read' && isset($url[2]) && !empty($url[2])){
                 require 'pages/read.php';
             } else {
                 require 'pages/' . $page_name . '.php';
             }
             
             require 'components/site_sidebar.php';
+        ?>
+            </div>
 
+        </div>
+        <?php
         } else {
 
             require 'pages/404.php';
