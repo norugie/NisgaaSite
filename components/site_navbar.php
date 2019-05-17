@@ -16,7 +16,7 @@
     </div>
     <div class="col-md-6">
         <div class="d-flex justify-content-md-end justify-content-between">
-        <div class="login"><a href="<?php if(isset($_SESSION['id']) && isset($_SESSION['type'])){ ?>cms/<?php } else { ?>login.php<?php } ?>" class="login-btn"><i class="fa fa-sign-in"></i><span class="d-md-inline-block"><?php if(isset($_SESSION['id']) && isset($_SESSION['type'])){ ?>Hello, <?php echo $_SESSION['firstname']; ?><?php } else { ?>Login<?php } ?></span></a></div>
+        <div class="login"><a href="<?php if(isset($_SESSION['id']) && isset($_SESSION['type'])){ ?>cms/<?php } else { ?>/login<?php } ?>" class="login-btn"><i class="fa fa-sign-in"></i><span class="d-md-inline-block"><?php if(isset($_SESSION['id']) && isset($_SESSION['type'])){ ?>Hello, <?php echo $_SESSION['firstname']; ?><?php } else { ?>Login<?php } ?></span></a></div>
         <ul class="social-custom list-inline">
             <li class="list-inline-item"><a href="#"><i class="fa fa-facebook"></i></a></li>
             <li class="list-inline-item"><a href="#"><i class="fa fa-envelope"></i></a></li>

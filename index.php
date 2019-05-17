@@ -1,3 +1,13 @@
+<?php
+    $url = explode("/", $_SERVER['QUERY_STRING']);
+    $page_name = $url[0];
+
+    if($page_name == "login"){
+        require 'login.php';
+        exit();
+    }
+?>
+
 <!-- Site Header -->
 <?php require 'components/site_header.php'; ?>
 
@@ -6,12 +16,6 @@
 
 <!-- ************************************************************** -->
 <!-- Site Content -->
-
-<?php
-    $url = explode("/", $_SERVER['QUERY_STRING']);
-    $page_name = $url[0];
-?>
-
 
 <?php
     if($page_name == "" || $page_name == "/"){
