@@ -2,10 +2,15 @@
     $url = explode("/", $_SERVER['QUERY_STRING']);
     $page_name = $url[0];
 
+    if(strpos($page_name, 'fbclid') !== false){
+        header("location: /");
+    }
+
     if($page_name == "login"){
         require 'login.php';
         exit();
     }
+
 ?>
 
 <!-- Site Header -->
@@ -18,13 +23,19 @@
 <!-- Site Content -->
 
 <?php
+
     if($page_name == "" || $page_name == "/"){
 
         require 'pages/index.php';
 
+    } else if($page_name == 'restricted'){
+
+        require 'pages/restricted.php';
+
     } else {
 
         if(file_exists('pages/' . $page_name . '.php')){
+
             require 'components/site_breadcrumb.php';
 
         ?>

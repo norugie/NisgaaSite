@@ -338,6 +338,27 @@
             
 			return $array;
 		}
+
+		public function weeklyWord($database){
+            $array;
+			$sql = "SELECT dictionary.word,
+						   dictionary.word_meaning,
+						   dictionary.form	    
+					FROM weeklyword
+					LEFT JOIN dictionary
+					ON (dictionary.id = weeklyword.word_id)
+					WHERE weeklyword.status = 'Active'
+					LIMIT 1";
+			$query = mysqli_query($database->con, $sql);
+			if (!$query) {
+				// header("location: ../?page=index&error=true");
+				return ("Error description: " . mysqli_error($database->con));
+			} else {
+				$array = mysqli_fetch_assoc($query);
+            }
+            
+			return $array;
+		}
 		
 		public function schoolList($database){
             $array = array();
@@ -414,6 +435,20 @@
             
 			return $array;
 		}
+
+		public function boeImageInformation($database){
+            $array = array();
+
+			$sql = "SELECT web_desc FROM web_content WHERE web_type = 'BOE'";
+			$query = mysqli_query($database->con, $sql);
+			if (!$query) {
+				header("location: ../?page=index&error=true");
+			} else {
+				$array = mysqli_fetch_assoc($query);
+            }
+            
+			return $array;
+        }
 
 		public function aboutList($database, $school){
             $array = array();

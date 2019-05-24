@@ -1,4 +1,7 @@
-<?php $boe = $site->boeInformation($database); ?>
+<?php 
+    $boe = $site->boeInformation($database); 
+    $boe_img = $site->boeImageInformation($database);
+?>
 
 <div class="col-md-9">
     <div class="row">
@@ -8,12 +11,22 @@
         <?php require 'components/modals/site_boe.php'; ?>
         <div class="col-md-12 text-center">
             <div class="box-image-text">
-                <div class="image"><img src="images/contacts/boe-banner.jpg" alt="BOE Banner" class="img-fluid"></div>
+                <div class="image"><img src="images/boe/<?php echo $boe_img['web_desc']; ?>" alt="BOE Banner" class="img-fluid"></div>
                 <div class="content">
                     <p class="lead">
                         <?php echo "The current elected Board members, from left to right: "; ?>
                         <?php $boe_count = count($boe); foreach($boe as $b): ?> 
-                            <a href="#" data-toggle="modal" data-target="#boe-modal" data-values='<?php echo json_encode(str_replace("'", "&apos;", $b)); ?>' onclick="boeInfo(this);"><?php echo $b['firstname'] . " " . $b['lastname'];?></a><?php if($boe_count > 1){ echo ", "; } $boe_count--; ?>
+                            <a href="#" data-toggle="modal" data-target="#boe-modal" data-values='{
+                                    "firstname":            <?php echo json_encode($b['firstname']); ?>,
+                                    "lastname":             <?php echo json_encode($b['lastname']); ?>,
+                                    "position":             <?php echo json_encode($b['position']); ?>,
+                                    "position_specifics":   <?php echo json_encode(str_replace("'", "&apos;", $b['position_specifics'])); ?>,
+                                    "phone":                <?php echo json_encode($b['phone']); ?>,
+                                    "email":                <?php echo json_encode($b['email']); ?>,
+                                    "contact_desc":         <?php echo json_encode(str_replace("'", "&apos;", $b['contact_desc'])); ?>,
+                                    "photo":                <?php echo json_encode($b['photo']); ?>
+                                }' 
+                            onclick="boeInfo(this);"><?php echo $b['firstname'] . " " . $b['lastname'];?></a><?php if($boe_count > 1){ echo ", "; } $boe_count--; ?>
                         <?php endforeach; ?>
                     </p>
                 </div>

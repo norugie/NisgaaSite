@@ -5,12 +5,9 @@
 </div>
 <?php } ?>
 
-<?php if(isset($_GET['restricted'])){ ?>
-<div class="alert bg-red alert-dismissible" role="alert">
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-    You are restricted from accessing that web page.
-</div>
-<?php } ?>
+<?php if(isset($_GET['restricted'])){ 
+    header("location: /restricted");
+} ?>
 
 <?php if(isset($_GET['invalid'])){ ?>
 <div class="alert bg-red alert-dismissible" role="alert">

@@ -12,6 +12,8 @@ $(function () {
         ],
         toolbar1: 'insertfile undo redo | styleselect | template | fontselect | fontsizeselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image',
         toolbar2: 'print preview | forecolor backcolor emoticons',
+        relative_urls: false,
+        document_base_url: 'https://webdev.nisgaa.bc.ca', // Change origin URL once site is online
         image_advtab: true,
         images_upload_url: '../functions/upload.php',
 
@@ -43,7 +45,7 @@ $(function () {
 
             formData = new FormData();
             formData.append('file', blobInfo.blob(), blobInfo.filename());
-
+            
             xhr.send(formData);
         },
         templates: [
