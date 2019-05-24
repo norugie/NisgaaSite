@@ -1,7 +1,8 @@
 <?php
 
     // Allowed origins to upload images. Add necessary origins ones site is in production
-    $accepted_origins = array("https://webdev.nisgaa.bc.ca"); // Change origin URL once site is online
+    $urlbase = "https://webdev.nisgaa.bc.ca";
+    $accepted_origins = array($urlbase); // Change origin URL once site is online
 
     // Images upload path
     $imageFolder = "../images/posts/";
@@ -33,10 +34,11 @@
     
         // Accept upload if there was no origin, or if it is an accepted origin
         $filetowrite = $imageFolder . $temp['name'];
+        $imageURL = $urlbase . "/images/posts/" . $temp['name'];
         move_uploaded_file($temp['tmp_name'], $filetowrite);
     
         // Respond to the successful upload with JSON.
-        echo json_encode(array('location' => $filetowrite));
+        echo json_encode(array('location' => $imageURL));
     } else {
         // Notify editor that the upload failed
         header("HTTP/1.1 500 Server Error");

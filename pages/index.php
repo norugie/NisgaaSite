@@ -120,12 +120,13 @@
               <hr class="d-block d-lg-none">
             </div>
             <div class="col-lg-3 with-border">
+                <?php $word = $site->weeklyWord($database); ?>
                 <h4 class="h5 text-center">NISGA'A PHRASE OF THE WEEK </h4>
                 <hr>
-                <h4 class="text-center">Dim huxw ga’ay̓ n̓iin</h4>
+                <h4 class="text-center" style="font-size: 20px!important;"><?php echo $word['word']; ?></h4>
                 <hr>
-                <p class="lead text-center mb-0">"I will see you again"</p>
-                <p class="intro text-center"><i>Singular</i></p>
+                <p class="lead text-center mb-0" style="font-size: 18px;">"<?php echo $word['word_meaning']; ?>"</p>
+                <p class="intro text-center"><i><?php echo $word['form']; ?></i></p>
                 <!-- <center><img src="images/nisgaa_icon_big.png" alt="" class="img-fluid" style="height:150px;min-height:150px;"></center> -->
             </div>
         </div>

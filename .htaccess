@@ -3,3 +3,6 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{QUERY_STRING} !^page
 RewriteRule ^(.*)/?$ /index.php?$1 [L,QSA]
+
+Options -Indexes
+ErrorDocument 403 /restricted
