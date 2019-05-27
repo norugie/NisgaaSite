@@ -25,8 +25,6 @@ function alertDesign(e) {
         showDisableLinkConfirm(id, name);
     } else if (type === 'reopen-link') {
         showReactivateLinkConfirm(id, name);
-    } else if (type === 'delete-announcement') {
-        showDisableAnnouncementConfirm(id, name);
     } else if (type === 'delete-logs') {
         showDeleteLogsConfirm();
     } else if (type === 'delete-faq'){
@@ -253,27 +251,7 @@ function showReactivateLinkConfirm(id, name) {
     });
 }
 
-//Warning for disabling announcement
-function showDisableAnnouncementConfirm(id, name) {
-    swal({
-        title: "Are you sure you want to disable this announcement post?",
-        text: "You won't be able to reactivate this announcement post once archived",
-        type: "warning",
-        showCancelButton: true,
-        confirmButtonColor: "#F44336",
-        confirmButtonText: "CONFIRM",
-        cancelButtonText: "CANCEL",
-        closeOnConfirm: false,
-        closeOnCancel: true
-    }, function (isConfirm) {
-        if (isConfirm) {
-            window.location = "../functions/post.php?post=true&announcementDisable=true&id=" + id + "&announcementName=" + name;
-        }
-
-    });
-}
-
-//Warning for disabling announcement
+//Warning for deleting logs
 function showDeleteLogsConfirm() {
     swal({
         title: "Are you sure you want to delete all logs?",
@@ -293,7 +271,7 @@ function showDeleteLogsConfirm() {
     });
 }
 
-//Warning for disabling announcement
+//Warning for deleting inquiries
 function showDeleteInquiryConfirm(id, name) {
     swal({
         title: "Are you sure you want to disable this inquiry information?",

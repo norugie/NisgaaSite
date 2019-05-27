@@ -191,27 +191,6 @@
             
 			return $array;           
         }
-
-        public function announcementList($database, $school){
-			$array = array();
-
-            $sql =  "SELECT announcements.a_title, announcements.a_id
-                    FROM announcements
-                    LEFT JOIN schools
-                    ON (announcements.a_school = schools.id)
-                    WHERE announcements.a_school = '$school'
-                    AND announcements.status = 'Active'";
-			$query = mysqli_query($database->con, $sql);
-			if (!$query) {
-			    header("location: ../?page=index&error=true");
-			} else {
-				while($row = mysqli_fetch_array($query)){
-					$array[] = $row;
-				}
-            }
-            
-			return $array;            
-		}
 		
 		public function contactList($database, $school){
 			$array = array();
@@ -404,28 +383,6 @@
 					LEFT JOIN schools
 					ON (schools.id = posts.post_school)
 					WHERE posts.post_id = '$post_id'";
-			$query = mysqli_query($database->con, $sql);
-			if (!$query) {
-			    header("location: ../?page=index&error=true");
-			} else {
-				$array = mysqli_fetch_assoc($query);
-            }
-            
-			return $array;
-		}
-
-		public function announcementInformation($database, $id){
-            $array;
-            $a_id = 'ANN' . $id;
-			$sql = "SELECT announcements.*,
-						   users.firstname,
-						   users.lastname
-					FROM announcements
-					LEFT JOIN users
-					ON (users.id = announcements.a_author)
-					LEFT JOIN schools
-					ON (schools.id = announcements.a_school)
-					WHERE announcements.a_id = '$a_id'";
 			$query = mysqli_query($database->con, $sql);
 			if (!$query) {
 			    header("location: ../?page=index&error=true");
