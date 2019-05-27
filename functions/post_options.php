@@ -134,42 +134,6 @@
         }
 
         /*********************************************************************************************/
-		/***********************  Posts Functionalities -- Announcements Posts ***********************/
-        /*********************************************************************************************/
-        
-        if(isset($_GET['announcementDisable'])){
-            
-            $id = $_GET['id'];
-            $title = str_replace('%20', ' ', $_GET['announcementName']);
-
-            $post->disableAnnouncement($database, $id, $title);
-
-        }
-
-        if(isset($_GET['editAnnouncement'])){
-
-            $id = mysqli_real_escape_string($database->con, $_POST['edit_announcement_id']);
-            $title = mysqli_real_escape_string($database->con, $_POST['edit_announcement_name']);
-
-            $a_title = mysqli_real_escape_string($database->con, $_POST['edit_announcement_title']);
-            $a_date = mysqli_real_escape_string($database->con, $_POST['edit_announcement_date']);
-            $a_desc = mysqli_real_escape_string($database->con, $_POST['edit_announcement_desc']);
-
-            $post->editAnnouncement($database, $id, $title, $a_title, $a_date, $a_desc);
-
-        }
-
-        if(isset($_GET['addAnnouncement'])){
-
-            $a_title = mysqli_real_escape_string($database->con, $_POST['announcement_title']);
-            $a_date = mysqli_real_escape_string($database->con, $_POST['announcement_date']);
-            $a_desc = mysqli_real_escape_string($database->con, $_POST['announcement_desc']);
-
-            $post->addAnnouncement($database, $a_title, $a_date, $a_desc);
-
-        }
-
-        /*********************************************************************************************/
 		/***************************  Posts Functionalities -- Links  ********************************/
         /*********************************************************************************************/
         

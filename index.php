@@ -3,7 +3,7 @@
     $url = explode("/", $_SERVER['QUERY_STRING']); // Get URL
     $page_name = $url[0]; // Explode URL string to array, use array 0 as variable for page name
 
-    // Remove the fbclid that gets attached when clicking the site from Facebook
+    // Remove the fbclid that gets attached when clicking the site from Facebook, redirect to home page
     if(strpos($page_name, "fbclid") !== false){
         header("location: /");
     }
@@ -29,7 +29,7 @@
 
     if($page_name == "" || $page_name == "/"){
 
-        // Display Index page
+        // Display index page
         require 'pages/index.php';
 
     } else if($page_name == 'restricted'){

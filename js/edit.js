@@ -101,21 +101,6 @@ function editLink(linkInfo) {
 
 }
 
-function editAnnouncement(announcementInfo) {
-
-    announcement = $(announcementInfo).data("values");
-
-    date = new Date(announcement['a_date_long']).toISOString().substring(0, 10);
-    datefield = document.querySelector('#edit_announcement_date');
-    datefield.value = date;
-
-    $("#edit_announcement_id").attr("value", announcement['id']);
-    $("#edit_announcement_name").attr("value", announcement['a_id']);
-    $("#edit_announcement_title").attr("value", announcement['a_title']);
-    $("#edit_announcement_desc").val(announcement['a_text']);
-
-}
-
 function editAboutPrograms(aboutProgramsInfo) {
 
     abtprg = $(aboutProgramsInfo).data("values");
