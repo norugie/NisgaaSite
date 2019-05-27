@@ -85,7 +85,8 @@
 		public function disableJob($database, $id, $title){
 
 			$sql = "UPDATE jobs SET 
-						   status = 'Closed'
+						   status = 'Closed',
+						   close_date = CURRENT_DATE()
 					WHERE id = '$id'";
 			$query = mysqli_query($database->con, $sql);
 			if(!$query){
