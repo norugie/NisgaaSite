@@ -41,7 +41,11 @@ function alertDesign(e) {
         showDisablePackageConfirm(id, name);
     } else if (type === 'reopen-package'){
         showReactivatePackageConfirm(id, name);
-    }
+    } else if (type === 'delete-finance'){
+        showDisableFinanceConfirm(id, name);
+    } else if (type === 'reopen-finance'){
+        showReactivateFinanceConfirm(id, name);
+    } 
 }
 
 
@@ -403,6 +407,45 @@ function showReactivatePackageConfirm(id, name) {
     }, function (isConfirm) {
         if (isConfirm) {
             window.location = "../functions/district.php?district=true&packageReactivate=true&id=" + id + "&packageName=" + name;
+        }
+
+    });
+}
+
+//Warning for disabling finance file
+function showDisableFinanceConfirm(id, name) {
+    swal({
+        title: "Are you sure you want to disable this Finance department file?",
+        text: "You will be able to reactivate this Finance department once archived",
+        type: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#F44336",
+        confirmButtonText: "CONFIRM",
+        cancelButtonText: "CANCEL",
+        closeOnConfirm: false,
+        closeOnCancel: true
+    }, function (isConfirm) {
+        if (isConfirm) {
+            window.location = "../functions/district.php?interaction=true&financeDisable=true&id=" + id + "&financeName=" + name;
+        }
+
+    });
+}
+
+//Warning for reactivating package
+function showReactivatePackageConfirm(id, name) {
+    swal({
+        title: "Are you sure you want to reactivate this Finance department file?",
+        type: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#00BCD4",
+        confirmButtonText: "CONFIRM",
+        cancelButtonText: "CANCEL",
+        closeOnConfirm: false,
+        closeOnCancel: true
+    }, function (isConfirm) {
+        if (isConfirm) {
+            window.location = "../functions/district.php?interaction=true&financeReactivate=true&id=" + id + "&financeName=" + name;
         }
 
     });

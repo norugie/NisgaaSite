@@ -211,6 +211,29 @@
 			return $array;
         }
 
+		public function financeList($database, $page, $subtab){
+
+			$array = array();
+			$sql = "SELECT links.*,
+						   schools.school_abbv 
+					FROM links
+					LEFT JOIN schools
+					ON (schools.id = links.school)
+					WHERE links.link_tag = 'Finance'";
+
+			$query = mysqli_query($database->con, $sql);
+			if (!$query) {
+			    header("location: ../cms/interaction.php?tab=web&subtab=". $subtab ."&page=". $page ."&error=true");
+			} else {
+				while($row = mysqli_fetch_array($query)){
+					$array[] = $row;
+				}
+            }
+            
+			return $array;
+			
+		}
+
         /*********************************************************************************************/
 		/***************************  Interaction Functionalities -- BOE  ****************************/
         /*********************************************************************************************/
