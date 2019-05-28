@@ -203,3 +203,15 @@ function editPackage(packageInfo) {
     $("#edit_package_desc_file").val(pack['link_desc']);
 
 }
+
+function editForm(financeInfo) {
+
+    finance = $(financeInfo).data("values");
+
+    // Finance type: File
+    $("#edit_finance_id_file").attr("value", finance['id']);
+    $("#edit_finance_id_name_file").attr("value", finance['link_id']);
+    $("#edit_finance_title_file").attr("value", finance['link_name']);
+    $("#edit_finance_desc_file").val(finance['link_desc']);
+
+}

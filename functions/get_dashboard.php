@@ -13,8 +13,7 @@
 					LEFT JOIN users
                     ON (users.id = logs.user)
                     LEFT JOIN schools
-					ON (schools.id = logs.school)
-					WHERE logs.date BETWEEN NOW() - INTERVAL 30 DAY AND NOW()";
+					ON (schools.id = logs.school)";
 
             /*  Content Filter  */
 			if($_SESSION['type'] != 1){
@@ -24,9 +23,9 @@
 				} else {
 					$school = $_SESSION['school'];
 				}
-				$sql = $sqlquery . " WHERE logs.school = '$school' ORDER BY logs.id DESC";
+				$sql = $sqlquery . " WHERE logs.school = '$school' AND logs.date BETWEEN NOW() - INTERVAL 30 DAY AND NOW() ORDER BY logs.id DESC";
 			} else {
-				$sql = $sqlquery . " ORDER BY logs.id DESC";
+				$sql = $sqlquery . " WHERE logs.date BETWEEN NOW() - INTERVAL 30 DAY AND NOW()ORDER BY logs.id DESC";
 			}
             /*  END Content Filter  */
             

@@ -192,6 +192,11 @@
                                     <span>School District Office</span>
                                 </a>
                             </li>
+                            <li id="finance">
+                                <a href="interaction.php?tab=web&subtab=department&page=finance">
+                                    <span>Finance</span>
+                                </a>
+                            </li>
                             <li id="sss">
                                 <a href="interaction.php?tab=web&subtab=department&page=sss">
                                     <span>Student Support Services</span>
