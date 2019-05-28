@@ -37,6 +37,16 @@
         // Display 403 page
         require 'pages/restricted.php';
 
+    } else if($page_name == '404'){
+
+        // Display 404 page when 404 is in the url
+        require 'pages/404.php';
+
+    } else if($page_name == 'error'){
+
+        // Display error page
+        require 'pages/error.php';
+
     } else {
 
         if(file_exists('pages/' . $page_name . '.php')){

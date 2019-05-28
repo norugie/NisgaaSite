@@ -5,48 +5,15 @@
             <div class="col-md-9 jumbotron-left">
                 <section>
                     <div class="owl-carousel owl-theme" id="owl-demo">
-                        <div>
-                            <div class="owl-text-overlay d-none d-sm-block">
-                                <h2 class="owl-title d-none d-md-block">Image 1</h2>
+                        <?php $carousel = $site->carouselImages($database, 2); ?>
+                        <?php foreach($carousel as $c): ?>
+                            <div>
+                                <div class="owl-text-overlay d-none d-sm-block">
+                                    <h2 class="owl-title d-none d-md-block"><?php echo $c['carousel_desc']; ?></h2>
+                                </div>
+                                <img class="owl-img" src="/images/carousel/<?php echo $c['carousel_name']; ?>">
                             </div>
-                            <img class="owl-img" src="/images/carousel/ca-6.jpg">
-                        </div>
-                        <div>
-                            <div class="owl-text-overlay d-none d-sm-block">
-                                <h2 class="owl-title d-none d-md-block">Image 2</h2>
-                            </div>
-                            <img class="owl-img" src="/images/carousel/ca-2.jpg">
-                        </div>
-                        <div>
-                            <div class="owl-text-overlay d-none d-sm-block">
-                                <h2 class="owl-title d-none d-md-block">Image 3</h2>
-                            </div>
-                            <img class="owl-img" src="/images/carousel/ca-3.jpg">
-                        </div>
-                        <div>
-                            <div class="owl-text-overlay d-none d-sm-block">
-                                <h2 class="owl-title d-none d-md-block">Image 4</h2>
-                            </div>
-                            <img class="owl-img" src="images/carousel/ca-4.jpg">
-                        </div>
-                        <div>
-                            <div class="owl-text-overlay d-none d-sm-block">
-                                <h2 class="owl-title d-none d-md-block">Image 5</h2>
-                            </div>
-                            <img class="owl-img" src="/images/carousel/ca-5.jpg">
-                        </div>
-                        <div>
-                            <div class="owl-text-overlay d-none d-sm-block">
-                                <h2 class="owl-title d-none d-md-block">Image 6</h2>
-                            </div>
-                            <img class="owl-img" src="/images/carousel/ca-6.jpg">
-                        </div>
-                        <div>
-                            <div class="owl-text-overlay d-none d-sm-block">
-                                <h2 class="owl-title d-none d-md-block">Jewelry Making</h2>
-                            </div>
-                            <img class="owl-img" src="/images/carousel/ca-7.jpg">
-                        </div>
+                        <?php endforeach; ?>
                     </div>
                 </section>
             </div>

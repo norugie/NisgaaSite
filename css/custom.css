@@ -546,7 +546,8 @@ html {
 
 .owl-text-overlay {
   position: absolute;
-  width: 300px;
+  min-width: 300px;
+  max-width: 400px;
   top: 80%;
   transform: translateY(-50%);
   background-color: rgba(255, 255, 255, 0.5);
@@ -557,8 +558,7 @@ html {
 
 h2.owl-title {
   color: #000 !important;
-  margin-top: 10px;
-  margin-bottom: 10px;
+  margin: 10px;
   z-index: 1000;
 }
 

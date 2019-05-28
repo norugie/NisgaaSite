@@ -13,30 +13,12 @@
 			$sql = "SELECT * FROM schools WHERE id = '$school'";
 			$query = mysqli_query($database->con, $sql);
 			if (!$query) {
-			    header("location: ../?page=index&error=true");
+			    echo "<script>window.open('https://webdev.nisgaa.bc.ca/error', '_parent');</script>";
 			} else {
                     $array = mysqli_fetch_assoc($query);
             }
             
 			return $array;            
-        }
-
-        public function categoryList($database){
-			$array = array();
-
-			$sql = "SELECT cat_id, cat_desc 
-                    FROM categories
-                    WHERE status = 'Active'";
-			$query = mysqli_query($database->con, $sql);
-			if (!$query) {
-			    header("location: ../?page=index&error=true");
-			} else {
-				while($row = mysqli_fetch_array($query)){
-					$array[] = $row;
-				}
-            }
-            
-			return $array;
         }
 
         public function linkList($database, $tag, $school){
@@ -64,7 +46,7 @@
 
 			$query = mysqli_query($database->con, $sql);
 			if (!$query) {
-			    header("location: ../?page=index&error=true");
+			    echo "<script>window.open('https://webdev.nisgaa.bc.ca/error', '_parent');</script>";
 			} else {
 				while($row = mysqli_fetch_array($query)){
 					$array[] = $row;
@@ -99,7 +81,7 @@
                     ORDER BY posts.id DESC";
 			$query = mysqli_query($database->con, $sql);
 			if (!$query) {
-                 //header("location: ../?page=index&error=true");
+                 //echo "<script>window.open('https://webdev.nisgaa.bc.ca/error', '_parent');</script>";
                 return ("Error description: " . mysqli_error($database->con));
 			} else {
 				while($row = mysqli_fetch_array($query)){
@@ -130,7 +112,7 @@
 					)";
 			$query = mysqli_query($database->con, $sql);
 			if (!$query) {
-				 //header("location: ../?page=index&error=true");
+				 //echo "<script>window.open('https://webdev.nisgaa.bc.ca/error', '_parent');</script>";
 				return ("Error description: " . mysqli_error($database->con));
 			} else {
 				while($row = mysqli_fetch_array($query)){
@@ -157,7 +139,7 @@
 					AND links.link_tag = 'District Forms'";
 			$query = mysqli_query($database->con, $sql);
 			if (!$query) {
-				 //header("location: ../?page=index&error=true");
+				 //echo "<script>window.open('https://webdev.nisgaa.bc.ca/error', '_parent');</script>";
 				return ("Error description: " . mysqli_error($database->con));
 			} else {
 				while($row = mysqli_fetch_array($query)){
@@ -172,6 +154,29 @@
 		/***************************  Site Functionalities -- Home  **********************************/
         /*********************************************************************************************/
 		
+		public function carouselImages($database, $school){
+			$array = array();
+
+			$sql =  "SELECT carousel.carousel_name,
+							carousel.carousel_desc
+					FROM carousel
+					LEFT JOIN schools
+					ON (schools.id = carousel.school)
+					WHERE carousel.school = '$school'
+					AND carousel.status = 'Active'
+					LIMIT 5";
+			$query = mysqli_query($database->con, $sql);
+			if (!$query) {
+			    echo "<script>window.open('https://webdev.nisgaa.bc.ca/error', '_parent');</script>";
+			} else {
+				while($row = mysqli_fetch_array($query)){
+					$array[] = $row;
+				}
+            }
+            
+			return $array;
+		}
+
         public function blogListIndex($database, $school){
 			$array = array();
 
@@ -192,7 +197,7 @@
                     LIMIT 3";
 			$query = mysqli_query($database->con, $sql);
 			if (!$query) {
-                 //header("location: ../?page=index&error=true");
+                 //echo "<script>window.open('https://webdev.nisgaa.bc.ca/error', '_parent');</script>";
                 return ("Error description: " . mysqli_error($database->con));
 			} else {
 				while($row = mysqli_fetch_array($query)){
@@ -225,7 +230,7 @@
                     LIMIT 3";
 			$query = mysqli_query($database->con, $sql);
 			if (!$query) {
-				header("location: ../?page=index&error=true");
+				echo "<script>window.open('https://webdev.nisgaa.bc.ca/error', '_parent');</script>";
 				// echo("Error description: " . mysqli_error($database->con));
 			} else {
 				while($row = mysqli_fetch_array($query)){
@@ -249,7 +254,7 @@
 					LIMIT 1";
 			$query = mysqli_query($database->con, $sql);
 			if (!$query) {
-				// header("location: ../?page=index&error=true");
+				// echo "<script>window.open('https://webdev.nisgaa.bc.ca/error', '_parent');</script>";
 				return ("Error description: " . mysqli_error($database->con));
 			} else {
 				$array = mysqli_fetch_assoc($query);
@@ -274,7 +279,7 @@
                     AND contacts.status = 'Active'";
 			$query = mysqli_query($database->con, $sql);
 			if (!$query) {
-			    header("location: ../?page=index&error=true");
+			    echo "<script>window.open('https://webdev.nisgaa.bc.ca/error', '_parent');</script>";
 			} else {
 				while($row = mysqli_fetch_array($query)){
 					$array[] = $row;
@@ -290,7 +295,7 @@
             $sql =  "SELECT * FROM schools WHERE id NOT IN (1, 2, 7, 8, 9, 10)";
 			$query = mysqli_query($database->con, $sql);
 			if (!$query) {
-			    header("location: ../?page=index&error=true");
+			    echo "<script>window.open('https://webdev.nisgaa.bc.ca/error', '_parent');</script>";
 			} else {
 				while($row = mysqli_fetch_array($query)){
 					$array[] = $row;
@@ -306,7 +311,7 @@
             $sql =  "SELECT * FROM schools WHERE id NOT IN (2, 3, 4, 5, 6, 8) ORDER BY id DESC";
 			$query = mysqli_query($database->con, $sql);
 			if (!$query) {
-			    header("location: ../?page=index&error=true");
+			    echo "<script>window.open('https://webdev.nisgaa.bc.ca/error', '_parent');</script>";
 			} else {
 				while($row = mysqli_fetch_array($query)){
 					$array[] = $row;
@@ -329,7 +334,7 @@
                     AND web_content.web_type = 'About'";
 			$query = mysqli_query($database->con, $sql);
 			if (!$query) {
-				header("location: ../?page=index&error=true");
+				echo "<script>window.open('https://webdev.nisgaa.bc.ca/error', '_parent');</script>";
 			} else {
 				$array = mysqli_fetch_assoc($query);
             }
@@ -350,7 +355,7 @@
                     AND web_content.web_type = 'Programs'";
 			$query = mysqli_query($database->con, $sql);
 			if (!$query) {
-				header("location: ../?page=index&error=true");
+				echo "<script>window.open('https://webdev.nisgaa.bc.ca/error', '_parent');</script>";
 			} else {
 				$array = mysqli_fetch_assoc($query);
             }
@@ -370,7 +375,7 @@
                     AND faqs.status = 'Active'";
 			$query = mysqli_query($database->con, $sql);
 			if (!$query) {
-				header("location: ../?page=index&error=true");
+				echo "<script>window.open('https://webdev.nisgaa.bc.ca/error', '_parent');</script>";
 			} else {
 				while($row = mysqli_fetch_array($query)){
 					$array[] = $row;
@@ -408,7 +413,7 @@
 					AND school = '$school'";
 			$query = mysqli_query($database->con, $sql);
 			if (!$query) {
-				header("location: ../?page=index&error=true");
+				echo "<script>window.open('https://webdev.nisgaa.bc.ca/error', '_parent');</script>";
 			} else {
 				$array = mysqli_fetch_assoc($query);
             }
@@ -431,7 +436,7 @@
                     WHERE web_type = '$page'";
 			$query = mysqli_query($database->con, $sql);
 			if (!$query) {
-				header("location: ../?page=index&error=true");
+				echo "<script>window.open('https://webdev.nisgaa.bc.ca/error', '_parent');</script>";
 			} else {
 				$array = mysqli_fetch_assoc($query);
             }
@@ -453,7 +458,7 @@
 					WHERE web_type = 'Culture'";
 			$query = mysqli_query($database->con, $sql);
 			if (!$query) {
-				header("location: ../?page=index&error=true");
+				echo "<script>window.open('https://webdev.nisgaa.bc.ca/error', '_parent');</script>";
 			} else {
 				$array = mysqli_fetch_assoc($query);
             }
@@ -471,7 +476,7 @@
 			$sql = "SELECT web_desc FROM web_content WHERE web_type = 'BOE'";
 			$query = mysqli_query($database->con, $sql);
 			if (!$query) {
-				header("location: ../?page=index&error=true");
+				echo "<script>window.open('https://webdev.nisgaa.bc.ca/error', '_parent');</script>";
 			} else {
 				$array = mysqli_fetch_assoc($query);
             }
@@ -485,7 +490,7 @@
 			$sql = "SELECT * FROM contacts WHERE type = 'BOE' ORDER BY photo_position ASC";
 			$query = mysqli_query($database->con, $sql);
 			if (!$query) {
-			    header("location: ../?page=index&error=true");
+			    echo "<script>window.open('https://webdev.nisgaa.bc.ca/error', '_parent');</script>";
 			} else {
 				while($row = mysqli_fetch_array($query)){
 					$array[] = $row;
@@ -522,7 +527,7 @@
                     LIMIT $sheet_index, $limit";
 			$query = mysqli_query($database->con, $sql);
 			if (!$query) {
-			    header("location: ../?page=index&error=true");
+			    echo "<script>window.open('https://webdev.nisgaa.bc.ca/error', '_parent');</script>";
 			} else {
 				while($row = mysqli_fetch_array($query)){
 					$array[] = $row;
@@ -538,7 +543,7 @@
             $sql = "SELECT COUNT(*) FROM posts WHERE post_school = '$school' AND status = 'Active'";
 			$query = mysqli_query($database->con, $sql);
 			if (!$query) {
-			    header("location: ../?page=index&error=true");
+			    echo "<script>window.open('https://webdev.nisgaa.bc.ca/error', '_parent');</script>";
 			} else {
 				$row = mysqli_fetch_array($query);
                 $count = $row[0];
@@ -561,7 +566,7 @@
 					WHERE posts.post_id = '$post_id'";
 			$query = mysqli_query($database->con, $sql);
 			if (!$query) {
-			    header("location: ../?page=index&error=true");
+			    echo "<script>window.open('https://webdev.nisgaa.bc.ca/error', '_parent');</script>";
 			} else {
 				$array = mysqli_fetch_assoc($query);
             }
@@ -583,7 +588,7 @@
                     AND post_categories.post_id = '$post_id'";
 			$query = mysqli_query($database->con, $sql);
 			if (!$query) {
-			    header("location: ../?page=index&error=true");
+			    echo "<script>window.open('https://webdev.nisgaa.bc.ca/error', '_parent');</script>";
 			} else {
 				while($row = mysqli_fetch_array($query)){
 					$array[] = $row;
@@ -611,7 +616,7 @@
                     WHERE jobs.status = 'Open'";
 			$query = mysqli_query($database->con, $sql);
 			if (!$query) {
-			    header("location: ../?page=index&error=true");
+			    echo "<script>window.open('https://webdev.nisgaa.bc.ca/error', '_parent');</script>";
 			} else {
 				while($row = mysqli_fetch_array($query)){
 					$array[] = $row;
@@ -638,7 +643,7 @@
 					LIMIT 10";
 			$query = mysqli_query($database->con, $sql);
 			if (!$query) {
-			    header("location: ../?page=index&error=true");
+			    echo "<script>window.open('https://webdev.nisgaa.bc.ca/error', '_parent');</script>";
 			} else {
 				while($row = mysqli_fetch_array($query)){
 					$array[] = $row;
@@ -659,7 +664,7 @@
 					WHERE jobs.job_id = '$job_id'";
 			$query = mysqli_query($database->con, $sql);
 			if (!$query) {
-				// header("location: ../?page=index&error=true");
+				// echo "<script>window.open('https://webdev.nisgaa.bc.ca/error', '_parent');</script>";
 				return ("Error description: " . mysqli_error($database->con));
 			} else {
 				$array = mysqli_fetch_assoc($query);
