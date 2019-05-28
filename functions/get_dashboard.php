@@ -13,7 +13,8 @@
 					LEFT JOIN users
                     ON (users.id = logs.user)
                     LEFT JOIN schools
-                    ON (schools.id = logs.school)";
+					ON (schools.id = logs.school)
+					WHERE logs.date BETWEEN NOW() - INTERVAL 30 DAY AND NOW()";
 
             /*  Content Filter  */
 			if($_SESSION['type'] != 1){

@@ -43,20 +43,7 @@
 
 <!-- District Posts Quick Info -->
 <div class="row">
-    <div class="col-md-4 col-xs-12 col-sm-12">
-        <div class="info-box-3 bg-blue-grey hover-zoom-effect">
-            <a href="post.php?tab=post&page=announcements">
-                <div class="icon">
-                    <i class="material-icons">announcement</i>
-                </div>
-                <div class="content">
-                    <div class="text">ANNOUNCEMENTS</div>
-                    <div class="number"><?php echo count($dashboard->announcementCount($database)); ?></div>
-                </div>
-            </a>
-        </div>
-    </div>
-    <div class="col-md-4 col-xs-12 col-sm-12">
+    <div class="col-md-6 col-xs-12 col-sm-12">
         <div class="info-box-3 bg-blue-grey hover-zoom-effect">
             <a href="post.php?tab=post&page=blog">
                 <div class="icon">
@@ -69,7 +56,7 @@
             </a>
         </div>
     </div>
-    <div class="col-md-4 col-xs-12 col-sm-12">
+    <div class="col-md-6 col-xs-12 col-sm-12">
         <div class="info-box-3 bg-blue-grey hover-zoom-effect">
             <a href="post.php?tab=post&page=media">
                 <div class="icon">
@@ -96,17 +83,9 @@
         <div class="card">
             <div class="header">
                 <div class="row clearfix">
-                    <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 text-xs-sm-center">
-                        <h4>LOGS</h4>     
-                    </div>
-                    <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-                        <center>
-                            <?php if($_SESSION['type'] == 1){ ?>
-                                <button type="button" class="btn btn-default waves-effect" style="display: inline-block; margin-left: 5px;"><i class="material-icons">print</i></button>
-                                <button type="button" class="btn btn-default waves-effect" style="display: inline-block; margin-left: 5px;"><i class="material-icons">assignment</i></button>
-                                <button type="button" class="btn bg-red waves-effect" style="display: inline-block; margin-left: 5px;" data-type="delete-logs" data-id="0" data-name="0" onclick="alertDesign(this);"><i class="material-icons">delete</i></button>
-                            <?php } ?>
-                        </center>
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-xs-sm-center">
+                        <h4>LOGS</h4>
+                        <p class="text-small"><i>Note: The log table below shows the log entries from the past 30 days only</i></p>     
                     </div>
                 </div>
             </div>
