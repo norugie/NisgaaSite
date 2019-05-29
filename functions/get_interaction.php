@@ -219,7 +219,8 @@
 					FROM links
 					LEFT JOIN schools
 					ON (schools.id = links.school)
-					WHERE links.link_tag = 'Finance'";
+					WHERE links.link_tag LIKE '%Finance%'
+					ORDER BY links.id DESC";
 
 			$query = mysqli_query($database->con, $sql);
 			if (!$query) {

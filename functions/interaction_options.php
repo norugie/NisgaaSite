@@ -204,7 +204,7 @@
             $link_name = mysqli_real_escape_string($database->con, $_POST['link_title']);
             $link_desc = mysqli_real_escape_string($database->con, $_POST['link_desc']);
             $link_type = "File";
-            $link_tag = "Finance";
+            $link_tag = mysqli_real_escape_string($database->con, $_POST['link_tag']);
             $link_content;
             $link_thumbnail = "post_thumbnail.jpg";
 
@@ -245,7 +245,7 @@
             $link_id = mysqli_real_escape_string($database->con, $_POST['edit_link_id_name']);
             $link_name = mysqli_real_escape_string($database->con, $_POST['edit_link_title']);
             $link_desc = mysqli_real_escape_string($database->con, $_POST['edit_link_desc']);
-            $link_tag = "Finance";
+            $link_tag = mysqli_real_escape_string($database->con, $_POST['edit_link_tag']);;
             $link_content;
 
             if(!file_exists($_FILES['edit_link_content']['tmp_name']) || !is_uploaded_file($_FILES['edit_link_content']['tmp_name'])){
