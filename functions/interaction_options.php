@@ -175,6 +175,28 @@
             $interaction->editPageInformation($database, $id, $curdept_name, $curdept_desc, $page, $subtab);
         }
 
+        if(isset($_GET['financeDisable'])){
+            $page = $_GET['page'];
+            $subtab = $_GET['subtab'];
+
+            $id = $_GET['id'];
+            $title = str_replace('%20', ' ', $_GET['financeName']);
+
+            $interaction->disableFinance($database, $id, $title, $page, $subtab);
+
+        }
+
+        if(isset($_GET['financeReactivate'])){
+            $page = $_GET['page'];
+            $subtab = $_GET['subtab'];
+
+            $id = $_GET['id'];
+            $title = str_replace('%20', ' ', $_GET['financeName']);
+
+            $interaction->reactivateFinance($database, $id, $title, $page, $subtab);
+
+        }
+
         if(isset($_GET['addFinance'])){
             $page = $_GET['page'];
             $subtab = $_GET['subtab'];
