@@ -230,6 +230,25 @@
 			}			
 		}
 
+		public function editFinance($database, $id, $link_id, $link_name, $link_desc, $link_content, $link_tag, $page, $subtab){
+			$sql = "UPDATE links SET 
+						   link_name = '$link_name',
+						   link_desc = '$link_desc',
+						   link_tag  = '$link_tag',
+						   link_content = '$link_content'
+					WHERE id = '$id'";
+			$query = mysqli_query($database->con, $sql);
+			if(!$query){
+			    header("location: ../cms/interaction.php?tab=web&subtab=". $subtab ."&page=". $page ."&error=true");
+			} else {
+				global $log;
+				$info = "Modified finance file: " . $link_name;
+				$log->logInput($database, $info);
+
+				header("location: ../cms/interaction.php?tab=web&subtab=". $subtab ."&page=". $page ."&editFinance=true");
+			}
+		}
+
         /*********************************************************************************************/
 		/***************************  Interaction Functionalities -- BOE  ****************************/
 		/*********************************************************************************************/
