@@ -214,5 +214,6 @@ function editFinance(financeInfo) {
     $("#edit_finance_content_name_file").attr("value", finance['link_content']);
     $("#edit_finance_title_file").attr("value", finance['link_name']);
     $("#edit_finance_desc_file").val(finance['link_desc']);
+    $("#edit_finance_tag_file").selectpicker("val", finance['link_tag']);
 
 }
