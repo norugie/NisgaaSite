@@ -44,7 +44,7 @@
                             <?php foreach($jobs as $job): ?>
                                 <tr>
                                     <td><?php echo preg_replace('/[a-zA-Z]/', '', $job['job_id']); ?></td>
-                                    <td><a href="jobs/<?php echo $job['file']; ?>" download><?php echo $job['title']; ?></a></td>
+                                    <td><a href="jobs/<?php echo $job['file']; ?>" target="_blank"><?php echo $job['title']; ?></a></td>
                                     <td><?php echo $job['school_name']; ?></td>
                                     <!-- <td><?php echo date_format(date_create($job['close_date']), 'd M Y'); ?></td> -->
                                     <!-- <td><a href="jobs/<?php echo $job['file']; ?>" class="btn btn-template-main btn-sm" download>View Posting</a></td> -->
