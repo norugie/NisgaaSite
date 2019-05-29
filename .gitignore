@@ -17,3 +17,6 @@
 !/images/posts/media/.gitkeep
 !/images/profile/.gitkeep
 !/images/thumbnails/.gitkeep
+
+# File Exceptions
+!/images/thumbnails/post_thumbnail.jpg
