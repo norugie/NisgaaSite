@@ -211,6 +211,25 @@
 			}			
 		}
 
+		public function addFinance($database, $link_name, $link_desc, $link_content, $link_type, $link_tag, $link_thumbnail, $page, $subtab){
+			$link_id = 'LNK' . rand(1111111,9999999);
+			$user = $_SESSION['id'];
+			$school = 2;
+
+			$sql = "INSERT INTO links
+					VALUES (null, '$link_id', '$link_name', '$link_type', '$link_tag', '$link_desc', '$link_content', '$link_thumbnail', '$user', '$school', 'Active')";
+			$query = mysqli_query($database->con, $sql);
+			if(!$query){
+			    header("location: ../cms/interaction.php?tab=web&subtab=". $subtab ."&page=". $page ."&error=true");
+			} else {
+				global $log;
+				$info = "Created a new finance file: " . $link_name;
+				$log->logInput($database, $info);
+
+				header("location: ../cms/interaction.php?tab=web&subtab=". $subtab ."&page=". $page ."&addFinance=true");
+			}			
+		}
+
         /*********************************************************************************************/
 		/***************************  Interaction Functionalities -- BOE  ****************************/
 		/*********************************************************************************************/

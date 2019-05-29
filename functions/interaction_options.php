@@ -175,6 +175,46 @@
             $interaction->editPageInformation($database, $id, $curdept_name, $curdept_desc, $page, $subtab);
         }
 
+        if(isset($_GET['addFinance'])){
+            $page = $_GET['page'];
+            $subtab = $_GET['subtab'];
+
+            $link_name = mysqli_real_escape_string($database->con, $_POST['link_title']);
+            $link_desc = mysqli_real_escape_string($database->con, $_POST['link_desc']);
+            $link_type = "File";
+            $link_tag = "Finance";
+            $link_content;
+            $link_thumbnail = "post_thumbnail.jpg";
+
+            if(file_exists($_FILES['link_content']['tmp_name']) || is_uploaded_file($_FILES['link_content']['tmp_name'])){
+
+                if(isset($_FILES['link_content'])){
+                    $errors = 0;
+                    $file_name = $_FILES['link_content']['name'];
+                    $file_size = $_FILES['link_content']['size'];
+                    $file_tmp = $_FILES['link_content']['tmp_name'];
+                    $file_type = $_FILES['link_content']['type'];
+                    $file_ext = strtolower(end(explode('.', $_FILES['link_content']['name'])));
+                    
+                    if($file_size > 20971520){
+                        $errors = 1;
+                    }
+                    
+                    if($errors == 0){
+                        move_uploaded_file($file_tmp, "../links/".$file_name);
+                        $link_content = $file_name;
+                        $interaction->addFinance($database, $link_name, $link_desc, $link_content, $link_type, $link_tag, $link_thumbnail, $page, $subtab);
+                    } else {
+                        header("location: ../cms/interaction.php?tab=web&subtab=". $subtab ."&page=". $page ."&error=true");
+                    }
+                } else {
+                    header("location: ../cms/interaction.php?tab=web&subtab=". $subtab ."&page=". $page ."&error=true");
+                }
+
+            }
+
+        }
+
         /*********************************************************************************************/
 		/***************************  Interaction Functionalities -- BOE *****************************/
         /*********************************************************************************************/

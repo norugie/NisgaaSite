@@ -1,1 +1,19 @@
+# Ignore files
 /functions/db_params.php
+/jobs/*
+/links/*
+/images/contacts/*
+/images/posts/*
+/images/posts/media/*
+/images/profile/*
+/images/thumbnails/*
+
+# Folder exceptions
+!/jobs/.gitkeep
+!/jobs/resumes/.gitkeep
+!/links/.gitkeep
+!/images/contacts/.gitkeep
+!/images/posts/.gitkeep
+!/images/posts/media/.gitkeep
+!/images/profile/.gitkeep
+!/images/thumbnails/.gitkeep

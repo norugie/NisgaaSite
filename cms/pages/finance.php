@@ -15,7 +15,7 @@
         <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
             <center>
                 <?php if($_SESSION['type'] != 3){ ?>
-                    <button type="button" class="btn bg-blue waves-effect" data-toggle="modal" data-target="#new-form-modal" style="display: inline-block;"><i class="material-icons">add</i><span>NEW FILE</span></button>
+                    <button type="button" class="btn bg-blue waves-effect" data-toggle="modal" data-target="#new-finance-modal" style="display: inline-block;"><i class="material-icons">add</i><span>NEW FILE</span></button>
                 <?php } ?>
             </center>
         </div>
@@ -47,8 +47,7 @@
             <tbody>
                 <?php foreach($links as $link): ?>
                     <tr>
-                        <td><a href="<?php echo "../links/" . $link['link_content']; ?>"><?php echo $link['link_name']; ?></a></td>
-                        <td><?php echo $link['link_type']; ?></td>
+                        <td><a href="<?php echo "../links/" . $link['link_content']; ?>" target="_blank"><?php echo $link['link_name']; ?></a></td>
                         <td><?php echo $link['link_desc']; ?></td>
                         <?php if($_SESSION['type'] != 3){ ?>
                             <td><center><button type="button" class="btn bg-green waves-effect" data-toggle="modal" data-target="#edit-finance-file-modal" 
@@ -56,7 +55,6 @@
                                 "id":           <?php echo json_encode($link['id']); ?>,
                                 "link_id":      <?php echo json_encode($link['link_id']); ?>,
                                 "link_name":    <?php echo json_encode(str_replace("'", "&apos;", $link['link_name'])); ?>,
-                                "link_tag":     <?php echo json_encode($link['link_tag']); ?>,
                                 "link_desc":    <?php echo json_encode(str_replace("'", "&apos;", $link['link_desc'])); ?>,
                                 "link_content": <?php echo json_encode($link['link_content']); ?>
                             }' 

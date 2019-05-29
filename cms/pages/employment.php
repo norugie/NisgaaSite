@@ -56,7 +56,7 @@
                                 <?php if($_SESSION['type'] == 3 || $_SESSION['type'] == 1){ ?>
                                     <tr>
                                         <td><?php echo preg_replace('/[a-zA-Z]/', '', $job['job_id']); ?></td>
-                                        <td><a href="../jobs/<?php echo $job['file']; ?>" download><?php echo $job['title']; ?></a></td>
+                                        <td><a href="../jobs/<?php echo $job['file']; ?>" target="_blank"><?php echo $job['title']; ?></a></td>
                                         <td><?php echo $job['school_name']; ?></td>
                                         <td><?php echo date_format(date_create($job['open_date']), 'd M Y - l'); ?></td>
                                         <td><?php echo date_format(date_create($job['close_date']), 'd M Y - l'); ?></td>
