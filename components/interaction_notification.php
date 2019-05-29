@@ -72,6 +72,13 @@
 </div>
 <?php } ?>
 
+<?php if(isset($_GET['addFinance']) && $_SESSION['alert'] == 'alerted'){?>
+<div class="alert bg-green alert-dismissible" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    A new finance file has been <b>created</b> successfully!
+</div>
+<?php } ?>
+
 <!--  Interaction Notifications - BOE Information  -->
 
 <?php if(isset($_GET['editBOEInformation']) && $_SESSION['alert'] == 'alerted'){?>

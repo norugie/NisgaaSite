@@ -373,7 +373,7 @@
 			    header("location:../cms/district.php?tab=sd&page=files&error=true");
 			} else {
 				global $log;
-				$info = "Created a new file: " . $link_name;
+				$info = "Created a new district file: " . $link_name;
 				$log->logInput($database, $info);
 
 				header("location:../cms/district.php?tab=sd&page=files&addForm=true");
