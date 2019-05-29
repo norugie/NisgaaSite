@@ -13,3 +13,11 @@
         display: none;
     }
 } 
+
+.sweet-alert {
+    width:500px !important;
+}
+
+.sweet-alert h2 {
+    line-height: 30px !important;
+}

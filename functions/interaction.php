@@ -211,6 +211,38 @@
 			}			
 		}
 
+		public function disableFinance($database, $id, $title, $page, $subtab){
+			$sql = "UPDATE links SET 
+						   status = 'Inactive'
+					WHERE id = '$id'";
+			$query = mysqli_query($database->con, $sql);
+			if(!$query){
+			    header("location: ../cms/interaction.php?tab=web&subtab=". $subtab ."&page=". $page ."&error=true");
+			} else {
+				global $log;
+				$info = "Disabled finance file: " . $title;
+				$log->logInput($database, $info);
+
+				header("location: ../cms/interaction.php?tab=web&subtab=". $subtab ."&page=". $page ."&disabledFinance=true");
+			}
+		}
+
+		public function reactivateFinance($database, $id, $title, $page, $subtab){
+			$sql = "UPDATE links SET 
+						   status = 'Active'
+					WHERE id = '$id'";
+			$query = mysqli_query($database->con, $sql);
+			if(!$query){
+			    header("location: ../cms/interaction.php?tab=web&subtab=". $subtab ."&page=". $page ."&error=true");
+			} else {
+				global $log;
+				$info = "Reactivated finance file: " . $title;
+				$log->logInput($database, $info);
+
+				header("location: ../cms/interaction.php?tab=web&subtab=". $subtab ."&page=". $page ."&reactivatedFinance=true");
+			}
+		}
+
 		public function addFinance($database, $link_name, $link_desc, $link_content, $link_type, $link_tag, $link_thumbnail, $page, $subtab){
 			$link_id = 'LNK' . rand(1111111,9999999);
 			$user = $_SESSION['id'];

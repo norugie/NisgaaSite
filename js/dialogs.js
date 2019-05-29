@@ -426,14 +426,14 @@ function showDisableFinanceConfirm(id, name) {
         closeOnCancel: true
     }, function (isConfirm) {
         if (isConfirm) {
-            window.location = "../functions/district.php?interaction=true&financeDisable=true&id=" + id + "&financeName=" + name;
+            window.location = "../functions/interaction.php?interaction=true&financeDisable=true&id=" + id + "&financeName=" + name + "&subtab=department&page=finance";
         }
 
     });
 }
 
-//Warning for reactivating package
-function showReactivatePackageConfirm(id, name) {
+//Warning for reactivating finance
+function showReactivateFinanceConfirm(id, name) {
     swal({
         title: "Are you sure you want to reactivate this Finance department file?",
         type: "warning",
@@ -445,7 +445,7 @@ function showReactivatePackageConfirm(id, name) {
         closeOnCancel: true
     }, function (isConfirm) {
         if (isConfirm) {
-            window.location = "../functions/district.php?interaction=true&financeReactivate=true&id=" + id + "&financeName=" + name;
+            window.location = "../functions/interaction.php?interaction=true&financeReactivate=true&id=" + id + "&financeName=" + name + "&subtab=department&page=finance";
         }
 
     });
