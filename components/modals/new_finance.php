@@ -37,6 +37,19 @@
                             </div>
                             <div class="row clearfix">
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <label for="link_tag">File Tag *</label>
+                                    <div class="form-group">
+                                        <select class="form-control show-tick" name="link_tag" id="link_tag" title="Select Finance File tag" required>
+                                            <option value="Finance Budget">Budget</option>
+                                            <option value="Finance Audit">Audited Financial Statement</option>
+                                            <option value="Finance SFI">Statement of Financial Information</option>
+                                            <option value="Finance ECR">Executive Compensation Report</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row clearfix">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                     <label for="link_content">File Content *</label>
                                     <div class="form-group">
                                         <div class="form-line" id="input-field">
