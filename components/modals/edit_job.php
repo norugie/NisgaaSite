@@ -49,6 +49,7 @@
                                                     <option value="Casual">Casual</option>
                                                     <option value="Remote">Remote</option>
                                                     <option value="Seasonal">Seasonal</option>
+                                                    <option value="Temporary">Temporary</option>
                                                 </select>
                                             </div>
                                         </div>
