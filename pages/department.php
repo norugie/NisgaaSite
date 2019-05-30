@@ -27,7 +27,7 @@
             <!-- FINANCE FORMS CONTENT -->
             <section>
                 <div class="row">
-                    <div class="col-md-12">
+                    <div class="col-md-6">
                         <p class="lead" style="margin-bottom:10px!important;"><b>Budgets</b></p>
                         <div class="row">
                             <ul>
@@ -38,10 +38,7 @@
                             </ul>
                         </div>
                     </div>
-                </div>
-                <hr>
-                <div class="row">
-                    <div class="col-md-12">
+                    <div class="col-md-6">
                         <p class="lead" style="margin-bottom:10px!important;"><b>Audited Financial Statements</b></p>
                         <div class="row">
                             <ul>
@@ -53,9 +50,9 @@
                         </div>
                     </div>
                 </div>
-                <hr>
+                <br>
                 <div class="row">
-                    <div class="col-md-12">
+                    <div class="col-md-6">
                         <p class="lead" style="margin-bottom:10px!important;"><b>Statements of Financial Information</b></p>
                         <div class="row">
                             <ul>
@@ -66,10 +63,7 @@
                             </ul>
                         </div>
                     </div>
-                </div>
-                <hr>
-                <div class="row">
-                    <div class="col-md-12">
+                    <div class="col-md-6">
                         <p class="lead" style="margin-bottom:10px!important;"><b>Executive Compensation Reports</b></p>
                         <div class="row">
                             <ul>

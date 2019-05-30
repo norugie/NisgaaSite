@@ -522,13 +522,13 @@ html {
 
 @media (min-width:768px){
   .owl-img {
-    height: 450px;
-    min-height: 450px;
+    height: 475px;
+    min-height: 475px;
     object-fit: cover;
   }
   
   .jumbotron-new {
-    height: 450px;
+    height: 475px;
     min-height:450px;
   }
 
@@ -537,10 +537,14 @@ html {
   }
 
   #nav-tabContent {
-    height: 400px;
-    min-height: 400px;
+    height: 425px;
+    min-height: 425px;
     overflow: hidden;
     overflow-y: scroll;
+  }
+
+  .tab-content {
+    padding: 0px!important;
   }
 }
 
@@ -548,7 +552,7 @@ html {
   position: absolute;
   min-width: 300px;
   max-width: 400px;
-  top: 80%;
+  top: 85%;
   transform: translateY(-50%);
   background-color: rgba(255, 255, 255, 0.5);
   background: rgba(255, 255, 255, 0.7);

@@ -187,19 +187,14 @@
                             <span>Departments</span>
                         </a>
                         <ul class="ml-menu">
-                            <li id="sdo">
-                                <a href="interaction.php?tab=web&subtab=department&page=sdo">
-                                    <span>School District Office</span>
-                                </a>
-                            </li>
                             <li id="finance">
                                 <a href="interaction.php?tab=web&subtab=department&page=finance">
                                     <span>Finance</span>
                                 </a>
                             </li>
-                            <li id="sss">
-                                <a href="interaction.php?tab=web&subtab=department&page=sss">
-                                    <span>Student Support Services</span>
+                            <li id="sdss">
+                                <a href="interaction.php?tab=web&subtab=department&page=sdss">
+                                    <span>Student Data Support Services</span>
                                 </a>
                             </li>
                             <li id="tech">

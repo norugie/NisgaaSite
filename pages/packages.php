@@ -4,7 +4,7 @@
     <section>
         <div class="row">
             <div class="col-md-12">
-                <p class="lead">Below is are the archived agendas from the past conducted board meetings, arranged by recency:</p>
+                <p class="lead">Below are the archived agendas from the past conducted board meetings, arranged by recency:</p>
             </div>
         </div>
     </section>
