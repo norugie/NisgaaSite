@@ -13,30 +13,30 @@
                             <div class="heading"><h4 class="text-center">Personal Details</h4></div>
                             <div class="form-group">
                                 <label for="firstname">First Name *</label>
-                                <input type="text" id="firstname" name="firstname" class="form-control" autocomplete="off">
+                                <input type="text" id="firstname" name="firstname" class="form-control" autocomplete="off" required>
                             </div>
                             <div class="form-group">
                                 <label for="lastname">Last Name *</label>
-                                <input type="text" id="lastname" name="lastname" class="form-control" autocomplete="off">
+                                <input type="text" id="lastname" name="lastname" class="form-control" autocomplete="off" required>
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="heading"><h4 class="text-center">Contact Details</h4></div>
                             <div class="form-group">
                                 <label for="address">Address *</label>
-                                <input type="text" id="address" name="address" class="form-control" autocomplete="off">
+                                <input type="text" id="address" name="address" class="form-control" autocomplete="off" required>
                             </div>
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="lastname">City *</label>
-                                        <input type="text" id="city" name="city" class="form-control" autocomplete="off">
+                                        <input type="text" id="city" name="city" class="form-control" autocomplete="off" required>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="lastname">Province *</label>
-                                        <input type="text" id="province" name="province" class="form-control" autocomplete="off">
+                                        <input type="text" id="province" name="province" class="form-control" autocomplete="off" required>
                                     </div>
                                 </div>
                             </div>
@@ -44,23 +44,23 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="lastname">Country *</label>
-                                        <input type="text" id="country" name="country" class="form-control" autocomplete="off">
+                                        <input type="text" id="country" name="country" class="form-control" autocomplete="off" required>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="lastname">Postal Code *</label>
-                                        <input type="text" id="postal" name="postal" class="form-control" autocomplete="off">
+                                        <input type="text" id="postal" name="postal" class="form-control" autocomplete="off" required>
                                     </div>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="lastname">Email Address *</label>
-                                <input type="text" id="email" name="email" class="form-control" autocomplete="off">
+                                <input type="text" id="email" name="email" class="form-control" autocomplete="off" required>
                             </div>
                             <div class="form-group">
                                 <label for="lastname">Phone Number *</label>
-                                <input type="text" id="phone" name="phone" class="form-control" autocomplete="off">
+                                <input type="text" id="phone" name="phone" class="form-control" autocomplete="off" required>
                             </div>
                         </div>
                         <div class="col-md-4">
@@ -76,8 +76,11 @@
                             </div>
                             <div class="form-group">
                                 <label for="resume">Resume *</label>
-                                <input type="file" id="resume" name="resume" accept="application/msword, application/vnd.openxmlformats-officedocument.wordprocessingml.document, application/pdf">
+                                <input type="file" id="resume" name="resume" accept="application/msword, application/vnd.openxmlformats-officedocument.wordprocessingml.document, application/pdf" required>
                             </div>
+                            <hr>
+                            <p class="font-12"><i><b>Keep the file size of your resume under 1.5MB.</b> It may take a while to submit your application, depending on the size of your resume.</i></p>
+                            <p class="font-12"><i>If you're having issues submitting your application, you can email your application to <b><a href="mailto:">hr@nisgaa.bc.ca</a></b>.</i></p>
                         </div>
                     </div>
                     <hr>
@@ -91,3 +94,16 @@
         </div>
     </div>
 </div>
+
+<script>
+
+    var uploadField = document.getElementById("resume");
+
+    uploadField.onchange = function() {
+        if(this.files[0].size > 1536080){
+        alert("File is too big! Please keep your resume's file size under 1.5MB.");
+        this.value = "";
+        };
+    };
+
+</script>
