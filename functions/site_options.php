@@ -20,7 +20,7 @@
     $site = new Site();
     
     if(isset($_GET['apply'])){
-        
+
         // Job Information
         $job = $_GET['job'];
         $jobid = $_GET['id'];
@@ -66,7 +66,7 @@
             $file_type = $_FILES['resume']['type'];
             $file_ext = strtolower(end(explode('.', $_FILES['resume']['name'])));
             
-            if($file_size > 20971520){
+            if($file_size > 2097152){
                 $errors = 1;
             }
             
@@ -109,6 +109,7 @@
         } else {
             header("location: ../error");
         }
+
     }
 
 ?>
