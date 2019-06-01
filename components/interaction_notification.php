@@ -72,10 +72,10 @@
 </div>
 <?php } ?>
 
-<?php if(isset($_GET['addFinance']) && $_SESSION['alert'] == 'alerted'){?>
+<?php if(isset($_GET['addPageFile']) && $_SESSION['alert'] == 'alerted'){?>
 <div class="alert bg-green alert-dismissible" role="alert">
     <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-    A new finance file has been <b>created</b> successfully!
+    A new page file has been <b>created</b> successfully!
 </div>
 <?php } ?>
 
@@ -86,17 +86,10 @@
 </div>
 <?php } ?>
 
-<?php if(isset($_GET['disabledFinance']) && $_SESSION['alert'] == 'alerted'){?>
+<?php if(isset($_GET['disabledPageFile']) && $_SESSION['alert'] == 'alerted'){?>
 <div class="alert bg-green alert-dismissible" role="alert">
     <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-    A finance file has been <b>disabled</b> successfully!
-</div>
-<?php } ?>
-
-<?php if(isset($_GET['reactivatedFinance']) && $_SESSION['alert'] == 'alerted'){?>
-<div class="alert bg-green alert-dismissible" role="alert">
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-    A finance file has been <b>reactivated</b> successfully!
+    A page file has been <b>disabled</b> successfully!
 </div>
 <?php } ?>
 
