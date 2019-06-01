@@ -219,5 +219,13 @@ function editFinance(financeInfo) {
 }
 
 function editPageFile(pageFileInfo){
-    file = $(pageFileInfo).data("values");
+    page = $(pageFileInfo).data("values");
+
+    $("#edit_page_id_file").attr("value", page['id']);
+    $("#edit_page_id_name_file").attr("value", page['link_id']);
+    $("#edit_page_content_name_file").attr("value", page['link_content']);
+    $("#edit_page_title_file").attr("value", page['link_name']);
+    if(page['link_page'] === 'finance'){
+        $("#edit_page_tag_file").selectpicker("val", page['link_tag']);
+    }
 }

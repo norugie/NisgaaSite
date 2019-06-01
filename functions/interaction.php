@@ -259,7 +259,7 @@
 			}			
 		}
 
-		public function editFinance($database, $id, $link_id, $link_name, $link_desc, $link_content, $link_tag, $page, $subtab){
+		public function editPageFile($database, $id, $link_id, $link_name, $link_desc, $link_content, $link_tag, $page, $subtab){
 			$sql = "UPDATE links SET 
 						   link_name = '$link_name',
 						   link_desc = '$link_desc',
@@ -271,10 +271,16 @@
 			    header("location: ../cms/interaction.php?tab=web&subtab=". $subtab ."&page=". $page ."&error=true");
 			} else {
 				global $log;
-				$info = "Modified finance file: " . $link_name;
+				if($page == 'sdss') $page_get = 'SDSS';
+				else if($page == 'tech') $page_get = 'tech';
+				else if($page == 'maintenance') $page_get = 'maintenance';
+				else if($page == 'finance') $page_get = 'finance';
+				else $page_get = strtoupper($page);
+
+				$info = "Modified a " . $page_get . " file: " . $link_name;
 				$log->logInput($database, $info);
 
-				header("location: ../cms/interaction.php?tab=web&subtab=". $subtab ."&page=". $page ."&editFinance=true");
+				header("location: ../cms/interaction.php?tab=web&subtab=". $subtab ."&page=". $page ."&editPageFile=true");
 			}
 		}
 
