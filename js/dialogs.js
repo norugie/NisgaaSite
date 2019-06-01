@@ -41,10 +41,10 @@ function alertDesign(e) {
         showDisablePackageConfirm(id, name);
     } else if (type === 'reopen-package'){
         showReactivatePackageConfirm(id, name);
-    } else if (type === 'delete-finance'){
-        showDisableFinanceConfirm(id, name);
-    } else if (type === 'reopen-finance'){
-        showReactivateFinanceConfirm(id, name);
+    } else if (type === 'delete-page'){
+        var subtab = $(e).data('subtab');
+        var page = $(e).data('page');
+        showDisablePageConfirm(id, name, subtab, page);
     } 
 }
 
@@ -412,11 +412,11 @@ function showReactivatePackageConfirm(id, name) {
     });
 }
 
-//Warning for disabling finance file
-function showDisableFinanceConfirm(id, name) {
+//Warning for disabling page file
+function showDisablePageConfirm(id, name, subtab, page) {
     swal({
-        title: "Are you sure you want to disable this Finance department file?",
-        text: "You will be able to reactivate this Finance department once archived",
+        title: "Are you sure you want to disable this page file?",
+        text: "You will not be able to reactivate this page file once archived",
         type: "warning",
         showCancelButton: true,
         confirmButtonColor: "#F44336",
@@ -426,26 +426,7 @@ function showDisableFinanceConfirm(id, name) {
         closeOnCancel: true
     }, function (isConfirm) {
         if (isConfirm) {
-            window.location = "../functions/interaction.php?interaction=true&financeDisable=true&id=" + id + "&financeName=" + name + "&subtab=department&page=finance";
-        }
-
-    });
-}
-
-//Warning for reactivating finance
-function showReactivateFinanceConfirm(id, name) {
-    swal({
-        title: "Are you sure you want to reactivate this Finance department file?",
-        type: "warning",
-        showCancelButton: true,
-        confirmButtonColor: "#00BCD4",
-        confirmButtonText: "CONFIRM",
-        cancelButtonText: "CANCEL",
-        closeOnConfirm: false,
-        closeOnCancel: true
-    }, function (isConfirm) {
-        if (isConfirm) {
-            window.location = "../functions/interaction.php?interaction=true&financeReactivate=true&id=" + id + "&financeName=" + name + "&subtab=department&page=finance";
+            window.location = "../functions/interaction.php?interaction=true&pageDisable=true&id=" + id + "&pageName=" + name + "&subtab=" + subtab + "&page=" + page;
         }
 
     });

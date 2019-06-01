@@ -211,7 +211,7 @@
 			return $array;
         }
 
-		public function financeList($database, $page, $subtab){
+		public function pageFileList($database, $page, $subtab){
 
 			$array = array();
 			$sql = "SELECT links.*,
@@ -219,7 +219,8 @@
 					FROM links
 					LEFT JOIN schools
 					ON (schools.id = links.school)
-					WHERE links.link_tag LIKE '%Finance%'
+					WHERE links.link_tag LIKE '%$page%'
+					AND links.status = 'Active'
 					ORDER BY links.id DESC";
 
 			$query = mysqli_query($database->con, $sql);

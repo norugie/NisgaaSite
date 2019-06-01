@@ -1,11 +1,12 @@
 <?php 
 
-    $links = $interaction->financeList($database, $_GET['page'], $_GET['subtab']);
+    $links = $interaction->pageFileList($database, $_GET['page'], $_GET['subtab']);
 
  ?>
 
 <?php require '../components/modals/new_finance.php'; ?>
 <?php require '../components/modals/edit_finance.php'; ?>
+
 
 <div class="header">
     <div class="row clearfix">
@@ -27,7 +28,6 @@
             <thead>
                 <tr>
                     <th>File Title</th>
-                    <th>File Description</th>
                     <th>File Tag</th>
                     <?php if($_SESSION['type'] != 3){ ?>
                     <th>Modify</th>
@@ -38,7 +38,6 @@
             <tfoot>
                 <tr>
                     <th>File Title</th>
-                    <th>File Description</th>
                     <th>File Tag</th>
                     <?php if($_SESSION['type'] != 3){ ?>
                     <th>Modify</th>
@@ -50,7 +49,6 @@
                 <?php foreach($links as $link): ?>
                     <tr>
                         <td><a href="<?php echo "../links/" . $link['link_content']; ?>" target="_blank"><?php echo $link['link_name']; ?></a></td>
-                        <td><?php echo $link['link_desc']; ?></td>
                         <td><?php
                             if($link['link_tag'] == 'Finance Budget') echo "Budget";
                             else if($link['link_tag'] == 'Finance Audit') echo "Audited Financial Statement";
