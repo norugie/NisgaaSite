@@ -217,3 +217,7 @@ function editFinance(financeInfo) {
     $("#edit_finance_tag_file").selectpicker("val", finance['link_tag']);
 
 }
+
+function editPageFile(pageFileInfo){
+    file = $(pageFileInfo).data("values");
+}
