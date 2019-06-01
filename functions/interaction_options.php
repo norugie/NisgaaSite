@@ -186,16 +186,22 @@
 
         }
 
-        if(isset($_GET['addFinance'])){
+        if(isset($_GET['addPage'])){
             $page = $_GET['page'];
             $subtab = $_GET['subtab'];
 
             $link_name = mysqli_real_escape_string($database->con, $_POST['link_title']);
             $link_desc = mysqli_real_escape_string($database->con, $_POST['link_desc']);
             $link_type = "File";
-            $link_tag = mysqli_real_escape_string($database->con, $_POST['link_tag']);
+            $link_tag;
             $link_content;
             $link_thumbnail = "post_thumbnail.jpg";
+
+            if($page == 'sdss') $link_tag = 'SDSS';
+            else if($page == 'tech') $link_tag = 'Tech';
+            else if($page == 'maintenance') $link_tag = 'Maintenance';
+            else if($page == 'finance') $link_tag = mysqli_real_escape_string($database->con, $_POST['link_tag']);
+            else $link_tag = strtoupper($page);
 
             if(file_exists($_FILES['link_content']['tmp_name']) || is_uploaded_file($_FILES['link_content']['tmp_name'])){
 
@@ -214,7 +220,7 @@
                     if($errors == 0){
                         move_uploaded_file($file_tmp, "../links/".$file_name);
                         $link_content = $file_name;
-                        $interaction->addFinance($database, $link_name, $link_desc, $link_content, $link_type, $link_tag, $link_thumbnail, $page, $subtab);
+                        $interaction->addPageFile($database, $link_name, $link_desc, $link_content, $link_type, $link_tag, $link_thumbnail, $page, $subtab);
                     } else {
                         header("location: ../cms/interaction.php?tab=web&subtab=". $subtab ."&page=". $page ."&error=true");
                     }

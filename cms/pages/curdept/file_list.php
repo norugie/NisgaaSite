@@ -1,9 +1,7 @@
 <?php 
 
     $links = $interaction->pageFileList($database, $_GET['page'], $_GET['subtab']);
-    $page_get;
-    if($_GET['page'] == 'finance') $page_get = 'finance';
-    else $page_get = 'page';
+    $page_get = 'page';
  ?>
 
 <?php require '../components/modals/new_'.$page_get.'.php'; ?>
@@ -18,7 +16,7 @@
         <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
             <center>
                 <?php if($_SESSION['type'] != 3){ ?>
-                    <button type="button" class="btn bg-blue waves-effect" data-toggle="modal" data-target="#new-<?php echo $_GET['page']; ?>-modal" style="display: inline-block;"><i class="material-icons">add</i><span>NEW FILE</span></button>
+                    <button type="button" class="btn bg-blue waves-effect" data-toggle="modal" data-target="#new-<?php echo $page_get; ?>-modal" style="display: inline-block;"><i class="material-icons">add</i><span>NEW FILE</span></button>
                 <?php } ?>
             </center>
         </div>

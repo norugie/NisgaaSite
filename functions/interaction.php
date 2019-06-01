@@ -220,14 +220,20 @@
 			    header("location: ../cms/interaction.php?tab=web&subtab=". $subtab ."&page=". $page ."&error=true");
 			} else {
 				global $log;
-				$info = "Disabled" . $page . " file: " . $title;
+				if($page == 'sdss') $page_get = 'SDSS';
+				else if($page == 'tech') $page_get = 'tech';
+				else if($page == 'maintenance') $page_get = 'maintenance';
+				else if($page == 'finance') $page_get = 'finance';
+				else $page_get = strtoupper($page);
+
+				$info = "Created a new " . $page_get . " file: " . $link_name;
 				$log->logInput($database, $info);
 
-				header("location: ../cms/interaction.php?tab=web&subtab=". $subtab ."&page=". $page ."&disabledFinance=true");
+				header("location: ../cms/interaction.php?tab=web&subtab=". $subtab ."&page=". $page ."&disabledPageFile=true");
 			}
 		}
 
-		public function addFinance($database, $link_name, $link_desc, $link_content, $link_type, $link_tag, $link_thumbnail, $page, $subtab){
+		public function addPageFile($database, $link_name, $link_desc, $link_content, $link_type, $link_tag, $link_thumbnail, $page, $subtab){
 			$link_id = 'LNK' . rand(1111111,9999999);
 			$user = $_SESSION['id'];
 			$school = 2;
@@ -239,10 +245,17 @@
 			    header("location: ../cms/interaction.php?tab=web&subtab=". $subtab ."&page=". $page ."&error=true");
 			} else {
 				global $log;
-				$info = "Created a new finance file: " . $link_name;
+
+				if($page == 'sdss') $page_get = 'SDSS';
+				else if($page == 'tech') $page_get = 'tech';
+				else if($page == 'maintenance') $page_get = 'maintenance';
+				else if($page == 'finance') $page_get = 'finance';
+				else $page_get = strtoupper($page);
+
+				$info = "Created a new " . $page_get . " file: " . $link_name;
 				$log->logInput($database, $info);
 
-				header("location: ../cms/interaction.php?tab=web&subtab=". $subtab ."&page=". $page ."&addFinance=true");
+				header("location: ../cms/interaction.php?tab=web&subtab=". $subtab ."&page=". $page ."&addPageFile=true");
 			}			
 		}
 
