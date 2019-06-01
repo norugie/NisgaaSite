@@ -395,9 +395,9 @@
             $array = array();
 			$school;
 			
-			if($page == 'sdo'){
-				$school = 2;
-			} else if($page == 'sss'){
+			if($page == 'finance'){
+				$school = 10;
+			} else if($page == 'sdss'){
 				$school = 9;
 			} else if($page == 'tech'){
 				$school = 1;
