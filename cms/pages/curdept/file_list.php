@@ -62,11 +62,11 @@
                                 "id":           <?php echo json_encode($link['id']); ?>,
                                 "link_id":      <?php echo json_encode($link['link_id']); ?>,
                                 "link_name":    <?php echo json_encode(str_replace("'", "&apos;", $link['link_name'])); ?>,
-                                "link_desc":    <?php echo json_encode(str_replace("'", "&apos;", $link['link_desc'])); ?>,
                                 "link_tag":     <?php echo json_encode($link['link_tag']); ?>,
-                                "link_content": <?php echo json_encode($link['link_content']); ?>
+                                "link_content": <?php echo json_encode($link['link_content']); ?>,
+                                "link_page":    <?php if($_GET['page'] == 'finance') echo json_encode("finance"); else echo json_encode("finance"); ?>
                             }' 
-                            onclick="<?php if($page_get == 'finance') echo 'editFinance(this);'; else echo 'editPageFile(this);'; ?>"><i class="material-icons">mode_edit</i><span>MODIFY</span></button></center></td> 
+                            onclick="editPageFile(this);"><i class="material-icons">mode_edit</i><span>MODIFY</span></button></center></td> 
                             <td><center><button type="button" class="btn bg-red waves-effect" data-type="delete-page" data-id="<?php echo $link['id']; ?>" data-name="<?php echo str_replace(' ', '%20', $link['link_name']); ?>" data-subtab="<?php echo $_GET['subtab']; ?>" data-page="<?php echo $_GET['page']; ?>"  onclick="alertDesign(this);"><i class="material-icons">clear</i><span>DELETE</span></button></center></td>
                         <?php } ?>
                     </tr>

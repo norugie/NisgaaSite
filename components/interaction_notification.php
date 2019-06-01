@@ -79,10 +79,10 @@
 </div>
 <?php } ?>
 
-<?php if(isset($_GET['editFinance']) && $_SESSION['alert'] == 'alerted'){?>
+<?php if(isset($_GET['editPageFile']) && $_SESSION['alert'] == 'alerted'){?>
 <div class="alert bg-green alert-dismissible" role="alert">
     <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-    A finance file has been <b>modified</b> successfully!
+    A page file has been <b>modified</b> successfully!
 </div>
 <?php } ?>
 

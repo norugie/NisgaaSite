@@ -7,7 +7,7 @@
                        <span aria-hidden="true">&times;</span>
                        <span class="sr-only">Close</span>
                 </button>
-                <h4 class="modal-title" id="largeModalLabel">New <?php if($_GET['page'] == 'sdss') echo "SDSS"; else if($_GET['page'] == 'tech') echo "Tech"; else if($_GET['page'] == 'maintenance') echo "Maintenance"; else echo strtoupper($_GET['page']); ?> File</h4>
+                <h4 class="modal-title" id="largeModalLabel">New <?php if($_GET['page'] == 'sdss') echo "SDSS"; else if($_GET['page'] == 'tech') echo "Tech"; else if($_GET['page'] == 'maintenance') echo "Maintenance"; else if($_GET['page'] == 'finance') echo "Finance"; else echo strtoupper($_GET['page']); ?> File</h4>
             </div>
             <div class="modal-body">
                 <p class="font-12"><i><b>Note:</b> Fields marked with an asterisk are required</i></p><br>

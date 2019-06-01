@@ -232,7 +232,7 @@
 
         }
 
-        if(isset($_GET['editFinance'])){
+        if(isset($_GET['editPage'])){
             $page = $_GET['page'];
             $subtab = $_GET['subtab'];
 
@@ -240,14 +240,20 @@
             $link_id = mysqli_real_escape_string($database->con, $_POST['edit_link_id_name']);
             $link_name = mysqli_real_escape_string($database->con, $_POST['edit_link_title']);
             $link_desc = mysqli_real_escape_string($database->con, $_POST['edit_link_desc']);
-            $link_tag = mysqli_real_escape_string($database->con, $_POST['edit_link_tag']);;
+            $link_tag;
             $link_content;
+
+            if($page == 'sdss') $link_tag = 'SDSS';
+            else if($page == 'tech') $link_tag = 'Tech';
+            else if($page == 'maintenance') $link_tag = 'Maintenance';
+            else if($page == 'finance') $link_tag = mysqli_real_escape_string($database->con, $_POST['edit_link_tag']);
+            else $link_tag = strtoupper($page);
 
             if(!file_exists($_FILES['edit_link_content']['tmp_name']) || !is_uploaded_file($_FILES['edit_link_content']['tmp_name'])){
 
                 $link_content = mysqli_real_escape_string($database->con, $_POST['edit_link_content_name']);
                 
-                $interaction->editFinance($database, $id, $link_id, $link_name, $link_desc, $link_content, $link_tag, $page, $subtab);
+                $interaction->editPageFile($database, $id, $link_id, $link_name, $link_desc, $link_content, $link_tag, $page, $subtab);
 
             } else {
 
@@ -266,7 +272,7 @@
                     if($errors == 0){
                         move_uploaded_file($file_tmp, "../links/".$file_name);
                         $link_content = $file_name;
-                        $interaction->editFinance($database, $id, $link_id, $link_name, $link_desc, $link_content, $link_tag, $page, $subtab);
+                        $interaction->editPageFile($database, $id, $link_id, $link_name, $link_desc, $link_content, $link_tag, $page, $subtab);
                     } else {
                         header("location: ../cms/interaction.php?tab=web&subtab=". $subtab ."&page=". $page ."&error=true");
                     }
