@@ -76,10 +76,10 @@
                     <h5>External Links</h5>
                     <ul class="list-unstyled mb-3">
                     <li class="nav-item"><a href="https://www.nisgaanation.ca/" class="nav-link" target="_blank">Nisga'a Lisims Government</a></li>
-                    <li class="nav-item"><a href="javascript: void(0)" class="nav-link">Gitlaxt'aamiks</a></li>
-                    <li class="nav-item"><a href="javascript: void(0)" class="nav-link">Gitwinksihlkw</a></li>
-                    <li class="nav-item"><a href="javascript: void(0)" class="nav-link">Laxgaltsap</a></li>
-                    <li class="nav-item"><a href="javascript: void(0)" class="nav-link">Gingolx</a></li>
+                    <li class="nav-item"><a href="http://www.gitlaxtaamiks.com/" class="nav-link" target="_blank">Gitlaxt'aamiks</a></li>
+                    <li class="nav-item"><a href="http://www.nisgaanation.ca/gitwinksihlkw-canyon-city" class="nav-link" target="_blank">Gitwinksihlkw</a></li>
+                    <li class="nav-item"><a href="http://www.laxgaltsap.ca/" class="nav-link" target="_blank">Laxgaltsap</a></li>
+                    <li class="nav-item"><a href="http://www.gingolx.ca/" class="nav-link" target="_blank">Gingolx</a></li>
                     </ul>
                 </div>
                 </div>

@@ -25,7 +25,7 @@
                         <ul>
                             <?php $page_info = $site->linkList($database, 'Finance Budget', 2); ?>
                             <?php foreach($page_info as $link): ?>
-                                <li class="lead mb-0"><a href="<?php if($link['link_type'] == 'File'){ echo "../links/"; } echo $link['link_content']; ?>" <?php if($link['link_type'] == 'Link' || pathinfo($link['link_content'], PATHINFO_EXTENSION) == 'pdf'){?>target="_blank"<?php } else { ?> download <?php } ?>><?php echo $link['link_name']; ?></a></li>
+                                <li class="lead mb-0"><a href="<?php if($link['link_type'] == 'File'){ echo "../links/"; } echo $link['link_content']; ?>" target="_blank"><?php echo $link['link_name']; ?></a></li>
                             <?php endforeach; ?>
                         </ul>
                     </div>
@@ -36,7 +36,7 @@
                         <ul>
                             <?php $page_info = $site->linkList($database, 'Finance Audit', 2); ?>
                             <?php foreach($page_info as $link): ?>
-                                <li class="lead mb-0"><a href="<?php if($link['link_type'] == 'File'){ echo "../links/"; } echo $link['link_content']; ?>" <?php if($link['link_type'] == 'Link' || pathinfo($link['link_content'], PATHINFO_EXTENSION) == 'pdf'){?>target="_blank"<?php } else { ?> download <?php } ?>><?php echo $link['link_name']; ?></a></li>
+                                <li class="lead mb-0"><a href="<?php if($link['link_type'] == 'File'){ echo "../links/"; } echo $link['link_content']; ?>" target="_blank"><?php echo $link['link_name']; ?></a></li>
                             <?php endforeach; ?>
                         </ul>
                     </div>
@@ -50,7 +50,7 @@
                         <ul>
                             <?php $page_info = $site->linkList($database, 'Finance SFI', 2); ?>
                             <?php foreach($page_info as $link): ?>
-                                <li class="lead mb-0"><a href="<?php if($link['link_type'] == 'File'){ echo "../links/"; } echo $link['link_content']; ?>" <?php if($link['link_type'] == 'Link' || pathinfo($link['link_content'], PATHINFO_EXTENSION) == 'pdf'){?>target="_blank"<?php } else { ?> download <?php } ?>><?php echo $link['link_name']; ?></a></li>
+                                <li class="lead mb-0"><a href="<?php if($link['link_type'] == 'File'){ echo "../links/"; } echo $link['link_content']; ?>" target="_blank"><?php echo $link['link_name']; ?></a></li>
                             <?php endforeach; ?>
                         </ul>
                     </div>
@@ -61,16 +61,13 @@
                         <ul>
                             <?php $page_info = $site->linkList($database, 'Finance ECR', 2); ?>
                             <?php foreach($page_info as $link): ?>
-                                <li class="lead mb-0"><a href="<?php if($link['link_type'] == 'File'){ echo "../links/"; } echo $link['link_content']; ?>" <?php if($link['link_type'] == 'Link' || pathinfo($link['link_content'], PATHINFO_EXTENSION) == 'pdf'){?>target="_blank"<?php } else { ?> download <?php } ?>><?php echo $link['link_name']; ?></a></li>
+                                <li class="lead mb-0"><a href="<?php if($link['link_type'] == 'File'){ echo "../links/"; } echo $link['link_content']; ?>" target="_blank"><?php echo $link['link_name']; ?></a></li>
                             <?php endforeach; ?>
                         </ul>
                     </div>
                 </div>
             </div>
         </section>
-        <?php } else if($url[1] == 'sdss'){ ?>
-        <?php } else if($url[1] == 'tech'){ ?>
-        <?php } else if($url[1] == 'maintenance'){ ?>
         <?php } else { header("location: /404"); } ?>
     </div>
 </div>
