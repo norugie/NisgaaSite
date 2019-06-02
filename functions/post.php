@@ -24,9 +24,9 @@
 						WHERE post = '$id'";
 				$query = mysqli_query($database->con, $sql);
 				if(!$query){
-					header("location:../cms/post.php?tab=post&page=blog&error=true");
+					header("location:../cms/post.php?tab=post&page=news&error=true");
 				} else {
-					header("location:../cms/post.php?tab=post&page=blog&postDisabled=true");
+					header("location:../cms/post.php?tab=post&page=news&postDisabled=true");
 				}	
 			}	
 	
@@ -39,13 +39,13 @@
 					WHERE id = '$id'";
 			$query = mysqli_query($database->con, $sql);
 			if(!$query){
-			    header("location:../cms/post.php?tab=post&page=blog&error=true");
+			    header("location:../cms/post.php?tab=post&page=news&error=true");
 			} else {
 				global $log;
-				$info = "Archived blog post: " . $title;
+				$info = "Archived news post: " . $title;
 				$log->logInput($database, $info);
 
-				header("location:../cms/post.php?tab=post&page=blog&postDisabled=true");
+				header("location:../cms/post.php?tab=post&page=news&postDisabled=true");
 			}	
 	
 		}
@@ -59,13 +59,13 @@
 					WHERE id = '$id'";
 			$query = mysqli_query($database->con, $sql);
 			if(!$query){
-			    header("location:../cms/post.php?tab=post&page=blog&error=true");
+			    header("location:../cms/post.php?tab=post&page=news&error=true");
 			} else {
 				global $log;
-				$info = "Modified blog post: " . $post_title;
+				$info = "Modified news post: " . $post_title;
 				$log->logInput($database, $info);
 
-				header("location:../cms/post.php?tab=post&page=blog&editPost=true");
+				header("location:../cms/post.php?tab=post&page=news&editPost=true");
 
 			}			
 		}
@@ -86,17 +86,17 @@
 					VALUES (null, '$post_id', '$post_title', NOW(), 'Post', '$user', '$school', '$post_content', '$post_thumbnail', '$post_desc', 'Active')";
 			$query = mysqli_query($database->con, $sql);
 			if(!$query){
-				header("location:../cms/post.php?tab=post&page=blog&error=true");
+				header("location:../cms/post.php?tab=post&page=news&error=true");
 				// echo("Error description: " . mysqli_error($database->con));
 			} else {
 				$sql = "SELECT id FROM posts ORDER BY id DESC LIMIT 1";
 				$query = mysqli_query($database->con, $sql);
 				if (!$query) {
-					header("location:../cms/post.php?tab=post&page=blog&error=true");
+					header("location:../cms/post.php?tab=post&page=news&error=true");
 					// echo("Error description: " . mysqli_error($database->con));
 				} else {
 					global $log;
-					$info = "Created a new blog post: " . $post_title;
+					$info = "Created a new news post: " . $post_title;
 					$log->logInput($database, $info);
 
 					$row = mysqli_fetch_assoc($query);
@@ -112,7 +112,7 @@
 			VALUES (null, '$post_id','$cat_id')";
 			$query = mysqli_query($database->con, $sql);
 			if(!$query){
-				header("location:../cms/post.php?tab=post&page=blog&error=true");
+				header("location:../cms/post.php?tab=post&page=news&error=true");
 				// echo("Error description: " . mysqli_error($database->con));
 			}
 		}
@@ -121,7 +121,7 @@
 			$sql = "DELETE FROM post_categories WHERE post_id = '$id'";
 			$query = mysqli_query($database->con, $sql);
 			if(!$query){
-				header("location:../cms/post.php?tab=post&page=blog&error=true");
+				header("location:../cms/post.php?tab=post&page=news&error=true");
 				// echo("Error description: " . mysqli_error($database->con));
 			}
 		}

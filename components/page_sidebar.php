@@ -59,10 +59,10 @@
                     <span>Posts</span>
                 </a>
                 <ul class="ml-menu">
-                    <li id="blog">
-                        <a href="post.php?tab=post&page=blog">
+                    <li id="news">
+                        <a href="post.php?tab=post&page=news">
                             <i class="material-icons">mode_comment</i>
-                            <span>Blog Posts</span>
+                            <span>News Posts</span>
                         </a>
                     </li>
                     <li id="links">
@@ -189,7 +189,7 @@
                         <ul class="ml-menu">
                             <li id="finance">
                                 <a href="interaction.php?tab=web&subtab=department&page=finance">
-                                    <span>Finance</span>
+                                    <span>Finance Department</span>
                                 </a>
                             </li>
                             <li id="sdss">
@@ -199,12 +199,12 @@
                             </li>
                             <li id="tech">
                                 <a href="interaction.php?tab=web&subtab=department&page=tech">
-                                    <span>Tech Office</span>
+                                    <span>Information Technology Department</span>
                                 </a>
                             </li>
                             <li id="maintenance">
                                 <a href="interaction.php?tab=web&subtab=department&page=maintenance">
-                                    <span>Maintenance Office</span>
+                                    <span>Transportation and Maintenance Department</span>
                                 </a>
                             </li>
                         </ul>

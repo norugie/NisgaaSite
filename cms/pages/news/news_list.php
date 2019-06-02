@@ -7,12 +7,12 @@
 <div class="header">
     <div class="row clearfix">
         <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 text-xs-sm-center">
-            <h4><?php if(isset($_GET['id'])){ echo "CATEGORY: " . $cat_name; } else { echo "BLOG LIST"; } ?></h4>      
+            <h4><?php if(isset($_GET['id'])){ echo "CATEGORY: " . $cat_name; } else { echo "NEWS LIST"; } ?></h4>      
         </div>
         <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
             <center>
                 <?php if($_SESSION['type'] != 3){ ?>
-                    <button type="button" class="btn bg-blue waves-effect" style="display: inline-block;" onclick="window.location.href='post.php?tab=post&page=blog&blog_option=create'"><i class="material-icons">add</i><span>NEW POST</span></button>
+                    <button type="button" class="btn bg-blue waves-effect" style="display: inline-block;" onclick="window.location.href='post.php?tab=post&page=news&news_option=create'"><i class="material-icons">add</i><span>NEW POST</span></button>
                 <?php } ?>
             </center>
         </div>
@@ -64,13 +64,13 @@
                                         <span>OPTIONS</span> <span class="caret"></span>
                                     </button>
                                     <ul class="dropdown-menu">
-                                        <li><a href="post.php?tab=post&page=blog&blog_option=view&post_id=<?php echo $p['id']; ?>&event=<?php if($cats[0][0] != 'Event'){ echo "0"; } else { echo "1"; } ?>">View Post</a></li>
+                                        <li><a href="post.php?tab=post&page=news&news_option=view&post_id=<?php echo $p['id']; ?>&event=<?php if($cats[0][0] != 'Event'){ echo "0"; } else { echo "1"; } ?>">View Post</a></li>
                                         <?php if($_SESSION['type'] != 3){ ?>
                                             <?php if($_SESSION['type'] == 1 || $_SESSION['type'] == 2 || $_SESSION['school'] == $p['post_school']){ ?>
                                                 <li role="separator" class="divider"></li>
-                                                <li><a href="post.php?tab=post&page=blog&blog_option=modify&modify=details&post_id=<?php echo $p['id']; ?>">Edit Post Details</a></li>
+                                                <li><a href="post.php?tab=post&page=news&news_option=modify&modify=details&post_id=<?php echo $p['id']; ?>">Edit Post Details</a></li>
                                                 <?php if($cats[0][0] != 'Event'){ ?>
-                                                    <li><a href="post.php?tab=post&page=blog&blog_option=modify&modify=categories&post_id=<?php echo $p['id']; ?>">Edit Post Categories</a></li>
+                                                    <li><a href="post.php?tab=post&page=news&news_option=modify&modify=categories&post_id=<?php echo $p['id']; ?>">Edit Post Categories</a></li>
                                                 <?php } ?>
                                             
                                             <li role="separator" class="divider"></li>

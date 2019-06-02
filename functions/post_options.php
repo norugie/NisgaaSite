@@ -88,10 +88,10 @@
                         $post_thumbnail = $file_name;
                         $post_id = $post->addPost($database, $post_title, $post_content, $post_thumbnail, $post_desc);
                     } else {
-                        header("location:../cms/post.php?tab=sd&page=blog&error=true");
+                        header("location:../cms/post.php?tab=sd&page=news&error=true");
                     }
                 } else {
-                    header("location:../cms/post.php?tab=sd&page=blog&error=true");
+                    header("location:../cms/post.php?tab=sd&page=news&error=true");
                 }   
                 
             }
@@ -103,7 +103,7 @@
                 $post->addPostCategories($database, $post_id, $post_cats[$i]);
 
                 if($i == count($post_cats)){
-                    header("location:../cms/post.php?tab=post&page=blog&addPost=true");
+                    header("location:../cms/post.php?tab=post&page=news&addPost=true");
                 }
 
             }
@@ -125,9 +125,9 @@
 
                 if($i == count($post_cats)){
                     global $log;
-					$info = "Modified blog post categories: " . $title;
+					$info = "Modified news post categories: " . $title;
 					$log->logInput($database, $info);
-                    header("location:../cms/post.php?tab=post&page=blog&editPostCategories=true");
+                    header("location:../cms/post.php?tab=post&page=news&editPostCategories=true");
                 }
 
             }

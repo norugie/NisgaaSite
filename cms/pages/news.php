@@ -33,17 +33,17 @@
 
             <?php
 
-                if(!isset($_GET['blog_option']) || empty($_GET['blog_option'])){
-                    require 'blog/blog_list.php';
+                if(!isset($_GET['news_option']) || empty($_GET['news_option'])){
+                    require 'news/news_list.php';
                 } else {
-                    if($_GET['blog_option'] == 'create'){
-                        require 'blog/blog_create.php';
-                    } else if($_GET['blog_option'] == 'modify'){
-                        require 'blog/blog_modify.php';
-                    } else if($_GET['blog_option'] == 'view'){
-                        require 'blog/blog_view.php';
+                    if($_GET['news_option'] == 'create'){
+                        require 'news/news_create.php';
+                    } else if($_GET['news_option'] == 'modify'){
+                        require 'news/news_modify.php';
+                    } else if($_GET['news_option'] == 'view'){
+                        require 'news/news_view.php';
                     } else {
-                        require 'blog/blog_list.php';
+                        require 'news/news_list.php';
                     }
                 }
             ?>
