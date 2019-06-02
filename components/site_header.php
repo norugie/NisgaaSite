@@ -7,7 +7,7 @@
 ?>
 <!DOCTYPE html>
 <html>
-    <head>
+    <head profile="http://www.w3.org/1999/xhtml/vocab">
         <meta charset="UTF-8">
         <meta http-equiv="Content-type" content="text/html; charset=UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
