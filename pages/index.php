@@ -61,7 +61,7 @@
             <div class="col-lg-3 with-border">
                 <h4 class="h5 text-center">CAREER OPPORTUNITIES</h4>
                 <ul class="list-unstyled footer-blog-list">
-                <?php if(count($joblist) < 1){ ?><li class="d-flex align-items-center"><div class="text"><h5 class="mb-0">No job postings available</h5></div></li><?php } ?>
+                    <?php if(count($joblist) < 1){ ?><li class="d-flex align-items-center"><div class="text"><h5 class="mb-0">No job postings available</h5></div></li><?php } ?>
                     <?php foreach($joblist as $j): ?>
                         <li class="d-flex align-items-center">
                             <div class="text">
@@ -75,11 +75,11 @@
             <div class="col-lg-3 with-border">
                 <h4 class="h5 text-center">UPCOMING EVENTS</h4>
                 <ul class="list-unstyled footer-blog-list">
-                <?php if(count($events) < 1){ ?><li class="d-flex align-items-center"><div class="text"><h5 class="mb-0">No upcoming events</h5></div></li><?php } ?>
+                    <?php if(count($events) < 1){ ?><li class="d-flex align-items-center"><div class="text"><h5 class="mb-0">No upcoming events available</h5></div></li><?php } ?>
                     <?php foreach($events as $e): ?>
                         <li class="d-flex align-items-center">
                             <div class="text">
-                                <h5 class="mb-0"> <a href="/news/read/<?php echo preg_replace('/[a-zA-Z]/', '', $e['post_id']); ?>"><?php echo $e['event_name']; ?></h5>
+                                <h5 class="mb-0"> <a href="/news/read/<?php echo preg_replace('/[a-zA-Z]/', '', $e['post_id']); ?>"><?php echo $e['event_name']; ?></a></h5>
                             </div>
                         </li>
                     <?php endforeach; ?>
@@ -94,7 +94,6 @@
                 <hr>
                 <p class="lead text-center mb-0" style="font-size: 16px;">"<?php echo $word['word_meaning']; ?>"</p>
                 <p class="intro text-center"><i><?php echo $word['form']; ?></i></p>
-                <!-- <center><img src="images/nisgaa_icon_big.png" alt="" class="img-fluid" style="height:150px;min-height:150px;"></center> -->
             </div>
         </div>
     </div>

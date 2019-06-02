@@ -584,10 +584,12 @@ p.owl-caption {
 
 /* Vertical Border */
 
-.vertical-border:not(:last-child) {
-	border-bottom: 2px solid #ccc;
-}
-
-.with-border:not(:last-child) {
-	border-right: 2px solid #ccc;
+@media (min-width:992px){
+  .vertical-border:not(:last-child) {
+    border-bottom: 2px solid #ccc;
+  }
+  
+  .with-border:not(:last-child) {
+    border-right: 2px solid #ccc;
+  }
 }
