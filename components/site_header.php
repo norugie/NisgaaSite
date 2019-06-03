@@ -15,7 +15,7 @@
         <!-- Primary Meta Tags -->
         <title>SD92 - Nisga'a</title>
         <meta name="title" content="SD92 - Nisga'a">
-        <meta name="description" content="Test Description">
+        <meta name="description" content="School District No. 92 (Nisga'a)">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="all,follow">
 
@@ -23,15 +23,15 @@
         <meta property="og:type" content="website">
         <meta property="og:url" content="https://webdev.nisgaa.bc.ca">
         <meta property="og:title" content="SD92 - Nisga'a">
-        <meta property="og:description" content="Test Description">
-        <meta property="og:image" content="https://webdev.nisgaa.bc.ca/nisgaa-icon-banner.png">
+        <meta property="og:description" content="School District No. 92 (Nisga'a)">
+        <meta property="og:image" content="https://webdev.nisgaa.bc.ca/images/thumbnails/post_thumbnail.jpg">
 
         <!-- Twitter -->
         <meta property="twitter:card" content="summary_large_image">
         <meta property="twitter:url" content="https://webdev.nisgaa.bc.ca">
         <meta property="twitter:title" content="SD92 - Nisga'a">
-        <meta property="twitter:description" content="Test Description">
-        <meta property="twitter:image" content="https://webdev.nisgaa.bc.ca/nisgaa-icon-banner.png">
+        <meta property="twitter:description" content="School District No. 92 (Nisga'a)">
+        <meta property="twitter:image" content="https://webdev.nisgaa.bc.ca/images/thumbnails/post_thumbnail.jpg">
 
         <!-- Bootstrap CSS-->
         <link rel="stylesheet" href="/plugins/bootstrap-v4/css/bootstrap.min.css">

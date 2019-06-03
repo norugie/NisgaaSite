@@ -1,11 +1,12 @@
 <?php
 
     $url = explode("/", $_SERVER['QUERY_STRING']); // Get URL
-    $page_name = $url[0]; // Explode URL string to array, use array 0 as variable for page name
+    $page_name = $url[0]; // Explode URL string to array
 
-    // Remove the fbclid that gets attached when clicking the site from Facebook, redirect to home page
-    if(strpos($page_name, "fbclid") !== false){
-        header("location: /");
+    // Remove the fbclid
+    if(strpos($_SERVER['QUERY_STRING'], "fbclid") !== false){
+        $redirect = str_replace('&', '', strstr($_SERVER['QUERY_STRING'], 'fbclid', true));
+        header("location: /" . $redirect);
     }
 
     // Redirect login.php to /login
