@@ -90,7 +90,7 @@
                 <?php $word = $site->weeklyWord($database); ?>
                 <h4 class="h5 text-center">NISGA'A PHRASE OF THE WEEK </h4>
                 <hr>
-                <h4 class="text-center" style="font-size: 18px!important;"><?php echo $word['word']; ?></h4>
+                <h4 class="text-center" style="font-family: sans-serif!important; font-size: 18px!important;"><?php echo $word['word']; ?></h4>
                 <hr>
                 <p class="lead text-center mb-0" style="font-size: 16px;">"<?php echo $word['word_meaning']; ?>"</p>
                 <p class="intro text-center"><i><?php echo $word['form']; ?></i></p>

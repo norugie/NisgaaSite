@@ -68,6 +68,9 @@
                 </div>
             </div>
         </section>
+        <?php } else if($url[1] == 'sdss'){ ?>
+        <?php } else if($url[1] == 'tech'){ ?>
+        <?php } else if($url[1] == 'maintenance'){ ?>
         <?php } else { header("location: /404"); } ?>
     </div>
 </div>
