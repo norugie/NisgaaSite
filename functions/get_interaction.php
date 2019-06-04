@@ -299,6 +299,21 @@
 
 		}
 
+		public function boeImage($database){
+			
+			$array = array();
+			$sql = "SELECT * FROM web_content WHERE web_type = 'BOE'";
+			$query = mysqli_query($database->con, $sql);
+			if (!$query) {
+			    header("location: ../cms/interaction.php?tab=web&page=boe&error=true");
+			} else {
+				$array = mysqli_fetch_assoc($query);
+            }
+            
+			return $array;
+
+		}
+
 		/*********************************************************************************************/
 		/***************************  Interaction Functionalities -- Culture Corner  *****************/
         /*********************************************************************************************/
