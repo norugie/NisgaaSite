@@ -122,7 +122,7 @@
                         <form class="edit_form_validate" action="../functions/interaction.php?interaction=true&editBOEImage=true" method="POST" enctype="multipart/form-data">
                             <div class="row clearfix">
                                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                                    <input type="text" name="edit_boe_position_id_c" value="<?php echo $chairperson['id']; ?>">
+                                    <input type="text" name="edit_boe_position_id_c" value="<?php echo $chairperson['id']; ?>" hidden>
                                     <label>Chairperson - <?php echo $chairperson['firstname'] . " " . $chairperson['lastname']; ?></label>
                                     <div class="form-group">
                                         <div class="form-line">
@@ -131,7 +131,7 @@
                                     </div>
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                                    <input type="text" name="edit_boe_position_id_v" value="<?php echo $vchairperson['id']; ?>">
+                                    <input type="text" name="edit_boe_position_id_v" value="<?php echo $vchairperson['id']; ?>" hidden>
                                     <label>Vice-Chairperson - <?php echo $vchairperson['firstname'] . " " . $vchairperson['lastname']; ?></label>
                                     <div class="form-group">
                                         <div class="form-line">
@@ -144,7 +144,7 @@
                                 <?php $ctr_boe = 1; ?>
                                 <?php foreach($trustees as $t): ?>
                                     <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                                        <input type="text" name="edit_boe_position_id_t_<?php echo $ctr_boe; ?>" value="<?php echo $t['id']; ?>">
+                                        <input type="text" name="edit_boe_position_id_t_<?php echo $ctr_boe; ?>" value="<?php echo $t['id']; ?>" hidden>
                                         <label>Trustee - <?php echo $t['firstname'] . " " . $t['lastname']; ?></label>
                                         <div class="form-group">
                                             <div class="form-line">
@@ -157,8 +157,8 @@
                             </div>
                             <hr>
 
-                            <input type="text" id="edit_boe_image_id" name="edit_boe_image_id">
-                            <input type="text" id="edit_boe_image_name" name="edit_boe_image_name">
+                            <input type="text" id="edit_boe_image_id" name="edit_boe_image_id" hidden>
+                            <input type="text" id="edit_boe_image_name" name="edit_boe_image_name" hidden>
 
                             <div class="row clearfix">
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">

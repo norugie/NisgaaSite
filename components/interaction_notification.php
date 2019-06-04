@@ -102,6 +102,13 @@
 </div>
 <?php } ?>
 
+<?php if(isset($_GET['editBOEImage']) && $_SESSION['alert'] == 'alerted'){?>
+<div class="alert bg-green alert-dismissible" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    The group photo for the Board of Education has been replaced.
+</div>
+<?php } ?>
+
 <!--  Interaction Notifications - Culture Corner  -->
 
 <?php if(isset($_GET['editCultureCorner']) && $_SESSION['alert'] == 'alerted'){?>
