@@ -377,9 +377,31 @@
 
             $interaction->editBOEImage($database, $id, $photo);
 
-            // Photo position update
+            // Photo position update //
 
+            // Photo position - Chairperson
+            $id = mysqli_real_escape_string($database->con, $_POST['edit_boe_position_id_c']);
+            $position = mysqli_real_escape_string($database->con, $_POST['boe_position_c']);
 
+            $interaction->editBOEImagePosition($database, $id, $position);
+
+            // Photo position - Vice-Chairperson
+            $id = mysqli_real_escape_string($database->con, $_POST['edit_boe_position_id_v']);
+            $position = mysqli_real_escape_string($database->con, $_POST['boe_position_v']);
+
+            $interaction->editBOEImagePosition($database, $id, $position);
+
+            // Photo position - Trustees
+            for($ctr = 1; $ctr <= 3; $ctr++){
+                $id = mysqli_real_escape_string($database->con, $_POST['edit_boe_position_id_t_'.$ctr]);
+                $position = mysqli_real_escape_string($database->con, $_POST['boe_position_t_'.$ctr]);
+
+                $interaction->editBOEImagePosition($database, $id, $position);
+
+                if($ctr >= 3){
+                    header("location: ../cms/interaction.php?tab=web&page=boe&editBOEImage=true");
+                }
+            }
 
         }
 

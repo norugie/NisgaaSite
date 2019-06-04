@@ -319,13 +319,23 @@
 					WHERE id = '$id'";
 			$query = mysqli_query($database->con, $sql);
 			if(!$query){
-			header("location: ../cms/interaction.php?tab=web&&page=boe&error=true");
+				header("location: ../cms/interaction.php?tab=web&&page=boe&error=true");
 			} else {
 				global $log;
 				$info = "Modified BOE group image";
 				$log->logInput($database, $info);
 
 				echo "Success";
+			}
+		}
+
+		public function editBOEImagePosition($database, $id, $position){
+			$sql = "UPDATE contacts SET 
+						   photo_position = '$position'
+					WHERE id = '$id'";
+			$query = mysqli_query($database->con, $sql);
+			if(!$query){
+				header("location: ../cms/interaction.php?tab=web&&page=boe&error=true");
 			}
 		}
 
