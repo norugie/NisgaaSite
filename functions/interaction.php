@@ -313,6 +313,22 @@
 			}
 		}
 
+		public function editBOEImage($database, $id, $photo){
+			$sql = "UPDATE web_content SET 
+						   web_desc = '$photo'
+					WHERE id = '$id'";
+			$query = mysqli_query($database->con, $sql);
+			if(!$query){
+			header("location: ../cms/interaction.php?tab=web&&page=boe&error=true");
+			} else {
+				global $log;
+				$info = "Modified BOE group image";
+				$log->logInput($database, $info);
+
+				echo "Success";
+			}
+		}
+
 		/*********************************************************************************************/
 		/***************************  Interaction Functionalities -- Culture Corner  *****************/
         /*********************************************************************************************/
