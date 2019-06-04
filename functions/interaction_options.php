@@ -340,6 +340,49 @@
         
         }
 
+        if(isset($_GET['editBOEImage'])){
+            // Image upload and update
+            $id = mysqli_real_escape_string($database->con, $_POST['edit_boe_image_id']);
+            $photo;
+
+            if(!file_exists($_FILES['boe_group_image']['tmp_name']) || !is_uploaded_file($_FILES['boe_group_image']['tmp_name'])){
+
+                $photo = mysqli_real_escape_string($database->con, $_POST['edit_boe_image_name']);
+
+            } else {
+
+                if(isset($_FILES['boe_group_image'])){
+                    $errors = 0;
+                    $file_name = $_FILES['boe_group_image']['name'];
+                    $file_size = $_FILES['boe_group_image']['size'];
+                    $file_tmp = $_FILES['boe_group_image']['tmp_name'];
+                    $file_type = $_FILES['boe_group_image']['type'];
+                    $file_ext = strtolower(end(explode('.', $_FILES['boe_group_image']['name'])));
+                    
+                    if($file_size > 2097152){
+                        $errors = 1;
+                    }
+                    
+                    if($errors == 0){
+                        move_uploaded_file($file_tmp, "../images/boe/".$file_name);
+                        $photo = $file_name;
+                    } else {
+                        header("location: ../cms/interaction.php?tab=web&page=boe&error=true");
+                    }
+                } else {
+                    header("location: ../cms/interaction.php?tab=web&page=boe&error=true");
+                }   
+                
+            }
+
+            $interaction->editBOEImage($database, $id, $photo);
+
+            // Photo position update
+
+
+
+        }
+
         /*********************************************************************************************/
 		/***************************  Interaction Functionalities -- Culture Corner  *****************/
         /*********************************************************************************************/

@@ -7,6 +7,7 @@
 /images/posts/media/*
 /images/profile/*
 /images/thumbnails/*
+/images/boe/*
 /links/*
 
 # Folder exceptions
@@ -18,9 +19,11 @@
 !/images/posts/media/.gitkeep
 !/images/profile/.gitkeep
 !/images/thumbnails/.gitkeep
+!/images/boe/.gitkeep
 !/links/.gitkeep
 
 # File Exceptions
 !/images/thumbnails/post_thumbnail.jpg
 !/images/profile/user.png
 !/images/contacts/user.png
+!/images/boe/boe-banner.jpg
