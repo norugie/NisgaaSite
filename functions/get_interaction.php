@@ -121,6 +121,20 @@
             
 			return $array;
 		}
+
+		public function schoolInfoPerSchool($database, $school){
+            $array = array();
+
+			$sql = "SELECT * FROM schools WHERE id = '$school'";
+			$query = mysqli_query($database->con, $sql);
+			if (!$query) {
+				header("location: ../cms/interaction.php?tab=web&subtab=content&page=contacts&error=true");
+			} else {
+				$array = mysqli_fetch_assoc($query);
+            }
+            
+			return $array;
+		}
 		
 		public function contactList($database){
             $array = array();

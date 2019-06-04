@@ -48,12 +48,13 @@
             $id = mysqli_real_escape_string($database->con, $_POST['school_id']);
             $school_name_id = mysqli_real_escape_string($database->con, $_POST['school_id_name']);
             $school_name = mysqli_real_escape_string($database->con, $_POST['school_name']);
-            $school_addr = mysqli_real_escape_string($database->con, $_POST['school_address']) . ", " . mysqli_real_escape_string($database->con, $_POST['school_city']) . ", British Columbia, Canada";
+            $school_addr = mysqli_real_escape_string($database->con, $_POST['school_address']);
             $school_abbv = mysqli_real_escape_string($database->con, $_POST['school_abbv']);
+            $school_head = mysqli_real_escape_string($database->con, $_POST['school_head']);
             $school_email = mysqli_real_escape_string($database->con, $_POST['school_email']);
             $school_phone = mysqli_real_escape_string($database->con, $_POST['school_phone']);
 
-            $interaction->editSchool($database, $id, $school_name_id, $school_name, $school_addr, $school_abbv, $school_email, $school_phone);
+            $interaction->editSchool($database, $id, $school_name_id, $school_name, $school_addr, $school_abbv, $school_email, $school_phone, $school_head);
         }
 
         if(isset($_GET['contactDisable'])){
@@ -76,7 +77,7 @@
 
         if(isset($_GET['addContact'])){
         
-            $position = mysqli_real_escape_string($database->con, $_POST['contact_name']);
+            $position = mysqli_real_escape_string($database->con, $_POST['contact_position']);
             $firstname = mysqli_real_escape_string($database->con, $_POST['contact_firstname']);
             $lastname = mysqli_real_escape_string($database->con, $_POST['contact_lastname']);
             $email = mysqli_real_escape_string($database->con, $_POST['contact_email']);
@@ -97,7 +98,7 @@
                     $file_type = $_FILES['contact_photo']['type'];
                     $file_ext = strtolower(end(explode('.', $_FILES['contact_photo']['name'])));
                     
-                    if($file_size > 2097152){
+                    if($file_size > 20971520){
                         $errors = 1;
                     }
                     
@@ -105,10 +106,10 @@
                         move_uploaded_file($file_tmp, "../images/contacts/".$file_name);
                         $photo = $file_name;
                     } else {
-                        header("location: ../cms/interaction.php?tab=web&page=boe&error=true");
+                        echo("Error description: " . mysqli_error($database->con));
                     }
                 } else {
-                    header("location: ../cms/interaction.php?tab=web&page=boe&error=true");
+                    echo("Error description: " . mysqli_error($database->con));
                 }   
                 
             }

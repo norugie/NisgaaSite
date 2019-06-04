@@ -141,14 +141,13 @@ function editInquiry(inquiryInfo) {
 function editSchool(schoolInfo) {
 
     school = $(schoolInfo).data("values");
-    school_addr = school['school_addr'].split(",");
 
     $("#edit_school_id").attr("value", school['id']);
     $("#edit_school_id_name").attr("value", school['school_abbv']);
     $("#edit_school_name").attr("value", school['school_name']);
     $("#edit_school_abbv").attr("value", school['school_abbv']);
-    $("#edit_school_address").attr("value", school_addr[0]);
-    $("#edit_school_city").attr("value", school_addr[1]);
+    $("#edit_school_head").attr("value", school['school_principal']);
+    $("#edit_school_address").attr("value", school['school_addr']);
     $("#edit_school_email").attr("value", school['school_email']);
     $("#edit_school_phone").attr("value", school['school_phone']);
 
