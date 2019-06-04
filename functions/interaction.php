@@ -88,13 +88,14 @@
 			}			
 		}
 
-		public function editSchool($database, $id, $school_name_id, $school_name, $school_addr, $school_abbv, $school_email, $school_phone) {
+		public function editSchool($database, $id, $school_name_id, $school_name, $school_addr, $school_abbv, $school_email, $school_phone, $school_head) {
 			$sql = "UPDATE schools SET 
 						   school_abbv = '$school_abbv',
 						   school_name = '$school_name',
 						   school_addr = '$school_addr',
 						   school_email = '$school_email',
-						   school_phone = '$school_phone'
+						   school_phone = '$school_phone',
+						   school_principal = '$school_head'
 					WHERE id = '$id'";
 			$query = mysqli_query($database->con, $sql);
 			if(!$query){
@@ -153,16 +154,17 @@
 			}
 
 			$sql = "INSERT INTO contacts
-					VALUES(null, '$firstname', '$lastname', '$position', null, 'Contact', '$phone', '$email', null, '$school', '$photo', 'Active')";
+					VALUES(null, '$firstname', '$lastname', '$position', null, 'Contact', '$phone', '$email', null, '$school', '$photo', null, 'Active')";
 			$query = mysqli_query($database->con, $sql);
 			if(!$query){
-			header("location: ../cms/interaction.php?tab=web&subtab=content&page=contacts&error=true");
+				// header("location: ../cms/interaction.php?tab=web&subtab=content&page=contacts&error=true");
+				echo("Error description: " . mysqli_error($database->con));
 			} else {
-			global $log;
-			$info = "Added new contact: " . $firstname . " " . $lastname;
-			$log->logInput($database, $info);
+				global $log;
+				$info = "Added new contact: " . $firstname . " " . $lastname;
+				$log->logInput($database, $info);
 
-			header("location: ../cms/interaction.php?tab=web&subtab=content&page=contacts&newContact=true");
+				header("location: ../cms/interaction.php?tab=web&subtab=content&page=contacts&newContact=true");
 
 			}
 		}

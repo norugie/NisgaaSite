@@ -30,7 +30,7 @@
                                         </div>
                                     </div>
                                     <div class="row clearfix">
-                                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                             <label for="edit_school_address">School Address *</label>
                                             <div class="form-group">
                                                 <div class="form-line">
@@ -38,17 +38,9 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                                            <label for="edit_school_city">City/Town *</label>
-                                            <div class="form-group">
-                                                <div class="form-line">
-                                                    <input type="text" class="form-control" id="edit_school_city" name="school_city" required>
-                                                </div>
-                                            </div>
-                                        </div>
                                     </div>
                                     <div class="row clearfix">
-                                        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                                             <label for="edit_school_abbv">School Abbreviation *</label>
                                             <div class="form-group">
                                                 <div class="form-line">
@@ -56,7 +48,17 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                            <label for="edit_school_head">School Head *</label>
+                                            <div class="form-group">
+                                                <div class="form-line">
+                                                    <input type="text" class="form-control" id="edit_school_head" name="school_head" required>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row clearfix">
+                                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                                             <label for="edit_school_email">Email Address *</label>
                                             <div class="form-group">
                                                 <div class="form-line">
@@ -64,7 +66,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                                             <label for="edit_school_phone">Phone Number *</label>
                                             <div class="form-group">
                                                 <div class="form-line">

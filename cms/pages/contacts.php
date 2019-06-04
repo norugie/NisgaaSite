@@ -28,20 +28,193 @@
                     </div>
                 </div>
                 <div class="row clearfix">
-                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                    <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
                         <p><b>School Abbreviation:</b> <?php echo $school['school_abbv']; ?></p>
                     </div>
-                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                    <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
                         <p><b>Email Address:</b> <?php echo $school['school_email']; ?></p>
                     </div>
-                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                    <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
                         <p><b>Phone Number: </b> <?php echo $school['school_phone']; ?></p>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                        <p><b>School Head: </b> <?php echo $school['school_principal']; ?></p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+<!-- School list information - Visible only when logged in user is an Admin -->
+<?php if($_SESSION['type'] == 1){ ?>
+<div class="row clearfix">
+    <!-- NESS -->
+    <?php $school = $interaction->SchoolInfoPerSchool($database, 3); ?>
+    <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+        <div class="card">
+            <div class="header">
+                <div class="row clearfix">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
+                        <h4>SCHOOL INFORMATION - NESS</h4>      
+                    </div>
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
+                        <center>
+                            <button type="button" data-toggle="modal" data-target="#edit-school-modal" class="btn bg-green waves-effect" style="display: inline-block;" 
+                            data-values='<?php echo json_encode(str_replace("'", "&apos;", $school)); ?>' onclick="editSchool(this);"><i class="material-icons">edit</i><span>MODIFY</span></button>
+                        </center>
+                    </div>
+                </div>
+            </div>
+            <div class="body">
+                <div class="row clearfix">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <p><b>School Name:</b> <?php echo $school['school_name']; ?></p>
+                    </div>
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <p><b>Address:</b> <?php echo $school['school_addr']; ?></p>
+                    </div>
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <p><b>School Abbreviation:</b> <?php echo $school['school_abbv']; ?></p>
+                    </div>
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <p><b>Email Address:</b> <?php echo $school['school_email']; ?></p>
+                    </div>
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <p><b>Phone Number: </b> <?php echo $school['school_phone']; ?></p>
+                    </div>
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <p><b>Principal: </b> <?php echo $school['school_principal']; ?></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- GES -->
+    <?php $school = $interaction->SchoolInfoPerSchool($database, 5); ?>
+    <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+        <div class="card">
+            <div class="header">
+                <div class="row clearfix">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
+                        <h4>SCHOOL INFORMATION - GES</h4>      
+                    </div>
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
+                        <center>
+                            <button type="button" data-toggle="modal" data-target="#edit-school-modal" class="btn bg-green waves-effect" style="display: inline-block;" 
+                            data-values='<?php echo json_encode(str_replace("'", "&apos;", $school)); ?>' onclick="editSchool(this);"><i class="material-icons">edit</i><span>MODIFY</span></button>
+                        </center>
+                    </div>
+                </div>
+            </div>
+            <div class="body">
+                <div class="row clearfix">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <p><b>School Name:</b> <?php echo $school['school_name']; ?></p>
+                    </div>
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <p><b>Address:</b> <?php echo $school['school_addr']; ?></p>
+                    </div>
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <p><b>School Abbreviation:</b> <?php echo $school['school_abbv']; ?></p>
+                    </div>
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <p><b>Email Address:</b> <?php echo $school['school_email']; ?></p>
+                    </div>
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <p><b>Phone Number: </b> <?php echo $school['school_phone']; ?></p>
+                    </div>
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <p><b>Principal: </b> <?php echo $school['school_principal']; ?></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- AAMES -->
+    <?php $school = $interaction->SchoolInfoPerSchool($database, 4); ?>
+    <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+        <div class="card">
+            <div class="header">
+                <div class="row clearfix">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
+                        <h4>SCHOOL INFORMATION - AAMES</h4>      
+                    </div>
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
+                        <center>
+                            <button type="button" data-toggle="modal" data-target="#edit-school-modal" class="btn bg-green waves-effect" style="display: inline-block;" 
+                            data-values='<?php echo json_encode(str_replace("'", "&apos;", $school)); ?>' onclick="editSchool(this);"><i class="material-icons">edit</i><span>MODIFY</span></button>
+                        </center>
+                    </div>
+                </div>
+            </div>
+            <div class="body">
+                <div class="row clearfix">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <p><b>School Name:</b> <?php echo $school['school_name']; ?></p>
+                    </div>
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <p><b>Address:</b> <?php echo $school['school_addr']; ?></p>
+                    </div>
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <p><b>School Abbreviation:</b> <?php echo $school['school_abbv']; ?></p>
+                    </div>
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <p><b>Email Address:</b> <?php echo $school['school_email']; ?></p>
+                    </div>
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <p><b>Phone Number: </b> <?php echo $school['school_phone']; ?></p>
+                    </div>
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <p><b>Principal: </b> <?php echo $school['school_principal']; ?></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- NBES -->
+    <?php $school = $interaction->SchoolInfoPerSchool($database, 6); ?>
+    <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+        <div class="card">
+            <div class="header">
+                <div class="row clearfix">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
+                        <h4>SCHOOL INFORMATION - NBES</h4>      
+                    </div>
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
+                        <center>
+                            <button type="button" data-toggle="modal" data-target="#edit-school-modal" class="btn bg-green waves-effect" style="display: inline-block;" 
+                            data-values='<?php echo json_encode(str_replace("'", "&apos;", $school)); ?>' onclick="editSchool(this);"><i class="material-icons">edit</i><span>MODIFY</span></button>
+                        </center>
+                    </div>
+                </div>
+            </div>
+            <div class="body">
+                <div class="row clearfix">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <p><b>School Name:</b> <?php echo $school['school_name']; ?></p>
+                    </div>
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <p><b>Address:</b> <?php echo $school['school_addr']; ?></p>
+                    </div>
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <p><b>School Abbreviation:</b> <?php echo $school['school_abbv']; ?></p>
+                    </div>
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <p><b>Email Address:</b> <?php echo $school['school_email']; ?></p>
+                    </div>
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <p><b>Phone Number: </b> <?php echo $school['school_phone']; ?></p>
+                    </div>
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <p><b>Principal: </b> <?php echo $school['school_principal']; ?></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<?php } ?>
 
 
 <!-- Contacts -->
