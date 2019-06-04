@@ -214,3 +214,11 @@ function editPageFile(pageFileInfo){
         $("#edit_page_tag_file").selectpicker("val", page['link_tag']);
     }
 }
+
+function editBOEImage(boe){
+    boe = $(boe).data("values");
+
+    $("#edit_boe_image_id").attr("value", boe['id']);
+    $("#edit_boe_image_name").attr("value", boe['web_desc']);
+    
+}

@@ -25,7 +25,7 @@
                         <div class="col-md-4 justify-content">
                             <div class="box-simple">
                                 <h3 class="h4"><?php echo $contact['firstname'] . " " . $contact['lastname']; ?><br><span style="font-size:15px;"><?php echo $contact['position']?></span></h3>
-                                <p>
+                                <p style="color: #000!important;">
                                     <strong>Email Address: </strong><a href="mailto:"><?php echo $contact['email']; ?></a><br>
                                     <strong>Phone Number: </strong> <?php echo $contact['phone']; ?>
                                 </p>
@@ -50,11 +50,11 @@
                         <div class="col-md-6">
                             <div class="box-simple">
                                 <h3 class="h4"><?php echo $school['school_name']; ?></h3>
-                                <p>
+                                <p style="color: #000!important;">
                                     <?php echo $school['school_addr']; ?><br>
                                     
                                 </p>
-                                <p>
+                                <p style="color: #000!important;">
                                     <strong>Email Address: </strong><a href="mailto:"><?php echo $school['school_email']; ?></a><br>
                                     <strong>Phone Number: </strong><?php echo $school['school_phone']; ?><br>
                                     <strong>Fax Number: </strong><?php echo $school['school_fax']; ?><br>
@@ -81,7 +81,7 @@
                         <div class="col-md-6">
                             <div class="box-simple">
                                 <h3 class="h4"><?php echo $department['school_name']; ?></h3>
-                                <p>
+                                <p style="color: #000!important;">
                                     <strong>Email Address: </strong><a href="mailto:"><?php echo $department['school_email']; ?></a><br>
                                     <strong>Phone Number: </strong><?php echo $department['school_phone']; ?><br>
                                     <strong>Fax Number: </strong><?php echo $department['school_fax']; ?><br>

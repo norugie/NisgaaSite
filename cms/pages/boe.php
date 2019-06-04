@@ -4,9 +4,48 @@
     $vchairperson = $interaction->vchairInformation($database);
     $trustees = $interaction->trusteeInformation($database);
 
+    $boe_img = $interaction->boeImage($database);
 ?>
 
 <?php require '../components/modals/edit_boe.php'; ?>
+
+<!-- BOE GROUP IMAGE -->
+<div class="row clearfix">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="card">
+            <div class="header">
+                <div class="row clearfix">
+                    <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 text-xs-sm-center">
+                        <h4>BOARD OF EDUCATION GROUP PICTURE</h4>      
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                        <center>
+                            <?php if($_SESSION['type'] != 3){ ?>
+                                <button type="button" class="btn bg-green waves-effect" style="display: inline-block;" data-toggle="modal" data-target="#edit-boe-image-modal" 
+                                    data-values='{
+                                        "id":           <?php echo json_encode($boe_img['id']); ?>,
+                                        "web_desc":     <?php echo json_encode(str_replace("'", "&apos;", $boe_img['web_desc'])); ?>
+                                    }' 
+                                    onclick="editBOEImage(this);"><i class="material-icons">mode_edit</i><span>MODIFY</span></button>
+                            <?php } ?>
+                        </center>
+                    </div>
+                </div>
+            </div>
+            <div class="body">
+                <div class="row clearfix">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <center>
+                            <img class="img-responsive" src="../images/boe/<?php echo $boe_img['web_desc']; ?>" alt="BOE Banner Image">
+                        </center>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- BOE MEMBER INFORMATION -->
 <div class="row clearfix">
     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
         <div class="card profile-card">

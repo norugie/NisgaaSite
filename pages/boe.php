@@ -13,7 +13,7 @@
             <div class="box-image-text">
                 <div class="image"><img src="images/boe/<?php echo $boe_img['web_desc']; ?>" alt="BOE Banner" class="img-fluid"></div>
                 <div class="content">
-                    <p class="lead">
+                    <p class="lead" style="color: #000!important; font-size: 18px!important;">
                         <?php echo "The current elected Board members, from left to right: "; ?>
                         <?php $boe_count = count($boe); foreach($boe as $b): ?> 
                             <a href="#" data-toggle="modal" data-target="#boe-modal" data-values='{
