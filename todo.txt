@@ -1,26 +1,19 @@
 TODO:
 
 High Priority:
-- Backend variable changes “Blog -> News”
-- Edit contacts backend
-- Edit BOE backend
-- Change job closing algorithm, keep the last 30 closed jobs in the archive section
-- Make a submit resume and view posting page
-- Remove Announcements functionality, move Nisgaa Phrase to Announcements slot
 - Make backend for home page carousel
-- Add principals for each school
-- Add departments contact to contacts page
 - Make backend for phrase of the week
+- Make searching for news posts per category working
 
 Normal Priority:
 - Scalability of the website on mobile devices, particularly on iPads/tablets
 - Add the following to the sidebar
     - Nisga’a News
-- Placement of certain elements on the sidebar when screen resolution is on mobile:
+- Placement of certain elements on the sidebar when screen resolution is on mobile (Consider floating action button):
     - Quick Links
     - Upcoming Events
+    - Career Opportunities
 - Consider letting logged-in users to edit page content on the actual page, rather than going to the backend
-- Make searching for news posts per category working
 - make drag n’ drop of photos working
 - Add file upload to tinymce
 - Add grid columns to tinymce

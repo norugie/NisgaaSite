@@ -96,17 +96,5 @@
     </section>
 
     <!-- GMAPS -->
-    <section>
-        <div class="row">
-            <div class="col-md-12">
-                <div class="heading">
-                    <h2>Give us a visit</h2>
-                </div>
-                <div id="map" style="width:100%;height:400px;"></div>
-            </div>
-        </div>
-    </section>
+    <?php require 'components/map.php'; ?>
 </div>
-
-<script src="js/gmaps.js"></script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDuW6fO9tShx85mZ3u-Y5SEi9EaeLTlGGA&callback=nisgaaMap"></script>

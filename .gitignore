@@ -9,6 +9,7 @@
 /images/thumbnails/*
 /images/boe/*
 /links/*
+/components/map.php
 
 # Folder exceptions
 !/jobs/.gitkeep
