@@ -527,6 +527,10 @@ html {
     object-fit: cover;
   }
   
+  .load-sidebar-mobile {
+    display: none!important;
+  }
+
   .jumbotron-new {
     height: 475px;
     min-height:450px;
@@ -593,3 +597,33 @@ p.owl-caption {
     border-right: 2px solid #ccc;
   }
 }
+
+/* Floating Action Button */
+
+@media (max-width: 767px){
+  .sidebar-mobile {
+    display: none;
+  }
+
+  .load-sidebar-mobile {
+    display: block!important;
+  }
+
+  .st-panel {
+    height: 400px;
+    max-height: 400px;
+    max-width: 280px;
+    overflow: hidden;
+    overflow-y: scroll;
+  }
+}
+
+@media (max-height: 411px){
+  .st-panel {
+    height: 200px;
+    max-height:200px;
+    overflow: hidden;
+    overflow-y: scroll;
+  }
+}
+
