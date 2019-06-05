@@ -48,6 +48,7 @@
         <link rel="stylesheet" href="/css/themes/style.red.css" id="theme-stylesheet">
         <!-- Custom stylesheet - for your changes-->
         <link rel="stylesheet" href="/css/custom.css">
+        <link rel="stylesheet" href="/css/responsive-font.css">
         <!-- Favicon and apple touch icons-->
         <link rel="icon" href="/nisgaa-icon.png" type="image/x-icon">
 
