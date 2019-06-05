@@ -605,6 +605,15 @@ p.owl-caption {
 /* Floating Action Button */
 
 @media (max-width: 767px){
+
+  .sidebar-mobile {
+    display: none!important;
+  }
+
+  .load-sidebar-mobile {
+    display: block!important;
+  }
+
   .st-panel {
     height: 400px;
     max-height: 400px;
