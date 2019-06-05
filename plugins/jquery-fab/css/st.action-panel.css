@@ -1,5 +1,5 @@
 .st-actionContainer {
-	z-index: 9999;
+	z-index: 1000;
 	position: fixed;
 	display: inline-block;
 }

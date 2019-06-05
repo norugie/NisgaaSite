@@ -850,8 +850,8 @@ header.nav-holder.sticky {
 
 @media (max-width: 991px) {
   #navbar {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+    padding-top: 0.44rem;
+    padding-bottom: 0.44rem;
   }
 
   #navbar .menu-large .megamenu {
@@ -1219,7 +1219,7 @@ header.nav-holder.sticky {
 
 #blog-listing-big .post,
 #blog-listing-medium .post {
-  margin-bottom: 60px;
+  margin-bottom: 20px;
 }
 
 #blog-listing-big .image,

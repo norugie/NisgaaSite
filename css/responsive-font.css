@@ -1,0 +1,40 @@
+@media only screen and (max-width: 540px){
+
+    /* Page Info */
+
+    #heading-breadcrumbs {
+        padding: 1.5rem 0!important;
+    }
+
+    #blog-post > h2, .heading > h2, .h2 {
+        font-size: 1.5rem!important;
+    }
+
+    .box-simple > h3, .lead {
+        font-size: 1rem!important;
+    }
+
+    .blog-title-mobile {
+        font-size: 1rem!important;
+    }
+
+    .author-category, .date-comments {
+        font-size: 0.75rem!important;
+    }
+
+}
+
+@media only screen and (min-width: 540px) and (max-width: 767px){
+    .col-blog-mobile {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+
+    .blog-title-mobile {
+        font-size: 1.2rem!important;
+    }
+
+    .author-category, .date-comments {
+        font-size: 0.75rem!important;
+    }
+}
