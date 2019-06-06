@@ -9,52 +9,17 @@
                 <hr class="d-block d-lg-none">
             </div>
             <!-- FOOTER CONTACT PAGE -->
-            <div class="col-lg-3">
+            <div class="col-lg-3 text-xs-sm-center">
                 <h4 class="h6">Contact Us</h4>
-                <ul class="list-unstyled footer-blog-list">
-                    <li class="d-flex align-items-center">
-                        <div class="text">
-                            <h5 class="mb-0">
-                                <div class="row">
-                                    <div class="col-sm-2">
-                                        <i class="fa fa-phone fa-lg"></i>
-                                    </div>
-                                    <div class="col-sm-10">
-                                        <?php echo $info['school_phone']; ?>
-                                    </div>
-                                </div>
-                            </h5>
-                        </div>
-                    </li>
-                    <li class="d-flex align-items-center">
-                        <div class="text">
-                            <h5 class="mb-0">
-                                <div class="row">
-                                    <div class="col-sm-2">
-                                        <i class="fa fa-envelope fa-lg"></i>
-                                    </div>
-                                    <div class="col-sm-10">
-                                        <a href="mailto:"><?php echo $info['school_email']; ?></a>
-                                    </div>
-                                </div>
-                            </h5>
-                        </div>
-                    </li>
-                    <li class="d-flex align-items-center">
-                        <div class="text">
-                            <h5 class="mb-0">
-                                <div class="row">
-                                    <div class="col-sm-2">
-                                        <i class="fa fa-facebook fa-lg"></i>
-                                    </div>
-                                    <div class="col-sm-10">
-                                        <a href="post.html">[school district fb page]</a>
-                                    </div>
-                                </div>
-                            </h5>
-                        </div>
-                    </li>
-                </ul>
+                <h4 class="h6">
+                    <?php echo $info['school_phone']; ?>
+                </h4>
+                <h4 class="h6">
+                    <?php echo $info['school_email']; ?>
+                </h4>
+                <h4 class="h6">
+                    <a href="https://www.facebook.com/sd92nisgaa/">SD92 Facebook Page</a>
+                </h4>
                 <hr>
                 <a href="/contacts" class="btn btn-template-main">Go to contact page</a>
 
