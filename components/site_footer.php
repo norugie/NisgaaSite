@@ -18,7 +18,7 @@
                     <?php echo $info['school_email']; ?>
                 </h4>
                 <h4 class="h6">
-                    <a href="https://www.facebook.com/sd92nisgaa/">SD92 Facebook Page</a>
+                    <a href="https://www.facebook.com/sd92nisgaa/" target="blank">SD92 Facebook Page</a>
                 </h4>
                 <hr>
                 <a href="/contacts" class="btn btn-template-main">Go to contact page</a>

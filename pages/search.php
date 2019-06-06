@@ -2,7 +2,7 @@
 
     if(!isset($_POST['search'])){
 ?>
-    <script>window.location = "/?page=index";</script>
+    <script>window.location = "/";</script>
 <?php
     }
 
@@ -75,7 +75,7 @@
                 <?php if(count($forms) < 1){ ?><p class="lead">No district files found for keyword: <?php echo $keyword; ?></p><?php } ?>
                 <ul>
                     <?php foreach($forms as $form): ?>
-                        <li class="lead mb-0"><a href="<?php if($form['link_type'] == 'File'){ echo "../links/"; } echo $form['link_content']; ?>" <?php if($form['link_type'] == 'Link' || pathinfo($form['link_content'], PATHINFO_EXTENSION) == 'pdf'){?>target="_blank"<?php } else { ?> download <?php } ?>><?php echo $form['link_name']; ?></a></li>
+                        <li class="lead mb-0"><a href="<?php if($form['link_type'] == 'File'){ echo "/links/"; } echo $form['link_content']; ?>" target="_blank"><?php echo $form['link_name']; ?></a></li>
                     <?php endforeach; ?>
                 </ul>
         </div>

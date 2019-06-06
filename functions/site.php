@@ -108,9 +108,9 @@
 					AND links.status = 'Active'
 					AND links.link_name LIKE '%$keyword%'
 					AND (
-						links.link_tag != 'Quick Links'
-						AND links.link_tag != 'Finance'
-						AND links.link_tag != 'District Forms'
+						links.link_tag = 'General Resources'
+						OR links.link_tag = 'Teacher Resources'
+						OR links.link_tag = 'Learning Resources'
 					)";
 			$query = mysqli_query($database->con, $sql);
 			if (!$query) {
