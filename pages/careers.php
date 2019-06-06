@@ -76,7 +76,7 @@
                 <ul>
                     <?php $cjobs = $site->cjobList($database); ?>
                     <?php foreach($cjobs as $cjob): ?>
-                        <li class="lead mb-0"><a href="/jobs/<?php echo $cjob['file']; ?>" target="_blank"><?php echo $cjob['title']; ?> - Closed on <?php echo $cjob['close_date']; ?></a></li>
+                        <li class="lead mb-0"><a href="/jobs/<?php echo $cjob['file']; ?>" target="_blank"><?php echo $cjob['title']; ?> - Closed on <?php echo date_format(date_create($cjob['close_date']), 'd M Y'); ?></a></li>
                     <?php endforeach; ?>
                 </ul>
             </div>
