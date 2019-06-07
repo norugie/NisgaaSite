@@ -119,6 +119,6 @@
                 </div>
             </div>
         </section>
-        <?php } else { header("location: /404"); } ?>
+        <?php } else { echo "<script>window.open('https://webdev.nisgaa.bc.ca/404', '_parent');</script>"; } ?>
     </div>
 </div>
