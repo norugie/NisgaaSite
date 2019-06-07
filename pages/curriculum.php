@@ -16,7 +16,7 @@
         <section>
             <div class="row">
                 <div class="col-md-12">
-                    <p class="lead" style="margin-bottom:10px!important;"><b>Relevant Files to K12</b></p>
+                    <p style="margin-bottom:10px!important;font-size:14pt;"><b>Relevant Files to K12</b></p>
                     <div class="row">
                         <ul>
                             <?php $page_info = $site->linkList($database, $url[1], 2); ?>
@@ -32,7 +32,7 @@
         <section>
             <div class="row">
                 <div class="col-md-12">
-                    <p class="lead" style="margin-bottom:10px!important;"><b>Relevant Files to Distance Learners Program</b></p>
+                    <p style="margin-bottom:10px!important;font-size:14pt;"><b>Relevant Files to Distance Learners Program</b></p>
                     <div class="row">
                         <ul>
                             <?php $page_info = $site->linkList($database, $url[1], 2); ?>
@@ -48,7 +48,7 @@
         <section>
             <div class="row">
                 <div class="col-md-12">
-                    <p class="lead" style="margin-bottom:10px!important;"><b>Relevant Files to Nisga’a Language and Culture</b></p>
+                    <p style="margin-bottom:10px!important;font-size:14pt;"><b>Relevant Files to Nisga’a Language and Culture</b></p>
                     <div class="row">
                         <ul>
                             <?php $page_info = $site->linkList($database, $url[1], 2); ?>
