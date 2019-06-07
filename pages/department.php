@@ -20,7 +20,7 @@
         <section>
             <div class="row">
                 <div class="col-md-6">
-                    <p class="lead" style="margin-bottom:10px!important;"><b>Budgets</b></p>
+                    <p style="margin-bottom:10px!important;font-size:14pt;"><b>Budgets</b></p>
                     <div class="row">
                         <ul>
                             <?php $page_info = $site->linkList($database, 'Finance Budget', 2); ?>
@@ -31,7 +31,7 @@
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <p class="lead" style="margin-bottom:10px!important;"><b>Audited Financial Statements</b></p>
+                    <p style="margin-bottom:10px!important;font-size:14pt;"><b>Audited Financial Statements</b></p>
                     <div class="row">
                         <ul>
                             <?php $page_info = $site->linkList($database, 'Finance Audit', 2); ?>
@@ -45,7 +45,7 @@
             <br>
             <div class="row">
                 <div class="col-md-6">
-                    <p class="lead" style="margin-bottom:10px!important;"><b>Statements of Financial Information</b></p>
+                    <p style="margin-bottom:10px!important;font-size:14pt;"><b>Statements of Financial Information</b></p>
                     <div class="row">
                         <ul>
                             <?php $page_info = $site->linkList($database, 'Finance SFI', 2); ?>
@@ -56,7 +56,7 @@
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <p class="lead" style="margin-bottom:10px!important;"><b>Executive Compensation Reports</b></p>
+                    <p style="margin-bottom:10px!important;font-size:14pt;"><b>Executive Compensation Reports</b></p>
                     <div class="row">
                         <ul>
                             <?php $page_info = $site->linkList($database, 'Finance ECR', 2); ?>
@@ -73,7 +73,7 @@
         <section>
             <div class="row">
                 <div class="col-md-12">
-                    <p class="lead" style="margin-bottom:10px!important;"><b>Department Files</b></p>
+                    <p style="margin-bottom:10px!important;font-size:14pt;"><b>Department Files</b></p>
                     <div class="row">
                         <ul>
                             <?php $page_info = $site->linkList($database, $url[1], 2); ?>
@@ -90,7 +90,7 @@
         <section>
             <div class="row">
                 <div class="col-md-12">
-                    <p class="lead" style="margin-bottom:10px!important;"><b>Department Files</b></p>
+                    <p style="margin-bottom:10px!important;font-size:14pt;"><b>Department Files</b></p>
                     <div class="row">
                         <ul>
                             <?php $page_info = $site->linkList($database, $url[1], 2); ?>
@@ -107,7 +107,7 @@
         <section>
             <div class="row">
                 <div class="col-md-12">
-                    <p class="lead" style="margin-bottom:10px!important;"><b>Department Files</b></p>
+                    <p style="margin-bottom:10px!important;font-size:14pt;"><b>Department Files</b></p>
                     <div class="row">
                         <ul>
                             <?php $page_info = $site->linkList($database, $url[1], 2); ?>
