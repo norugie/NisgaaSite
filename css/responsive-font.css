@@ -3,11 +3,6 @@
         flex: 0 0 50%;
         max-width: 50%;
     }
-
-    .products-big .image {
-        min-height: 210px!important;
-        max-height: 210px!important;
-    }
 }
 
 @media only screen and (max-width: 767px){
@@ -18,14 +13,14 @@
 
     #blog-post > h2, 
     .heading > h2, .h2 {
-        font-size: 1.5rem!important;
+        font-size: 1.2rem!important;
     }
 
     .box-simple > h3, 
     .lead, 
     .home-blog-post > .text > h4,
     .blog-title-mobile {
-        font-size: 1rem!important;
+        font-size: 0.95rem!important;
     }
 
     .author-category, .date-comments, p.intro {

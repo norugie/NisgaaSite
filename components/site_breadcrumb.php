@@ -36,6 +36,8 @@ if($page_name == 'news'){
     $breadcrumb = "Contact us";
 } else if($page_name == 'files'){
     $breadcrumb = "District Files";
+} else if($page_name == 'search'){
+    $breadcrumb = "Search Results";
 } else {
     $breadcrumb = str_replace('_', ' ', $page_name);
 }
