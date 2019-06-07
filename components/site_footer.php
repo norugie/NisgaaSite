@@ -15,7 +15,7 @@
                     <?php echo $info['school_phone']; ?>
                 </h4>
                 <h4 class="h6">
-                    <a href="mailto:"><?php echo $info['school_email']; ?></a>
+                    <a href="mailto:<?php echo $info['school_email']; ?>"><?php echo $info['school_email']; ?></a>
                 </h4>
                 <h4 class="h6">
                     <a href="https://www.facebook.com/sd92nisgaa/" target="blank">SD92 Facebook Page</a>
