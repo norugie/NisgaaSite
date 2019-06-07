@@ -12,8 +12,10 @@
     }
 
     #blog-post > h2, 
-    .heading > h2, .h2 {
-        font-size: 1.2rem!important;
+    .heading > h2, 
+    .heading > h3,
+    .h2 {
+        font-size: 1.3rem!important;
     }
 
     .box-simple > h3, 
@@ -24,6 +26,6 @@
     }
 
     .author-category, .date-comments, p.intro {
-        font-size: 0.75rem!important;
+        font-size: 0.8rem!important;
     }
 }

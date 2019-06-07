@@ -11,7 +11,7 @@
         <?php require 'components/modals/site_boe.php'; ?>
         <div class="col-md-12 text-center">
             <div class="box-image-text">
-                <div class="image"><img src="images/boe/<?php echo $boe_img['web_desc']; ?>" alt="BOE Banner" class="img-fluid"></div>
+                <div class="image"><img src="/images/boe/<?php echo $boe_img['web_desc']; ?>" alt="BOE Banner" class="img-fluid"></div>
                 <div class="content">
                     <p class="lead" style="color: #000!important; font-size: 18px!important;">
                         <?php echo "The current elected Board members, from left to right: "; ?>
@@ -40,7 +40,7 @@
     function boeInfo(boeInfo){
         boe = $(boeInfo).data("values");
         
-        $("#trustee-img").attr("src", 'images/contacts/' + boe['photo']);
+        $("#trustee-img").attr("src", '/images/contacts/' + boe['photo']);
         $("#trustee-name").html(boe['firstname'] + " " + boe['lastname']);
         $("#trustee-position").html(boe['position']);
         $("#trustee-place").html(boe['position_specifics']);
