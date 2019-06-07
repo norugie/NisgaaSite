@@ -57,9 +57,9 @@
                 <?php if(count($resources) < 1){ ?><p class="lead">No resources found for keyword: <?php echo $keyword; ?></p><?php } ?>
                 <div class="row products products-big">
                     <?php foreach($resources as $resource): ?>
-                        <div class="col-lg-3 col-md-4 col-blog-mobile">
+                        <div class="col-lg-3 col-md-6 col-blog-mobile">
                             <div class="product d-none d-md-block">
-                                <div class="image"><a href="<?php if($resource['link_type'] == 'File'){ echo "/links/"; } echo $resource['link_content']; ?>" target="_blank"><img src="/images/thumbnails/<?php echo $resource['link_thumbnail']; ?>" alt="" class="img-fluid image1"></a></div>
+                                <div class="image"><a href="<?php if($resource['link_type'] == 'File'){ echo "/links/"; } echo $resource['link_content']; ?>" target="_blank"><img src="/images/thumbnails/<?php echo $resource['link_thumbnail']; ?>" alt="" class="img-fluid image1" style="max-width: 80% !important;"></a></div>
                                 <div class="text">
                                     <h3 class="h5"><a href="<?php if($resource['link_type'] == 'File'){ echo "/links/"; } echo $resource['link_content']; ?>" target="_blank"><?php echo $resource['link_name']; ?></a></h3>
                                 </div>
