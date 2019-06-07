@@ -19,9 +19,9 @@
                     <p class="lead" style="margin-bottom:10px!important;"><b>Relevant Files to K12</b></p>
                     <div class="row">
                         <ul>
-                            <?php $page_info = $site->linkList($database, 'K12', 2); ?>
+                            <?php $page_info = $site->linkList($database, $url[1], 2); ?>
                             <?php foreach($page_info as $link): ?>
-                                <li class="lead mb-0"><a href="<?php if($link['link_type'] == 'File'){ echo "../links/"; } echo $link['link_content']; ?>" target="_blank"><?php echo $link['link_name']; ?></a></li>
+                                <li class="lead mb-0"><a href="<?php if($link['link_type'] == 'File'){ echo "/links/"; } echo $link['link_content']; ?>" target="_blank"><?php echo $link['link_name']; ?></a></li>
                             <?php endforeach; ?>
                         </ul>
                     </div>
@@ -29,31 +29,31 @@
             </div>
         </section>
         <?php } else if($url[1] == 'dl'){ ?>
-            <section>
+        <section>
             <div class="row">
                 <div class="col-md-12">
-                    <p class="lead" style="margin-bottom:10px!important;"><b>Relevant Files to K12</b></p>
+                    <p class="lead" style="margin-bottom:10px!important;"><b>Relevant Files to Distance Learners Program</b></p>
                     <div class="row">
-                        <!-- <ul>
-                            <?php $page_info = $site->linkList($database, 'DL', 2); ?>
+                        <ul>
+                            <?php $page_info = $site->linkList($database, $url[1], 2); ?>
                             <?php foreach($page_info as $link): ?>
-                                <li class="lead mb-0"><a href="<?php if($link['link_type'] == 'File'){ echo "../links/"; } echo $link['link_content']; ?>" target="_blank"><?php echo $link['link_name']; ?></a></li>
+                                <li class="lead mb-0"><a href="<?php if($link['link_type'] == 'File'){ echo "/links/"; } echo $link['link_content']; ?>" target="_blank"><?php echo $link['link_name']; ?></a></li>
                             <?php endforeach; ?>
-                        </ul> -->
+                        </ul>
                     </div>
                 </div>
             </div>
         </section>
         <?php } else if($url[1] == 'nlc'){ ?>
-            <section>
+        <section>
             <div class="row">
                 <div class="col-md-12">
                     <p class="lead" style="margin-bottom:10px!important;"><b>Relevant Files to Nisga’a Language and Culture</b></p>
                     <div class="row">
                         <ul>
-                            <?php $page_info = $site->linkList($database, 'NLC', 2); ?>
+                            <?php $page_info = $site->linkList($database, $url[1], 2); ?>
                             <?php foreach($page_info as $link): ?>
-                                <li class="lead mb-0"><a href="<?php if($link['link_type'] == 'File'){ echo "../links/"; } echo $link['link_content']; ?>" target="_blank"><?php echo $link['link_name']; ?></a></li>
+                                <li class="lead mb-0"><a href="<?php if($link['link_type'] == 'File'){ echo "/links/"; } echo $link['link_content']; ?>" target="_blank"><?php echo $link['link_name']; ?></a></li>
                             <?php endforeach; ?>
                         </ul>
                     </div>

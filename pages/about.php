@@ -34,7 +34,7 @@
                 <div class="heading">
                     <h2>VISION FOR EDUCATION</h2>
                 </div>
-                <img class="img-responsive img-fluid" style="display: block; margin-left: auto; margin-right: auto; padding: 10px;" src="../images/site/nisgaa-vision.png" alt="">
+                <img class="img-responsive img-fluid" style="display: block; margin-left: auto; margin-right: auto; padding: 10px;" src="/images/site/nisgaa-vision.png" alt="">
             </div>
         </div>
     </section>
