@@ -23,17 +23,23 @@
                 <?php if(count($blogs) < 1){ ?><p class="lead">No district news posts found for keyword: <?php echo $keyword; ?></p><?php } ?>
                 <div class="row">
                     <?php foreach($blogs as $blog): ?>
-                        <div class="col-lg-3">
-                            <div class="home-blog-post">
+                        <div class="col-lg-3 col-md-4 col-blog-mobile">
+                            <div class="home-blog-post d-none d-md-block">
                                 <div class="image"><img src="images/thumbnails/<?php echo $blog['post_thumbnail']; ?>" alt="..." class="img-fluid">
-                                <div class="overlay d-flex align-items-center justify-content-center"><a href="/?page=news&id=<?php echo preg_replace('/[a-zA-Z]/', '', $blog['post_id']); ?>" class="btn btn-template-outlined-white"><i class="fa fa-chain"> </i> Read More</a></div>
+                                <div class="overlay d-flex align-items-center justify-content-center"><a href="/news/read/<?php echo preg_replace('/[a-zA-Z]/', '', $blog['post_id']); ?>" class="btn btn-template-outlined-white"><i class="fa fa-chain"> </i> Read More</a></div>
                                 </div>
                                 <div class="text">
-                                    <h4><a href="/?page=news&id=<?php echo preg_replace('/[a-zA-Z]/', '', $blog['post_id']); ?>"><?php echo $blog['post_title']; ?></a></h4>
+                                    <h4><a href="/news/read/<?php echo preg_replace('/[a-zA-Z]/', '', $blog['post_id']); ?>"><?php echo $blog['post_title']; ?></a></h4>
                                     <p class="author-category">By <?php echo $blog['firstname'] . " " . $blog['lastname']; ?></p>
                                     <p class="author-category"><?php echo date_format(date_create($blog['post_date']), 'd M Y'); ?></p>
                                 </div>
                             </div>
+                            <ul class="d-block d-md-none d-lg-none">
+                                <li class="lead mb-0">
+                                    <a href="/news/read/<?php echo preg_replace('/[a-zA-Z]/', '', $blog['post_id']); ?>"><?php echo $blog['post_title']; ?></a>
+                                    <p class="author-category">By <?php echo $blog['firstname'] . " " . $blog['lastname']; ?> | <?php echo date_format(date_create($blog['post_date']), 'd M Y'); ?></p>
+                                </li>
+                            </ul>
                         </div>
                     <?php endforeach; ?>
                 </div>
@@ -51,13 +57,16 @@
                 <?php if(count($resources) < 1){ ?><p class="lead">No resources found for keyword: <?php echo $keyword; ?></p><?php } ?>
                 <div class="row products products-big">
                     <?php foreach($resources as $resource): ?>
-                        <div class="col-lg-3 col-md-6">
-                            <div class="product">
-                                <div class="image"><a href="<?php if($resource['link_type'] == 'File'){ echo "../links/"; } echo $resource['link_content']; ?>" <?php if($resource['link_type'] == 'Link' || pathinfo($resource['link_content'], PATHINFO_EXTENSION) == 'pdf'){?>target="_blank"<?php } else { ?> download <?php } ?>><img src="images/thumbnails/<?php echo $resource['link_thumbnail']; ?>" alt="" class="img-fluid image1"></a></div>
+                        <div class="col-lg-3 col-md-4 col-blog-mobile">
+                            <div class="product d-none d-md-block">
+                                <div class="image"><a href="<?php if($resource['link_type'] == 'File'){ echo "/links/"; } echo $resource['link_content']; ?>" target="_blank"><img src="/images/thumbnails/<?php echo $resource['link_thumbnail']; ?>" alt="" class="img-fluid image1"></a></div>
                                 <div class="text">
-                                    <h3 class="h5"><a href="<?php if($resource['link_type'] == 'File'){ echo "../links/"; } echo $resource['link_content']; ?>" <?php if($resource['link_type'] == 'Link' || pathinfo($resource['link_content'], PATHINFO_EXTENSION) == 'pdf'){?>target="_blank"<?php } else { ?> download <?php } ?>><?php echo $resource['link_name']; ?></a></h3>
+                                    <h3 class="h5"><a href="<?php if($resource['link_type'] == 'File'){ echo "/links/"; } echo $resource['link_content']; ?>" target="_blank"><?php echo $resource['link_name']; ?></a></h3>
                                 </div>
                             </div>
+                            <ul class="d-block d-md-none d-lg-none">
+                                <li class="lead mb-0"><a href="<?php if($resource['link_type'] == 'File'){ echo "/links/"; } echo $resource['link_content']; ?>" target="_blank"><?php echo $resource['link_name']; ?></a></li>
+                            </ul>
                         </div>
                     <?php endforeach; ?>
                 </div>
