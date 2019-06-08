@@ -2,7 +2,7 @@
 
 <div id="blog-post" class="col-md-9">
     <h2 class="text-center"><?php echo $career['title']; ?></h2>
-    <?php echo date_format(date_create($career['close_date']), 'd M Y'); ?></p> -->
+    <!-- <?php echo date_format(date_create($career['close_date']), 'd M Y'); ?></p> -->
     <div id="post-content">
         <hr>
         <div class="row text-center">

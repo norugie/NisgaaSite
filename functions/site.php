@@ -640,9 +640,8 @@
                     LEFT JOIN schools
                     ON (jobs.school = schools.id)
 					WHERE jobs.status = 'Closed'
-					AND jobs.close_date >= CURRENT_DATE()
 					ORDER BY jobs.close_date DESC
-					LIMIT 10";
+					LIMIT 15";
 			$query = mysqli_query($database->con, $sql);
 			if (!$query) {
 			    echo "<script>window.open('https://webdev.nisgaa.bc.ca/error', '_parent');</script>";

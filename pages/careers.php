@@ -17,7 +17,7 @@
                     </div>
                     <div class="col-md-3">
                         <center>
-                            <div class="image"><a href="http://www.makeafuture.ca/nisgaa" target="_new"><img src="/images/site/maf-logo.png" alt="Make A Future Logo" class="img-fluid"></a></div>
+                            <div class="image" style="margin-bottom: 25px!important;"><a href="http://www.makeafuture.ca/nisgaa" target="_new"><img src="/images/site/maf-logo.png" alt="Make A Future Logo" class="img-fluid"></a></div>
                         </center>
                     </div>
                 </div>
@@ -28,7 +28,7 @@
     <!-- ON SITE OPENED JOBS CONTENT -->
     <section>
         <div id="customer-orders">
-            <div class="box">
+            <div class="box mt-0">
                 <div class="table-responsive">
                     <table class="table table-hover">
                         <thead>
@@ -63,7 +63,7 @@
                 </div>
                 <div class="row">
                     <div class="col-md-12">
-                        <p class="lead">The following job postings have been closed before their listed closing date:</p>
+                        <p class="lead">The following job postings have been closed:</p>
                     </div>
                 </div>
             </div>
