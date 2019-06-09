@@ -1,5 +1,6 @@
 <?php $carousel = $interaction->carouselList($database); ?>
 
+<?php require '../components/modals/new_carousel.php'; ?>
 <?php require '../components/modals/edit_carousel.php'; ?>
 
 <div class="row clearfix">
@@ -13,8 +14,10 @@
                     <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
                         <center>
                             <?php if($_SESSION['type'] != 3){ ?>
-                                <button type="button" class="btn bg-red waves-effect" style="display: inline-block;" data-toggle="modal" data-target="#edit-carousel-modal"><i class="material-icons">find_replace</i></button>
-                                <button type="button" class="btn bg-blue waves-effect" style="display: inline-block;" data-toggle="modal" data-target="#edit-carousel-modal"><i class="material-icons">add</i><span>NEW IMAGE</span></button>
+                                <button type="button" class="btn bg-red waves-effect" style="display: inline-block;" data-toggle="modal" data-target="#edit-carousel-modal"><i class="material-icons">find_replace</i><span>REPLACE ALL</span></button>
+                                <?php if(count($carousel) < 5){ ?>
+                                    <button type="button" class="btn bg-blue waves-effect" style="display: inline-block;" data-toggle="modal" data-target="#new-carousel-modal"><i class="material-icons">add</i></button>
+                                <?php } ?>
                             <?php } ?>
                         </center>
                     </div>

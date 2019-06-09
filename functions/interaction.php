@@ -226,6 +226,31 @@
 			}
 		}
 
+		public function newCarouselImage($database, $photo, $caption){
+			$school;
+
+			if($_SESSION['type'] == 4){
+				$school = $_SESSION['school'];
+			} else {
+				$school = 2;
+			}
+
+			$sql = "INSERT INTO carousel
+					VALUES(null, '$photo', '$caption', '$school', 'Active')";
+			$query = mysqli_query($database->con, $sql);
+			if(!$query){
+				// header("location: ../cms/interaction.php?tab=web&subtab=content&page=carousel&error=true");
+				echo("Error description: " . mysqli_error($database->con));
+			} else {
+				global $log;
+				$info = "Added new image to the home carousel image list.";
+				$log->logInput($database, $info);
+
+				header("location: ../cms/interaction.php?tab=web&subtab=content&page=carousel&newCarouselImage=true");
+
+			}
+		}
+
         /*********************************************************************************************/
 		/***************************  Interaction Functionalities -- Page Information  ***************/
         /*********************************************************************************************/
