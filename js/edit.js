@@ -222,3 +222,12 @@ function editBOEImage(boe){
     $("#edit_boe_image_name").attr("value", boe['web_desc']);
     
 }
+
+function editCarouselImage(carousel){
+    carousel = $(carousel).data("values");
+
+    $("#edit_carousel_image_id").attr("value", carousel['id']);
+    $("#edit_carousel_image_name").attr("value", carousel['carousel_name']);
+    $("#edit_carousel_caption").attr("value", carousel['carousel_desc']);
+    
+}
