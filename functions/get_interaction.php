@@ -198,9 +198,9 @@
 				} else {
 					$school = $_SESSION['school'];
 				}
-				$sql = $sqlquery . " AND carousel.school = '$school' ORDER BY carousel.id LIMIT 6";
+				$sql = $sqlquery . " AND carousel.school = '$school' ORDER BY carousel.id LIMIT 5";
 			} else {
-				$sql = $sqlquery . " ORDER BY carousel.id LIMIT 6";
+				$sql = $sqlquery . " ORDER BY carousel.id LIMIT 5";
 			}
 			/*  END Content Filter  */
 

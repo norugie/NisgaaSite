@@ -13,7 +13,8 @@
                     <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
                         <center>
                             <?php if($_SESSION['type'] != 3){ ?>
-                                <button type="button" class="btn bg-green waves-effect" style="display: inline-block;" data-toggle="modal" data-target="#edit-carousel-modal"><i class="material-icons">find_replace</i><span>REPLACE ALL</span></button>
+                                <button type="button" class="btn bg-red waves-effect" style="display: inline-block;" data-toggle="modal" data-target="#edit-carousel-modal"><i class="material-icons">find_replace</i></button>
+                                <button type="button" class="btn bg-blue waves-effect" style="display: inline-block;" data-toggle="modal" data-target="#edit-carousel-modal"><i class="material-icons">add</i><span>NEW IMAGE</span></button>
                             <?php } ?>
                         </center>
                     </div>
@@ -25,7 +26,7 @@
                         <h4>ACTIVE IMAGES</h4>
                         <div class="row">
                             <?php foreach($carousel as $c): ?>
-                            <div class="col-sm-6 col-md-2">
+                            <div class="col-sm-12 col-md-5ths">
                                 <div class="thumbnail">
                                     <img src="../images/carousel/<?php echo $c['carousel_name']; ?>">
                                     <div class="caption">
