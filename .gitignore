@@ -8,6 +8,7 @@
 /images/profile/*
 /images/thumbnails/*
 /images/boe/*
+/images/carousel/*
 /links/*
 /components/map.php
 
@@ -20,6 +21,7 @@
 !/images/posts/media/.gitkeep
 !/images/profile/.gitkeep
 !/images/thumbnails/.gitkeep
+!/images/carousel/.gitkeep
 !/images/boe/.gitkeep
 !/links/.gitkeep
 
