@@ -155,6 +155,12 @@
                                     <span>Contacts</span>
                                 </a>
                             </li>
+                            <li id="carousel">
+                                <a href="interaction.php?tab=web&subtab=content&page=carousel">
+                                    <i class="material-icons">photo_size_select_large</i>
+                                    <span>Home Carousel</span>
+                                </a>
+                            </li>
                         </ul>
                     </li>
                     <?php if($_SESSION['school'] != 3 && $_SESSION['school'] != 4 && $_SESSION['school'] != 5 && $_SESSION['school'] != 6){ ?> 

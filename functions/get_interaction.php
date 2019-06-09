@@ -179,6 +179,43 @@
 			return $array;
         }
 
+        public function carouselList($database){
+            $array = array();
+			$sql;
+			$sqlquery = "SELECT carousel.id,
+                           carousel.carousel_name,
+						   carousel.carousel_desc
+					FROM carousel
+					LEFT JOIN schools
+                    ON (schools.id = carousel.school)
+                    WHERE carousel.status = 'Active'";
+					
+			/*  Content Filter  */
+			if($_SESSION['type'] != 1){
+				$school;
+				if($_SESSION['school'] != 3 && $_SESSION['school'] != 4 && $_SESSION['school'] != 5 && $_SESSION['school'] != 6){
+					$school = 2;
+				} else {
+					$school = $_SESSION['school'];
+				}
+				$sql = $sqlquery . " AND carousel.school = '$school' ORDER BY carousel.id LIMIT 6";
+			} else {
+				$sql = $sqlquery . " ORDER BY carousel.id LIMIT 6";
+			}
+			/*  END Content Filter  */
+
+			$query = mysqli_query($database->con, $sql);
+			if (!$query) {
+				header("location: ../cms/interaction.php?tab=web&subtab=content&page=carousel&error=true");
+			} else {
+				while($row = mysqli_fetch_array($query)){
+					$array[] = $row;
+				}
+            }
+            
+			return $array;
+        }
+
         /*********************************************************************************************/
 		/***************************  Interaction Functionalities -- Page Information  ***************/
         /*********************************************************************************************/
