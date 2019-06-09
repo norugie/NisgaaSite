@@ -63,6 +63,13 @@
 </div>
 <?php } ?>
 
+<?php if(isset($_GET['carouselImageDisable']) && $_SESSION['alert'] == 'alerted'){?>
+<div class="alert bg-green alert-dismissible" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    An image has been <b>removed</b> from the home carousel image list successfully!
+</div>
+<?php } ?>
+
 <!--  Interaction Notifications - Page Information  -->
 
 <?php if(isset($_GET['editPageInformation']) && $_SESSION['alert'] == 'alerted'){?>

@@ -45,7 +45,9 @@ function alertDesign(e) {
         var subtab = $(e).data('subtab');
         var page = $(e).data('page');
         showDisablePageConfirm(id, name, subtab, page);
-    } 
+    } else if (type === 'delete-carousel-image'){
+        showDisableCarouselImageConfirm(id);
+    }
 }
 
 
@@ -427,6 +429,26 @@ function showDisablePageConfirm(id, name, subtab, page) {
     }, function (isConfirm) {
         if (isConfirm) {
             window.location = "../functions/interaction.php?interaction=true&pageDisable=true&id=" + id + "&pageName=" + name + "&subtab=" + subtab + "&page=" + page;
+        }
+
+    });
+}
+
+//Warning for disabling carousel image
+function showDisableCarouselImageConfirm(id) {
+    swal({
+        title: "Are you sure you want to delete this image from the home carousel?",
+        text: "You will not be able to reactivate this image once archived",
+        type: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#F44336",
+        confirmButtonText: "CONFIRM",
+        cancelButtonText: "CANCEL",
+        closeOnConfirm: false,
+        closeOnCancel: true
+    }, function (isConfirm) {
+        if (isConfirm) {
+            window.location = "../functions/interaction.php?interaction=true&carouselImageDisable=true&id=" + id;
         }
 
     });

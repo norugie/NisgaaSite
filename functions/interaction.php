@@ -191,6 +191,23 @@
 			}
 		}
 
+		public function disableCarouselImage($database, $id){
+			$sql = "UPDATE carousel SET 
+						   status = 'Inactive'
+					WHERE id = '$id'";
+			$query = mysqli_query($database->con, $sql);
+			if(!$query){
+			    header("location: ../cms/interaction.php?tab=web&subtab=content&page=carousel&error=true");
+			} else {
+				global $log;
+				$info = "Deleted an image from the current home carousel image list.";
+				$log->logInput($database, $info);
+
+				header("location: ../cms/interaction.php?tab=web&subtab=content&page=carousel&carouselImageDisable=true");
+
+			}
+		}
+
         /*********************************************************************************************/
 		/***************************  Interaction Functionalities -- Page Information  ***************/
         /*********************************************************************************************/
