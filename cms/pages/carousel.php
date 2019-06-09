@@ -28,9 +28,20 @@
                                     <img src="../images/carousel/<?php echo $c['carousel_name']; ?>">
                                     <div class="caption">
                                         <h3>Image Caption</h3>
-                                        <p><?php echo $c['carousel_desc']; ?></p>
+                                        <p style="color:#000!important;"><?php echo $c['carousel_desc']; ?></p>
                                         <p>
-                                            <a href="javascript:void(0);" class="btn btn-primary waves-effect" role="button">BUTTON</a>
+                                            <center>
+                                                <div class="btn-group">
+                                                    <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="material-icons">more_horiz</i>
+                                                        <span>OPTIONS</span> <span class="caret"></span>
+                                                    </button>
+                                                    <ul class="dropdown-menu">
+                                                        <li><a href="#">Modify Image</a></li>
+                                                        <li role="separator" class="divider"></li>
+                                                        <li><a href="#" data-type="delete-carousel-image" data-id="<?php echo $c['id']; ?>" data-name="<?php echo str_replace(' ', '%20', $c['carousel_name']); ?>" onclick="alertDesign(this);">Delete Image</a></li>
+                                                    </ul>
+                                                </div>
+                                            </center>
                                         </p>
                                     </div>
                                 </div>
