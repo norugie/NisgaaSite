@@ -208,6 +208,24 @@
 			}
 		}
 
+		public function editCarouselImage($database, $id, $photo, $caption){
+			$sql = "UPDATE carousel SET 
+						   carousel_name = '$photo',
+						   carousel_desc = '$caption'
+					WHERE id = '$id'";
+			$query = mysqli_query($database->con, $sql);
+			if(!$query){
+			    header("location: ../cms/interaction.php?tab=web&subtab=content&page=carousel&error=true");
+			} else {
+				global $log;
+				$info = "Modified an image from the current home carousel image list.";
+				$log->logInput($database, $info);
+
+				header("location: ../cms/interaction.php?tab=web&subtab=content&page=carousel&editCarouselImage=true");
+
+			}
+		}
+
         /*********************************************************************************************/
 		/***************************  Interaction Functionalities -- Page Information  ***************/
         /*********************************************************************************************/

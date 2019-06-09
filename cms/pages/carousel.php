@@ -1,5 +1,7 @@
 <?php $carousel = $interaction->carouselList($database); ?>
 
+<?php require '../components/modals/edit_carousel.php'; ?>
+
 <div class="row clearfix">
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
         <div class="card">
@@ -36,7 +38,7 @@
                                                         <span>OPTIONS</span> <span class="caret"></span>
                                                     </button>
                                                     <ul class="dropdown-menu">
-                                                        <li><a href="#">Modify Image</a></li>
+                                                        <li><a href="#" data-toggle="modal" data-target="#edit-carousel-image-modal" data-values='<?php echo json_encode(str_replace("'", "&apos;", $c)); ?>' onclick="editCarouselImage(this);">Modify Image</a></li>
                                                         <li role="separator" class="divider"></li>
                                                         <li><a href="#" data-type="delete-carousel-image" data-id="<?php echo $c['id']; ?>" data-name="<?php echo str_replace(' ', '%20', $c['carousel_name']); ?>" onclick="alertDesign(this);">Delete Image</a></li>
                                                     </ul>

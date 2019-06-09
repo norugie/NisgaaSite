@@ -169,6 +169,44 @@
 
         }
 
+        if(isset($_GET['editCarouselImage'])){
+            $id = mysqli_real_escape_string($database->con, $_POST['edit_carousel_image_id']);
+            $caption = mysqli_real_escape_string($database->con, $_POST['carousel_caption']);
+            $photo;
+
+            if(!file_exists($_FILES['carousel_image']['tmp_name']) || !is_uploaded_file($_FILES['carousel_image']['tmp_name'])){
+
+                $photo = mysqli_real_escape_string($database->con, $_POST['edit_carousel_image_name']);
+
+            } else {
+
+                if(isset($_FILES['carousel_image'])){
+                    $errors = 0;
+                    $file_name = $_FILES['carousel_image']['name'];
+                    $file_size = $_FILES['carousel_image']['size'];
+                    $file_tmp = $_FILES['carousel_image']['tmp_name'];
+                    $file_type = $_FILES['carousel_image']['type'];
+                    $file_ext = strtolower(end(explode('.', $_FILES['carousel_image']['name'])));
+                    
+                    if($file_size > 2097152){
+                        $errors = 1;
+                    }
+                    
+                    if($errors == 0){
+                        move_uploaded_file($file_tmp, "../images/carousel/".$file_name);
+                        $photo = $file_name;
+                    } else {
+                        header("location: ../cms/interaction.php?tab=web&subtab=content&page=carousel&error=true");
+                    }
+                } else {
+                    header("location: ../cms/interaction.php?tab=web&subtab=content&page=boe&error=true");
+                }   
+                
+            }
+
+            $interaction->editCarouselImage($database, $id, $photo, $caption);
+        }
+
         /*********************************************************************************************/
 		/***************************  Interaction Functionalities -- Page Information  ***************/
         /*********************************************************************************************/
