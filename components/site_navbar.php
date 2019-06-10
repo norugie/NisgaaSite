@@ -63,7 +63,7 @@
                     </ul>
                     <h5>Miscellaneous</h5>
                     <ul class="list-unstyled mb-3">
-                    <li class="nav-item"><a href="/culture_corner" class="nav-link">Culture Corner</a></li>
+                    <!-- <li class="nav-item"><a href="/culture_corner" class="nav-link">Culture Corner</a></li> -->
                     <li class="nav-item"><a href="/files" class="nav-link">District Files</a></li>
                     </ul> 
                 </div>
