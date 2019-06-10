@@ -16,7 +16,7 @@ if($page_name == 'curriculum' || $page_name == 'department'){
     } else if($content_breadcrumb == 'tech'){
         $content_breadcrumb = 'INFORMATION TECHNOLOGY DEPARTMENT';
     } else if($content_breadcrumb == 'maintenance'){
-        $content_breadcrumb = 'TRANSPORTAION AND MAINTENANCE DEPARTMENT';
+        $content_breadcrumb = 'TRANSPORTATION AND MAINTENANCE DEPARTMENT';
     } else {
         $content_breadcrumb = '';
     }

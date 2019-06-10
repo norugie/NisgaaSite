@@ -188,7 +188,7 @@
                     $file_type = $_FILES['carousel_image']['type'];
                     $file_ext = strtolower(end(explode('.', $_FILES['carousel_image']['name'])));
                     
-                    if($file_size > 2097152){
+                    if($file_size > 209715200){
                         $errors = 1;
                     }
                     
@@ -218,7 +218,7 @@
                 $file_type = $_FILES['carousel_image']['type'];
                 $file_ext = strtolower(end(explode('.', $_FILES['carousel_image']['name'])));
                 
-                if($file_size > 2097152){
+                if($file_size > 209715200){
                     $errors = 1;
                 }
                 
@@ -232,6 +232,54 @@
             } else {
                 header("location: ../cms/interaction.php?tab=web&subtab=content&page=boe&error=true");
             }
+        }
+
+        if(isset($_GET['newCarouselImageSet'])){
+
+            $photo;
+            $caption;
+
+            $interaction->disableCarouselImageSet($database);
+
+            for($ctr=1; $ctr<= 5; $ctr++){
+                $caption = mysqli_real_escape_string($database->con, $_POST['carousel_caption_' . $ctr]);
+
+                if(isset($_FILES['carousel_image_' . $ctr]) && !empty($_FILES['carousel_image_' . $ctr]) && isset($_POST['carousel_caption_' . $ctr]) && !empty($_POST['carousel_caption_' . $ctr])){
+                    $errors = 0;
+                    $file_name = $_FILES['carousel_image_' . $ctr]['name'];
+                    $file_size = $_FILES['carousel_image_' . $ctr]['size'];
+                    $file_tmp = $_FILES['carousel_image_' . $ctr]['tmp_name'];
+                    $file_type = $_FILES['carousel_image_' . $ctr]['type'];
+                    
+                    if($file_size > 209715200){
+                        $errors = 1;
+                    }
+                    
+                    if($errors == 0){
+                        move_uploaded_file($file_tmp, "../images/carousel/".$file_name);
+                        $photo = $file_name;
+                        $interaction->newCarouselImageSet($database, $photo, $caption);
+                    } else {
+                        echo "<script>window.open('https://webdev.nisgaa.bc.ca/cms/interaction.php?tab=web&subtab=content&page=carousel&error=true', '_parent');</script>";
+                    }
+                } else {
+                    global $log;
+                    $info = "Added new image set to the home carousel image list.";
+                    $log->logInput($database, $info);
+
+                    echo "<script>window.open('https://webdev.nisgaa.bc.ca/cms/interaction.php?tab=web&subtab=content&page=carousel&newCarouselImageSet=true', '_parent');</script>";
+                    //header("location: ../cms/interaction.php?tab=web&subtab=content&page=carousel&newCarouselImageSet=true");
+                }
+
+                if($ctr > 5){
+                    global $log;
+                    $info = "Added new image set to the home carousel image list.";
+                    $log->logInput($database, $info);
+
+                    echo "<script>window.open('https://webdev.nisgaa.bc.ca/cms/interaction.php?tab=web&subtab=content&page=carousel&newCarouselImageSet=true', '_parent');</script>";
+                }
+            }
+
         }
 
         /*********************************************************************************************/
