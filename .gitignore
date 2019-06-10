@@ -11,6 +11,7 @@
 /images/carousel/*
 /links/*
 /components/map.php
+/todo.txt
 
 # Folder exceptions
 !/jobs/.gitkeep
