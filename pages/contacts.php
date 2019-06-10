@@ -78,7 +78,7 @@
                 </div>
                 <div class="row text-center">
                     <?php foreach($departments as $department): ?>
-                        <div class="col-md-6">
+                        <div class="col-md-4">
                             <div class="box-simple">
                                 <h3 class="h4"><?php echo $department['school_name']; ?></h3>
                                 <p style="color: #000!important;">

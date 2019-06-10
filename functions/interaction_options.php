@@ -186,9 +186,8 @@
                     $file_size = $_FILES['carousel_image']['size'];
                     $file_tmp = $_FILES['carousel_image']['tmp_name'];
                     $file_type = $_FILES['carousel_image']['type'];
-                    $file_ext = strtolower(end(explode('.', $_FILES['carousel_image']['name'])));
                     
-                    if($file_size > 209715200){
+                    if($file_size > 999999999){
                         $errors = 1;
                     }
                     
