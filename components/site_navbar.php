@@ -49,7 +49,7 @@
                     <h5>Departments</h5>
                     <ul class="list-unstyled mb-3">
                     <li class="nav-item"><a href="/department/finance" class="nav-link">Finance</a></li>
-                    <li class="nav-item"><a href="/department/sdss" class="nav-link">Student Data Support Services</a></li>
+                    <!-- <li class="nav-item"><a href="/department/sdss" class="nav-link">Student Data Support Services</a></li> -->
                     <li class="nav-item"><a href="/department/tech" class="nav-link">Information Technology Department</a></li>
                     <li class="nav-item"><a href="/department/maintenance" class="nav-link">Transportation and Maintenance Department</a></li>
                     </ul>      
@@ -88,10 +88,10 @@
         </li>
         <li class="nav-item dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Schools<b class="caret"></b></a>
             <ul class="dropdown-menu">
-            <li class="dropdown-item"><a href="javascript: void(0)" class="nav-link">NESS</a></li>
-            <li class="dropdown-item"><a href="javascript: void(0)" class="nav-link">GES</a></li>
-            <li class="dropdown-item"><a href="javascript: void(0)" class="nav-link">AAMES</a></li>
-            <li class="dropdown-item"><a href="javascript: void(0)" class="nav-link">NBES</a></li>
+            <li class="dropdown-item"><a href="https://ness.nisgaa.bc.ca" class="nav-link">NISGA'A ELEMENTARY SECONDARY SCHOOL</a></li>
+            <li class="dropdown-item"><a href="https://ges.nisgaa.bc.ca" class="nav-link">GITWINKSIHLKW ELEMENTARY SCHOOL</a></li>
+            <li class="dropdown-item"><a href="https://aames.nisgaa.bc.ca" class="nav-link">ALVIN A. MCKAY ELEMENTARY SCHOOL</a></li>
+            <li class="dropdown-item"><a href="https://nbes.nisgaa.bc.ca" class="nav-link">NATHAN BARTON ELEMENTARY SCHOOL</a></li>
             </ul>
         </li>
         <li class="nav-item dropdown"><a href="javascript: void(0)" data-toggle="dropdown" class="dropdown-toggle">Resources <b class="caret"></b></a>
@@ -99,6 +99,8 @@
             <li class="dropdown-item"><a href="/general_resources" class="nav-link">General Resources</a></li>
             <li class="dropdown-item"><a href="/teacher_resources" class="nav-link">Teacher Resources</a></li>
             <li class="dropdown-item"><a href="/learning_resources" class="nav-link">Learning Resources</a></li>
+            <li class="dropdown-item"><a href="/student_resources" class="nav-link">Student Resources</a></li>
+            <li class="dropdown-item"><a href="/parent_resources" class="nav-link">Parent Resources</a></li>
             </ul>
         </li>
         <li class="nav-item"><a href="/news">District News</a></li>

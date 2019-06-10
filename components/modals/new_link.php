@@ -63,6 +63,8 @@
                                             <?php if($_SESSION['school'] == 2){ ?><option value="District Forms">District Forms</option><?php } ?>
                                             <option value="Learning Resources">Learning Resources</option>
                                             <option value="Teacher Resources">Teacher Resources</option>
+                                            <option value="Parent Resources">Parent Resources</option>
+                                            <option value="Student Resources">Student Resources</option>
                                             <option value="General Resources">General Resources</option>
                                         </select>
                                     </div>
