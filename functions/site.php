@@ -294,7 +294,7 @@
 		public function schoolList($database){
             $array = array();
 
-            $sql =  "SELECT * FROM schools WHERE id NOT IN (1, 2, 7, 8, 9, 10)";
+            $sql =  "SELECT * FROM schools WHERE id NOT IN (1, 2, 7, 8, 10)";
 			$query = mysqli_query($database->con, $sql);
 			if (!$query) {
 			    echo "<script>window.open('https://webdev.nisgaa.bc.ca/error', '_parent');</script>";
@@ -310,7 +310,7 @@
 		public function departmentList($database){
             $array = array();
 
-            $sql =  "SELECT * FROM schools WHERE id NOT IN (2, 3, 4, 5, 6, 8, 9) ORDER BY id DESC";
+            $sql =  "SELECT * FROM schools WHERE id NOT IN (2, 3, 4, 5, 6, 8) ORDER BY id DESC";
 			$query = mysqli_query($database->con, $sql);
 			if (!$query) {
 			    echo "<script>window.open('https://webdev.nisgaa.bc.ca/error', '_parent');</script>";

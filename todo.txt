@@ -3,7 +3,6 @@ TODO:
 High Priority:
 - Fix backend for home page carousel
 - Make backend for phrase of the week
-- Make searching for news posts per category working
 - Remove SDSS
 - Add pages for Parent and Student Resources
 - Add Department Files and Curriculum Files in the Search results page
@@ -12,13 +11,8 @@ High Priority:
 - Remove dead resources
 
 Normal Priority:
-- Scalability of the website on mobile devices, particularly on iPads/tablets
 - Add the following to the sidebar
     - Nisga’a News
-- Placement of certain elements on the sidebar when screen resolution is on mobile (Consider floating action button):
-    - Quick Links
-    - Upcoming Events
-    - Career Opportunities
 - Consider letting logged-in users to edit page content on the actual page, rather than going to the backend
 - make drag n’ drop of photos working
 - Add file upload to tinymce
