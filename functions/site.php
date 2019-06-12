@@ -511,32 +511,45 @@
 			$array = array();
 
 			if($category == 0){
-				$sqlquery = "";
+				$sqlquery = "SELECT posts.post_title,
+									posts.post_date,
+									posts.post_desc,
+									posts.id,
+									posts.post_id,
+									posts.post_thumbnail,
+									users.firstname,
+									users.lastname
+							FROM posts 
+							LEFT JOIN users 
+							ON (posts.post_author = users.id) 
+							LEFT JOIN schools 
+							ON (posts.post_school = schools.id) 
+							WHERE posts.status = 'Active' ";
 			} else {
-				$sqlquery = "AND post_categories.cat_id = '$category' ";
+				$sqlquery = "SELECT posts.post_title,
+									posts.post_date,
+									posts.post_desc,
+									posts.id,
+									posts.post_id,
+									posts.post_thumbnail,
+									users.firstname,
+									users.lastname
+							FROM post_categories 
+							LEFT JOIN posts 
+							ON (post_categories.post_id = posts.id) 
+							LEFT JOIN categories 
+							ON (post_categories.cat_id = categories.id) 
+							LEFT JOIN users 
+							ON (posts.post_author = users.id) 
+							LEFT JOIN schools 
+							ON (posts.post_school = schools.id) 
+							WHERE posts.status = 'Active'
+							AND post_categories.cat_id = '$category' ";
 			}
 
-			$sql = "SELECT posts.post_title,
-                           posts.post_date,
-                           posts.post_desc,
-						   posts.id,
-                           posts.post_id,
-                           posts.post_thumbnail,
-                           users.firstname,
-						   users.lastname
-					FROM post_categories 
-				    LEFT JOIN posts 
-					ON (post_categories.post_id = posts.id) 
-					LEFT JOIN categories 
-					ON (post_categories.cat_id = categories.id) 
-					LEFT JOIN users 
-					ON (posts.post_author = users.id) 
-					LEFT JOIN schools 
-					ON (posts.post_school = schools.id) 
-					WHERE posts.post_school = '$school' 
-					AND posts.status = 'Active' ".
-					$sqlquery
-                    ."ORDER BY posts.post_date DESC
+			$sql = $sqlquery .
+					"AND posts.post_school = '$school'
+					ORDER BY posts.post_date DESC
                     LIMIT $sheet_index, $limit";
 			$query = mysqli_query($database->con, $sql);
 			if (!$query) {
@@ -554,25 +567,31 @@
 			$count;
 
             if($category == 0){
-				$sqlquery = "";
+				$sqlquery = "SELECT COUNT(*)
+							FROM posts 
+							LEFT JOIN users 
+							ON (posts.post_author = users.id) 
+							LEFT JOIN schools 
+							ON (posts.post_school = schools.id) 
+							WHERE posts.status = 'Active' ";
 			} else {
-				$sqlquery = "AND post_categories.cat_id = '$category' ";
+				$sqlquery = "SELECT COUNT(*)
+							FROM post_categories 
+							LEFT JOIN posts 
+							ON (post_categories.post_id = posts.id) 
+							LEFT JOIN categories 
+							ON (post_categories.cat_id = categories.id) 
+							LEFT JOIN users 
+							ON (posts.post_author = users.id) 
+							LEFT JOIN schools 
+							ON (posts.post_school = schools.id) 
+							WHERE posts.status = 'Active'
+							AND post_categories.cat_id = '$category' ";
 			}
 
-			$sql = "SELECT COUNT(*)
-					FROM post_categories 
-				    LEFT JOIN posts 
-					ON (post_categories.post_id = posts.id) 
-					LEFT JOIN categories 
-					ON (post_categories.cat_id = categories.id) 
-					LEFT JOIN users 
-					ON (posts.post_author = users.id) 
-					LEFT JOIN schools 
-					ON (posts.post_school = schools.id) 
-					WHERE posts.post_school = '$school' 
-					AND posts.status = 'Active' ".
-					$sqlquery
-                    ."ORDER BY posts.post_date DESC";
+			$sql = $sqlquery .
+					"AND posts.post_school = '$school'
+					ORDER BY posts.post_date DESC";
 			$query = mysqli_query($database->con, $sql);
 			if (!$query) {
 			    echo "<script>window.open('https://webdev.nisgaa.bc.ca/error', '_parent');</script>";
