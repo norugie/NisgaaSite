@@ -11,8 +11,6 @@ if($page_name == 'curriculum' || $page_name == 'department'){
         $content_breadcrumb = 'LANGUAGE AND CULTURE';
     } else if($content_breadcrumb == 'finance'){
         $content_breadcrumb = 'FINANCE DEPARTMENT';
-    } else if($content_breadcrumb == 'sdss'){
-        $content_breadcrumb = 'STUDENT DATA SUPPORT SERVICES';
     } else if($content_breadcrumb == 'tech'){
         $content_breadcrumb = 'INFORMATION TECHNOLOGY DEPARTMENT';
     } else if($content_breadcrumb == 'maintenance'){
