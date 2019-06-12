@@ -4,7 +4,7 @@
     <ul class="tag-cloud list-inline text-center">
         <?php $categories = $site->categoryListPerPost($database, $post_info['id']);?>
         <?php foreach($categories as $cat): ?>
-            <li class="list-inline-item"><a href="#"><i class="fa fa-tags"></i> <?php echo $cat['cat_desc']; ?></a></li>
+            <li class="list-inline-item"><a href="/news/category/<?php echo $cat['id']; ?>"><i class="fa fa-tags"></i> <?php echo $cat['cat_desc']; ?></a></li>
         <?php endforeach; ?>
     </ul>
     <div id="post-content">
