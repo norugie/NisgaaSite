@@ -3,16 +3,25 @@
 <?php 
 
     $limit = 6; 
-
+    $sheet;
+    $category;
 
     if (isset($url[1]) && !empty($url[1]) && $url[1] == 'sheet' && isset($url[2]) && !empty($url[2])){
-        $sheet  = $url[2]; 
+        $sheet = $url[2];
+        $category = 0; 
+    } else if(isset($url[1]) && !empty($url[1]) && $url[1] == 'category' && isset($url[2]) && !empty($url[2]) && isset($url[3]) && !empty($url[3]) && $url[3] == 'sheet' && isset($url[4]) && !empty($url[4])){
+        $sheet = $url[4];
+        $category = $url[2];
+    } else if(isset($url[1]) && !empty($url[1]) && $url[1] == 'category' && isset($url[2]) && !empty($url[2]) && !isset($url[3]) && empty($url[3]) && !isset($url[4]) && empty($url[4])){
+        $sheet = 1;
+        $category = $url[2];
     } else {
-        $sheet = 1; 
+        $sheet = 1;
+        $category = 0; 
     }  
 
     $sheet_index= ($sheet - 1) * $limit;
-    $blog_list = $site->blogList($database, 2, $limit, $sheet_index);
+    $blog_list = $site->blogList($database, 2, $limit, $sheet_index, $category);
 
 ?>
 
@@ -37,7 +46,7 @@
                             <ul class="tag-cloud list-inline">
                                 <?php $cats = $site->categoryListPerPost($database, $blog['id']);?>
                                 <?php foreach($cats as $cat): ?>
-                                    <li class="list-inline-item"><a href="#"><i class="fa fa-tags"></i> <?php echo $cat['cat_desc']; ?></a></li>
+                                    <li class="list-inline-item"><a href="/news/category/<?php echo $cat['id']; ?>"><i class="fa fa-tags"></i> <?php echo $cat['cat_desc']; ?></a></li>
                                 <?php endforeach; ?>
                             </ul>
                         </div>
@@ -49,13 +58,13 @@
     </div>
 
     <?php
-        $total_sheets = $site->blogListCount($database, 2);
+        $total_sheets = $site->blogListCount($database, 2, $category);
         $total_pages = ceil($total_sheets / $limit);  
     ?>
 
     <ul class="pager list-unstyled d-flex align-items-center justify-content-between">
-        <li class="previous <?php if($sheet == $total_pages){ ?>disabled<?php } ?>"><a href="<?php if($sheet == $total_pages){ ?> javascript:void(0);<?php } else { ?>/news/sheet/<?php echo $sheet+1; } ?>" class="btn btn-template-outlined">← Older</a></li>
-        <li class="next <?php if($sheet == 1){ ?>disabled<?php } ?>"><a href="<?php if($sheet == 1){ ?> javascript:void(0);<?php } else { ?>/news/sheet/<?php echo $sheet-1; } ?>" class="btn btn-template-outlined">Newer →</a></li>
+        <li class="previous <?php if($sheet == $total_pages){ ?>disabled<?php } ?>"><a href="<?php if($sheet == $total_pages){ ?> javascript:void(0);<?php } else { ?>/news/<?php if($category != 0){ echo "category/" . $category . "/"; } ?>sheet/<?php echo $sheet+1; } ?>" class="btn btn-template-outlined">← Older</a></li>
+        <li class="next <?php if($sheet == 1){ ?>disabled<?php } ?>"><a href="<?php if($sheet == 1){ ?> javascript:void(0);<?php } else { ?>/news/<?php if($category != 0){ echo "category/" . $category . "/"; } ?>sheet/<?php echo $sheet-1; } ?>" class="btn btn-template-outlined">Newer →</a></li>
     </ul>
     <br>
 </div>
