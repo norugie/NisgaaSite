@@ -13,7 +13,6 @@
         <meta http-equiv="Content-type" content="text/html; charset=UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         
-
         <!-- Primary Meta Tags -->
         <title>SD92 - Nisga'a</title>
         <meta name="title" content="SD92 - Nisga'a">
