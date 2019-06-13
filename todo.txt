@@ -3,8 +3,6 @@ TODO:
 High Priority:
 - Fix backend for home page carousel
 - Make backend for phrase of the week
-- Remove SDSS
-- Add pages for Parent and Student Resources
 - Add Department Files and Curriculum Files in the Search results page
 - Facebook Auto-publish but only for important posts
 - Change resource tags
@@ -21,4 +19,5 @@ Normal Priority:
 
 Low Priority:
 - Clean code
+- Do proper comment documentation
 - Fix meta tags to allow social media sites to post a link preview when linking the sites
