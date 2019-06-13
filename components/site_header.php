@@ -1,9 +1,10 @@
 <?php 
     header('X-Frame-Options: SAMEORIGIN');
     header("X-XSS-Protection: 1; mode=block");
-    header("Strict-Transport-Security:max-age=63072000");
+    header("Strict-Transport-Security: max-age=63072000");
     header('X-Content-Type-Options: nosniff');
     header('Content-type: text/html; charset=utf-8');
+    header("Cache-Control: max-age=604800"); // File to cache lasts for 1 week
 ?>
 <!DOCTYPE html>
 <html>
@@ -11,6 +12,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="Content-type" content="text/html; charset=UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        
 
         <!-- Primary Meta Tags -->
         <title>SD92 - Nisga'a</title>
@@ -39,16 +41,11 @@
         <link rel="stylesheet" href="/plugins/font-awesome/css/font-awesome.min.css">
         <!-- Google fonts - Roboto-->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,700">
-        <!-- Bootstrap Select-->
-        <link rel="stylesheet" href="/plugins/bootstrap-select/css/bootstrap-select.min.css">
-        <!-- Owl Carousel -->
-        <link rel="stylesheet" href="/plugins/owl.carousel/assets/owl.carousel.css">
-        <link rel="stylesheet" href="/plugins/owl.carousel/assets/owl.theme.default.css">
         <!-- Theme stylesheet-->
-        <link rel="stylesheet" href="/css/themes/style.red.css" id="theme-stylesheet">
+        <link rel="stylesheet" href="/css/themes/style.red.min.css" id="theme-stylesheet">
         <!-- Custom stylesheet - for your changes-->
-        <link rel="stylesheet" href="/css/custom.css">
-        <link rel="stylesheet" href="/css/responsive-font.css">
+        <link rel="stylesheet" href="/css/custom.min.css">
+        <link rel="stylesheet" href="/css/responsive-font.min.css">
         <!-- Favicon and apple touch icons-->
         <link rel="icon" href="/nisgaa-icon.png" type="image/x-icon">
 

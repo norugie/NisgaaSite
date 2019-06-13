@@ -1,3 +1,7 @@
+<!-- Owl Carousel -->
+<link rel="stylesheet" href="/plugins/owl.carousel/assets/owl.carousel.css">
+<link rel="stylesheet" href="/plugins/owl.carousel/assets/owl.theme.default.css">
+
 <!-- JUMBOTRON -->
 <section class="no-mb relative-positioned">
     <div class="relative-positioned">
@@ -98,4 +102,26 @@
         </div>
     </div>
 </footer>
+
 <!-- INFORMATION BAR END -->
+
+<script src="/plugins/owl.carousel/owl.carousel.min.js"></script>
+<script src="/plugins/owl.carousel2.thumbs/owl.carousel2.thumbs.min.js"></script>
+
+<script>
+
+    // Owl Carousel
+
+    $(document).ready(function(){
+        $(".owl-carousel").owlCarousel({
+            items: 1,
+            loop: true,
+            animateIn: 'fadeIn',
+            animateOut: 'fadeOut',
+            autoplay: true,
+            autoplayTimeout: 3500,
+            dots: false
+        });
+    });
+
+</script>
