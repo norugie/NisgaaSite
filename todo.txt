@@ -1,11 +1,8 @@
 TODO:
 
 High Priority:
-- Fix backend for home page carousel
 - Make backend for phrase of the week
 - Facebook Auto-publish but only for important posts
-- Change resource tags
-- Remove dead resources
 
 Normal Priority:
 - Add the following to the sidebar

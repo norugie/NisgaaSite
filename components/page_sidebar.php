@@ -216,12 +216,12 @@
                             <span>Board of Education</span>
                         </a>
                     </li>
-                    <!-- <li id="culture">
+                    <li id="culture">
                         <a href="interaction.php?tab=web&page=culture">
                             <i class="material-icons">nature_people</i>
                             <span>Culture Corner</span>
                         </a>
-                    </li> -->
+                    </li>
                     <?php } ?>
                 </ul>
             </li>

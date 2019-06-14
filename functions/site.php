@@ -111,6 +111,8 @@
 						links.link_tag = 'General Resources'
 						OR links.link_tag = 'Teacher Resources'
 						OR links.link_tag = 'Learning Resources'
+						OR links.link_tag = 'Student Resources'
+						OR links.link_tag = 'Parent Resources'
 					)";
 			$query = mysqli_query($database->con, $sql);
 			if (!$query) {
