@@ -18,6 +18,5 @@ Normal Priority:
 
 Low Priority:
 - Clean code
-- Make website loading efficient
 - Do proper comment documentation
 - Fix meta tags to allow social media sites to post a link preview when linking the sites
