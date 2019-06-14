@@ -261,21 +261,14 @@
                     } else {
                         echo "<script>window.open('https://webdev.nisgaa.bc.ca/cms/interaction.php?tab=web&subtab=content&page=carousel&error=true', '_parent');</script>";
                     }
-                } else {
-                    global $log;
-                    $info = "Added new image set to the home carousel image list.";
-                    $log->logInput($database, $info);
-
-                    echo "<script>window.open('https://webdev.nisgaa.bc.ca/cms/interaction.php?tab=web&subtab=content&page=carousel&newCarouselImageSet=true', '_parent');</script>";
-                    //header("location: ../cms/interaction.php?tab=web&subtab=content&page=carousel&newCarouselImageSet=true");
                 }
 
-                if($ctr > 5){
+                if($ctr >= 5){
                     global $log;
                     $info = "Added new image set to the home carousel image list.";
                     $log->logInput($database, $info);
 
-                    echo "<script>window.open('https://webdev.nisgaa.bc.ca/cms/interaction.php?tab=web&subtab=content&page=carousel&newCarouselImageSet=true', '_parent');</script>";
+                    header("location: ../cms/interaction.php?tab=web&subtab=content&page=carousel&newCarouselImageSet=true");
                 }
             }
 
