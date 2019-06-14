@@ -12,7 +12,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="Content-type" content="text/html; charset=UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        
+        <meta name="google-site-verification" content="AoSEh84a-NthX9s-5lUi7X8yrNXhh9J5LFtlncT5lJI">
 
         <!-- Primary Meta Tags -->
         <title>SD92 - Nisga'a</title>
