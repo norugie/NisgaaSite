@@ -37,7 +37,7 @@
 
         <!-- Bootstrap CSS-->
         <link rel="stylesheet" href="/plugins/bootstrap-v4/css/bootstrap.min.css">
-        <!-- Font Awesome CSS-->
+        <!-- Font Awesome CSS -->
         <link rel="stylesheet" href="/plugins/font-awesome/css/font-awesome.min.css">
         <!-- Google fonts - Roboto-->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,700">
