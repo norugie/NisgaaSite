@@ -59,11 +59,20 @@
             dictRemoveFile: "Remove file", // Default: Remove file
             dictRemoveFileConfirmation: null, // Default: null
             dictMaxFilesExceeded: "You can not upload any more files.", // Default: You can not upload any more files.
-            success: function(response){
-                console.log(response);
+            success: function(file){
+                imageName = $("#image-media-name").val();
+                $("#image-media-name").attr("value", file.name + "," + imageName);
             },
-            error: function(response){
-                console.log(response);
+            error: function(file, message, xhr){
+                if (xhr == null) this.removeFile(file);
+                alert(message);
+            },
+            init: function(){
+                this.on("removedfile", function(file){ 
+                    imageNameList = $("#image-media-name").val();
+                    imageNameList = imageNameList.replace(file.name+",", "");
+                    $("#image-media-name").attr("value", imageNameList);
+                 });
             }
         };
     });
