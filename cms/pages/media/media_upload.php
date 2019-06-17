@@ -17,7 +17,7 @@
     <!-- Inline Layout -->
     <div class="row clearfix">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-            <form action="/" id="frmFileUpload" class="dropzone" method="post" enctype="multipart/form-data">
+            <form action="../functions/media.php" id="mediaUpload" name="file" class="dropzone" method="post" enctype="multipart/form-data">
                 <div class="dz-message">
                     <div class="drag-icon-cph">
                         <i class="material-icons">touch_app</i>
@@ -29,7 +29,7 @@
                 </div>
             </form>
             <form action="">
-                <input type="text">
+                <input type="text" id="image-media-name" name="image-media-name" value="">
                 <div class="row clearfix">
                     <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12" style="float: right;">
                         <button type="submit" class="btn bg-blue-grey btn-block btn-lg waves-effect">SAVE</button>  
@@ -47,9 +47,24 @@
 <script>
     $(function () {
         //Dropzone
-        Dropzone.options.frmFileUpload = {
+        Dropzone.options.mediaUpload = {
             paramName: "file",
-            maxFilesize: 2
+            acceptedFiles: "image/*",
+            maxFileSize: 1, // MB
+            addRemoveLinks: true,
+            dictDefaultMessage: "Drop files here to upload.", // Default: Drop files here to upload
+            dictFallbackMessage: "Your browser does not support drag'n'drop file uploads.", // Default: Your browser does not support drag'n'drop file uploads.
+            dictFileTooBig: "File is too big ({{filesize}}MiB). Max filesize: {{maxFilesize}}MiB.", // Default: File is too big ({{filesize}}MiB). Max filesize: {{maxFilesize}}MiB.
+            dictInvalidFileType: "You can't upload files of this type.", // Default: You can't upload files of this type.
+            dictRemoveFile: "Remove file", // Default: Remove file
+            dictRemoveFileConfirmation: null, // Default: null
+            dictMaxFilesExceeded: "You can not upload any more files.", // Default: You can not upload any more files.
+            success: function(response){
+                console.log(response);
+            },
+            error: function(response){
+                console.log(response);
+            }
         };
     });
 </script>

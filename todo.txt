@@ -3,6 +3,7 @@ TODO:
 High Priority:
 - Make backend for phrase of the week
 - Facebook Auto-publish but only for important posts
+- Make adding of media photo album per post working
 
 Normal Priority:
 - Add the following to the sidebar
@@ -11,9 +12,9 @@ Normal Priority:
 - make drag n’ drop of photos working
 - Add file upload to tinymce
 - Add grid columns to tinymce
-- Make adding of media photo album per post working
 
 Low Priority:
 - Clean code
 - Do proper comment documentation
 - Fix meta tags to allow social media sites to post a link preview when linking the sites
+- Conduct testing
