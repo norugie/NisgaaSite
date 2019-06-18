@@ -28,8 +28,9 @@
                     <input name="file" type="file" multiple />
                 </div>
             </form>
-            <form action="">
-                <input type="text" id="image-media-name" name="image-media-name" value="">
+            <form action="../functions/post.php?post=true&addMediaImages=true" method="POST">
+                <input type="text" id="image_media_id" name="image_media_id" value="<?php echo $_GET['media_id']; ?>" required>
+                <input type="text" id="image_media_name" name="image_media_name" value="" required>
                 <div class="row clearfix">
                     <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12" style="float: right;">
                         <button type="submit" class="btn bg-blue-grey btn-block btn-lg waves-effect">SAVE</button>  
@@ -50,7 +51,7 @@
         Dropzone.options.mediaUpload = {
             paramName: "file",
             acceptedFiles: "image/*",
-            maxFileSize: 1, // MB
+            maxFileSize: 10, // MB
             addRemoveLinks: true,
             dictDefaultMessage: "Drop files here to upload.", // Default: Drop files here to upload
             dictFallbackMessage: "Your browser does not support drag'n'drop file uploads.", // Default: Your browser does not support drag'n'drop file uploads.
@@ -60,8 +61,8 @@
             dictRemoveFileConfirmation: null, // Default: null
             dictMaxFilesExceeded: "You can not upload any more files.", // Default: You can not upload any more files.
             success: function(file){
-                imageName = $("#image-media-name").val();
-                $("#image-media-name").attr("value", file.name + "," + imageName);
+                imageName = $("#image_media_name").val();
+                $("#image_media_name").attr("value", file.name + "," + imageName);
             },
             error: function(file, message, xhr){
                 if (xhr == null) this.removeFile(file);
@@ -69,10 +70,10 @@
             },
             init: function(){
                 this.on("removedfile", function(file){ 
-                    imageNameList = $("#image-media-name").val();
+                    imageNameList = $("#image_media_name").val();
                     imageNameList = imageNameList.replace(file.name+",", "");
-                    $("#image-media-name").attr("value", imageNameList);
-                 });
+                    $("#image_media_name").attr("value", imageNameList);
+                });
             }
         };
     });
