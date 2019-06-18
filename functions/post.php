@@ -337,6 +337,16 @@
 			}
 		}
 
+		public function addMediaImages($database, $id, $media_image){
+			$sql = "INSERT INTO media
+			VALUES (null, '$media_image','$id')";
+			$query = mysqli_query($database->con, $sql);
+			if(!$query){
+				header("location:../cms/post.php?tab=post&page=media&error=true");
+				// echo("Error description: " . mysqli_error($database->con));
+			}
+		}
+
 		public function deleteAllMediaCategories($database, $id){
 			$sql = "DELETE FROM post_categories WHERE post_id = '$id'";
 			$query = mysqli_query($database->con, $sql);

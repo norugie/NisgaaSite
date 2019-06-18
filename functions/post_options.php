@@ -397,6 +397,25 @@
 
         }
 
+        if(isset($_GET['addMediaImages'])){
+            $id = mysqli_real_escape_string($database->con, $_POST['image_media_id']);
+            $images = mysqli_real_escape_string($database->con, $_POST['image_media_name']);
+            $images = rtrim($images, ',');
+            $media_images = explode(',', $images);
+            // echo "<br>" . $images . "<br>";
+            // print_r($media_images);
+            for($i = 0; $i < count($media_images); $i++){
+                
+                $post->addMediaImages($database, $id, $media_images[$i]);
+
+                if($i == count($media_images)-1){
+                    header("location:../cms/post.php?tab=post&page=media&addMedia=true");
+                }
+                // echo $i . " " . count($media_images) . "<br>"; 
+                // echo $media_images[$i] . "<br>";
+            }
+        }
+
     }
 
 ?>
