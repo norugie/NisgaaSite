@@ -715,6 +715,20 @@
 			return $array;
 		}
 
+		public function mediaImages($database, $id){
+            $array;
+			$sql = "SELECT * FROM media WHERE post_id = '$id'";
+			$query = mysqli_query($database->con, $sql);
+			if (!$query) {
+			    echo "<script>window.open('https://webdev.nisgaa.bc.ca/error', '_parent');</script>";
+			} else {
+				while($row = mysqli_fetch_array($query)){
+					$array[] = $row;
+				}
+            }
+			return $array; 
+		}
+
         public function categoryListPerPost($database, $post_id){
             $array = array();
 
