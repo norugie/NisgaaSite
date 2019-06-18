@@ -9,5 +9,13 @@
     </ul>
     <div id="post-content">
         <?php echo $post_info['post_text']; ?>
+        <?php if($post_info['post_type'] == 'Media'){ 
+            $media_images = $site->mediaImages($database, $post_info['id']);
+            foreach($media_images as $mi):
+        ?>
+            <img src="/images/posts/media/<?php echo $mi['media_name']; ?>" class="img-fluid" alt="">
+        <?php
+            endforeach;
+        } ?>
     </div>
 </div>
