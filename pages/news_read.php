@@ -12,23 +12,24 @@
     </ul>
     <div id="post-content">
         <?php echo $post_info['post_text']; ?>
-        <div id="animated-thumbnails" class="list-unstyled row clearfix">
-            <?php if($post_info['post_type'] == 'Media'){ 
-                $media_images = $site->mediaImages($database, $post_info['id']);
-                foreach($media_images as $mi):
-            ?>
-                <!-- <img src="/images/posts/media/<?php echo $mi['media_name']; ?>" class="img-fluid" alt=""> -->  
-                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                    <div class="box-image">
+        <?php if($post_info['post_type'] == 'Media'){ ?>
+            <div id="animated-thumbnails" class="list-unstyled row clearfix">
+        <?php 
+            $media_images = $site->mediaImages($database, $post_info['id']);
+            foreach($media_images as $mi):
+        ?>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                <div class="box-image">
+                    <center>
                         <a href="/images/posts/media/<?php echo $mi['media_name']; ?>" data-sub-html="<?php echo $post_info['post_title']; ?>">
-                            <img class="img-fluid thumbnail" src="/images/posts/media/<?php echo $mi['media_name']; ?>">
+                            <img class="img-fluid thumbnail" src="/images/posts/media/<?php echo $mi['media_name']; ?>" style="height: 180px!important; object-fit: cover!important;">
                         </a>
-                    </div>
+                    </center>
                 </div>
-            <?php
-                endforeach;
-            } ?>
-        </div>
+            </div>
+        <?php endforeach; ?>
+            </div>
+        <?php } ?>
     </div>
 
 </div>

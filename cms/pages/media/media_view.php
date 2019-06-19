@@ -1,3 +1,6 @@
+<!-- Light Gallery Plugin Css -->
+<link href="../plugins/light-gallery/css/lightgallery.css" rel="stylesheet">
+
 <div class="header">
     <div class="row clearfix">
         <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 text-xs-sm-center">
@@ -21,6 +24,41 @@
     <div class="row clearfix">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <?php echo $media_info['post_text']; ?>
+            
+            <?php if($media_info['post_type'] == 'Media'){ ?>
+                <div id="animated-thumbnails" class="list-unstyled row clearfix">
+            <?php 
+                $media_images = $post->mediaImages($database, $media_info['id']);
+                foreach($media_images as $mi):
+            ?>
+                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                    <a href="/images/posts/media/<?php echo $mi['media_name']; ?>" data-sub-html="<?php echo $media_info['post_title']; ?>">
+                        <center>
+                            <img class="img-responsive thumbnail" src="/images/posts/media/<?php echo $mi['media_name']; ?>" style="height: 155px!important; object-fit: cover!important;">
+                        </center>
+                    </a>
+                </div>
+            <?php endforeach; ?>
+                </div>
+            <?php } ?>
+
         </div>
     </div>
 </div>
+
+<!-- Light Gallery Plugin Js -->
+<script src="../plugins/light-gallery/js/lightgallery-all.js"></script>
+
+<script>
+    $( document ).ready(function() {
+        $('#animated-thumbnails').lightGallery({
+            thumbnail: true,
+            mode: 'lg-fade',
+            autoplay: false,
+            autoplayControls: false,
+            fullScreen: false,
+            actualSize: false,
+            selector: 'a'
+        });
+    });
+</script>
