@@ -412,12 +412,26 @@
 					AND posts.id = '$id'";
 			$query = mysqli_query($database->con, $sql);
 			if (!$query) {
-			    header("location:../cms/post.php?tab=post&page=blog&error=true");
+			    header("location:../cms/post.php?tab=post&page=media&error=true");
 			} else {
 				$array = mysqli_fetch_assoc($query);
             }
             
 			return $array;
+		}
+
+		public function mediaImages($database, $id){
+            $array;
+			$sql = "SELECT * FROM media WHERE post_id = '$id'";
+			$query = mysqli_query($database->con, $sql);
+			if (!$query) {
+			    header("location:../cms/post.php?tab=post&page=media&error=true");
+			} else {
+				while($row = mysqli_fetch_array($query)){
+					$array[] = $row;
+				}
+            }
+			return $array; 
 		}
 
     }
