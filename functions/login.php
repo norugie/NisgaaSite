@@ -1,6 +1,6 @@
 <?php
 	
-	require 'security_cookies.php';
+	//require 'security_cookies.php';
 	require 'connect.php';
     session_start();
     

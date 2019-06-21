@@ -120,18 +120,18 @@
                 $file_type = $_FILES['jobfile']['type'];
                 $file_ext = strtolower(end(explode('.', $_FILES['jobfile']['name'])));
                 
-                $expensions = array("doc","docx","pdf");
+                $extensions = array("doc","docx","pdf");
                 
-                if(in_array($file_ext, $expensions) == false){
+                if(in_array($file_ext, $extensions) == false){
                     $errors = 1;
                 }
                 
-                if($file_size > 2097152){
+                if($file_size > 20971520){ // Limit job file upload to 20MB
                     $errors = 1;
                 }
                 
                 if($errors == 0){
-                    move_uploaded_file($file_tmp, "../jobs/".$file_name);
+                    move_uploaded_file($file_tmp, "../jobs/" . $file_name);
                     $district->addJob($database, $id, $title, $jobdesc, $jobtype, $school, $jobopen, $jobclose, $file_name);
                 } else {
                     header("location:../cms/district.php?tab=sd&page=employment&error=true");
@@ -155,18 +155,18 @@
                 $file_type = $_FILES['edit-jobfile']['type'];
                 $file_ext = strtolower(end(explode('.', $_FILES['edit-jobfile']['name'])));
                 
-                $expensions = array("doc","docx","pdf");
+                $extensions = array("doc","docx","pdf");
                 
-                if(in_array($file_ext, $expensions) == false){
+                if(in_array($file_ext, $extensions) == false){
                     $errors = 1;
                 }
                 
-                if($file_size > 2097152){
+                if($file_size > 20971520){ // Limit job file upload to 20 MB
                     $errors = 1;
                 }
                 
                 if($errors == 0){
-                    move_uploaded_file($file_tmp, "../jobs/".$file_name);
+                    move_uploaded_file($file_tmp, "../jobs/" . $file_name);
                     $district->editJobFile($database, $id, $title, $file_name);
                 } else {
                     header("location:../cms/district.php?tab=sd&page=employment&error=true");
@@ -257,12 +257,12 @@
                     $file_type = $_FILES['post_thumbnail']['type'];
                     $file_ext = strtolower(end(explode('.', $_FILES['post_thumbnail']['name'])));
                     
-                    if($file_size > 2097152){
+                    if($file_size > 5242880){ // Limit thumbnail upload to 5 MB
                         $errors = 1;
                     }
                     
                     if($errors == 0){
-                        move_uploaded_file($file_tmp, "../images/thumbnails/".$file_name);
+                        move_uploaded_file($file_tmp, "../images/thumbnails/" . $file_name);
                         $post_thumbnail = $file_name;
                         $post_id = $district->addPostEvent($database, $post_title, $post_content, $event_desc, $post_thumbnail);
                     } else {
@@ -376,14 +376,13 @@
                     $file_size = $_FILES['edit_link_content']['size'];
                     $file_tmp = $_FILES['edit_link_content']['tmp_name'];
                     $file_type = $_FILES['edit_link_content']['type'];
-                    $file_ext = strtolower(end(explode('.', $_FILES['edit_link_content']['name'])));
                     
-                    if($file_size > 20971520){
+                    if($file_size > 52428800){ // Limit file upload to 50 MB
                         $errors = 1;
                     }
                     
                     if($errors == 0){
-                        move_uploaded_file($file_tmp, "../links/".$file_name);
+                        move_uploaded_file($file_tmp, "../links/" . $file_name);
                         $link_content = $file_name;
                         $district->editForm($database, $id, $link_id, $link_name, $link_desc, $link_content, $link_tag);
                     } else {
@@ -419,7 +418,6 @@
                     $file_size = $_FILES['link_content']['size'];
                     $file_tmp = $_FILES['link_content']['tmp_name'];
                     $file_type = $_FILES['link_content']['type'];
-                    $file_ext = strtolower(end(explode('.', $_FILES['link_content']['name'])));
                     
                     if($file_size > 20971520){
                         $errors = 1;

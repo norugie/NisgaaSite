@@ -162,6 +162,7 @@
                                     <div class="row clearfix">
                                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                             <label for="edit-jobfile">Job File Upload *</label>
+                                            <p class="font-12"><i><b>Note:</b> The max file size you can upload is 20 MB.</i></p>
                                             <div class="form-group">
                                                 <div class="form-line">
                                                     <input type="file" name="edit-jobfile" id="fileToUploadEdit" accept="application/msword, application/vnd.openxmlformats-officedocument.wordprocessingml.document, application/pdf" required>
