@@ -17,8 +17,6 @@
             
 			if($info['status'] == 'Active'){
                 header("location: ../cms/");
-			} else if($info['status'] == 'Inactive') {
-				header("location: ../new_user.php?logging=true");
 			} else {
                 header("location: ../login.php?restricted=true");
             }
