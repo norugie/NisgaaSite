@@ -255,7 +255,13 @@
                     $file_type = $_FILES['post_thumbnail']['type'];
                     $file_ext = strtolower(end(explode('.', $_FILES['post_thumbnail']['name'])));
                     
-                    if($file_size > 5242880){ // Limit thumbnail upload to 5 MB
+                    $extensions = array("jpeg","png","gif","svg","bmp");
+                
+                    if(in_array($file_ext, $extensions) == false){
+                        $errors = 1;
+                    }
+
+                    if($file_size > 10485760){ // Limit thumbnail upload to 10 MB
                         $errors = 1;
                     }
                     
