@@ -1,6 +1,22 @@
+<?php 
+    require 'functions/security_headers.php';
+?>
+
 <?php
 
     session_start();
+
+    $currentCookieParams = session_get_cookie_params();  
+    $sidvalue = session_id();  
+    setcookie(  
+        'PHPSESSID',    //name  
+        $sidvalue,  //value  
+        0,  //expires at end of session  
+        $currentCookieParams['path'],   //path  
+        $currentCookieParams['domain'], //domain  
+        true,   //secure
+        true  
+    );
 
     if(isset($_SESSION['id']) && isset($_SESSION['type'])){
         
@@ -60,7 +76,7 @@
                             <i class="material-icons">lock</i>
                         </span>
                         <div class="form-line">
-                            <input type="password" class="form-control" name="password" placeholder="Password" required>
+                            <input type="password" class="form-control" name="password" placeholder="Password" required autocomplete=off>
                         </div>
                     </div>
                     <div class="row">

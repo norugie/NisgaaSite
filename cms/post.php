@@ -11,14 +11,9 @@
         $schools = $post->schoolList($database);
 ?>
 
-<!DOCTYPE html>
-<html>
-
-<head>
-    <!-- Page Header -->
-    <?php require '../components/page_head.php'; ?>
-    <!-- #END# Page Header -->
-</head>
+<!-- Page Header -->
+<?php require '../components/page_head.php'; ?>
+<!-- #END# Page Header -->
 
 <body class="theme-blue-grey">
     

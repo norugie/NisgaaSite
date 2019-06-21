@@ -12,14 +12,10 @@
         $schools = $district->schoolList($database);
 ?>
 
-<!DOCTYPE html>
-<html>
+<!-- Page Header -->
+<?php require '../components/page_head.php'; ?>
+<!-- #END# Page Header -->
 
-<head>
-    <!-- Page Header -->
-    <?php require '../components/page_head.php'; ?>
-    <!-- #END# Page Header -->
-</head>
 
 <body class="theme-blue-grey">
     
