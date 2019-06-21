@@ -2,6 +2,8 @@
 
     if(isset($_GET['interaction'])){
 
+        require 'security_cookies.php';
+
         session_start();
         require 'connect.php';
         require 'log.php';

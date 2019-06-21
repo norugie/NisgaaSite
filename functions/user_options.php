@@ -1,6 +1,9 @@
 <?php
 
     if(isset($_GET['userOpt'])){
+
+        require 'security_cookies.php';
+
         session_start();
         require 'connect.php';
         require 'log.php';

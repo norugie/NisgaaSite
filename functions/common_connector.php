@@ -2,19 +2,10 @@
 
     session_start();
 
-    $currentCookieParams = session_get_cookie_params();  
-    $sidvalue = session_id();  
-    setcookie(  
-        'PHPSESSID',    //name  
-        $sidvalue,  //value  
-        0,  //expires at end of session  
-        $currentCookieParams['path'],   //path  
-        $currentCookieParams['domain'], //domain  
-        true,   //secure
-        true  
-    );
-
+    require 'security_cookies.php';
+    
     require 'connect.php';
+    
     $database = new Database();
     require 'user.php';
     $userInfo = new User();
