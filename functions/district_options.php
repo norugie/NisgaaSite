@@ -255,7 +255,7 @@
                     $file_type = $_FILES['post_thumbnail']['type'];
                     $file_ext = strtolower(end(explode('.', $_FILES['post_thumbnail']['name'])));
                     
-                    $extensions = array("jpeg","png","gif","svg","bmp");
+                    $extensions = array("jpeg","jpg","png","gif","svg","bmp");
                 
                     if(in_array($file_ext, $extensions) == false){
                         $errors = 1;
@@ -271,9 +271,11 @@
                         $post_id = $district->addPostEvent($database, $post_title, $post_content, $event_desc, $post_thumbnail);
                     } else {
                         header("location:../cms/district.php?tab=sd&page=events&error=true");
+                        //echo("Error description: " . mysqli_error($database->con));
                     }
                 } else {
                     header("location:../cms/district.php?tab=sd&page=events&error=true");
+                    //echo("Error description: " . mysqli_error($database->con));
                 }   
                 
             }
