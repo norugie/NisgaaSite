@@ -425,7 +425,7 @@
                     $file_tmp = $_FILES['link_content']['tmp_name'];
                     $file_type = $_FILES['link_content']['type'];
                     
-                    if($file_size > 20971520){
+                    if($file_size > 52428800){ // Limit file upload to 50 MB
                         $errors = 1;
                     }
                     

@@ -42,6 +42,7 @@
                             <div class="row clearfix">
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                     <label for="edit_form_content_file">File Content *</label>
+                                    <p class="font-12"><i><b>Note:</b> The max file size you can upload is 50 MB</i></p>
                                     <div class="form-group">
                                         <div class="form-line">
                                             <input type="file" class="form-control" id="edit_form_content_file" name="edit_link_content" required>

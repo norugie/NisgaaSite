@@ -50,6 +50,7 @@
                             <div class="row clearfix">
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                     <label for="link_content">File Content *</label>
+                                    <p class="font-12"><i><b>Note:</b> If form is a file, the max file size you can upload is 50 MB</i></p>
                                     <div class="form-group">
                                         <div class="form-line" id="input-field">
                                             <!-- Insert input onchange here -->
