@@ -2,8 +2,6 @@
 
     if(isset($_GET['post'])){
 
-        require 'security_cookies.php';
-
         session_start();
         require 'connect.php';
         require 'log.php';

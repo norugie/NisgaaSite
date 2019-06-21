@@ -9,7 +9,7 @@
         $currentCookieParams['path'],   //path  
         $currentCookieParams['domain'], //domain  
         true,   //secure
-        true  
+        true    //httponly
     );
 
 ?>
