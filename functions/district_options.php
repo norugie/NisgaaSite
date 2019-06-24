@@ -135,7 +135,7 @@
                     if($error == 1){
                         $_SESSION['error_message'] = "You tried uploading a file with an invalid file extension. Please make sure that the file's extension is one of the followings: .doc, .docx, .pdf.";
                     } else if($error == 2){
-                        $_SESSION['error_message'] = "You tried uploading a file that exceeded the file size limit. Please make sure that the file size is less than 20 MB."
+                        $_SESSION['error_message'] = "You tried uploading a file that exceeded the file size limit. Please make sure that the file size is less than 20 MB.";
                     }
                     header("location:../cms/district.php?tab=sd&page=employment&error=true");
                 }
@@ -175,7 +175,7 @@
                     if($error == 1){
                         $_SESSION['error_message'] = "You tried uploading a file with an invalid file extension. Please make sure that the file's extension is one of the followings: .doc, .docx, .pdf.";
                     } else if($error == 2){
-                        $_SESSION['error_message'] = "You tried uploading a file that exceeded the file size limit. Please make sure that the file size is less than 20 MB."
+                        $_SESSION['error_message'] = "You tried uploading a file that exceeded the file size limit. Please make sure that the file size is less than 20 MB.";
                     }
                     header("location:../cms/district.php?tab=sd&page=employment&error=true");
                 }
@@ -283,7 +283,7 @@
                         if($error == 1){
                             $_SESSION['error_message'] = "You tried uploading a file with an invalid file extension. Please make sure that the file's extension is one of the followings: .jpeg, .jpg, .png, .gif, .svg, .bmp.";
                         } else if($error == 2){
-                            $_SESSION['error_message'] = "You tried uploading a file that exceeded the file size limit. Please make sure that the file size is less than 10 MB."
+                            $_SESSION['error_message'] = "You tried uploading a file that exceeded the file size limit. Please make sure that the file size is less than 10 MB.";
                         }
                         header("location:../cms/district.php?tab=sd&page=events&error=true");
                     }
@@ -528,7 +528,7 @@
                         if($error == 1){
                             $_SESSION['error_message'] = "You tried uploading a file with an invalid file extension. Please make sure that the file's extension is one of the followings: .doc, .docx, .pdf.";
                         } else if($error == 2){
-                            $_SESSION['error_message'] = "You tried uploading a file that exceeded the file size limit. Please make sure that the file size is less than 20 MB."
+                            $_SESSION['error_message'] = "You tried uploading a file that exceeded the file size limit. Please make sure that the file size is less than 20 MB.";
                         }
                         header("location:../cms/post.php?tab=sd&page=packages&error=true");
                     }
@@ -582,7 +582,7 @@
                         if($error == 1){
                             $_SESSION['error_message'] = "You tried uploading a file with an invalid file extension. Please make sure that the file's extension is one of the followings: .doc, .docx, .pdf.";
                         } else if($error == 2){
-                            $_SESSION['error_message'] = "You tried uploading a file that exceeded the file size limit. Please make sure that the file size is less than 20 MB."
+                            $_SESSION['error_message'] = "You tried uploading a file that exceeded the file size limit. Please make sure that the file size is less than 20 MB.";
                         }
                         header("location:../cms/district.php?tab=sd&page=packages&error=true");
                     }

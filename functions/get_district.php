@@ -7,7 +7,8 @@
 			$array = array();
 			$sql = "SELECT * FROM roles";
 			$query = mysqli_query($database->con, $sql);
-			if (!$query) {
+			if(!$query){
+				$_SESSION['error_message'] = mysqli_error($database->con);
 			    header("location: ../cms/?error=true");
 			} else {
 				while($row = mysqli_fetch_array($query)){
@@ -24,7 +25,8 @@
 			$array = array();
 			$sql = "SELECT * FROM schools";
 			$query = mysqli_query($database->con, $sql);
-			if (!$query) {
+			if(!$query){
+				$_SESSION['error_message'] = mysqli_error($database->con);
 			    header("location: ../cms/?error=true");
 			} else {
 				while($row = mysqli_fetch_array($query)){
@@ -67,7 +69,8 @@
 					WHERE users.id != '$gid'";
 
 			$query = mysqli_query($database->con, $sql);
-			if (!$query) {
+			if(!$query){
+				$_SESSION['error_message'] = mysqli_error($database->con);
 			    header("location: ../cms/district.php?tab=sd&page=users&error=true");
 			} else {
 				while($row = mysqli_fetch_array($query)){
@@ -83,7 +86,8 @@
 			$array = array();
 			$sql = "SELECT username FROM users";
 			$query = mysqli_query($database->con, $sql);
-			if (!$query) {
+			if(!$query){
+				$_SESSION['error_message'] = mysqli_error($database->con);
 			    header("location: ../cms/?error=true");
 			} else {
 				while($row = mysqli_fetch_array($query)){
@@ -113,7 +117,8 @@
 					LEFT JOIN schools
 					ON (schools.id = jobs.school)";
 			$query = mysqli_query($database->con, $sql);
-			if (!$query) {
+			if(!$query){
+				$_SESSION['error_message'] = mysqli_error($database->con);
 				header("location: ../cms/district.php?tab=sd&page=employment&error=true");
 			} else {
 				while($row = mysqli_fetch_array($query)){
@@ -165,7 +170,8 @@
 			/*  END Content Filter  */
 
 			$query = mysqli_query($database->con, $sql);
-			if (!$query) {
+			if(!$query){
+				$_SESSION['error_message'] = mysqli_error($database->con);
 				header("location: ../cms/district.php?tab=sd&page=events&error=true");
 				// echo("Error description: " . mysqli_error($database->con));
 			} else {
@@ -193,7 +199,8 @@
 					WHERE links.link_tag = 'District Forms'";
 
 			$query = mysqli_query($database->con, $sql);
-			if (!$query) {
+			if(!$query){
+				$_SESSION['error_message'] = mysqli_error($database->con);
 			    header("location: ../cms/post.php?tab=sd&page=forms&error=true");
 			} else {
 				while($row = mysqli_fetch_array($query)){
@@ -220,7 +227,8 @@
 					WHERE links.link_tag = 'Board Meeting Packages'";
 
 			$query = mysqli_query($database->con, $sql);
-			if (!$query) {
+			if(!$query){
+				$_SESSION['error_message'] = mysqli_error($database->con);
 			    header("location: ../cms/post.php?tab=sd&page=packages&error=true");
 			} else {
 				while($row = mysqli_fetch_array($query)){
