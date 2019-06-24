@@ -12,6 +12,7 @@
 					WHERE id = '$id'";
 			$query = mysqli_query($database->con, $sql);
 			if(!$query){
+				$_SESSION['error_message'] = mysqli_error($database->con);
 			    header("location: ../cms/interaction.php?tab=web&subtab=content&page=about&error=true");
 			} else {
 				global $log;
@@ -38,8 +39,8 @@
 					VALUES (null, '$faq_id', '$faq_question', '$faq_answer', '$user', '$school', 'Active')";
 			$query = mysqli_query($database->con, $sql);
 			if(!$query){
+				$_SESSION['error_message'] = mysqli_error($database->con);
 				header("location: ../cms/interaction.php?tab=web&subtab=content&page=inquiries&error=true");
-				// echo("Error description: " . mysqli_error($database->con));
 			} else {
 
 				global $log;
@@ -59,6 +60,7 @@
 					WHERE id = '$id'";
 			$query = mysqli_query($database->con, $sql);
 			if(!$query){
+				$_SESSION['error_message'] = mysqli_error($database->con);
 			    header("location: ../cms/interaction.php?tab=web&subtab=content&page=inquiries&error=true");
 			} else {
 				global $log;
@@ -77,6 +79,7 @@
 					WHERE id = '$id'";
 			$query = mysqli_query($database->con, $sql);
 			if(!$query){
+				$_SESSION['error_message'] = mysqli_error($database->con);
 			    header("location: ../cms/interaction.php?tab=web&subtab=content&page=inquiries&error=true");
 			} else {
 				global $log;
@@ -99,6 +102,7 @@
 					WHERE id = '$id'";
 			$query = mysqli_query($database->con, $sql);
 			if(!$query){
+				$_SESSION['error_message'] = mysqli_error($database->con);
 			    header("location: ../cms/interaction.php?tab=web&subtab=content&page=contacts&error=true");
 			} else {
 				global $log;
@@ -116,6 +120,7 @@
 					WHERE id = '$id'";
 			$query = mysqli_query($database->con, $sql);
 			if(!$query){
+				$_SESSION['error_message'] = mysqli_error($database->con);
 			    header("location: ../cms/interaction.php?tab=web&subtab=content&page=contacts&error=true");
 			} else {
 				global $log;
@@ -133,6 +138,7 @@
 					WHERE id = '$id'";
 			$query = mysqli_query($database->con, $sql);
 			if(!$query){
+				$_SESSION['error_message'] = mysqli_error($database->con);
 			    header("location: ../cms/interaction.php?tab=web&subtab=content&page=contacts&error=true");
 			} else {
 				global $log;
@@ -157,8 +163,8 @@
 					VALUES(null, '$firstname', '$lastname', '$position', null, 'Contact', '$phone', '$email', null, '$school', '$photo', null, 'Active')";
 			$query = mysqli_query($database->con, $sql);
 			if(!$query){
-				// header("location: ../cms/interaction.php?tab=web&subtab=content&page=contacts&error=true");
-				echo("Error description: " . mysqli_error($database->con));
+				$_SESSION['error_message'] = mysqli_error($database->con);
+				header("location: ../cms/interaction.php?tab=web&subtab=content&page=contacts&error=true");
 			} else {
 				global $log;
 				$info = "Added new contact: " . $firstname . " " . $lastname;
@@ -180,6 +186,7 @@
 					WHERE id = '$id'";
 			$query = mysqli_query($database->con, $sql);
 			if(!$query){
+				$_SESSION['error_message'] = mysqli_error($database->con);
 			    header("location: ../cms/interaction.php?tab=web&subtab=content&page=contacts&error=true");
 			} else {
 				global $log;
@@ -197,6 +204,7 @@
 					WHERE id = '$id'";
 			$query = mysqli_query($database->con, $sql);
 			if(!$query){
+				$_SESSION['error_message'] = mysqli_error($database->con);
 			    header("location: ../cms/interaction.php?tab=web&subtab=content&page=carousel&error=true");
 			} else {
 				global $log;
@@ -215,6 +223,7 @@
 					WHERE id = '$id'";
 			$query = mysqli_query($database->con, $sql);
 			if(!$query){
+				$_SESSION['error_message'] = mysqli_error($database->con);
 			    header("location: ../cms/interaction.php?tab=web&subtab=content&page=carousel&error=true");
 			} else {
 				global $log;
@@ -239,8 +248,8 @@
 					VALUES(null, '$photo', '$caption', '$school', 'Active')";
 			$query = mysqli_query($database->con, $sql);
 			if(!$query){
-				// header("location: ../cms/interaction.php?tab=web&subtab=content&page=carousel&error=true");
-				echo("Error description: " . mysqli_error($database->con));
+				$_SESSION['error_message'] = mysqli_error($database->con);
+				header("location: ../cms/interaction.php?tab=web&subtab=content&page=carousel&error=true");
 			} else {
 				global $log;
 				$info = "Added new image to the home carousel image list.";
@@ -264,8 +273,8 @@
 					VALUES(null, '$photo', '$caption', '$school', 'Active')";
 			$query = mysqli_query($database->con, $sql);
 			if(!$query){
-				// header("location: ../cms/interaction.php?tab=web&subtab=content&page=carousel&error=true");
-				echo("Error description: " . mysqli_error($database->con));
+				$_SESSION['error_message'] = mysqli_error($database->con);
+				header("location: ../cms/interaction.php?tab=web&subtab=content&page=carousel&error=true");
 			}
 		}
 
@@ -283,8 +292,8 @@
 					WHERE status = 'Active'";
 			$query = mysqli_query($database->con, $sql);
 			if(!$query){
-				// header("location: ../cms/interaction.php?tab=web&subtab=content&page=carousel&error=true");
-				echo("Error description: " . mysqli_error($database->con));
+				$_SESSION['error_message'] = mysqli_error($database->con);
+				header("location: ../cms/interaction.php?tab=web&subtab=content&page=carousel&error=true");
 			}
 		}
 
@@ -299,6 +308,7 @@
 					WHERE id = '$id'";
 			$query = mysqli_query($database->con, $sql);
 			if(!$query){
+				$_SESSION['error_message'] = mysqli_error($database->con);
 			    header("location: ../cms/interaction.php?tab=web&subtab=". $subtab ."&page=". $page ."&error=true");
 			} else {
 				global $log;
@@ -316,6 +326,7 @@
 					WHERE id = '$id'";
 			$query = mysqli_query($database->con, $sql);
 			if(!$query){
+				$_SESSION['error_message'] = mysqli_error($database->con);
 			    header("location: ../cms/interaction.php?tab=web&subtab=". $subtab ."&page=". $page ."&error=true");
 			} else {
 				global $log;
@@ -341,6 +352,7 @@
 					VALUES (null, '$link_id', '$link_name', '$link_type', '$link_tag', '$link_desc', '$link_content', '$link_thumbnail', '$user', '$school', 'Active')";
 			$query = mysqli_query($database->con, $sql);
 			if(!$query){
+				$_SESSION['error_message'] = mysqli_error($database->con);
 			    header("location: ../cms/interaction.php?tab=web&subtab=". $subtab ."&page=". $page ."&error=true");
 			} else {
 				global $log;
@@ -367,6 +379,7 @@
 					WHERE id = '$id'";
 			$query = mysqli_query($database->con, $sql);
 			if(!$query){
+				$_SESSION['error_message'] = mysqli_error($database->con);
 			    header("location: ../cms/interaction.php?tab=web&subtab=". $subtab ."&page=". $page ."&error=true");
 			} else {
 				global $log;
@@ -399,6 +412,7 @@
 					WHERE id = '$id'";
 			$query = mysqli_query($database->con, $sql);
 			if(!$query){
+				$_SESSION['error_message'] = mysqli_error($database->con);
 			    header("location: ../cms/interaction.php?tab=web&&page=boe&error=true");
 			} else {
 				global $log;
@@ -416,6 +430,7 @@
 					WHERE id = '$id'";
 			$query = mysqli_query($database->con, $sql);
 			if(!$query){
+				$_SESSION['error_message'] = mysqli_error($database->con);
 				header("location: ../cms/interaction.php?tab=web&&page=boe&error=true");
 			} else {
 				global $log;
@@ -432,6 +447,7 @@
 					WHERE id = '$id'";
 			$query = mysqli_query($database->con, $sql);
 			if(!$query){
+				$_SESSION['error_message'] = mysqli_error($database->con);
 				header("location: ../cms/interaction.php?tab=web&&page=boe&error=true");
 			}
 		}
@@ -447,6 +463,7 @@
 					WHERE id = '$id'";
 			$query = mysqli_query($database->con, $sql);
 			if(!$query){
+				$_SESSION['error_message'] = mysqli_error($database->con);
 			    header("location: ../cms/interaction.php?tab=web&page=culture&error=true");
 			} else {
 				global $log;
