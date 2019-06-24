@@ -7,7 +7,8 @@
 			$array = array();
 			$sql = "SELECT * FROM schools";
 			$query = mysqli_query($database->con, $sql);
-			if (!$query) {
+			if(!$query){
+				$_SESSION['error_message'] = mysqli_error($database->con);
 			    header("location: ../cms/?error=true");
 			} else {
 				while($row = mysqli_fetch_array($query)){
@@ -58,9 +59,9 @@
 			/*  END Content Filter  */
 
 			$query = mysqli_query($database->con, $sql);
-			if (!$query) {
-				//header("location:../cms/post.php?tab=post&page=blog&error=true");
-				echo("Error description: " . mysqli_error($database->con));
+			if(!$query){
+				$_SESSION['error_message'] = mysqli_error($database->con);
+				header("location:../cms/post.php?tab=post&page=blog&error=true");
 			} else {
 				while($row = mysqli_fetch_array($query)){
 					$array[] = $row;
@@ -84,7 +85,8 @@
 					WHERE posts.post_type = 'Post' 
 					AND posts.id = '$id'";
 			$query = mysqli_query($database->con, $sql);
-			if (!$query) {
+			if(!$query){
+				$_SESSION['error_message'] = mysqli_error($database->con);
 			    header("location:../cms/post.php?tab=post&page=blog&error=true");
 			} else {
 				$array = mysqli_fetch_assoc($query);
@@ -134,7 +136,8 @@
 			/*  END Content Filter  */
 
 			$query = mysqli_query($database->con, $sql);
-			if (!$query) {
+			if(!$query){
+				$_SESSION['error_message'] = mysqli_error($database->con);
 			    header("location:../cms/post.php?tab=post&page=blog&error=true");
 			} else {
 				while($row = mysqli_fetch_array($query)){
@@ -177,8 +180,8 @@
 			/*  END Content Filter  */
 
 			$query = mysqli_query($database->con, $sql);
-			if (!$query) {
-				// echo("Error description: " . mysqli_error($database->con));
+			if(!$query){
+				$_SESSION['error_message'] = mysqli_error($database->con);
 				header("location: ../cms/post.php?tab=post&page=links&error=true");
 			} else {
 				while($row = mysqli_fetch_array($query)){
@@ -200,7 +203,8 @@
 			$sql = "SELECT * FROM categories
 					WHERE status = 'Active'";
 			$query = mysqli_query($database->con, $sql);
-			if (!$query) {
+			if(!$query){
+				$_SESSION['error_message'] = mysqli_error($database->con);
 			    header("location: ../cms/post.php?tab=post&page=categories&error=true");
 			} else {
 				while($row = mysqli_fetch_array($query)){
@@ -219,7 +223,8 @@
 					WHERE status = 'Active'
 					AND id != '1'";
 			$query = mysqli_query($database->con, $sql);
-			if (!$query) {
+			if(!$query){
+				$_SESSION['error_message'] = mysqli_error($database->con);
 			    header("location: ../cms/post.php?tab=post&page=categories&error=true");
 			} else {
 				while($row = mysqli_fetch_array($query)){
@@ -261,9 +266,9 @@
 			/*  END Content Filter  */
 
 			$query = mysqli_query($database->con, $sql);
-			if (!$query) {
-				//header("location:../cms/post.php?tab=post&page=blog&error=true");
-				echo("Error description: " . mysqli_error($database->con));
+			if(!$query){
+				$_SESSION['error_message'] = mysqli_error($database->con);
+				header("location:../cms/post.php?tab=post&page=blog&error=true");
 			} else {
 				while($row = mysqli_fetch_array($query)){
 					$array[] = $row;
@@ -283,9 +288,9 @@
 					WHERE post_categories.post_id = '$post'
 					AND categories.status = 'Active'";
 			$query = mysqli_query($database->con, $sql);
-			if (!$query) {
+			if(!$query){
+				$_SESSION['error_message'] = mysqli_error($database->con);
 				header("location:../cms/post.php?tab=post&page=categories&error=true");
-				//echo("Error description: " . mysqli_error($database->con));
 			} else {
 				while($row = mysqli_fetch_array($query)){
 					$array[] = $row;
@@ -340,7 +345,8 @@
 			/*  END Content Filter  */
 
 			$query = mysqli_query($database->con, $sql);
-			if (!$query) {
+			if(!$query){
+				$_SESSION['error_message'] = mysqli_error($database->con);
 			    header("location:../cms/post.php?tab=post&page=media&error=true");
 			} else {
 				while($row = mysqli_fetch_array($query)){
@@ -386,7 +392,8 @@
 			/*  END Content Filter  */
 
 			$query = mysqli_query($database->con, $sql);
-			if (!$query) {
+			if(!$query){
+				$_SESSION['error_message'] = mysqli_error($database->con);
 			    header("location:../cms/post.php?tab=post&page=media&error=true");
 			} else {
 				while($row = mysqli_fetch_array($query)){
@@ -411,7 +418,8 @@
 					WHERE posts.post_type = 'Media' 
 					AND posts.id = '$id'";
 			$query = mysqli_query($database->con, $sql);
-			if (!$query) {
+			if(!$query){
+				$_SESSION['error_message'] = mysqli_error($database->con);
 			    header("location:../cms/post.php?tab=post&page=media&error=true");
 			} else {
 				$array = mysqli_fetch_assoc($query);
@@ -424,7 +432,8 @@
             $array;
 			$sql = "SELECT * FROM media WHERE post_id = '$id'";
 			$query = mysqli_query($database->con, $sql);
-			if (!$query) {
+			if(!$query){
+				$_SESSION['error_message'] = mysqli_error($database->con);
 			    header("location:../cms/post.php?tab=post&page=media&error=true");
 			} else {
 				while($row = mysqli_fetch_array($query)){
