@@ -1,7 +1,9 @@
 <?php if(isset($_GET['error'])){ ?>
 <div class="alert bg-red alert-dismissible" role="alert">
     <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-    Something went wrong while processing your request. Please try again. If problems persist, contact your administrator.
+    Something went wrong while processing your request. <br>
+    <b>Error Description: </b><?php echo $_SESSION['error_message']; ?><br>
+    Please contact your administrator.
 </div>
 <?php } ?>
 

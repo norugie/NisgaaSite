@@ -13,6 +13,7 @@
 					WHERE id = '$id'";
 			$query = mysqli_query($database->con, $sql);
 			if(!$query){
+				$_SESSION['error_message'] = mysqli_error($database->con);
 			    header("location:../cms/district.php?tab=sd&page=users&error=true");
 			} else {
 				global $log;
@@ -31,6 +32,7 @@
 					WHERE id = '$id'";
 			$query = mysqli_query($database->con, $sql);
 			if(!$query){
+				$_SESSION['error_message'] = mysqli_error($database->con);
 			    header("location:../cms/district.php?tab=sd&page=users&error=true");
 			} else {
 				global $log;
@@ -48,6 +50,7 @@
 					VALUES(null, '$username', '$firstname', '$lastname', '$email', md5('$password'), '$role', '$school',  'user.png', 'Active')";
 			$query = mysqli_query($database->con, $sql);
 			if(!$query){
+				$_SESSION['error_message'] = mysqli_error($database->con);
 			    header("location:../cms/district.php?tab=sd&page=users&error=true");
 			} else {
 				global $log;
@@ -68,6 +71,7 @@
 					WHERE id = '$id'";
 			$query = mysqli_query($database->con, $sql);
 			if(!$query){
+				$_SESSION['error_message'] = mysqli_error($database->con);
 			    header("location:../cms/district.php?tab=sd&page=users&error=true");
 			} else {
 				global $log;
@@ -90,6 +94,7 @@
 					WHERE id = '$id'";
 			$query = mysqli_query($database->con, $sql);
 			if(!$query){
+				$_SESSION['error_message'] = mysqli_error($database->con);
 			    header("location:../cms/district.php?tab=sd&page=employment&error=true");
 			} else {
 				global $log;
@@ -110,6 +115,7 @@
 					WHERE id = '$id'";
 			$query = mysqli_query($database->con, $sql);
 			if(!$query){
+				$_SESSION['error_message'] = mysqli_error($database->con);
 			    header("location:../cms/district.php?tab=sd&page=employment&error=true");
 			} else {
 				global $log;
@@ -137,6 +143,7 @@
 					WHERE id = '$id'";
 			$query = mysqli_query($database->con, $sql);
 			if(!$query){
+				$_SESSION['error_message'] = mysqli_error($database->con);
 			    header("location:../cms/district.php?tab=sd&page=employment&error=true");
 			} else {
 				global $log;
@@ -156,6 +163,7 @@
 					VALUES (null, '$id', '$school', '$title', '$jobdesc', '$user', '$jobopen', '$jobclose', '$jobtype', '$file_name', 'Open')";
 			$query = mysqli_query($database->con, $sql);
 			if(!$query){
+				$_SESSION['error_message'] = mysqli_error($database->con);
 			    header("location:../cms/district.php?tab=sd&page=employment&error=true");
 			} else {
 				global $log;
@@ -177,6 +185,7 @@
 					WHERE id = '$id'";
 			$query = mysqli_query($database->con, $sql);
 			if(!$query){
+				$_SESSION['error_message'] = mysqli_error($database->con);
 			    header("location:../cms/district.php?tab=sd&page=employment&error=true");
 			} else {
 				global $log;
@@ -199,6 +208,7 @@
 					WHERE id = '$id'";
 			$query = mysqli_query($database->con, $sql);
 			if(!$query){
+				$_SESSION['error_message'] = mysqli_error($database->con);
 			    header("location:../cms/district.php?tab=sd&page=events&error=true");
 			} else {
 				global $log;
@@ -210,6 +220,7 @@
 						WHERE id = '$post_id'";
 				$query = mysqli_query($database->con, $sql);
 				if(!$query){
+					$_SESSION['error_message'] = mysqli_error($database->con);
 					header("location:../cms/district.php?tab=sd&page=events&error=true");
 				} else {
 					header("location:../cms/district.php?tab=sd&page=events&eventDisabled=true");
@@ -237,14 +248,14 @@
 					VALUES (null, '$post_id', '$post_title', '$date', 'Post', '$user', '$school', '$post_content', '$post_thumbnail', '$event_desc', 'Active')";
 			$query = mysqli_query($database->con, $sql);
 			if(!$query){
+				$_SESSION['error_message'] = mysqli_error($database->con);
 				header("location:../cms/district.php?tab=sd&page=events&error=true");
-				//echo("Error description: " . mysqli_error($database->con));
 			} else {
 				$sql = "SELECT id FROM posts ORDER BY id DESC LIMIT 1";
 				$query = mysqli_query($database->con, $sql);
-				if (!$query) {
+				if(!$query){
+					$_SESSION['error_message'] = mysqli_error($database->con);
 					header("location:../cms/district.php?tab=sd&page=events&error=true");
-					//echo("Error description: " . mysqli_error($database->con));
 				} else {
 					$row = mysqli_fetch_assoc($query);
 					$id = $row['id'];
@@ -253,6 +264,7 @@
 					VALUES (null, '$id','1')";
 					$query = mysqli_query($database->con, $sql);
 					if(!$query){
+						$_SESSION['error_message'] = mysqli_error($database->con);
 						header("location:../cms/district.php?tab=sd&page=events&error=true");
 						//echo("Error description: " . mysqli_error($database->con));
 					}
@@ -272,14 +284,14 @@
 					VALUES (null, '$event_id_name', '$event_name', '$event_shortname', '$event_desc', '$event_type', '$event_color_code', '$location', '$school', '$user', '$post', 'Active')";
 			$query = mysqli_query($database->con, $sql);
 			if(!$query){
+				$_SESSION['error_message'] = mysqli_error($database->con);
 				header("location:../cms/district.php?tab=sd&page=events&error=true");
-				//echo("Error description: " . mysqli_error($database->con));
 			} else {
 				$sql = "SELECT id, event_shortname FROM events ORDER BY id DESC LIMIT 1";
 				$query = mysqli_query($database->con, $sql);
-				if (!$query) {
+				if(!$query){
+					$_SESSION['error_message'] = mysqli_error($database->con);
 					header("location:../cms/district.php?tab=sd&page=events&error=true");
-					//echo("Error description: " . mysqli_error($database->con));
 				} else {
 					$row = mysqli_fetch_assoc($query);
 					$id = $row['id'];
@@ -299,8 +311,8 @@
 					VALUES (null, '$event_start', '$event_end', '$event_final', '$event_time', '$event_id')";
 			$query = mysqli_query($database->con, $sql);
 			if(!$query){
+				$_SESSION['error_message'] = mysqli_error($database->con);
 				header("location:../cms/district.php?tab=sd&page=events&error=true");
-				//echo("Error description: " . mysqli_error($database->con));
 			}
 		
 		}
@@ -314,6 +326,7 @@
 					WHERE id = '$event_id'";
 			$query = mysqli_query($database->con, $sql);
 			if(!$query){
+				$_SESSION['error_message'] = mysqli_error($database->con);
 			    header("location:../cms/district.php?tab=sd&page=events&error=true");
 			} else {
 				global $log;
@@ -335,6 +348,7 @@
 					WHERE id = '$id'";
 			$query = mysqli_query($database->con, $sql);
 			if(!$query){
+				$_SESSION['error_message'] = mysqli_error($database->con);
 			    header("location:../cms/district.php?tab=sd&page=files&error=true");
 			} else {
 				global $log;
@@ -351,6 +365,7 @@
 					WHERE id = '$id'";
 			$query = mysqli_query($database->con, $sql);
 			if(!$query){
+				$_SESSION['error_message'] = mysqli_error($database->con);
 			    header("location:../cms/district.php?tab=sd&page=files&error=true");
 			} else {
 				global $log;
@@ -370,6 +385,7 @@
 					VALUES (null, '$link_id', '$link_name', '$link_type', '$link_tag', '$link_desc', '$link_content', '$link_thumbnail', '$user', '$school', 'Active')";
 			$query = mysqli_query($database->con, $sql);
 			if(!$query){
+				$_SESSION['error_message'] = mysqli_error($database->con);
 			    header("location:../cms/district.php?tab=sd&page=files&error=true");
 			} else {
 				global $log;
@@ -389,6 +405,7 @@
 					WHERE id = '$id'";
 			$query = mysqli_query($database->con, $sql);
 			if(!$query){
+				$_SESSION['error_message'] = mysqli_error($database->con);
 			    header("location:../cms/district.php?tab=sd&page=files&error=true");
 			} else {
 				global $log;
@@ -409,6 +426,7 @@
 					WHERE id = '$id'";
 			$query = mysqli_query($database->con, $sql);
 			if(!$query){
+				$_SESSION['error_message'] = mysqli_error($database->con);
 			    header("location:../cms/district.php?tab=sd&page=packages&error=true");
 			} else {
 				global $log;
@@ -425,6 +443,7 @@
 					WHERE id = '$id'";
 			$query = mysqli_query($database->con, $sql);
 			if(!$query){
+				$_SESSION['error_message'] = mysqli_error($database->con);
 			    header("location:../cms/district.php?tab=sd&page=packages&error=true");
 			} else {
 				global $log;
@@ -444,6 +463,7 @@
 					VALUES (null, '$link_id', '$link_name', '$link_type', '$link_tag', '$link_desc', '$link_content', '$link_thumbnail', '$user', '$school', 'Active')";
 			$query = mysqli_query($database->con, $sql);
 			if(!$query){
+				$_SESSION['error_message'] = mysqli_error($database->con);
 			    header("location:../cms/district.php?tab=sd&page=packages&error=true");
 			} else {
 				global $log;
@@ -463,6 +483,7 @@
 					WHERE id = '$id'";
 			$query = mysqli_query($database->con, $sql);
 			if(!$query){
+				$_SESSION['error_message'] = mysqli_error($database->con);
 			    header("location:../cms/district.php?tab=sd&page=packages&error=true");
 			} else {
 				global $log;

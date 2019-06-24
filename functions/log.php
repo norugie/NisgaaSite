@@ -17,10 +17,11 @@
 					VALUES(null, '$logId', '$log', '$userId', '$school', NOW())";
 			$query = mysqli_query($database->con, $sql);
 			if(!$query){
-                //header("location:../cms/?error=true");
-                echo("Error description: " . mysqli_error($database->con));
+                $_SESSION['error_message'] = mysqli_error($database->con);
+                header("location:../cms/?error=true");
 			} else {
                 $_SESSION['alert'] = 'alerted';
+                $_SESSION['error_message'] = 'none';
             }
 
         }
