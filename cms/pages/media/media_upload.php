@@ -29,8 +29,8 @@
                 </div>
             </form>
             <form action="../functions/post.php?post=true&addMediaImages=true" method="POST">
-                <input type="text" id="image_media_id" name="image_media_id" value="<?php echo $_GET['media_id']; ?>" required>
-                <input type="text" id="image_media_name" name="image_media_name" value="" required>
+                <input type="text" id="image_media_id" name="image_media_id" value="<?php echo $_GET['media_id']; ?>" required hidden>
+                <input type="text" id="image_media_name" name="image_media_name" value="" required hidden>
                 <div class="row clearfix">
                     <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12" style="float: right;">
                         <button type="submit" class="btn bg-blue-grey btn-block btn-lg waves-effect">SAVE</button>  
