@@ -408,10 +408,10 @@
                         if($error == 2){
                             $_SESSION['error_message'] = "You tried uploading a file that exceeded the file size limit. Please make sure that the file size is less than 50 MB.";
                         }
-                        header("location:../cms/post.php?tab=sd&page=links&error=true");
+                        header("location:../cms/post.php?tab=sd&page=files&error=true");
                     }
                 } else {
-                    header("location:../cms/post.php?tab=sd&page=links&error=true");
+                    header("location:../cms/post.php?tab=sd&page=files&error=true");
                 }   
                 
             }
@@ -453,10 +453,10 @@
                         if($error == 2){
                             $_SESSION['error_message'] = "You tried uploading a file that exceeded the file size limit. Please make sure that the file size is less than 50 MB.";
                         }
-                        header("location:../cms/district.php?tab=sd&page=forms&error=true");
+                        header("location:../cms/district.php?tab=sd&page=files&error=true");
                     }
                 } else {
-                    header("location:../cms/district.php?tab=sd&page=forms&error=true");
+                    header("location:../cms/district.php?tab=sd&page=files&error=true");
                 }   
                 
             }

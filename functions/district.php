@@ -266,7 +266,6 @@
 					if(!$query){
 						$_SESSION['error_message'] = mysqli_error($database->con);
 						header("location:../cms/district.php?tab=sd&page=events&error=true");
-						//echo("Error description: " . mysqli_error($database->con));
 					}
 				}
 			}

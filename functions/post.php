@@ -13,7 +13,8 @@
 					WHERE id = '$id'";
 			$query = mysqli_query($database->con, $sql);
 			if(!$query){
-			    header("location:../cms/post.php?tab=post&page=blog&error=true");
+				$_SESSION['error_message'] = mysqli_error($database->con);
+			    header("location:../cms/post.php?tab=post&page=news&error=true");
 			} else {
 				global $log;
 				$info = "Archived event post: " . $title;
@@ -24,6 +25,7 @@
 						WHERE post = '$id'";
 				$query = mysqli_query($database->con, $sql);
 				if(!$query){
+					$_SESSION['error_message'] = mysqli_error($database->con);
 					header("location:../cms/post.php?tab=post&page=news&error=true");
 				} else {
 					header("location:../cms/post.php?tab=post&page=news&postDisabled=true");
@@ -39,6 +41,7 @@
 					WHERE id = '$id'";
 			$query = mysqli_query($database->con, $sql);
 			if(!$query){
+				$_SESSION['error_message'] = mysqli_error($database->con);
 			    header("location:../cms/post.php?tab=post&page=news&error=true");
 			} else {
 				global $log;
@@ -59,6 +62,7 @@
 					WHERE id = '$id'";
 			$query = mysqli_query($database->con, $sql);
 			if(!$query){
+				$_SESSION['error_message'] = mysqli_error($database->con);
 			    header("location:../cms/post.php?tab=post&page=news&error=true");
 			} else {
 				global $log;
@@ -86,14 +90,14 @@
 					VALUES (null, '$post_id', '$post_title', NOW(), 'Post', '$user', '$school', '$post_content', '$post_thumbnail', '$post_desc', 'Active')";
 			$query = mysqli_query($database->con, $sql);
 			if(!$query){
+				$_SESSION['error_message'] = mysqli_error($database->con);
 				header("location:../cms/post.php?tab=post&page=news&error=true");
-				// echo("Error description: " . mysqli_error($database->con));
 			} else {
 				$sql = "SELECT id FROM posts ORDER BY id DESC LIMIT 1";
 				$query = mysqli_query($database->con, $sql);
-				if (!$query) {
+				if(!$query){
+					$_SESSION['error_message'] = mysqli_error($database->con);
 					header("location:../cms/post.php?tab=post&page=news&error=true");
-					// echo("Error description: " . mysqli_error($database->con));
 				} else {
 					global $log;
 					$info = "Created a new news post: " . $post_title;
@@ -112,8 +116,8 @@
 			VALUES (null, '$post_id','$cat_id')";
 			$query = mysqli_query($database->con, $sql);
 			if(!$query){
+				$_SESSION['error_message'] = mysqli_error($database->con);
 				header("location:../cms/post.php?tab=post&page=news&error=true");
-				// echo("Error description: " . mysqli_error($database->con));
 			}
 		}
 
@@ -121,8 +125,8 @@
 			$sql = "DELETE FROM post_categories WHERE post_id = '$id'";
 			$query = mysqli_query($database->con, $sql);
 			if(!$query){
+				$_SESSION['error_message'] = mysqli_error($database->con);
 				header("location:../cms/post.php?tab=post&page=news&error=true");
-				// echo("Error description: " . mysqli_error($database->con));
 			}
 		}
 
@@ -136,6 +140,7 @@
 					WHERE id = '$id'";
 			$query = mysqli_query($database->con, $sql);
 			if(!$query){
+				$_SESSION['error_message'] = mysqli_error($database->con);
 			    header("location:../cms/post.php?tab=post&page=links&error=true");
 			} else {
 				global $log;
@@ -152,6 +157,7 @@
 					WHERE id = '$id'";
 			$query = mysqli_query($database->con, $sql);
 			if(!$query){
+				$_SESSION['error_message'] = mysqli_error($database->con);
 			    header("location:../cms/post.php?tab=post&page=links&error=true");
 			} else {
 				global $log;
@@ -171,6 +177,7 @@
 					WHERE id = '$id'";
 			$query = mysqli_query($database->con, $sql);
 			if(!$query){
+				$_SESSION['error_message'] = mysqli_error($database->con);
 			    header("location:../cms/post.php?tab=post&page=links&error=true");
 			} else {
 				global $log;
@@ -196,6 +203,7 @@
 					VALUES (null, '$link_id', '$link_name', '$link_type', '$link_tag', '$link_desc', '$link_content', '$link_thumbnail', '$user', '$school', 'Active')";
 			$query = mysqli_query($database->con, $sql);
 			if(!$query){
+				$_SESSION['error_message'] = mysqli_error($database->con);
 			    header("location:../cms/post.php?tab=post&page=links&error=true");
 			} else {
 				global $log;
@@ -216,8 +224,8 @@
 					VALUES (null, '$cat_id','$cat_name', 'Active')";
 			$query = mysqli_query($database->con, $sql);
 			if(!$query){
+				$_SESSION['error_message'] = mysqli_error($database->con);
 				header("location:../cms/post.php?tab=post&page=categories&error=true");
-				//echo("Error description: " . mysqli_error($database->con));
 			} else {
 				global $log;
 				$info = "Created a new category: " . $cat_name;
@@ -235,6 +243,7 @@
 					WHERE id = '$id'";
 			$query = mysqli_query($database->con, $sql);
 			if(!$query){
+				$_SESSION['error_message'] = mysqli_error($database->con);
 			    header("location:../cms/post.php?tab=post&page=categories&error=true");
 			} else {
 				global $log;
@@ -259,6 +268,7 @@
 					WHERE id = '$id'";
 			$query = mysqli_query($database->con, $sql);
 			if(!$query){
+				$_SESSION['error_message'] = mysqli_error($database->con);
 			    header("location:../cms/post.php?tab=post&page=media&error=true");
 			} else {
 				global $log;
@@ -277,6 +287,7 @@
 					WHERE id = '$id'";
 			$query = mysqli_query($database->con, $sql);
 			if(!$query){
+				$_SESSION['error_message'] = mysqli_error($database->con);
 			    header("location:../cms/post.php?tab=post&page=media&error=true");
 			} else {
 				global $log;
@@ -306,14 +317,14 @@
 					VALUES (null, '$post_id', '$post_title', '$date', 'Media', '$user', '$school', '$post_content', '$post_thumbnail', '$post_desc', 'Active')";
 			$query = mysqli_query($database->con, $sql);
 			if(!$query){
+				$_SESSION['error_message'] = mysqli_error($database->con);
 				header("location:../cms/post.php?tab=post&page=media&error=true");
-				// echo("Error description: " . mysqli_error($database->con));
 			} else {
 				$sql = "SELECT id FROM posts ORDER BY id DESC LIMIT 1";
 				$query = mysqli_query($database->con, $sql);
-				if (!$query) {
+				if(!$query){
+					$_SESSION['error_message'] = mysqli_error($database->con);
 					header("location:../cms/post.php?tab=post&page=media&error=true");
-					// echo("Error description: " . mysqli_error($database->con));
 				} else {
 					global $log;
 					$info = "Created a new media post: " . $post_title;
@@ -332,8 +343,8 @@
 			VALUES (null, '$post_id','$cat_id')";
 			$query = mysqli_query($database->con, $sql);
 			if(!$query){
+				$_SESSION['error_message'] = mysqli_error($database->con);
 				header("location:../cms/post.php?tab=post&page=media&error=true");
-				// echo("Error description: " . mysqli_error($database->con));
 			}
 		}
 
@@ -342,8 +353,8 @@
 			VALUES (null, '$media_image','$id')";
 			$query = mysqli_query($database->con, $sql);
 			if(!$query){
+				$_SESSION['error_message'] = mysqli_error($database->con);
 				header("location:../cms/post.php?tab=post&page=media&error=true");
-				// echo("Error description: " . mysqli_error($database->con));
 			}
 		}
 
@@ -351,8 +362,8 @@
 			$sql = "DELETE FROM post_categories WHERE post_id = '$id'";
 			$query = mysqli_query($database->con, $sql);
 			if(!$query){
+				$_SESSION['error_message'] = mysqli_error($database->con);
 				header("location:../cms/post.php?tab=post&page=media&error=true");
-				// echo("Error description: " . mysqli_error($database->con));
 			}
 		}
 
