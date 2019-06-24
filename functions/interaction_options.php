@@ -98,18 +98,29 @@
                     $file_type = $_FILES['contact_photo']['type'];
                     $file_ext = strtolower(end(explode('.', $_FILES['contact_photo']['name'])));
                     
-                    if($file_size > 20971520){
+                    $extensions = array("jpeg","jpg","png");
+                
+                    if(in_array($file_ext, $extensions) == false){
                         $errors = 1;
+                    }
+
+                    if($file_size > 10485760){ // Limit user photo upload to 10 MB
+                        $errors = 2;
                     }
                     
                     if($errors == 0){
                         move_uploaded_file($file_tmp, "../images/contacts/".$file_name);
                         $photo = $file_name;
                     } else {
-                        echo("Error description: " . mysqli_error($database->con));
+                        if($error == 1){
+                            $_SESSION['error_message'] = "You tried uploading a file with an invalid file extension. Please make sure that the file's extension is one of the followings: .jpeg, .jpg, .png.";
+                        } else if($error == 2){
+                            $_SESSION['error_message'] = "You tried uploading a file that exceeded the file size limit. Please make sure that the file size is less than 10 MB.";
+                        }
+                        header("location: ../cms/interaction.php?tab=web&subtab=content&page=contacts&error=true");
                     }
                 } else {
-                    echo("Error description: " . mysqli_error($database->con));
+                    header("location: ../cms/interaction.php?tab=web&subtab=content&page=contacts&error=true");
                 }   
                 
             }
@@ -141,14 +152,25 @@
                     $file_type = $_FILES['contact_photo']['type'];
                     $file_ext = strtolower(end(explode('.', $_FILES['contact_photo']['name'])));
                     
-                    if($file_size > 2097152){
+                    $extensions = array("jpeg","jpg","png");
+                
+                    if(in_array($file_ext, $extensions) == false){
                         $errors = 1;
+                    }
+
+                    if($file_size > 10485760){ // Limit user photo upload to 10 MB
+                        $errors = 2;
                     }
                     
                     if($errors == 0){
                         move_uploaded_file($file_tmp, "../images/contacts/".$file_name);
                         $photo = $file_name;
                     } else {
+                        if($error == 1){
+                            $_SESSION['error_message'] = "You tried uploading a file with an invalid file extension. Please make sure that the file's extension is one of the followings: .jpeg, .jpg, .png.";
+                        } else if($error == 2){
+                            $_SESSION['error_message'] = "You tried uploading a file that exceeded the file size limit. Please make sure that the file size is less than 10 MB.";
+                        }
                         header("location: ../cms/interaction.php?tab=web&subtab=content&page=contacts&error=true");
                     }
                 } else {
@@ -186,19 +208,31 @@
                     $file_size = $_FILES['carousel_image']['size'];
                     $file_tmp = $_FILES['carousel_image']['tmp_name'];
                     $file_type = $_FILES['carousel_image']['type'];
+                    $file_ext = strtolower(end(explode('.', $_FILES['carousel_image']['name'])));
                     
-                    if($file_size > 999999999){
+                    $extensions = array("jpeg","jpg","png");
+                
+                    if(in_array($file_ext, $extensions) == false){
                         $errors = 1;
+                    }
+
+                    if($file_size > 10485760){ // Limit image upload to 10 MB
+                        $errors = 2;
                     }
                     
                     if($errors == 0){
                         move_uploaded_file($file_tmp, "../images/carousel/".$file_name);
                         $photo = $file_name;
                     } else {
+                        if($error == 1){
+                            $_SESSION['error_message'] = "You tried uploading a file with an invalid file extension. Please make sure that the file's extension is one of the followings: .jpeg, .jpg, .png.";
+                        } else if($error == 2){
+                            $_SESSION['error_message'] = "You tried uploading a file that exceeded the file size limit. Please make sure that the file size is less than 10 MB.";
+                        }
                         header("location: ../cms/interaction.php?tab=web&subtab=content&page=carousel&error=true");
                     }
                 } else {
-                    header("location: ../cms/interaction.php?tab=web&subtab=content&page=boe&error=true");
+                    header("location: ../cms/interaction.php?tab=web&subtab=content&page=carousel&error=true");
                 }   
                 
             }
@@ -216,9 +250,15 @@
                 $file_tmp = $_FILES['carousel_image']['tmp_name'];
                 $file_type = $_FILES['carousel_image']['type'];
                 $file_ext = strtolower(end(explode('.', $_FILES['carousel_image']['name'])));
-                
-                if($file_size > 209715200){
+                    
+                $extensions = array("jpeg","jpg","png");
+            
+                if(in_array($file_ext, $extensions) == false){
                     $errors = 1;
+                }
+
+                if($file_size > 10485760){ // Limit image upload to 10 MB
+                    $errors = 2;
                 }
                 
                 if($errors == 0){
@@ -226,10 +266,15 @@
                     $photo = $file_name;
                     $interaction->newCarouselImage($database, $photo, $caption);
                 } else {
+                    if($error == 1){
+                        $_SESSION['error_message'] = "You tried uploading a file with an invalid file extension. Please make sure that the file's extension is one of the followings: .jpeg, .jpg, .png.";
+                    } else if($error == 2){
+                        $_SESSION['error_message'] = "You tried uploading a file that exceeded the file size limit. Please make sure that the file size is less than 10 MB.";
+                    }
                     header("location: ../cms/interaction.php?tab=web&subtab=content&page=carousel&error=true");
                 }
             } else {
-                header("location: ../cms/interaction.php?tab=web&subtab=content&page=boe&error=true");
+                header("location: ../cms/interaction.php?tab=web&subtab=content&page=carousel&error=true");
             }
         }
 
@@ -249,9 +294,16 @@
                     $file_size = $_FILES['carousel_image_' . $ctr]['size'];
                     $file_tmp = $_FILES['carousel_image_' . $ctr]['tmp_name'];
                     $file_type = $_FILES['carousel_image_' . $ctr]['type'];
+                    $file_ext = strtolower(end(explode('.', $_FILES['carousel_image']['name'])));
                     
-                    if($file_size > 209715200){
+                    $extensions = array("jpeg","jpg","png");
+                
+                    if(in_array($file_ext, $extensions) == false){
                         $errors = 1;
+                    }
+
+                    if($file_size > 10485760){ // Limit image upload to 10 MB
+                        $errors = 2;
                     }
                     
                     if($errors == 0){
@@ -259,7 +311,12 @@
                         $photo = $file_name;
                         $interaction->newCarouselImageSet($database, $photo, $caption);
                     } else {
-                        echo "<script>window.open('https://webdev.nisgaa.bc.ca/cms/interaction.php?tab=web&subtab=content&page=carousel&error=true', '_parent');</script>";
+                        if($error == 1){
+                            $_SESSION['error_message'] = "You tried uploading a file with an invalid file extension. Please make sure that the file's extension is one of the followings: .jpeg, .jpg, .png.";
+                        } else if($error == 2){
+                            $_SESSION['error_message'] = "You tried uploading a file that exceeded the file size limit. Please make sure that the file size is less than 10 MB.";
+                        }
+                        header("location: ../cms/interaction.php?tab=web&subtab=content&page=carousel&error=true");
                     }
                 }
 
@@ -325,10 +382,9 @@
                     $file_size = $_FILES['link_content']['size'];
                     $file_tmp = $_FILES['link_content']['tmp_name'];
                     $file_type = $_FILES['link_content']['type'];
-                    $file_ext = strtolower(end(explode('.', $_FILES['link_content']['name'])));
                     
-                    if($file_size > 20971520){
-                        $errors = 1;
+                    if($file_size > 52428800){ // Limit file upload to 50 MB
+                        $errors = 2;
                     }
                     
                     if($errors == 0){
@@ -336,6 +392,9 @@
                         $link_content = $file_name;
                         $interaction->addPageFile($database, $link_name, $link_desc, $link_content, $link_type, $link_tag, $link_thumbnail, $page, $subtab);
                     } else {
+                        if($error == 2){
+                            $_SESSION['error_message'] = "You tried uploading a file that exceeded the file size limit. Please make sure that the file size is less than 50 MB.";
+                        }
                         header("location: ../cms/interaction.php?tab=web&subtab=". $subtab ."&page=". $page ."&error=true");
                     }
                 } else {
@@ -377,10 +436,9 @@
                     $file_size = $_FILES['edit_link_content']['size'];
                     $file_tmp = $_FILES['edit_link_content']['tmp_name'];
                     $file_type = $_FILES['edit_link_content']['type'];
-                    $file_ext = strtolower(end(explode('.', $_FILES['edit_link_content']['name'])));
                     
-                    if($file_size > 20971520){
-                        $errors = 1;
+                    if($file_size > 52428800){ // Limit file upload to 50 MB
+                        $errors = 2;
                     }
                     
                     if($errors == 0){
@@ -388,6 +446,9 @@
                         $link_content = $file_name;
                         $interaction->editPageFile($database, $id, $link_id, $link_name, $link_desc, $link_content, $link_tag, $page, $subtab);
                     } else {
+                        if($error == 2){
+                            $_SESSION['error_message'] = "You tried uploading a file that exceeded the file size limit. Please make sure that the file size is less than 50 MB.";
+                        }
                         header("location: ../cms/interaction.php?tab=web&subtab=". $subtab ."&page=". $page ."&error=true");
                     }
                 } else {
@@ -433,14 +494,25 @@
                     $file_type = $_FILES['boe_photo']['type'];
                     $file_ext = strtolower(end(explode('.', $_FILES['boe_photo']['name'])));
                     
-                    if($file_size > 2097152){
+                    $extensions = array("jpeg","jpg","png");
+                
+                    if(in_array($file_ext, $extensions) == false){
                         $errors = 1;
+                    }
+
+                    if($file_size > 10485760){ // Limit thumbnail upload to 10 MB
+                        $errors = 2;
                     }
                     
                     if($errors == 0){
                         move_uploaded_file($file_tmp, "../images/contacts/".$file_name);
                         $photo = $file_name;
                     } else {
+                        if($error == 1){
+                            $_SESSION['error_message'] = "You tried uploading a file with an invalid file extension. Please make sure that the file's extension is one of the followings: .jpeg, .jpg, .png.";
+                        } else if($error == 2){
+                            $_SESSION['error_message'] = "You tried uploading a file that exceeded the file size limit. Please make sure that the file size is less than 10 MB.";
+                        }
                         header("location: ../cms/interaction.php?tab=web&page=boe&error=true");
                     }
                 } else {
@@ -472,14 +544,25 @@
                     $file_type = $_FILES['boe_group_image']['type'];
                     $file_ext = strtolower(end(explode('.', $_FILES['boe_group_image']['name'])));
                     
-                    if($file_size > 2097152){
+                    $extensions = array("jpeg","jpg","png");
+                
+                    if(in_array($file_ext, $extensions) == false){
                         $errors = 1;
+                    }
+
+                    if($file_size > 10485760){ // Limit thumbnail upload to 10 MB
+                        $errors = 2;
                     }
                     
                     if($errors == 0){
                         move_uploaded_file($file_tmp, "../images/boe/".$file_name);
                         $photo = $file_name;
                     } else {
+                        if($error == 1){
+                            $_SESSION['error_message'] = "You tried uploading a file with an invalid file extension. Please make sure that the file's extension is one of the followings: .jpeg, .jpg, .png.";
+                        } else if($error == 2){
+                            $_SESSION['error_message'] = "You tried uploading a file that exceeded the file size limit. Please make sure that the file size is less than 10 MB.";
+                        }
                         header("location: ../cms/interaction.php?tab=web&page=boe&error=true");
                     }
                 } else {
