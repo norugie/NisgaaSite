@@ -30,18 +30,23 @@
                 
                 $expensions = array("jpeg","jpg","png");
                 
-                if(in_array($file_ext, $expensions) == false){
+                if(in_array($file_ext, $extensions) == false){
                     $errors = 1;
                 }
-                
-                if($file_size > 2097152){
-                    $errors = 1;
+
+                if($file_size > 10485760){ // Limit thumbnail upload to 10 MB
+                    $errors = 2;
                 }
                 
                 if($errors == 0){
                     move_uploaded_file($file_tmp, "../images/profile/".$file_name);
                     $user->userEditPicture($database, $file_name);
                 } else {
+                    if($error == 1){
+                        $_SESSION['error_message'] = "You tried uploading a file with an invalid file extension. Please make sure that the file's extension is one of the followings: .jpeg, .jpg, .png.";
+                    } else if($error == 2){
+                        $_SESSION['error_message'] = "You tried uploading a file that exceeded the file size limit. Please make sure that the file size is less than 10 MB.";
+                    }
                     header("location:../cms/?error=true");
                 }
             } else {
@@ -66,7 +71,7 @@
                      if($new_password == $r_password){
                          $user->userEditPassword($database, $new_password, $id);
                      } else {
-                         header("location: ../cms/?incorrect=true");
+                        header("location: ../cms/?incorrect=true");
                      }
                 } else {
                     header("location: ../cms/?incorrect=true");

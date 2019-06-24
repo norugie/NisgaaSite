@@ -19,6 +19,7 @@
 					WHERE users.id = '$u_id'";
 			$query = mysqli_query($database->con, $sql);
 			if(!$query){
+				$_SESSION['error_message'] = mysqli_error($database->con);
 				header("location: ../cms/?error=true");
 			} else {
 				$userInfo = mysqli_fetch_assoc($query);
@@ -36,6 +37,7 @@
 					WHERE id = '$id'";
 			$query = mysqli_query($database->con, $sql);
 			if(!$query){
+				$_SESSION['error_message'] = mysqli_error($database->con);
 				header("location:../cms/?error=true");
 			} else {
 				global $log;
@@ -52,6 +54,7 @@
 					WHERE id = '$id'";
 			$query = mysqli_query($database->con, $sql);
 			if(!$query){
+				$_SESSION['error_message'] = mysqli_error($database->con);
 				header("location:../cms/?error=true");
 			} else {
 				global $log;
@@ -69,6 +72,7 @@
 					WHERE id = '$id'";
 			$query = mysqli_query($database->con, $sql);
 			if(!$query){
+				$_SESSION['error_message'] = mysqli_error($database->con);
 				header("location:../cms/?error=true");
 			} else {
 				global $log;
