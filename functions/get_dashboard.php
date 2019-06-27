@@ -102,37 +102,6 @@
 			return $array;
         }
 
-        public function announcementCount($database){
-            $array = array();
-            $sql;
-            $sqlquery = "SELECT id FROM announcements WHERE status = 'Active'";
-            
-            /*  Content Filter  */
-			if($_SESSION['type'] != 1){
-				$school;
-				if($_SESSION['school'] != 3 && $_SESSION['school'] != 4 && $_SESSION['school'] != 5 && $_SESSION['school'] != 6){
-					$school = 2;
-				} else {
-					$school = $_SESSION['school'];
-				}
-				$sql = $sqlquery . " AND a_school = '$school'";
-			} else {
-				$sql = $sqlquery;
-			}
-            /*  END Content Filter  */
-            
-			$query = mysqli_query($database->con, $sql);
-			if (!$query) {
-			    header("location: ../cms/index.php?error=true");
-			} else {
-				while($row = mysqli_fetch_array($query)){
-					$array[] = $row;
-				}
-            }
-            
-			return $array;
-        }
-
         public function blogCount($database){
             $array = array();
             $sql;
