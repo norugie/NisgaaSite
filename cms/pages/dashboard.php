@@ -7,7 +7,7 @@
                     <i class="material-icons">people</i>
                 </div>
                 <div class="content">
-                    <div class="text">USERS</div>
+                    <div class="text">ACTIVE USERS</div>
                     <div class="number"><?php echo count($dashboard->userCount($database)); ?></div>
                 </div>
             </a>
@@ -20,7 +20,7 @@
                     <i class="material-icons">work</i>
                 </div>
                 <div class="content">
-                    <div class="text">JOBS</div>
+                    <div class="text">OPEN JOBS</div>
                     <div class="number"><?php echo count($dashboard->jobCount($database)); ?></div>
                 </div>
             </a>
@@ -33,7 +33,7 @@
                     <i class="material-icons">event</i>
                 </div>
                 <div class="content">
-                    <div class="text">EVENTS</div>
+                    <div class="text">UPCOMING EVENTS</div>
                     <div class="number"><?php echo count($dashboard->eventCount($database)); ?></div>
                 </div>
             </a>
@@ -50,7 +50,7 @@
                     <i class="material-icons">mode_comment</i>
                 </div>
                 <div class="content">
-                    <div class="text">BLOG POSTS</div>
+                    <div class="text">NEWS POSTS</div>
                     <div class="number"><?php echo count($dashboard->blogCount($database)); ?></div>
                 </div>
             </a>
