@@ -18,7 +18,7 @@
 
             <?php if($_GET['modify'] == 'details'){ ?>
                 <!-- Media details here -->
-                <form class="edit_form_validate" action="../functions/post.php?post=true&editMedia=true" method="POST">
+                <form class="edit_form_validate" action="../functions/post.php?post=true&editMedia=true" method="POST" enctype="multipart/form-data">
                     <input type="text" id="edit_media_post_id" name="edit_media_post_id" value="<?php echo $media_info['id']; ?>" hidden>
                     <input type="text" id="edit_media_post_id_name" name="edit_media_post_id_name" value="<?php echo $media_info['post_id']; ?>" hidden>
                     <div class="row clearfix">
@@ -27,6 +27,18 @@
                             <div class="form-group">
                                 <div class="form-line">
                                     <input type="text" class="form-control" id="edit_media_post_title" name="edit_media_post_title" value="<?php echo $media_info['post_title']; ?>" required>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row clearfix">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <input type="text" name="post_thumbnail_previous" value="<?php echo $media_info['post_thumbnail']; ?>" hidden>
+                            <label for="post_thumbnail">Media Thumbnail</label>
+                            <p class="font-12"><i><b>Note:</b> The max image size you can upload is 10 MB.</i></p>
+                            <div class="form-group">
+                                <div class="form-line">
+                                    <input type="file" name="post_thumbnail" id="post_thumbnail" accept="image/x-png, image/jpeg">
                                 </div>
                             </div>
                         </div>

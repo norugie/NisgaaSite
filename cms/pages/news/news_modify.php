@@ -19,7 +19,7 @@
             <?php if($_GET['modify'] == 'details'){ ?>
                 <!-- Modify details here -->
 
-                <form class="edit_form_validate" action="../functions/post.php?post=true&editPost=true" method="POST">
+                <form class="edit_form_validate" action="../functions/post.php?post=true&editPost=true" method="POST" enctype="multipart/form-data">
                     <input type="text" id="edit_post_id" name="edit_post_id" value="<?php echo $post_info['id']; ?>" hidden>
                     <input type="text" id="edit_post_id_name" name="edit_post_id_name" value="<?php echo $post_info['post_id']; ?>" hidden>
                     <div class="row clearfix">
@@ -39,7 +39,7 @@
                             <p class="font-12"><i><b>Note:</b> The max image size you can upload is 10 MB.</i></p>
                             <div class="form-group">
                                 <div class="form-line">
-                                    <input type="file" name="post_thumbnail" id="post_thumbnail" accept="image/x-png, image/jpeg*">
+                                    <input type="file" name="post_thumbnail" id="post_thumbnail" accept="image/x-png, image/jpeg">
                                 </div>
                             </div>
                         </div>

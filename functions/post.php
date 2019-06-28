@@ -53,12 +53,13 @@
 	
 		}
 
-		public function editPost($database, $id, $post_id, $post_title, $post_content, $post_desc){
+		public function editPost($database, $id, $post_id, $post_title, $post_content, $post_desc, $post_thumbnail){
 
 			$sql = "UPDATE posts SET 
 						   post_title = '$post_title',
 						   post_text = '$post_content',
-						   post_desc = '$post_desc'
+						   post_desc = '$post_desc',
+						   post_thumbnail = '$post_thumbnail'
 					WHERE id = '$id'";
 			$query = mysqli_query($database->con, $sql);
 			if(!$query){
@@ -259,12 +260,13 @@
 		/***************************  Posts Functionalities -- Media Posts ***************************/
 		/*********************************************************************************************/
 
-		public function editMedia($database, $id, $media_id, $media_title, $media_content, $media_desc){
+		public function editMedia($database, $id, $media_id, $media_title, $media_content, $media_desc, $media_thumbnail){
 
 			$sql = "UPDATE posts SET 
 						   post_title = '$media_title',
 						   post_text = '$media_content',
-						   post_desc = '$media_desc'
+						   post_desc = '$media_desc',
+						   post_thumbnail = '$media_thumbnail'
 					WHERE id = '$id'";
 			$query = mysqli_query($database->con, $sql);
 			if(!$query){
