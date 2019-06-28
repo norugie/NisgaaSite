@@ -110,7 +110,7 @@
                         </a>
                     </li>
                     <?php if($_SESSION['school'] != 3 && $_SESSION['school'] != 4 && $_SESSION['school'] != 5 && $_SESSION['school'] != 6){ ?> 
-                    <li id="forms">
+                    <li id="files">
                         <a href="district.php?tab=sd&page=files">
                             <i class="material-icons">library_books</i>
                             <span>District Files</span>
