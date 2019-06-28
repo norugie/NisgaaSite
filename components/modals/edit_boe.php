@@ -165,7 +165,7 @@
                                     <label for="edit_boe_image">Group Image *</label>
                                     <div class="form-group">
                                         <div class="form-line">
-                                            <input type="file" name="boe_group_image" id="imgInp" accept="image/*" required>
+                                            <input type="file" name="boe_group_image" id="imgInp" accept="image/x-png, image/jpeg" required>
                                         </div>
                                         <br>
                                         <center>
