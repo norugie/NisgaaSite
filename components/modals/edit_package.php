@@ -16,8 +16,10 @@
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 
                     <form class="edit_form_validate_file" action="../functions/district.php?district=true&editPackage=true" method="POST" enctype="multipart/form-data">
-                            <input type="text" id="edit_package_id_file" name="edit_link_id" hidden>
-                            <input type="text" id="edit_package_id_name_file" name="edit_link_id_name" hidden>
+                            <input type="text" id="edit_package_id_file" name="edit_link_id">
+                            <input type="text" id="edit_package_id_name_file" name="edit_link_id_name">
+                            <input type="text" id="edit_package_id_file_file" name="edit_link_id_file">
+                            <input type="text" id="edit_package_id_type_file" name="edit_link_id_type">
                             <div class="row clearfix">
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                     <label for="edit_package_title_file">Package Title *</label>
@@ -45,7 +47,7 @@
                                     <p class="font-12"><i><b>Note:</b> The max file size you can upload is 20 MB</i></p>
                                     <div class="form-group">
                                         <div class="form-line">
-                                            <input type="file" class="form-control" id="edit_package_content_file" name="edit_link_content" accept="application/msword, application/vnd.openxmlformats-officedocument.wordprocessingml.document, application/pdf" required>
+                                            <input type="file" class="form-control" id="edit_package_content_file" name="edit_link_content" accept="application/msword, application/vnd.openxmlformats-officedocument.wordprocessingml.document, application/pdf">
                                         </div>
                                     </div>
                                 </div>
@@ -84,8 +86,9 @@
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 
                         <form class="edit_form_validate_link" action="../functions/district.php?district=true&editPackage=true" method="POST">
-                            <input type="text" id="edit_package_id_link" name="edit_link_id" hidden>
-                            <input type="text" id="edit_package_id_name_link" name="edit_link_id_name" hidden>
+                            <input type="text" id="edit_package_id_link" name="edit_link_id">
+                            <input type="text" id="edit_package_id_name_link" name="edit_link_id_name">
+                            <input type="text" id="edit_package_id_type_link" name="edit_link_id_type">
                             <div class="row clearfix">
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                     <label for="edit_package_title_link">Package Title *</label>
