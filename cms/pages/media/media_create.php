@@ -97,7 +97,7 @@
                         <p class="font-12"><i><b>Note:</b> The max image size you can upload is 10 MB.</i></p>
                         <div class="form-group">
                             <div class="form-line">
-                                <input type="file" name="media_thumbnail" id="media_thumbnail" accept="image/*">
+                                <input type="file" name="media_thumbnail" id="media_thumbnail" accept="image/x-png, image/jpeg">
                             </div>
                         </div>
                     </div>
