@@ -38,13 +38,55 @@
             $post_title = mysqli_real_escape_string($database->con, $_POST['edit_post_title']);
             $post_content = mysqli_real_escape_string($database->con, $_POST['edit_post_content']);
             $post_desc;
+            $post_thumbnail;
+
             if(isset($_POST['edit_post_desc']) || !empty($_POST['edit_post_desc'])){
                 $post_desc = mysqli_real_escape_string($database->con, $_POST['edit_post_desc']);
             } else {
                 $post_desc = "No description given.";
             }
 
-            $post->editPost($database, $id, $post_id, $post_title, $post_content, $post_desc);
+            if(!file_exists($_FILES['post_thumbnail']['tmp_name']) || !is_uploaded_file($_FILES['post_thumbnail']['tmp_name'])){
+
+                $post_thumbnail = mysqli_real_escape_string($database->con, $_POST['post_thumbnail_previous']);;
+
+            } else {
+
+                if(isset($_FILES['post_thumbnail'])){
+                    $errors = 0;
+                    $file_name = $_FILES['post_thumbnail']['name'];
+                    $file_size = $_FILES['post_thumbnail']['size'];
+                    $file_tmp = $_FILES['post_thumbnail']['tmp_name'];
+                    $file_type = $_FILES['post_thumbnail']['type'];
+                    $file_ext = strtolower(end(explode('.', $_FILES['post_thumbnail']['name'])));
+                    
+                    $extensions = array("jpeg","jpg","png");
+                
+                    if(in_array($file_ext, $extensions) == false){
+                        $errors = 1;
+                    }
+
+                    if($file_size > 10485760){ // Limit thumbnail upload to 10 MB
+                        $errors = 2;
+                    }
+                    
+                    if($errors == 0){
+                        move_uploaded_file($file_tmp, "../images/thumbnails/" . $file_name);
+                        $post_thumbnail = $file_name;
+                    } else {
+                        if($error == 1){
+                            $_SESSION['error_message'] = "You tried uploading a file with an invalid file extension. Please make sure that the file's extension is one of the followings: .jpeg, .jpg, .png.";
+                        } else if($error == 2){
+                            $_SESSION['error_message'] = "You tried uploading a file that exceeded the file size limit. Please make sure that the file size is less than 10 MB.";
+                        }
+                        header("location:../cms/district.php?tab=post&page=news&error=true");
+                    }
+                } else {
+                    header("location:../cms/post.php?tab=post&page=news&error=true");
+                }
+            }
+            
+            $post->editPost($database, $id, $post_id, $post_title, $post_content, $post_desc, $post_thumbnail);
 
         }
 
@@ -65,8 +107,7 @@
 
             if(!file_exists($_FILES['post_thumbnail']['tmp_name']) || !is_uploaded_file($_FILES['post_thumbnail']['tmp_name'])){
 
-                $post_thumbnail = mysqli_real_escape_string($database->con, $_POST['post_thumbnail_previous']);
-                
+                $post_thumbnail = "post_thumbnail.jpg";
                 $post_id = $post->addPost($database, $post_title, $post_content, $post_thumbnail, $post_desc);
 
             } else {
@@ -79,7 +120,7 @@
                     $file_type = $_FILES['post_thumbnail']['type'];
                     $file_ext = strtolower(end(explode('.', $_FILES['post_thumbnail']['name'])));
                     
-                    $extensions = array("jpeg","jpg","png","gif","svg","bmp");
+                    $extensions = array("jpeg","jpg","png");
                 
                     if(in_array($file_ext, $extensions) == false){
                         $errors = 1;
@@ -95,7 +136,7 @@
                         $post_id = $post->addPost($database, $post_title, $post_content, $post_thumbnail, $post_desc);
                     } else {
                         if($error == 1){
-                            $_SESSION['error_message'] = "You tried uploading a file with an invalid file extension. Please make sure that the file's extension is one of the followings: .jpeg, .jpg, .png, .gif, .svg, .bmp.";
+                            $_SESSION['error_message'] = "You tried uploading a file with an invalid file extension. Please make sure that the file's extension is one of the followings: .jpeg, .jpg, .png.";
                         } else if($error == 2){
                             $_SESSION['error_message'] = "You tried uploading a file that exceeded the file size limit. Please make sure that the file size is less than 10 MB.";
                         }
@@ -338,8 +379,49 @@
             $media_title = mysqli_real_escape_string($database->con, $_POST['edit_media_post_title']);
             $media_content = mysqli_real_escape_string($database->con, $_POST['edit_media_post_content']);
             $media_desc = mysqli_real_escape_string($database->con, $_POST['edit_media_post_content']);
+            $media_thumbnail;
 
-            $post->editMedia($database, $id, $media_id, $media_title, $media_content, $media_desc);      
+            if(!file_exists($_FILES['post_thumbnail']['tmp_name']) || !is_uploaded_file($_FILES['post_thumbnail']['tmp_name'])){
+
+                $media_thumbnail = mysqli_real_escape_string($database->con, $_POST['post_thumbnail_previous']);;
+
+            } else {
+
+                if(isset($_FILES['post_thumbnail'])){
+                    $errors = 0;
+                    $file_name = $_FILES['post_thumbnail']['name'];
+                    $file_size = $_FILES['post_thumbnail']['size'];
+                    $file_tmp = $_FILES['post_thumbnail']['tmp_name'];
+                    $file_type = $_FILES['post_thumbnail']['type'];
+                    $file_ext = strtolower(end(explode('.', $_FILES['post_thumbnail']['name'])));
+                    
+                    $extensions = array("jpeg","jpg","png");
+                
+                    if(in_array($file_ext, $extensions) == false){
+                        $errors = 1;
+                    }
+
+                    if($file_size > 10485760){ // Limit thumbnail upload to 10 MB
+                        $errors = 2;
+                    }
+                    
+                    if($errors == 0){
+                        move_uploaded_file($file_tmp, "../images/thumbnails/" . $file_name);
+                        $media_thumbnail = $file_name;
+                    } else {
+                        if($error == 1){
+                            $_SESSION['error_message'] = "You tried uploading a file with an invalid file extension. Please make sure that the file's extension is one of the followings: .jpeg, .jpg, .png.";
+                        } else if($error == 2){
+                            $_SESSION['error_message'] = "You tried uploading a file that exceeded the file size limit. Please make sure that the file size is less than 10 MB.";
+                        }
+                        header("location:../cms/district.php?tab=post&page=news&error=true");
+                    }
+                } else {
+                    header("location:../cms/post.php?tab=post&page=news&error=true");
+                }
+            }
+
+            $post->editMedia($database, $id, $media_id, $media_title, $media_content, $media_desc, $media_thumbnail);      
 
         }
 
