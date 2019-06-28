@@ -175,6 +175,7 @@ function editForm(formInfo) {
     // Form type: Link
     $("#edit_form_id_link").attr("value", form['id']);
     $("#edit_form_id_name_link").attr("value", form['link_id']);
+    $("#edit_form_id_type_link").attr("value", form['link_type']);
     $("#edit_form_title_link").attr("value", form['link_name']);
     $("#edit_form_desc_link").val(form['link_desc']);
     $("#edit_form_content_link").attr("value", form['link_content']);
@@ -182,6 +183,8 @@ function editForm(formInfo) {
     // Form type: File
     $("#edit_form_id_file").attr("value", form['id']);
     $("#edit_form_id_name_file").attr("value", form['link_id']);
+    $("#edit_form_id_file_file").attr("value", form['link_content']);
+    $("#edit_form_id_type_file").attr("value", form['link_type']);
     $("#edit_form_title_file").attr("value", form['link_name']);
     $("#edit_form_desc_file").val(form['link_desc']);
 

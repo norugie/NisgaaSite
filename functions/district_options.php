@@ -376,6 +376,7 @@
 
             $id = mysqli_real_escape_string($database->con, $_POST['edit_link_id']);
             $link_id = mysqli_real_escape_string($database->con, $_POST['edit_link_id_name']);
+            $link_type = mysqli_real_escape_string($database->con, $_POST['edit_link_id_type']);
             $link_name = mysqli_real_escape_string($database->con, $_POST['edit_link_title']);
             $link_desc = mysqli_real_escape_string($database->con, $_POST['edit_link_desc']);
             $link_tag = "District Forms";
@@ -383,9 +384,11 @@
 
             if(!file_exists($_FILES['edit_link_content']['tmp_name']) || !is_uploaded_file($_FILES['edit_link_content']['tmp_name'])){
 
-                $link_content = mysqli_real_escape_string($database->con, $_POST['edit_link_content']);
-                
-                $district->editForm($database, $id, $link_id, $link_name, $link_desc, $link_content, $link_tag);
+                if($link_type == 'Link'){
+                    $link_content = mysqli_real_escape_string($database->con, $_POST['edit_link_content']);
+                } else {
+                    $link_content = mysqli_real_escape_string($database->con, $_POST['edit_link_id_file']);
+                }
 
             } else {
 
@@ -403,7 +406,6 @@
                     if($errors == 0){
                         move_uploaded_file($file_tmp, "../links/" . $file_name);
                         $link_content = $file_name;
-                        $district->editForm($database, $id, $link_id, $link_name, $link_desc, $link_content, $link_tag);
                     } else {
                         if($error == 2){
                             $_SESSION['error_message'] = "You tried uploading a file that exceeded the file size limit. Please make sure that the file size is less than 50 MB.";
@@ -415,6 +417,8 @@
                 }   
                 
             }
+
+            $district->editForm($database, $id, $link_id, $link_name, $link_desc, $link_content, $link_tag);
 
         }
 

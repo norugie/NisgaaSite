@@ -62,6 +62,7 @@
                                             "link_id":      <?php echo json_encode($link['link_id']); ?>,
                                             "link_name":    <?php echo json_encode(str_replace("'", "&apos;", $link['link_name'])); ?>,
                                             "link_tag":     <?php echo json_encode($link['link_tag']); ?>,
+                                            "link_type":    <?php echo json_encode($link['link_type']); ?>,
                                             "link_desc":    <?php echo json_encode(str_replace("'", "&apos;", $link['link_desc'])); ?>,
                                             "link_content": <?php echo json_encode($link['link_content']); ?>
                                         }' 
