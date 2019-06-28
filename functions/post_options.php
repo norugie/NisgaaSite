@@ -170,6 +170,7 @@
 
             $id = mysqli_real_escape_string($database->con, $_POST['edit_link_id']);
             $link_id = mysqli_real_escape_string($database->con, $_POST['edit_link_id_name']);
+            $link_type = mysqli_real_escape_string($database->con, $_POST['edit_link_id_type']);
             $link_name = mysqli_real_escape_string($database->con, $_POST['edit_link_title']);
             $link_desc = mysqli_real_escape_string($database->con, $_POST['edit_link_desc']);
             $link_tag = mysqli_real_escape_string($database->con, $_POST['edit_link_tag']);
@@ -177,7 +178,12 @@
 
             if(!file_exists($_FILES['edit_link_content']['tmp_name']) || !is_uploaded_file($_FILES['edit_link_content']['tmp_name'])){
 
-                $link_content = mysqli_real_escape_string($database->con, $_POST['edit_link_content']);
+                if($link_type == "Link"){
+                    $link_content = mysqli_real_escape_string($database->con, $_POST['edit_link_content']);
+                } else {
+                    $link_content = mysqli_real_escape_string($database->con, $_POST['edit_link_id_file']);
+                }
+                
                 $post->editLink($database, $id, $link_id, $link_name, $link_desc, $link_content, $link_tag);
 
             } else {
