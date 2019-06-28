@@ -65,7 +65,7 @@
 
             if(!file_exists($_FILES['post_thumbnail']['tmp_name']) || !is_uploaded_file($_FILES['post_thumbnail']['tmp_name'])){
 
-                $post_thumbnail = "post_thumbnail.jpg";
+                $post_thumbnail = mysqli_real_escape_string($database->con, $_POST['post_thumbnail_previous']);
                 
                 $post_id = $post->addPost($database, $post_title, $post_content, $post_thumbnail, $post_desc);
 

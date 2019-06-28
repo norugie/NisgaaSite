@@ -34,6 +34,18 @@
                     </div>
                     <div class="row clearfix">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <input type="text" name="post_thumbnail_previous" value="<?php echo $post_info['post_thumbnail']; ?>" hidden>
+                            <label for="post_thumbnail">Post Thumbnail</label>
+                            <p class="font-12"><i><b>Note:</b> The max image size you can upload is 10 MB.</i></p>
+                            <div class="form-group">
+                                <div class="form-line">
+                                    <input type="file" name="post_thumbnail" id="post_thumbnail" accept="image/x-png, image/jpeg*">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row clearfix">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                             <label for="edit_post_desc">Post Description </label>
                             <div class="form-group">
                                 <div class="form-line">
