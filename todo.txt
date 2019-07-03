@@ -11,8 +11,6 @@ Normal Priority:
 - make drag n’ drop of photos working
 - Add file upload to tinymce
 - Add grid columns to tinymce
-- Edit the edit functionality for areas with file upload to allow for successful editing without requiring a file
-- Add ability to edit thumbnail for news and media posts
 
 Low Priority:
 - Clean code
