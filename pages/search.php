@@ -14,6 +14,7 @@
     $dfiles = $site->departmentFormsSearchResults($database, $keyword);
     $cfiles = $site->curriculumFormsSearchResults($database, $keyword);
     $boefiles = $site->boardFormsSearchResults($database, $keyword);
+    
 ?>
 <div class="col-md-9">
     <!-- BLOG RESULTS CONTENT -->
