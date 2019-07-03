@@ -6,29 +6,20 @@
 
     session_start();
 
-    $currentCookieParams = session_get_cookie_params();  
-    $sidvalue = session_id();  
-    setcookie(  
-        'PHPSESSID',    //name  
-        $sidvalue,  //value  
-        0,  //expires at end of session  
-        $currentCookieParams['path'],   //path  
-        $currentCookieParams['domain'], //domain  
-        true,   //secure
-        true  
-    );
+    require 'functions/security_cookies.php';
 
     if(isset($_SESSION['id']) && isset($_SESSION['type'])){
         
         header("location: cms/");
 
     }
+
 ?>
 
 <!DOCTYPE html>
 <html>
 
-<head>
+<head lang="en">
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <title>Sign In | SD92 - Nisga'a</title>
