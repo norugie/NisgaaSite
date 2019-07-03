@@ -1,7 +1,6 @@
 TODO:
 
 High Priority:
-- Make backend for phrase of the week
 - Facebook Auto-publish but only for important posts
 
 Normal Priority:
