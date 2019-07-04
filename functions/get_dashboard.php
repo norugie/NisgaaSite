@@ -1,5 +1,8 @@
 <?php
 
+	require 'get_error_log.php';
+	$error =  new ErrorLog();
+
     Class Dashboard {
 
         public function logList($database){
@@ -31,7 +34,8 @@
             
 			$query = mysqli_query($database->con, $sql);
 			if (!$query) {
-			    header("location: ../cms/index.php?error=true");
+				global $error;
+				echo $error->errorMessage(mysqli_error($database->con));
 			} else {
 				while($row = mysqli_fetch_array($query)){
 					$array[] = $row;
@@ -46,7 +50,8 @@
 			$sql = "SELECT id FROM users WHERE status = 'Active'";
 			$query = mysqli_query($database->con, $sql);
 			if (!$query) {
-			    header("location: ../cms/index.php?error=true");
+				global $error;
+				echo $error->errorMessage(mysqli_error($database->con));
 			} else {
 				while($row = mysqli_fetch_array($query)){
 					$array[] = $row;
@@ -61,7 +66,8 @@
 			$sql = "SELECT id FROM jobs WHERE status = 'Open'";
 			$query = mysqli_query($database->con, $sql);
 			if (!$query) {
-			    header("location: ../cms/index.php?error=true");
+				global $error;
+				echo $error->errorMessage(mysqli_error($database->con));
 			} else {
 				while($row = mysqli_fetch_array($query)){
 					$array[] = $row;
@@ -92,7 +98,8 @@
             
 			$query = mysqli_query($database->con, $sql);
 			if (!$query) {
-			    header("location: ../cms/index.php?error=true");
+				global $error;
+				echo $error->errorMessage(mysqli_error($database->con));
 			} else {
 				while($row = mysqli_fetch_array($query)){
 					$array[] = $row;
@@ -123,7 +130,8 @@
             
 			$query = mysqli_query($database->con, $sql);
 			if (!$query) {
-			    header("location: ../cms/index.php?error=true");
+				global $error;
+				echo $error->errorMessage(mysqli_error($database->con));
 			} else {
 				while($row = mysqli_fetch_array($query)){
 					$array[] = $row;
@@ -154,7 +162,8 @@
             
 			$query = mysqli_query($database->con, $sql);
 			if (!$query) {
-			    header("location: ../cms/index.php?error=true");
+				global $error;
+				echo $error->errorMessage(mysqli_error($database->con));
 			} else {
 				while($row = mysqli_fetch_array($query)){
 					$array[] = $row;

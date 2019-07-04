@@ -1,5 +1,8 @@
 <?php
 
+	require 'get_error_log.php';
+	$error =  new ErrorLog();
+
     Class Interaction {
 
         /*********************************************************************************************/
@@ -26,7 +29,8 @@
                     AND web_content.web_type = 'About'";
 			$query = mysqli_query($database->con, $sql);
 			if (!$query) {
-				header("location: ../cms/interaction.php?tab=web&subtab=content&page=about&error=true");
+				global $error;
+				echo $error->errorMessage(mysqli_error($database->con));
 			} else {
 				$array = mysqli_fetch_assoc($query);
             }
@@ -54,7 +58,8 @@
                     AND web_content.web_type = 'Programs'";
 			$query = mysqli_query($database->con, $sql);
 			if (!$query) {
-				header("location: ../cms/interaction.php?tab=web&subtab=content&page=about&error=true");
+				global $error;
+				echo $error->errorMessage(mysqli_error($database->con));
 			} else {
 				$array = mysqli_fetch_assoc($query);
             }
@@ -91,7 +96,8 @@
 
 			$query = mysqli_query($database->con, $sql);
 			if (!$query) {
-				header("location: ../cms/interaction.php?tab=web&subtab=content&page=inquiries&error=true");
+				global $error;
+				echo $error->errorMessage(mysqli_error($database->con));
 			} else {
 				while($row = mysqli_fetch_array($query)){
 					$array[] = $row;
@@ -114,7 +120,8 @@
 			$sql = "SELECT * FROM schools WHERE id = '$school'";
 			$query = mysqli_query($database->con, $sql);
 			if (!$query) {
-				header("location: ../cms/interaction.php?tab=web&subtab=content&page=contacts&error=true");
+				global $error;
+				echo $error->errorMessage(mysqli_error($database->con));
 			} else {
 				$array = mysqli_fetch_assoc($query);
             }
@@ -128,7 +135,8 @@
 			$sql = "SELECT * FROM schools WHERE id = '$school'";
 			$query = mysqli_query($database->con, $sql);
 			if (!$query) {
-				header("location: ../cms/interaction.php?tab=web&subtab=content&page=contacts&error=true");
+				global $error;
+				echo $error->errorMessage(mysqli_error($database->con));
 			} else {
 				$array = mysqli_fetch_assoc($query);
             }
@@ -169,7 +177,8 @@
 
 			$query = mysqli_query($database->con, $sql);
 			if (!$query) {
-				header("location: ../cms/interaction.php?tab=web&subtab=content&page=contacts&error=true");
+				global $error;
+				echo $error->errorMessage(mysqli_error($database->con));
 			} else {
 				while($row = mysqli_fetch_array($query)){
 					$array[] = $row;
@@ -206,7 +215,8 @@
 
 			$query = mysqli_query($database->con, $sql);
 			if (!$query) {
-				header("location: ../cms/interaction.php?tab=web&subtab=content&page=carousel&error=true");
+				global $error;
+				echo $error->errorMessage(mysqli_error($database->con));
 			} else {
 				while($row = mysqli_fetch_array($query)){
 					$array[] = $row;
@@ -253,8 +263,8 @@
 					AND web_content.school = '$school'";
 			$query = mysqli_query($database->con, $sql);
 			if (!$query) {
-				header("location: ../cms/interaction.php?tab=web&subtab=". $subtab ."&page=". $page ."&error=true");
-				//echo("Error description: " . mysqli_error($database->con));
+				global $error;
+				echo $error->errorMessage(mysqli_error($database->con));
 			} else {
 				$array = mysqli_fetch_assoc($query);
             }
@@ -276,7 +286,8 @@
 
 			$query = mysqli_query($database->con, $sql);
 			if (!$query) {
-			    header("location: ../cms/interaction.php?tab=web&subtab=". $subtab ."&page=". $page ."&error=true");
+			    global $error;
+				echo $error->errorMessage(mysqli_error($database->con));
 			} else {
 				while($row = mysqli_fetch_array($query)){
 					$array[] = $row;
@@ -297,7 +308,8 @@
 			$sql = "SELECT * FROM contacts WHERE type = 'BOE' AND position = 'Board Chairperson'";
 			$query = mysqli_query($database->con, $sql);
 			if (!$query) {
-				header("location: ../cms/interaction.php?tab=web&page=boe&error=true");
+				global $error;
+				echo $error->errorMessage(mysqli_error($database->con));
 			} else {
 				$array = mysqli_fetch_assoc($query);
             }
@@ -311,7 +323,8 @@
 			$sql = "SELECT * FROM contacts WHERE type = 'BOE' AND position = 'Board Vice-Chairperson'";
 			$query = mysqli_query($database->con, $sql);
 			if (!$query) {
-				header("location: ../cms/interaction.php?tab=web&page=boe&error=true");
+				global $error;
+				echo $error->errorMessage(mysqli_error($database->con));
 			} else {
 				$array = mysqli_fetch_assoc($query);
             }
@@ -325,7 +338,8 @@
 			$sql = "SELECT * FROM contacts WHERE type = 'BOE' AND position = 'Board Trustee'";
 			$query = mysqli_query($database->con, $sql);
 			if (!$query) {
-			    header("location: ../cms/interaction.php?tab=web&page=boe&error=true");
+			    global $error;
+				echo $error->errorMessage(mysqli_error($database->con));
 			} else {
 				while($row = mysqli_fetch_array($query)){
 					$array[] = $row;
@@ -342,7 +356,8 @@
 			$sql = "SELECT * FROM web_content WHERE web_type = 'BOE'";
 			$query = mysqli_query($database->con, $sql);
 			if (!$query) {
-			    header("location: ../cms/interaction.php?tab=web&page=boe&error=true");
+			    global $error;
+				echo $error->errorMessage(mysqli_error($database->con));
 			} else {
 				$array = mysqli_fetch_assoc($query);
             }
@@ -365,8 +380,8 @@
 					WHERE web_content.web_type = 'Culture'";
 			$query = mysqli_query($database->con, $sql);
 			if (!$query) {
-				header("location: ../cms/interaction.php?tab=web&page=culture&error=true");
-				//echo("Error description: " . mysqli_error($database->con));
+				global $error;
+				echo $error->errorMessage(mysqli_error($database->con));
 			} else {
 				$array = mysqli_fetch_assoc($query);
             }

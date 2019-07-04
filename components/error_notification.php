@@ -1,11 +1,4 @@
-<?php if(isset($_GET['error'])){ ?>
-<div class="alert bg-red alert-dismissible" role="alert">
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-    Something went wrong while processing your request. <br>
-    <b>Error Description: </b><?php echo $_SESSION['error_message']; ?><br>
-    Please contact your administrator.
-</div>
-<?php } ?>
+<?php if(isset($_GET['error']) && $_SESSION['error_message'] != 'none'){ echo $error->errorMessage($_SESSION['error_message']); } ?>
 
 <?php if(isset($_GET['restricted'])){ 
     header("location: /restricted");
