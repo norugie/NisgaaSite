@@ -1,5 +1,8 @@
 <?php
 
+	require 'get_error_log.php';
+	$error =  new ErrorLog();
+
     Class District {
 
 		public function roleList($database){
@@ -8,8 +11,8 @@
 			$sql = "SELECT * FROM roles";
 			$query = mysqli_query($database->con, $sql);
 			if(!$query){
-				$_SESSION['error_message'] = mysqli_error($database->con);
-			    header("location: ../cms/?error=true");
+				global $error;
+				echo $error->errorMessage(mysqli_error($database->con));
 			} else {
 				while($row = mysqli_fetch_array($query)){
 					$array[] = $row;
@@ -26,8 +29,8 @@
 			$sql = "SELECT * FROM schools";
 			$query = mysqli_query($database->con, $sql);
 			if(!$query){
-				$_SESSION['error_message'] = mysqli_error($database->con);
-			    header("location: ../cms/?error=true");
+				global $error;
+				echo $error->errorMessage(mysqli_error($database->con));
 			} else {
 				while($row = mysqli_fetch_array($query)){
 					$array[] = $row;
@@ -70,8 +73,8 @@
 
 			$query = mysqli_query($database->con, $sql);
 			if(!$query){
-				$_SESSION['error_message'] = mysqli_error($database->con);
-			    header("location: ../cms/district.php?tab=sd&page=users&error=true");
+				global $error;
+				echo $error->errorMessage(mysqli_error($database->con));
 			} else {
 				while($row = mysqli_fetch_array($query)){
 					$array[] = $row;
@@ -87,8 +90,8 @@
 			$sql = "SELECT username FROM users";
 			$query = mysqli_query($database->con, $sql);
 			if(!$query){
-				$_SESSION['error_message'] = mysqli_error($database->con);
-			    header("location: ../cms/?error=true");
+				global $error;
+				echo $error->errorMessage(mysqli_error($database->con));
 			} else {
 				while($row = mysqli_fetch_array($query)){
 					$array[] = $row['username'];
@@ -118,8 +121,8 @@
 					ON (schools.id = jobs.school)";
 			$query = mysqli_query($database->con, $sql);
 			if(!$query){
-				$_SESSION['error_message'] = mysqli_error($database->con);
-				header("location: ../cms/district.php?tab=sd&page=employment&error=true");
+				global $error;
+				echo $error->errorMessage(mysqli_error($database->con));
 			} else {
 				while($row = mysqli_fetch_array($query)){
 					$array[] = $row;
@@ -171,9 +174,8 @@
 
 			$query = mysqli_query($database->con, $sql);
 			if(!$query){
-				$_SESSION['error_message'] = mysqli_error($database->con);
-				header("location: ../cms/district.php?tab=sd&page=events&error=true");
-				// echo("Error description: " . mysqli_error($database->con));
+				global $error;
+				echo $error->errorMessage(mysqli_error($database->con));
 			} else {
 				while($row = mysqli_fetch_array($query)){
 					$array[] = $row;
@@ -200,8 +202,8 @@
 
 			$query = mysqli_query($database->con, $sql);
 			if(!$query){
-				$_SESSION['error_message'] = mysqli_error($database->con);
-			    header("location: ../cms/post.php?tab=sd&page=forms&error=true");
+				global $error;
+				echo $error->errorMessage(mysqli_error($database->con));
 			} else {
 				while($row = mysqli_fetch_array($query)){
 					$array[] = $row;
@@ -228,8 +230,8 @@
 
 			$query = mysqli_query($database->con, $sql);
 			if(!$query){
-				$_SESSION['error_message'] = mysqli_error($database->con);
-			    header("location: ../cms/post.php?tab=sd&page=packages&error=true");
+				global $error;
+				echo $error->errorMessage(mysqli_error($database->con));
 			} else {
 				while($row = mysqli_fetch_array($query)){
 					$array[] = $row;
