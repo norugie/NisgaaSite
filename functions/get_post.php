@@ -41,8 +41,7 @@
 					LEFT JOIN schools
 					ON (schools.id = posts.post_school)
 					WHERE posts.post_type = 'Post' 
-					AND posts.status = 'Active'
-					ORDER BY posts.post_date DESC";
+					AND posts.status = 'Active'";
 
 			/*  Content Filter  */
 			if($_SESSION['type'] != 1){
@@ -52,9 +51,9 @@
 				} else {
 					$school = $_SESSION['school'];
 				}
-				$sql = $sqlquery . " AND posts.post_school = '$school'";
+				$sql = $sqlquery . " AND posts.post_school = '$school' ORDER BY posts.post_date DESC";
 			} else {
-				$sql = $sqlquery;
+				$sql = $sqlquery . " ORDER BY posts.post_date DESC";
 			}
 			/*  END Content Filter  */
 
@@ -385,9 +384,9 @@
 				} else {
 					$school = $_SESSION['school'];
 				}
-				$sql = $sqlquery . " AND posts.post_school = '$school'";
+				$sql = $sqlquery . " AND posts.post_school = '$school' ORDER BY posts.post_date DESC";
 			} else {
-				$sql = $sqlquery;
+				$sql = $sqlquery . " ORDER BY posts.post_date DESC";
 			}
 			/*  END Content Filter  */
 
