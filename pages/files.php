@@ -1,4 +1,4 @@
-<?php $links = $site->linkList($database, 'District Forms', 2); ?>
+<?php $links = $site->linkList($database, 'District Forms', $schoolContent); ?>
 <div class="col-md-9">
     <!-- DISTRICT FORMS INFO CONTENT -->
     <section>

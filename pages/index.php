@@ -9,7 +9,7 @@
             <div class="col-md-9 jumbotron-left">
                 <section>
                     <div class="owl-carousel owl-theme" id="owl-demo">
-                        <?php $carousel = $site->carouselImages($database, 2); ?>
+                        <?php $carousel = $site->carouselImages($database, $schoolContent); ?>
                         <?php foreach($carousel as $c): ?>
                             <div>
                                 <div class="owl-text-overlay d-none d-sm-block">
@@ -49,7 +49,7 @@
         <div class="row vertical-border">
             <div class="col-lg-3 with-border">
                 <h4 class="h5 text-center">RECENT NEWS</h4>
-                <?php $blog_posts = $site->blogListIndex($database, 2); ?>
+                <?php $blog_posts = $site->blogListIndex($database, $schoolContent); ?>
                 <ul class="list-unstyled footer-blog-list">
                     <?php foreach($blog_posts as $blog): ?>
                         <li class="d-flex align-items-center">

@@ -1,4 +1,4 @@
-<?php $links = $site->linkList($database, 'Board Meeting Packages', 2); ?>
+<?php $links = $site->linkList($database, 'Board Meeting Packages', $schoolContent); ?>
 <div class="col-md-9">
     <!-- PACKAGE INFO CONTENT -->
     <section>

@@ -21,7 +21,7 @@
     }  
 
     $sheet_index= ($sheet - 1) * $limit;
-    $blog_list = $site->blogList($database, 2, $limit, $sheet_index, $category);
+    $blog_list = $site->blogList($database, $schoolContent, $limit, $sheet_index, $category);
 
 ?>
 
@@ -58,7 +58,7 @@
     </div>
 
     <?php
-        $total_sheets = $site->blogListCount($database, 2, $category);
+        $total_sheets = $site->blogListCount($database, $schoolContent, $category);
         $total_pages = ceil($total_sheets / $limit);  
     ?>
 
