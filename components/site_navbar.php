@@ -88,10 +88,10 @@
         </li>
         <li class="nav-item dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Schools<b class="caret"></b></a>
             <ul class="dropdown-menu">
-            <li class="dropdown-item"><a href="https://ness.nisgaa.bc.ca" class="nav-link">NISGA'A ELEMENTARY SECONDARY SCHOOL</a></li>
-            <li class="dropdown-item"><a href="https://ges.nisgaa.bc.ca" class="nav-link">GITWINKSIHLKW ELEMENTARY SCHOOL</a></li>
-            <li class="dropdown-item"><a href="https://aames.nisgaa.bc.ca" class="nav-link">ALVIN A. MCKAY ELEMENTARY SCHOOL</a></li>
-            <li class="dropdown-item"><a href="https://nbes.nisgaa.bc.ca" class="nav-link">NATHAN BARTON ELEMENTARY SCHOOL</a></li>
+            <li class="dropdown-item"><a href="https://dev-ness.nisgaa.bc.ca" class="nav-link">NISGA'A ELEMENTARY SECONDARY SCHOOL</a></li>
+            <li class="dropdown-item"><a href="https://dev-ges.nisgaa.bc.ca" class="nav-link">GITWINKSIHLKW ELEMENTARY SCHOOL</a></li>
+            <li class="dropdown-item"><a href="https://dev-aames.nisgaa.bc.ca" class="nav-link">ALVIN A. MCKAY ELEMENTARY SCHOOL</a></li>
+            <li class="dropdown-item"><a href="https://dev-nbes.nisgaa.bc.ca" class="nav-link">NATHAN BARTON ELEMENTARY SCHOOL</a></li>
             </ul>
         </li>
         <li class="nav-item dropdown"><a href="javascript: void(0)" data-toggle="dropdown" class="dropdown-toggle">Resources <b class="caret"></b></a>
