@@ -1,4 +1,4 @@
-<?php $faqs = $site->faqList($database, 2); ?>
+<?php $faqs = $site->faqList($database, $schoolContent); ?>
 <div class="col-md-9">
     <!-- FAQ INTRO CONTENT -->
     <section>

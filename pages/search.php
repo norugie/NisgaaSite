@@ -7,10 +7,10 @@
     }
 
     $keyword = mysqli_real_escape_string($database->con, $_POST['search']);
-    $school = 2;
-    $blogs = $site->blogSearchResults($database, $keyword, $school);
-    $resources = $site->resourcesSearchResults($database, $keyword, $school);
-    $forms = $site->formsSearchResults($database, $keyword, $school);
+
+    $blogs = $site->blogSearchResults($database, $keyword, $schoolContent);
+    $resources = $site->resourcesSearchResults($database, $keyword, $schoolContent);
+    $forms = $site->formsSearchResults($database, $keyword, $schoolContent);
     $dfiles = $site->departmentFormsSearchResults($database, $keyword);
     $cfiles = $site->curriculumFormsSearchResults($database, $keyword);
     $boefiles = $site->boardFormsSearchResults($database, $keyword);

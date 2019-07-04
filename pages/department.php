@@ -1,5 +1,4 @@
 <?php 
-
     $page_info;
     $page_info = $site->departmentInformation($database, $url[1]); 
 ?>
@@ -23,7 +22,7 @@
                     <p style="margin-bottom:10px!important;font-size:14pt;"><b>Budgets</b></p>
                     <div class="row">
                         <ul>
-                            <?php $page_info = $site->linkList($database, 'Finance Budget', 2); ?>
+                            <?php $page_info = $site->linkList($database, 'Finance Budget', $schoolContent); ?>
                             <?php foreach($page_info as $link): ?>
                                 <li class="lead mb-0"><a href="<?php if($link['link_type'] == 'File'){ echo "/links/"; } echo $link['link_content']; ?>" target="_blank"><?php echo $link['link_name']; ?></a></li>
                             <?php endforeach; ?>
@@ -34,7 +33,7 @@
                     <p style="margin-bottom:10px!important;font-size:14pt;"><b>Audited Financial Statements</b></p>
                     <div class="row">
                         <ul>
-                            <?php $page_info = $site->linkList($database, 'Finance Audit', 2); ?>
+                            <?php $page_info = $site->linkList($database, 'Finance Audit', $schoolContent); ?>
                             <?php foreach($page_info as $link): ?>
                                 <li class="lead mb-0"><a href="<?php if($link['link_type'] == 'File'){ echo "/links/"; } echo $link['link_content']; ?>" target="_blank"><?php echo $link['link_name']; ?></a></li>
                             <?php endforeach; ?>
@@ -48,7 +47,7 @@
                     <p style="margin-bottom:10px!important;font-size:14pt;"><b>Statements of Financial Information</b></p>
                     <div class="row">
                         <ul>
-                            <?php $page_info = $site->linkList($database, 'Finance SFI', 2); ?>
+                            <?php $page_info = $site->linkList($database, 'Finance SFI', $schoolContent); ?>
                             <?php foreach($page_info as $link): ?>
                                 <li class="lead mb-0"><a href="<?php if($link['link_type'] == 'File'){ echo "/links/"; } echo $link['link_content']; ?>" target="_blank"><?php echo $link['link_name']; ?></a></li>
                             <?php endforeach; ?>
@@ -59,7 +58,7 @@
                     <p style="margin-bottom:10px!important;font-size:14pt;"><b>Executive Compensation Reports</b></p>
                     <div class="row">
                         <ul>
-                            <?php $page_info = $site->linkList($database, 'Finance ECR', 2); ?>
+                            <?php $page_info = $site->linkList($database, 'Finance ECR', $schoolContent); ?>
                             <?php foreach($page_info as $link): ?>
                                 <li class="lead mb-0"><a href="<?php if($link['link_type'] == 'File'){ echo "/links/"; } echo $link['link_content']; ?>" target="_blank"><?php echo $link['link_name']; ?></a></li>
                             <?php endforeach; ?>
@@ -76,7 +75,7 @@
                     <p style="margin-bottom:10px!important;font-size:14pt;"><b>Department Files</b></p>
                     <div class="row">
                         <ul>
-                            <?php $page_info = $site->linkList($database, $url[1], 2); ?>
+                            <?php $page_info = $site->linkList($database, $url[1], $schoolContent); ?>
                             <?php foreach($page_info as $link): ?>
                                 <li class="lead mb-0"><a href="<?php if($link['link_type'] == 'File'){ echo "/links/"; } echo $link['link_content']; ?>" target="_blank"><?php echo $link['link_name']; ?></a></li>
                             <?php endforeach; ?>
@@ -93,7 +92,7 @@
                     <p style="margin-bottom:10px!important;font-size:14pt;"><b>Department Files</b></p>
                     <div class="row">
                         <ul>
-                            <?php $page_info = $site->linkList($database, $url[1], 2); ?>
+                            <?php $page_info = $site->linkList($database, $url[1], $schoolContent); ?>
                             <?php foreach($page_info as $link): ?>
                                 <li class="lead mb-0"><a href="<?php if($link['link_type'] == 'File'){ echo "/links/"; } echo $link['link_content']; ?>" target="_blank"><?php echo $link['link_name']; ?></a></li>
                             <?php endforeach; ?>
@@ -110,7 +109,7 @@
                     <p style="margin-bottom:10px!important;font-size:14pt;"><b>Department Files</b></p>
                     <div class="row">
                         <ul>
-                            <?php $page_info = $site->linkList($database, $url[1], 2); ?>
+                            <?php $page_info = $site->linkList($database, $url[1], $schoolContent); ?>
                             <?php foreach($page_info as $link): ?>
                                 <li class="lead mb-0"><a href="<?php if($link['link_type'] == 'File'){ echo "/links/"; } echo $link['link_content']; ?>" target="_blank"><?php echo $link['link_name']; ?></a></li>
                             <?php endforeach; ?>

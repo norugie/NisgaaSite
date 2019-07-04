@@ -1,6 +1,6 @@
 <?php 
-    $about = $site->aboutList($database, 2); 
-    $programs = $site->programList($database, 2);
+    $about = $site->aboutList($database, $schoolContent); 
+    $programs = $site->programList($database, $schoolContent);
 ?>
 <div class="col-md-9">
     <!-- ABOUT US CONTENT -->

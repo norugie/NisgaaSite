@@ -1,4 +1,4 @@
-<?php $links = $site->linkList($database, 'Parent Resources', 2); ?>
+<?php $links = $site->linkList($database, 'Parent Resources', $schoolContent); ?>
 <div class="col-md-9">
     <!-- PARENT RESOURCE INFO CONTENT -->
     <section>
