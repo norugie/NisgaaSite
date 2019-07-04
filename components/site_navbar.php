@@ -51,7 +51,6 @@
                     <h5>Departments</h5>
                     <ul class="list-unstyled mb-3">
                     <li class="nav-item"><a href="/department/finance" class="nav-link">Finance</a></li>
-                    <!-- <li class="nav-item"><a href="/department/sdss" class="nav-link">Student Data Support Services</a></li> -->
                     <li class="nav-item"><a href="/department/tech" class="nav-link">Information Technology Department</a></li>
                     <li class="nav-item"><a href="/department/maintenance" class="nav-link">Transportation and Maintenance Department</a></li>
                     </ul>      
