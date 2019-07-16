@@ -245,7 +245,7 @@
             //Event Post
             $post_title = mysqli_real_escape_string($database->con, $_POST['post_title']);
             $post_content = mysqli_real_escape_string($database->con, $_POST['post_content']);
-            
+            $sm_opt = mysqli_real_escape_string($database->con, $_POST['post_sm_autopost']);
             $post_thumbnail; 
             $post_id;
 
@@ -292,6 +292,33 @@
                 }   
                 
             }
+
+            // Process Social Media post here
+            if($sm_opt == "Yes"){
+                $post_id_link = preg_replace('/[a-zA-Z]/', '', $district->getPostIdLink($database, $post_id));
+                $post_link = "https://webdev.nisgaa.bc.ca/news/read/".$post_id_link;
+                $message = "District Event: ".$post_title;
+                $link_fb_data = [
+                    'link' => $post_link,
+                    'message' => $message
+                ];
+                $pageAccessToken = "EAAKGGWIraNYBAMD3xwrZBKMte0R4adCZAUAINJ3p2Ctat8vdCW89rdxCxCj4RAc0UIwlXDv8lQiO9Akv94c4le78RUJWtFjpZAjZCa2ZBXO5xH7EkClZBSkKdaIdnTzwqv69K7meGvXb7v2v98ZA0O0wR0g5nZCRZCj4AwX7CgNEqZCQZDZD";
+                require_once('autopost_fb.php'); // Facebook Autopost Class
+                
+                try {
+                    $response = $fb->post('/me/feed', $link_fb_data, $pageAccessToken);
+                } catch(Facebook\Exceptions\FacebookResponseException $e) {
+                    echo 'Graph returned an error: '.$e->getMessage();
+                    exit;
+                } catch(Facebook\Exceptions\FacebookSDKException $e) {
+                    echo 'Facebook SDK returned an error: '.$e->getMessage();
+                    exit;
+                }
+
+                $graphNode = $response->getGraphNode();
+                
+            }
+            // End Social Media Process
 
             $event_id = $district->addEvent($database, $event_name, $event_shortname, $event_desc, $event_type, $post_id, $event_school, $event_location);
 
