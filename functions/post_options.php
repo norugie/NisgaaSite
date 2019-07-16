@@ -151,8 +151,27 @@
 
             // Process Social Media post here
             if($sm_opt == "Yes"){
-                require_once('autopost.php'); // Facebook Autopost Class
                 $post_id_link = preg_replace('/[a-zA-Z]/', '', $post->getPostIdLink($database, $post_id));
+                $post_link = "https://webdev.nisgaa.bc.ca/news/read/".$post_id_link;
+                $message = "District News: ".$post_title;
+                $link_fb_data = [
+                    'link' => $post_link,
+                    'message' => $message
+                ];
+                $pageAccessToken = "EAAKGGWIraNYBAMD3xwrZBKMte0R4adCZAUAINJ3p2Ctat8vdCW89rdxCxCj4RAc0UIwlXDv8lQiO9Akv94c4le78RUJWtFjpZAjZCa2ZBXO5xH7EkClZBSkKdaIdnTzwqv69K7meGvXb7v2v98ZA0O0wR0g5nZCRZCj4AwX7CgNEqZCQZDZD";
+                require_once('autopost_fb.php'); // Facebook Autopost Class
+                
+                try {
+                    $response = $fb->post('/me/feed', $link_fb_data, $pageAccessToken);
+                } catch(Facebook\Exceptions\FacebookResponseException $e) {
+                    echo 'Graph returned an error: '.$e->getMessage();
+                    exit;
+                } catch(Facebook\Exceptions\FacebookSDKException $e) {
+                    echo 'Facebook SDK returned an error: '.$e->getMessage();
+                    exit;
+                }
+
+                $graphNode = $response->getGraphNode();
                 
             }
             // End Social Media Process
@@ -164,7 +183,7 @@
                 $post->addPostCategories($database, $post_id, $post_cats[$i]);
 
                 if($i == count($post_cats)){
-                    //header("location:../cms/post.php?tab=post&page=news&addPost=true");
+                    header("location:../cms/post.php?tab=post&page=news&addPost=true");
                 }
 
             }
@@ -512,7 +531,7 @@
                         } else if($error == 2){
                             $_SESSION['error_message'] = "You tried uploading a file that exceeded the file size limit. Please make sure that the file size is less than 10 MB.";
                         }
-                        header("location:../cms/district.php?tab=post&page=media&error=true");
+                        header("location:../cms/post.php?tab=post&page=media&error=true");
                     }
                 } else {
                     header("location:../cms/post.php?tab=post&page=media&error=true");
@@ -522,8 +541,27 @@
 
             // Process Social Media post here
             if($sm_opt == "Yes"){
-                require_once('autopost.php'); // Facebook Autopost Class
                 $post_id_link = preg_replace('/[a-zA-Z]/', '', $post->getPostIdLink($database, $post_id));
+                $post_link = "https://webdev.nisgaa.bc.ca/news/read/".$post_id_link;
+                $message = "District Media Post: ".$post_title;
+                $link_fb_data = [
+                    'link' => $post_link,
+                    'message' => $message
+                ];
+                $pageAccessToken = "EAAKGGWIraNYBAMD3xwrZBKMte0R4adCZAUAINJ3p2Ctat8vdCW89rdxCxCj4RAc0UIwlXDv8lQiO9Akv94c4le78RUJWtFjpZAjZCa2ZBXO5xH7EkClZBSkKdaIdnTzwqv69K7meGvXb7v2v98ZA0O0wR0g5nZCRZCj4AwX7CgNEqZCQZDZD";
+                require_once('autopost_fb.php'); // Facebook Autopost Class
+                
+                try {
+                    $response = $fb->post('/me/feed', $link_fb_data, $pageAccessToken);
+                } catch(Facebook\Exceptions\FacebookResponseException $e) {
+                    echo 'Graph returned an error: '.$e->getMessage();
+                    exit;
+                } catch(Facebook\Exceptions\FacebookSDKException $e) {
+                    echo 'Facebook SDK returned an error: '.$e->getMessage();
+                    exit;
+                }
+
+                $graphNode = $response->getGraphNode();
                 
             }
             // End Social Media Process

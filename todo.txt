@@ -1,11 +1,12 @@
 TODO:
 
 High Priority:
-- Facebook Auto-publish but only for important posts
+- Deploy SD92 Website
+- Make SD92AutoPublish Facebook App live
+    - Create a Privacy Policy that is publicly accessible
+- Add the domain site for the Facebook page
 
 Normal Priority:
-- Add the following to the sidebar
-    - Nisga’a News
 - Consider letting logged-in users to edit page content on the actual page, rather than going to the backend
 - make drag n’ drop of photos working
 - Add file upload to tinymce
