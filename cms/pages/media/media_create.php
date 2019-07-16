@@ -91,6 +91,18 @@
                         </div>
                     </div>
                 </div>
+                <div class="row clearfix" <?php if($_SESSION['school'] == 3 || $_SESSION['school'] == 4 || $_SESSION['school'] == 5 || $_SESSION['school'] == 6){ echo "hidden"; } ?>>
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <label for="media_fb_autopost">Post on SD92 Social Media Platforms?</label>
+                        <p class="font-12"><i><b>Note:</b> Creating the media post might take a while if you choose "Yes".</i></p>
+                        <div class="demo-radio-button">
+                            <input type="radio" name="media_fb_autopost" id="fb_opt_1" class="radio-col-blue-grey with-gap" checked>
+                            <label for="fb_opt_1">No</label>
+                            <input type="radio" name="media_fb_autopost" id="fb_opt_2" class="radio-col-blue-grey with-gap">
+                            <label for="fb_opt_2">Yes</label>
+                        </div>
+                    </div>
+                </div>
                 <div class="row clearfix">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <label for="media_thumbnail">Media Post Thumbnail</label>
