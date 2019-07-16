@@ -112,6 +112,23 @@
 			return $id;	
 		}
 
+		public function getPostIdLink($database, $post_id){
+			$id;
+
+			$sql = "SELECT post_id FROM posts WHERE id = '$post_id'";
+			$query = mysqli_query($database->con, $sql);
+			if(!$query){
+				$_SESSION['error_message'] = mysqli_error($database->con);
+				header("location:../cms/post.php?tab=post&page=news&error=true");
+			} else {
+				$row = mysqli_fetch_assoc($query);
+				$id = $row['post_id'];
+			}
+
+			return $id;
+
+		}
+
 		public function addPostCategories($database, $post_id, $cat_id){
 			$sql = "INSERT INTO post_categories
 			VALUES (null, '$post_id','$cat_id')";

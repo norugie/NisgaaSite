@@ -95,6 +95,7 @@
             $post_title = mysqli_real_escape_string($database->con, $_POST['post_title']);
             $post_content = mysqli_real_escape_string($database->con, $_POST['post_content']);
             $post_categories = mysqli_real_escape_string($database->con, $_POST['post_categories_id']);
+            $sm_opt = mysqli_real_escape_string($database->con, $_POST['post_sm_autopost']);
             $post_thumbnail;
             $post_desc;
             if(isset($_POST['post_desc']) && !empty($_POST['post_desc'])){
@@ -148,6 +149,14 @@
                 
             }
 
+            // Process Social Media post here
+            if($sm_opt == "Yes"){
+                require_once('autopost.php'); // Facebook Autopost Class
+                $post_id_link = preg_replace('/[a-zA-Z]/', '', $post->getPostIdLink($database, $post_id));
+                
+            }
+            // End Social Media Process
+
             $post_cats = explode(',', $post_categories);
 
             for($i = 0; $i <= count($post_cats); $i++){
@@ -155,7 +164,7 @@
                 $post->addPostCategories($database, $post_id, $post_cats[$i]);
 
                 if($i == count($post_cats)){
-                    header("location:../cms/post.php?tab=post&page=news&addPost=true");
+                    //header("location:../cms/post.php?tab=post&page=news&addPost=true");
                 }
 
             }
@@ -463,6 +472,7 @@
             $post_content = mysqli_real_escape_string($database->con, $_POST['media_content']);
             $post_desc = mysqli_real_escape_string($database->con, $_POST['media_content']);
             $post_categories = mysqli_real_escape_string($database->con, $_POST['media_categories_id']);
+            $sm_opt = mysqli_real_escape_string($database->con, $_POST['media_sm_autopost']);
             $post_thumbnail;
             $post_id;
 
@@ -509,6 +519,14 @@
                 }    
                 
             }
+
+            // Process Social Media post here
+            if($sm_opt == "Yes"){
+                require_once('autopost.php'); // Facebook Autopost Class
+                $post_id_link = preg_replace('/[a-zA-Z]/', '', $post->getPostIdLink($database, $post_id));
+                
+            }
+            // End Social Media Process
 
             $post_cats = explode(',', $post_categories);
 
