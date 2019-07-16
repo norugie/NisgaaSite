@@ -96,10 +96,10 @@
                         <label for="media_fb_autopost">Post on SD92 Social Media Platforms?</label>
                         <p class="font-12"><i><b>Note:</b> Creating the media post might take a while if you choose "Yes".</i></p>
                         <div class="demo-radio-button">
-                            <input type="radio" name="media_fb_autopost" id="fb_opt_1" class="radio-col-blue-grey with-gap" checked>
-                            <label for="fb_opt_1">No</label>
-                            <input type="radio" name="media_fb_autopost" id="fb_opt_2" class="radio-col-blue-grey with-gap">
-                            <label for="fb_opt_2">Yes</label>
+                            <input type="radio" name="media_sm_autopost" id="sm_opt_1" class="radio-col-blue-grey with-gap" value="No" checked>
+                            <label for="sm_opt_1">No</label>
+                            <input type="radio" name="media_sm_autopost" id="sm_opt_2" class="radio-col-blue-grey with-gap" value="Yes">
+                            <label for="sm_opt_2">Yes</label>
                         </div>
                     </div>
                 </div>
