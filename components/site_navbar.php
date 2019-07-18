@@ -45,12 +45,12 @@
                     <h5>Curriculum</h5>
                     <ul class="list-unstyled mb-3">
                     <li class="nav-item"><a href="/curriculum/k12" class="nav-link">K-12 Program</a></li>
-                    <li class="nav-item"><a href="/curriculum/dl" class="nav-link">Distant Learners Program</a></li>
+                    <!-- <li class="nav-item"><a href="/curriculum/dl" class="nav-link">Distant Learners Program</a></li> -->
                     <li class="nav-item"><a href="/curriculum/nlc" class="nav-link">Nisga'a Language and Culture</a></li>
                     </ul>
                     <h5>Miscellaneous</h5>
                     <ul class="list-unstyled mb-3">
-                    <li class="nav-item"><a href="/culture_corner" class="nav-link">Culture Corner</a></li>
+                    <!-- <li class="nav-item"><a href="/culture_corner" class="nav-link">Culture Corner</a></li> -->
                     <li class="nav-item"><a href="/files" class="nav-link">District Files</a></li>
                     </ul> 
                 </div>
@@ -75,10 +75,10 @@
         </li>
         <li class="nav-item dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Schools<b class="caret"></b></a>
             <ul class="dropdown-menu">
-            <li class="dropdown-item"><a href="https://dev-ness.nisgaa.bc.ca" class="nav-link">NISGA'A ELEMENTARY SECONDARY SCHOOL</a></li>
-            <li class="dropdown-item"><a href="https://dev-ges.nisgaa.bc.ca" class="nav-link">GITWINKSIHLKW ELEMENTARY SCHOOL</a></li>
-            <li class="dropdown-item"><a href="https://dev-aames.nisgaa.bc.ca" class="nav-link">ALVIN A. MCKAY ELEMENTARY SCHOOL</a></li>
-            <li class="dropdown-item"><a href="https://dev-nbes.nisgaa.bc.ca" class="nav-link">NATHAN BARTON ELEMENTARY SCHOOL</a></li>
+            <li class="dropdown-item"><a href="https://ness.nisgaa.bc.ca" class="nav-link">NISGA'A ELEMENTARY SECONDARY SCHOOL</a></li>
+            <li class="dropdown-item"><a href="https://ges.nisgaa.bc.ca" class="nav-link">GITWINKSIHLKW ELEMENTARY SCHOOL</a></li>
+            <li class="dropdown-item"><a href="https://aames.nisgaa.bc.ca" class="nav-link">ALVIN A. MCKAY ELEMENTARY SCHOOL</a></li>
+            <li class="dropdown-item"><a href="https://nbes.nisgaa.bc.ca" class="nav-link">NATHAN BARTON ELEMENTARY SCHOOL</a></li>
             </ul>
         </li>
         <li class="nav-item dropdown"><a href="javascript: void(0)" data-toggle="dropdown" class="dropdown-toggle">Resources <b class="caret"></b></a>
