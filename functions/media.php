@@ -1,7 +1,7 @@
 <?php
 
     // Allowed origins to upload images. Add necessary origins ones site is in production
-    $urlbase = "https://nisgaa.bc.ca";
+    $urlbase = "https://www.nisgaa.bc.ca";
     $accepted_origins = array($urlbase); // Change origin URL once site is online
 
     // Images upload path

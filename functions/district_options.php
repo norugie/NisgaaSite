@@ -296,7 +296,7 @@
             // Process Social Media post here
             if($sm_opt == "Yes"){
                 $post_id_link = preg_replace('/[a-zA-Z]/', '', $district->getPostIdLink($database, $post_id));
-                $post_link = "https://nisgaa.bc.ca/news/read/".$post_id_link;
+                $post_link = "https://www.nisgaa.bc.ca/news/read/".$post_id_link;
                 $message = "District Event: ".$post_title;
                 $link_fb_data = [
                     'link' => $post_link,
