@@ -35,7 +35,7 @@
         $filename;
 
         // Mail Information
-        $mailto   = 'rbarrameda@nisgaa.bc.ca'; // Change to the HR email once ready
+        $mailto   = 'hr@nisgaa.bc.ca'; // Change to the HR email once ready
         $mailfrom = 'sd92@nisgaa.bc.ca';
         $mailname = 'SDO';
         $subject  = 'Application for JOB ID: ' . $jobid;
