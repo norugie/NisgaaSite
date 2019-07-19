@@ -45,7 +45,8 @@
                 </div>
                 <div class="row clearfix">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <label for="post_categories">Post Categories *</label>
+                        <label for="post_categories">Post Categories</label>
+                        <p class="font-12"><i><b>Note:</b> Leaving this section blank will automatically tag your post to "Uncategorized".</i></p>
                         <div class="form-group">
                             <input type="text" value=""  name="post_categories_id" hidden>
                             <div class="form-line">

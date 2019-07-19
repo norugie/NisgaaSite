@@ -222,7 +222,8 @@
 			$array = array();
 			$sql = "SELECT * FROM categories
 					WHERE status = 'Active'
-					AND id != '1'";
+					AND id != '1'
+					AND id != '2'";
 			$query = mysqli_query($database->con, $sql);
 			if(!$query){
 				global $error;

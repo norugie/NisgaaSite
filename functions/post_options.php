@@ -178,15 +178,21 @@
 
             $post_cats = explode(',', $post_categories);
 
-            for($i = 0; $i <= count($post_cats); $i++){
+            if(!empty($post_cats[0])){
+                for($i = 0; $i <= count($post_cats); $i++){
 
-                $post->addPostCategories($database, $post_id, $post_cats[$i]);
-
-                if($i == count($post_cats)){
-                    header("location:../cms/post.php?tab=post&page=news&addPost=true");
+                    $post->addPostCategories($database, $post_id, $post_cats[$i]);
+    
+                    if($i == count($post_cats)){
+                        header("location:../cms/post.php?tab=post&page=news&addPost=true");
+                    }
+    
                 }
-
+            } else {
+                $post->addPostCategories($database, $post_id, 2);
+                header("location:../cms/post.php?tab=post&page=news&addPost=true");
             }
+            
 
         }
 
@@ -568,14 +574,19 @@
 
             $post_cats = explode(',', $post_categories);
 
-            for($i = 0; $i <= count($post_cats); $i++){
+            if(!empty($post_cats[0])){
+                for($i = 0; $i <= count($post_cats); $i++){
 
-                $post->addMediaCategories($database, $post_id, $post_cats[$i]);
-
-                if($i == count($post_cats)){
-                    header("location:../cms/post.php?tab=post&page=media&media_option=upload&media_id=" . $post_id);
+                    $post->addMediaCategories($database, $post_id, $post_cats[$i]);
+    
+                    if($i == count($post_cats)){
+                        header("location:../cms/post.php?tab=post&page=media&media_option=upload&media_id=" . $post_id);
+                    }
+    
                 }
-
+            } else {
+                $post->addMediaCategories($database, $post_id, 2);
+                header("location:../cms/post.php?tab=post&page=media&media_option=upload&media_id=" . $post_id);
             }
 
         }
