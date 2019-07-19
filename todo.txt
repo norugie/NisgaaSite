@@ -3,7 +3,7 @@ TODO:
 High Priority:
 - Deploy SD92 Website
 - Make SD92AutoPublish Facebook App live
-    - Create a Privacy Policy that is publicly accessible
+    - Have the Facebook app verified (in-progress)
 - Add the domain site for the Facebook page
 
 Normal Priority:
