@@ -8,7 +8,7 @@
             <div class="modal-body">
                 <div class="row">
                     <div class="col-md-4">
-                        <center><img src="" id="trustee-img" class="img-fluid rounded-circle" alt="BOE Trustee Image"></center>
+                        <center><img src="" id="trustee-img" class="img-fluid rounded-circle" alt="BOE Trustee Image" style="height:150px!important;width:150px!important;object-fit:cover!important;"></center>
                     </div>
                     <div class="col-md-8">
                         <div class="heading">

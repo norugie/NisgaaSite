@@ -98,6 +98,7 @@
                 <hr>
                 <p class="lead text-center mb-0" style="font-size: 16px;">"<?php echo $word['word_meaning']; ?>"</p>
                 <p class="intro text-center"><i><?php echo $word['form']; ?></i></p>
+                <h5 class="h5 text-center">Learn more about the Nisga'a language at <a href="https://www.firstvoices.com/explore/FV/sections/Data/Nisga'a/Nisga'a/Nisga'a"><u>FirstVoices</u></a>.</h5>
             </div>
         </div>
     </div>

@@ -7,13 +7,14 @@
     }
 
     $keyword = mysqli_real_escape_string($database->con, $_POST['search']);
+    $searchKeyword = str_replace(" ", "%", $keyword);
 
-    $blogs = $site->blogSearchResults($database, $keyword, $schoolContent);
-    $resources = $site->resourcesSearchResults($database, $keyword, $schoolContent);
-    $forms = $site->formsSearchResults($database, $keyword, $schoolContent);
-    $dfiles = $site->departmentFormsSearchResults($database, $keyword);
-    $cfiles = $site->curriculumFormsSearchResults($database, $keyword);
-    $boefiles = $site->boardFormsSearchResults($database, $keyword);
+    $blogs = $site->blogSearchResults($database, $searchKeyword, $schoolContent);
+    $resources = $site->resourcesSearchResults($database, $searchKeyword, $schoolContent);
+    $forms = $site->formsSearchResults($database, $searchKeyword, $schoolContent);
+    $dfiles = $site->departmentFormsSearchResults($database, $searchKeyword);
+    $cfiles = $site->curriculumFormsSearchResults($database, $searchKeyword);
+    $boefiles = $site->boardFormsSearchResults($database, $searchKeyword);
     
 ?>
 <div class="col-md-9">

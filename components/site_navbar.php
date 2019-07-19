@@ -31,7 +31,7 @@
                     <h5>District Information</h5>
                     <ul class="list-unstyled mb-3">
                     <li class="nav-item"><a href="/about" class="nav-link">About</a></li>
-                    <li class="nav-item"><a href="/inquiries" class="nav-link">Inquiries</a></li>
+                    <!-- <li class="nav-item"><a href="/inquiries" class="nav-link">Inquiries</a></li> -->
                     <li class="nav-item"><a href="/contacts" class="nav-link">Contact Us</a></li>
                     </ul>
                     <h5>Departments</h5>

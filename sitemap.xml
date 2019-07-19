@@ -8,108 +8,110 @@
 
 
 <url>
-  <loc>https://webdev.nisgaa.bc.ca/</loc>
-  <lastmod>2019-06-14T03:53:36+00:00</lastmod>
+  <loc>https://www.nisgaa.bc.ca/</loc>
+  <lastmod>2019-07-19T19:18:44+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
-  <loc>https://webdev.nisgaa.bc.ca/login</loc>
-  <lastmod>2019-06-14T03:53:36+00:00</lastmod>
+  <loc>https://www.nisgaa.bc.ca/login</loc>
+  <lastmod>2019-07-19T19:18:44+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://webdev.nisgaa.bc.ca/about</loc>
-  <lastmod>2019-06-14T03:53:36+00:00</lastmod>
+  <loc>https://www.nisgaa.bc.ca/about</loc>
+  <lastmod>2019-07-19T19:18:44+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://webdev.nisgaa.bc.ca/inquiries</loc>
-  <lastmod>2019-06-14T03:53:36+00:00</lastmod>
+  <loc>https://www.nisgaa.bc.ca/inquiries</loc>
+  <lastmod>2019-07-19T19:18:44+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://webdev.nisgaa.bc.ca/contacts</loc>
-  <lastmod>2019-06-14T03:53:36+00:00</lastmod>
+  <loc>https://www.nisgaa.bc.ca/contacts</loc>
+  <lastmod>2019-07-19T19:18:44+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://webdev.nisgaa.bc.ca/department/finance</loc>
-  <lastmod>2019-06-14T03:53:36+00:00</lastmod>
+  <loc>https://www.nisgaa.bc.ca/department/finance</loc>
+  <lastmod>2019-07-19T19:18:44+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://webdev.nisgaa.bc.ca/department/tech</loc>
-  <lastmod>2019-06-14T03:53:36+00:00</lastmod>
+  <loc>https://www.nisgaa.bc.ca/department/tech</loc>
+  <lastmod>2019-07-19T19:18:44+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://webdev.nisgaa.bc.ca/department/maintenance</loc>
-  <lastmod>2019-06-14T03:53:36+00:00</lastmod>
+  <loc>https://www.nisgaa.bc.ca/department/maintenance</loc>
+  <lastmod>2019-07-19T19:18:44+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://webdev.nisgaa.bc.ca/curriculum/k12</loc>
-  <lastmod>2019-06-14T03:53:36+00:00</lastmod>
+  <loc>https://www.nisgaa.bc.ca/curriculum/k12</loc>
+  <lastmod>2019-07-19T19:18:44+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://webdev.nisgaa.bc.ca/curriculum/dl</loc>
-  <lastmod>2019-06-14T03:53:36+00:00</lastmod>
+  <loc>https://www.nisgaa.bc.ca/curriculum/nlc</loc>
+  <lastmod>2019-07-19T19:18:44+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://webdev.nisgaa.bc.ca/curriculum/nlc</loc>
-  <lastmod>2019-06-14T03:53:36+00:00</lastmod>
+  <loc>https://www.nisgaa.bc.ca/files</loc>
+  <lastmod>2019-07-19T19:18:44+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://webdev.nisgaa.bc.ca/files</loc>
-  <lastmod>2019-06-14T03:53:36+00:00</lastmod>
+  <loc>https://www.nisgaa.bc.ca/boe</loc>
+  <lastmod>2019-07-19T19:18:44+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://webdev.nisgaa.bc.ca/boe</loc>
-  <lastmod>2019-06-14T03:53:36+00:00</lastmod>
+  <loc>https://www.nisgaa.bc.ca/packages</loc>
+  <lastmod>2019-07-19T19:18:44+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://webdev.nisgaa.bc.ca/packages</loc>
-  <lastmod>2019-06-14T03:53:36+00:00</lastmod>
+  <loc>https://www.nisgaa.bc.ca/general_resources</loc>
+  <lastmod>2019-07-19T19:18:44+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://webdev.nisgaa.bc.ca/general_resources</loc>
-  <lastmod>2019-06-14T03:53:36+00:00</lastmod>
+  <loc>https://www.nisgaa.bc.ca/teacher_resources</loc>
+  <lastmod>2019-07-19T19:18:44+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://webdev.nisgaa.bc.ca/teacher_resources</loc>
-  <lastmod>2019-06-14T03:53:36+00:00</lastmod>
+  <loc>https://www.nisgaa.bc.ca/learning_resources</loc>
+  <lastmod>2019-07-19T19:18:44+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://webdev.nisgaa.bc.ca/learning_resources</loc>
-  <lastmod>2019-06-14T03:53:36+00:00</lastmod>
+  <loc>https://www.nisgaa.bc.ca/student_resources</loc>
+  <lastmod>2019-07-19T19:18:44+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://webdev.nisgaa.bc.ca/student_resources</loc>
-  <lastmod>2019-06-14T03:53:36+00:00</lastmod>
+  <loc>https://www.nisgaa.bc.ca/parent_resources</loc>
+  <lastmod>2019-07-19T19:18:44+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://webdev.nisgaa.bc.ca/parent_resources</loc>
-  <lastmod>2019-06-14T03:53:36+00:00</lastmod>
+  <loc>https://www.nisgaa.bc.ca/news</loc>
+  <lastmod>2019-07-19T19:18:44+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://webdev.nisgaa.bc.ca/news</loc>
-  <lastmod>2019-06-14T03:53:36+00:00</lastmod>
+  <loc>https://www.nisgaa.bc.ca/careers</loc>
+  <lastmod>2019-07-19T19:18:44+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://webdev.nisgaa.bc.ca/careers</loc>
-  <lastmod>2019-06-14T03:53:36+00:00</lastmod>
+  <loc>https://www.nisgaa.bc.ca/search</loc>
+  <lastmod>2019-05-29T22:07:57+00:00</lastmod>
   <priority>0.80</priority>
 </url>
+
+
 </urlset>
