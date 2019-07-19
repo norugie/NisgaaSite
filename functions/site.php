@@ -80,7 +80,7 @@
 						OR users.firstname LIKE '%$keyword%'
 						OR users.lastname LIKE '%$keyword%'
 					)
-                    ORDER BY posts.id DESC";
+                    ORDER BY posts.post_date DESC";
 			$query = mysqli_query($database->con, $sql);
 			if (!$query) {
                  //echo "<script>window.open('https://www.nisgaa.bc.ca/error', '_parent');</script>";
