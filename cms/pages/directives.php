@@ -53,7 +53,7 @@
                                     <td><a href="<?php echo $link['link_content']; ?>" target="_blank"><?php echo $link['link_name']; ?></a></td>
                                     <td><?php echo $link['link_desc']; ?></td>
                                     <?php if($_SESSION['type'] != 3){ ?>
-                                        <td><center><button type="button" class="btn bg-green waves-effect" data-toggle="modal" data-target="#edit-package-modal" 
+                                        <td><center><button type="button" class="btn bg-green waves-effect" data-toggle="modal" data-target="#edit-directive-file-modal" 
                                         data-values='{
                                             "id":           <?php echo json_encode($link['id']); ?>,
                                             "link_id":      <?php echo json_encode($link['link_id']); ?>,
