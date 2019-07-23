@@ -17,7 +17,7 @@
                         <form class="new_form_validate" action="../functions/district.php?district=true&addDirective=true" method="POST" enctype="multipart/form-data">
                             <div class="row clearfix">
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                    <label for="link_title">Package Title *</label>
+                                    <label for="link_title">Title *</label>
                                     <div class="form-group">
                                         <div class="form-line">
                                             <input type="text" class="form-control" id="link_title" name="link_title" required>
@@ -27,7 +27,7 @@
                             </div>
                             <div class="row clearfix">
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                    <label for="link_desc">Package Description</label>
+                                    <label for="link_desc">Description</label>
                                     <div class="form-group">
                                         <div class="form-line">
                                             <textarea rows="2" class="form-control no-resize" id="link_desc" name="link_desc"></textarea>
@@ -38,7 +38,7 @@
                             <br>
                             <div class="row clearfix">
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                    <label for="link_content">Package Content *</label>
+                                    <label for="link_content">Content *</label>
                                     <p class="font-12"><i><b>Note:</b> The max file size you can upload is 20 MB</i></p>
                                     <div class="form-group">
                                         <div class="form-line" id="input-field">
