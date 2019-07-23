@@ -9,6 +9,12 @@
         header("location: /" . $redirect);
     }
 
+    // Remove the utm_source
+    if(strpos($_SERVER['QUERY_STRING'], "utm_source") !== false){
+        $redirect = str_replace('&', '', strstr($_SERVER['QUERY_STRING'], 'utm_source', true));
+        header("location: /" . $redirect);
+    }
+
     // Redirect login.php to /login
     if($page_name == "login"){
         require 'login.php';

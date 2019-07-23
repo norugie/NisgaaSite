@@ -5,7 +5,7 @@ High Priority:
 - Make SD92AutoPublish Facebook App live
     - Have the Facebook app verified (in-progress)
 - Add the domain site for the Facebook page
-- Fix post creation without categories
+- Create an RSS feed for the Website
 
 Normal Priority:
 - Consider letting logged-in users to edit page content on the actual page, rather than going to the backend

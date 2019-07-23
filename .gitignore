@@ -13,6 +13,7 @@
 /links/*
 /components/map.php
 /todo.txt
+/feed.php
 
 # Folder exceptions
 !/jobs/.gitkeep
