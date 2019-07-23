@@ -254,3 +254,17 @@ function editDirective(directiveInfo) {
     $("#edit_directive_desc_file").val(directive['link_desc']);
 
 }
+
+function editPolicy(policyInfo) {
+
+    policy = $(policyInfo).data("values");
+
+    // Policy type: File
+    $("#edit_policy_id_file").attr("value", policy['id']);
+    $("#edit_policy_id_name_file").attr("value", policy['link_id']);
+    $("#edit_policy_id_type_file").attr("value", policy['link_type']);
+    $("#edit_policy_id_file_file").attr("value", policy['link_content']);
+    $("#edit_policy_title_file").attr("value", policy['link_name']);
+    $("#edit_policy_desc_file").val(policy['link_desc']);
+
+}
