@@ -38,6 +38,8 @@
 
 			if($tag == 'Board Meeting Packages'){
 				$sql = $sqlquery . " ORDER BY links.id DESC";
+			} else if($tag == 'BOE PAD') {
+				$sql = $sqlquery . " ORDER BY links.id DESC";
 			} else if($tag == 'District Forms') {
 				$sql = $sqlquery . " ORDER BY links.link_name ASC";
 			} else if(strpos($tag, 'Finance') !== false){

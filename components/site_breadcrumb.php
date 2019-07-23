@@ -36,6 +36,8 @@ if($page_name == 'news'){
     $breadcrumb = "District Files";
 } else if($page_name == 'search'){
     $breadcrumb = "Search Results";
+} else if($page_name == 'process_directives'){
+    $breadcrumb = "Board of Education - Process and Directives";
 } else {
     $breadcrumb = str_replace('_', ' ', $page_name);
 }

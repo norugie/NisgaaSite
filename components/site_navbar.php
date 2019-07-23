@@ -58,6 +58,7 @@
                     <h5>Governance</h5>
                     <ul class="list-unstyled mb-3">
                     <li class="nav-item"><a href="/boe" class="nav-link">Board of Education</a></li>
+                    <li class="nav-item"><a href="/process_directives" class="nav-link">Board of Education - Process and Directives</a></li>
                     <li class="nav-item"><a href="/packages" class="nav-link">Board Meeting Packages</a></li>
                     </ul>
                     <h5>External Links</h5>
