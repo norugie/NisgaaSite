@@ -1,6 +1,6 @@
 <?php 
 
-    $links = $district->policyeList($database);
+    $links = $district->policyList($database);
 
  ?>
 
