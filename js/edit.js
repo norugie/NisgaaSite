@@ -240,3 +240,25 @@ function editCarouselImage(carousel){
     $("#edit_carousel_caption").attr("value", carousel['carousel_desc']);
     
 }
+
+function editDirective(directiveInfo) {
+
+    directive = $(directiveInfo).data("values");
+
+    // Directive type: Link
+    $("#edit_directive_id_link").attr("value", directive['id']);
+    $("#edit_directive_id_name_link").attr("value", directive['link_id']);
+    $("#edit_directive_id_type_link").attr("value", directive['link_type']);
+    $("#edit_directive_title_link").attr("value", directive['link_name']);
+    $("#edit_directive_desc_link").val(directive['link_desc']);
+    $("#edit_directive_content_link").attr("value", directive['link_content']);
+
+    // Directive type: File
+    $("#edit_directive_id_file").attr("value", directive['id']);
+    $("#edit_directive_id_name_file").attr("value", directive['link_id']);
+    $("#edit_directive_id_type_file").attr("value", directive['link_type']);
+    $("#edit_directive_id_file_file").attr("value", directive['link_content']);
+    $("#edit_directive_title_file").attr("value", directive['link_name']);
+    $("#edit_directive_desc_file").val(directive['link_desc']);
+
+}

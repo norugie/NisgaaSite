@@ -47,6 +47,10 @@ function alertDesign(e) {
         showDisablePageConfirm(id, name, subtab, page);
     } else if (type === 'delete-carousel-image'){
         showDisableCarouselImageConfirm(id);
+    } else if (type === 'delete-directive'){
+        showDisableDirectiveConfirm(id, name);
+    } else if (type === 'reopen-directive'){
+        showReactivateDirectiveConfirm(id, name);
     }
 }
 
@@ -449,6 +453,45 @@ function showDisableCarouselImageConfirm(id) {
     }, function (isConfirm) {
         if (isConfirm) {
             window.location = "../functions/interaction.php?interaction=true&carouselImageDisable=true&id=" + id;
+        }
+
+    });
+}
+
+//Warning for disabling directive
+function showDisableDirectiveConfirm(id, name) {
+    swal({
+        title: "Are you sure you want to disable this process/directive?",
+        text: "You will be able to reactivate this process/directive once archived",
+        type: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#F44336",
+        confirmButtonText: "CONFIRM",
+        cancelButtonText: "CANCEL",
+        closeOnConfirm: false,
+        closeOnCancel: true
+    }, function (isConfirm) {
+        if (isConfirm) {
+            window.location = "../functions/district.php?district=true&directiveDisable=true&id=" + id + "&directiveName=" + name;
+        }
+
+    });
+}
+
+//Warning for reactivating directive
+function showReactivateDirectiveConfirm(id, name) {
+    swal({
+        title: "Are you sure you want to reactivate this processs/directive?",
+        type: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#00BCD4",
+        confirmButtonText: "CONFIRM",
+        cancelButtonText: "CANCEL",
+        closeOnConfirm: false,
+        closeOnCancel: true
+    }, function (isConfirm) {
+        if (isConfirm) {
+            window.location = "../functions/district.php?district=true&directiveReactivate=true&id=" + id + "&directiveName=" + name;
         }
 
     });

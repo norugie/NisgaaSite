@@ -122,6 +122,18 @@
                             <span>Board Meeting Packages</span>
                         </a>
                     </li>
+                    <li id="policy">
+                        <a href="district.php?tab=sd&page=policy">
+                            <i class="material-icons">account_balance</i>
+                            <span>Board of Education - Policy</span>
+                        </a>
+                    </li>
+                    <li id="directives">
+                        <a href="district.php?tab=sd&page=directives">
+                            <i class="material-icons">subdirectory_arrow_right</i>
+                            <span>Board of Education - Process and Directives</span>
+                        </a>
+                    </li>
                     <?php } ?>
                 </ul>
             </li>
