@@ -46,7 +46,7 @@
             <?php require '../components/district_notification.php'; ?>
             
             <div class="block-header">
-                <h2>SCHOOL DISTRICT - <?php echo strtoupper($page_name); ?></h2>
+                <h2>SCHOOL DISTRICT - <?php if($page_name == 'policy' || $page_name == 'directives'){ echo "BOE "; } if($page_name == 'directives'){ echo " PROCESS AND "; } echo strtoupper($page_name); ?></h2>
             </div>
 
             <!-- Page Content -->
