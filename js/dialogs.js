@@ -51,6 +51,10 @@ function alertDesign(e) {
         showDisableDirectiveConfirm(id, name);
     } else if (type === 'reopen-directive'){
         showReactivateDirectiveConfirm(id, name);
+    } else if (type === 'delete-policy'){
+        showDisablePolicyConfirm(id, name);
+    } else if (type === 'reopen-policy'){
+        showReactivatePolicyConfirm(id, name);
     }
 }
 
@@ -481,7 +485,7 @@ function showDisableDirectiveConfirm(id, name) {
 //Warning for reactivating directive
 function showReactivateDirectiveConfirm(id, name) {
     swal({
-        title: "Are you sure you want to reactivate this processs/directive?",
+        title: "Are you sure you want to reactivate this process/directive?",
         type: "warning",
         showCancelButton: true,
         confirmButtonColor: "#00BCD4",
@@ -492,6 +496,45 @@ function showReactivateDirectiveConfirm(id, name) {
     }, function (isConfirm) {
         if (isConfirm) {
             window.location = "../functions/district.php?district=true&directiveReactivate=true&id=" + id + "&directiveName=" + name;
+        }
+
+    });
+}
+
+//Warning for disabling policy
+function showDisablePolicyConfirm(id, name) {
+    swal({
+        title: "Are you sure you want to disable this policy?",
+        text: "You will be able to reactivate this policy once archived",
+        type: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#F44336",
+        confirmButtonText: "CONFIRM",
+        cancelButtonText: "CANCEL",
+        closeOnConfirm: false,
+        closeOnCancel: true
+    }, function (isConfirm) {
+        if (isConfirm) {
+            window.location = "../functions/district.php?district=true&policyDisable=true&id=" + id + "&policyName=" + name;
+        }
+
+    });
+}
+
+//Warning for reactivating policy
+function showReactivatePolicyConfirm(id, name) {
+    swal({
+        title: "Are you sure you want to reactivate this policy?",
+        type: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#00BCD4",
+        confirmButtonText: "CONFIRM",
+        cancelButtonText: "CANCEL",
+        closeOnConfirm: false,
+        closeOnCancel: true
+    }, function (isConfirm) {
+        if (isConfirm) {
+            window.location = "../functions/district.php?district=true&policyReactivate=true&id=" + id + "&policyName=" + name;
         }
 
     });
