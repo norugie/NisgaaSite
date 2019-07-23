@@ -1,10 +1,10 @@
-<?php $links = $site->linkList($database, 'BOE PAD', $schoolContent); ?>
+<?php $links = $site->linkList($database, 'BOE Policy', $schoolContent); ?>
 <div class="col-md-9">
     <!-- DIRECTIVES INFO CONTENT -->
     <section>
         <div class="row">
             <div class="col-md-12">
-                <p class="lead">Below are the archived processes and directives for conducting official district actions, arranged by recency:</p>
+                <p class="lead">Below are the archived policies and bylaws agreed upon by the Board of Education:</p>
             </div>
         </div>
     </section>

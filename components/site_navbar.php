@@ -39,14 +39,21 @@
                     <li class="nav-item"><a href="/department/finance" class="nav-link">Finance</a></li>
                     <li class="nav-item"><a href="/department/tech" class="nav-link">Information Technology Department</a></li>
                     <li class="nav-item"><a href="/department/maintenance" class="nav-link">Transportation and Maintenance Department</a></li>
-                    </ul>      
-                </div>
-                <div class="col-lg-4">
+                    </ul>
                     <h5>Curriculum</h5>
                     <ul class="list-unstyled mb-3">
                     <li class="nav-item"><a href="/curriculum/k12" class="nav-link">K-12 Program</a></li>
                     <!-- <li class="nav-item"><a href="/curriculum/dl" class="nav-link">Distant Learners Program</a></li> -->
                     <li class="nav-item"><a href="/curriculum/nlc" class="nav-link">Nisga'a Language and Culture</a></li>
+                    </ul>      
+                </div>
+                <div class="col-lg-4">
+                    <h5>Governance</h5>
+                    <ul class="list-unstyled mb-3">
+                    <li class="nav-item"><a href="/boe" class="nav-link">Board of Education</a></li>
+                    <li class="nav-item"><a href="/process_directives" class="nav-link">Board of Education - Process and Directives</a></li>
+                    <li class="nav-item"><a href="/policy" class="nav-link">Board of Education - Policies</a></li>
+                    <li class="nav-item"><a href="/packages" class="nav-link">Board Meeting Packages</a></li>
                     </ul>
                     <h5>Miscellaneous</h5>
                     <ul class="list-unstyled mb-3">
@@ -55,12 +62,6 @@
                     </ul> 
                 </div>
                 <div class="col-lg-4">
-                    <h5>Governance</h5>
-                    <ul class="list-unstyled mb-3">
-                    <li class="nav-item"><a href="/boe" class="nav-link">Board of Education</a></li>
-                    <li class="nav-item"><a href="/process_directives" class="nav-link">Board of Education - Process and Directives</a></li>
-                    <li class="nav-item"><a href="/packages" class="nav-link">Board Meeting Packages</a></li>
-                    </ul>
                     <h5>External Links</h5>
                     <ul class="list-unstyled mb-3">
                     <li class="nav-item"><a href="https://www.nisgaanation.ca/" class="nav-link" target="_blank">Nisga'a Lisims Government</a></li>
