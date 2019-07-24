@@ -1,5 +1,6 @@
 <?php 
     require 'functions/security_headers.php';
+    require 'functions/site.php';
 ?>
 <!DOCTYPE html>
 <html>
@@ -10,26 +11,43 @@
         <meta name="google-site-verification" content="AoSEh84a-NthX9s-5lUi7X8yrNXhh9J5LFtlncT5lJI">
         <meta property="fb:app_id" content="710393532737750">
 
+        <?php
+
+            if(isset($url[2]) && !empty($url[2])){
+                $tag = $site->postInformation($database, $url[2]);
+                $tag_title = $tag['post_title'];
+                $tag_desc = $tag['post_desc'];
+                $tag_image = "https://www.nisgaa.bc.ca/images/thumbnails/".$tag['post_thumbnail'];
+
+            } else {
+                $tag_title = "SD92 - Nisga'a";
+                $tag_desc = "School District No. 92 (Nisga'a)";
+                $tag_image = "https://www.nisgaa.bc.ca/images/thumbnails/post_thumbnail.jpg";
+            }
+
+        ?>
+
         <!-- Primary Meta Tags -->
-        <title>SD92 - Nisga'a</title>
-        <meta name="title" content="SD92 - Nisga'a">
-        <meta name="description" content="School District No. 92 (Nisga'a)">
+        <title><?php echo $tag_title; ?></title>
+        <meta name="title" content="<?php echo $tag_title; ?>">
+        <meta name="description" content="<?php echo $tag_desc; ?>">
+        <meta name="url" content="https://www.nisgaa.bc.ca">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="all,follow">
 
         <!-- Open Graph / Facebook -->
         <meta property="og:type" content="website">
         <meta property="og:url" content="https://www.nisgaa.bc.ca">
-        <meta property="og:title" content="SD92 - Nisga'a">
-        <meta property="og:description" content="School District No. 92 (Nisga'a)">
-        <meta property="og:image" content="https://www.nisgaa.bc.ca/images/thumbnails/post_thumbnail.jpg">
+        <meta property="og:title" content="<?php echo $tag_title; ?>">
+        <meta property="og:description" content="<?php echo $tag_desc; ?>">
+        <meta property="og:image" content="<?php echo $tag_image; ?>">
 
         <!-- Twitter -->
         <meta property="twitter:card" content="summary_large_image">
         <meta property="twitter:url" content="https://www.nisgaa.bc.ca">
-        <meta property="twitter:title" content="SD92 - Nisga'a">
-        <meta property="twitter:description" content="School District No. 92 (Nisga'a)">
-        <meta property="twitter:image" content="https://www.nisgaa.bc.ca/images/thumbnails/post_thumbnail.jpg">
+        <meta property="twitter:title" content="<?php echo $tag_title; ?>">
+        <meta property="twitter:description" content="<?php echo $tag_desc; ?>">
+        <meta property="twitter:image" content="<?php echo $tag_image; ?>">
 
         <!-- Bootstrap CSS-->
         <link rel="stylesheet" href="/plugins/bootstrap-v4/css/bootstrap.min.css">

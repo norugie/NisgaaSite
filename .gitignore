@@ -1,6 +1,5 @@
 # Ignore files
 /functions/db_params.php
-/functions/autopost_fb.php
 /jobs/*
 /links/*
 /images/contacts/*

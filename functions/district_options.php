@@ -293,35 +293,6 @@
                 
             }
 
-            // Process Social Media post here
-            // if($sm_opt == "Yes"){
-            //     $post_id_link = preg_replace('/[a-zA-Z]/', '', $district->getPostIdLink($database, $post_id));
-            //     $post_link = "https://www.nisgaa.bc.ca/news/read/".$post_id_link;
-            //     $message = "District Event: ".$post_title;
-            //     $link_fb_data = [
-            //         'link' => $post_link,
-            //         'message' => $message
-            //     ];
-                
-            //     require_once('autopost_fb.php'); // Facebook Autopost Class
-                
-            //     try {
-            //         $response = $fb->post('/me/feed', $link_fb_data, $pageAccessToken);
-            //     } catch(Facebook\Exceptions\FacebookResponseException $e) {
-            //         echo 'Graph returned an error: '.$e->getMessage();
-            //         exit;
-            //     } catch(Facebook\Exceptions\FacebookSDKException $e) {
-            //         echo 'Facebook SDK returned an error: '.$e->getMessage();
-            //         exit;
-            //     }
-
-            //     $graphNode = $response->getGraphNode();
-
-
-                
-            // }
-            // End Social Media Process
-
             $event_id = $district->addEvent($database, $event_name, $event_shortname, $event_desc, $event_type, $post_id, $event_school, $event_location);
 
             $event_start;
