@@ -1,7 +1,6 @@
 <!-- Site Backend Connection Initialization -->
 <?php
 
-    require 'functions/site.php';
     $schoolInfo = 8;
     $schoolContent = 2;
     $info = $site->siteInformation($database, $schoolInfo);
