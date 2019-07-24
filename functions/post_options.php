@@ -109,7 +109,7 @@
             if(!file_exists($_FILES['post_thumbnail']['tmp_name']) || !is_uploaded_file($_FILES['post_thumbnail']['tmp_name'])){
 
                 $post_thumbnail = "post_thumbnail.jpg";
-                $post_id = $post->addPost($database, $post_title, $post_content, $post_thumbnail, $post_desc);
+                $post_id = $post->addPost($database, $post_title, $post_content, $post_thumbnail, $post_desc, $sm_opt);
 
             } else {
 
@@ -134,7 +134,7 @@
                     if($errors == 0){
                         move_uploaded_file($file_tmp, "../images/thumbnails/" . $file_name);
                         $post_thumbnail = $file_name;
-                        $post_id = $post->addPost($database, $post_title, $post_content, $post_thumbnail, $post_desc);
+                        $post_id = $post->addPost($database, $post_title, $post_content, $post_thumbnail, $post_desc, $sm_opt);
                     } else {
                         if($error == 1){
                             $_SESSION['error_message'] = "You tried uploading a file with an invalid file extension. Please make sure that the file's extension is one of the followings: .jpeg, .jpg, .png.";
@@ -150,30 +150,30 @@
             }
 
             // Process Social Media post here
-            if($sm_opt == "Yes"){
-                $post_id_link = preg_replace('/[a-zA-Z]/', '', $post->getPostIdLink($database, $post_id));
-                $post_link = "https://www.nisgaa.bc.ca/news/read/".$post_id_link;
-                $message = "District News: ".$post_title;
-                $link_fb_data = [
-                    'link' => $post_link,
-                    'message' => $message
-                ];
+            // if($sm_opt == "Yes"){
+            //     $post_id_link = preg_replace('/[a-zA-Z]/', '', $post->getPostIdLink($database, $post_id));
+            //     $post_link = "https://www.nisgaa.bc.ca/news/read/".$post_id_link;
+            //     $message = "District News: ".$post_title;
+            //     $link_fb_data = [
+            //         'link' => $post_link,
+            //         'message' => $message
+            //     ];
                 
-                require_once('autopost_fb.php'); // Facebook Autopost Class
+            //     require_once('autopost_fb.php'); // Facebook Autopost Class
                 
-                try {
-                    $response = $fb->post('/me/feed', $link_fb_data, $pageAccessToken);
-                } catch(Facebook\Exceptions\FacebookResponseException $e) {
-                    echo 'Graph returned an error: '.$e->getMessage();
-                    exit;
-                } catch(Facebook\Exceptions\FacebookSDKException $e) {
-                    echo 'Facebook SDK returned an error: '.$e->getMessage();
-                    exit;
-                }
+            //     try {
+            //         $response = $fb->post('/me/feed', $link_fb_data, $pageAccessToken);
+            //     } catch(Facebook\Exceptions\FacebookResponseException $e) {
+            //         echo 'Graph returned an error: '.$e->getMessage();
+            //         exit;
+            //     } catch(Facebook\Exceptions\FacebookSDKException $e) {
+            //         echo 'Facebook SDK returned an error: '.$e->getMessage();
+            //         exit;
+            //     }
 
-                $graphNode = $response->getGraphNode();
+            //     $graphNode = $response->getGraphNode();
                 
-            }
+            // }
             // End Social Media Process
 
             $post_cats = explode(',', $post_categories);
@@ -505,7 +505,7 @@
 
                 $post_thumbnail = "post_thumbnail.jpg";
                 
-                $post_id = $post->addMedia($database, $post_title, $post_content, $post_thumbnail, $post_desc);
+                $post_id = $post->addMedia($database, $post_title, $post_content, $post_thumbnail, $post_desc, $sm_opt);
 
             } else {
 
@@ -530,7 +530,7 @@
                     if($errors == 0){
                         move_uploaded_file($file_tmp, "../images/thumbnails/" . $file_name);
                         $post_thumbnail = $file_name;
-                        $post_id = $post->addMedia($database, $post_title, $post_content, $post_thumbnail, $post_desc);
+                        $post_id = $post->addMedia($database, $post_title, $post_content, $post_thumbnail, $post_desc, $sm_opt);
                     } else {
                         if($error == 1){
                             $_SESSION['error_message'] = "You tried uploading a file with an invalid file extension. Please make sure that the file's extension is one of the followings: .jpeg, .jpg, .png, .gif, .svg, .bmp.";
@@ -546,30 +546,30 @@
             }
 
             // Process Social Media post here
-            if($sm_opt == "Yes"){
-                $post_id_link = preg_replace('/[a-zA-Z]/', '', $post->getPostIdLink($database, $post_id));
-                $post_link = "https://www.nisgaa.bc.ca/news/read/".$post_id_link;
-                $message = "District Media Post: ".$post_title;
-                $link_fb_data = [
-                    'link' => $post_link,
-                    'message' => $message
-                ];
+            // if($sm_opt == "Yes"){
+            //     $post_id_link = preg_replace('/[a-zA-Z]/', '', $post->getPostIdLink($database, $post_id));
+            //     $post_link = "https://www.nisgaa.bc.ca/news/read/".$post_id_link;
+            //     $message = "District Media Post: ".$post_title;
+            //     $link_fb_data = [
+            //         'link' => $post_link,
+            //         'message' => $message
+            //     ];
                 
-                require_once('autopost_fb.php'); // Facebook Autopost Class
+            //     require_once('autopost_fb.php'); // Facebook Autopost Class
                 
-                try {
-                    $response = $fb->post('/me/feed', $link_fb_data, $pageAccessToken);
-                } catch(Facebook\Exceptions\FacebookResponseException $e) {
-                    echo 'Graph returned an error: '.$e->getMessage();
-                    exit;
-                } catch(Facebook\Exceptions\FacebookSDKException $e) {
-                    echo 'Facebook SDK returned an error: '.$e->getMessage();
-                    exit;
-                }
+            //     try {
+            //         $response = $fb->post('/me/feed', $link_fb_data, $pageAccessToken);
+            //     } catch(Facebook\Exceptions\FacebookResponseException $e) {
+            //         echo 'Graph returned an error: '.$e->getMessage();
+            //         exit;
+            //     } catch(Facebook\Exceptions\FacebookSDKException $e) {
+            //         echo 'Facebook SDK returned an error: '.$e->getMessage();
+            //         exit;
+            //     }
 
-                $graphNode = $response->getGraphNode();
+            //     $graphNode = $response->getGraphNode();
                 
-            }
+            // }
             // End Social Media Process
 
             $post_cats = explode(',', $post_categories);

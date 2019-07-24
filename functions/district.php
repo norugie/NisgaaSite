@@ -230,7 +230,7 @@
 	
 		}
 
-		public function addPostEvent($database, $post_title, $post_content, $event_desc, $post_thumbnail){
+		public function addPostEvent($database, $post_title, $post_content, $event_desc, $post_thumbnail, $sm_opt){
 			$id;
 			$post_id = 'PST' . rand(1111111111,9999999999);
 			$user = $_SESSION['id'];
@@ -245,7 +245,7 @@
 			$date = date('Y-m-d');
 
 			$sql = "INSERT INTO posts
-					VALUES (null, '$post_id', '$post_title', '$date', 'Post', '$user', '$school', '$post_content', '$post_thumbnail', '$event_desc', 'Active')";
+					VALUES (null, '$post_id', '$post_title', '$date', NOW(), 'Post', '$user', '$school', '$post_content', '$post_thumbnail', '$event_desc', '$sm_opt', 'Active')";
 			$query = mysqli_query($database->con, $sql);
 			if(!$query){
 				$_SESSION['error_message'] = mysqli_error($database->con);
