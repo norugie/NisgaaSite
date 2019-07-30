@@ -50,7 +50,7 @@
                         <tbody>
                             <?php foreach($links as $link): ?>
                                 <tr>
-                                    <td><a href="<?php echo $link['link_content']; ?>" target="_blank"><?php echo $link['link_name']; ?></a></td>
+                                    <td><a href="../links/<?php echo $link['link_content']; ?>" target="_blank"><?php echo $link['link_name']; ?></a></td>
                                     <td><?php echo $link['link_desc']; ?></td>
                                     <?php if($_SESSION['type'] != 3){ ?>
                                         <td><center><button type="button" class="btn bg-green waves-effect" data-toggle="modal" data-target="#edit-policy-file-modal" 

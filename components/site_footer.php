@@ -17,16 +17,20 @@
                 <h4 class="h6">
                     <a href="mailto:<?php echo $info['school_email']; ?>"><?php echo $info['school_email']; ?></a>
                 </h4>
+                <hr>
+                <a href="/contacts" class="btn btn-template-main">Go to contact page</a>
+
+                <hr class="d-block d-lg-none">
+            </div>
+            <!-- FOOTER SOCIAL MEDIA -->
+            <div class="col-lg-3 text-xs-sm-center">
+                <h4 class="h6">Keep Updated Through Social Media</h4>
                 <h4 class="h6">
                     <a href="https://www.facebook.com/nisgaa.sd92/" target="blank">SD92 Facebook Page</a>
                 </h4>
                 <h4 class="h6">
                     <a href="https://www.twitter.com/nisgaa_sd92/" target="blank">SD92 Twitter Page</a>
                 </h4>
-                <hr>
-                <a href="/contacts" class="btn btn-template-main">Go to contact page</a>
-
-                <hr class="d-block d-lg-none">
             </div>
         </div>
     </div>

@@ -38,7 +38,7 @@ if($page_name == 'news'){
     $breadcrumb = "Search Results";
 } else if($page_name == 'process_directives'){
     $breadcrumb = "Board of Education - Process and Directives";
-} else if($page_name == 'policy'){
+} else if($page_name == 'policies'){
     $breadcrumb = "Board of Education - Policies";
 } else {
     $breadcrumb = str_replace('_', ' ', $page_name);
