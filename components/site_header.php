@@ -3,22 +3,29 @@
     require 'functions/site.php';
 ?>
 <!DOCTYPE html>
-<html>
+<html xmlns:fb="http://www.facebook.com/2008/fbml"
+    xmlns:og="http://opengraphprotocol.org/schema/"
+    xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+    lang="en" dir="ltr">
     <head profile="http://www.w3.org/1999/xhtml/vocab">
         <meta charset="UTF-8">
         <meta http-equiv="Content-type" content="text/html; charset=UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="google-site-verification" content="AoSEh84a-NthX9s-5lUi7X8yrNXhh9J5LFtlncT5lJI">
-        <meta property="fb:app_id" content="710393532737750">
 
         <?php
 
-            if(isset($url[2]) && !empty($url[2])){
+            if(isset($url[2]) && !empty($url[2]) && $page_name == 'news'){
                 $tag = $site->postInformation($database, $url[2]);
                 $tag_title = $tag['post_title'];
                 $tag_desc = $tag['post_desc'];
                 $tag_image = "https://www.nisgaa.bc.ca/images/thumbnails/".$tag['post_thumbnail'];
 
+            } else if(isset($url[2]) && !empty($url[2]) && $page_name == 'careers'){
+                $tag = $site->jobInformation($database, $url[2]);
+                $tag_title = $tag['title'];
+                $tag_desc = "A new career opportunity is open for the position of: ".$tag['title'];
+                $tag_image = "https://www.nisgaa.bc.ca/images/thumbnails/post_thumbnail.jpg";
             } else {
                 $tag_title = "SD92 - Nisga'a";
                 $tag_desc = "School District No. 92 (Nisga'a)";
@@ -28,18 +35,20 @@
         ?>
 
         <!-- Primary Meta Tags -->
-        <title><?php echo $tag_title; ?></title>
-        <meta name="title" content="<?php echo $tag_title; ?>">
-        <meta name="description" content="<?php echo $tag_desc; ?>">
+        <title><?php echo trim($tag_title); ?></title>
+        <meta name="type" content="article">
+        <meta name="title" content="<?php echo trim($tag_title); ?>">
+        <meta name="description" content="<?php echo trim($tag_desc); ?>">
         <meta name="url" content="https://www.nisgaa.bc.ca">
+        <meta property="image" content="<?php echo trim($tag_image); ?>">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="all,follow">
 
         <!-- Open Graph / Facebook -->
-        <meta property="og:type" content="website">
+        <!-- <meta property="og:type" content="article">
         <meta property="og:url" content="https://www.nisgaa.bc.ca">
-        <meta property="og:title" content="<?php echo $tag_title; ?>">
-        <meta property="og:description" content="<?php echo $tag_desc; ?>">
+        <meta property="og:title" content="<?php echo trim($tag_title); ?>">
+        <meta property="og:description" content="<?php echo $tag_desc; ?>"> -->
         <meta property="og:image" content="<?php echo $tag_image; ?>">
 
         <!-- Twitter -->
