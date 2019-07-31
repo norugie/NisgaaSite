@@ -259,6 +259,7 @@
 
                 if(isset($_FILES['post_thumbnail'])){
                     $errors = 0;
+                    $new_file_name = "THMB".rand(111111111,999999999);
                     $file_name = $_FILES['post_thumbnail']['name'];
                     $file_size = $_FILES['post_thumbnail']['size'];
                     $file_tmp = $_FILES['post_thumbnail']['tmp_name'];
@@ -276,8 +277,8 @@
                     }
                     
                     if($errors == 0){
-                        move_uploaded_file($file_tmp, "../images/thumbnails/" . $file_name);
-                        $post_thumbnail = $file_name;
+                        move_uploaded_file($file_tmp, "../images/thumbnails/" . $new_file_name);
+                        $post_thumbnail = $new_file_name;
                         $post_id = $district->addPostEvent($database, $post_title, $post_content, $event_desc, $post_thumbnail, $sm_opt);
                     } else {
                         if($error == 1){

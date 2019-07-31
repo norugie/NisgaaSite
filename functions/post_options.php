@@ -115,11 +115,13 @@
 
                 if(isset($_FILES['post_thumbnail'])){
                     $errors = 0;
+                    $new_file_name = "THMB".rand(111111111,999999999);
                     $file_name = $_FILES['post_thumbnail']['name'];
                     $file_size = $_FILES['post_thumbnail']['size'];
                     $file_tmp = $_FILES['post_thumbnail']['tmp_name'];
                     $file_type = $_FILES['post_thumbnail']['type'];
                     $file_ext = strtolower(end(explode('.', $_FILES['post_thumbnail']['name'])));
+                    $new_file_name = "THMB".rand(111111111,999999999).".".$file_ext;
                     
                     $extensions = array("jpeg","jpg","png");
                 
@@ -132,8 +134,8 @@
                     }
                     
                     if($errors == 0){
-                        move_uploaded_file($file_tmp, "../images/thumbnails/" . $file_name);
-                        $post_thumbnail = $file_name;
+                        move_uploaded_file($file_tmp, "../images/thumbnails/" . $new_file_name);
+                        $post_thumbnail = $new_file_name;
                         $post_id = $post->addPost($database, $post_title, $post_content, $post_thumbnail, $post_desc, $sm_opt);
                     } else {
                         if($error == 1){
