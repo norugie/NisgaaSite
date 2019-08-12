@@ -189,7 +189,7 @@
                             </li>
                             <li id="dl">
                                 <a href="interaction.php?tab=web&subtab=curriculum&page=dl">
-                                    <span>Distant Learners Program</span>
+                                    <span>Distributed Learning Program</span>
                                 </a>
                             </li>
                             <li id="nlc">

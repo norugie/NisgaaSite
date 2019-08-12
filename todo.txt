@@ -2,13 +2,8 @@ TODO:
 
 High Priority:
 - Deploy SD92 Website
-- Make SD92AutoPublish Facebook App live
-    - Have the Facebook app verified (in-progress)
-- Add the domain site for the Facebook page
-- Create an RSS feed for the Website
 
 Normal Priority:
-- Consider letting logged-in users to edit page content on the actual page, rather than going to the backend
 - make drag n’ drop of photos working
 - Add file upload to tinymce
 - Add grid columns to tinymce

@@ -6,7 +6,7 @@ if($page_name == 'curriculum' || $page_name == 'department'){
     if($content_breadcrumb == 'k12'){
         $content_breadcrumb = 'K-12 PROGRAM';
     } else if($content_breadcrumb == 'dl'){
-        $content_breadcrumb = 'DISTANCE LEARNERS PROGRAM';
+        $content_breadcrumb = 'DISTRIBUTED LEARNING PROGRAM';
     } else if($content_breadcrumb == 'nlc'){
         $content_breadcrumb = 'LANGUAGE AND CULTURE';
     } else if($content_breadcrumb == 'finance'){
