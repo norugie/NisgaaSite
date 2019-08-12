@@ -32,7 +32,7 @@
         <section>
             <div class="row">
                 <div class="col-md-12">
-                    <p style="margin-bottom:10px!important;font-size:14pt;"><b>Relevant Files to Distance Learners Program</b></p>
+                    <p style="margin-bottom:10px!important;font-size:14pt;"><b>Relevant Files to Distributed Learning Program</b></p>
                     <div class="row">
                         <ul>
                             <?php $page_info = $site->linkList($database, $url[1], 2); ?>

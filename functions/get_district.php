@@ -118,7 +118,8 @@
 					LEFT JOIN users
 					ON (users.id = jobs.user)
 					LEFT JOIN schools
-					ON (schools.id = jobs.school)";
+					ON (schools.id = jobs.school)
+					ORDER BY jobs.id DESC";
 			$query = mysqli_query($database->con, $sql);
 			if(!$query){
 				global $error;

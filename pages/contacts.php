@@ -21,6 +21,7 @@
                     <h2>School Board Office Contacts</h2>
                 </div>
                 <div class="row text-center">
+                    <!-- Display current active members of the Board Office -->
                     <?php foreach($contacts as $contact): ?>
                         <div class="col-md-4 justify-content">
                             <div class="box-simple">
@@ -46,6 +47,7 @@
                     <h2>Schools</h2>
                 </div>
                 <div class="row text-center">
+                    <!-- Display school information -->
                     <?php foreach($schools as $school): ?>
                         <div class="col-md-6">
                             <div class="box-simple">
@@ -77,6 +79,7 @@
                     <h2>DEPARTMENTS</h2>
                 </div>
                 <div class="row text-center">
+                    <!-- Display department information -->
                     <?php foreach($departments as $department): ?>
                         <div class="col-md-4">
                             <div class="box-simple">
