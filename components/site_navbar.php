@@ -93,7 +93,7 @@
         </li>
         <li class="nav-item"><a href="/news">District News</a></li>
         <li class="nav-item"><a href="/careers">Careers</a></li>
-        <li class="nav-item"><a href="#search"><i class="fa fa-search fa-lg"></i><span class="d-inline-block d-md-none">&nbsp;&nbsp;Search</span></a></li>
+        <li class="nav-item"><a href="#search"><i class="fa fa-search fa-lg"></i><span class="d-inline-block d-lg-none">&nbsp;&nbsp;Search</span></a></li>
         </ul>
     </div>
 </div>

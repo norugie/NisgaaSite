@@ -526,8 +526,8 @@ html {
 
 @media (min-width:768px){
   .owl-img {
-    height: 475px;
-    min-height: 475px;
+    height: 500px;
+    min-height: 500px;
     object-fit: cover;
   }
   
@@ -536,8 +536,8 @@ html {
   }
 
   .jumbotron-new {
-    height: 475px;
-    min-height:450px;
+    height: 500px;
+    min-height:500px;
   }
 
   .jumbotron-right {
@@ -545,8 +545,8 @@ html {
   }
 
   #nav-tabContent {
-    height: 425px;
-    min-height: 425px;
+    height: 460px;
+    min-height: 460px;
     overflow: hidden;
     overflow-y: scroll;
   }
