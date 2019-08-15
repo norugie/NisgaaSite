@@ -1,17 +1,5 @@
 
 <div class="col-md-9">
-    <!-- CONTACT CONTENT -->
-    <section>
-        <div class="row">
-            <div class="col-md-12">
-                <div class="heading">
-                    <h2>We are here to help</h2>
-                </div>
-                <p class="lead">We're here to provide you with more information and answer any question you may have. You can reach us through any of the contact means below:</p>
-            </div>
-        </div>
-    </section>
-
     <!-- CONTACT PERSON -->
     <?php $contacts = $site->contactList($database, 2); ?>
     <section>

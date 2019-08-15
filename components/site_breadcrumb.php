@@ -40,6 +40,8 @@ if($page_name == 'news'){
     $breadcrumb = "Board of Education - Process and Directives";
 } else if($page_name == 'policies'){
     $breadcrumb = "Board of Education - Policies";
+} else if($page_name == 'help'){
+    $breadcrumb = "Tech Help";
 } else {
     $breadcrumb = str_replace('_', ' ', $page_name);
 }
