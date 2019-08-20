@@ -134,6 +134,12 @@
                             <span>Board of Education - Process and Directives</span>
                         </a>
                     </li>
+                    <li id="plans">
+                        <a href="district.php?tab=sd&page=plans">
+                            <i class="material-icons">assignment</i>
+                            <span>School District Strategic Plans</span>
+                        </a>
+                    </li>
                     <?php } ?>
                 </ul>
             </li>
@@ -205,6 +211,11 @@
                             <span>Departments</span>
                         </a>
                         <ul class="ml-menu">
+                            <li id="ssd">
+                                <a href="interaction.php?tab=web&subtab=department&page=ssd">
+                                    <span>School District Superintendent</span>
+                                </a>
+                            </li>
                             <li id="finance">
                                 <a href="interaction.php?tab=web&subtab=department&page=finance">
                                     <span>Finance Department</span>

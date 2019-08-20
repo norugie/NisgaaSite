@@ -105,6 +105,19 @@
                         </div>
                     </div>
                 </div>
+                <?php if($_SESSION['school'] == 11 || $_SESSION['type'] == 1){ ?>
+                    <div class="row clearfix">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <label for="post_ssd_autopost">Post on School District Superintendent Page?</label>
+                            <div class="demo-radio-button">
+                                <input type="radio" name="post_ssd_autopost" id="ssd_opt_1" class="radio-col-blue-grey with-gap" value="No" checked>
+                                <label for="ssd_opt_1">No</label>
+                                <input type="radio" name="post_ssd_autopost" id="ssd_opt_2" class="radio-col-blue-grey with-gap" value="Yes">
+                                <label for="ssd_opt_2">Yes</label>
+                            </div>
+                        </div>
+                    </div>
+                <?php } ?>
                 <div class="row clearfix">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <label for="post_thumbnail">Post Thumbnail</label>

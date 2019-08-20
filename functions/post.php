@@ -75,7 +75,7 @@
 			}			
 		}
 
-		public function addPost($database, $post_title, $post_content, $post_thumbnail, $post_desc, $sm_opt){
+		public function addPost($database, $post_title, $post_content, $post_thumbnail, $post_desc, $sm_opt, $ssd_opt){
 			$id;
 			$post_id = 'PST' . rand(1111111111,9999999999);
 			$user = $_SESSION['id'];
@@ -88,7 +88,7 @@
 			}
 
 			$sql = "INSERT INTO posts
-					VALUES (null, '$post_id', '$post_title', NOW(), NOW(), 'Post', '$user', '$school', '$post_content', '$post_thumbnail', '$post_desc', '$sm_opt', 'Active')";
+					VALUES (null, '$post_id', '$post_title', NOW(), NOW(), 'Post', '$user', '$school', '$post_content', '$post_thumbnail', '$post_desc', '$sm_opt', '$ssd_opt', 'Active')";
 			$query = mysqli_query($database->con, $sql);
 			if(!$query){
 				$_SESSION['error_message'] = mysqli_error($database->con);
@@ -318,7 +318,7 @@
 	
 		}
 
-		public function addMedia($database, $post_title, $post_content, $post_thumbnail, $post_desc, $sm_opt){
+		public function addMedia($database, $post_title, $post_content, $post_thumbnail, $post_desc, $sm_opt, $ssd_opt){
 			$id;
 			$post_id = 'PST' . rand(1111111111,9999999999);
 			$user = $_SESSION['id'];
@@ -333,7 +333,7 @@
 			$date = date('Y-m-d');
 
 			$sql = "INSERT INTO posts
-					VALUES (null, '$post_id', '$post_title', '$date', NOW(), 'Media', '$user', '$school', '$post_content', '$post_thumbnail', '$post_desc', '$sm_opt', 'Active')";
+					VALUES (null, '$post_id', '$post_title', '$date', NOW(), 'Media', '$user', '$school', '$post_content', '$post_thumbnail', '$post_desc', '$sm_opt', '$ssd_opt', 'Active')";
 			$query = mysqli_query($database->con, $sql);
 			if(!$query){
 				$_SESSION['error_message'] = mysqli_error($database->con);

@@ -268,3 +268,17 @@ function editPolicy(policyInfo) {
     $("#edit_policy_desc_file").val(policy['link_desc']);
 
 }
+
+function editPlan(planInfo) {
+
+    plan = $(planInfo).data("values");
+
+    // plan type: File
+    $("#edit_plan_id_file").attr("value", plan['id']);
+    $("#edit_plan_id_name_file").attr("value", plan['link_id']);
+    $("#edit_plan_id_type_file").attr("value", plan['link_type']);
+    $("#edit_plan_id_file_file").attr("value", plan['link_content']);
+    $("#edit_plan_title_file").attr("value", plan['link_name']);
+    $("#edit_plan_desc_file").val(plan['link_desc']);
+
+}
