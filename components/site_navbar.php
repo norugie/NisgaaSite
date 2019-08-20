@@ -35,6 +35,7 @@
                     </ul>
                     <h5>Departments</h5>
                     <ul class="list-unstyled mb-3">
+                    <li class="nav-item"><a href="/department/superintendent" class="nav-link">School District Superintendent</a></li>
                     <li class="nav-item"><a href="/department/finance" class="nav-link">Finance</a></li>
                     <li class="nav-item"><a href="/department/tech" class="nav-link">Information Technology Department</a></li>
                     <li class="nav-item"><a href="/department/maintenance" class="nav-link">Transportation and Maintenance Department</a></li>
@@ -53,6 +54,7 @@
                     <li class="nav-item"><a href="/policies" class="nav-link">Board of Education - Policies</a></li>
                     <li class="nav-item"><a href="/process_directives" class="nav-link">Board of Education - Process and Directives</a></li>
                     <li class="nav-item"><a href="/packages" class="nav-link">Board Meeting Packages</a></li>
+                    <li class="nav-item"><a href="/plans" class="nav-link">District Strategic Plans</a></li>
                     </ul>
                     <h5>Miscellaneous</h5>
                     <ul class="list-unstyled mb-3">

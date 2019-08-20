@@ -666,6 +666,84 @@
 			}
 		}
 
+		/*********************************************************************************************/
+		/***************************  District Functionalities -- Plan  ******************************/
+        /*********************************************************************************************/
+
+		public function disablePlan($database, $id, $title){
+			$sql = "UPDATE links SET 
+						   status = 'Inactive'
+					WHERE id = '$id'";
+			$query = mysqli_query($database->con, $sql);
+			if(!$query){
+				$_SESSION['error_message'] = mysqli_error($database->con);
+			    header("location:../cms/district.php?tab=sd&page=plans&error=true");
+			} else {
+				global $log;
+				$info = "Disabled a plan: " . $title;
+				$log->logInput($database, $info);
+
+				header("location:../cms/district.php?tab=sd&page=plans&planDisabled=true");
+			}
+		}
+
+		public function reactivatePlan($database, $id, $title){
+			$sql = "UPDATE links SET 
+						   status = 'Active'
+					WHERE id = '$id'";
+			$query = mysqli_query($database->con, $sql);
+			if(!$query){
+				$_SESSION['error_message'] = mysqli_error($database->con);
+			    header("location:../cms/district.php?tab=sd&page=plans&error=true");
+			} else {
+				global $log;
+				$info = "Reactivated a plan: " . $title;
+				$log->logInput($database, $info);
+
+				header("location:../cms/district.php?tab=sd&page=plans&planReactivated=true");
+			}
+		}
+
+		public function addPlan($database, $link_name, $link_desc, $link_content, $link_type, $link_tag, $link_thumbnail){
+			$link_id = 'LNK' . rand(1111111,9999999);
+			$user = $_SESSION['id'];
+			$school = 2;
+
+			$sql = "INSERT INTO links
+					VALUES (null, '$link_id', '$link_name', '$link_type', '$link_tag', '$link_desc', '$link_content', '$link_thumbnail', '$user', '$school', 'Active')";
+			$query = mysqli_query($database->con, $sql);
+			if(!$query){
+				$_SESSION['error_message'] = mysqli_error($database->con);
+			    header("location:../cms/district.php?tab=sd&page=plans&error=true");
+			} else {
+				global $log;
+				$info = "Created a new plan: " . $link_name;
+				$log->logInput($database, $info);
+
+				header("location:../cms/district.php?tab=sd&page=plans&addplan=true");
+			}			
+		}
+
+		public function editPlan($database, $id, $link_id, $link_name, $link_desc, $link_content, $link_tag){
+			$sql = "UPDATE links SET 
+						   link_name = '$link_name',
+						   link_desc = '$link_desc',
+						   link_tag  = '$link_tag',
+						   link_content = '$link_content'
+					WHERE id = '$id'";
+			$query = mysqli_query($database->con, $sql);
+			if(!$query){
+				$_SESSION['error_message'] = mysqli_error($database->con);
+			    header("location:../cms/district.php?tab=sd&page=plans&error=true");
+			} else {
+				global $log;
+				$info = "Modified a plan: " . $link_name;
+				$log->logInput($database, $info);
+
+				header("location:../cms/district.php?tab=sd&page=plans&editplan=true");
+			}
+		}
+
     }
 
     require 'district_options.php';

@@ -60,6 +60,6 @@
                 </div>
             </div>
         </section>
-        <?php } else { echo "<script>window.open('https://webdev.nisgaa.bc.ca/404', '_parent');</script>"; } ?>
+        <?php } else { echo "<script>window.open('https://www.nisgaa.bc.ca/404', '_parent');</script>"; } ?>
     </div>
 </div>

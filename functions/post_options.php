@@ -96,6 +96,7 @@
             $post_content = mysqli_real_escape_string($database->con, $_POST['post_content']);
             $post_categories = mysqli_real_escape_string($database->con, $_POST['post_categories_id']);
             $sm_opt = mysqli_real_escape_string($database->con, $_POST['post_sm_autopost']);
+            $ssd_opt = mysqli_real_escape_string($database->con, $_POST['post_ssd_autopost']);
             $post_thumbnail;
             $post_desc;
             if(isset($_POST['post_desc']) && !empty($_POST['post_desc'])){
@@ -109,7 +110,7 @@
             if(!file_exists($_FILES['post_thumbnail']['tmp_name']) || !is_uploaded_file($_FILES['post_thumbnail']['tmp_name'])){
 
                 $post_thumbnail = "post_thumbnail.jpg";
-                $post_id = $post->addPost($database, $post_title, $post_content, $post_thumbnail, $post_desc, $sm_opt);
+                $post_id = $post->addPost($database, $post_title, $post_content, $post_thumbnail, $post_desc, $sm_opt, $ssd_opt);
 
             } else {
 
@@ -136,7 +137,7 @@
                     if($errors == 0){
                         move_uploaded_file($file_tmp, "../images/thumbnails/" . $new_file_name);
                         $post_thumbnail = $new_file_name;
-                        $post_id = $post->addPost($database, $post_title, $post_content, $post_thumbnail, $post_desc, $sm_opt);
+                        $post_id = $post->addPost($database, $post_title, $post_content, $post_thumbnail, $post_desc, $sm_opt, $ssd_opt);
                     } else {
                         if($error == 1){
                             $_SESSION['error_message'] = "You tried uploading a file with an invalid file extension. Please make sure that the file's extension is one of the followings: .jpeg, .jpg, .png.";
@@ -473,6 +474,7 @@
             $post_desc = mysqli_real_escape_string($database->con, $_POST['media_content']);
             $post_categories = mysqli_real_escape_string($database->con, $_POST['media_categories_id']);
             $sm_opt = mysqli_real_escape_string($database->con, $_POST['media_sm_autopost']);
+            $ssd_opt = mysqli_real_escape_string($database->con, $_POST['media_ssd_autopost']);
             $post_thumbnail;
             $post_id;
 
@@ -480,7 +482,7 @@
 
                 $post_thumbnail = "post_thumbnail.jpg";
                 
-                $post_id = $post->addMedia($database, $post_title, $post_content, $post_thumbnail, $post_desc, $sm_opt);
+                $post_id = $post->addMedia($database, $post_title, $post_content, $post_thumbnail, $post_desc, $sm_opt, $ssd_opt);
 
             } else {
 
@@ -505,7 +507,7 @@
                     if($errors == 0){
                         move_uploaded_file($file_tmp, "../images/thumbnails/" . $file_name);
                         $post_thumbnail = $file_name;
-                        $post_id = $post->addMedia($database, $post_title, $post_content, $post_thumbnail, $post_desc, $sm_opt);
+                        $post_id = $post->addMedia($database, $post_title, $post_content, $post_thumbnail, $post_desc, $sm_opt, $ssd_opt);
                     } else {
                         if($error == 1){
                             $_SESSION['error_message'] = "You tried uploading a file with an invalid file extension. Please make sure that the file's extension is one of the followings: .jpeg, .jpg, .png, .gif, .svg, .bmp.";

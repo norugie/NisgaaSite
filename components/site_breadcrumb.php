@@ -15,6 +15,8 @@ if($page_name == 'curriculum' || $page_name == 'department'){
         $content_breadcrumb = 'INFORMATION TECHNOLOGY DEPARTMENT';
     } else if($content_breadcrumb == 'maintenance'){
         $content_breadcrumb = 'TRANSPORTATION AND MAINTENANCE DEPARTMENT';
+    } else if($content_breadcrumb == 'superintendent'){
+        $content_breadcrumb = 'SCHOOL DISTRICT SUPERINTENDENT';
     } else {
         $content_breadcrumb = '';
     }
@@ -42,6 +44,8 @@ if($page_name == 'news'){
     $breadcrumb = "Board of Education - Policies";
 } else if($page_name == 'help'){
     $breadcrumb = "Tech Help";
+} else if($page_name == 'plans'){
+    $breadcrumb = "District Strategic Plans";
 } else {
     $breadcrumb = str_replace('_', ' ', $page_name);
 }

@@ -55,6 +55,10 @@ function alertDesign(e) {
         showDisablePolicyConfirm(id, name);
     } else if (type === 'reopen-policy'){
         showReactivatePolicyConfirm(id, name);
+    } else if (type === 'delete-plan'){
+        showDisablePlanConfirm(id, name);
+    } else if (type === 'reopen-plan'){
+        showReactivatePlanConfirm(id, name);
     }
 }
 
@@ -535,6 +539,45 @@ function showReactivatePolicyConfirm(id, name) {
     }, function (isConfirm) {
         if (isConfirm) {
             window.location = "../functions/district.php?district=true&policyReactivate=true&id=" + id + "&policyName=" + name;
+        }
+
+    });
+}
+
+//Warning for disabling plan
+function showDisablePlanConfirm(id, name) {
+    swal({
+        title: "Are you sure you want to disable this strategic plan?",
+        text: "You will be able to reactivate this plan once archived",
+        type: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#F44336",
+        confirmButtonText: "CONFIRM",
+        cancelButtonText: "CANCEL",
+        closeOnConfirm: false,
+        closeOnCancel: true
+    }, function (isConfirm) {
+        if (isConfirm) {
+            window.location = "../functions/district.php?district=true&planDisable=true&id=" + id + "&planName=" + name;
+        }
+
+    });
+}
+
+//Warning for reactivating plan
+function showReactivatePlanConfirm(id, name) {
+    swal({
+        title: "Are you sure you want to reactivate this strategic plan?",
+        type: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#00BCD4",
+        confirmButtonText: "CONFIRM",
+        cancelButtonText: "CANCEL",
+        closeOnConfirm: false,
+        closeOnCancel: true
+    }, function (isConfirm) {
+        if (isConfirm) {
+            window.location = "../functions/district.php?district=true&planReactivate=true&id=" + id + "&planName=" + name;
         }
 
     });

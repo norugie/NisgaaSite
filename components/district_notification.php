@@ -200,6 +200,36 @@
 </div>
 <?php } ?>
 
+<!--  District Notifications - Plan  -->
+
+<?php if(isset($_GET['planDisabled']) && $_SESSION['alert'] == 'alerted'){ ?>
+<div class="alert bg-green alert-dismissible" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    A strategic plan has been <b>disabled</b> successfully!
+</div>
+<?php } ?>
+
+<?php if(isset($_GET['planReactivated']) && $_SESSION['alert'] == 'alerted'){ ?>
+<div class="alert bg-green alert-dismissible" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    A strategic plan has been <b>reactivated</b> successfully!
+</div>
+<?php } ?>
+
+<?php if(isset($_GET['addPlan']) && $_SESSION['alert'] == 'alerted'){ ?>
+<div class="alert bg-green alert-dismissible" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    A new strategic plan has been <b>created</b> successfully!
+</div>
+<?php } ?>
+
+<?php if(isset($_GET['editPlan']) && $_SESSION['alert'] == 'alerted'){ ?>
+<div class="alert bg-green alert-dismissible" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    The strategic plan has been <b>modified</b> successfully!
+</div>
+<?php } ?>
+
 <!--  Errors  -->
 <?php require 'error_notification.php'; ?>
 

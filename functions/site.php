@@ -442,7 +442,7 @@
 		public function schoolList($database){
             $array = array();
 
-            $sql =  "SELECT * FROM schools WHERE id NOT IN (1, 2, 7, 8, 10)";
+            $sql =  "SELECT * FROM schools WHERE id NOT IN (1, 2, 7, 8, 10, 11)";
 			$query = mysqli_query($database->con, $sql);
 			if (!$query) {
 			    echo "<script>window.open('https://www.nisgaa.bc.ca/error', '_parent');</script>";
@@ -458,7 +458,7 @@
 		public function departmentList($database){
             $array = array();
 
-            $sql =  "SELECT * FROM schools WHERE id NOT IN (2, 3, 4, 5, 6, 8) ORDER BY id DESC";
+            $sql =  "SELECT * FROM schools WHERE id NOT IN (2, 3, 4, 5, 6, 8, 11) ORDER BY id DESC";
 			$query = mysqli_query($database->con, $sql);
 			if (!$query) {
 			    echo "<script>window.open('https://www.nisgaa.bc.ca/error', '_parent');</script>";
@@ -545,8 +545,8 @@
 			
 			if($page == 'finance'){
 				$school = 10;
-			} else if($page == 'sdss'){
-				$school = 9;
+			} else if($page == 'superintendent'){
+				$school = 11;
 			} else if($page == 'tech'){
 				$school = 1;
 			} else if($page == 'maintenance'){
@@ -569,6 +569,62 @@
             }
             
 			return $array;
+		}
+
+		public function ssdList($database, $school, $limit, $sheet_index){
+			$array = array();
+			$sql = "SELECT posts.post_title,
+								posts.post_date,
+								posts.post_desc,
+								posts.id,
+								posts.post_id,
+								posts.post_thumbnail,
+								users.firstname,
+								users.lastname
+						FROM posts 
+						LEFT JOIN users 
+						ON (posts.post_author = users.id) 
+						LEFT JOIN schools 
+						ON (posts.post_school = schools.id) 
+						WHERE posts.status = 'Active'
+						AND posts.post_ssd = 'Yes' 
+						AND posts.post_school = '$school'
+						ORDER BY posts.post_date DESC
+						LIMIT $sheet_index, $limit";
+			$query = mysqli_query($database->con, $sql);
+			if (!$query) {
+			    echo "<script>window.open('https://www.nisgaa.bc.ca/error', '_parent');</script>";
+			} else {
+				while($row = mysqli_fetch_array($query)){
+					$array[] = $row;
+				}
+            }
+            
+			return $array;
+        }
+
+        public function ssdListCount($database, $school){
+			$count;
+
+			$sql = "SELECT COUNT(*)
+						FROM posts 
+						LEFT JOIN users 
+						ON (posts.post_author = users.id) 
+						LEFT JOIN schools 
+						ON (posts.post_school = schools.id) 
+						WHERE posts.status = 'Active' 
+						AND posts.post_school = '$school'
+						AND posts.post_ssd = 'Yes'
+						ORDER BY posts.post_date DESC";
+			$query = mysqli_query($database->con, $sql);
+			if (!$query) {
+			    echo "<script>window.open('https://www.nisgaa.bc.ca/error', '_parent');</script>";
+			} else {
+				$row = mysqli_fetch_array($query);
+                $count = $row[0];
+            }
+            
+			return $count;
 		}
 
 		/*********************************************************************************************/

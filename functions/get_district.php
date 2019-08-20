@@ -242,6 +242,34 @@
 			return $array;
 			
 		}
+
+		/*********************************************************************************************/
+		/***************************  District Functionalities -- Plans  *****************************/
+        /*********************************************************************************************/
+		
+		public function plansList($database){
+
+			$array = array();
+			$sql = "SELECT links.*,
+						   schools.school_abbv 
+					FROM links
+					LEFT JOIN schools
+					ON (schools.id = links.school)
+					WHERE links.link_tag = 'Plans'";
+
+			$query = mysqli_query($database->con, $sql);
+			if(!$query){
+				global $error;
+				echo $error->errorMessage(mysqli_error($database->con));
+			} else {
+				while($row = mysqli_fetch_array($query)){
+					$array[] = $row;
+				}
+            }
+            
+			return $array;
+			
+		}
 		
 		/*********************************************************************************************/
 		/***************************  District Functionalities -- Directives  ************************/
