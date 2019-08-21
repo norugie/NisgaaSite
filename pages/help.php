@@ -1,4 +1,4 @@
-<?php $faqs = $site->faqList($database, $schoolContent); ?>
+<?php $links = $site->linkList($database, 'Help', $schoolContent); ?>
 <div class="col-md-9">
     <!-- HELP INTRO CONTENT -->
     <section>
@@ -17,9 +17,15 @@
     <section>
         <div class="row">
             <div class="col-md-12">
-
+                <div class="row">
+                    <ul>
+                        <?php foreach($links as $link): ?>
+                            <li class="lead mb-0"><a href="<?php if($link['link_type'] == 'File'){ echo "/links/"; } echo $link['link_content']; ?>" target="_blank"><?php echo $link['link_name']; ?></a></li>
+                        <?php endforeach; ?>
+                    </ul>
+                </div>
             </div>
         </div>
     </section>
-    <br>
+    
 </div>
