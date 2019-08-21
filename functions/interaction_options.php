@@ -21,27 +21,116 @@
             $interaction->editAboutProgram($database, $id, $web_id, $web_desc);
         }
 
-        if(isset($_GET['newInquiry'])){
-            $faq_question = mysqli_real_escape_string($database->con, $_POST['faq_question']);
-            $faq_answer = mysqli_real_escape_string($database->con, $_POST['faq_answer']);
-        
-            $interaction->addInquiry($database, $faq_question, $faq_answer);
+        if(isset($_GET['addInquiry'])){
+
+            $link_name = mysqli_real_escape_string($database->con, $_POST['link_title']);
+            $link_desc = "No description provided";
+            $link_type = "File";
+            $link_tag = "Help";
+            $link_content;
+            $link_thumbnail = "post_thumbnail.jpg";
+
+            if(file_exists($_FILES['link_content']['tmp_name']) || is_uploaded_file($_FILES['link_content']['tmp_name'])){
+                if(isset($_FILES['link_content'])){
+                    $errors = 0;
+                    $file_name = $_FILES['link_content']['name'];
+                    $file_size = $_FILES['link_content']['size'];
+                    $file_tmp = $_FILES['link_content']['tmp_name'];
+                    $file_type = $_FILES['link_content']['type'];
+                    $file_ext = strtolower(end(explode('.', $_FILES['link_content']['name'])));
+                
+                    $extensions = array("doc","docx","pdf");
+                    
+                    if(in_array($file_ext, $extensions) == false){
+                        $errors = 1;
+                    }
+                    
+                    if($file_size > 20971520){ // Limit job file upload to 20MB
+                        $errors = 2;
+                    }
+                    
+                    if($errors == 0){
+                        move_uploaded_file($file_tmp, "../links/".$file_name);
+                        $link_content = $file_name;
+                        $interaction->addInquiry($database, $link_name, $link_desc, $link_content, $link_type, $link_tag, $link_thumbnail);
+                    } else {
+                        if($error == 1){
+                            $_SESSION['error_message'] = "You tried uploading a file with an invalid file extension. Please make sure that the file's extension is one of the followings: .doc, .docx, .pdf.";
+                        } else if($error == 2){
+                            $_SESSION['error_message'] = "You tried uploading a file that exceeded the file size limit. Please make sure that the file size is less than 20 MB.";
+                        }
+                        header("location:../cms/interaction.php?tab=web&page=inquiries&error=true");
+                    }
+                } else {
+                    header("location:../cms/interaction.php?tab=web&page=inquiries&error=true");
+                }   
+                
+            }
+
         }
 
         if(isset($_GET['editInquiry'])){
-            $id = mysqli_real_escape_string($database->con, $_POST['faq_id']);
-            $faq_id = mysqli_real_escape_string($database->con, $_POST['faq_name']);
-            $faq_question = mysqli_real_escape_string($database->con, $_POST['faq_question']);
-            $faq_answer = mysqli_real_escape_string($database->con, $_POST['faq_answer']);
-        
-            $interaction->editInquiry($database, $id, $faq_id, $faq_question, $faq_answer);
+
+            $id = mysqli_real_escape_string($database->con, $_POST['edit_link_id']);
+            $link_id = mysqli_real_escape_string($database->con, $_POST['edit_link_id_name']);
+            $link_type = "File";
+            $link_name = mysqli_real_escape_string($database->con, $_POST['edit_link_title']);
+            $link_desc = "No description given";
+            $link_tag = "Help";
+            $link_content;
+
+            if(!file_exists($_FILES['edit_link_content']['tmp_name']) || !is_uploaded_file($_FILES['edit_link_content']['tmp_name'])){
+
+                $link_content = mysqli_real_escape_string($database->con, $_POST['edit_link_id_file']);
+
+            } else {
+
+                if(isset($_FILES['edit_link_content'])){
+                    $errors = 0;
+                    $file_name = $_FILES['edit_link_content']['name'];
+                    $file_size = $_FILES['edit_link_content']['size'];
+                    $file_tmp = $_FILES['edit_link_content']['tmp_name'];
+                    $file_type = $_FILES['edit_link_content']['type'];
+                    $file_ext = strtolower(end(explode('.', $_FILES['edit_link_content']['name'])));
+                
+                    $extensions = array("doc","docx","pdf");
+                    
+                    if(in_array($file_ext, $extensions) == false){
+                        $errors = 1;
+                    }
+
+                    if($file_size > 20971520){ // Limit file upload to 20MB
+                        $errors = 2;
+                    }
+                    
+                    if($errors == 0){
+                        move_uploaded_file($file_tmp, "../links/".$file_name);
+                        $link_content = $file_name;
+                    } else {
+                        if($error == 1){
+                            $_SESSION['error_message'] = "You tried uploading a file with an invalid file extension. Please make sure that the file's extension is one of the followings: .doc, .docx, .pdf.";
+                        } else if($error == 2){
+                            $_SESSION['error_message'] = "You tried uploading a file that exceeded the file size limit. Please make sure that the file size is less than 20 MB.";
+                        }
+                        header("location:../cms/interaction.php?tab=web&page=inquiries&error=true");
+                    }
+                } else {
+                    header("location:../cms/interaction.php?tab=web&page=inquiries&error=true");
+                }    
+                
+            }
+
+            $interaction->editInquiry($database, $id, $link_id, $link_name, $link_desc, $link_content, $link_tag);
+
         }
 
         if(isset($_GET['inquiryDisable'])){
+            
             $id = $_GET['id'];
-            $faq_id = $_GET['faq_id'];
+            $title = str_replace('%20', ' ', $_GET['inquiryName']);
 
-            $interaction->disableInquiry($database, $id, $faq_id);
+            $interaction->disableInquiry($database, $id, $title);
+
         }
 
         if(isset($_GET['editSchoolInfo'])){

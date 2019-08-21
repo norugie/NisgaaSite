@@ -164,6 +164,7 @@
 					ON (schools.id = links.school)
 					WHERE links.link_tag != 'District Forms'
 					AND links.link_tag != 'Board Meeting Packages'
+					AND links.link_tag != 'Help'
 					AND links.link_tag NOT LIKE '%Finance%'";
 			
 			/*  Content Filter  */

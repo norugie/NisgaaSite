@@ -161,12 +161,6 @@
                                     <span>About</span>
                                 </a>
                             </li>
-                            <li id="inquiries">
-                                <a href="interaction.php?tab=web&subtab=content&page=inquiries">
-                                    <i class="material-icons">question_answer</i>
-                                    <span>Inquiries</span>
-                                </a>
-                            </li>
                             <li id="contacts">
                                 <a href="interaction.php?tab=web&subtab=content&page=contacts">
                                     <i class="material-icons">contacts</i>
@@ -237,6 +231,12 @@
                         <a href="interaction.php?tab=web&page=boe">
                             <i class="material-icons">group_work</i>
                             <span>Board of Education</span>
+                        </a>
+                    </li>
+                    <li id="inquiries">
+                        <a href="interaction.php?tab=web&page=inquiries">
+                            <i class="material-icons">question_answer</i>
+                            <span>Tech Help Inquiries</span>
                         </a>
                     </li>
                     <li id="culture">
