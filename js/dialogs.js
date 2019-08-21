@@ -27,7 +27,7 @@ function alertDesign(e) {
         showReactivateLinkConfirm(id, name);
     } else if (type === 'delete-logs') {
         showDeleteLogsConfirm();
-    } else if (type === 'delete-faq'){
+    } else if (type === 'delete-inquiry'){
         showDeleteInquiryConfirm(id, name);
     } else if (type === 'delete-contact'){
         showDeleteContactConfirm(id, name);

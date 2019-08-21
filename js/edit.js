@@ -134,10 +134,13 @@ function editInquiry(inquiryInfo) {
 
     inquiry = $(inquiryInfo).data("values");
 
-    $("#edit_faq_id").attr("value", inquiry['id']);
-    $("#edit_faq_name").attr("value", inquiry['faq_id']);
-    $("#edit_faq_question").val(inquiry['faq_question']);
-    $("#edit_faq_answer").val(inquiry['faq_answer']);
+    // Inquiry type: File
+    $("#edit_inquiry_id_file").attr("value", inquiry['id']);
+    $("#edit_inquiry_id_name_file").attr("value", inquiry['link_id']);
+    $("#edit_inquiry_id_type_file").attr("value", inquiry['link_type']);
+    $("#edit_inquiry_id_file_file").attr("value", inquiry['link_content']);
+    $("#edit_inquiry_title_file").attr("value", inquiry['link_name']);
+    $("#edit_inquiry_desc_file").val(inquiry['link_desc']);
 
 }
 
@@ -273,7 +276,7 @@ function editPlan(planInfo) {
 
     plan = $(planInfo).data("values");
 
-    // plan type: File
+    // Plan type: File
     $("#edit_plan_id_file").attr("value", plan['id']);
     $("#edit_plan_id_name_file").attr("value", plan['link_id']);
     $("#edit_plan_id_type_file").attr("value", plan['link_type']);

@@ -68,34 +68,18 @@
         }
 
         public function faqList($database){
-            $array = array();
-			$sql;
-			$sqlquery = "SELECT faqs.id,
-                           faqs.faq_id, 
-						   faqs.faq_question,
-						   faqs.faq_answer,
-						   schools.school_abbv
-					FROM faqs
+
+			$array = array();
+			$sql = "SELECT links.*,
+						   schools.school_abbv 
+					FROM links
 					LEFT JOIN schools
-                    ON (schools.id = faqs.school)
-                    WHERE faqs.status = 'Active'";
-					
-			/*  Content Filter  */
-			if($_SESSION['type'] != 1){
-				$school;
-				if($_SESSION['school'] != 3 && $_SESSION['school'] != 4 && $_SESSION['school'] != 5 && $_SESSION['school'] != 6){
-					$school = 2;
-				} else {
-					$school = $_SESSION['school'];
-				}
-				$sql = $sqlquery . " AND faqs.school = '$school'";
-			} else {
-				$sql = $sqlquery;
-			}
-			/*  END Content Filter  */
+					ON (schools.id = links.school)
+					WHERE links.link_tag = 'Help'
+					AND links.status = 'Active'";
 
 			$query = mysqli_query($database->con, $sql);
-			if (!$query) {
+			if(!$query){
 				global $error;
 				echo $error->errorMessage(mysqli_error($database->con));
 			} else {
@@ -105,7 +89,8 @@
             }
             
 			return $array;
-        }
+			
+		}
 
         public function schoolInfo($database){
             $array = array();

@@ -720,7 +720,7 @@
 				$info = "Created a new plan: " . $link_name;
 				$log->logInput($database, $info);
 
-				header("location:../cms/district.php?tab=sd&page=plans&addplan=true");
+				header("location:../cms/district.php?tab=sd&page=plans&addPlan=true");
 			}			
 		}
 
@@ -740,7 +740,7 @@
 				$info = "Modified a plan: " . $link_name;
 				$log->logInput($database, $info);
 
-				header("location:../cms/district.php?tab=sd&page=plans&editplan=true");
+				header("location:../cms/district.php?tab=sd&page=plans&editPlan=true");
 			}
 		}
 

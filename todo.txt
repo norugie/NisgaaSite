@@ -2,6 +2,7 @@ TODO:
 
 High Priority:
 - Deploy SD92 Website
+- Make a Tech Help page
 
 Normal Priority:
 - make drag n’ drop of photos working
