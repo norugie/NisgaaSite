@@ -29,13 +29,13 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="lastname">City *</label>
+                                        <label for="city">City *</label>
                                         <input type="text" id="city" name="city" class="form-control" autocomplete="off" required>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="lastname">Province *</label>
+                                        <label for="province">Province *</label>
                                         <input type="text" id="province" name="province" class="form-control" autocomplete="off" required>
                                     </div>
                                 </div>
@@ -43,23 +43,23 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="lastname">Country *</label>
+                                        <label for="country">Country *</label>
                                         <input type="text" id="country" name="country" class="form-control" autocomplete="off" required>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="lastname">Postal Code *</label>
+                                        <label for="postal">Postal Code *</label>
                                         <input type="text" id="postal" name="postal" class="form-control" autocomplete="off" required>
                                     </div>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="lastname">Email Address *</label>
+                                <label for="email">Email Address *</label>
                                 <input type="text" id="email" name="email" class="form-control" autocomplete="off" required>
                             </div>
                             <div class="form-group">
-                                <label for="lastname">Phone Number *</label>
+                                <label for="phone">Phone Number *</label>
                                 <input type="text" id="phone" name="phone" class="form-control" autocomplete="off" required>
                             </div>
                         </div>

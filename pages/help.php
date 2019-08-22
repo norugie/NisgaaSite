@@ -1,4 +1,5 @@
 <?php $links = $site->linkList($database, 'Help', $schoolContent); ?>
+
 <div class="col-md-9">
     <!-- HELP INTRO CONTENT -->
     <section>
@@ -16,11 +17,14 @@
     <!-- HELP ANSWERS CONTENT -->
     <section>
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-12" id="filter-list">
+                <div class="form-group">
+                    <input type="text" id="keyword" name="keyword" class="form-control search" placeholder="Type in your help keyword(s) here..." autocomplete="off" data-search>
+                </div>
                 <div class="row">
-                    <ul>
+                    <ul class="list">
                         <?php foreach($links as $link): ?>
-                            <li class="lead mb-0"><a href="<?php if($link['link_type'] == 'File'){ echo "/links/"; } echo $link['link_content']; ?>" target="_blank"><?php echo $link['link_name']; ?></a></li>
+                            <li class="lead mb-0"><a href="<?php if($link['link_type'] == 'File'){ echo "/links/"; } echo $link['link_content']; ?>" class="inquiry-item" target="_blank"><?php echo $link['link_name']; ?></a></li>
                         <?php endforeach; ?>
                     </ul>
                 </div>
@@ -29,3 +33,12 @@
     </section>
     
 </div>
+
+<script src="/js/list.min.js"></script>
+<script>
+    var options = {
+    valueNames: [ 'inquiry-item' ]
+    };
+
+    var userList = new List('filter-list', options);
+</script>
