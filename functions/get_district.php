@@ -132,7 +132,37 @@
             
 			return $array;
 
-        }
+		}
+		
+		public function appList($database, $jobid){
+			$array = array();
+			if($jobid != 0){
+				$filter = "AND jobs.id = '$jobid'";
+			} else {
+				$filter = "";
+			}
+
+			$sql = "SELECT applicants.*, 
+						   jobs.title,
+						   jobs.file
+					FROM applicants
+					LEFT JOIN jobs
+					ON (jobs.id = applicants.app_jobid)
+					WHERE jobs.status = 'Open' "
+					.$filter.
+					" ORDER BY applicants.id DESC";
+			$query = mysqli_query($database->con, $sql);
+			if(!$query){
+				global $error;
+				echo $error->errorMessage(mysqli_error($database->con));
+			} else {
+				while($row = mysqli_fetch_array($query)){
+					$array[] = $row;
+				}
+            }
+            
+			return $array;
+		}
 
 		/*********************************************************************************************/
 		/***************************  District Functionalities -- Events  ****************************/
