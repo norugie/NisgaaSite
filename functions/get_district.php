@@ -137,7 +137,7 @@
 		public function appList($database, $jobid){
 			$array = array();
 			if($jobid != 0){
-				$filter = "AND jobs.id = '$jobid'";
+				$filter = " AND jobs.id = '$jobid'";
 			} else {
 				$filter = "";
 			}
@@ -148,7 +148,7 @@
 					FROM applicants
 					LEFT JOIN jobs
 					ON (jobs.id = applicants.app_jobid)
-					WHERE jobs.status = 'Open' "
+					WHERE jobs.status = 'Open'"
 					.$filter.
 					" ORDER BY applicants.id DESC";
 			$query = mysqli_query($database->con, $sql);
