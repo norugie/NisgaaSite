@@ -14,6 +14,7 @@
         // Job Information
         $job = $_GET['job'];
         $jobid = $_GET['id'];
+        $job_id = $_GET['jobid'];
 
         // Applicant Information
         $firstname = mysqli_real_escape_string($database->con, $_POST['firstname']);
@@ -33,20 +34,6 @@
             $title = mysqli_real_escape_string($database->con, $_POST['title']);
         }
         $filename;
-
-        // Mail Information
-        $mailto   = 'hr@nisgaa.bc.ca'; // Change to the HR email once ready
-        $mailfrom = 'sd92@nisgaa.bc.ca';
-        $mailname = 'SDO';
-        $subject  = 'Application for JOB ID: ' . $jobid;
-
-        $message  = '<b>Applicant Name: </b>' . $firstname . ' ' . $lastname . '<br>
-                    <b>Email: </b>' . $email . '<br>
-                    <b>Phone: </b>' . $phone . '<br>
-                    <b>Address: </b>' . $address . ', ' . $city . ', ' . $province . ', ' . $country . ', ' . $postal . '<br>
-                    <b>Applying For: </b>' . $job . '<br>
-                    <b>Degree: </b>' . $degree . '<br>
-                    <b>Degree Title: </b>' . $title;
 
         if(isset($_FILES['resume'])){
             $errors = 0;
@@ -68,9 +55,28 @@
             }
         }
 
+        // Add application information to database
+        $fullname = $firstname . " " . $lastname;
+        $fulladdress = $address . ', ' . $city . ', ' . $province . ', ' . $country . ', ' . $postal;
+        $site->addResume($database, $fullname, $fulladdress, $email, $phone, $degree, $title, $filename, $job_id);
+
         $path = "../jobs/resumes/";
         $file = $path.$filename;
     
+        // Mail Information
+        $mailto   = 'hr@nisgaa.bc.ca'; // Change to the HR email once ready
+        $mailfrom = 'sd92@nisgaa.bc.ca';
+        $mailname = 'SDO';
+        $subject  = 'Application for JOB ID: ' . $jobid;
+
+        $message  = '<b>Applicant Name: </b>' . $firstname . ' ' . $lastname . '<br>
+                    <b>Email: </b>' . $email . '<br>
+                    <b>Phone: </b>' . $phone . '<br>
+                    <b>Address: </b>' . $address . ', ' . $city . ', ' . $province . ', ' . $country . ', ' . $postal . '<br>
+                    <b>Applying For: </b>' . $job . '<br>
+                    <b>Degree: </b>' . $degree . '<br>
+                    <b>Degree Title: </b>' . $title;
+
         // Get file
         $content = file_get_contents($file);
         $content = chunk_split(base64_encode($content));

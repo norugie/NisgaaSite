@@ -16,7 +16,7 @@
             <div class="header">
                 <div class="row clearfix">
                     <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 text-xs-sm-center">
-                        <h4>APPLICANT LIST<?php if($jobid != 0) echo ": " . $apps[0]['title']; ?></h4>      
+                        <h4>APPLICANT LIST</h4>      
                     </div>
                     <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
                         <center>
@@ -32,6 +32,7 @@
                             <tr>
                                 <th>Name</th>
                                 <th>Address</th>
+                                <th>Degree</th>
                                 <th>Email</th>
                                 <th>Phone</th>
                                 <th>Applying For</th>
@@ -41,6 +42,7 @@
                             <tr>
                                 <th>Name</th>
                                 <th>Address</th>
+                                <th>Degree</th>
                                 <th>Email</th>
                                 <th>Phone</th>
                                 <th>Applying For</th>
@@ -51,6 +53,7 @@
                                 <tr>
                                     <td><a href="../jobs/resumes/<?php echo $app['resume']; ?>" target="_blank"><?php echo $app['app_name']; ?></a></td>
                                     <td><?php echo $app['app_add']; ?></td>
+                                    <td><?php if($app['degree'] == 'Yes'){ echo $app['degree_title']; } else { echo "No degree"; } ?></td>
                                     <td><?php echo $app['email']; ?></td>
                                     <td><?php echo $app['phone']; ?></td>
                                     <td><a href="../jobs/<?php echo $app['file']; ?>" target="_blank"><?php echo $app['title']; ?></a></td>

@@ -941,6 +941,16 @@
 			return $array;
 		}
 
+		public function addResume($database, $fullname, $fulladdress, $email, $phone, $degree, $title, $filename, $job_id){
+			$sql = "INSERT INTO applicants
+					VALUES (null, '$fullname', '$fulladdress', '$email', '$phone', '$degree', '$title', '$filename', '$job_id')";
+			$query = mysqli_query($database->con, $sql);
+			if (!$query) {
+				// echo "<script>window.open('https://www.nisgaa.bc.ca/error', '_parent');</script>";
+				return ("Error description: " . mysqli_error($database->con));
+			}
+		}
+
 	}
 
     require 'site_options.php';

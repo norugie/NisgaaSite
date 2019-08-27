@@ -7,7 +7,7 @@
             </div>
             <div class="modal-body">
                 <p class="font-12"><i><b>Note:</b> Fields marked with an asterisk are required</i></p>
-                <form action="/functions/site.php?apply=true&id=<?php echo $url[2]; ?>&job=<?php echo $career['title']?>" method="POST" enctype="multipart/form-data">
+                <form action="/functions/site.php?apply=true&id=<?php echo $url[2]; ?>&job=<?php echo $career['title']?>&jobid=<?php echo $career['id']; ?>" method="POST" enctype="multipart/form-data">
                     <div class="row">
                         <div class="col-md-4">
                             <div class="heading"><h4 class="text-center">Personal Details</h4></div>
