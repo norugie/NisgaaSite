@@ -269,6 +269,7 @@ function editPolicy(policyInfo) {
     $("#edit_policy_id_file_file").attr("value", policy['link_content']);
     $("#edit_policy_title_file").attr("value", policy['link_name']);
     $("#edit_policy_desc_file").val(policy['link_desc']);
+    $("#edit_policy_tag_file").selectpicker("val", policy['link_tag']);
 
 }
 

@@ -16,8 +16,8 @@
                 <div class="row clearfix">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <form class="edit_form_validate" action="../functions/interaction.php?interaction=true&editCarouselImage=true" method="POST" enctype="multipart/form-data">
-                            <input type="text" id="edit_carousel_image_id" name="edit_carousel_image_id">
-                            <input type="text" id="edit_carousel_image_name" name="edit_carousel_image_name">
+                            <input type="text" id="edit_carousel_image_id" name="edit_carousel_image_id" hidden>
+                            <input type="text" id="edit_carousel_image_name" name="edit_carousel_image_name" hidden>
 
                             <div class="row clearfix">
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
