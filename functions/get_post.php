@@ -165,7 +165,9 @@
 					WHERE links.link_tag != 'District Forms'
 					AND links.link_tag != 'Board Meeting Packages'
 					AND links.link_tag != 'Help'
-					AND links.link_tag NOT LIKE '%Finance%'";
+					AND links.link_tag NOT LIKE '%Finance%'
+					AND links.link_tag NOT LIKE '%PolicyP%'
+					AND links.link_tag NOT LIKE '%PolicyAP%'";
 			
 			/*  Content Filter  */
 			if($_SESSION['type'] != 1){

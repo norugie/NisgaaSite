@@ -341,7 +341,8 @@
 					FROM links
 					LEFT JOIN schools
 					ON (schools.id = links.school)
-					WHERE links.link_tag = 'BOE Policy'";
+					WHERE links.link_tag LIKE '%PolicyP%'
+					OR links.link_tag LIKE '%PolicyAP%'";
 
 			$query = mysqli_query($database->con, $sql);
 			if(!$query){

@@ -57,7 +57,7 @@
 			    header("location:../cms/interaction.php?tab=web&page=inquiries&error=true");
 			} else {
 				global $log;
-				$info = "Modified a plan: " . $link_name;
+				$info = "Modified an inquiry: " . $link_name;
 				$log->logInput($database, $info);
 
 				header("location:../cms/interaction.php?tab=web&page=inquiries&editInquiry=true");

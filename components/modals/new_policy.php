@@ -35,6 +35,25 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="row clearfix">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <label for="link_tag">Policy Tag *</label>
+                                    <div class="form-group">
+                                        <select class="form-control show-tick" name="link_tag" id="link_tag" title="Select policy tag" required>
+                                            <option value="PolicyAP 200">Administrative Procedure - 200: Personnel</option>
+                                            <option value="PolicyAP 300">Administrative Procedure - 300: Students</option>
+                                            <option value="PolicyAP 400">Administrative Procedure - 400: Operations, Facilities</option>
+                                            <option value="PolicyAP 500">Administrative Procedure - 500: Finance</option>
+                                            <option value="PolicyP BL">Policy - By Laws</option>
+                                            <option value="PolicyP 100">Policy - 100: Governance</option>
+                                            <option value="PolicyP 300">Policy - 300: Students</option>
+                                            <option value="PolicyP 400">Policy - 400: Operations, Facilities</option>
+                                            <option value="PolicyP 500">Policy - 500: Finance</option>
+                                            <option value="PolicyP 600">Policy - 600: Legislation, School Act, Ministerial Orders, Ministry Directives</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
                             <br>
                             <div class="row clearfix">
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
