@@ -197,7 +197,8 @@
 					WHERE links.school = '2'
 					AND links.status = 'Active'
 					AND links.link_name LIKE '%$keyword%'
-					AND links.link_tag = 'BOE Policy'
+					AND (links.link_tag LIKE '%PolicyP%'
+					OR links.link_tag LIKE '%PolicyAP%')
 					ORDER BY links.id DESC";
 			$query = mysqli_query($database->con, $sql);
 			if (!$query) {
