@@ -9,7 +9,7 @@
     $database = new Database();
     $site = new Site();
     
-    if(isset($_GET['apply'])){
+    if(isset($_GET['apply']) && isset($_GET['id']) && !empty($_GET['id'])){
 
         // Job Information
         $job = $_GET['job'];
@@ -58,52 +58,54 @@
         // Add application information to database
         $fullname = $firstname . " " . $lastname;
         $fulladdress = $address . ', ' . $city . ', ' . $province . ', ' . $country . ', ' . $postal;
-        $site->addResume($database, $fullname, $fulladdress, $email, $phone, $degree, $title, $filename, $job_id);
+        $appinforesult = $site->addResume($database, $fullname, $fulladdress, $email, $phone, $degree, $title, $filename, $job_id);
 
-        $path = "../jobs/resumes/";
-        $file = $path.$filename;
+        if($appinforesult == 1){
+            $path = "../jobs/resumes/";
+            $file = $path.$filename;
+        
+            // Mail Information
+            $mailto   = 'hr@nisgaa.bc.ca'; // Change to the HR email once ready
+            $mailfrom = 'sd92@nisgaa.bc.ca';
+            $mailname = 'SDO';
+            $subject  = 'Application for JOB ID: ' . $jobid;
     
-        // Mail Information
-        $mailto   = 'hr@nisgaa.bc.ca'; // Change to the HR email once ready
-        $mailfrom = 'sd92@nisgaa.bc.ca';
-        $mailname = 'SDO';
-        $subject  = 'Application for JOB ID: ' . $jobid;
-
-        $message  = '<b>Applicant Name: </b>' . $firstname . ' ' . $lastname . '<br>
-                    <b>Email: </b>' . $email . '<br>
-                    <b>Phone: </b>' . $phone . '<br>
-                    <b>Address: </b>' . $address . ', ' . $city . ', ' . $province . ', ' . $country . ', ' . $postal . '<br>
-                    <b>Applying For: </b>' . $job . '<br>
-                    <b>Degree: </b>' . $degree . '<br>
-                    <b>Degree Title: </b>' . $title;
-
-        // Get file
-        $content = file_get_contents($file);
-        $content = chunk_split(base64_encode($content));
-        $uid = md5(uniqid(time()));
-        $name = basename($file);
-        
-        // Header
-        $header = "From: ".$mailname." <".$mailfrom.">\r\n";
-        $header .= "MIME-Version: 1.0\r\n";
-        $header .= "Content-Type: multipart/mixed; boundary=\"".$uid."\"\r\n\r\n";
-        
-        // Message & attachment
-        $nmessage = "--".$uid."\r\n";
-        $nmessage .= "Content-type:text/html; charset=UTF-8\r\n";
-        $nmessage .= "Content-Transfer-Encoding: 7bit\r\n\r\n";
-        $nmessage .= $message."\r\n\r\n";
-        $nmessage .= "--".$uid."\r\n";
-        $nmessage .= "Content-Type: application/octet-stream; name=\"".$filename."\"\r\n";
-        $nmessage .= "Content-Transfer-Encoding: base64\r\n";
-        $nmessage .= "Content-Disposition: attachment; filename=\"".$filename."\"\r\n\r\n";
-        $nmessage .= $content."\r\n\r\n";
-        $nmessage .= "--".$uid."--";
-        
-        if (mail($mailto, $subject, $nmessage, $header)) {
-            header("location: ../careers/read/" . $jobid);
-        } else {
-            header("location: ../error");
+            $message  = '<b>Applicant Name: </b>' . $firstname . ' ' . $lastname . '<br>
+                        <b>Email: </b>' . $email . '<br>
+                        <b>Phone: </b>' . $phone . '<br>
+                        <b>Address: </b>' . $address . ', ' . $city . ', ' . $province . ', ' . $country . ', ' . $postal . '<br>
+                        <b>Applying For: </b>' . $job . '<br>
+                        <b>Degree: </b>' . $degree . '<br>
+                        <b>Degree Title: </b>' . $title;
+    
+            // Get file
+            $content = file_get_contents($file);
+            $content = chunk_split(base64_encode($content));
+            $uid = md5(uniqid(time()));
+            $name = basename($file);
+            
+            // Header
+            $header = "From: ".$mailname." <".$mailfrom.">\r\n";
+            $header .= "MIME-Version: 1.0\r\n";
+            $header .= "Content-Type: multipart/mixed; boundary=\"".$uid."\"\r\n\r\n";
+            
+            // Message & attachment
+            $nmessage = "--".$uid."\r\n";
+            $nmessage .= "Content-type:text/html; charset=UTF-8\r\n";
+            $nmessage .= "Content-Transfer-Encoding: 7bit\r\n\r\n";
+            $nmessage .= $message."\r\n\r\n";
+            $nmessage .= "--".$uid."\r\n";
+            $nmessage .= "Content-Type: application/octet-stream; name=\"".$filename."\"\r\n";
+            $nmessage .= "Content-Transfer-Encoding: base64\r\n";
+            $nmessage .= "Content-Disposition: attachment; filename=\"".$filename."\"\r\n\r\n";
+            $nmessage .= $content."\r\n\r\n";
+            $nmessage .= "--".$uid."--";
+            
+            if (mail($mailto, $subject, $nmessage, $header)) {
+                header("location: ../careers/read/" . $jobid);
+            } else {
+                header("location: ../error");
+            }
         }
 
     }

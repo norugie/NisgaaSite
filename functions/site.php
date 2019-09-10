@@ -949,6 +949,8 @@
 			if (!$query) {
 				// echo "<script>window.open('https://www.nisgaa.bc.ca/error', '_parent');</script>";
 				return ("Error description: " . mysqli_error($database->con));
+			} else {
+				return 1;
 			}
 		}
 
