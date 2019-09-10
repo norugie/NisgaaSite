@@ -19,6 +19,9 @@ $(function () {
         external_plugins: { "filemanager" : "/filemanager/plugin.min.js"},
         image_advtab: true,
         images_upload_url: '../functions/upload.php',
+        image_class_list: [
+            {title: 'Responsive', value: 'img-responsive img-fluid'}
+        ],
 
         // Override default upload handler to simulate successful upload
         images_upload_handler: function (blobInfo, success, failure) {
@@ -50,36 +53,6 @@ $(function () {
             formData.append('file', blobInfo.blob(), blobInfo.filename());
             
             xhr.send(formData);
-        },
-        style_formats: [{
-                title: 'Image Left',
-                selector: 'img',
-                classes: 'img-responsive img-fluid',
-                styles: {
-                    'float': 'left',
-                    'padding': '10px'
-                }
-            },
-            {
-                title: 'Image Right',
-                selector: 'img',
-                classes: 'img-responsive img-fluid',
-                styles: {
-                    'float': 'right',
-                    'padding': '10px'
-                }
-            },
-            {
-                title: 'Image Center',
-                selector: 'img',
-                classes: 'img-responsive img-fluid',
-                styles: {
-                    'display': 'block',
-                    'margin-left': 'auto',
-                    'margin-right': 'auto',
-                    'padding': '10px'
-                }
-            }
-        ]
+        }
     });
 });
