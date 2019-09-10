@@ -7,13 +7,16 @@ $(function () {
         plugins: [
             'advlist autolink lists link image charmap print preview hr anchor pagebreak',
             'searchreplace wordcount visualblocks visualchars code fullscreen',
-            'insertdatetime media nonbreaking save table contextmenu directionality',
+            'insertdatetime nonbreaking save table contextmenu directionality',
             'emoticons paste textcolor colorpicker textpattern imagetools'
         ],
-        toolbar1: 'insertfile undo redo | styleselect | fontselect | fontsizeselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image',
+        toolbar1: 'undo redo | styleselect | fontselect | fontsizeselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image',
         toolbar2: 'print preview | forecolor backcolor emoticons',
         relative_urls: false,
         document_base_url: 'https://www.nisgaa.bc.ca', // Change origin URL once site is online
+        external_filemanager_path:"/filemanager/",
+        filemanager_title:"Responsive Filemanager" ,
+        external_plugins: { "filemanager" : "/filemanager/plugin.min.js"},
         image_advtab: true,
         images_upload_url: '../functions/upload.php',
 
