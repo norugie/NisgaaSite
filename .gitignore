@@ -13,11 +13,16 @@
 /components/map.php
 /todo.txt
 /feed.php
+/filemanager
+/source/*
+/thumbs/*
 
 # Folder exceptions
 !/jobs/.gitkeep
 !/jobs/resumes/.gitkeep
 !/links/.gitkeep
+!/source/.gitkeep
+!/thumbs/.gitkeep
 !/images/contacts/.gitkeep
 !/images/posts/.gitkeep
 !/images/posts/media/.gitkeep
