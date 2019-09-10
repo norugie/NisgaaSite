@@ -9,7 +9,7 @@
                     <h2>We are here to help</h2>
                 </div>
                 <p class="lead">Need some help? We've put together the answers to some commonly asked tech questions for the staff and students of School District no. 92 (Nisga’a).</p>
-                <p class="lead">If you have a question that you can't find the answer to, please feel free to give the IT Department a call at <b>ext. 4357 (HELP)</b>.</p>
+                <p class="lead">If you have a question that you can't find the answer to, please feel free to give the IT Department a call at <b>ext. 4357 (HELP)</b> or create a ticket through the <a href="https://helpdesk.nisgaa.bc.ca/" target="_blank">IT Helpdesk Ticketing System</a> or sending us an email at <a href="mailto:itsupport@nisgaa.bc.ca">itsupport@nisgaa.bc.ca</a>.</p>
             </div>
         </div>
     </section>

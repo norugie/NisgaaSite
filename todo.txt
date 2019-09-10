@@ -3,7 +3,6 @@ TODO:
 High Priority:
 - Deploy SD92 Website
 - Add content to Tech Help Page
-- Edit the Policy functionality in accordance to Sharlene's email
 
 Normal Priority:
 - make drag n’ drop of photos working
