@@ -58,14 +58,19 @@
         // Add application information to database
         $fullname = $firstname . " " . $lastname;
         $fulladdress = $address . ', ' . $city . ', ' . $province . ', ' . $country . ', ' . $postal;
-        $appinforesult = $site->addResume($database, $fullname, $fulladdress, $email, $phone, $degree, $title, $filename, $job_id);
-
-        if($appinforesult == 1){
+        $appinforesult;
+        if(isset($firstname) && !empty($firstname) && isset($lastname) && !empty($lastname) && isset($email) && !empty($email)){
+            $appinforesult = $site->addResume($database, $fullname, $fulladdress, $email, $phone, $degree, $title, $filename, $job_id);
+        } else {
+            header("location: ../error");
+        }
+        
+        if(isset($appinforesult) &&!empty($appinforesult) && $appinforesult == 1){
             $path = "../jobs/resumes/";
             $file = $path.$filename;
         
             // Mail Information
-            $mailto   = 'hr@nisgaa.bc.ca'; // Change to the HR email once ready
+            $mailto   = 'rbarrameda@nisgaa.bc.ca'; // Change to the HR email once ready
             $mailfrom = 'sd92@nisgaa.bc.ca';
             $mailname = 'SDO';
             $subject  = 'Application for JOB ID: ' . $jobid;
@@ -106,6 +111,8 @@
             } else {
                 header("location: ../error");
             }
+        } else {
+            header("location: ../error");
         }
 
     }
