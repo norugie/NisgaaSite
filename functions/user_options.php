@@ -40,6 +40,7 @@
                 
                 if($errors == 0){
                     move_uploaded_file($file_tmp, "../images/profile/".$file_name);
+                    $file_name = mysqli_real_escape_string($database->con, $file_name);
                     $user->userEditPicture($database, $file_name);
                 } else {
                     if($error == 1){

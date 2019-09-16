@@ -51,7 +51,7 @@
                     
                     if($errors == 0){
                         move_uploaded_file($file_tmp, "../links/".$file_name);
-                        $link_content = $file_name;
+                        $link_content = mysqli_real_escape_string($database->con, $file_name);
                         $interaction->addInquiry($database, $link_name, $link_desc, $link_content, $link_type, $link_tag, $link_thumbnail);
                     } else {
                         if($error == 1){
@@ -105,7 +105,7 @@
                     
                     if($errors == 0){
                         move_uploaded_file($file_tmp, "../links/".$file_name);
-                        $link_content = $file_name;
+                        $link_content = mysqli_real_escape_string($database->con, $file_name);
                     } else {
                         if($error == 1){
                             $_SESSION['error_message'] = "You tried uploading a file with an invalid file extension. Please make sure that the file's extension is one of the followings: .doc, .docx, .pdf.";
@@ -199,7 +199,7 @@
                     
                     if($errors == 0){
                         move_uploaded_file($file_tmp, "../images/contacts/".$file_name);
-                        $photo = $file_name;
+                        $photo = mysqli_real_escape_string($database->con, $file_name);
                     } else {
                         if($error == 1){
                             $_SESSION['error_message'] = "You tried uploading a file with an invalid file extension. Please make sure that the file's extension is one of the followings: .jpeg, .jpg, .png.";
@@ -253,7 +253,7 @@
                     
                     if($errors == 0){
                         move_uploaded_file($file_tmp, "../images/contacts/".$file_name);
-                        $photo = $file_name;
+                        $photo = mysqli_real_escape_string($database->con, $file_name);
                     } else {
                         if($error == 1){
                             $_SESSION['error_message'] = "You tried uploading a file with an invalid file extension. Please make sure that the file's extension is one of the followings: .jpeg, .jpg, .png.";
@@ -311,7 +311,7 @@
                     
                     if($errors == 0){
                         move_uploaded_file($file_tmp, "../images/carousel/".$file_name);
-                        $photo = $file_name;
+                        $photo = mysqli_real_escape_string($database->con, $file_name);
                     } else {
                         if($error == 1){
                             $_SESSION['error_message'] = "You tried uploading a file with an invalid file extension. Please make sure that the file's extension is one of the followings: .jpeg, .jpg, .png.";
@@ -352,7 +352,7 @@
                 
                 if($errors == 0){
                     move_uploaded_file($file_tmp, "../images/carousel/".$file_name);
-                    $photo = $file_name;
+                    $photo = mysqli_real_escape_string($database->con, $file_name);
                     $interaction->newCarouselImage($database, $photo, $caption);
                 } else {
                     if($error == 1){
@@ -397,7 +397,7 @@
                     
                     if($errors == 0){
                         move_uploaded_file($file_tmp, "../images/carousel/".$file_name);
-                        $photo = $file_name;
+                        $photo = mysqli_real_escape_string($database->con, $file_name);
                         $interaction->newCarouselImageSet($database, $photo, $caption);
                     } else {
                         if($error == 1){
@@ -478,7 +478,7 @@
                     
                     if($errors == 0){
                         move_uploaded_file($file_tmp, "../links/".$file_name);
-                        $link_content = $file_name;
+                        $link_content = mysqli_real_escape_string($database->con, $file_name);
                         $interaction->addPageFile($database, $link_name, $link_desc, $link_content, $link_type, $link_tag, $link_thumbnail, $page, $subtab);
                     } else {
                         if($error == 2){
@@ -532,7 +532,7 @@
                     
                     if($errors == 0){
                         move_uploaded_file($file_tmp, "../links/".$file_name);
-                        $link_content = $file_name;
+                        $link_content = mysqli_real_escape_string($database->con, $file_name);
                         $interaction->editPageFile($database, $id, $link_id, $link_name, $link_desc, $link_content, $link_tag, $page, $subtab);
                     } else {
                         if($error == 2){
@@ -595,7 +595,7 @@
                     
                     if($errors == 0){
                         move_uploaded_file($file_tmp, "../images/contacts/".$file_name);
-                        $photo = $file_name;
+                        $photo = mysqli_real_escape_string($database->con, $file_name);
                     } else {
                         if($error == 1){
                             $_SESSION['error_message'] = "You tried uploading a file with an invalid file extension. Please make sure that the file's extension is one of the followings: .jpeg, .jpg, .png.";
@@ -645,7 +645,7 @@
                     
                     if($errors == 0){
                         move_uploaded_file($file_tmp, "../images/boe/".$file_name);
-                        $photo = $file_name;
+                        $photo = mysqli_real_escape_string($database->con, $file_name);
                     } else {
                         if($error == 1){
                             $_SESSION['error_message'] = "You tried uploading a file with an invalid file extension. Please make sure that the file's extension is one of the followings: .jpeg, .jpg, .png.";
