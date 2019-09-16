@@ -515,7 +515,7 @@
                     $file_size = $_FILES['edit_link_content']['size'];
                     $file_tmp = $_FILES['edit_link_content']['tmp_name'];
                     $file_type = $_FILES['edit_link_content']['type'];
-                    $file_ext = strtolower(end(explode('.', $_FILES['jobfile']['name'])));
+                    $file_ext = strtolower(end(explode('.', $_FILES['edit_link_content']['name'])));
                 
                     $extensions = array("doc","docx","pdf");
                     
@@ -523,7 +523,7 @@
                         $errors = 1;
                     }
 
-                    if($file_size > 20971520){ // Limit job file upload to 20MB
+                    if($file_size > 20971520){ // Limit package file upload to 20MB
                         $errors = 2;
                     }
                     
@@ -570,7 +570,7 @@
                     $file_size = $_FILES['link_content']['size'];
                     $file_tmp = $_FILES['link_content']['tmp_name'];
                     $file_type = $_FILES['link_content']['type'];
-                    $file_ext = strtolower(end(explode('.', $_FILES['jobfile']['name'])));
+                    $file_ext = strtolower(end(explode('.', $_FILES['link_content']['name'])));
                 
                     $extensions = array("doc","docx","pdf");
                     
@@ -578,7 +578,7 @@
                         $errors = 1;
                     }
                     
-                    if($file_size > 20971520){ // Limit job file upload to 20MB
+                    if($file_size > 20971520){ // Limit package file upload to 20MB
                         $errors = 2;
                     }
                     
@@ -703,7 +703,7 @@
                         $errors = 1;
                     }
                     
-                    if($file_size > 20971520){ // Limit job file upload to 20MB
+                    if($file_size > 20971520){ // Limit directive file upload to 20MB
                         $errors = 2;
                     }
                     
