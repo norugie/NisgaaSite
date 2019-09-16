@@ -130,6 +130,7 @@
                 
                 if($errors == 0){
                     move_uploaded_file($file_tmp, "../jobs/" . $file_name);
+                    $file_name = mysqli_real_escape_string($database->con, $file_name);
                     $district->addJob($database, $id, $title, $jobdesc, $jobtype, $school, $jobopen, $jobclose, $file_name);
                 } else {
                     if($error == 1){
@@ -170,6 +171,7 @@
                 
                 if($errors == 0){
                     move_uploaded_file($file_tmp, "../jobs/" . $file_name);
+                    $file_name = mysqli_real_escape_string($database->con, $file_name);
                     $district->editJobFile($database, $id, $title, $file_name);
                 } else {
                     if($error == 1){
@@ -278,7 +280,7 @@
                     
                     if($errors == 0){
                         move_uploaded_file($file_tmp, "../images/thumbnails/" . $new_file_name);
-                        $post_thumbnail = $new_file_name;
+                        $post_thumbnail = mysqli_real_escape_string($database->con, $new_file_name);
                         $post_id = $district->addPostEvent($database, $post_title, $post_content, $event_desc, $post_thumbnail, $sm_opt);
                     } else {
                         if($error == 1){
@@ -406,7 +408,7 @@
                     
                     if($errors == 0){
                         move_uploaded_file($file_tmp, "../links/" . $file_name);
-                        $link_content = $file_name;
+                        $link_content = mysqli_real_escape_string($database->con, $file_name);
                     } else {
                         if($error == 2){
                             $_SESSION['error_message'] = "You tried uploading a file that exceeded the file size limit. Please make sure that the file size is less than 50 MB.";
@@ -452,7 +454,7 @@
                     
                     if($errors == 0){
                         move_uploaded_file($file_tmp, "../links/".$file_name);
-                        $link_content = $file_name;
+                        $link_content = mysqli_real_escape_string($database->con, $file_name);
                         $district->addForm($database, $link_name, $link_desc, $link_content, $link_type, $link_tag, $link_thumbnail);
                     } else {
                         if($error == 2){
@@ -529,7 +531,7 @@
                     
                     if($errors == 0){
                         move_uploaded_file($file_tmp, "../links/".$file_name);
-                        $link_content = $file_name;
+                        $link_content = mysqli_real_escape_string($database->con, $file_name);
                     } else {
                         if($error == 1){
                             $_SESSION['error_message'] = "You tried uploading a file with an invalid file extension. Please make sure that the file's extension is one of the followings: .doc, .docx, .pdf.";
@@ -584,7 +586,7 @@
                     
                     if($errors == 0){
                         move_uploaded_file($file_tmp, "../links/".$file_name);
-                        $link_content = $file_name;
+                        $link_content = mysqli_real_escape_string($database->con, $file_name);
                         $district->addPackage($database, $link_name, $link_desc, $link_content, $link_type, $link_tag, $link_thumbnail);
                     } else {
                         if($error == 1){
@@ -660,7 +662,7 @@
                     
                     if($errors == 0){
                         move_uploaded_file($file_tmp, "../links/".$file_name);
-                        $link_content = $file_name;
+                        $link_content = mysqli_real_escape_string($database->con, $file_name);
                     } else {
                         if($error == 1){
                             $_SESSION['error_message'] = "You tried uploading a file with an invalid file extension. Please make sure that the file's extension is one of the followings: .doc, .docx, .pdf.";
@@ -709,7 +711,7 @@
                     
                     if($errors == 0){
                         move_uploaded_file($file_tmp, "../links/".$file_name);
-                        $link_content = $file_name;
+                        $link_content = mysqli_real_escape_string($database->con, $file_name);
                         $district->addDirective($database, $link_name, $link_desc, $link_content, $link_type, $link_tag, $link_thumbnail);
                     } else {
                         if($error == 1){
@@ -785,7 +787,7 @@
                     
                     if($errors == 0){
                         move_uploaded_file($file_tmp, "../links/".$file_name);
-                        $link_content = $file_name;
+                        $link_content = mysqli_real_escape_string($database->con, $file_name);
                     } else {
                         if($error == 1){
                             $_SESSION['error_message'] = "You tried uploading a file with an invalid file extension. Please make sure that the file's extension is one of the followings: .doc, .docx, .pdf.";
@@ -834,7 +836,7 @@
                     
                     if($errors == 0){
                         move_uploaded_file($file_tmp, "../links/".$file_name);
-                        $link_content = $file_name;
+                        $link_content = mysqli_real_escape_string($database->con, $file_name);
                         $district->addPolicy($database, $link_name, $link_desc, $link_content, $link_type, $link_tag, $link_thumbnail);
                     } else {
                         if($error == 1){
@@ -910,7 +912,7 @@
                     
                     if($errors == 0){
                         move_uploaded_file($file_tmp, "../links/".$file_name);
-                        $link_content = $file_name;
+                        $link_content = mysqli_real_escape_string($database->con, $file_name);
                     } else {
                         if($error == 1){
                             $_SESSION['error_message'] = "You tried uploading a file with an invalid file extension. Please make sure that the file's extension is one of the followings: .doc, .docx, .pdf.";
@@ -959,7 +961,7 @@
                     
                     if($errors == 0){
                         move_uploaded_file($file_tmp, "../links/".$file_name);
-                        $link_content = $file_name;
+                        $link_content = mysqli_real_escape_string($database->con, $file_name);
                         $district->addPlan($database, $link_name, $link_desc, $link_content, $link_type, $link_tag, $link_thumbnail);
                     } else {
                         if($error == 1){

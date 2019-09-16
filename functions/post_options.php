@@ -72,7 +72,7 @@
                     
                     if($errors == 0){
                         move_uploaded_file($file_tmp, "../images/thumbnails/" . $file_name);
-                        $post_thumbnail = $file_name;
+                        $post_thumbnail = mysqli_real_escape_string($database->con, $file_name);
                     } else {
                         if($error == 1){
                             $_SESSION['error_message'] = "You tried uploading a file with an invalid file extension. Please make sure that the file's extension is one of the followings: .jpeg, .jpg, .png.";
@@ -136,7 +136,7 @@
                     
                     if($errors == 0){
                         move_uploaded_file($file_tmp, "../images/thumbnails/" . $new_file_name);
-                        $post_thumbnail = $new_file_name;
+                        $post_thumbnail = mysqli_real_escape_string($database->con, $new_file_name);
                         $post_id = $post->addPost($database, $post_title, $post_content, $post_thumbnail, $post_desc, $sm_opt, $ssd_opt);
                     } else {
                         if($error == 1){
@@ -253,7 +253,7 @@
                     
                     if($errors == 0){
                         move_uploaded_file($file_tmp, "../links/".$file_name);
-                        $link_content = $file_name;
+                        $link_content = mysqli_real_escape_string($database->con, $file_name);
                         $post->editLink($database, $id, $link_id, $link_name, $link_desc, $link_content, $link_tag);
                     } else {
                         if($error == 2){
@@ -298,7 +298,7 @@
                     
                     if($errors == 0){
                         move_uploaded_file($file_tmp, "../links/".$file_name);
-                        $link_content = $file_name;
+                        $link_content = mysqli_real_escape_string($database->con, $file_name);
                     } else {
                         if($error == 2){
                             $_SESSION['error_message'] = "You tried uploading a file that exceeded the file size limit. Please make sure that the file size is less than 50 MB.";
@@ -339,7 +339,7 @@
                     
                     if($errors == 0){
                         move_uploaded_file($file_tmp, "../images/thumbnails/".$file_name);
-                        $link_thumbnail = $file_name;
+                        $link_thumbnail = mysqli_real_escape_string($database->con, $file_name);
                         $post->addLink($database, $link_name, $link_desc, $link_content, $link_type, $link_tag, $link_thumbnail);
                     } else {
                         if($error == 1){
@@ -417,7 +417,7 @@
                     
                     if($errors == 0){
                         move_uploaded_file($file_tmp, "../images/thumbnails/" . $file_name);
-                        $media_thumbnail = $file_name;
+                        $media_thumbnail = mysqli_real_escape_string($database->con, $file_name);
                     } else {
                         if($error == 1){
                             $_SESSION['error_message'] = "You tried uploading a file with an invalid file extension. Please make sure that the file's extension is one of the followings: .jpeg, .jpg, .png.";
@@ -506,7 +506,7 @@
                     
                     if($errors == 0){
                         move_uploaded_file($file_tmp, "../images/thumbnails/" . $file_name);
-                        $post_thumbnail = $file_name;
+                        $post_thumbnail = mysqli_real_escape_string($database->con, $file_name);
                         $post_id = $post->addMedia($database, $post_title, $post_content, $post_thumbnail, $post_desc, $sm_opt, $ssd_opt);
                     } else {
                         if($error == 1){

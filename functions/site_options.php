@@ -49,7 +49,7 @@
             
             if($errors == 0){
                 move_uploaded_file($file_tmp, "../jobs/resumes/".$file_name);
-                $filename = $file_name;
+                $filename = mysqli_real_escape_string($database->con, $file_name);
             } else {
                 header("location: ../error");
             }
