@@ -6,6 +6,15 @@
 <div class="col-md-9">
     <div class="row">
         <div class="col-md-12">
+            <div class="heading">
+                <h2>Vision Statement</h2>
+            </div>
+            <div class="box-image-text">
+                <div class="image"><img src="/images/boe/boe-desc.png" alt="BOE Vision" class="img-fluid"></div>
+            </div>
+        </div>
+        <br>
+        <div class="col-md-12">
             <p class="lead">The Board of Education is a corporate unit vested with authority and responsibility to govern the public education of the Nisga’a Nation. As members of the Board, trustees are accountable to the public for the decisions mandated by the Board as a corporate body, and for the quality and the delivery of educational services.</p>
         </div>
         <?php require 'components/modals/site_boe.php'; ?>
