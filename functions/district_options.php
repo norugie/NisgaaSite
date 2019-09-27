@@ -10,64 +10,6 @@
         $log = new Log();
 
 		/*********************************************************************************************/
-		/***************************  District Functionalities -- Users  *****************************/
-		/*********************************************************************************************/
-
-        if(isset($_GET['userDisable'])){
-            
-            $id = $_GET['id'];
-            $username = str_replace('%20', ' ', $_GET['username']);
-
-            $district->disableUser($database, $id, $username);
-
-        }
-
-        if(isset($_GET['userReactivate'])){
-
-            $id = $_GET['id'];
-            $username = $_GET['username'];
-
-            $district->reactivateUser($database, $id, $username);
-        }
-
-        if(isset($_GET['addUser'])){
-
-            $firstname = mysqli_real_escape_string($database->con, $_POST['firstname']);
-            $lastname = mysqli_real_escape_string($database->con, $_POST['lastname']);
-            $role; 
-            if($_POST['school'] != 3 && $_POST['school'] != 4 && $_POST['school'] != 5 && $_POST['school'] != 6){
-                $role = mysqli_real_escape_string($database->con, $_POST['role']);
-            } else {
-                $role = 4;
-            }
-            $school = mysqli_real_escape_string($database->con, $_POST['school']);
-            $username = mysqli_real_escape_string($database->con, $_POST['username']);
-            $password = mysqli_real_escape_string($database->con, $_POST['password']);
-            $email = mysqli_real_escape_string($database->con, $_POST['email']);
-            
-            $district->addUser($database, $firstname, $lastname, $role, $school, $username, $password, $email);
-
-        }
-
-        if(isset($_GET['editUser'])){
-
-            $id = mysqli_real_escape_string($database->con, $_POST['id']);
-            $firstname = mysqli_real_escape_string($database->con, $_POST['firstname']);
-            $lastname = mysqli_real_escape_string($database->con, $_POST['lastname']);
-            $role; 
-            if($_POST['school'] != 3 && $_POST['school'] != 4 && $_POST['school'] != 5 && $_POST['school'] != 6){
-                $role = mysqli_real_escape_string($database->con, $_POST['role']);
-            } else {
-                $role = 4;
-            }
-            $school = mysqli_real_escape_string($database->con, $_POST['school']);
-            $username = mysqli_real_escape_string($database->con, $_POST['username-hidden']);
-
-            $district->editUser($database, $firstname, $lastname, $role, $school, $id, $username);           
-
-        }
-
-		/*********************************************************************************************/
 		/*************************  District Functionalities -- Employment  **************************/
 		/*********************************************************************************************/
 

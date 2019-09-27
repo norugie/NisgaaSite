@@ -69,7 +69,8 @@
 					ON (users.user_type = roles.id)
 					LEFT JOIN schools
 					ON (users.school = schools.id)
-					WHERE users.id != '$gid'";
+					WHERE users.id != '$gid'
+					AND status = 'Active'";
 
 			$query = mysqli_query($database->con, $sql);
 			if(!$query){

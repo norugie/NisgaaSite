@@ -5,23 +5,13 @@
 
  ?>
 
-<?php require '../components/modals/new_user.php'; ?>
-<?php require '../components/modals/edit_user.php'; ?>
-
 <div class="row clearfix">
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
         <div class="card">
                 <div class="header">
                     <div class="row clearfix">
-                        <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 text-xs-sm-center">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-xs-sm-center">
                             <h4>USER LIST</h4>      
-                        </div>
-                        <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-                            <?php if($_SESSION['type'] == 1){ ?>
-                                <center>
-                                    <button type="button" class="btn bg-blue waves-effect" data-toggle="modal" data-target="#new-user-modal" style="display: inline-block;"><i class="material-icons">add</i><span>NEW USER</span></button>
-                                </center>
-                            <?php } ?>
                         </div>
                     </div>
                 </div>
@@ -35,8 +25,6 @@
                                 <th>School</th>
                                 <th>Username</th>
                                 <th>Email</th>
-                                <?php if($_SESSION['type'] == 1){ ?><th>Modify</th><?php } ?>
-                                <?php if($_SESSION['type'] != 4){ ?><th>Delete<?php if($_SESSION['type'] == 1) echo '/Reactivate'; ?></th><?php } ?>
                             </tr>
                         </thead>
                         <tfoot>
@@ -46,51 +34,17 @@
                                 <th>School</th>
                                 <th>Username</th>
                                 <th>Email</th>
-                                <?php if($_SESSION['type'] == 1){ ?><th>Modify</th><?php } ?>
-                                <?php if($_SESSION['type'] != 4){ ?><th>Delete<?php if($_SESSION['type'] == 1) echo '/Reactivate'; ?></th><?php } ?>
                             </tr>
                         </tfoot>
                         <tbody>
                             <?php foreach($users as $solo): ?>
-                                <?php if($_SESSION['type'] == 1){ ?>
-                                    <tr>
-                                        <td><?php echo $uname = $solo['firstname'] . " " . $solo['lastname']; ?></td>
-                                        <td><?php echo $solo['role_desc']; ?></td>
-                                        <td><?php echo $solo['school_abbv']; ?></td>
-                                        <td><?php echo $solo['username']; ?></td>
-                                        <td><?php echo $solo['email']; ?></td>
-                                        <td><center><button type="button" class="btn bg-green waves-effect" data-toggle="modal" data-target="#edit-user-modal" 
-                                        data-values='{
-                                                "id":           <?php echo json_encode($solo['id']); ?>,
-                                                "username":     <?php echo json_encode($solo['username']); ?>,
-                                                "firstname":    <?php echo json_encode($solo['firstname']); ?>,
-                                                "lastname":     <?php echo json_encode($solo['lastname']); ?>,
-                                                "user_type":    <?php echo json_encode($solo['user_type']); ?>,
-                                                "school":       <?php echo json_encode($solo['school']); ?>
-                                            }' 
-                                        onclick="editUser(this);" <?php if($solo['status'] == 'Inactive') echo "disabled"; ?>><i class="material-icons">mode_edit</i><span>MODIFY</span></button></center></td>
-                                        <?php if($solo['status'] == 'Active'){ ?>
-                                            <td><center><button type="button" class="btn bg-red waves-effect" data-type="delete-user" data-id="<?php echo $solo['id']; ?>" data-name="<?php echo str_replace(' ', '%20', $uname); ?>" onclick="alertDesign(this);"><i class="material-icons">clear</i><span>DELETE</span></button></center></td>
-                                        <?php } else { ?>
-                                            <td><center><button type="button" class="btn bg-cyan waves-effect" data-type="reactivate-user" data-id="<?php echo $solo['id']; ?>" data-name="<?php echo str_replace(' ', '%20', $uname); ?>" onclick="alertDesign(this);"><i class="material-icons">check</i><span>REACTIVATE</span></button></center></td>
-                                        <?php } ?>                                       
-                                    </tr>
-                                <?php } else { ?>
-                                    <?php if($solo['status'] !== 'Inactive'){ ?>
-                                        <tr>
-                                            <td><?php echo $solo['firstname'] . " " . $solo['lastname']; ?></td>
-                                            <td><?php echo $solo['role_desc']; ?></td>
-                                            <td><?php echo $solo['school_abbv']; ?></td>
-                                            <td><?php echo $solo['username']; ?></td>
-                                            <td><?php echo $solo['email']; ?></td>
-                                            <?php if($solo['user_type'] != 1){ ?>
-                                                <?php if($_SESSION['type'] != 4){ ?><td><center><button type="button" class="btn bg-red waves-effect" data-type="delete-user" data-id="<?php echo $solo['id']; ?>" data-name="<?php echo $solo['username']; ?>" onclick="alertDesign(this);"><i class="material-icons">clear</i><span>DELETE</span></button></center></td><?php } ?>
-                                            <?php } else { ?>
-                                                <?php if($_SESSION['type'] != 4){ ?><td><center><button type="button" class="btn bg-red waves-effect" disabled><i class="material-icons">clear</i><span>DELETE</span></button></center></td><?php } ?>
-                                            <?php } ?>
-                                        </tr>
-                                    <?php } ?>
-                                <?php } ?>
+                                <tr>
+                                    <td><?php echo $uname = $solo['firstname'] . " " . $solo['lastname']; ?></td>
+                                    <td><?php echo $solo['role_desc']; ?></td>
+                                    <td><?php echo $solo['school_abbv']; ?></td>
+                                    <td><?php echo $solo['username']; ?></td>
+                                    <td><?php echo $solo['email']; ?></td>                                      
+                                </tr>
                             <?php endforeach; ?>
                         </tbody>
                     </table>

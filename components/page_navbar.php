@@ -7,9 +7,6 @@
         </div>
         <div class="collapse navbar-collapse" id="navbar-collapse">
             <ul class="nav navbar-nav navbar-right">
-                <!-- Call Profile Modal -->
-                <li><a href="#" data-toggle="modal" data-target="#profile-modal"><i class="material-icons">person</i></a></li>
-                <!-- #END# Profile Modal -->
                 <!-- Logout -->
                 <li><a href="../functions/logout.php"><i class="material-icons">input</i></a></li>
                 <!-- #END# Logout -->
@@ -17,5 +14,3 @@
         </div>
     </div>
 </nav>
-
-<?php require 'modals/profile.php'; ?>

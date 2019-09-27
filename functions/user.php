@@ -27,62 +27,7 @@
             }
             
 		}
-		
-		public function userEditProfile($database, $firstname, $lastname){
-			$id = $_SESSION['id'];
-			$username = $_SESSION['username'];
-			$sql = "UPDATE users SET
-						   firstname = '$firstname',
-						   lastname = '$lastname'
-					WHERE id = '$id'";
-			$query = mysqli_query($database->con, $sql);
-			if(!$query){
-				$_SESSION['error_message'] = mysqli_error($database->con);
-				header("location:../cms/?error=true");
-			} else {
-				global $log;
-				$info = "Modified the user account information for " . $username;
-				$log->logInput($database, $info);
-				header("location:../cms/?editProfile=true");
-			}	
-		}
-
-		public function userEditPassword($database, $new_password, $id){
-			$username = $_SESSION['username'];
-			$sql = "UPDATE users SET 
-					password = md5('$new_password')
-					WHERE id = '$id'";
-			$query = mysqli_query($database->con, $sql);
-			if(!$query){
-				$_SESSION['error_message'] = mysqli_error($database->con);
-				header("location:../cms/?error=true");
-			} else {
-				global $log;
-				$info = "Modified the user account password for " . $username;
-				$log->logInput($database, $info);
-				header("location:../cms/?editPassword=true");
-			}
-		}
-
-		public function userEditPicture($database, $filename){
-			$username = $_SESSION['username'];
-			$id = $_SESSION['id'];
-			$sql = "UPDATE users SET 
-					display_picture = '$filename'
-					WHERE id = '$id'";
-			$query = mysqli_query($database->con, $sql);
-			if(!$query){
-				$_SESSION['error_message'] = mysqli_error($database->con);
-				header("location:../cms/?error=true");
-			} else {
-				global $log;
-				$info = "Modified the user display image for " . $username;
-				$log->logInput($database, $info);
-				header("location:../cms/?editDisplayPicture=true");
-			}
-		}
         
     }
     
-	require 'user_options.php'
 ?>

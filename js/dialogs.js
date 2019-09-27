@@ -3,11 +3,7 @@ function alertDesign(e) {
     var id = $(e).data('id');
     var name = $(e).data('name');
 
-    if (type === 'delete-user') {
-        showDisableUserConfirm(id, name);
-    } else if (type === 'reactivate-user') {
-        showReactivateUserConfirm(id, name);
-    } else if (type === 'delete-job') {
+    if (type === 'delete-job') {
         showDisableJobConfirm(id, name);
     } else if (type === 'reopen-job') {
         showReopenJobConfirm(id, name);
@@ -60,46 +56,6 @@ function alertDesign(e) {
     } else if (type === 'reopen-plan'){
         showReactivatePlanConfirm(id, name);
     }
-}
-
-
-//Warning for disabling user accounts
-function showDisableUserConfirm(id, name) {
-    swal({
-        title: "Are you sure you want to disable this account?",
-        text: "Only those with the Administrator role can reactivate the account",
-        type: "warning",
-        showCancelButton: true,
-        confirmButtonColor: "#F44336",
-        confirmButtonText: "CONFIRM",
-        cancelButtonText: "CANCEL",
-        closeOnConfirm: false,
-        closeOnCancel: true
-    }, function (isConfirm) {
-        if (isConfirm) {
-            window.location = "../functions/district.php?district=true&userDisable=true&id=" + id + "&username=" + name;
-        }
-
-    });
-}
-
-//Warning for reactivating user accounts
-function showReactivateUserConfirm(id, name) {
-    swal({
-        title: "Are you sure you want to reactivate this account?",
-        type: "warning",
-        showCancelButton: true,
-        confirmButtonColor: "#00BCD4",
-        confirmButtonText: "CONFIRM",
-        cancelButtonText: "CANCEL",
-        closeOnConfirm: false,
-        closeOnCancel: true
-    }, function (isConfirm) {
-        if (isConfirm) {
-            window.location = "../functions/district.php?district=true&userReactivate=true&id=" + id + "&username=" + name;
-        }
-
-    });
 }
 
 //Warning for closing job posting
