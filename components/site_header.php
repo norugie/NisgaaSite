@@ -57,9 +57,6 @@
         <meta property="twitter:title" content="<?php echo $tag_title; ?>">
         <meta property="twitter:description" content="<?php echo $tag_desc; ?>">
         <meta property="twitter:image" content="<?php echo $tag_image; ?>">
-
-        <!-- Manifest -->
-        <link rel="manifest" href="manifest.json" />
         
         <!-- Bootstrap CSS-->
         <link rel="stylesheet" href="/plugins/bootstrap-v4/css/bootstrap.min.css">
