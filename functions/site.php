@@ -44,7 +44,9 @@
 				$sql = $sqlquery . " ORDER BY links.link_name ASC";
 			} else if(strpos($tag, 'Finance') !== false){
 				$sql = $sqlquery . " ORDER BY links.id DESC";
-			} else {
+			} else if(strpos($tag, 'PolicyP') !== false || strpos($tag, 'PolicyAP') !== false){
+				$sql = $sqlquery . " ORDER BY links.link_name ASC";
+		 	} else {
 				$sql = $sqlquery;
 			}
 
