@@ -17,9 +17,9 @@
                     <?php foreach($links as $link): ?>
                         <div class="col-lg-3 col-md-6 col-sm-6 col-xs-6 col-blog-mobile">
                             <div class="product">
-                                <div class="image"><a href="<?php if($link['link_type'] == 'File'){ echo "/links/"; } echo $link['link_content']; ?>" target="_blank"><img src="/images/thumbnails/<?php echo $link['link_thumbnail']; ?>" alt="" class="img-fluid image1" style="max-width: 80% !important;"></a></div>
+                                <div class="image"><a href="<?php if($link['link_type'] == 'File'){ echo "/links/"; } echo $link['link_content']; ?>" target="_blank" rel="noreferrer"><img src="/images/thumbnails/<?php echo $link['link_thumbnail']; ?>" alt="" class="img-fluid image1" style="max-width: 80% !important;"></a></div>
                                 <div class="text">
-                                    <h5><a href="<?php if($link['link_type'] == 'File'){ echo "/links/"; } echo $link['link_content']; ?>" target="_blank"><?php echo $link['link_name']; ?></a></h5>
+                                    <h5><a href="<?php if($link['link_type'] == 'File'){ echo "/links/"; } echo $link['link_content']; ?>" target="_blank" rel="noreferrer"><?php echo $link['link_name']; ?></a></h5>
                                     <p class="lead mb-0"><?php echo $link['link_desc']; ?></p>
                                 </div>
                             </div>

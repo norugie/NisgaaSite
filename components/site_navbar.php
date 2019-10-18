@@ -108,8 +108,7 @@
 <div id="search">
     <button type="button" class="close">×</button>
     <form action="/search" method="POST">
-        <label for="search"></label>
-        <input type="search" id="searchItem" name="search" aria-label="Search Overlay" placeholder="Search for..." autocomplete="off" required>
+        <input type="search" name="search" aria-label="Search Overlay" placeholder="Search for..." autocomplete="off" required>
         <button type="submit" class="btn btn-lg btn-primary">Search</button>
     </form>
 </div>

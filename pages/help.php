@@ -19,7 +19,7 @@
         <div class="row">
             <div class="col-md-12" id="filter-list">
                 <div class="form-group">
-                    <input type="text" id="keyword" name="keyword" class="form-control search" placeholder="Type in your help keyword(s) here..." autocomplete="off" data-search>
+                    <input type="text" id="keyword" name="keyword" aria-label="Help Searchbar" class="form-control search" placeholder="Type in your help keyword(s) here..." autocomplete="off" data-search>
                 </div>
                 <div class="row">
                     <ul class="list">
