@@ -1,0 +1,24 @@
+{
+    "name": "SD92 - Nisga'a",
+    "short_name": "SD92",
+    "description": "School District No. 92 (Nisga'a)",
+    "start_url": "/",
+    "background_color": "#fff",
+    "theme_color": "#da4d4d",
+    "icons": [{
+        "src": "nisgaa-icon.png",
+        "sizes": "50x75",
+        "type": "image/png"
+    },
+    {
+        "src": "nisgaa-icon-banner.png",
+        "sizes": "240x75",
+        "type": "image/png"
+    },
+    {
+        "src": "nisgaa-icon-sd92.png",
+        "sizes": "89x35",
+        "type": "image/png"
+    }],
+    "display": "standalone"
+}

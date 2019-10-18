@@ -26,10 +26,10 @@
             <div class="col-lg-3 text-xs-sm-center">
                 <h4 class="h6">Keep Updated Through Social Media</h4>
                 <h4 class="h6">
-                    <a href="https://www.facebook.com/nisgaa.sd92/" target="blank">SD92 Facebook Page</a>
+                    <a href="https://www.facebook.com/nisgaa.sd92/" target="blank" rel="noreferrer">SD92 Facebook Page</a>
                 </h4>
                 <h4 class="h6">
-                    <a href="https://www.twitter.com/nisgaa_sd92/" target="blank">SD92 Twitter Page</a>
+                    <a href="https://www.twitter.com/nisgaa_sd92/" target="blank" rel="noreferrer">SD92 Twitter Page</a>
                 </h4>
             </div>
         </div>

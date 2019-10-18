@@ -6,7 +6,7 @@
         <div class="panel-body">
             <ul class="nav nav-pills flex-column text-sm">
                 <?php foreach($quick_links as $ql): ?>
-                    <li class="nav-item"><a href="<?php if($ql['link_type'] == 'File'){ echo "/links/"; } echo $ql['link_content']; ?>" class="nav-link" target="_blank"><?php echo $ql['link_name']; ?></a></li>
+                    <li class="nav-item"><a href="<?php if($ql['link_type'] == 'File'){ echo "/links/"; } echo $ql['link_content']; ?>" class="nav-link" target="_blank" rel="noreferrer"><?php echo $ql['link_name']; ?></a></li>
                 <?php endforeach; ?>
             </ul>
         </div>
@@ -60,7 +60,7 @@
                     <div class="panel-body">
                         <ul class="nav nav-pills flex-column text-sm">
                             <?php foreach($quick_links as $ql): ?>
-                                <li class="nav-item"><a href="<?php if($ql['link_type'] == 'File'){ echo "/links/"; } echo $ql['link_content']; ?>" class="nav-link" target="_blank"><?php echo $ql['link_name']; ?></a></li>
+                                <li class="nav-item"><a href="<?php if($ql['link_type'] == 'File'){ echo "/links/"; } echo $ql['link_content']; ?>" class="nav-link" target="_blank" rel="noreferrer"><?php echo $ql['link_name']; ?></a></li>
                             <?php endforeach; ?>
                         </ul>
                     </div>
