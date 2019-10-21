@@ -5,8 +5,6 @@ High Priority:
 - Add content to Tech Help Page
 
 Normal Priority:
-- make drag n’ drop of photos working
-- Add file upload to tinymce
 - Add grid columns to tinymce
 
 Low Priority:
