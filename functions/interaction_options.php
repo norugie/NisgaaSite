@@ -346,7 +346,7 @@
                     $errors = 1;
                 }
 
-                if($file_size > 10485760){ // Limit image upload to 10 MB
+                if($file_size > 20971520){ // Limit image upload to 20 MB
                     $errors = 2;
                 }
                 
@@ -391,7 +391,7 @@
                         $errors = 1;
                     }
 
-                    if($file_size > 10485760){ // Limit image upload to 10 MB
+                    if($file_size > 20971520){ // Limit image upload to 20 MB
                         $errors = 2;
                     }
                     
