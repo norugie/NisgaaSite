@@ -69,6 +69,7 @@
                                     <div class="row clearfix">
                                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                             <label for="edit_boe_photo">Trustee Photo</label>
+                                            <p class="font-12"><i><b>Note:</b> The max file size you can upload is 10 MB</i></p>
                                             <div class="form-group">
                                                 <div class="form-line">
                                                     <input type="file" class="form-control" id="edit_boe_photo" name="boe_photo">
@@ -163,6 +164,7 @@
                             <div class="row clearfix">
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                     <label for="edit_boe_image">Group Image *</label>
+                                    <p class="font-12"><i><b>Note:</b> The max file size you can upload is 10 MB</i></p>
                                     <div class="form-group">
                                         <div class="form-line">
                                             <input type="file" name="boe_group_image" id="imgInp" accept="image/x-png, image/jpeg" required>

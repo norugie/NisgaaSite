@@ -65,7 +65,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="row clearfix">
+                                    <!-- <div class="row clearfix">
                                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                             <label for="edit_contact_photo">Contact Photo</label>
                                             <div class="form-group">
@@ -74,7 +74,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> -->
                                     <div class="row clearfix">
                                         <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12" style="float: right;">
                                             <button type="submit" class="btn bg-blue-grey btn-block btn-lg waves-effect">SAVE</button>  
