@@ -13,6 +13,7 @@ $(function () {
         toolbar1: 'undo redo | styleselect | fontselect | fontsizeselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image',
         toolbar2: 'print preview | forecolor backcolor emoticons',
         relative_urls: false,
+        remove_script_host: false,
         document_base_url: 'https://www.nisgaa.bc.ca', // Change origin URL once site is online
         external_filemanager_path:"/filemanager/",
         filemanager_title:"Responsive Filemanager" ,
