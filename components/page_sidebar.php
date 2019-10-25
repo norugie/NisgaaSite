@@ -122,6 +122,12 @@
                             <span>Board Meeting Packages</span>
                         </a>
                     </li>
+                    <li id="packages">
+                        <a href="district.php?tab=sd&page=minutes">
+                            <i class="material-icons">access_time</i>
+                            <span>Board Meeting Minutes</span>
+                        </a>
+                    </li>
                     <li id="policy">
                         <a href="district.php?tab=sd&page=policy">
                             <i class="material-icons">account_balance</i>
