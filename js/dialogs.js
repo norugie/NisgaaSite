@@ -37,6 +37,10 @@ function alertDesign(e) {
         showDisablePackageConfirm(id, name);
     } else if (type === 'reopen-package'){
         showReactivatePackageConfirm(id, name);
+    } else if (type === 'delete-minutes'){
+        showDisableMinutesConfirm(id, name);
+    } else if (type === 'reopen-minutes'){
+        showReactivateMinutesConfirm(id, name);
     } else if (type === 'delete-page'){
         var subtab = $(e).data('subtab');
         var page = $(e).data('page');
@@ -346,8 +350,8 @@ function showReactivateFormConfirm(id, name) {
 //Warning for disabling package
 function showDisablePackageConfirm(id, name) {
     swal({
-        title: "Are you sure you want to disable this Board Meeting package?",
-        text: "You will be able to reactivate this Board Meeting package once archived",
+        title: "Are you sure you want to disable this Board Meeting Package?",
+        text: "You will be able to reactivate this Board Meeting Package once archived",
         type: "warning",
         showCancelButton: true,
         confirmButtonColor: "#F44336",
@@ -366,7 +370,7 @@ function showDisablePackageConfirm(id, name) {
 //Warning for reactivating package
 function showReactivatePackageConfirm(id, name) {
     swal({
-        title: "Are you sure you want to reactivate this Board Meeting package?",
+        title: "Are you sure you want to reactivate this Board Meeting Package?",
         type: "warning",
         showCancelButton: true,
         confirmButtonColor: "#00BCD4",
@@ -377,6 +381,45 @@ function showReactivatePackageConfirm(id, name) {
     }, function (isConfirm) {
         if (isConfirm) {
             window.location = "../functions/district.php?district=true&packageReactivate=true&id=" + id + "&packageName=" + name;
+        }
+
+    });
+}
+
+//Warning for disabling minutes
+function showDisableMinutesConfirm(id, name) {
+    swal({
+        title: "Are you sure you want to disable this Board Meeting Minutes?",
+        text: "You will be able to reactivate this Board Meeting Minutes once archived",
+        type: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#F44336",
+        confirmButtonText: "CONFIRM",
+        cancelButtonText: "CANCEL",
+        closeOnConfirm: false,
+        closeOnCancel: true
+    }, function (isConfirm) {
+        if (isConfirm) {
+            window.location = "../functions/district.php?district=true&minutesDisable=true&id=" + id + "&minutesName=" + name;
+        }
+
+    });
+}
+
+//Warning for reactivating minutes
+function showReactivateMinutesConfirm(id, name) {
+    swal({
+        title: "Are you sure you want to reactivate this Board Meeting Minutes?",
+        type: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#00BCD4",
+        confirmButtonText: "CONFIRM",
+        cancelButtonText: "CANCEL",
+        closeOnConfirm: false,
+        closeOnCancel: true
+    }, function (isConfirm) {
+        if (isConfirm) {
+            window.location = "../functions/district.php?district=true&minutesReactivate=true&id=" + id + "&minutesName=" + name;
         }
 
     });
