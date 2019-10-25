@@ -86,22 +86,6 @@
 
         }
 
-		public function usernameList($database){
-			$array = array();
-			$sql = "SELECT username FROM users";
-			$query = mysqli_query($database->con, $sql);
-			if(!$query){
-				global $error;
-				echo $error->errorMessage(mysqli_error($database->con));
-			} else {
-				while($row = mysqli_fetch_array($query)){
-					$array[] = $row['username'];
-				}
-            }
-            
-			return $array;			
-		}
-
 		/*********************************************************************************************/
 		/*************************  District Functionalities -- Employment  **************************/
 		/*********************************************************************************************/
