@@ -185,14 +185,6 @@ function editPackage(packageInfo) {
 
     pack = $(packageInfo).data("values");
 
-    // Package type: Link
-    $("#edit_package_id_link").attr("value", pack['id']);
-    $("#edit_package_id_name_link").attr("value", pack['link_id']);
-    $("#edit_package_id_type_link").attr("value", pack['link_type']);
-    $("#edit_package_title_link").attr("value", pack['link_name']);
-    $("#edit_package_desc_link").val(pack['link_desc']);
-    $("#edit_package_content_link").attr("value", pack['link_content']);
-
     // Package type: File
     $("#edit_package_id_file").attr("value", pack['id']);
     $("#edit_package_id_name_file").attr("value", pack['link_id']);

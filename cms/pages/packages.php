@@ -56,7 +56,7 @@
                                     <td><?php echo $link['link_type']; ?></td>
                                     <td><?php echo $link['link_desc']; ?></td>
                                     <?php if($_SESSION['type'] != 3){ ?>
-                                        <td><center><button type="button" class="btn bg-green waves-effect" data-toggle="modal" data-target="#edit-package-<?php if($link['link_type'] == 'Link'){?>link<?php } else { ?>file<?php } ?>-modal" 
+                                        <td><center><button type="button" class="btn bg-green waves-effect" data-toggle="modal" data-target="#edit-package-file-modal" 
                                         data-values='{
                                             "id":           <?php echo json_encode($link['id']); ?>,
                                             "link_id":      <?php echo json_encode($link['link_id']); ?>,
