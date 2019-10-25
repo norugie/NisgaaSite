@@ -54,6 +54,7 @@
                     <li class="nav-item"><a href="/policies" class="nav-link">Board of Education - Policies</a></li>
                     <li class="nav-item"><a href="/process_directives" class="nav-link">Board of Education - Process and Directives</a></li>
                     <li class="nav-item"><a href="/packages" class="nav-link">Board Meeting Packages</a></li>
+                    <li class="nav-item"><a href="/minutes" class="nav-link">Board Meeting Minutes</a></li>
                     <li class="nav-item"><a href="/plans" class="nav-link">District Strategic Plans</a></li>
                     </ul>
                     <h5>Miscellaneous</h5>

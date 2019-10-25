@@ -36,7 +36,7 @@
                     AND links.school = '$school'
 					AND links.status = 'Active'";
 
-			if($tag == 'Board Meeting Packages'){
+			if($tag == 'Board Meeting Packages' || $tag == 'Board Meeting Minutes'){
 				$sql = $sqlquery . " ORDER BY links.id DESC";
 			} else if($tag == 'BOE PAD') {
 				$sql = $sqlquery . " ORDER BY links.id DESC";

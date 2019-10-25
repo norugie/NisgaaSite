@@ -28,6 +28,8 @@ if($page_name == 'news'){
     $breadcrumb = "District News";
 } else if($page_name == 'packages'){
     $breadcrumb = "Board Meeting Packages";
+} else if($page_name == 'minutes'){
+    $breadcrumb = "Board Meeting Minutes";
 } else if($page_name == 'boe'){
     $breadcrumb = "Board of Education";
 } else if($page_name == 'about'){
