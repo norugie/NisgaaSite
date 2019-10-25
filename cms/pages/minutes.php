@@ -30,7 +30,6 @@
                         <thead>
                             <tr>
                                 <th>Minutes Title</th>
-                                <th>Minutes Type</th>
                                 <th>Minutes Description</th>
                                 <?php if($_SESSION['type'] != 3){ ?>
                                 <th>Modify</th>
@@ -41,7 +40,6 @@
                         <tfoot>
                             <tr>
                                 <th>Minutes Title</th>
-                                <th>Minutes Type</th>
                                 <th>Minutes Description</th>
                                 <?php if($_SESSION['type'] != 3){ ?>
                                 <th>Modify</th>
@@ -53,10 +51,9 @@
                             <?php foreach($links as $link): ?>
                                 <tr>
                                     <td><a href="<?php if($link['link_type'] == 'File'){ echo "../links/"; } echo $link['link_content']; ?>" <?php if($link['link_type'] == 'Link'){?>target="_blank"<?php } else { ?> download <?php } ?>><?php echo $link['link_name']; ?></a></td>
-                                    <td><?php echo $link['link_type']; ?></td>
                                     <td><?php echo $link['link_desc']; ?></td>
                                     <?php if($_SESSION['type'] != 3){ ?>
-                                        <td><center><button type="button" class="btn bg-green waves-effect" data-toggle="modal" data-target="#edit-minutes-<?php if($link['link_type'] == 'Link'){?>link<?php } else { ?>file<?php } ?>-modal" 
+                                        <td><center><button type="button" class="btn bg-green waves-effect" data-toggle="modal" data-target="#edit-minutes-file-modal" 
                                         data-values='{
                                             "id":           <?php echo json_encode($link['id']); ?>,
                                             "link_id":      <?php echo json_encode($link['link_id']); ?>,
@@ -66,7 +63,7 @@
                                             "link_desc":    <?php echo json_encode(str_replace("'", "&apos;", $link['link_desc'])); ?>,
                                             "link_content": <?php echo json_encode($link['link_content']); ?>
                                         }' 
-                                        onclick="editPackage(this);" <?php if($link['status'] == 'Inactive') echo "disabled"; ?>><i class="material-icons">mode_edit</i><span>MODIFY</span></button></center></td> 
+                                        onclick="editMinutes(this);" <?php if($link['status'] == 'Inactive') echo "disabled"; ?>><i class="material-icons">mode_edit</i><span>MODIFY</span></button></center></td> 
                                         <?php if($link['status'] == 'Active'){ ?>
                                             <td><center><button type="button" class="btn bg-red waves-effect" data-type="delete-minutes" data-id="<?php echo $link['id']; ?>" data-name="<?php echo str_replace(' ', '%20', $link['link_name']); ?>" onclick="alertDesign(this);"><i class="material-icons">clear</i><span>DELETE</span></button></center></td>
                                         <?php } else { ?>

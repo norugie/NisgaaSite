@@ -423,10 +423,88 @@
 			    header("location:../cms/district.php?tab=sd&page=packages&error=true");
 			} else {
 				global $log;
-				$info = "Modified form: " . $link_name;
+				$info = "Modified Board Meeting Package: " . $link_name;
 				$log->logInput($database, $info);
 
 				header("location:../cms/district.php?tab=sd&page=packages&editPackage=true");
+			}
+		}
+
+		/*********************************************************************************************/
+		/***************************  District Functionalities -- Minutes  ***************************/
+        /*********************************************************************************************/
+
+		public function disableMinutes($database, $id, $title){
+			$sql = "UPDATE links SET 
+						   status = 'Inactive'
+					WHERE id = '$id'";
+			$query = mysqli_query($database->con, $sql);
+			if(!$query){
+				$_SESSION['error_message'] = mysqli_error($database->con);
+			    header("location:../cms/district.php?tab=sd&page=minutes&error=true");
+			} else {
+				global $log;
+				$info = "Disabled Board Meeting Minutes: " . $title;
+				$log->logInput($database, $info);
+
+				header("location:../cms/district.php?tab=sd&page=minutes&minutesDisabled=true");
+			}
+		}
+
+		public function reactivateMinutes($database, $id, $title){
+			$sql = "UPDATE links SET 
+						   status = 'Active'
+					WHERE id = '$id'";
+			$query = mysqli_query($database->con, $sql);
+			if(!$query){
+				$_SESSION['error_message'] = mysqli_error($database->con);
+			    header("location:../cms/district.php?tab=sd&page=minutes&error=true");
+			} else {
+				global $log;
+				$info = "Reactivated Board Meeting Minutes: " . $title;
+				$log->logInput($database, $info);
+
+				header("location:../cms/district.php?tab=sd&page=minutes&minutesReactivated=true");
+			}
+		}
+
+		public function addMinutes($database, $link_name, $link_desc, $link_content, $link_type, $link_tag, $link_thumbnail){
+			$link_id = 'LNK' . rand(1111111,9999999);
+			$user = $_SESSION['id'];
+			$school = 2;
+
+			$sql = "INSERT INTO links
+					VALUES (null, '$link_id', '$link_name', '$link_type', '$link_tag', '$link_desc', '$link_content', '$link_thumbnail', '$user', '$school', 'Active')";
+			$query = mysqli_query($database->con, $sql);
+			if(!$query){
+				$_SESSION['error_message'] = mysqli_error($database->con);
+			    header("location:../cms/district.php?tab=sd&page=minutes&error=true");
+			} else {
+				global $log;
+				$info = "Created a new Board Meeting Minutes: " . $link_name;
+				$log->logInput($database, $info);
+
+				header("location:../cms/district.php?tab=sd&page=minutes&addMinutes=true");
+			}			
+		}
+
+		public function editMinutes($database, $id, $link_id, $link_name, $link_desc, $link_content, $link_tag){
+			$sql = "UPDATE links SET 
+						   link_name = '$link_name',
+						   link_desc = '$link_desc',
+						   link_tag  = '$link_tag',
+						   link_content = '$link_content'
+					WHERE id = '$id'";
+			$query = mysqli_query($database->con, $sql);
+			if(!$query){
+				$_SESSION['error_message'] = mysqli_error($database->con);
+			    header("location:../cms/district.php?tab=sd&page=minutes&error=true");
+			} else {
+				global $log;
+				$info = "Modified Board Meeting Minutes: " . $link_name;
+				$log->logInput($database, $info);
+
+				header("location:../cms/district.php?tab=sd&page=minutes&editMinutes=true");
 			}
 		}
 

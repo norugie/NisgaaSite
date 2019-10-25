@@ -203,6 +203,20 @@ function editPackage(packageInfo) {
 
 }
 
+function editMinutes(minutesInfo) {
+
+    min = $(minutesInfo).data("values");
+
+    // Minutes type: File
+    $("#edit_minutes_id_file").attr("value", min['id']);
+    $("#edit_minutes_id_name_file").attr("value", min['link_id']);
+    $("#edit_minutes_id_type_file").attr("value", min['link_type']);
+    $("#edit_minutes_id_file_file").attr("value", min['link_content']);
+    $("#edit_minutes_title_file").attr("value", min['link_name']);
+    $("#edit_minutes_desc_file").val(min['link_desc']);
+
+}
+
 function editPageFile(pageFileInfo){
     page = $(pageFileInfo).data("values");
 

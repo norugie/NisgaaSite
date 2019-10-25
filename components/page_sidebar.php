@@ -122,7 +122,7 @@
                             <span>Board Meeting Packages</span>
                         </a>
                     </li>
-                    <li id="packages">
+                    <li id="minutes">
                         <a href="district.php?tab=sd&page=minutes">
                             <i class="material-icons">access_time</i>
                             <span>Board Meeting Minutes</span>
