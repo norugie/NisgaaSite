@@ -17,6 +17,8 @@
     $boefiles = $site->boardFormsSearchResults($database, $searchKeyword);
     $policies = $site->policiesSearchResults($database, $searchKeyword);
     $directives = $site->directivesSearchResults($database, $searchKeyword);
+    $help = $site->techHelpSearchResults($database, $searchKeyword);
+    $minutes = $site->minutesSearchResults($database, $searchKeyword);
     
 ?>
 <div class="col-md-9">
@@ -87,6 +89,34 @@
             </div>
             <div class="col-md-6">
                 <div class="heading">
+                    <h2>Tech Help</h2>
+                </div>
+                <?php if(count($help) < 1){ ?><p class="lead">No tech help files found for keyword: <?php echo $keyword; ?></p><?php } ?>
+                <ul>
+                    <?php foreach($help as $th): ?>
+                        <li class="lead mb-0"><a href="<?php if($th['link_type'] == 'File'){ echo "/links/"; } echo $th['link_content']; ?>" target="_blank"><?php echo $th['link_name']; ?></a></li>
+                    <?php endforeach; ?>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- MINUTES AND PACKAGES RESULTS CONTENT -->
+    <section>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="heading">
+                    <h2>Board Meeting Minutes</h2>
+                </div>
+                <?php if(count($minutes) < 1){ ?><p class="lead">No board meeting minutes found for keyword: <?php echo $keyword; ?></p><?php } ?>
+                <ul>
+                    <?php foreach($minutes as $ms): ?>
+                        <li class="lead mb-0"><a href="<?php if($ms['link_type'] == 'File'){ echo "/links/"; } echo $ms['link_content']; ?>" target="_blank"><?php echo $ms['link_name']; ?></a></li>
+                    <?php endforeach; ?>
+                </ul>
+            </div>
+            <div class="col-md-6">
+                <div class="heading">
                     <h2>Board Meeting Packages</h2>
                 </div>
                 <?php if(count($boefiles) < 1){ ?><p class="lead">No board meeting packages found for keyword: <?php echo $keyword; ?></p><?php } ?>
@@ -117,7 +147,7 @@
                 <div class="heading">
                     <h2>Process and Directive Files</h2>
                 </div>
-                <?php if(count($directives) < 1){ ?><p class="lead">No board meeting packages found for keyword: <?php echo $keyword; ?></p><?php } ?>
+                <?php if(count($directives) < 1){ ?><p class="lead">No process and directive files found for keyword: <?php echo $keyword; ?></p><?php } ?>
                 <ul>
                     <?php foreach($directives as $directive): ?>
                         <li class="lead mb-0"><a href="<?php if($directive['link_type'] == 'File'){ echo "/links/"; } echo $directive['link_content']; ?>" target="_blank"><?php echo $directive['link_name']; ?></a></li>

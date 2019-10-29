@@ -303,6 +303,62 @@
 			return $array;
 		}
 
+		public function techHelpSearchResults($database, $keyword){
+			$array = array();
+	
+			$sql = "SELECT links.link_name,
+							links.link_type,
+							links.link_content,
+							links.link_thumbnail
+					FROM links
+					LEFT JOIN schools
+					ON (links.school = schools.id)
+					WHERE links.school = '2'
+					AND links.status = 'Active'
+					AND links.link_name LIKE '%$keyword%'
+					AND links.link_tag LIKE '%Help%'
+					ORDER BY links.id DESC";
+			$query = mysqli_query($database->con, $sql);
+			if (!$query) {
+				 //echo "<script>window.open('https://www.nisgaa.bc.ca/error', '_parent');</script>";
+				return ("Error description: " . mysqli_error($database->con));
+			} else {
+				while($row = mysqli_fetch_array($query)){
+					$array[] = $row;
+				}
+			}
+			
+			return $array;
+		}
+
+		public function minutesSearchResults($database, $keyword){
+			$array = array();
+	
+			$sql = "SELECT links.link_name,
+							links.link_type,
+							links.link_content,
+							links.link_thumbnail
+					FROM links
+					LEFT JOIN schools
+					ON (links.school = schools.id)
+					WHERE links.school = '2'
+					AND links.status = 'Active'
+					AND links.link_name LIKE '%$keyword%'
+					AND links.link_tag = 'Board Meeting Minutes'
+					ORDER BY links.id DESC";
+			$query = mysqli_query($database->con, $sql);
+			if (!$query) {
+				 //echo "<script>window.open('https://www.nisgaa.bc.ca/error', '_parent');</script>";
+				return ("Error description: " . mysqli_error($database->con));
+			} else {
+				while($row = mysqli_fetch_array($query)){
+					$array[] = $row;
+				}
+			}
+			
+			return $array;
+		}
+
 		/*********************************************************************************************/
 		/***************************  Site Functionalities -- Home  **********************************/
         /*********************************************************************************************/
