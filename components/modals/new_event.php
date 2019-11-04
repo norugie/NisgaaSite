@@ -23,7 +23,7 @@
                                     <label for="event_shortname">Event Shortname *</label>
                                     <div class="form-group">
                                         <div class="form-line">
-                                            <input type="text" class="form-control" id="event_shortname" name="event_shortname" onkeypress="return validateEvent(event);" required>
+                                            <input type="text" class="form-control" id="event_shortname" name="event_shortname" maxlength="25" onkeypress="return validateEvent(event);" required>
                                         </div>
                                     </div>
                                 </div>

@@ -95,13 +95,10 @@
                                         $data_time = explode(',', $e['GROUP_CONCAT(event_days.event_date_time)']);
                                         $data_end = explode(',', $e['GROUP_CONCAT(event_days.event_date_day_end)']); 
 
-
                                         foreach($data_start as $key => $start):
-
-                                        echo date_format(date_create($start), 'd M Y');
-                                        if($data_end[$key] != $start){ echo ' to ' . date_format(date_create($data_end[$key]), 'd M Y'); } 
-                                        echo ' at ' . date_format(date_create($data_time[$key]), 'h:i A') . '<br>';
-                                                            
+                                            echo date_format(date_create($start), 'd M Y');
+                                            if($data_end[$key] != $start){ echo ' to ' . date_format(date_create($data_end[$key]), 'd M Y'); } 
+                                            echo ' at ' . date_format(date_create($data_time[$key]), 'h:i A') . '<br>';                    
                                         endforeach; 
                                     ?>
                                 </p>
