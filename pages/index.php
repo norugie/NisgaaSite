@@ -86,9 +86,25 @@
                     <!-- Displays all the upcoming and active events -->
                     <?php if(count($events) < 1){ ?><li class="d-flex align-items-center"><div class="text"><h5 class="mb-0">No upcoming events available</h5></div></li><?php } ?>
                     <?php foreach($events as $e): ?>
-                        <li class="d-flex align-items-center">
+                        <li class="d-flex align-items-center mb-0">
                             <div class="text">
-                                <h5 class="mb-0"> <a href="/news/read/<?php echo preg_replace('/[a-zA-Z]/', '', $e['post_id']); ?>"><?php echo $e['event_name']; ?></a></h5>
+                                <h5 class="mb-0"><a href="/news/read/<?php echo preg_replace('/[a-zA-Z]/', '', $e['post_id']); ?>"><?php echo $e['event_name']; ?></a></h5>
+                                <p style="font-size: 13px!important;">
+                                    <?php 
+                                        $data_start = explode(',', $e['GROUP_CONCAT(event_days.event_date_day_start)']); 
+                                        $data_time = explode(',', $e['GROUP_CONCAT(event_days.event_date_time)']);
+                                        $data_end = explode(',', $e['GROUP_CONCAT(event_days.event_date_day_end)']); 
+
+
+                                        foreach($data_start as $key => $start):
+
+                                        echo date_format(date_create($start), 'd M Y');
+                                        if($data_end[$key] != $start){ echo ' to ' . date_format(date_create($data_end[$key]), 'd M Y'); } 
+                                        echo ' at ' . date_format(date_create($data_time[$key]), 'h:i A') . '<br>';
+                                                            
+                                        endforeach; 
+                                    ?>
+                                </p>
                             </div>
                         </li>
                     <?php endforeach; ?>
