@@ -1,11 +1,19 @@
 <?php
+    session_start();
 
     // Allowed origins to upload images. Add necessary origins ones site is in production
     $urlbase = "https://www.nisgaa.bc.ca";
     $accepted_origins = array($urlbase); // Change origin URL once site is online
 
     // Images upload path
-    $imageFolder = "../images/posts/";
+    $imageFolder;
+    $imageurlbase;
+
+    if($_SESSION['school'] == '3') {$imageFolder = "../../ness/images/posts/"; $imageurlbase = "https://dev-ness.nisgaa.bc.ca";}
+    else if($_SESSION['school'] == '4') {$imageFolder = "../../aames/images/posts/"; $imageurlbase = "https://dev-aames.nisgaa.bc.ca";}
+    else if($_SESSION['school'] == '5') {$imageFolder = "../../ges/images/posts/"; $imageurlbase = "https://dev-ges.nisgaa.bc.ca";}
+    else if($_SESSION['school'] == '6') {$imageFolder = "../../nbes/images/posts/"; $imageurlbase = "https://dev-nbes.nisgaa.bc.ca";}
+    else {$imageFolder = "../images/posts/";  $imageurlbase = "https://www.nisgaa.bc.ca";}
 
     reset($_FILES);
     $temp = current($_FILES);
@@ -34,7 +42,7 @@
     
         // Accept upload if there was no origin, or if it is an accepted origin
         $filetowrite = $imageFolder . $temp['name'];
-        $imageURL = $urlbase . "/images/posts/" . $temp['name'];
+        $imageURL = $imageurlbase . "/images/posts/" . $temp['name'];
         move_uploaded_file($temp['tmp_name'], $filetowrite);
     
         // Respond to the successful upload with JSON.

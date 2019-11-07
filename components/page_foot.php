@@ -37,3 +37,9 @@
 <script src="../js/edit.js"></script>
 <script src="../js/custom.js"></script>
 
+<!-- TinyMCE Image Link Modification Script -->
+<script>
+    var schoolIndicator = "<?php echo $_SESSION['school']; ?>";
+    var schoolLink;
+</script>
+
