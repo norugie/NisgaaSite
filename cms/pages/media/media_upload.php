@@ -28,6 +28,7 @@
                     <input name="file" type="file" multiple />
                 </div>
             </form>
+            <br>
             <form action="../functions/post.php?post=true&addMediaImages=true" method="POST">
                 <input type="text" id="image_media_id" name="image_media_id" value="<?php echo $_GET['media_id']; ?>" required hidden>
                 <input type="text" id="image_media_name" name="image_media_name" value="" required hidden>
@@ -51,7 +52,7 @@
         Dropzone.options.mediaUpload = {
             paramName: "file",
             acceptedFiles: "image/*",
-            maxFileSize: 10, // MB
+            maxFileSize: 20, // MB
             addRemoveLinks: true,
             dictDefaultMessage: "Drop files here to upload.", // Default: Drop files here to upload
             dictFallbackMessage: "Your browser does not support drag'n'drop file uploads.", // Default: Your browser does not support drag'n'drop file uploads.
