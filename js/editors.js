@@ -14,7 +14,7 @@ $(function () {
         toolbar2: 'print preview | forecolor backcolor emoticons',
         relative_urls: false,
         remove_script_host: false,
-        document_base_url: 'https://www.nisgaa.bc.ca', // Change origin URL once site is online
+        document_base_url: schoolLink, // Change origin URL once site is online
         external_filemanager_path:"/filemanager/",
         filemanager_title:"Responsive Filemanager" ,
         external_plugins: { "filemanager" : "/filemanager/plugin.min.js"},
