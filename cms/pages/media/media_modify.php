@@ -45,10 +45,10 @@
                     </div>
                     <div class="row clearfix">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                            <label for="edit_media_post_content" style="margin-bottom:10px;">Media Post Description *</label><br>
+                            <label for="edit_media_post_content" style="margin-bottom:10px;">Media Post Description</label><br>
                             <div class="form-group">
                                 <div class="form-line">
-                                    <textarea rows="2" class="form-control no-resize" id="edit_media_post_content" name="edit_media_post_content" required><?php echo $media_info['post_text']; ?></textarea>
+                                    <textarea rows="2" class="form-control no-resize" id="edit_media_post_content" name="edit_media_post_content"><?php echo $media_info['post_text']; ?></textarea>
                                 </div>
                             </div>
                         </div>

@@ -387,9 +387,17 @@
             $id = mysqli_real_escape_string($database->con, $_POST['edit_media_post_id']);
             $media_id = mysqli_real_escape_string($database->con, $_POST['edit_media_post_id_name']);
             $media_title = mysqli_real_escape_string($database->con, $_POST['edit_media_post_title']);
-            $media_content = mysqli_real_escape_string($database->con, $_POST['edit_media_post_content']);
-            $media_desc = mysqli_real_escape_string($database->con, $_POST['edit_media_post_content']);
             $media_thumbnail;
+            $media_content;
+            $media_desc;
+
+            if(isset($_POST['edit_media_post_content']) && !empty($_POST['edit_media_post_content'])){
+                $media_content = mysqli_real_escape_string($database->con, $_POST['edit_media_post_content']);
+                $media_desc = mysqli_real_escape_string($database->con, $_POST['edit_media_post_content']);
+            } else {
+                $media_desc = "No description given.";
+                $media_content = "";
+            }
 
             if(!file_exists($_FILES['post_thumbnail']['tmp_name']) || !is_uploaded_file($_FILES['post_thumbnail']['tmp_name'])){
 
@@ -470,13 +478,21 @@
         if(isset($_GET['addMedia'])){
 
             $post_title = mysqli_real_escape_string($database->con, $_POST['media_title']);
-            $post_content = mysqli_real_escape_string($database->con, $_POST['media_content']);
-            $post_desc = mysqli_real_escape_string($database->con, $_POST['media_content']);
             $post_categories = mysqli_real_escape_string($database->con, $_POST['media_categories_id']);
             $sm_opt = mysqli_real_escape_string($database->con, $_POST['media_sm_autopost']);
             $ssd_opt = mysqli_real_escape_string($database->con, $_POST['media_ssd_autopost']);
             $post_thumbnail;
             $post_id;
+            $post_content;
+            $post_desc;
+
+            if(isset($_POST['media_content']) && !empty($_POST['media_content'])){
+                $post_content = mysqli_real_escape_string($database->con, $_POST['media_content']);
+                $post_desc = mysqli_real_escape_string($database->con, $_POST['media_content']);
+            } else {
+                $post_desc = "No description given.";
+                $post_content = "";
+            }
 
             if(!file_exists($_FILES['post_thumbnail']['tmp_name']) || !is_uploaded_file($_FILES['post_thumbnail']['tmp_name'])){
 

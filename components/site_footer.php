@@ -37,7 +37,7 @@
     <div class="copyrights">
         <div class="row" style="padding-left: 25px; padding-right: 25px;">
             <div class="col-lg-4 text-center-md">
-                <p>&copy; 2018-2019. SD92 (Nisga'a) | <a href="/privacy">Privacy Notice</a></p>
+                <p>&copy; 2019. SD92 (Nisga'a) | <a href="/privacy">Privacy Notice</a></p>
             </div>
             <div class="col-lg-8 text-right text-center-md">
                 <p>Template design by <a href="https://bootstrapious.com/free-templates">Bootstrapious Templates </a></p>

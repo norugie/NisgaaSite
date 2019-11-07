@@ -133,7 +133,7 @@
                         <label for="media_content" style="margin-bottom:10px;">Media Post Description</label><br>
                         <div class="form-group">
                             <div class="form-line">
-                                <textarea rows="2" class="form-control no-resize" id="media_content" name="media_content" required></textarea>
+                                <textarea rows="2" class="form-control no-resize" id="media_content" name="media_content"></textarea>
                             </div>
                         </div>
                     </div>
