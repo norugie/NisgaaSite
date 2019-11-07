@@ -1,11 +1,18 @@
 <?php
+    session_start();
 
     // Allowed origins to upload images. Add necessary origins ones site is in production
     $urlbase = "https://www.nisgaa.bc.ca";
     $accepted_origins = array($urlbase); // Change origin URL once site is online
 
     // Images upload path
-    $imageFolder = "../images/posts/media/";
+    $imageFolder;
+
+    if($_SESSION['school'] == '3') {$imageFolder = "../../ness/images/posts/media/";}
+    else if($_SESSION['school'] == '4') {$imageFolder = "../../aames/images/posts/media/";}
+    else if($_SESSION['school'] == '5') {$imageFolder = "../../ges/images/posts/media/";}
+    else if($_SESSION['school'] == '6') {$imageFolder = "../../nbes/images/posts/media/";}
+    else {$imageFolder = "../images/posts/media/";}
 
     reset($_FILES);
     $temp = current($_FILES);
