@@ -53,6 +53,14 @@
             } else {
 
                 if(isset($_FILES['post_thumbnail'])){
+                    $imageFolder;
+                
+                    if($_SESSION['school'] == '3') {$imageFolder = "../../ness/images/thumbnails/";}
+                    else if($_SESSION['school'] == '4') {$imageFolder = "../../aames/images/thumbnails/";}
+                    else if($_SESSION['school'] == '5') {$imageFolder = "../../ges/images/thumbnails/";}
+                    else if($_SESSION['school'] == '6') {$imageFolder = "../../nbes/images/thumbnails/";}
+                    else {$imageFolder = "../images/thumbnails/";}
+
                     $errors = 0;
                     $file_name = $_FILES['post_thumbnail']['name'];
                     $file_size = $_FILES['post_thumbnail']['size'];
@@ -71,7 +79,7 @@
                     }
                     
                     if($errors == 0){
-                        move_uploaded_file($file_tmp, "../images/thumbnails/" . $file_name);
+                        move_uploaded_file($file_tmp, $imageFolder . $file_name);
                         $post_thumbnail = mysqli_real_escape_string($database->con, $file_name);
                     } else {
                         if($error == 1){
@@ -115,6 +123,14 @@
             } else {
 
                 if(isset($_FILES['post_thumbnail'])){
+                    $imageFolder;
+                
+                    if($_SESSION['school'] == '3') {$imageFolder = "../../ness/images/thumbnails/";}
+                    else if($_SESSION['school'] == '4') {$imageFolder = "../../aames/images/thumbnails/";}
+                    else if($_SESSION['school'] == '5') {$imageFolder = "../../ges/images/thumbnails/";}
+                    else if($_SESSION['school'] == '6') {$imageFolder = "../../nbes/images/thumbnails/";}
+                    else {$imageFolder = "../images/thumbnails/";}
+
                     $errors = 0;
                     $new_file_name = "THMB".rand(111111111,999999999);
                     $file_name = $_FILES['post_thumbnail']['name'];
@@ -135,7 +151,7 @@
                     }
                     
                     if($errors == 0){
-                        move_uploaded_file($file_tmp, "../images/thumbnails/" . $new_file_name);
+                        move_uploaded_file($file_tmp, $imageFolder . $new_file_name);
                         $post_thumbnail = mysqli_real_escape_string($database->con, $new_file_name);
                         $post_id = $post->addPost($database, $post_title, $post_content, $post_thumbnail, $post_desc, $sm_opt, $ssd_opt);
                     } else {
