@@ -41,5 +41,12 @@
 <script>
     var schoolIndicator = "<?php echo $_SESSION['school']; ?>";
     var schoolLink;
+
+    if(schoolIndicator === '3') school = "https://dev-ness.nisgaa.bc.ca";
+    else if(schoolIndicator === '4') school = "https://dev-aames.nisgaa.bc.ca";
+    else if(schoolIndicator === '5') school = "https://dev-ges.nisgaa.bc.ca";
+    else if(schoolIndicator === '6') school = "https://dev-nbes.nisgaa.bc.ca";
+    else school = "https://www.nisgaa.bc.ca";
+        
 </script>
 
