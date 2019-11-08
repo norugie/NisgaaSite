@@ -46,7 +46,7 @@
                                     <div class="form-group">
                                         <select class="form-control show-tick" name="edit_link_tag" id="edit_link_tag_file" title="Select link tag" required>
                                             <option value="Quick Links">Quick Links</option>
-                                            <option value="News Files">News Files</option>
+                                            <!-- <option value="News Files">News Files</option> -->
                                             <?php if($_SESSION['school'] != 3 && $_SESSION['school'] != 4 && $_SESSION['school'] != 5 && $_SESSION['school'] != 6){ ?>
                                             <option value="Learning Resources">Learning Resources</option>
                                             <option value="Teacher Resources">Teacher Resources</option>
@@ -133,10 +133,14 @@
                                     <div class="form-group">
                                         <select class="form-control show-tick" name="edit_link_tag" id="edit_link_tag_link" title="Select link tag" required>
                                             <option value="Quick Links">Quick Links</option>
-                                            <option value="Finance">Finance</option>
+                                            <!-- <option value="News Files">News Files</option> -->
+                                            <?php if($_SESSION['school'] != 3 && $_SESSION['school'] != 4 && $_SESSION['school'] != 5 && $_SESSION['school'] != 6){ ?>
                                             <option value="Learning Resources">Learning Resources</option>
                                             <option value="Teacher Resources">Teacher Resources</option>
+                                            <option value="Parent Resources">Parent Resources</option>
+                                            <option value="Student Resources">Student Resources</option>
                                             <option value="General Resources">General Resources</option>
+                                            <?php } ?>
                                         </select>
                                     </div>
                                 </div>

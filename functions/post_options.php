@@ -256,6 +256,14 @@
             } else {
 
                 if(isset($_FILES['edit_link_content'])){
+                    $imageFolder;
+                
+                    if($_SESSION['school'] == '3') {$imageFolder = "../../ness/links/";}
+                    else if($_SESSION['school'] == '4') {$imageFolder = "../../aames/links/";}
+                    else if($_SESSION['school'] == '5') {$imageFolder = "../../ges/links/";}
+                    else if($_SESSION['school'] == '6') {$imageFolder = "../../nbes/links/";}
+                    else {$imageFolder = "../links/";}
+
                     $errors = 0;
                     $file_name = $_FILES['edit_link_content']['name'];
                     $file_size = $_FILES['edit_link_content']['size'];
@@ -268,7 +276,7 @@
                     }
                     
                     if($errors == 0){
-                        move_uploaded_file($file_tmp, "../links/".$file_name);
+                        move_uploaded_file($file_tmp, $imageFolder . $file_name);
                         $link_content = mysqli_real_escape_string($database->con, $file_name);
                         $post->editLink($database, $id, $link_id, $link_name, $link_desc, $link_content, $link_tag);
                     } else {
@@ -301,6 +309,14 @@
             } else {
 
                 if(isset($_FILES['link_content'])){
+                    $imageFolder;
+                
+                    if($_SESSION['school'] == '3') {$imageFolder = "../../ness/links/";}
+                    else if($_SESSION['school'] == '4') {$imageFolder = "../../aames/links/";}
+                    else if($_SESSION['school'] == '5') {$imageFolder = "../../ges/links/";}
+                    else if($_SESSION['school'] == '6') {$imageFolder = "../../nbes/links/";}
+                    else {$imageFolder = "../links/";}
+
                     $errors = 0;
                     $file_name = $_FILES['link_content']['name'];
                     $file_size = $_FILES['link_content']['size'];
@@ -313,7 +329,7 @@
                     }
                     
                     if($errors == 0){
-                        move_uploaded_file($file_tmp, "../links/".$file_name);
+                        move_uploaded_file($file_tmp, $imageFolder . $file_name);
                         $link_content = mysqli_real_escape_string($database->con, $file_name);
                     } else {
                         if($error == 2){
@@ -336,6 +352,14 @@
             } else {
 
                 if(isset($_FILES['link_thumbnail'])){
+                    $imageFolder;
+                
+                    if($_SESSION['school'] == '3') {$imageFolder = "../../ness/images/thumbnails/";}
+                    else if($_SESSION['school'] == '4') {$imageFolder = "../../aames/images/thumbnails/";}
+                    else if($_SESSION['school'] == '5') {$imageFolder = "../../ges/images/thumbnails/";}
+                    else if($_SESSION['school'] == '6') {$imageFolder = "../../nbes/images/thumbnails/";}
+                    else {$imageFolder = "../images/thumbnails/";}
+
                     $errors = 0;
                     $file_name = $_FILES['link_thumbnail']['name'];
                     $file_size = $_FILES['link_thumbnail']['size'];
@@ -354,7 +378,7 @@
                     }
                     
                     if($errors == 0){
-                        move_uploaded_file($file_tmp, "../images/thumbnails/".$file_name);
+                        move_uploaded_file($file_tmp, $imageFolder . $file_name);
                         $link_thumbnail = mysqli_real_escape_string($database->con, $file_name);
                         $post->addLink($database, $link_name, $link_desc, $link_content, $link_type, $link_tag, $link_thumbnail);
                     } else {
@@ -518,7 +542,7 @@
                 $post_content = "";
             }
 
-            if(!file_exists($_FILES['post_thumbnail']['tmp_name']) || !is_uploaded_file($_FILES['post_thumbnail']['tmp_name'])){
+            if(!file_exists($_FILES['media_thumbnail']['tmp_name']) || !is_uploaded_file($_FILES['media_thumbnail']['tmp_name'])){
 
                 $post_thumbnail = "post_thumbnail.jpg";
                 
@@ -526,7 +550,7 @@
 
             } else {
 
-                if(isset($_FILES['post_thumbnail'])){
+                if(isset($_FILES['media_thumbnail'])){
                     $imageFolder;
                 
                     if($_SESSION['school'] == '3') {$imageFolder = "../../ness/images/thumbnails/";}
@@ -536,11 +560,11 @@
                     else {$imageFolder = "../images/thumbnails/";}
 
                     $errors = 0;
-                    $file_name = $_FILES['post_thumbnail']['name'];
-                    $file_size = $_FILES['post_thumbnail']['size'];
-                    $file_tmp = $_FILES['post_thumbnail']['tmp_name'];
-                    $file_type = $_FILES['post_thumbnail']['type'];
-                    $file_ext = strtolower(end(explode('.', $_FILES['post_thumbnail']['name'])));
+                    $file_name = $_FILES['media_thumbnail']['name'];
+                    $file_size = $_FILES['media_thumbnail']['size'];
+                    $file_tmp = $_FILES['media_thumbnail']['tmp_name'];
+                    $file_type = $_FILES['media_thumbnail']['type'];
+                    $file_ext = strtolower(end(explode('.', $_FILES['media_thumbnail']['name'])));
                     
                     $extensions = array("jpeg","jpg","png","gif","svg","bmp");
                 
