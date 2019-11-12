@@ -31,7 +31,16 @@
                             <?php foreach($carousel as $c): ?>
                             <div class="col-sm-12 col-md-5ths">
                                 <div class="thumbnail">
-                                    <img src="../images/carousel/<?php echo $c['carousel_name']; ?>">
+                                    <?php
+                                        $imageFolder;
+                
+                                        if($_SESSION['school'] == '3') {$imageFolder = "https://dev-ness.nisgaa.bc.ca/images/carousel/";}
+                                        else if($_SESSION['school'] == '4') {$imageFolder = "https://dev-aames.nisgaa.bc.ca/images/carousel/";}
+                                        else if($_SESSION['school'] == '5') {$imageFolder = "https://dev-ges.nisgaa.bc.ca/images/carousel/";}
+                                        else if($_SESSION['school'] == '6') {$imageFolder = "https://dev-nbes.nisgaa.bc.ca/images/carousel/";}
+                                        else {$imageFolder = "../images/carousel/";}
+                                    ?>
+                                    <img src="<?php echo $imageFolder . $c['carousel_name']; ?>">
                                     <div class="caption">
                                         <h3>Image Caption</h3>
                                         <p style="color:#000!important;"><?php echo $c['carousel_desc']; ?></p>

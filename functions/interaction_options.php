@@ -292,6 +292,14 @@
             } else {
 
                 if(isset($_FILES['carousel_image'])){
+                    $imageFolder;
+                
+                    if($_SESSION['school'] == '3') {$imageFolder = "../../ness/images/carousel/";}
+                    else if($_SESSION['school'] == '4') {$imageFolder = "../../aames/images/carousel/";}
+                    else if($_SESSION['school'] == '5') {$imageFolder = "../../ges/images/carousel/";}
+                    else if($_SESSION['school'] == '6') {$imageFolder = "../../nbes/images/carousel/";}
+                    else {$imageFolder = "../images/carousel/";}
+
                     $errors = 0;
                     $file_name = $_FILES['carousel_image']['name'];
                     $file_size = $_FILES['carousel_image']['size'];
@@ -310,7 +318,7 @@
                     }
                     
                     if($errors == 0){
-                        move_uploaded_file($file_tmp, "../images/carousel/".$file_name);
+                        move_uploaded_file($file_tmp, $imageFolder.$file_name);
                         $photo = mysqli_real_escape_string($database->con, $file_name);
                     } else {
                         if($error == 1){
@@ -333,6 +341,14 @@
             $caption = mysqli_real_escape_string($database->con, $_POST['carousel_caption']);
 
             if(isset($_FILES['carousel_image'])){
+                $imageFolder;
+                
+                if($_SESSION['school'] == '3') {$imageFolder = "../../ness/images/carousel/";}
+                else if($_SESSION['school'] == '4') {$imageFolder = "../../aames/images/carousel/";}
+                else if($_SESSION['school'] == '5') {$imageFolder = "../../ges/images/carousel/";}
+                else if($_SESSION['school'] == '6') {$imageFolder = "../../nbes/images/carousel/";}
+                else {$imageFolder = "../images/carousel/";}
+
                 $errors = 0;
                 $file_name = $_FILES['carousel_image']['name'];
                 $file_size = $_FILES['carousel_image']['size'];
@@ -351,7 +367,7 @@
                 }
                 
                 if($errors == 0){
-                    move_uploaded_file($file_tmp, "../images/carousel/".$file_name);
+                    move_uploaded_file($file_tmp, $imageFolder.$file_name);
                     $photo = mysqli_real_escape_string($database->con, $file_name);
                     $interaction->newCarouselImage($database, $photo, $caption);
                 } else {
@@ -378,6 +394,14 @@
                 $caption = mysqli_real_escape_string($database->con, $_POST['carousel_caption_' . $ctr]);
 
                 if(isset($_FILES['carousel_image_' . $ctr]) && !empty($_FILES['carousel_image_' . $ctr]) && isset($_POST['carousel_caption_' . $ctr]) && !empty($_POST['carousel_caption_' . $ctr])){
+                    $imageFolder;
+                
+                    if($_SESSION['school'] == '3') {$imageFolder = "../../ness/images/carousel/";}
+                    else if($_SESSION['school'] == '4') {$imageFolder = "../../aames/images/carousel/";}
+                    else if($_SESSION['school'] == '5') {$imageFolder = "../../ges/images/carousel/";}
+                    else if($_SESSION['school'] == '6') {$imageFolder = "../../nbes/images/carousel/";}
+                    else {$imageFolder = "../images/carousel/";}
+
                     $errors = 0;
                     $file_name = $_FILES['carousel_image_' . $ctr]['name'];
                     $file_size = $_FILES['carousel_image_' . $ctr]['size'];
@@ -396,7 +420,7 @@
                     }
                     
                     if($errors == 0){
-                        move_uploaded_file($file_tmp, "../images/carousel/".$file_name);
+                        move_uploaded_file($file_tmp, $imageFolder.$file_name);
                         $photo = mysqli_real_escape_string($database->con, $file_name);
                         $interaction->newCarouselImageSet($database, $photo, $caption);
                     } else {
