@@ -185,17 +185,13 @@
                     WHERE carousel.status = 'Active'";
 					
 			/*  Content Filter  */
-			if($_SESSION['type'] != 1){
-				$school;
-				if($_SESSION['school'] != 3 && $_SESSION['school'] != 4 && $_SESSION['school'] != 5 && $_SESSION['school'] != 6){
-					$school = 2;
-				} else {
-					$school = $_SESSION['school'];
-				}
-				$sql = $sqlquery . " AND carousel.school = '$school' ORDER BY carousel.id LIMIT 5";
+			$school;
+			if($_SESSION['school'] != 3 && $_SESSION['school'] != 4 && $_SESSION['school'] != 5 && $_SESSION['school'] != 6){
+				$school = 2;
 			} else {
-				$sql = $sqlquery . " ORDER BY carousel.id LIMIT 5";
+				$school = $_SESSION['school'];
 			}
+			$sql = $sqlquery . " AND carousel.school = '$school' ORDER BY carousel.id LIMIT 5";
 			/*  END Content Filter  */
 
 			$query = mysqli_query($database->con, $sql);
