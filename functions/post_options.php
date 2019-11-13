@@ -67,7 +67,8 @@
                     $file_tmp = $_FILES['post_thumbnail']['tmp_name'];
                     $file_type = $_FILES['post_thumbnail']['type'];
                     $file_ext = strtolower(end(explode('.', $_FILES['post_thumbnail']['name'])));
-                    
+                    $new_file_name = "THMB-SD92_".substr(str_shuffle(str_repeat("0123456789abcdefghijklmnopqrstuvwxyz", 10)), 0, 10).".".$file_ext;
+
                     $extensions = array("jpeg","jpg","png");
                 
                     if(in_array($file_ext, $extensions) == false){
@@ -79,8 +80,8 @@
                     }
                     
                     if($errors == 0){
-                        move_uploaded_file($file_tmp, $imageFolder . $file_name);
-                        $post_thumbnail = mysqli_real_escape_string($database->con, $file_name);
+                        move_uploaded_file($file_tmp, $imageFolder . $new_file_name);
+                        $post_thumbnail = mysqli_real_escape_string($database->con, $new_file_name);
                     } else {
                         if($error == 1){
                             $_SESSION['error_message'] = "You tried uploading a file with an invalid file extension. Please make sure that the file's extension is one of the followings: .jpeg, .jpg, .png.";
@@ -132,13 +133,12 @@
                     else {$imageFolder = "../images/thumbnails/";}
 
                     $errors = 0;
-                    $new_file_name = "THMB".rand(111111111,999999999);
                     $file_name = $_FILES['post_thumbnail']['name'];
                     $file_size = $_FILES['post_thumbnail']['size'];
                     $file_tmp = $_FILES['post_thumbnail']['tmp_name'];
                     $file_type = $_FILES['post_thumbnail']['type'];
                     $file_ext = strtolower(end(explode('.', $_FILES['post_thumbnail']['name'])));
-                    $new_file_name = "THMB".rand(111111111,999999999).".".$file_ext;
+                    $new_file_name = "THMB-SD92_".substr(str_shuffle(str_repeat("0123456789abcdefghijklmnopqrstuvwxyz", 10)), 0, 10).".".$file_ext;
                     
                     $extensions = array("jpeg","jpg","png");
                 
@@ -270,14 +270,15 @@
                     $file_tmp = $_FILES['edit_link_content']['tmp_name'];
                     $file_type = $_FILES['edit_link_content']['type'];
                     $file_ext = strtolower(end(explode('.', $_FILES['edit_link_content']['name'])));
-                    
+                    $new_file_name = "LNK-SD92_".substr(str_shuffle(str_repeat("0123456789abcdefghijklmnopqrstuvwxyz", 10)), 0, 10).".".$file_ext;
+
                     if($file_size > 52428800){ // Limit file upload to 50 MB
                         $errors = 2;
                     }
                     
                     if($errors == 0){
-                        move_uploaded_file($file_tmp, $imageFolder . $file_name);
-                        $link_content = mysqli_real_escape_string($database->con, $file_name);
+                        move_uploaded_file($file_tmp, $imageFolder . $new_file_name);
+                        $link_content = mysqli_real_escape_string($database->con, $new_file_name);
                         $post->editLink($database, $id, $link_id, $link_name, $link_desc, $link_content, $link_tag);
                     } else {
                         if($error == 2){
@@ -323,14 +324,15 @@
                     $file_tmp = $_FILES['link_content']['tmp_name'];
                     $file_type = $_FILES['link_content']['type'];
                     $file_ext = strtolower(end(explode('.', $_FILES['link_content']['name'])));
-                    
+                    $new_file_name = "LNK-SD92_".substr(str_shuffle(str_repeat("0123456789abcdefghijklmnopqrstuvwxyz", 10)), 0, 10).".".$file_ext;
+
                     if($file_size > 52428800){ // Limit file upload to 50 MB
                         $errors = 2;
                     }
                     
                     if($errors == 0){
-                        move_uploaded_file($file_tmp, $imageFolder . $file_name);
-                        $link_content = mysqli_real_escape_string($database->con, $file_name);
+                        move_uploaded_file($file_tmp, $imageFolder . $new_file_name);
+                        $link_content = mysqli_real_escape_string($database->con, $new_file_name);
                     } else {
                         if($error == 2){
                             $_SESSION['error_message'] = "You tried uploading a file that exceeded the file size limit. Please make sure that the file size is less than 50 MB.";
@@ -366,7 +368,8 @@
                     $file_tmp = $_FILES['link_thumbnail']['tmp_name'];
                     $file_type = $_FILES['link_thumbnail']['type'];
                     $file_ext = strtolower(end(explode('.', $_FILES['link_thumbnail']['name'])));
-                    
+                    $new_file_name = "THMB-SD92_".substr(str_shuffle(str_repeat("0123456789abcdefghijklmnopqrstuvwxyz", 10)), 0, 10).".".$file_ext;
+
                     $extensions = array("jpeg","jpg","png","gif","svg","bmp");
                 
                     if(in_array($file_ext, $extensions) == false){
@@ -378,8 +381,8 @@
                     }
                     
                     if($errors == 0){
-                        move_uploaded_file($file_tmp, $imageFolder . $file_name);
-                        $link_thumbnail = mysqli_real_escape_string($database->con, $file_name);
+                        move_uploaded_file($file_tmp, $imageFolder . $new_file_name);
+                        $link_thumbnail = mysqli_real_escape_string($database->con, $new_file_name);
                         $post->addLink($database, $link_name, $link_desc, $link_content, $link_type, $link_tag, $link_thumbnail);
                     } else {
                         if($error == 1){
@@ -460,7 +463,8 @@
                     $file_tmp = $_FILES['post_thumbnail']['tmp_name'];
                     $file_type = $_FILES['post_thumbnail']['type'];
                     $file_ext = strtolower(end(explode('.', $_FILES['post_thumbnail']['name'])));
-                    
+                    $new_file_name = "THMB-SD92_".substr(str_shuffle(str_repeat("0123456789abcdefghijklmnopqrstuvwxyz", 10)), 0, 10).".".$file_ext;
+
                     $extensions = array("jpeg","jpg","png");
                 
                     if(in_array($file_ext, $extensions) == false){
@@ -472,8 +476,8 @@
                     }
                     
                     if($errors == 0){
-                        move_uploaded_file($file_tmp, $imageFolder . $file_name);
-                        $media_thumbnail = mysqli_real_escape_string($database->con, $file_name);
+                        move_uploaded_file($file_tmp, $imageFolder . $new_file_name);
+                        $media_thumbnail = mysqli_real_escape_string($database->con, $new_file_name);
                     } else {
                         if($error == 1){
                             $_SESSION['error_message'] = "You tried uploading a file with an invalid file extension. Please make sure that the file's extension is one of the followings: .jpeg, .jpg, .png.";
@@ -565,7 +569,8 @@
                     $file_tmp = $_FILES['media_thumbnail']['tmp_name'];
                     $file_type = $_FILES['media_thumbnail']['type'];
                     $file_ext = strtolower(end(explode('.', $_FILES['media_thumbnail']['name'])));
-                    
+                    $new_file_name = "THMB-SD92_".substr(str_shuffle(str_repeat("0123456789abcdefghijklmnopqrstuvwxyz", 10)), 0, 10).".".$file_ext;
+
                     $extensions = array("jpeg","jpg","png","gif","svg","bmp");
                 
                     if(in_array($file_ext, $extensions) == false){
@@ -577,8 +582,8 @@
                     }
                     
                     if($errors == 0){
-                        move_uploaded_file($file_tmp, $imageFolder . $file_name);
-                        $post_thumbnail = mysqli_real_escape_string($database->con, $file_name);
+                        move_uploaded_file($file_tmp, $imageFolder . $new_file_name);
+                        $post_thumbnail = mysqli_real_escape_string($database->con, $new_file_name);
                         $post_id = $post->addMedia($database, $post_title, $post_content, $post_thumbnail, $post_desc, $sm_opt, $ssd_opt);
                     } else {
                         if($error == 1){
