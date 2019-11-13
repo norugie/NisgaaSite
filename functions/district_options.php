@@ -59,7 +59,8 @@
                 $file_tmp = $_FILES['jobfile']['tmp_name'];
                 $file_type = $_FILES['jobfile']['type'];
                 $file_ext = strtolower(end(explode('.', $_FILES['jobfile']['name'])));
-                
+                $new_file_name = "JOB-SD92_".substr(str_shuffle(str_repeat("0123456789abcdefghijklmnopqrstuvwxyz", 10)), 0, 10).".".$file_ext;
+
                 $extensions = array("doc","docx","pdf");
                 
                 if(in_array($file_ext, $extensions) == false){
@@ -71,8 +72,8 @@
                 }
                 
                 if($errors == 0){
-                    move_uploaded_file($file_tmp, "../jobs/" . $file_name);
-                    $file_name = mysqli_real_escape_string($database->con, $file_name);
+                    move_uploaded_file($file_tmp, "../jobs/" . $new_file_name);
+                    $file_name = mysqli_real_escape_string($database->con, $new_file_name);
                     $district->addJob($database, $id, $title, $jobdesc, $jobtype, $school, $jobopen, $jobclose, $file_name);
                 } else {
                     if($error == 1){
@@ -100,7 +101,8 @@
                 $file_tmp = $_FILES['edit-jobfile']['tmp_name'];
                 $file_type = $_FILES['edit-jobfile']['type'];
                 $file_ext = strtolower(end(explode('.', $_FILES['edit-jobfile']['name'])));
-                
+                $new_file_name = "JOB-SD92_".substr(str_shuffle(str_repeat("0123456789abcdefghijklmnopqrstuvwxyz", 10)), 0, 10).".".$file_ext;
+
                 $extensions = array("doc","docx","pdf");
                 
                 if(in_array($file_ext, $extensions) == false){
@@ -112,8 +114,8 @@
                 }
                 
                 if($errors == 0){
-                    move_uploaded_file($file_tmp, "../jobs/" . $file_name);
-                    $file_name = mysqli_real_escape_string($database->con, $file_name);
+                    move_uploaded_file($file_tmp, "../jobs/" . $new_file_name);
+                    $file_name = mysqli_real_escape_string($database->con, $new_file_name);
                     $district->editJobFile($database, $id, $title, $file_name);
                 } else {
                     if($error == 1){
@@ -203,13 +205,13 @@
 
                 if(isset($_FILES['post_thumbnail'])){
                     $errors = 0;
-                    $new_file_name = "THMB".rand(111111111,999999999);
                     $file_name = $_FILES['post_thumbnail']['name'];
                     $file_size = $_FILES['post_thumbnail']['size'];
                     $file_tmp = $_FILES['post_thumbnail']['tmp_name'];
                     $file_type = $_FILES['post_thumbnail']['type'];
                     $file_ext = strtolower(end(explode('.', $_FILES['post_thumbnail']['name'])));
-                    
+                    $new_file_name = "THMB-SD92_".substr(str_shuffle(str_repeat("0123456789abcdefghijklmnopqrstuvwxyz", 10)), 0, 10).".".$file_ext;
+
                     $extensions = array("jpeg","jpg","png","gif","svg","bmp");
                 
                     if(in_array($file_ext, $extensions) == false){
@@ -343,14 +345,16 @@
                     $file_size = $_FILES['edit_link_content']['size'];
                     $file_tmp = $_FILES['edit_link_content']['tmp_name'];
                     $file_type = $_FILES['edit_link_content']['type'];
-                    
+                    $file_ext = strtolower(end(explode('.', $_FILES['edit_link_content']['name'])));
+                    $new_file_name = "FORM-SD92_".substr(str_shuffle(str_repeat("0123456789abcdefghijklmnopqrstuvwxyz", 10)), 0, 10).".".$file_ext;
+
                     if($file_size > 52428800){ // Limit file upload to 50 MB
                         $errors = 2;
                     }
                     
                     if($errors == 0){
-                        move_uploaded_file($file_tmp, "../links/" . $file_name);
-                        $link_content = mysqli_real_escape_string($database->con, $file_name);
+                        move_uploaded_file($file_tmp, "../links/" . $new_file_name);
+                        $link_content = mysqli_real_escape_string($database->con, $new_file_name);
                     } else {
                         if($error == 2){
                             $_SESSION['error_message'] = "You tried uploading a file that exceeded the file size limit. Please make sure that the file size is less than 50 MB.";
@@ -389,14 +393,16 @@
                     $file_size = $_FILES['link_content']['size'];
                     $file_tmp = $_FILES['link_content']['tmp_name'];
                     $file_type = $_FILES['link_content']['type'];
+                    $file_ext = strtolower(end(explode('.', $_FILES['link_content']['name'])));
+                    $new_file_name = "FORM-SD92_".substr(str_shuffle(str_repeat("0123456789abcdefghijklmnopqrstuvwxyz", 10)), 0, 10).".".$file_ext;
                     
                     if($file_size > 52428800){ // Limit file upload to 50 MB
                         $errors = 2;
                     }
                     
                     if($errors == 0){
-                        move_uploaded_file($file_tmp, "../links/".$file_name);
-                        $link_content = mysqli_real_escape_string($database->con, $file_name);
+                        move_uploaded_file($file_tmp, "../links/".$new_file_name);
+                        $link_content = mysqli_real_escape_string($database->con, $new_file_name);
                         $district->addForm($database, $link_name, $link_desc, $link_content, $link_type, $link_tag, $link_thumbnail);
                     } else {
                         if($error == 2){
@@ -458,7 +464,8 @@
                     $file_tmp = $_FILES['edit_link_content']['tmp_name'];
                     $file_type = $_FILES['edit_link_content']['type'];
                     $file_ext = strtolower(end(explode('.', $_FILES['edit_link_content']['name'])));
-                
+                    $new_file_name = "PCKG-SD92_".substr(str_shuffle(str_repeat("0123456789abcdefghijklmnopqrstuvwxyz", 10)), 0, 10).".".$file_ext;
+
                     $extensions = array("doc","docx","pdf");
                     
                     if(in_array($file_ext, $extensions) == false){
@@ -470,8 +477,8 @@
                     }
                     
                     if($errors == 0){
-                        move_uploaded_file($file_tmp, "../links/".$file_name);
-                        $link_content = mysqli_real_escape_string($database->con, $file_name);
+                        move_uploaded_file($file_tmp, "../links/".$new_file_name);
+                        $link_content = mysqli_real_escape_string($database->con, $new_file_name);
                     } else {
                         if($error == 1){
                             $_SESSION['error_message'] = "You tried uploading a file with an invalid file extension. Please make sure that the file's extension is one of the followings: .doc, .docx, .pdf.";
@@ -506,7 +513,8 @@
                 $file_tmp = $_FILES['link_content']['tmp_name'];
                 $file_type = $_FILES['link_content']['type'];
                 $file_ext = strtolower(end(explode('.', $_FILES['link_content']['name'])));
-            
+                $new_file_name = "PCKG-SD92_".substr(str_shuffle(str_repeat("0123456789abcdefghijklmnopqrstuvwxyz", 10)), 0, 10).".".$file_ext;
+
                 $extensions = array("doc","docx","pdf");
                 
                 if(in_array($file_ext, $extensions) == false){
@@ -518,8 +526,8 @@
                 }
                 
                 if($errors == 0){
-                    move_uploaded_file($file_tmp, "../links/".$file_name);
-                    $link_content = mysqli_real_escape_string($database->con, $file_name);
+                    move_uploaded_file($file_tmp, "../links/".$new_file_name);
+                    $link_content = mysqli_real_escape_string($database->con, $new_file_name);
                     $district->addPackage($database, $link_name, $link_desc, $link_content, $link_type, $link_tag, $link_thumbnail);
                 } else {
                     if($error == 1){
@@ -580,7 +588,8 @@
                     $file_tmp = $_FILES['edit_link_content']['tmp_name'];
                     $file_type = $_FILES['edit_link_content']['type'];
                     $file_ext = strtolower(end(explode('.', $_FILES['edit_link_content']['name'])));
-                
+                    $new_file_name = "MNTS-SD92_".substr(str_shuffle(str_repeat("0123456789abcdefghijklmnopqrstuvwxyz", 10)), 0, 10).".".$file_ext;
+
                     $extensions = array("doc","docx","pdf");
                     
                     if(in_array($file_ext, $extensions) == false){
@@ -592,8 +601,8 @@
                     }
                     
                     if($errors == 0){
-                        move_uploaded_file($file_tmp, "../links/".$file_name);
-                        $link_content = mysqli_real_escape_string($database->con, $file_name);
+                        move_uploaded_file($file_tmp, "../links/".$new_file_name);
+                        $link_content = mysqli_real_escape_string($database->con, $new_file_name);
                     } else {
                         if($error == 1){
                             $_SESSION['error_message'] = "You tried uploading a file with an invalid file extension. Please make sure that the file's extension is one of the followings: .doc, .docx, .pdf.";
@@ -628,7 +637,8 @@
                 $file_tmp = $_FILES['link_content']['tmp_name'];
                 $file_type = $_FILES['link_content']['type'];
                 $file_ext = strtolower(end(explode('.', $_FILES['link_content']['name'])));
-            
+                $new_file_name = "MNTS-SD92_".substr(str_shuffle(str_repeat("0123456789abcdefghijklmnopqrstuvwxyz", 10)), 0, 10).".".$file_ext;
+
                 $extensions = array("doc","docx","pdf");
                 
                 if(in_array($file_ext, $extensions) == false){
@@ -640,8 +650,8 @@
                 }
                 
                 if($errors == 0){
-                    move_uploaded_file($file_tmp, "../links/".$file_name);
-                    $link_content = mysqli_real_escape_string($database->con, $file_name);
+                    move_uploaded_file($file_tmp, "../links/".$new_file_name);
+                    $link_content = mysqli_real_escape_string($database->con, $new_file_name);
                     $district->addMinutes($database, $link_name, $link_desc, $link_content, $link_type, $link_tag, $link_thumbnail);
                 } else {
                     if($error == 1){
@@ -702,7 +712,8 @@
                     $file_tmp = $_FILES['edit_link_content']['tmp_name'];
                     $file_type = $_FILES['edit_link_content']['type'];
                     $file_ext = strtolower(end(explode('.', $_FILES['edit_link_content']['name'])));
-                
+                    $new_file_name = "DRTV-SD92_".substr(str_shuffle(str_repeat("0123456789abcdefghijklmnopqrstuvwxyz", 10)), 0, 10).".".$file_ext;
+
                     $extensions = array("doc","docx","pdf");
                     
                     if(in_array($file_ext, $extensions) == false){
@@ -714,8 +725,8 @@
                     }
                     
                     if($errors == 0){
-                        move_uploaded_file($file_tmp, "../links/".$file_name);
-                        $link_content = mysqli_real_escape_string($database->con, $file_name);
+                        move_uploaded_file($file_tmp, "../links/".$new_file_name);
+                        $link_content = mysqli_real_escape_string($database->con, $new_file_name);
                     } else {
                         if($error == 1){
                             $_SESSION['error_message'] = "You tried uploading a file with an invalid file extension. Please make sure that the file's extension is one of the followings: .doc, .docx, .pdf.";
@@ -751,7 +762,8 @@
                     $file_tmp = $_FILES['link_content']['tmp_name'];
                     $file_type = $_FILES['link_content']['type'];
                     $file_ext = strtolower(end(explode('.', $_FILES['link_content']['name'])));
-                
+                    $new_file_name = "DRTV-SD92_".substr(str_shuffle(str_repeat("0123456789abcdefghijklmnopqrstuvwxyz", 10)), 0, 10).".".$file_ext;
+
                     $extensions = array("doc","docx","pdf");
                     
                     if(in_array($file_ext, $extensions) == false){
@@ -763,8 +775,8 @@
                     }
                     
                     if($errors == 0){
-                        move_uploaded_file($file_tmp, "../links/".$file_name);
-                        $link_content = mysqli_real_escape_string($database->con, $file_name);
+                        move_uploaded_file($file_tmp, "../links/".$new_file_name);
+                        $link_content = mysqli_real_escape_string($database->con, $new_file_name);
                         $district->addDirective($database, $link_name, $link_desc, $link_content, $link_type, $link_tag, $link_thumbnail);
                     } else {
                         if($error == 1){
@@ -827,7 +839,8 @@
                     $file_tmp = $_FILES['edit_link_content']['tmp_name'];
                     $file_type = $_FILES['edit_link_content']['type'];
                     $file_ext = strtolower(end(explode('.', $_FILES['edit_link_content']['name'])));
-                
+                    $new_file_name = "PLCY-SD92_".substr(str_shuffle(str_repeat("0123456789abcdefghijklmnopqrstuvwxyz", 10)), 0, 10).".".$file_ext;
+
                     $extensions = array("doc","docx","pdf");
                     
                     if(in_array($file_ext, $extensions) == false){
@@ -839,8 +852,8 @@
                     }
                     
                     if($errors == 0){
-                        move_uploaded_file($file_tmp, "../links/".$file_name);
-                        $link_content = mysqli_real_escape_string($database->con, $file_name);
+                        move_uploaded_file($file_tmp, "../links/".$new_file_name);
+                        $link_content = mysqli_real_escape_string($database->con, $new_file_name);
                     } else {
                         if($error == 1){
                             $_SESSION['error_message'] = "You tried uploading a file with an invalid file extension. Please make sure that the file's extension is one of the followings: .doc, .docx, .pdf.";
@@ -876,7 +889,8 @@
                     $file_tmp = $_FILES['link_content']['tmp_name'];
                     $file_type = $_FILES['link_content']['type'];
                     $file_ext = strtolower(end(explode('.', $_FILES['link_content']['name'])));
-                
+                    $new_file_name = "PLCY-SD92_".substr(str_shuffle(str_repeat("0123456789abcdefghijklmnopqrstuvwxyz", 10)), 0, 10).".".$file_ext;
+
                     $extensions = array("doc","docx","pdf");
                     
                     if(in_array($file_ext, $extensions) == false){
@@ -888,8 +902,8 @@
                     }
                     
                     if($errors == 0){
-                        move_uploaded_file($file_tmp, "../links/".$file_name);
-                        $link_content = mysqli_real_escape_string($database->con, $file_name);
+                        move_uploaded_file($file_tmp, "../links/".$new_file_name);
+                        $link_content = mysqli_real_escape_string($database->con, $new_file_name);
                         $district->addPolicy($database, $link_name, $link_desc, $link_content, $link_type, $link_tag, $link_thumbnail);
                     } else {
                         if($error == 1){
@@ -952,7 +966,8 @@
                     $file_tmp = $_FILES['edit_link_content']['tmp_name'];
                     $file_type = $_FILES['edit_link_content']['type'];
                     $file_ext = strtolower(end(explode('.', $_FILES['edit_link_content']['name'])));
-                
+                    $new_file_name = "PLAN-SD92_".substr(str_shuffle(str_repeat("0123456789abcdefghijklmnopqrstuvwxyz", 10)), 0, 10).".".$file_ext;
+
                     $extensions = array("doc","docx","pdf");
                     
                     if(in_array($file_ext, $extensions) == false){
@@ -964,8 +979,8 @@
                     }
                     
                     if($errors == 0){
-                        move_uploaded_file($file_tmp, "../links/".$file_name);
-                        $link_content = mysqli_real_escape_string($database->con, $file_name);
+                        move_uploaded_file($file_tmp, "../links/".$new_file_name);
+                        $link_content = mysqli_real_escape_string($database->con, $new_file_name);
                     } else {
                         if($error == 1){
                             $_SESSION['error_message'] = "You tried uploading a file with an invalid file extension. Please make sure that the file's extension is one of the followings: .doc, .docx, .pdf.";
@@ -1001,7 +1016,8 @@
                     $file_tmp = $_FILES['link_content']['tmp_name'];
                     $file_type = $_FILES['link_content']['type'];
                     $file_ext = strtolower(end(explode('.', $_FILES['link_content']['name'])));
-                
+                    $new_file_name = "PLAN-SD92_".substr(str_shuffle(str_repeat("0123456789abcdefghijklmnopqrstuvwxyz", 10)), 0, 10).".".$file_ext;
+
                     $extensions = array("doc","docx","pdf");
                     
                     if(in_array($file_ext, $extensions) == false){
@@ -1013,8 +1029,8 @@
                     }
                     
                     if($errors == 0){
-                        move_uploaded_file($file_tmp, "../links/".$file_name);
-                        $link_content = mysqli_real_escape_string($database->con, $file_name);
+                        move_uploaded_file($file_tmp, "../links/".$new_file_name);
+                        $link_content = mysqli_real_escape_string($database->con, $new_file_name);
                         $district->addPlan($database, $link_name, $link_desc, $link_content, $link_type, $link_tag, $link_thumbnail);
                     } else {
                         if($error == 1){
