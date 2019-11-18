@@ -65,7 +65,7 @@
             header("location: ../error");
         }
         
-        if(isset($appinforesult) &&!empty($appinforesult) && $appinforesult == 1){
+        if(isset($appinforesult) && !empty($appinforesult) && $appinforesult == 1){
             $path = "../jobs/resumes/";
             $file = $path.$filename;
         

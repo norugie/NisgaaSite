@@ -347,29 +347,6 @@
 
 		}
 
-		/*********************************************************************************************/
-		/***************************  Interaction Functionalities -- Culture Corner  *****************/
-        /*********************************************************************************************/
-
-		public function pageInformationCultureCorner($database){
-            $array = array();
-
-			$sql = "SELECT web_content.id,
-                           web_content.web_id, 
-						   web_content.web_desc
-					FROM web_content
-					WHERE web_content.web_type = 'Culture'";
-			$query = mysqli_query($database->con, $sql);
-			if (!$query) {
-				global $error;
-				echo $error->errorMessage(mysqli_error($database->con));
-			} else {
-				$array = mysqli_fetch_assoc($query);
-            }
-            
-			return $array;
-		}
-
     }
 
 ?>

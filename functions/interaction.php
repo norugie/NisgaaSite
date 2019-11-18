@@ -442,29 +442,6 @@
 			}
 		}
 
-		/*********************************************************************************************/
-		/***************************  Interaction Functionalities -- Culture Corner  *****************/
-        /*********************************************************************************************/
-
-		public function editCultureCorner($database, $id, $culture_name, $culture_desc){
-
-			$sql = "UPDATE web_content SET 
-						   web_desc = '$culture_desc'
-					WHERE id = '$id'";
-			$query = mysqli_query($database->con, $sql);
-			if(!$query){
-				$_SESSION['error_message'] = mysqli_error($database->con);
-			    header("location: ../cms/interaction.php?tab=web&page=culture&error=true");
-			} else {
-				global $log;
-				$info = "Modified page information for: Culture Corner";
-				$log->logInput($database, $info);
-
-				header("location: ../cms/interaction.php?tab=web&page=culture&editCultureCorner=true");
-
-			}			
-		}
-
     }
 
     require 'interaction_options.php';

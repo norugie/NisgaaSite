@@ -408,6 +408,7 @@
                     $file_tmp = $_FILES['carousel_image_' . $ctr]['tmp_name'];
                     $file_type = $_FILES['carousel_image_' . $ctr]['type'];
                     $file_ext = strtolower(end(explode('.', $_FILES['carousel_image']['name'])));
+                    $new_file_name = "CRSL-SD92_".substr(str_shuffle(str_repeat("0123456789abcdefghijklmnopqrstuvwxyz", 10)), 0, 10).".".$file_ext;
                     
                     $extensions = array("jpeg","jpg","png");
                 
@@ -420,8 +421,8 @@
                     }
                     
                     if($errors == 0){
-                        move_uploaded_file($file_tmp, $imageFolder.$file_name);
-                        $photo = mysqli_real_escape_string($database->con, $file_name);
+                        move_uploaded_file($file_tmp, $imageFolder.$new_file_name);
+                        $photo = mysqli_real_escape_string($database->con, $new_file_name);
                         $interaction->newCarouselImageSet($database, $photo, $caption);
                     } else {
                         if($error == 1){
@@ -606,6 +607,7 @@
                     $file_tmp = $_FILES['boe_photo']['tmp_name'];
                     $file_type = $_FILES['boe_photo']['type'];
                     $file_ext = strtolower(end(explode('.', $_FILES['boe_photo']['name'])));
+                    $new_file_name = "BOEP-SD92_".substr(str_shuffle(str_repeat("0123456789abcdefghijklmnopqrstuvwxyz", 10)), 0, 10).".".$file_ext;
                     
                     $extensions = array("jpeg","jpg","png");
                 
@@ -618,8 +620,8 @@
                     }
                     
                     if($errors == 0){
-                        move_uploaded_file($file_tmp, "../images/contacts/".$file_name);
-                        $photo = mysqli_real_escape_string($database->con, $file_name);
+                        move_uploaded_file($file_tmp, "../images/contacts/".$new_file_name);
+                        $photo = mysqli_real_escape_string($database->con, $new_file_name);
                     } else {
                         if($error == 1){
                             $_SESSION['error_message'] = "You tried uploading a file with an invalid file extension. Please make sure that the file's extension is one of the followings: .jpeg, .jpg, .png.";
@@ -656,7 +658,8 @@
                     $file_tmp = $_FILES['boe_group_image']['tmp_name'];
                     $file_type = $_FILES['boe_group_image']['type'];
                     $file_ext = strtolower(end(explode('.', $_FILES['boe_group_image']['name'])));
-                    
+                    $new_file_name = "BOEG-SD92_".substr(str_shuffle(str_repeat("0123456789abcdefghijklmnopqrstuvwxyz", 10)), 0, 10).".".$file_ext;
+
                     $extensions = array("jpeg","jpg","png");
                 
                     if(in_array($file_ext, $extensions) == false){
@@ -668,8 +671,8 @@
                     }
                     
                     if($errors == 0){
-                        move_uploaded_file($file_tmp, "../images/boe/".$file_name);
-                        $photo = mysqli_real_escape_string($database->con, $file_name);
+                        move_uploaded_file($file_tmp, "../images/boe/".$new_file_name);
+                        $photo = mysqli_real_escape_string($database->con, $new_file_name);
                     } else {
                         if($error == 1){
                             $_SESSION['error_message'] = "You tried uploading a file with an invalid file extension. Please make sure that the file's extension is one of the followings: .jpeg, .jpg, .png.";
@@ -712,19 +715,6 @@
                 }
             }
 
-        }
-
-        /*********************************************************************************************/
-		/***************************  Interaction Functionalities -- Culture Corner  *****************/
-        /*********************************************************************************************/
-
-        if(isset($_GET['editCulture'])){
-            
-            $id = mysqli_real_escape_string($database->con, $_POST['culture_id']);
-            $culture_name = mysqli_real_escape_string($database->con, $_POST['culture_name']);
-            $culture_desc = mysqli_real_escape_string($database->con, $_POST['culture_desc']);
-
-            $interaction->editCultureCorner($database, $id, $culture_name, $culture_desc);
         }
 
     }
