@@ -1,5 +1,8 @@
 # Ignore files
 /functions/db_params.php
+/functions/auth_helper.php
+/functions/auth_settings.php
+/functions/token.php
 /jobs/*
 /links/*
 /images/contacts/*

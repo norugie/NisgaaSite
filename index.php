@@ -21,6 +21,12 @@
         exit();
     }
 
+    // Redirect auth.php to /auth
+    if($page_name == "auth"){
+        require 'auth.php';
+        exit();
+    }
+
 ?>
 
 <!-- Site Header -->
