@@ -29,11 +29,11 @@ if(!isset($_GET['code'])){
             ->setReturnType(Model\Group::class)
             ->execute();
 
-    echo $user->getDisplayName() . "<br>";
-    echo $user->getMail() . "<br>";
-    echo $user->getDepartment() . "<br>";
-    echo $user->getId() . "<br>";
-    echo "Groups:<br>";
+    // echo $user->getDisplayName() . "<br>";
+    // echo $user->getMail() . "<br>";
+    // echo $user->getDepartment() . "<br>";
+    // echo $user->getId() . "<br>";
+    // echo "Groups:<br>";
 
     // var_dump($groups);
     $gs = array();

@@ -14,7 +14,7 @@
     </div>
     <div class="col-md-6">
         <div class="d-flex justify-content-md-end justify-content-between">
-        <div class="login"><a href="https://www.nisgaa.bc.ca/login" class="login-btn"><i class="fa fa-sign-in"></i><span class="d-md-inline-block">Site Panel</span></a></div>
+        <div class="login"><a href="https://www.nisgaa.bc.ca/auth" class="login-btn"><i class="fa fa-sign-in"></i><span class="d-md-inline-block">Login</span></a></div>
         <ul class="social-custom list-inline">
             <li class="list-inline-item"><a class="fb-icon" aria-label="Facebook Page" href="https://www.facebook.com/nisgaa.sd92/" target="_blank" rel="noreferrer"><i class="fa fa-facebook"></i></a></li>
             <li class="list-inline-item"><a class="twt-icon" aria-label="Twitter Page" href="https://www.twitter.com/nisgaa_sd92/" target="_blank" rel="noreferrer"><i class="fa fa-twitter"></i></a></li>
