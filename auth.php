@@ -29,13 +29,6 @@ if(!isset($_GET['code'])){
             ->setReturnType(Model\Group::class)
             ->execute();
 
-    // echo $user->getDisplayName() . "<br>";
-    // echo $user->getMail() . "<br>";
-    // echo $user->getDepartment() . "<br>";
-    // echo $user->getId() . "<br>";
-    // echo "Groups:<br>";
-
-    // var_dump($groups);
     $gs = array();
 
     foreach($groups as $group):
@@ -105,9 +98,18 @@ if(!isset($_GET['code'])){
                         $status = $row['status'];
                     }
                 }
-            } else {               
+            } else {
                 $id = $loginInfo['id'];
                 $status = $loginInfo['status'];
+
+                if($loginInfo['school'] != $school || $loginInfo['type'] != $role){
+                    $sql = "UPDATE users SET user_type = '$role', school = '$school' WHERE id = '$id'";
+                    $query = mysqli_query($database->con, $sql);
+                    if(!$query){
+                        session_destroy();
+                        header("location:https://login.microsoftonline.com/common/oauth2/logout?post_logout_redirect_uri=https://www.nisgaa.bc.ca/error");
+                    }
+                }
             }
             
             $_SESSION['id'] = $id;
