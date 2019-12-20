@@ -15,14 +15,8 @@
         header("location: /" . $redirect);
     }
 
-    // Redirect login.php to /login
-    if($page_name == "login"){
-        require 'login.php';
-        exit();
-    }
-
     // Redirect auth.php to /auth
-    if($page_name == "auth"){
+    if($page_name == "auth" || $page_name == "login"){
         require 'auth.php';
         exit();
     }
