@@ -27,14 +27,24 @@
             
             <?php if($media_info['post_type'] == 'Media'){ ?>
                 <div id="animated-thumbnails" class="list-unstyled row clearfix">
-            <?php 
+            <?php
+            
+                // Images upload path
+                $imageurlbase;
+            
+                if($_SESSION['school'] == '3') {$imageurlbase = "https://ness.nisgaa.bc.ca/";}
+                else if($_SESSION['school'] == '4') {$imageurlbase = "https://dev-aames.nisgaa.bc.ca/";}
+                else if($_SESSION['school'] == '5') {$imageurlbase = "https://ges.nisgaa.bc.ca/";}
+                else if($_SESSION['school'] == '6') {$imageurlbase = "https://nbes.nisgaa.bc.ca/";}
+                else {$imageurlbase = "https://www.nisgaa.bc.ca/";}
+            
                 $media_images = $post->mediaImages($database, $media_info['id']);
                 foreach($media_images as $mi):
             ?>
                 <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                    <a href="/images/posts/media/<?php echo $mi['media_name']; ?>" data-sub-html="<?php echo $media_info['post_title']; ?>">
+                    <a href="<?php echo $imageurlbase."/images/posts/media/".$mi['media_name']; ?>" data-sub-html="<?php echo $media_info['post_title']; ?>">
                         <center>
-                            <img class="img-responsive thumbnail" src="/images/posts/media/<?php echo $mi['media_name']; ?>" style="height: 155px!important; object-fit: cover!important;">
+                            <img class="img-responsive thumbnail" src="<?php echo $imageurlbase."/images/posts/media/".$mi['media_name']; ?>" style="height: 155px!important; object-fit: cover!important;">
                         </center>
                     </a>
                 </div>

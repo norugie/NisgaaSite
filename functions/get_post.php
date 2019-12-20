@@ -433,7 +433,7 @@
 
 		public function mediaImages($database, $id){
             $array;
-			$sql = "SELECT * FROM media WHERE post_id = '$id'";
+			$sql = "SELECT * FROM media WHERE post_id = '$id' ORDER BY id DESC";
 			$query = mysqli_query($database->con, $sql);
 			if(!$query){
 				global $error;

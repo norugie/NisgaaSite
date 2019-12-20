@@ -17,6 +17,7 @@
     <!-- Inline Layout -->
     <div class="row clearfix">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <p class="font-12"><i><b>Note:</b> This is an experimental feature. Uploading images over 1.5 MB may take a while. The max image size you can upload is 10 MB.</i></p>
             <form action="../functions/media.php" id="mediaUpload" name="file" class="dropzone" method="post" enctype="multipart/form-data">
                 <div class="dz-message">
                     <div class="drag-icon-cph">
@@ -52,7 +53,8 @@
         Dropzone.options.mediaUpload = {
             paramName: "file",
             acceptedFiles: "image/*",
-            maxFileSize: 20, // MB
+            maxFileSize: 10, // MB
+            maxThumbnailFileSize: 1, // MB
             addRemoveLinks: true,
             dictDefaultMessage: "Drop files here to upload.", // Default: Drop files here to upload
             dictFallbackMessage: "Your browser does not support drag'n'drop file uploads.", // Default: Your browser does not support drag'n'drop file uploads.
