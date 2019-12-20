@@ -392,6 +392,7 @@
 			$sql = "SELECT posts.post_title,
                            posts.post_date,
 						   posts.post_id,
+						   posts.id,
                            posts.post_thumbnail,
                            users.firstname,
 						   users.lastname

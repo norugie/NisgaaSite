@@ -14,8 +14,13 @@ Low Priority:
 
 Note:
 On domain migration, update the following in accordance to changes:
--ssl/https settings
--httpd settings
--search google console settings
--site links
--htaccess
+- ssl/https settings
+- httpd settings
+- search google console settings
+- site links
+- htaccess
+
+Added comments:
+- auth.php
+- index.php
+- removed login.php

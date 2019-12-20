@@ -1,4 +1,26 @@
 <?php $links = $site->linkList($database, 'Teacher Resources', $schoolContent); ?>
+
+<style>
+
+    .iframe-container {
+    padding-top: 56.25%;
+    position: relative;
+    }
+    .iframe-container iframe {
+    border: 0;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    }
+    /* 4x3 Aspect Ratio */
+    .iframe-container-4x3 {
+    padding-top: 75%;
+    }
+
+</style>
+
 <div class="col-md-9">
     <!-- TEACHER RESOURCE INFO CONTENT -->
     <section>
@@ -8,11 +30,28 @@
             </div>
         </div>
     </section>
-    
-    <!-- TEACHER RESOURCE CONTENT -->
+
+    <!-- TEACHER RESOURCE CONTENT FROM BCERAC -->
     <section>
         <div class="row">
             <div class="col-md-12">
+                <div class="heading">
+                    <h2>Resources from BCERAC</h2>
+                </div>
+                <div class="iframe-container">
+                    <iframe src= "https://bcerac.ca/district-access-iframe/" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+    <br>
+    <!-- TEACHER RESOURCE CONTENT FROM THE DISTRICT -->
+    <section>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="heading">
+                    <h2>District Resources</h2>
+                </div>
                 <div class="row products products-big">
                     <?php foreach($links as $link): ?>
                         <div class="col-lg-3 col-md-6 col-sm-6 col-xs-6 col-blog-mobile">
