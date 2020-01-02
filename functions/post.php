@@ -148,6 +148,146 @@
 			}
 		}
 
+		/*********************************************************************************************/
+		/***************************  Post Functionalities -- Events  ****************************/
+		/*********************************************************************************************/
+
+		public function disableEvent($database, $id, $title, $post_id){
+
+			$sql = "UPDATE events SET 
+						   status = 'Cancelled'
+					WHERE id = '$id'";
+			$query = mysqli_query($database->con, $sql);
+			if(!$query){
+				$_SESSION['error_message'] = mysqli_error($database->con);
+			    header("location:../cms/post.php?tab=post&page=events&error=true");
+			} else {
+				global $log;
+				$info = "Cancelled the event:  " . $title;
+				$log->logInput($database, $info);
+
+				$sql = "UPDATE posts SET 
+				status = 'Archived'
+						WHERE id = '$post_id'";
+				$query = mysqli_query($database->con, $sql);
+				if(!$query){
+					$_SESSION['error_message'] = mysqli_error($database->con);
+					header("location:../cms/post.php?tab=post&page=events&error=true");
+				} else {
+					header("location:../cms/post.php?tab=post&page=events&eventDisabled=true");
+				}	
+
+			}	
+	
+		}
+
+		public function addPostEvent($database, $post_title, $post_content, $event_desc, $post_thumbnail, $sm_opt){
+			$id;
+			$post_id = 'PST' . rand(1111111111,9999999999);
+			$user = $_SESSION['id'];
+			$school;
+
+			if($_SESSION['type'] == 4){
+				$school = $_SESSION['school'];
+			} else {
+				$school = 2;
+			}
+			
+			$date = date('Y-m-d');
+
+			$sql = "INSERT INTO posts
+					VALUES (null, '$post_id', '$post_title', '$date', NOW(), 'Post', '$user', '$school', '$post_content', '$post_thumbnail', '$event_desc', '$sm_opt', 'No', 'Active')";
+			$query = mysqli_query($database->con, $sql);
+			if(!$query){
+				$_SESSION['error_message'] = mysqli_error($database->con);
+				header("location:../cms/post.php?tab=post&page=events&error=true");
+			} else {
+				$sql = "SELECT id FROM posts ORDER BY id DESC LIMIT 1";
+				$query = mysqli_query($database->con, $sql);
+				if(!$query){
+					$_SESSION['error_message'] = mysqli_error($database->con);
+					header("location:../cms/post.php?tab=post&page=events&error=true");
+				} else {
+					$row = mysqli_fetch_assoc($query);
+					$id = $row['id'];
+
+					$sql = "INSERT INTO post_categories
+					VALUES (null, '$id','1')";
+					$query = mysqli_query($database->con, $sql);
+					if(!$query){
+						$_SESSION['error_message'] = mysqli_error($database->con);
+						header("location:../cms/post.php?tab=post&page=events&error=true");
+					}
+				}
+			}
+
+			return $id;				
+		}
+
+		public function addEvent($database, $event_name, $event_shortname, $event_desc, $event_type, $post, $school, $location){
+			$id;
+			$user = $_SESSION['id'];
+			$event_color_code = substr(md5(rand()), 0, 6);
+			$event_id_name = 'EVNT' . rand(1111111,9999999);
+
+			$sql = "INSERT INTO events
+					VALUES (null, '$event_id_name', '$event_name', '$event_shortname', '$event_desc', '$event_type', '$event_color_code', '$location', '$school', '$user', '$post', 'Active')";
+			$query = mysqli_query($database->con, $sql);
+			if(!$query){
+				$_SESSION['error_message'] = mysqli_error($database->con);
+				header("location:../cms/post.php?tab=post&page=events&error=true");
+			} else {
+				$sql = "SELECT id, event_shortname FROM events ORDER BY id DESC LIMIT 1";
+				$query = mysqli_query($database->con, $sql);
+				if(!$query){
+					$_SESSION['error_message'] = mysqli_error($database->con);
+					header("location:../cms/post.php?tab=post&page=events&error=true");
+				} else {
+					$row = mysqli_fetch_assoc($query);
+					$id = $row['id'];
+
+					global $log;
+					$info = "Created the event: " . $row['event_shortname'];
+					$log->logInput($database, $info);
+				}
+			}
+
+			return $id;	
+		}
+
+		public function addEventDays($database, $event_start, $event_end, $event_final, $event_time, $event_id){
+
+			$sql = "INSERT INTO event_days
+					VALUES (null, '$event_start', '$event_end', '$event_final', '$event_time', '$event_id')";
+			$query = mysqli_query($database->con, $sql);
+			if(!$query){
+				$_SESSION['error_message'] = mysqli_error($database->con);
+				header("location:../cms/post.php?tab=post&page=events&error=true");
+			}
+		
+		}
+
+		public function editEvent($database, $event_name, $event_shortname, $event_desc, $event_location, $event_id){
+			$sql = "UPDATE events SET 
+						   event_name = '$event_name',
+						   event_shortname = '$event_shortname',
+						   event_desc = '$event_desc',
+						   event_location = '$event_location'
+					WHERE id = '$event_id'";
+			$query = mysqli_query($database->con, $sql);
+			if(!$query){
+				$_SESSION['error_message'] = mysqli_error($database->con);
+			    header("location:../cms/post.php?tab=post&page=events&error=true");
+			} else {
+				global $log;
+				$info = "Modified the event information for: " . $event_shortname;
+				$log->logInput($database, $info);
+
+				header("location:../cms/post.php?tab=post&page=events&editEvent=true");
+
+			}	
+		}
+
         /*********************************************************************************************/
 		/***************************  Posts Functionalities -- Links  ********************************/
         /*********************************************************************************************/
