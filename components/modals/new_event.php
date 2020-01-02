@@ -15,7 +15,7 @@
             <p class="font-12"><i><b>Note:</b> Fields marked with an asterisk are required</i></p><br>
                 <!-- Inline Layout -->
 
-                    <form id="wizard_form" class="new_form_validate" action="../functions/district.php?district=true&addEvent=true" method="POST" enctype="multipart/form-data">
+                    <form id="wizard_form" class="new_form_validate" action="../functions/post.php?post=true&addEvent=true" method="POST" enctype="multipart/form-data">
                         <h3>Event Information</h3>
                         <fieldset>
                             <div class="row clearfix">

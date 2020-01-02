@@ -88,7 +88,7 @@
                         } else if($error == 2){
                             $_SESSION['error_message'] = "You tried uploading a file that exceeded the file size limit. Please make sure that the file size is less than 10 MB.";
                         }
-                        header("location:../cms/district.php?tab=post&page=news&error=true");
+                        header("location:../cms/post.php?tab=post&page=news&error=true");
                     }
                 } else {
                     header("location:../cms/post.php?tab=post&page=news&error=true");
@@ -160,7 +160,7 @@
                         } else if($error == 2){
                             $_SESSION['error_message'] = "You tried uploading a file that exceeded the file size limit. Please make sure that the file size is less than 10 MB.";
                         }
-                        header("location:../cms/district.php?tab=post&page=news&error=true");
+                        header("location:../cms/post.php?tab=post&page=news&error=true");
                     }
                 } else {
                     header("location:../cms/post.php?tab=post&page=news&error=true");
@@ -209,6 +209,160 @@
                 }
 
             }
+        }
+
+		/*********************************************************************************************/
+		/***************************  Post Functionalities -- Events  ****************************/
+        /*********************************************************************************************/
+
+        if(isset($_GET['changeEventView'])){
+
+            if($_SESSION['event_view'] == 'CALENDAR'){
+                $_SESSION['event_view'] = 'LIST';
+            } else {
+                $_SESSION['event_view'] = 'CALENDAR';
+            }
+
+            header("location:../cms/post.php?tab=post&page=events");
+
+        }
+
+        if(isset($_GET['eventDisable'])){
+            
+            $id = $_GET['id'];
+            $title = $_GET['event'];
+            $post_id = $_GET['post'];
+
+            $post->disableEvent($database, $id, $title, $post_id);
+        }
+
+        if(isset($_GET['addEvent'])){
+
+            // Counter
+            $ctr_event = mysqli_real_escape_string($database->con, $_POST['ctr_value_event']);
+            $i = 1;
+
+            // Event Information
+            $event_name = mysqli_real_escape_string($database->con, $_POST['event_name']);
+            $event_shortname = mysqli_real_escape_string($database->con, $_POST['event_shortname']);
+            $event_desc = mysqli_real_escape_string($database->con, $_POST['event_desc']);
+            $event_type = mysqli_real_escape_string($database->con, $_POST['event_type']);
+            $event_location = mysqli_real_escape_string($database->con, $_POST['event_location']);
+            $event_school;
+
+			if($_SESSION['type'] == 4){
+				$event_school = $_SESSION['school'];
+			} else {
+				$event_school = 2;
+			}
+
+            //Event Post
+            $post_title = mysqli_real_escape_string($database->con, $_POST['post_title']);
+            $post_content = mysqli_real_escape_string($database->con, $_POST['post_content']);
+            $sm_opt = mysqli_real_escape_string($database->con, $_POST['post_sm_autopost']);
+            $post_thumbnail; 
+            $post_id;
+
+            if(!file_exists($_FILES['post_thumbnail']['tmp_name']) || !is_uploaded_file($_FILES['post_thumbnail']['tmp_name'])){
+
+                $post_thumbnail = "post_thumbnail.jpg";
+                
+                $post_id = $post->addPostEvent($database, $post_title, $post_content, $event_desc, $post_thumbnail, $sm_opt);
+
+            } else {
+
+                if(isset($_FILES['post_thumbnail'])){
+                    $errors = 0;
+                    $file_name = $_FILES['post_thumbnail']['name'];
+                    $file_size = $_FILES['post_thumbnail']['size'];
+                    $file_tmp = $_FILES['post_thumbnail']['tmp_name'];
+                    $file_type = $_FILES['post_thumbnail']['type'];
+                    $file_ext = strtolower(end(explode('.', $_FILES['post_thumbnail']['name'])));
+                    $new_file_name = "THMB-SD92_".substr(str_shuffle(str_repeat("0123456789abcdefghijklmnopqrstuvwxyz", 10)), 0, 10).".".$file_ext;
+
+                    $extensions = array("jpeg","jpg","png","gif","svg","bmp");
+                
+                    if(in_array($file_ext, $extensions) == false){
+                        $errors = 1;
+                    }
+
+                    if($file_size > 10485760){ // Limit thumbnail upload to 10 MB
+                        $errors = 2;
+                    }
+                    
+                    if($errors == 0){
+                        move_uploaded_file($file_tmp, "../images/thumbnails/" . $new_file_name);
+                        $post_thumbnail = mysqli_real_escape_string($database->con, $new_file_name);
+                        $post_id = $post->addPostEvent($database, $post_title, $post_content, $event_desc, $post_thumbnail, $sm_opt);
+                    } else {
+                        if($error == 1){
+                            $_SESSION['error_message'] = "You tried uploading a file with an invalid file extension. Please make sure that the file's extension is one of the followings: .jpeg, .jpg, .png, .gif, .svg, .bmp.";
+                        } else if($error == 2){
+                            $_SESSION['error_message'] = "You tried uploading a file that exceeded the file size limit. Please make sure that the file size is less than 10 MB.";
+                        }
+                        header("location:../cms/post.php?tab=post&page=events&error=true");
+                    }
+                } else {
+                    header("location:../cms/post.php?tab=post&page=events&error=true");
+                }   
+                
+            }
+
+            $event_id = $post->addEvent($database, $event_name, $event_shortname, $event_desc, $event_type, $post_id, $event_school, $event_location);
+
+            $event_start;
+            $event_end;
+
+            //Event Setup
+            if($event_type != 'Segmented'){
+                if($event_type == 'Single'){
+                    $event_start = mysqli_real_escape_string($database->con, $_POST['event_date_start_single_1']);
+                    $event_end = mysqli_real_escape_string($database->con, $_POST['event_date_start_single_1']);
+                    $event_final = mysqli_real_escape_string($database->con, $_POST['event_date_start_single_1']);
+                    $event_time = mysqli_real_escape_string($database->con, $_POST['event_time_single_1']);
+
+                    $post->addEventDays($database, $event_start, $event_end, $event_final, $event_time, $event_id);
+                    if($i == $ctr_event){
+                        header("location:../cms/post.php?tab=post&page=events&newEvent=true");
+                    }
+                } else {
+                    $event_start = mysqli_real_escape_string($database->con, $_POST['event_date_start_continuous_1']);
+                    $event_end = mysqli_real_escape_string($database->con, $_POST['event_date_end_continuous_1']);
+                    $event_final = mysqli_real_escape_string($database->con, $_POST['event_date_end_continuous_1']);
+                    $event_time = mysqli_real_escape_string($database->con, $_POST['event_time_continuous_1']);
+
+                    $post->addEventDays($database, $event_start, $event_end, $event_final, $event_time, $event_id);
+                    if($i == $ctr_event){
+                        header("location:../cms/post.php?tab=post&page=events&newEvent=true");
+                    }
+                    echo $event_id . "<br>" . $event_start . "<br>" . $event_end . "<br>" . $event_time . "<br>" . $event_type . "<br>" . $event_school;
+                }
+            } else {
+                for($i = 1; $i <= $ctr_event; $i++){
+                    $event_start = mysqli_real_escape_string($database->con, $_POST['event_date_start_segmented_'.$i]);
+                    $event_end = mysqli_real_escape_string($database->con, $_POST['event_date_start_segmented_'.$i]);
+                    $event_final = mysqli_real_escape_string($database->con, $_POST['event_date_start_segmented_'.$ctr_event]);
+                    $event_time = mysqli_real_escape_string($database->con, $_POST['event_time_segmented_'.$i]);
+
+                    $post->addEventDays($database, $event_start, $event_end, $event_final, $event_time, $event_id);
+
+                    if($i == $ctr_event){
+                        header("location:../cms/post.php?tab=post&page=events&newEvent=true");
+                    }
+                }
+            }
+
+        }
+
+        if(isset($_GET['editEventDetails'])){
+
+            $event_name = mysqli_real_escape_string($database->con, $_POST['edit_event_name']);
+            $event_shortname = mysqli_real_escape_string($database->con, $_POST['edit_event_shortname']);
+            $event_desc = mysqli_real_escape_string($database->con, $_POST['edit_event_desc']);
+            $event_location = mysqli_real_escape_string($database->con, $_POST['edit_event_location']);
+            $event_id = mysqli_real_escape_string($database->con, $_POST['edit_event_id']);
+
+            $post->editEvent($database, $event_name, $event_shortname, $event_desc, $event_location, $event_id);
         }
 
         /*********************************************************************************************/
@@ -484,7 +638,7 @@
                         } else if($error == 2){
                             $_SESSION['error_message'] = "You tried uploading a file that exceeded the file size limit. Please make sure that the file size is less than 10 MB.";
                         }
-                        header("location:../cms/district.php?tab=post&page=news&error=true");
+                        header("location:../cms/post.php?tab=post&page=news&error=true");
                     }
                 } else {
                     header("location:../cms/post.php?tab=post&page=news&error=true");

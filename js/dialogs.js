@@ -118,7 +118,7 @@ function showDisableEventConfirm(id, name, post) {
         closeOnCancel: true
     }, function (isConfirm) {
         if (isConfirm) {
-            window.location = "../functions/district.php?district=true&eventDisable=true&id=" + id + "&event=" + name + "&post=" + post;
+            window.location = "../functions/post.php?post=true&eventDisable=true&id=" + id + "&event=" + name + "&post=" + post;
         }
 
     });

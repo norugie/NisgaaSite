@@ -57,29 +57,6 @@
 </div>
 <?php } ?>
 
-<!--  District Notifications - Events  -->
-
-<?php if(isset($_GET['eventDisabled']) && $_SESSION['alert'] == 'alerted'){ ?>
-<div class="alert bg-green alert-dismissible" role="alert">
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-    The event has been <b>cancelled</b> successfully!
-</div>
-<?php } ?>
-
-<?php if(isset($_GET['newEvent']) && $_SESSION['alert'] == 'alerted'){ ?>
-<div class="alert bg-green alert-dismissible" role="alert">
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-    An event has been <b>created</b> successfully!
-</div>
-<?php } ?>
-
-<?php if(isset($_GET['editEvent']) && $_SESSION['alert'] == 'alerted'){ ?>
-<div class="alert bg-green alert-dismissible" role="alert">
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-    The event has been <b>modified</b> successfully!
-</div>
-<?php } ?>
-
 <!--  District Notifications - Files  -->
 
 <?php if(isset($_GET['formDisabled']) && $_SESSION['alert'] == 'alerted'){ ?>

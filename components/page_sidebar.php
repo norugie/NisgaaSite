@@ -65,6 +65,18 @@
                             <span>News Posts</span>
                         </a>
                     </li>
+                    <li id="media">
+                        <a href="post.php?tab=post&page=media">
+                            <i class="material-icons">photo_library</i>
+                            <span>Media Posts</span>
+                        </a>
+                    </li>
+                    <li id="events">
+                        <a href="post.php?tab=post&page=events">
+                            <i class="material-icons">event</i>
+                            <span>Events</span>
+                        </a>
+                    </li>
                     <li id="links">
                         <a href="post.php?tab=post&page=links">
                             <i class="material-icons">link</i>
@@ -75,12 +87,6 @@
                         <a href="post.php?tab=post&page=categories">
                             <i class="material-icons">widgets</i>
                             <span>Categories</span>
-                        </a>
-                    </li> 
-                    <li id="media">
-                        <a href="post.php?tab=post&page=media">
-                            <i class="material-icons">photo_library</i>
-                            <span>Media</span>
                         </a>
                     </li>  
                 </ul>
@@ -101,12 +107,6 @@
                         <a href="district.php?tab=sd&page=employment">
                             <i class="material-icons">work</i>
                             <span>Employment</span>
-                        </a>
-                    </li>
-                    <li id="events">
-                        <a href="district.php?tab=sd&page=events">
-                            <i class="material-icons">event</i>
-                            <span>Events</span>
                         </a>
                     </li>
                     <?php if($_SESSION['school'] != 3 && $_SESSION['school'] != 4 && $_SESSION['school'] != 5 && $_SESSION['school'] != 6){ ?> 

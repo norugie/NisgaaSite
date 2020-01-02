@@ -147,7 +147,60 @@
             }
             
 			return $array;
-        }
+		}
+		
+		/*********************************************************************************************/
+		/***************************  District Functionalities -- Events  ****************************/
+		/*********************************************************************************************/
+
+        public function eventList($database){
+            
+			$array = array();
+			$sql;
+			$sqlquery = "SELECT events.*, 
+						   users.firstname, 
+						   users.lastname, 
+						   schools.school_abbv, 
+						   schools.school_name,
+						   GROUP_CONCAT(event_days.event_date_day_start),
+						   GROUP_CONCAT(event_days.event_date_day_end),
+						   GROUP_CONCAT(event_days.event_date_time)
+					FROM events
+					LEFT JOIN users
+					ON (users.id = events.user)
+					LEFT JOIN schools
+					ON (schools.id = events.school)
+					LEFT JOIN event_days
+					ON (event_days.event = events.id)
+					WHERE events.status != 'Done'";
+			
+			/*  Content Filter  */
+			if($_SESSION['type'] != 1){
+				$school;
+				if($_SESSION['school'] != 3 && $_SESSION['school'] != 4 && $_SESSION['school'] != 5 && $_SESSION['school'] != 6){
+					$school = 2;
+				} else {
+					$school = $_SESSION['school'];
+				}
+				$sql = $sqlquery . " AND events.school = '$school' GROUP BY event_days.event";
+			} else {
+				$sql = $sqlquery . " GROUP BY event_days.event";
+			}
+			/*  END Content Filter  */
+
+			$query = mysqli_query($database->con, $sql);
+			if(!$query){
+				global $error;
+				echo $error->errorMessage(mysqli_error($database->con));
+			} else {
+				while($row = mysqli_fetch_array($query)){
+					$array[] = $row;
+				}
+            }
+
+			return $array;
+
+		}		
 
         /*********************************************************************************************/
 		/***************************  Posts Functionalities -- Links  ********************************/
