@@ -33,7 +33,7 @@
                 $imageurlbase;
             
                 if($_SESSION['school'] == '3') {$imageurlbase = "https://ness.nisgaa.bc.ca/";}
-                else if($_SESSION['school'] == '4') {$imageurlbase = "https://dev-aames.nisgaa.bc.ca/";}
+                else if($_SESSION['school'] == '4') {$imageurlbase = "https://aames.nisgaa.bc.ca/";}
                 else if($_SESSION['school'] == '5') {$imageurlbase = "https://ges.nisgaa.bc.ca/";}
                 else if($_SESSION['school'] == '6') {$imageurlbase = "https://nbes.nisgaa.bc.ca/";}
                 else {$imageurlbase = "https://www.nisgaa.bc.ca/";}

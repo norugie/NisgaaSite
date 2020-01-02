@@ -1,11 +1,11 @@
 <!-- Development Warning. Remove when site is fully deployed. -->
-<!-- <div class="top-bar" style="background-color: #fff!important;color: #000!important;">
+<div class="top-bar" style="background-color: #fff!important;color: #000!important;">
     <div class="row align-items-center">
         <div class="col-md-12">
             <center><p><b>This site is currently in development. Please report any encountered issues to the Tech Department (itsupport@nisgaa.bc.ca)</b></p></center>
         </div>
     </div>
-</div> -->
+</div>
 
 <div class="top-bar">
     <div class="row d-flex align-items-center">

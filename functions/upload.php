@@ -10,7 +10,7 @@
     $imageurlbase;
 
     if($_SESSION['school'] == '3') {$imageFolder = "../../ness/images/posts/"; $imageurlbase = "https://ness.nisgaa.bc.ca";}
-    else if($_SESSION['school'] == '4') {$imageFolder = "../../aames/images/posts/"; $imageurlbase = "https://dev-aames.nisgaa.bc.ca";}
+    else if($_SESSION['school'] == '4') {$imageFolder = "../../aames/images/posts/"; $imageurlbase = "https://aames.nisgaa.bc.ca";}
     else if($_SESSION['school'] == '5') {$imageFolder = "../../ges/images/posts/"; $imageurlbase = "https://ges.nisgaa.bc.ca";}
     else if($_SESSION['school'] == '6') {$imageFolder = "../../nbes/images/posts/"; $imageurlbase = "https://nbes.nisgaa.bc.ca";}
     else {$imageFolder = "../images/posts/";  $imageurlbase = "https://www.nisgaa.bc.ca";}
