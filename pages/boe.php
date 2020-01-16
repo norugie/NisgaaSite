@@ -19,7 +19,7 @@
         </div>
         <?php require 'components/modals/site_boe.php'; ?>
         <!-- Make this section available when the BOE pictures are already provided -->
-        <!-- <div class="col-md-12 text-center">
+        <div class="col-md-12 text-center">
             <div class="box-image-text">
                 <div class="image"><img src="/images/boe/<?php echo $boe_img['web_desc']; ?>" alt="BOE Banner" class="img-fluid"></div>
                 <div class="content">
@@ -41,34 +41,44 @@
                     </p>
                 </div>
             </div>
-        </div> -->
+        </div>
         <div class="col-md-12">
             <p class="lead mb-0" style="font-weight: bold;">Board Chairperson:</p>
-            <a class="lead" href="#" data-toggle="modal" data-target="#boe-modal" data-values='{
-                    "firstname":            <?php echo json_encode($boe[2]['firstname']); ?>,
-                    "lastname":             <?php echo json_encode($boe[2]['lastname']); ?>,
-                    "position":             <?php echo json_encode($boe[2]['position']); ?>,
-                    "position_specifics":   <?php echo json_encode(str_replace("'", "&apos;", $boe[2]['position_specifics'])); ?>,
-                    "phone":                <?php echo json_encode($boe[2]['phone']); ?>,
-                    "email":                <?php echo json_encode($boe[2]['email']); ?>,
-                    "contact_desc":         <?php echo json_encode(str_replace("'", "&apos;", $boe[2]['contact_desc'])); ?>,
-                    "photo":                <?php echo json_encode($boe[2]['photo']); ?>
-                }' 
-            onclick="boeInfo(this);"><?php echo $boe[2]['firstname'] . " " . $boe[2]['lastname'];?></a><br><br>
+            <?php foreach($boe as $b): ?>
+                <?php if($b['position'] == "Board Chairperson"){ ?>
+
+                        <a class="lead" href="#" data-toggle="modal" data-target="#boe-modal" data-values='{
+                                "firstname":            <?php echo json_encode($b['firstname']); ?>,
+                                "lastname":             <?php echo json_encode($b['lastname']); ?>,
+                                "position":             <?php echo json_encode($b['position']); ?>,
+                                "position_specifics":   <?php echo json_encode(str_replace("'", "&apos;", $b['position_specifics'])); ?>,
+                                "phone":                <?php echo json_encode($b['phone']); ?>,
+                                "email":                <?php echo json_encode($b['email']); ?>,
+                                "contact_desc":         <?php echo json_encode(str_replace("'", "&apos;", $b['contact_desc'])); ?>,
+                                "photo":                <?php echo json_encode($b['photo']); ?>
+                            }' 
+                        onclick="boeInfo(this);"><?php echo $b['firstname'] . " " . $b['lastname'];?></a><br><br>
+                <?php } ?>
+            <?php endforeach; ?>
         </div>
         <div class="col-md-12">
             <p class="lead mb-0" style="font-weight: bold;">Board Vice-Chairperson:</p>
-            <a class="lead" href="#" data-toggle="modal" data-target="#boe-modal" data-values='{
-                    "firstname":            <?php echo json_encode($boe[1]['firstname']); ?>,
-                    "lastname":             <?php echo json_encode($boe[1]['lastname']); ?>,
-                    "position":             <?php echo json_encode($boe[1]['position']); ?>,
-                    "position_specifics":   <?php echo json_encode(str_replace("'", "&apos;", $boe[1]['position_specifics'])); ?>,
-                    "phone":                <?php echo json_encode($boe[1]['phone']); ?>,
-                    "email":                <?php echo json_encode($boe[1]['email']); ?>,
-                    "contact_desc":         <?php echo json_encode(str_replace("'", "&apos;", $boe[1]['contact_desc'])); ?>,
-                    "photo":                <?php echo json_encode($boe[1]['photo']); ?>
-                }' 
-            onclick="boeInfo(this);"><?php echo $boe[1]['firstname'] . " " . $boe[1]['lastname'];?></a><br><br>
+            <?php foreach($boe as $b): ?>
+                <?php if($b['position'] == "Board Vice-Chairperson"){ ?>
+
+                        <a class="lead" href="#" data-toggle="modal" data-target="#boe-modal" data-values='{
+                                "firstname":            <?php echo json_encode($b['firstname']); ?>,
+                                "lastname":             <?php echo json_encode($b['lastname']); ?>,
+                                "position":             <?php echo json_encode($b['position']); ?>,
+                                "position_specifics":   <?php echo json_encode(str_replace("'", "&apos;", $b['position_specifics'])); ?>,
+                                "phone":                <?php echo json_encode($b['phone']); ?>,
+                                "email":                <?php echo json_encode($b['email']); ?>,
+                                "contact_desc":         <?php echo json_encode(str_replace("'", "&apos;", $b['contact_desc'])); ?>,
+                                "photo":                <?php echo json_encode($b['photo']); ?>
+                            }' 
+                        onclick="boeInfo(this);"><?php echo $b['firstname'] . " " . $b['lastname'];?></a><br><br>
+                <?php } ?>
+            <?php endforeach; ?>
         </div>
         <div class="col-md-12">
             <p class="lead mb-0" style="font-weight: bold;">Trustees:</p>

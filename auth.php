@@ -105,9 +105,9 @@
                     $id = $loginInfo['id'];
                     $status = $loginInfo['status'];
 
-                    if($loginInfo['school'] != $school || $loginInfo['type'] != $role){
+                    if($loginInfo['school'] != $school || $loginInfo['type'] != $role || $loginInfo['firstname'] != $firstname || $loginInfo['lastname'] != $lastname){
                         // Update account based off of differences from user's O365 account
-                        $sql = "UPDATE users SET user_type = '$role', school = '$school' WHERE id = '$id'";
+                        $sql = "UPDATE users SET user_type = '$role', school = '$school', firstname = '$firstname', lastname = '$lastname' WHERE id = '$id'";
                         $query = mysqli_query($database->con, $sql);
                         if(!$query){
                             session_destroy();
