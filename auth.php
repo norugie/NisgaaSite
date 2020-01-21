@@ -116,16 +116,34 @@
                     }
                 }
                 
-                $_SESSION['id'] = $id;
-                $_SESSION['type'] = $role;
-                $_SESSION['username'] = $username;
-                $_SESSION['school'] = $school;
-                $_SESSION['alert'] = 'unalerted';
-                $_SESSION['error_message'] = 'none';
-                $_SESSION['event_view'] = 'LIST';
                 
                 if($status == 'Active'){
-                    header("location: /cms/");
+                    $_SESSION['id'] = $id;
+                    $_SESSION['type'] = $role;
+                    $_SESSION['username'] = $username;
+                    $_SESSION['school'] = $school;
+                    $_SESSION['alert'] = 'unalerted';
+                    $_SESSION['error_message'] = 'none';
+                    $_SESSION['event_view'] = 'LIST';
+
+                    $logId = "LOG" . rand(1000000,9999999);
+                    $log = "User logged in";
+                    $userId = $_SESSION['id'];
+                    $school;
+
+                    if($_SESSION['type'] == 4){
+                        $school = $_SESSION['school'];
+                    } else {
+                        $school = 2;
+                    }
+                    
+                    $sql = "INSERT INTO logs
+                            VALUES(null, '$logId', '$log', '$userId', '$school', NOW())";
+                    $query = mysqli_query($database->con, $sql);
+                    if($query){
+                        header("location: /cms/");
+                    }
+                    
                 } else {
                     session_destroy();
                     header("location:https://login.microsoftonline.com/common/oauth2/logout?post_logout_redirect_uri=https://www.nisgaa.bc.ca/restricted");
