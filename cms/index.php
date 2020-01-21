@@ -64,7 +64,7 @@
 <?php
 
     } else {
-        header ("location:../login.php?restricted=true");
+        header ("location:../restricted");
     }
 
 ?>
