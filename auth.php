@@ -118,16 +118,22 @@
                 
                 
                 if($status == 'Active'){
-                    $_SESSION['id'] = $id;
-                    $_SESSION['type'] = $role;
-                    $_SESSION['username'] = $username;
-                    $_SESSION['school'] = $school;
-                    $_SESSION['alert'] = 'unalerted';
-                    $_SESSION['error_message'] = 'none';
-                    $_SESSION['event_view'] = 'LIST';
+                    if(!isset($_SESSION['id'])){
+                        $_SESSION['id'] = $id;
+                        $_SESSION['type'] = $role;
+                        $_SESSION['username'] = $username;
+                        $_SESSION['school'] = $school;
+                        $_SESSION['alert'] = 'unalerted';
+                        $_SESSION['error_message'] = 'none';
+                        $_SESSION['event_view'] = 'LIST';
+
+                        $log = "User logged in and accessed SD92 CMS";
+                    } else {
+                        $log = "Accessed SD92 CMS";
+                    }
+                    
 
                     $logId = "LOG" . rand(1000000,9999999);
-                    $log = "User logged in";
                     $userId = $_SESSION['id'];
                     $school;
 
