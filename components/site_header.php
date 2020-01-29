@@ -15,12 +15,11 @@
 
         <?php
 
-            if(isset($url[2]) && !empty($url[2]) && $page_name == 'news'){
+            if(isset($url[2]) && !empty($url[2]) && $page_name == 'news' && $url[1] != 'category'){
                 $tag = $site->postInformation($database, $url[2]);
                 $tag_title = $tag['post_title'];
                 $tag_desc = $tag['post_desc'];
                 $tag_image = "https://www.nisgaa.bc.ca/images/thumbnails/".$tag['post_thumbnail'];
-
             } else if(isset($url[2]) && !empty($url[2]) && $page_name == 'careers'){
                 $tag = $site->jobInformation($database, $url[2]);
                 $tag_title = $tag['title'];
@@ -45,10 +44,6 @@
         <meta name="robots" content="all,follow">
 
         <!-- Open Graph / Facebook -->
-        <!-- <meta property="og:type" content="article">
-        <meta property="og:url" content="https://www.nisgaa.bc.ca">
-        <meta property="og:title" content="<?php echo trim($tag_title); ?>">
-        <meta property="og:description" content="<?php echo $tag_desc; ?>"> -->
         <meta property="og:image" content="<?php echo $tag_image; ?>">
 
         <!-- Twitter -->
