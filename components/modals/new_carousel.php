@@ -18,10 +18,10 @@
                         <form class="new_form_validate" action="../functions/interaction.php?interaction=true&newCarouselImage=true" method="POST" enctype="multipart/form-data">
                             <div class="row clearfix">
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                    <label for="carousel_caption">Image Caption *</label>
+                                    <label for="carousel_caption">Image Caption</label>
                                     <div class="form-group">
                                         <div class="form-line">
-                                            <input type="text" class="form-control" id="carousel_caption" name="carousel_caption" required>
+                                            <input type="text" class="form-control" id="carousel_caption" name="carousel_caption">
                                         </div>
                                     </div>
                                 </div>
@@ -70,10 +70,10 @@
                         <form class="new_form_validate" action="../functions/interaction.php?interaction=true&newCarouselImageSet=true" method="POST" enctype="multipart/form-data">
                             <div class="row clearfix">
                                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                                    <label for="carousel_caption_1">Image Caption 1 *</label>
+                                    <label for="carousel_caption_1">Image Caption 1 </label>
                                     <div class="form-group">
                                         <div class="form-line">
-                                            <input type="text" class="form-control" id="carousel_caption_1" name="carousel_caption_1" required>
+                                            <input type="text" class="form-control" id="carousel_caption_1" name="carousel_caption_1">
                                         </div>
                                     </div>
                                 </div>
@@ -88,7 +88,7 @@
                             </div>
                             <div class="row clearfix">
                                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                                    <label for="carousel_caption_2">Image Caption 2 *</label>
+                                    <label for="carousel_caption_2">Image Caption 2 </label>
                                     <div class="form-group">
                                         <div class="form-line">
                                             <input type="text" class="form-control" id="carousel_caption_2" name="carousel_caption_2">
@@ -106,7 +106,7 @@
                             </div>
                             <div class="row clearfix">
                                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                                    <label for="carousel_caption_3">Image Caption 3 *</label>
+                                    <label for="carousel_caption_3">Image Caption 3 </label>
                                     <div class="form-group">
                                         <div class="form-line">
                                             <input type="text" class="form-control" id="carousel_caption_3" name="carousel_caption_3">
@@ -124,7 +124,7 @@
                             </div>
                             <div class="row clearfix">
                                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                                    <label for="carousel_caption_4">Image Caption 4 *</label>
+                                    <label for="carousel_caption_4">Image Caption 4 </label>
                                     <div class="form-group">
                                         <div class="form-line">
                                             <input type="text" class="form-control" id="carousel_caption_4" name="carousel_caption_4">
@@ -142,7 +142,7 @@
                             </div>
                             <div class="row clearfix">
                                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                                    <label for="carousel_caption_5">Image Caption 5 *</label>
+                                    <label for="carousel_caption_5">Image Caption 5 </label>
                                     <div class="form-group">
                                         <div class="form-line">
                                             <input type="text" class="form-control" id="carousel_caption_5" name="carousel_caption_5">
@@ -154,6 +154,96 @@
                                     <div class="form-group">
                                         <div class="form-line">
                                             <input type="file" name="carousel_image_5" id="carousel_image_5" accept="image/*">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row clearfix">
+                                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                    <label for="carousel_caption_6">Image Caption 6 </label>
+                                    <div class="form-group">
+                                        <div class="form-line">
+                                            <input type="text" class="form-control" id="carousel_caption_6" name="carousel_caption_6">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                    <label for="carousel_image_6">Carousel Image 6 *</label>
+                                    <div class="form-group">
+                                        <div class="form-line">
+                                            <input type="file" name="carousel_image_6" id="carousel_image_6" accept="image/*">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row clearfix">
+                                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                    <label for="carousel_caption_7">Image Caption 7 </label>
+                                    <div class="form-group">
+                                        <div class="form-line">
+                                            <input type="text" class="form-control" id="carousel_caption_7" name="carousel_caption_7">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                    <label for="carousel_image_7">Carousel Image 7 *</label>
+                                    <div class="form-group">
+                                        <div class="form-line">
+                                            <input type="file" name="carousel_image_7" id="carousel_image_7" accept="image/*">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row clearfix">
+                                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                    <label for="carousel_caption_8">Image Caption 8 </label>
+                                    <div class="form-group">
+                                        <div class="form-line">
+                                            <input type="text" class="form-control" id="carousel_caption_8" name="carousel_caption_8">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                    <label for="carousel_image_8">Carousel Image 8 *</label>
+                                    <div class="form-group">
+                                        <div class="form-line">
+                                            <input type="file" name="carousel_image_8" id="carousel_image_8" accept="image/*">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row clearfix">
+                                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                    <label for="carousel_caption_9">Image Caption 9 </label>
+                                    <div class="form-group">
+                                        <div class="form-line">
+                                            <input type="text" class="form-control" id="carousel_caption_9" name="carousel_caption_9">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                    <label for="carousel_image_9">Carousel Image 9 *</label>
+                                    <div class="form-group">
+                                        <div class="form-line">
+                                            <input type="file" name="carousel_image_9" id="carousel_image_9" accept="image/*">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row clearfix">
+                                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                    <label for="carousel_caption_10">Image Caption 10 </label>
+                                    <div class="form-group">
+                                        <div class="form-line">
+                                            <input type="text" class="form-control" id="carousel_caption_10" name="carousel_caption_10">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                    <label for="carousel_image_10">Carousel Image 10 *</label>
+                                    <div class="form-group">
+                                        <div class="form-line">
+                                            <input type="file" name="carousel_image_10" id="carousel_image_10" accept="image/*">
                                         </div>
                                     </div>
                                 </div>

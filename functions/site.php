@@ -373,7 +373,7 @@
 					ON (schools.id = carousel.school)
 					WHERE carousel.school = '$school'
 					AND carousel.status = 'Active'
-					LIMIT 5";
+					LIMIT 10";
 			$query = mysqli_query($database->con, $sql);
 			if (!$query) {
 			    echo "<script>window.open('https://www.nisgaa.bc.ca/error', '_parent');</script>";
