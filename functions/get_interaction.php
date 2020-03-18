@@ -191,7 +191,7 @@
 			} else {
 				$school = $_SESSION['school'];
 			}
-			$sql = $sqlquery . " AND carousel.school = '$school' ORDER BY carousel.id LIMIT 5";
+			$sql = $sqlquery . " AND carousel.school = '$school' ORDER BY carousel.id LIMIT 10";
 			/*  END Content Filter  */
 
 			$query = mysqli_query($database->con, $sql);

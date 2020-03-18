@@ -390,7 +390,7 @@
 
             $interaction->disableCarouselImageSet($database);
 
-            for($ctr=1; $ctr<= 5; $ctr++){
+            for($ctr=1; $ctr<= 10; $ctr++){
                 $caption = mysqli_real_escape_string($database->con, $_POST['carousel_caption_' . $ctr]);
 
                 if(isset($_FILES['carousel_image_' . $ctr]) && !empty($_FILES['carousel_image_' . $ctr]) && isset($_POST['carousel_caption_' . $ctr]) && !empty($_POST['carousel_caption_' . $ctr])){
@@ -434,7 +434,7 @@
                     }
                 }
 
-                if($ctr >= 5){
+                if($ctr >= 10){
                     global $log;
                     $info = "Added new image set to the home carousel image list.";
                     $log->logInput($database, $info);

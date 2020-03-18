@@ -15,7 +15,7 @@
                         <center>
                             <?php if($_SESSION['type'] != 3){ ?>
                                 <button type="button" class="btn bg-red waves-effect" style="display: inline-block;" data-toggle="modal" data-target="#new-carousel-set-modal"><i class="material-icons">find_replace</i><span>REPLACE ALL</span></button>
-                                <?php if(count($carousel) < 5){ ?>
+                                <?php if(count($carousel) < 10){ ?>
                                     <button type="button" class="btn bg-blue waves-effect" style="display: inline-block;" data-toggle="modal" data-target="#new-carousel-modal"><i class="material-icons">add</i></button>
                                 <?php } ?>
                             <?php } ?>
@@ -27,9 +27,9 @@
                 <div class="row clearfix">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-xs-sm-center">
                         <h4>ACTIVE IMAGES</h4>
-                        <div class="row">
+                        <div class="row" style="float:left;">
                             <?php foreach($carousel as $c): ?>
-                            <div class="col-sm-12 col-md-5ths">
+                            <div class="col-sm-12 col-md-3">
                                 <div class="thumbnail">
                                     <?php
                                         $imageFolder;
@@ -43,7 +43,7 @@
                                     <img src="<?php echo $imageFolder . $c['carousel_name']; ?>">
                                     <div class="caption">
                                         <h3>Image Caption</h3>
-                                        <p style="color:#000!important;"><?php echo $c['carousel_desc']; ?></p>
+                                        <p style="color:#000!important;"><?php if(isset($c['carousel_desc']) && !empty($c['carousel_desc'])){ echo $c['carousel_desc']; } else { echo "No image caption given"; }  ?></p>
                                         <p>
                                             <center>
                                                 <div class="btn-group">

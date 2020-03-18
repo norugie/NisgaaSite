@@ -21,10 +21,10 @@
 
                             <div class="row clearfix">
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                    <label for="edit_carousel_caption">Image Caption *</label>
+                                    <label for="edit_carousel_caption">Image Caption </label>
                                     <div class="form-group">
                                         <div class="form-line">
-                                            <input type="text" class="form-control" id="edit_carousel_caption" name="carousel_caption" required>
+                                            <input type="text" class="form-control" id="edit_carousel_caption" name="carousel_caption">
                                         </div>
                                     </div>
                                 </div>
