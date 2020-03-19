@@ -14,9 +14,8 @@
                     <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
                         <center>
                             <?php if($_SESSION['type'] != 3){ ?>
-                                <button type="button" class="btn bg-red waves-effect" style="display: inline-block;" data-toggle="modal" data-target="#new-carousel-set-modal"><i class="material-icons">find_replace</i><span>REPLACE ALL</span></button>
                                 <?php if(count($carousel) < 10){ ?>
-                                    <button type="button" class="btn bg-blue waves-effect" style="display: inline-block;" data-toggle="modal" data-target="#new-carousel-modal"><i class="material-icons">add</i></button>
+                                    <button type="button" class="btn bg-blue waves-effect" style="display: inline-block;" data-toggle="modal" data-target="#new-carousel-modal"><i class="material-icons">add</i><span>NEW IMAGE</span></button>
                                 <?php } ?>
                             <?php } ?>
                         </center>

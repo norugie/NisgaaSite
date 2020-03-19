@@ -250,43 +250,6 @@
 			}
 		}
 
-		public function newCarouselImageSet($database, $photo, $caption){
-			$school;
-
-			if($_SESSION['type'] == 4){
-				$school = $_SESSION['school'];
-			} else {
-				$school = 2;
-			}
-
-			$sql = "INSERT INTO carousel
-					VALUES(null, '$photo', '$caption', '$school', 'Active')";
-			$query = mysqli_query($database->con, $sql);
-			if(!$query){
-				$_SESSION['error_message'] = mysqli_error($database->con);
-				header("location: ../cms/interaction.php?tab=web&subtab=content&page=carousel&error=true");
-			}
-		}
-
-		public function disableCarouselImageSet($database){
-			$school;
-
-			if($_SESSION['type'] == 4){
-				$school = $_SESSION['school'];
-			} else {
-				$school = 2;
-			}
-
-			$sql = "UPDATE carousel SET
-						   status = 'Inactive'
-					WHERE status = 'Active'";
-			$query = mysqli_query($database->con, $sql);
-			if(!$query){
-				$_SESSION['error_message'] = mysqli_error($database->con);
-				header("location: ../cms/interaction.php?tab=web&subtab=content&page=carousel&error=true");
-			}
-		}
-
         /*********************************************************************************************/
 		/***************************  Interaction Functionalities -- Page Information  ***************/
         /*********************************************************************************************/
