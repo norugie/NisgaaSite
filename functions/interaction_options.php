@@ -383,68 +383,6 @@
             }
         }
 
-        if(isset($_GET['newCarouselImageSet'])){
-
-            $photo;
-            $caption;
-
-            $interaction->disableCarouselImageSet($database);
-
-            for($ctr=1; $ctr<= 10; $ctr++){
-                $caption = mysqli_real_escape_string($database->con, $_POST['carousel_caption_' . $ctr]);
-
-                if(isset($_FILES['carousel_image_' . $ctr]) && !empty($_FILES['carousel_image_' . $ctr]) && isset($_POST['carousel_caption_' . $ctr]) && !empty($_POST['carousel_caption_' . $ctr])){
-                    $imageFolder;
-                
-                    if($_SESSION['school'] == '3') {$imageFolder = "../../ness/images/carousel/";}
-                    else if($_SESSION['school'] == '4') {$imageFolder = "../../aames/images/carousel/";}
-                    else if($_SESSION['school'] == '5') {$imageFolder = "../../ges/images/carousel/";}
-                    else if($_SESSION['school'] == '6') {$imageFolder = "../../nbes/images/carousel/";}
-                    else {$imageFolder = "../images/carousel/";}
-
-                    $errors = 0;
-                    $file_name = $_FILES['carousel_image_' . $ctr]['name'];
-                    $file_size = $_FILES['carousel_image_' . $ctr]['size'];
-                    $file_tmp = $_FILES['carousel_image_' . $ctr]['tmp_name'];
-                    $file_type = $_FILES['carousel_image_' . $ctr]['type'];
-                    $file_ext = strtolower(end(explode('.', $_FILES['carousel_image']['name'])));
-                    $new_file_name = "CRSL-SD92_".substr(str_shuffle(str_repeat("0123456789abcdefghijklmnopqrstuvwxyz", 10)), 0, 10).".".$file_ext;
-                    
-                    $extensions = array("jpeg","jpg","png");
-                
-                    if(in_array($file_ext, $extensions) == false){
-                        $errors = 1;
-                    }
-
-                    if($file_size > 20971520){ // Limit image upload to 20 MB
-                        $errors = 2;
-                    }
-                    
-                    if($errors == 0){
-                        move_uploaded_file($file_tmp, $imageFolder.$new_file_name);
-                        $photo = mysqli_real_escape_string($database->con, $new_file_name);
-                        $interaction->newCarouselImageSet($database, $photo, $caption);
-                    } else {
-                        if($error == 1){
-                            $_SESSION['error_message'] = "You tried uploading a file with an invalid file extension. Please make sure that the file's extension is one of the followings: .jpeg, .jpg, .png.";
-                        } else if($error == 2){
-                            $_SESSION['error_message'] = "You tried uploading a file that exceeded the file size limit. Please make sure that the file size is less than 10 MB.";
-                        }
-                        header("location: ../cms/interaction.php?tab=web&subtab=content&page=carousel&error=true");
-                    }
-                }
-
-                if($ctr >= 10){
-                    global $log;
-                    $info = "Added new image set to the home carousel image list.";
-                    $log->logInput($database, $info);
-
-                    header("location: ../cms/interaction.php?tab=web&subtab=content&page=carousel&newCarouselImageSet=true");
-                }
-            }
-
-        }
-
         /*********************************************************************************************/
 		/***************************  Interaction Functionalities -- Page Information  ***************/
         /*********************************************************************************************/
