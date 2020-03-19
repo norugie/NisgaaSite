@@ -45,10 +45,10 @@
                                             </div>
                                         </div>
                                         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                                            <label for="contact_phone">Phone Number *</label>
+                                            <label for="contact_phone">Phone Number</label>
                                             <div class="form-group">
                                                 <div class="form-line">
-                                                    <input type="text" class="form-control" id="contact_phone" name="contact_phone" required>
+                                                    <input type="text" class="form-control" id="contact_phone" name="contact_phone">
                                                 </div>
                                             </div>
                                         </div>
