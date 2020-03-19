@@ -1,5 +1,9 @@
 <?php $carousel = $interaction->carouselList($database); ?>
 
+<script type="text/javascript" src="../plugins/croppie/croppie.js"></script>
+
+<link rel="stylesheet" href="../plugins/croppie/croppie.css" type="text/css" />
+
 <?php require '../components/modals/new_carousel.php'; ?>
 <?php require '../components/modals/edit_carousel.php'; ?>
 
@@ -33,10 +37,10 @@
                                     <?php
                                         $imageFolder;
                 
-                                        if($_SESSION['school'] == '3') {$imageFolder = "https://dev-ness.nisgaa.bc.ca/images/carousel/";}
-                                        else if($_SESSION['school'] == '4') {$imageFolder = "https://dev-aames.nisgaa.bc.ca/images/carousel/";}
-                                        else if($_SESSION['school'] == '5') {$imageFolder = "https://dev-ges.nisgaa.bc.ca/images/carousel/";}
-                                        else if($_SESSION['school'] == '6') {$imageFolder = "https://dev-nbes.nisgaa.bc.ca/images/carousel/";}
+                                        if($_SESSION['school'] == '3') {$imageFolder = "https://ness.nisgaa.bc.ca/images/carousel/";}
+                                        else if($_SESSION['school'] == '4') {$imageFolder = "https://aames.nisgaa.bc.ca/images/carousel/";}
+                                        else if($_SESSION['school'] == '5') {$imageFolder = "https://ges.nisgaa.bc.ca/images/carousel/";}
+                                        else if($_SESSION['school'] == '6') {$imageFolder = "https://nbes.nisgaa.bc.ca/images/carousel/";}
                                         else {$imageFolder = "../images/carousel/";}
                                     ?>
                                     <img src="<?php echo $imageFolder . $c['carousel_name']; ?>">
