@@ -35,10 +35,12 @@
                                             <input type="file" name="carousel_image" id="imgInpCarouselNew" accept="image/x-png, image/jpeg" required>
                                         </div>
                                         <br>
-                                        <center>
-                                            <img class="img-responsive" id="img-upload-new" style="width: 80%;" hidden>
-                                            <input type="text" id="cropped_image_value_new" name="cropped_image_value_new" value="">
-                                        </center>
+                                        <div id="image-display-new" style="display:none;">
+                                            <center>
+                                                <img class="img-responsive" id="img-upload-new" style="width: 80%;">
+                                                <input type="text" id="cropped-image-value-new" name="cropped_image_value_new" value="" hidden>
+                                            </center>
+                                        </div>
                                     </div>
 
                                 </div>
@@ -63,13 +65,13 @@
         $image_crop = $("#img-upload-new").croppie({
             enableExif: true,
             viewport: {
-                width: 600,
-                height: 300,
+                width: 800,
+                height: 420,
                 type: 'square' //circle
             },
             boundary:{
-                width: 600,
-                height: 400
+                width: 800,
+                height: 600
             }
         });
 
@@ -102,6 +104,7 @@
                     }).then(function(){
                         console.log("Success!");
                     });
+                    $("#image-display-new").css("display", "block");
 		        }
 		        
 		        reader.readAsDataURL(input.files[0]);
@@ -109,13 +112,11 @@
 		}
 
         $("#submit-carousel-new").click(function(){
-            var randomNumber = Math.floor(Math.random() * (99999 - 11111 + 1)) + 11111;
             $image_crop.croppie('result', {
                 type: 'canvas',
-                size: 'viewport',
-                name: 'CRSL-' + randomNumber
+                size: 'viewport'
             }).then(function(response){
-                $("#cropped_image_value_new").attr("value", response);
+                $("#cropped-image-value-new").attr("value", response);
             });
         })
         
