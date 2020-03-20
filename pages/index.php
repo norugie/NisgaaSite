@@ -83,11 +83,11 @@
                 </ul>
               <hr class="d-block d-lg-none">
             </div>
-            <div class="col-lg-3 with-border">
+            <!-- <div class="col-lg-3 with-border">
                 <h4 class="h5 text-center">UPCOMING EVENTS</h4>
-                <ul class="list-unstyled footer-blog-list">
+                <ul class="list-unstyled footer-blog-list"> -->
                     <!-- Displays all the upcoming and active events -->
-                    <?php if(count($events) < 1){ ?><li class="d-flex align-items-center"><div class="text"><h5 class="mb-0">No upcoming events available</h5></div></li><?php } ?>
+                    <!-- <?php if(count($events) < 1){ ?><li class="d-flex align-items-center"><div class="text"><h5 class="mb-0">No upcoming events available</h5></div></li><?php } ?>
                     <?php foreach($events as $e): ?>
                         <li class="d-flex align-items-center mb-0">
                             <div class="text">
@@ -110,10 +110,10 @@
                     <?php endforeach; ?>
                 </ul>
               <hr class="d-block d-lg-none">
-            </div>
-            <div class="col-lg-3 with-border">
+            </div> -->
+            <!-- <div class="col-lg-3 with-border"> -->
                 <!-- Displays a Nisga'a phrase randomly selected for the week from the table dictionary in the database -->
-                <?php $word = $site->weeklyWord($database); ?>
+                <!-- <?php $word = $site->weeklyWord($database); ?>
                 <h4 class="h5 text-center">NISGA'A PHRASE OF THE WEEK </h4>
                 <hr>
                 <h4 class="text-center" style="font-family: sans-serif!important; font-size: 18px!important;"><?php echo $word['word']; ?></h4>
@@ -121,6 +121,43 @@
                 <p class="lead text-center mb-0" style="font-size: 16px;">"<?php echo $word['word_meaning']; ?>"</p>
                 <p class="intro text-center"><i><?php echo $word['form']; ?></i></p>
                 <h5 class="h5 text-center">Learn more about the Nisga'a language at <a href="https://www.firstvoices.com/explore/FV/sections/Data/Nisga'a/Nisga'a/Nisga'a"><u>FirstVoices</u></a>.</h5>
+            </div> -->
+            
+            <div class="col-lg-3 with-border">
+                <h4 class="h5 text-center">COVID-19 UPDATES FROM THE MINISTRY</h4>
+                <ul class="list-unstyled footer-blog-list">
+                    <!-- Displays all the updates from the ministry regarding COVID-19. This page is temporary. -->
+                    <?php $covid_posts = $site->covidListIndex($database, $schoolContent, 4); ?>
+                    <!-- Displays the three most recent posts for COVID-19 updates -->
+                    <?php if(count($covid_posts) < 1){ ?><li class="d-flex align-items-center"><div class="text"><h5 class="mb-0">No updates available</h5></div></li><?php } ?>
+                    <?php foreach($covid_posts as $c19): ?>
+                        <li class="d-flex align-items-center" style="padding:3px;" >
+                            <div class="image"><img src="/images/thumbnails/<?php echo $c19['post_thumbnail']; ?>" alt="..." class="img-fluid"></div>
+                            <div class="text">
+                                <h5 class="mb-0"> <a href="/news/read/<?php echo preg_replace('/[a-zA-Z]/', '', $c19['post_id']); ?>"><?php echo $c19['post_title']; ?></a></h5>
+                            </div>
+                        </li>
+                    <?php endforeach; ?>
+                </ul>
+                <hr class="d-block d-lg-none">
+            </div>
+            <div class="col-lg-3 with-border">
+                <h4 class="h5 text-center">COVID-19 UPDATES FROM THE DISTRICT</h4>
+                <ul class="list-unstyled footer-blog-list">
+                    <!-- Displays all the updates from the district regarding COVID-19. This page is temporary. -->
+                    <?php $covid_posts = $site->covidListIndex($database, $schoolContent, 5); ?>
+                    <!-- Displays the three most recent posts for COVID-19 updates -->
+                    <?php if(count($covid_posts) < 1){ ?><li class="d-flex align-items-center"><div class="text"><h5 class="mb-0">No updates available</h5></div></li><?php } ?>
+                    <?php foreach($covid_posts as $c19): ?>
+                        <li class="d-flex align-items-center" style="padding:3px;" >
+                            <div class="image"><img src="/images/thumbnails/<?php echo $c19['post_thumbnail']; ?>" alt="..." class="img-fluid"></div>
+                            <div class="text">
+                                <h5 class="mb-0"> <a href="/news/read/<?php echo preg_replace('/[a-zA-Z]/', '', $c19['post_id']); ?>"><?php echo $c19['post_title']; ?></a></h5>
+                            </div>
+                        </li>
+                    <?php endforeach; ?>
+                </ul>
+                <hr class="d-block d-lg-none">
             </div>
         </div>
     </div>

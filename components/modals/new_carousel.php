@@ -45,11 +45,10 @@
                             </div>
                             <div class="row clearfix">
                                 <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12" style="float: right;">
-                                    <button type="submit" class="btn bg-blue-grey btn-block btn-lg waves-effect">SAVE</button>  
+                                    <button type="submit" id="submit-carousel-new" class="btn bg-blue-grey btn-block btn-lg waves-effect">SAVE</button>  
                                 </div>
                             </div>
                         </form>
-                        <button class="test-click"></button>
                     </div>
                 </div>
             </div>
@@ -109,7 +108,7 @@
 		    }
 		}
 
-        $(".test-click").click(function(){
+        $("#submit-carousel-new").click(function(){
             var randomNumber = Math.floor(Math.random() * (99999 - 11111 + 1)) + 11111;
             $image_crop.croppie('result', {
                 type: 'canvas',
