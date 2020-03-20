@@ -338,7 +338,29 @@
         }
 
         if(isset($_GET['newCarouselImage'])){
-            echo $_POST['cropped_image_value_new'];
+            if(isset($_POST['cropped_image_value_new'])){
+                $data = $_POST['cropped_image_value_new'];
+
+                $image_array_1 = explode(";", $data);
+                $image_array_2 = explode(",", $image_array_1[1]);
+                $data = base64_decode($image_array_2[1]);
+
+                if($_SESSION['school'] == '3') {$imageFolder = "../../ness/images/carousel/";}
+                else if($_SESSION['school'] == '4') {$imageFolder = "../../aames/images/carousel/";}
+                else if($_SESSION['school'] == '5') {$imageFolder = "../../ges/images/carousel/";}
+                else if($_SESSION['school'] == '6') {$imageFolder = "../../nbes/images/carousel/";}
+                else {$imageFolder = "../images/carousel/";}
+
+                $imageName = "CRSL-NEW-" . rand(111111,99999) . '.png';
+                $imageLocation = $imageFolder.$imageName;
+
+                file_put_contents($imageLocation, $data);
+
+                $photo = mysqli_real_escape_string($database->con, $imageName);
+                $caption = mysqli_real_escape_string($database->con, $_POST['carousel_caption']);
+                $interaction->newCarouselImage($database, $photo, $caption);
+                
+            }
             // $caption = mysqli_real_escape_string($database->con, $_POST['carousel_caption']);
 
             // if(isset($_FILES['carousel_image'])){
