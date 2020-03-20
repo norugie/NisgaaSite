@@ -37,6 +37,7 @@
                                         <br>
                                         <div id="image-display-new" style="display:none;">
                                             <center>
+                                                <p class="font-12"><i><b>Note:</b> This cropping functionality is mainly to help in orienting the image horizontally, with focus on what you'd like to see on the home page's image carousel. The image may look different depending on the resolution size of the screen the website is being viewed on.</i></p>
                                                 <img class="img-responsive" id="img-upload-new" style="width: 80%;">
                                                 <input type="text" id="cropped-image-value-new" name="cropped_image_value_new" value="" hidden>
                                             </center>
