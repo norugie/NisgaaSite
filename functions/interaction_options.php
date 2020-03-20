@@ -291,45 +291,26 @@
 
             } else {
 
-                if(isset($_FILES['carousel_image'])){
-                    $imageFolder;
-                
+                if(isset($_POST['cropped_image_value_edit'])){
+                    $data = $_POST['cropped_image_value_edit'];
+    
+                    $image_array_1 = explode(";", $data);
+                    $image_array_2 = explode(",", $image_array_1[1]);
+                    $data = base64_decode($image_array_2[1]);
+    
                     if($_SESSION['school'] == '3') {$imageFolder = "../../ness/images/carousel/";}
                     else if($_SESSION['school'] == '4') {$imageFolder = "../../aames/images/carousel/";}
                     else if($_SESSION['school'] == '5') {$imageFolder = "../../ges/images/carousel/";}
                     else if($_SESSION['school'] == '6') {$imageFolder = "../../nbes/images/carousel/";}
                     else {$imageFolder = "../images/carousel/";}
-
-                    $errors = 0;
-                    $file_name = $_FILES['carousel_image']['name'];
-                    $file_size = $_FILES['carousel_image']['size'];
-                    $file_tmp = $_FILES['carousel_image']['tmp_name'];
-                    $file_type = $_FILES['carousel_image']['type'];
-                    $file_ext = strtolower(end(explode('.', $_FILES['carousel_image']['name'])));
+    
+                    $imageName = "CRSL-EDIT-" . rand(111111,99999) . '.png';
+                    $imageLocation = $imageFolder.$imageName;
+    
+                    file_put_contents($imageLocation, $data);
+    
+                    $photo = mysqli_real_escape_string($database->con, $imageName);
                     
-                    $extensions = array("jpeg","jpg","png");
-                
-                    if(in_array($file_ext, $extensions) == false){
-                        $errors = 1;
-                    }
-
-                    if($file_size > 10485760){ // Limit image upload to 10 MB
-                        $errors = 2;
-                    }
-                    
-                    if($errors == 0){
-                        move_uploaded_file($file_tmp, $imageFolder.$file_name);
-                        $photo = mysqli_real_escape_string($database->con, $file_name);
-                    } else {
-                        if($error == 1){
-                            $_SESSION['error_message'] = "You tried uploading a file with an invalid file extension. Please make sure that the file's extension is one of the followings: .jpeg, .jpg, .png.";
-                        } else if($error == 2){
-                            $_SESSION['error_message'] = "You tried uploading a file that exceeded the file size limit. Please make sure that the file size is less than 10 MB.";
-                        }
-                        header("location: ../cms/interaction.php?tab=web&subtab=content&page=carousel&error=true");
-                    }
-                } else {
-                    header("location: ../cms/interaction.php?tab=web&subtab=content&page=carousel&error=true");
                 }   
                 
             }
@@ -338,6 +319,8 @@
         }
 
         if(isset($_GET['newCarouselImage'])){
+            $caption = mysqli_real_escape_string($database->con, $_POST['carousel_caption']);
+
             if(isset($_POST['cropped_image_value_new'])){
                 $data = $_POST['cropped_image_value_new'];
 
@@ -357,53 +340,9 @@
                 file_put_contents($imageLocation, $data);
 
                 $photo = mysqli_real_escape_string($database->con, $imageName);
-                $caption = mysqli_real_escape_string($database->con, $_POST['carousel_caption']);
                 $interaction->newCarouselImage($database, $photo, $caption);
                 
             }
-            // $caption = mysqli_real_escape_string($database->con, $_POST['carousel_caption']);
-
-            // if(isset($_FILES['carousel_image'])){
-            //     $imageFolder;
-                
-            //     if($_SESSION['school'] == '3') {$imageFolder = "../../ness/images/carousel/";}
-            //     else if($_SESSION['school'] == '4') {$imageFolder = "../../aames/images/carousel/";}
-            //     else if($_SESSION['school'] == '5') {$imageFolder = "../../ges/images/carousel/";}
-            //     else if($_SESSION['school'] == '6') {$imageFolder = "../../nbes/images/carousel/";}
-            //     else {$imageFolder = "../images/carousel/";}
-
-            //     $errors = 0;
-            //     $file_name = $_FILES['carousel_image']['name'];
-            //     $file_size = $_FILES['carousel_image']['size'];
-            //     $file_tmp = $_FILES['carousel_image']['tmp_name'];
-            //     $file_type = $_FILES['carousel_image']['type'];
-            //     $file_ext = strtolower(end(explode('.', $_FILES['carousel_image']['name'])));
-                    
-            //     $extensions = array("jpeg","jpg","png");
-            
-            //     if(in_array($file_ext, $extensions) == false){
-            //         $errors = 1;
-            //     }
-
-            //     if($file_size > 20971520){ // Limit image upload to 20 MB
-            //         $errors = 2;
-            //     }
-                
-            //     if($errors == 0){
-            //         move_uploaded_file($file_tmp, $imageFolder.$file_name);
-            //         $photo = mysqli_real_escape_string($database->con, $file_name);
-            //         $interaction->newCarouselImage($database, $photo, $caption);
-            //     } else {
-            //         if($error == 1){
-            //             $_SESSION['error_message'] = "You tried uploading a file with an invalid file extension. Please make sure that the file's extension is one of the followings: .jpeg, .jpg, .png.";
-            //         } else if($error == 2){
-            //             $_SESSION['error_message'] = "You tried uploading a file that exceeded the file size limit. Please make sure that the file size is less than 10 MB.";
-            //         }
-            //         header("location: ../cms/interaction.php?tab=web&subtab=content&page=carousel&error=true");
-            //     }
-            // } else {
-            //     header("location: ../cms/interaction.php?tab=web&subtab=content&page=carousel&error=true");
-            // }
         }
 
         /*********************************************************************************************/
