@@ -1,12 +1,4 @@
-<!-- Development Warning. Remove when site is fully deployed. -->
-<div class="top-bar" style="background-color: #fff!important;color: #000!important;">
-    <div class="row align-items-center">
-        <div class="col-md-12">
-            <center><p><b>This site is currently in development. Please report any encountered issues to the Tech Department (itsupport@nisgaa.bc.ca)</b></p></center>
-        </div>
-    </div>
-</div>
-
+<?php require 'site_development_warning.php'; ?>
 <div class="top-bar">
     <div class="row d-flex align-items-center">
     <div class="col-md-6 d-md-block d-none">

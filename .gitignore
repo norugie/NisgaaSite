@@ -3,6 +3,7 @@
 /functions/auth_helper.php
 /functions/auth_settings.php
 /functions/token.php
+/components/site_development_warning.php
 /jobs/*
 /links/*
 /images/contacts/*
