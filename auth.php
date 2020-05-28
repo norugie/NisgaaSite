@@ -47,7 +47,7 @@
             $query = mysqli_query($database->con, $sql);
             if(!$query){
                 session_destroy();
-                header("location:https://login.microsoftonline.com/common/oauth2/logout?post_logout_redirect_uri=https://www.nisgaa.bc.ca/error");
+                header("location:https://www.nisgaa.bc.ca/error");
             } else {
                 $loginInfo = mysqli_fetch_assoc($query); 
 
@@ -87,13 +87,13 @@
                     $query = mysqli_query($database->con, $sql);
                     if(!$query){
                         session_destroy();
-                        header("location:https://login.microsoftonline.com/common/oauth2/logout?post_logout_redirect_uri=https://www.nisgaa.bc.ca/error");
+                        header("location:https://www.nisgaa.bc.ca/error");
                     } else {
                         $sql = "SELECT id FROM users ORDER BY id DESC LIMIT 1";
                         $query = mysqli_query($database->con, $sql);
                         if(!$query){
                             session_destroy();
-                            header("location:https://login.microsoftonline.com/common/oauth2/logout?post_logout_redirect_uri=https://www.nisgaa.bc.ca/restricted");
+                            header("location:https://www.nisgaa.bc.ca/restricted");
                         } else {
                             $row = mysqli_fetch_assoc($query);
                             
@@ -111,7 +111,7 @@
                         $query = mysqli_query($database->con, $sql);
                         if(!$query){
                             session_destroy();
-                            header("location:https://login.microsoftonline.com/common/oauth2/logout?post_logout_redirect_uri=https://www.nisgaa.bc.ca/error");
+                            header("location:https://www.nisgaa.bc.ca/error");
                         }
                     }
                 }
@@ -152,14 +152,14 @@
                     
                 } else {
                     session_destroy();
-                    header("location:https://login.microsoftonline.com/common/oauth2/logout?post_logout_redirect_uri=https://www.nisgaa.bc.ca/restricted");
+                    header("location:https://www.nisgaa.bc.ca/restricted");
                 }
 
             }
             
         } else {
             session_destroy();
-            header("location:https://login.microsoftonline.com/common/oauth2/logout?post_logout_redirect_uri=https://www.nisgaa.bc.ca/restricted");
+            header("location:https://www.nisgaa.bc.ca/restricted");
         }
     }
 

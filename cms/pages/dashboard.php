@@ -45,7 +45,7 @@
 <div class="row">
     <div class="col-md-6 col-xs-12 col-sm-12">
         <div class="info-box-3 bg-blue-grey hover-zoom-effect">
-            <a href="post.php?tab=post&page=blog">
+            <a href="post.php?tab=post&page=news">
                 <div class="icon">
                     <i class="material-icons">mode_comment</i>
                 </div>

@@ -58,12 +58,12 @@
                     <!-- Displays the three most recent posts (Post and Media included) -->
                     <?php foreach($blog_posts as $blog): ?>
                         <?php $catIndex = $site->categoryListPerPost($database, $blog['id'])[0]['id']; ?>
-                        <li class="d-flex align-items-center" style="padding:3px; <?php if($catIndex == 3) { ?>background: rgba(255, 255, 255, 0.6)!important;<?php } ?>" >
-                            <div class="image"><img src="/images/thumbnails/<?php echo $blog['post_thumbnail']; ?>" alt="..." class="img-fluid"></div>
-                            <div class="text">
-                                <h5 class="mb-0"> <a href="/news/read/<?php echo preg_replace('/[a-zA-Z]/', '', $blog['post_id']); ?>" <?php if($catIndex == 3) { ?>style="color:#000!important;"<?php } ?>><?php echo $blog['post_title']; ?></a></h5>
-                            </div>
-                        </li>
+                            <li class="d-flex align-items-center" style="padding:3px; <?php if($catIndex == 3) { ?>background: rgba(255, 255, 255, 0.6)!important;<?php } ?>" >
+                                <div class="image"><img src="/images/thumbnails/<?php echo $blog['post_thumbnail']; ?>" alt="..." class="img-fluid"></div>
+                                <div class="text">
+                                    <h5 class="mb-0"> <a href="/news/read/<?php echo preg_replace('/[a-zA-Z]/', '', $blog['post_id']); ?>" <?php if($catIndex == 3) { ?>style="color:#000!important;"<?php } ?>><?php echo $blog['post_title']; ?></a></h5>
+                                </div>
+                            </li>
                     <?php endforeach; ?>
                 </ul>
               <hr class="d-block d-lg-none">
