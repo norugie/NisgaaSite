@@ -15,7 +15,7 @@
                             <div>
                                 <?php if(isset($c['carousel_desc']) && !empty($c['carousel_desc'])){ ?>
                                     <div class="owl-text-overlay d-none d-sm-block">
-                                        <h3 class="owl-title d-none d-md-block"><?php echo $c['carousel_desc']; ?></h3>
+                                        <h3 class="owl-title d-none m-0 d-md-block" style="padding:5px;"><?php echo $c['carousel_desc']; ?></h3>
                                     </div>
                                 <?php } ?>
                                 <img class="owl-img" src="/images/carousel/<?php echo $c['carousel_name']; ?>" alt="<?php echo $c['carousel_desc']; ?>">
