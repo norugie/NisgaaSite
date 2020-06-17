@@ -18,7 +18,7 @@
                     <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
                         <center>
                             <?php if($_SESSION['type'] != 3){ ?>
-                                <?php if(count($carousel) < 10){ ?>
+                                <?php if(count($carousel) < 15){ ?>
                                     <button type="button" class="btn bg-blue waves-effect" style="display: inline-block;" data-toggle="modal" data-target="#new-carousel-modal"><i class="material-icons">add</i><span>NEW IMAGE</span></button>
                                 <?php } ?>
                             <?php } ?>
