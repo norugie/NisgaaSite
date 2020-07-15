@@ -20,6 +20,7 @@
 /filemanager
 /source/*
 /thumbs/*
+/no_update.dat
 
 # Folder exceptions
 !/jobs/.gitkeep

@@ -111,9 +111,22 @@
                 </ul>
               <hr class="d-block d-lg-none">
             </div> -->
-            <!-- <div class="col-lg-3 with-border"> -->
+            <div class="col-lg-3 with-border">
+                <h4 class="h5 text-center">IMPORTANT COVID-19 UPDATES</h4>
+                <ul class="list-unstyled footer-blog-list">
+                    <li class="d-flex align-items-center mb-0">
+                        <div class="text">
+                            <p class="text-center" style="font-size: 13px!important;">Refer to the links below for COVID-19 updates from the Ministry and the District</p>
+                            <h5 class="h5"><a href="/covid_ministry">COVID-19 Updates from the Ministry</a></h5>
+                            <h5 class="h5"><a href="/covid_district">COVID-19 Updates from SD92</a></h5>
+                        </div>
+                    </li>
+                </ul>
+              <hr class="d-block d-lg-none">
+            </div>
+            <div class="col-lg-3 with-border">
                 <!-- Displays a Nisga'a phrase randomly selected for the week from the table dictionary in the database -->
-                <!-- <?php $word = $site->weeklyWord($database); ?>
+                <?php $word = $site->weeklyWord($database); ?>
                 <h4 class="h5 text-center">NISGA'A PHRASE OF THE WEEK </h4>
                 <hr>
                 <h4 class="text-center" style="font-family: sans-serif!important; font-size: 18px!important;"><?php echo $word['word']; ?></h4>
@@ -121,48 +134,10 @@
                 <p class="lead text-center mb-0" style="font-size: 16px;">"<?php echo $word['word_meaning']; ?>"</p>
                 <p class="intro text-center"><i><?php echo $word['form']; ?></i></p>
                 <h5 class="h5 text-center">Learn more about the Nisga'a language at <a href="https://www.firstvoices.com/explore/FV/sections/Data/Nisga'a/Nisga'a/Nisga'a"><u>FirstVoices</u></a>.</h5>
-            </div> -->
-            
-            <div class="col-lg-3 with-border">
-                <h4 class="h5 text-center">COVID-19 UPDATES FROM THE MINISTRY</h4>
-                <ul class="list-unstyled footer-blog-list">
-                    <!-- Displays all the updates from the ministry regarding COVID-19. This page is temporary. -->
-                    <?php $covid_posts = $site->covidListIndex($database, $schoolContent, 4); ?>
-                    <!-- Displays the three most recent posts for COVID-19 updates -->
-                    <?php if(count($covid_posts) < 1){ ?><li class="d-flex align-items-center"><div class="text"><h5 class="mb-0">No updates available</h5></div></li><?php } ?>
-                    <?php foreach($covid_posts as $c19): ?>
-                        <li class="d-flex align-items-center" style="padding:3px;" >
-                            <div class="image"><img src="/images/thumbnails/<?php echo $c19['post_thumbnail']; ?>" alt="..." class="img-fluid"></div>
-                            <div class="text">
-                                <h5 class="mb-0"> <a href="/news/read/<?php echo preg_replace('/[a-zA-Z]/', '', $c19['post_id']); ?>"><?php echo $c19['post_title']; ?></a></h5>
-                            </div>
-                        </li>
-                    <?php endforeach; ?>
-                </ul>
-                <hr class="d-block d-lg-none">
-            </div>
-            <div class="col-lg-3 with-border">
-                <h4 class="h5 text-center">COVID-19 UPDATES FROM THE DISTRICT</h4>
-                <ul class="list-unstyled footer-blog-list">
-                    <!-- Displays all the updates from the district regarding COVID-19. This page is temporary. -->
-                    <?php $covid_posts = $site->covidListIndex($database, $schoolContent, 5); ?>
-                    <!-- Displays the three most recent posts for COVID-19 updates -->
-                    <?php if(count($covid_posts) < 1){ ?><li class="d-flex align-items-center"><div class="text"><h5 class="mb-0">No updates available</h5></div></li><?php } ?>
-                    <?php foreach($covid_posts as $c19): ?>
-                        <li class="d-flex align-items-center" style="padding:3px;" >
-                            <div class="image"><img src="/images/thumbnails/<?php echo $c19['post_thumbnail']; ?>" alt="..." class="img-fluid"></div>
-                            <div class="text">
-                                <h5 class="mb-0"> <a href="/news/read/<?php echo preg_replace('/[a-zA-Z]/', '', $c19['post_id']); ?>"><?php echo $c19['post_title']; ?></a></h5>
-                            </div>
-                        </li>
-                    <?php endforeach; ?>
-                </ul>
-                <hr class="d-block d-lg-none">
             </div>
         </div>
     </div>
 </footer>
-
 <!-- INFORMATION BAR END -->
 
 <!-- Owl Carousel JS -->
