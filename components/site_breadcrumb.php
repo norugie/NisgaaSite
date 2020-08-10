@@ -48,6 +48,8 @@ if($page_name == 'news'){
     $breadcrumb = "Tech Help";
 } else if($page_name == 'plans'){
     $breadcrumb = "District Strategic Plans";
+} else if($page_name == 'gcc'){
+    $breadcrumb = "Gitginsaa Childcare Centre";
 } else if($page_name == 'covid_district'){
     $breadcrumb = "COVID-19 Updates from SD92";
 } else if($page_name == 'covid_ministry'){
