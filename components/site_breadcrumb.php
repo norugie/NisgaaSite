@@ -52,7 +52,7 @@ if($page_name == 'news'){
     $breadcrumb = "COVID-19 Updates from SD92";
 } else if($page_name == 'covid_ministry'){
     $breadcrumb = "COVID-19 Updates from the Ministry";
-}else {
+} else {
     $breadcrumb = str_replace('_', ' ', $page_name);
 }
 

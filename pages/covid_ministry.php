@@ -1,4 +1,4 @@
-<?php $updates = $site->covidListIndex($database, $schoolContent, 5); ?>
+<?php $updates = $site->covidListIndex($database, $schoolContent, 4); ?>
 <div class="col-md-9">
     <!-- COVID INFORMATION FROM DISTRICT -->
     <section>
