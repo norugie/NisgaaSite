@@ -61,6 +61,8 @@
                 
                 if(in_array("appadmins", $gs)){
                     $role = 1;
+                } else if(in_array("gccmanager", $gs)){
+                    $role = 5;
                 } else if($user->getDepartment() === "SDO" || $user->getDepartment() === "TechOffice") {
                     $role = 2;
                 } else {
