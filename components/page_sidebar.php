@@ -47,6 +47,7 @@
     <div class="menu">
         <ul class="list">
             <li class="header">MAIN NAVIGATION</li>
+            <?php if($_SESSION['type'] != 5) {?>
             <li id="dashboard">
                 <a href="../cms/">
                     <i class="material-icons">dashboard</i>
@@ -91,6 +92,7 @@
                     </li>  
                 </ul>
             </li>
+            <?php } ?>
             <li id="sd">
                 <a href="javascript:void(0);" class="menu-toggle">
                     <i class="material-icons">business</i>
@@ -109,7 +111,7 @@
                             <span>Employment</span>
                         </a>
                     </li>
-                    <?php if($_SESSION['school'] != 3 && $_SESSION['school'] != 4 && $_SESSION['school'] != 5 && $_SESSION['school'] != 6){ ?> 
+                    <?php if($_SESSION['school'] != 3 && $_SESSION['school'] != 4 && $_SESSION['school'] != 5 && $_SESSION['school'] != 6 && $_SESSION['type'] != 5){ ?> 
                     <li id="files">
                         <a href="district.php?tab=sd&page=files">
                             <i class="material-icons">library_books</i>
@@ -155,6 +157,7 @@
                     <span>Web Interactions</span>
                 </a>
                 <ul class="ml-menu">
+                    <?php if($_SESSION['type'] != 5){ ?>
                     <li id="content">
                         <a href="javascript:void(0);" class="menu-toggle">
                             <i class="material-icons">view_day</i>
@@ -246,6 +249,13 @@
                         </a>
                     </li>
                     <?php } ?>
+                    <?php } ?>
+                    <li id="gcc">
+                        <a href="interaction.php?tab=web&page=gcc">
+                            <i class="material-icons">face</i>
+                            <span>Gitginsaa Childcare Centre</span>
+                        </a>
+                    </li>
                 </ul>
             </li>
         </ul>
