@@ -149,7 +149,8 @@
                             VALUES(null, '$logId', '$log', '$userId', '$school', NOW())";
                     $query = mysqli_query($database->con, $sql);
                     if($query){
-                        header("location: /cms/");
+                        if($_SESSION['type'] != 5) header("location: /cms/");
+                        else header("location: /cms/interaction.php?tab=web&page=gcc");
                     }
                     
                 } else {
