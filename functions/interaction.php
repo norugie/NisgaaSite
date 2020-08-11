@@ -11,15 +11,17 @@
 						   web_desc = '$web_desc'
 					WHERE id = '$id'";
 			$query = mysqli_query($database->con, $sql);
+			$page;
+			if($id == 18 ? $page = "&page=gcc" : $page = "&subtab=content&page=about");
 			if(!$query){
 				$_SESSION['error_message'] = mysqli_error($database->con);
-			    header("location: ../cms/interaction.php?tab=web&subtab=content&page=about&error=true");
+			    header("location: ../cms/interaction.php?tab=web" . $page . "&error=true");
 			} else {
 				global $log;
 				$info = "Modified the page information for About page";
 				$log->logInput($database, $info);
 
-				header("location: ../cms/interaction.php?tab=web&subtab=content&page=about&editPageInfo=true");
+				header("location: ../cms/interaction.php?tab=web" . $page . "&editPageInfo=true");
 
 			}
 		}
