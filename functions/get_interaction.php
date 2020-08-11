@@ -15,6 +15,8 @@
 
 			if($_SESSION['type'] == 4){
 				$school = $_SESSION['school'];
+			} else if($_SESSION['type'] == 5){
+				$school = 12;
 			} else {
 				$school = 2;
 			}
