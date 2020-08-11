@@ -47,7 +47,6 @@
     <div class="menu">
         <ul class="list">
             <li class="header">MAIN NAVIGATION</li>
-            <?php if($_SESSION['type'] != 5) {?>
             <li id="dashboard">
                 <a href="../cms/">
                     <i class="material-icons">dashboard</i>
@@ -66,6 +65,7 @@
                             <span>News Posts</span>
                         </a>
                     </li>
+                    <?php if($_SESSION['type'] != 5){ ?>
                     <li id="media">
                         <a href="post.php?tab=post&page=media">
                             <i class="material-icons">photo_library</i>
@@ -84,6 +84,7 @@
                             <span>Links</span>
                         </a>
                     </li>
+                    <?php } ?>
                     <li id="categories">
                         <a href="post.php?tab=post&page=categories">
                             <i class="material-icons">widgets</i>
@@ -92,7 +93,6 @@
                     </li>  
                 </ul>
             </li>
-            <?php } ?>
             <li id="sd">
                 <a href="javascript:void(0);" class="menu-toggle">
                     <i class="material-icons">business</i>

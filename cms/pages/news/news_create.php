@@ -46,7 +46,7 @@
                 <div class="row clearfix">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <label for="post_categories">Post Categories</label>
-                        <p class="font-12"><i><b>Note:</b> Leaving this section blank will automatically tag your post to "Uncategorized".</i></p>
+                        <p class="font-12"><i><b>Note:</b> Leaving this section blank will automatically tag your post to <?php echo ($_SESSION['type'] == 5 ? '"Daycare"' :  '"Uncategorized"'); ?>.</i></p>
                         <div class="form-group">
                             <input type="text" value=""  name="post_categories_id" hidden>
                             <div class="form-line">
@@ -93,7 +93,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="row clearfix" <?php if($_SESSION['school'] == 3 || $_SESSION['school'] == 4 || $_SESSION['school'] == 5 || $_SESSION['school'] == 6){ echo "hidden"; } ?>>
+                <div class="row clearfix" <?php if($_SESSION['school'] == 3 || $_SESSION['school'] == 4 || $_SESSION['school'] == 5 || $_SESSION['school'] == 6 || $_SESSION['type'] == 5){ echo "hidden"; } ?>>
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <label for="post_fb_autopost">Post on SD92 Social Media Platforms?</label>
                         <p class="font-12"><i><b>Note:</b> Posting on to SD92's social media outlets will take at least 15 minutes to 2 hours after the post's creation.</i></p>

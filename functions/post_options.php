@@ -181,7 +181,7 @@
     
                 }
             } else {
-                $post->addPostCategories($database, $post_id, 2);
+                if($_SESSION['type'] == 5 ? $post->addPostCategories($database, $post_id, 6) : $post->addPostCategories($database, $post_id, 2));
                 header("location:../cms/post.php?tab=post&page=news&addPost=true");
             }
             
