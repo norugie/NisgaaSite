@@ -250,12 +250,14 @@
                     </li>
                     <?php } ?>
                     <?php } ?>
+                    <?php if($_SESSION['type'] != 3 && $_SESSION['type'] != 4){ ?>
                     <li id="gcc">
                         <a href="interaction.php?tab=web&page=gcc">
                             <i class="material-icons">face</i>
                             <span>Gitginsaa Childcare Centre</span>
                         </a>
                     </li>
+                    <?php } ?>
                 </ul>
             </li>
         </ul>
