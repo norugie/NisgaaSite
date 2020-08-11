@@ -1,4 +1,4 @@
-<!-- Edit Finance Modal -->
+<!-- Edit File Modal -->
 <div class="modal fade" id="edit-page-file-modal" tabindex="-1" role="dialog">
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
