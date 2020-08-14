@@ -171,6 +171,7 @@
             $post_cats = explode(',', $post_categories);
 
             if(!empty($post_cats[0])){
+                if($_SESSION['type'] == 5 && !in_array(6, $post_cats)) array_push($post_cats, 6);
                 for($i = 0; $i <= count($post_cats); $i++){
 
                     $post->addPostCategories($database, $post_id, $post_cats[$i]);
@@ -197,17 +198,23 @@
 
             $post_cats = explode(',', $categories);
 
-            for($i = 0; $i <= count($post_cats); $i++){
+            if(!empty($post_cats[0])){
+                if($_SESSION['type'] == 5 && !in_array(6, $post_cats)) array_push($post_cats, 6);
+                for($i = 0; $i <= count($post_cats); $i++){
 
-                $post->addPostCategories($database, $id, $post_cats[$i]);
-
-                if($i == count($post_cats)){
-                    global $log;
-					$info = "Modified news post categories: " . $title;
-					$log->logInput($database, $info);
-                    header("location:../cms/post.php?tab=post&page=news&editPostCategories=true");
+                    $post->addPostCategories($database, $id, $post_cats[$i]);
+    
+                    if($i == count($post_cats)){
+                        global $log;
+                        $info = "Modified news post categories: " . $title;
+                        $log->logInput($database, $info);
+                        header("location:../cms/post.php?tab=post&page=news&editPostCategories=true");
+                    }
+    
                 }
-
+            } else {
+                if($_SESSION['type'] == 5 ? $post->addPostCategories($database, $post_id, 6) : $post->addPostCategories($database, $post_id, 2));
+                header("location:../cms/post.php?tab=post&page=news&addPost=true");
             }
         }
 
