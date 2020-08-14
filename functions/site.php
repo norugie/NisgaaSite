@@ -509,7 +509,7 @@
 			return $array;
 		}
 
-		public function covidListIndex($database, $school, $newsSource){
+		public function specifiedListIndex($database, $school, $newsSource){
 			$array = array();
 
 			$sql = "SELECT posts.post_title,
