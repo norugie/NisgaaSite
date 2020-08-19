@@ -1083,6 +1083,23 @@
 			}
 		}
 
+
+		// DELETE AFTER NLC PROJECT
+		public function wordList($database){
+			$sql = "SELECT * FROM dictionary";
+			$query = mysqli_query($database->con, $sql);
+			if (!$query) {
+				return ("Error description: " . mysqli_error($database->con));
+			    //echo "<script>window.open('https://www.nisgaa.bc.ca/error', '_parent');</script>";
+			} else {
+				while($row = mysqli_fetch_array($query)){
+					$array[] = $row;
+				}
+            }
+            
+			return $array; 
+		}
+
 	}
 
     require 'site_options.php';
