@@ -6,7 +6,7 @@ function editJob(jobInfo) {
     $("#edit-school").selectpicker("val", job['school']);
     $("#edit-jobtype").selectpicker("val", job['job_type']);
     $("#edit-job-id-num").attr("value", job['id']);
-    $("#edit-jobid-hidden").attr("value", job['job_id']);
+    $("#edit-jobid-hidden").attr("value", job['job_id'].replace("JOB", ""));
 
 }
 

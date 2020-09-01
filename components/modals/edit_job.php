@@ -18,9 +18,16 @@
                             <div>
                                 <form class="edit_form_validate" action="../functions/district.php?district=true&editJobDetails=true" method="POST">
                                     <input type="text" id="edit-job-id-num" name="job-id" hidden>
-                                    <input type="text" id="edit-jobid-hidden" name="jobid-name" hidden>
                                     <div class="row clearfix">
-                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                        <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                                            <label for="jobid">Job ID *</label>
+                                            <div class="form-group">
+                                                <div class="form-line">
+                                                    <input type="text" class="form-control" id="edit-jobid-hidden" name="jobid-name" onkeypress="return validateEvent(event);" required>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
                                             <label for="edit-title">Job Title *</label>
                                             <div class="form-group">
                                                 <div class="form-line">
