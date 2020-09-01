@@ -98,6 +98,7 @@
 		public function editJob($database, $id, $title, $jobtitle, $jobdesc, $jobtype, $school){
 
 			$sql = "UPDATE jobs SET
+						   job_id = '$title',
 						   title = '$jobtitle',
 						   job_desc = '$jobdesc',
 						   job_type = '$jobtype',

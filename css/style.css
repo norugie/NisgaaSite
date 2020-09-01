@@ -7587,7 +7587,7 @@ fieldset[disabled] .form-control {
         -o-text-overflow: ellipsis;
         text-overflow: ellipsis;
         overflow: hidden;
-        font-size: 14px;
+        font-size: 15px;
         max-width: 200px;
         color: #fff; }
       .sidebar .user-info .info-container .email {
@@ -7596,7 +7596,7 @@ fieldset[disabled] .form-control {
         -o-text-overflow: ellipsis;
         text-overflow: ellipsis;
         overflow: hidden;
-        font-size: 12px;
+        font-size: 13px;
         max-width: 200px;
         color: #fff; }
       .sidebar .user-info .info-container .user-helper-dropdown {

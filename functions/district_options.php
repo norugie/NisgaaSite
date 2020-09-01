@@ -133,7 +133,7 @@
         if(isset($_GET['editJobDetails'])){
 
             $id = mysqli_real_escape_string($database->con, $_POST['job-id']);
-            $title = mysqli_real_escape_string($database->con, $_POST['jobid-name']);
+            $title = "JOB" . mysqli_real_escape_string($database->con, $_POST['jobid-name']);
 
             $jobtitle = mysqli_real_escape_string($database->con, $_POST['title']);
             $jobdesc = mysqli_real_escape_string($database->con, $_POST['jobdesc']);

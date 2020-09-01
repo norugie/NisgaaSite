@@ -34,9 +34,6 @@
 <aside id="leftsidebar" class="sidebar">
     <!-- User Info -->
     <div class="user-info">
-        <div class="image">
-            <img src="../images/profile/<?php echo $user['display_picture']; ?>" width="48" height="48" alt="User" />
-        </div>
         <div class="info-container">
             <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?php echo $user['firstname'] . " " . $user['lastname']; ?></div>
             <div class="email"><?php echo $user['email']; ?></div>
