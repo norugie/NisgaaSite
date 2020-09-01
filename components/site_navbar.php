@@ -92,11 +92,11 @@
             <li class="dropdown-item"><a href="/teacher_resources" class="nav-link">Teacher Resources</a></li>
             <li class="dropdown-item"><a href="/learning_resources" class="nav-link">Learning Resources</a></li>
             <li class="dropdown-item"><a href="/student_resources" class="nav-link">Student Resources</a></li>
-            <li class="dropdown-item"><a href="/parent_resources" class="nav-link">Parent Resources</a></li>
             </ul>
         </li>
         <li class="nav-item"><a href="/news">District News</a></li>
         <li class="nav-item"><a href="/careers">Careers</a></li>
+        <li class="nav-item"><a href="/parent_resources">Parents</a></li>
         <li class="nav-item"><a href="#search"><i class="fa fa-search fa-lg"></i><span class="d-inline-block d-lg-none">&nbsp;&nbsp;Search</span></a></li>
         </ul>
     </div>
