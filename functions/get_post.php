@@ -499,6 +499,56 @@
 			return $array; 
 		}
 
+		/*********************************************************************************************/
+		/***************************  Posts Functionalities -- Posts Integrated  *********************/
+		/*********************************************************************************************/
+		
+		public function postsIntegratedList($database){
+			$array = array();
+			$sql;
+			$sqlquery = "SELECT posts.post_title,
+						   posts.post_date,
+						   posts.post_school,
+						   posts.id,
+						   posts.post_id,
+						   posts.post_type,
+						   users.firstname,
+						   users.lastname,
+						   schools.school_abbv
+					FROM posts
+					LEFT JOIN users
+					ON (users.id = posts.post_author)
+					LEFT JOIN schools
+					ON (schools.id = posts.post_school) 
+					WHERE posts.status = 'Active'";
+
+			/*  Content Filter  */
+			if($_SESSION['type'] != 1){
+				$school;
+				if($_SESSION['school'] != 3 && $_SESSION['school'] != 4 && $_SESSION['school'] != 5 && $_SESSION['school'] != 6){
+					$school = 2;
+				} else {
+					$school = $_SESSION['school'];
+				}
+				$sql = $sqlquery . " AND posts.post_school = '$school' ORDER BY posts.post_date DESC";
+			} else {
+				$sql = $sqlquery . " ORDER BY posts.post_date DESC";
+			}
+			/*  END Content Filter  */
+
+			$query = mysqli_query($database->con, $sql);
+			if(!$query){
+				global $error;
+				echo $error->errorMessage(mysqli_error($database->con));
+			} else {
+				while($row = mysqli_fetch_array($query)){
+					$array[] = $row;
+				}
+            }
+            
+			return $array;	
+		}
+
     }
 
 
