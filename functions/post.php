@@ -3,6 +3,122 @@
     Class Post {
 
         /*********************************************************************************************/
+		/***************************  Posts Functionalities -- Posts Integrated  *********************/
+        /*********************************************************************************************/
+		public function disablePostEventIntegrated($database, $id, $title){
+
+			$sql = "UPDATE posts SET 
+						   status = 'Archived'
+					WHERE id = '$id'";
+			$query = mysqli_query($database->con, $sql);
+			if(!$query){
+				$_SESSION['error_message'] = mysqli_error($database->con);
+			    header("location:../cms/post.php?tab=post&page=posts&error=true");
+			} else {
+				global $log;
+				$info = "Archived post: " . $title;
+				$log->logInput($database, $info);
+
+				$sql = "UPDATE events SET 
+							   status = 'Cancelled'
+						WHERE post = '$id'";
+				$query = mysqli_query($database->con, $sql);
+				if(!$query){
+					$_SESSION['error_message'] = mysqli_error($database->con);
+					header("location:../cms/post.php?tab=post&page=posts&error=true");
+				} else {
+					header("location:../cms/post.php?tab=post&page=posts&postDisabled=true");
+				}	
+			}	
+	
+		}
+
+		public function disablePostIntegrated($database, $id, $title){
+
+			$sql = "UPDATE posts SET 
+						   status = 'Archived'
+					WHERE id = '$id'";
+			$query = mysqli_query($database->con, $sql);
+			if(!$query){
+				$_SESSION['error_message'] = mysqli_error($database->con);
+			    header("location:../cms/post.php?tab=post&page=posts&error=true");
+			} else {
+				global $log;
+				$info = "Archived post: " . $title;
+				$log->logInput($database, $info);
+
+				header("location:../cms/post.php?tab=post&page=posts&postDisabled=true");
+			}	
+	
+		}
+
+		public function addPostIntegrated($database, $post_title, $post_content, $post_thumbnail, $post_desc, $post_type, $sm_opt, $ssd_opt){
+			$id;
+			$post_id = 'PST' . rand(1111111111,9999999999);
+			$user = $_SESSION['id'];
+			$school;
+
+			if($_SESSION['type'] == 4){
+				$school = $_SESSION['school'];
+			} else {
+				$school = 2;
+			}
+
+			$sql = "INSERT INTO posts
+					VALUES (null, '$post_id', '$post_title', NOW(), NOW(), '$post_type', '$user', '$school', '$post_content', '$post_thumbnail', '$post_desc', '$sm_opt', '$ssd_opt', 'Active')";
+			$query = mysqli_query($database->con, $sql);
+			if(!$query){
+				$_SESSION['error_message'] = mysqli_error($database->con);
+				header("location:../cms/post.php?tab=post&page=posts&error=true");
+			} else {
+				$sql = "SELECT id FROM posts ORDER BY id DESC LIMIT 1";
+				$query = mysqli_query($database->con, $sql);
+				if(!$query){
+					$_SESSION['error_message'] = mysqli_error($database->con);
+					header("location:../cms/post.php?tab=post&page=posts&error=true");
+				} else {
+					global $log;
+					$info = "Created a new post: " . $post_title;
+					$log->logInput($database, $info);
+
+					$row = mysqli_fetch_assoc($query);
+					$id = $row['id'];
+				}
+			}
+
+			return $id;	
+		}
+
+		public function addPostCategoriesIntegrated($database, $post_id, $cat_id){
+			$sql = "INSERT INTO post_categories
+			VALUES (null, '$post_id','$cat_id')";
+			$query = mysqli_query($database->con, $sql);
+			if(!$query){
+				$_SESSION['error_message'] = mysqli_error($database->con);
+				header("location:../cms/post.php?tab=post&page=posts&error=true");
+			}
+		}
+
+		public function deleteAllPostCategoriesIntegrated($database, $id){
+			$sql = "DELETE FROM post_categories WHERE post_id = '$id'";
+			$query = mysqli_query($database->con, $sql);
+			if(!$query){
+				$_SESSION['error_message'] = mysqli_error($database->con);
+				header("location:../cms/post.php?tab=post&page=posts&error=true");
+			}
+		}
+
+		public function addPostImagesIntegrated($database, $id, $media_image){
+			$sql = "INSERT INTO media
+			VALUES (null, '$media_image','$id')";
+			$query = mysqli_query($database->con, $sql);
+			if(!$query){
+				$_SESSION['error_message'] = mysqli_error($database->con);
+				header("location:../cms/post.php?tab=post&page=media&error=true");
+			}
+		}
+
+        /*********************************************************************************************/
 		/***************************  Posts Functionalities -- Blog Posts  ***************************/
         /*********************************************************************************************/
 

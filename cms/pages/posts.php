@@ -19,7 +19,7 @@
         }
 
         $post_id = $_GET['post_id'];
-        $post_info = $post->postInformation($database, $post_id);
+        $post_info = $post->postInformationIntegrated($database, $post_id);
        
     }
  ?>
