@@ -10,6 +10,123 @@
         $log = new Log();
 
         /*********************************************************************************************/
+		/***************************  Posts Functionalities -- Posts Integrated **********************/
+        /*********************************************************************************************/
+
+        if(isset($_GET['postDisableIntegrated'])){
+            
+            $id = $_GET['id'];
+            $title = str_replace('%20', ' ', $_GET['postName']);
+
+            $post->disablePost($database, $id, $title);
+
+        }
+
+        if(isset($_GET['postDisableEventIntegrated'])){
+            
+            $id = $_GET['id'];
+            $title = str_replace('%20', ' ', $_GET['postName']);
+
+            $post->disablePostEvent($database, $id, $title);
+
+        }
+
+        if(isset($_GET['addPostIntegrated'])){
+
+            $post_title = mysqli_real_escape_string($database->con, $_POST['post_title']);
+            $post_content = mysqli_real_escape_string($database->con, $_POST['post_content']);
+            $post_categories = mysqli_real_escape_string($database->con, $_POST['post_categories_id']);
+            $post_type = mysqli_real_escape_string($database->con, $_POST['post_opt_type']);
+            $sm_opt = mysqli_real_escape_string($database->con, $_POST['post_sm_autopost']);
+            $ssd_opt = mysqli_real_escape_string($database->con, $_POST['post_ssd_autopost']);
+            $post_thumbnail;
+            $post_desc;
+            if(isset($_POST['post_desc']) && !empty($_POST['post_desc'])){
+                $post_desc = mysqli_real_escape_string($database->con, $_POST['post_desc']);
+            } else {
+                $post_desc = "No description given.";
+            }
+
+            $post_id;
+
+            if(!file_exists($_FILES['post_thumbnail']['tmp_name']) || !is_uploaded_file($_FILES['post_thumbnail']['tmp_name'])){
+
+                $post_thumbnail = "post_thumbnail.jpg";
+                $post_id = $post->addPostIntegrated($database, $post_title, $post_content, $post_thumbnail, $post_desc, $post_type, $sm_opt, $ssd_opt);
+
+            } else {
+
+                if(isset($_FILES['post_thumbnail'])){
+                    $imageFolder;
+                
+                    if($_SESSION['school'] == '3') {$imageFolder = "../../ness/images/thumbnails/";}
+                    else if($_SESSION['school'] == '4') {$imageFolder = "../../aames/images/thumbnails/";}
+                    else if($_SESSION['school'] == '5') {$imageFolder = "../../ges/images/thumbnails/";}
+                    else if($_SESSION['school'] == '6') {$imageFolder = "../../nbes/images/thumbnails/";}
+                    else {$imageFolder = "../images/thumbnails/";}
+
+                    $errors = 0;
+                    $file_name = $_FILES['post_thumbnail']['name'];
+                    $file_size = $_FILES['post_thumbnail']['size'];
+                    $file_tmp = $_FILES['post_thumbnail']['tmp_name'];
+                    $file_type = $_FILES['post_thumbnail']['type'];
+                    $file_ext = strtolower(end(explode('.', $_FILES['post_thumbnail']['name'])));
+                    $new_file_name = "THMB-SD92_".substr(str_shuffle(str_repeat("0123456789abcdefghijklmnopqrstuvwxyz", 10)), 0, 10).".".$file_ext;
+                    
+                    $extensions = array("jpeg","jpg","png");
+                
+                    if(in_array($file_ext, $extensions) == false){
+                        $errors = 1;
+                    }
+
+                    if($file_size > 10485760){ // Limit thumbnail upload to 10 MB
+                        $errors = 2;
+                    }
+                    
+                    if($errors == 0){
+                        move_uploaded_file($file_tmp, $imageFolder . $new_file_name);
+                        $post_thumbnail = mysqli_real_escape_string($database->con, $new_file_name);
+                        $post_id = $post->addPostIntegrated($database, $post_title, $post_content, $post_thumbnail, $post_desc, $sm_opt, $ssd_opt);
+                    } else {
+                        if($errors == 1){
+                            $_SESSION['error_message'] = "You tried uploading a file with an invalid file extension. Please make sure that the file's extension is one of the followings: .jpeg, .jpg, .png.";
+                        } else if($errors == 2){
+                            $_SESSION['error_message'] = "You tried uploading a file that exceeded the file size limit. Please make sure that the file size is less than 10 MB.";
+                        }
+                        header("location:../cms/post.php?tab=post&page=news&error=true");
+                    }
+                } else {
+                    header("location:../cms/post.php?tab=post&page=news&error=true");
+                }   
+                
+            }
+
+            $post_cats = explode(',', $post_categories);
+
+            if(!empty($post_cats[0])){
+                if($_SESSION['type'] == 5 && !in_array(6, $post_cats)) array_push($post_cats, 6);
+                for($i = 0; $i <= count($post_cats); $i++){
+                    $post->addPostCategoriesIntegrated($database, $post_id, $post_cats[$i]);
+                }
+            } else {
+                if($_SESSION['type'] == 5 ? $post->addPostCategoriesIntegrated($database, $post_id, 6) : $post->addPostCategoriesIntegrated($database, $post_id, 2));
+            }
+
+            if($post_type == 'Media'){
+                $images = mysqli_real_escape_string($database->con, $_POST['image_name']);
+                $images = rtrim($images, ',');
+                $media_images = explode(',', $images);
+                
+                for($i = 0; $i < count($media_images); $i++){
+                    $post->addPostImagesIntegrated($database, $post_id, $media_images[$i]);
+                }
+            }
+
+            header("location:../cms/post.php?tab=post&page=posts&addPost=true");
+
+        }
+
+        /*********************************************************************************************/
 		/***************************  Posts Functionalities -- Blog Posts  ***************************/
         /*********************************************************************************************/
         
@@ -219,7 +336,7 @@
         }
 
 		/*********************************************************************************************/
-		/***************************  Post Functionalities -- Events  ****************************/
+		/***************************  Post Functionalities -- Events  ********************************/
         /*********************************************************************************************/
 
         if(isset($_GET['changeEventView'])){

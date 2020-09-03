@@ -12,5 +12,4 @@
 
     $path = $imageFolder . $_POST['filename'];
     unlink($path);
-    
 ?>

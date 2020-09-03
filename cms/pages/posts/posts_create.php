@@ -22,7 +22,7 @@
         </div>
         <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
             <center>
-                <button type="button" class="btn bg-blue waves-effect" style="display: inline-block;" onclick="window.location.href='post.php?tab=post&page=news'"><i class="material-icons">list</i><span>LIST</span></button>
+                <button type="button" class="btn bg-blue waves-effect" style="display: inline-block;" onclick="window.location.href='post.php?tab=post&page=posts'"><i class="material-icons">list</i><span>LIST</span></button>
             </center>
         </div>
     </div>
@@ -32,7 +32,7 @@
     <!-- Inline Layout -->
     <div class="row clearfix">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-            <form class="new_form_validate" action="../functions/post.php?post=true&addPost=true" method="POST" enctype="multipart/form-data">
+            <form class="new_form_validate" action="../functions/post.php?post=true&addPostIntegrated=true" method="POST" enctype="multipart/form-data">
                 <div class="row clearfix">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <label for="post_title">Post Title *</label>
@@ -123,7 +123,7 @@
                         <label for="post_opt">Set post as News or Media</label>
                         <p class="font-12"><i><b>Note:</b> Setting post to Media will let your upload images in gallery sets.</i></p>
                         <div class="demo-radio-button">
-                            <input type="radio" name="post_opt_type" id="post_opt_news" class="radio-col-blue-grey with-gap" value="News" checked>
+                            <input type="radio" name="post_opt_type" id="post_opt_news" class="radio-col-blue-grey with-gap" value="Post" checked>
                             <label for="post_opt_news">News</label>
                             <input type="radio" name="post_opt_type" id="post_opt_media" class="radio-col-blue-grey with-gap" value="Media">
                             <label for="post_opt_media">Media</label>
@@ -164,7 +164,7 @@
                     </div>
                 </div>
                 <!-- Dropzone -->
-                <div class="row clearfix">
+                <div class="row clearfix dropzone-area" hidden>
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <p class="font-12"><i><b>Note:</b> This is an experimental feature. Uploading images over 1.5 MB may take a while. The max image size you can upload is 10 MB.</i></p>
                         <div id="dropzone-gallery" class="dropzone">
@@ -175,7 +175,7 @@
                                 <h3>Drop images here or click to upload</h3>
                             </div>
                         </div>
-                        <input type="text" id="image_name" name="image_name" value="">
+                        <input type="text" id="image_name" name="image_name" value="" hidden>
                     </div>
                 </div>
 
@@ -189,3 +189,16 @@
     </div>
     <!-- #END# Inline Layout -->
 </div>
+
+<script>
+    (function () {
+        'use strict';
+        $('input[name=post_opt_type]:radio').click(function(ev) {
+            if (ev.currentTarget.value == 'Post') {
+                $('.dropzone-area').hide();
+            } else if (ev.currentTarget.value == 'Media') {
+                $('.dropzone-area').show();
+            }
+        });
+    })();
+</script>
