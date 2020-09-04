@@ -89,6 +89,25 @@
 			return $id;	
 		}
 
+		public function editPostIntegrated($database, $id, $post_id, $post_title, $post_content, $post_desc, $post_thumbnail){
+
+			$sql = "UPDATE posts SET 
+						   post_title = '$post_title',
+						   post_text = '$post_content',
+						   post_desc = '$post_desc',
+						   post_thumbnail = '$post_thumbnail'
+					WHERE id = '$id'";
+			$query = mysqli_query($database->con, $sql);
+			if(!$query){
+				$_SESSION['error_message'] = mysqli_error($database->con);
+			    header("location:../cms/post.php?tab=post&page=posts&error=true");
+			} else {
+				global $log;
+				$info = "Modified a post: " . $post_title;
+				$log->logInput($database, $info);
+			}		
+		}
+
 		public function addPostCategoriesIntegrated($database, $post_id, $cat_id){
 			$sql = "INSERT INTO post_categories
 			VALUES (null, '$post_id','$cat_id')";
@@ -114,7 +133,7 @@
 			$query = mysqli_query($database->con, $sql);
 			if(!$query){
 				$_SESSION['error_message'] = mysqli_error($database->con);
-				header("location:../cms/post.php?tab=post&page=media&error=true");
+				header("location:../cms/post.php?tab=post&page=posts&error=true");
 			}
 		}
 
