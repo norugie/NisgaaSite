@@ -93,10 +93,10 @@
                         } else if($errors == 2){
                             $_SESSION['error_message'] = "You tried uploading a file that exceeded the file size limit. Please make sure that the file size is less than 10 MB.";
                         }
-                        header("location:../cms/post.php?tab=post&page=news&error=true");
+                        header("location:../cms/post.php?tab=post&page=posts&error=true");
                     }
                 } else {
-                    header("location:../cms/post.php?tab=post&page=news&error=true");
+                    header("location:../cms/post.php?tab=post&page=posts&error=true");
                 }   
                 
             }
@@ -123,6 +123,90 @@
             }
 
             header("location:../cms/post.php?tab=post&page=posts&addPost=true");
+
+        }
+
+        if(isset($_GET['editPostIntegrated'])){
+
+            $id = mysqli_real_escape_string($database->con, $_POST['edit_post_id']);
+            $post_id = mysqli_real_escape_string($database->con, $_POST['edit_post_id_name']);
+            $post_title = mysqli_real_escape_string($database->con, $_POST['edit_post_title']);
+            $post_content = mysqli_real_escape_string($database->con, $_POST['edit_post_content']);
+            $post_desc;
+            $post_thumbnail;
+
+            if(isset($_POST['edit_post_desc']) || !empty($_POST['edit_post_desc'])){
+                $post_desc = mysqli_real_escape_string($database->con, $_POST['edit_post_desc']);
+            } else {
+                $post_desc = "No description given.";
+            }
+
+            if(!file_exists($_FILES['post_thumbnail']['tmp_name']) || !is_uploaded_file($_FILES['post_thumbnail']['tmp_name'])){
+
+                $post_thumbnail = mysqli_real_escape_string($database->con, $_POST['post_thumbnail_previous']);;
+
+            } else {
+
+                if(isset($_FILES['post_thumbnail'])){
+                    $imageFolder;
+                
+                    if($_SESSION['school'] == '3') {$imageFolder = "../../ness/images/thumbnails/";}
+                    else if($_SESSION['school'] == '4') {$imageFolder = "../../aames/images/thumbnails/";}
+                    else if($_SESSION['school'] == '5') {$imageFolder = "../../ges/images/thumbnails/";}
+                    else if($_SESSION['school'] == '6') {$imageFolder = "../../nbes/images/thumbnails/";}
+                    else {$imageFolder = "../images/thumbnails/";}
+
+                    $errors = 0;
+                    $file_name = $_FILES['post_thumbnail']['name'];
+                    $file_size = $_FILES['post_thumbnail']['size'];
+                    $file_tmp = $_FILES['post_thumbnail']['tmp_name'];
+                    $file_type = $_FILES['post_thumbnail']['type'];
+                    $file_ext = strtolower(end(explode('.', $_FILES['post_thumbnail']['name'])));
+                    $new_file_name = "THMB-SD92_".substr(str_shuffle(str_repeat("0123456789abcdefghijklmnopqrstuvwxyz", 10)), 0, 10).".".$file_ext;
+
+                    $extensions = array("jpeg","jpg","png");
+                
+                    if(in_array($file_ext, $extensions) == false){
+                        $errors = 1;
+                    }
+
+                    if($file_size > 10485760){ // Limit thumbnail upload to 10 MB
+                        $errors = 2;
+                    }
+                    
+                    if($errors == 0){
+                        move_uploaded_file($file_tmp, $imageFolder . $new_file_name);
+                        $post_thumbnail = mysqli_real_escape_string($database->con, $new_file_name);
+                    } else {
+                        if($error == 1){
+                            $_SESSION['error_message'] = "You tried uploading a file with an invalid file extension. Please make sure that the file's extension is one of the followings: .jpeg, .jpg, .png.";
+                        } else if($error == 2){
+                            $_SESSION['error_message'] = "You tried uploading a file that exceeded the file size limit. Please make sure that the file size is less than 10 MB.";
+                        }
+                        header("location:../cms/post.php?tab=post&page=posts&error=true");
+                    }
+                } else {
+                    header("location:../cms/post.php?tab=post&page=posts&error=true");
+                }
+            }
+            
+            $post->editPostIntegrated($database, $id, $post_id, $post_title, $post_content, $post_desc, $post_thumbnail);
+            $categories = mysqli_real_escape_string($database->con, $_POST['edit_post_categories']);
+
+            $post->deleteAllPostCategoriesIntegrated($database, $id);
+
+            $post_cats = explode(',', $categories);
+
+            if(!empty($post_cats[0])){
+                if($_SESSION['type'] == 5 && !in_array(6, $post_cats)) array_push($post_cats, 6);
+                for($i = 0; $i <= count($post_cats); $i++){
+                    $post->addPostCategoriesIntegrated($database, $id, $post_cats[$i]);
+                }
+            } else {
+                if($_SESSION['type'] == 5 ? $post->addPostCategoriesIntegrated($database, $id, 6) : $post->addPostCategoriesIntegrated($database, $id, 2));
+            }
+
+            header("location:../cms/post.php?tab=post&page=posts&editPost=true");
 
         }
 
