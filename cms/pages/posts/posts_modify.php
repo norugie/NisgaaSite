@@ -151,7 +151,7 @@
                         <div class="row clearfix dropzone-area">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                 <p class="font-12"><i><b>Note:</b> This is an experimental feature. Uploading images over 1.5 MB may take a while. The max image size you can upload is 10 MB.</i></p>
-                                <div id="dropzone-gallery" class="dropzone">
+                                <div id="dropzone-gallery" class="dropzone dz-clickable dz-started">
                                     <div class="dz-default dz-message">
                                         <div class="drag-icon-cph">
                                             <i class="material-icons">touch_app</i>
@@ -159,7 +159,7 @@
                                         <h3>Drop images here or click to upload</h3>
                                     </div>
                                 </div>
-                                <input type="text" id="image_name" name="image_name" value="" hidden>
+                                <input type="text" id="image_name" name="image_name" value="">
                             </div>
                         </div>
                     <?php } ?>
