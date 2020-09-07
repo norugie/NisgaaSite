@@ -75,7 +75,6 @@
             acceptedFiles: 'image/*',
             maxFileSize: 10, // MB
             addRemoveLinks: true,
-            dictDefaultMessage: 'Drop images here to upload',
             dictFallbackMessage: 'Your browser does not support drag and drop image uploads.',
             dictFileTooBig: 'Image is too big. Max image size: 10 MB.',
             dictInvalidFileType: 'You cannot upload images of this file type.',
@@ -100,9 +99,36 @@
                         url: '../functions/deleteMedia.php',
                         type: 'POST',
                         data: {
-                            'filename': file.name
+                            'filename': file.name,
+                            post_id: '<?php if((isset($_GET["posts_option"]) && $_GET["posts_option"] == "modify") && (isset($post_info["post_type"]) && $post_info["post_type"] == "Media") ? $post_id = $_GET["post_id"] : $post_id = 0); echo $post_id; ?>',
+                            school: '<?php if(isset($post_info["post_school"])) echo $post_info["post_school"]; else echo "2"; ?>'
                         }
                     });
+                });
+                var md = this;
+                $.ajax({
+                    url: '../functions/media.php',
+                    type: 'POST',
+                    data: {
+                        request: 2, 
+                        post_id: '<?php if((isset($_GET["posts_option"]) && $_GET["posts_option"] == "modify") && (isset($post_info["post_type"]) && $post_info["post_type"] == "Media") ? $post_id = $_GET["post_id"] : $post_id = 0); echo $post_id; ?>',
+                        school: '<?php if(isset($post_info["post_school"])) echo $post_info["post_school"]; else echo "2"; ?>'
+                    },
+                    dataType: 'JSON',
+                    success: function(response){
+                        var imageNameListModify = $('#image_name').val();
+                        $.each(response, function(key, value) {
+                            var mockFile = { name: value.name, size: value.size };
+
+                            md.emit("addedfile", mockFile);
+                            md.emit("thumbnail", mockFile, value.url);
+                            md.emit("complete", mockFile);
+
+                            $('#image_name').attr('value', value.name + ',' + imageNameListModify);
+
+                        });
+
+                    }
                 });
             }
         });
