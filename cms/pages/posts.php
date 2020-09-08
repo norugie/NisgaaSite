@@ -5,10 +5,10 @@
 
     if(isset($_GET['id'])){
         $cat_id = $_GET['id'];
-        $posts = $post->postsPerCategoryList($database, $cat_id);
+        $posts = $post->postsPerCategoryListIntegrated($database, $cat_id);
         $cat_name = $posts[0]['cat_desc'];
     } else if ($_SESSION['type'] == 5){
-        $posts = $post->postsPerCategoryList($database, 6);
+        $posts = $post->postsPerCategoryListIntegrated($database, 6);
     } else {
         $posts = $post->postsIntegratedList($database);
     }

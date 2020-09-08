@@ -12,11 +12,6 @@ function alertDesign(e) {
         showDisableEventConfirm(id, name, post);
     } else if (type === 'delete-cat') {
         showDisableCatConfirm(id, name);
-    } else if (type === 'delete-post') {
-        var event = $(e).data('event');
-        showDisablePostConfirm(id, name, event);
-    } else if (type === 'delete-media') {
-        showDisableMediaConfirm(id, name);
     } else if (type === 'delete-link') {
         showDisableLinkConfirm(id, name);
     } else if (type === 'reopen-link') {
@@ -168,52 +163,6 @@ function showDisablePostIntegrateConfirm(id, name, event) {
             }
 
 
-        }
-
-    });
-}
-
-//Warning for disabling post
-function showDisablePostConfirm(id, name, event) {
-    swal({
-        title: "Are you sure you want to disable this post?",
-        text: "You won't be able to reactivate this post once archived",
-        type: "warning",
-        showCancelButton: true,
-        confirmButtonColor: "#F44336",
-        confirmButtonText: "CONFIRM",
-        cancelButtonText: "CANCEL",
-        closeOnConfirm: false,
-        closeOnCancel: true
-    }, function (isConfirm) {
-        if (isConfirm) {
-            if (event === 1) {
-                window.location = "../functions/post.php?post=true&postDisableEvent=true&id=" + id + "&postName=" + name;
-            } else {
-                window.location = "../functions/post.php?post=true&postDisable=true&id=" + id + "&postName=" + name;
-            }
-
-
-        }
-
-    });
-}
-
-//Warning for disabling media post
-function showDisableMediaConfirm(id, name) {
-    swal({
-        title: "Are you sure you want to disable this media post?",
-        text: "You won't be able to reactivate this media post once archived",
-        type: "warning",
-        showCancelButton: true,
-        confirmButtonColor: "#F44336",
-        confirmButtonText: "CONFIRM",
-        cancelButtonText: "CANCEL",
-        closeOnConfirm: false,
-        closeOnCancel: true
-    }, function (isConfirm) {
-        if (isConfirm) {
-            window.location = "../functions/post.php?post=true&mediaDisable=true&id=" + id + "&mediaName=" + name;
         }
 
     });
