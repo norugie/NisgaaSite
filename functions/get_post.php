@@ -244,6 +244,7 @@
 						   posts.post_date,
 						   posts.post_school,
 						   posts.id,
+						   posts.post_type,
 						   posts.post_id,
 						   categories.cat_desc,
 						   users.firstname,
@@ -259,7 +260,6 @@
 					LEFT JOIN schools
 					ON (schools.id = posts.post_school)
 					WHERE post_categories.cat_id = '$category'
-					AND posts.post_type = 'Post'
 					AND posts.status = 'Active'";
 
 			/*  Content Filter  */

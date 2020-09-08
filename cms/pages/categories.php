@@ -54,19 +54,7 @@
                                     <td><?php echo $countPosts = count($post->postsAndMediaPerCategoryCount($database, $cat['id'])); ?></td>
                                     <td>
                                         <center>
-                                            <div class="btn-group">
-                                                <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" <?php if($countPosts == 0){ echo "disabled"; } ?>><i class="material-icons">more_horiz</i>
-                                                    <span>LIST</span> <span class="caret"></span>
-                                                </button>
-                                                <ul class="dropdown-menu">
-                                                    <?php if(count($post->postsPerCategoryList($database, $cat['id'])) > 0){ ?>
-                                                    <li><a href="post.php?tab=post&page=news&id=<?php echo $cat['id']; ?>">View List (Posts)</a></li>
-                                                    <?php } ?>
-                                                    <?php if(count($post->mediaPerCategoryList($database, $cat['id'])) > 0){ ?>
-                                                    <li><a href="post.php?tab=post&page=media&id=<?php echo $cat['id']; ?>">View List (Media)</a></li>
-                                                    <?php } ?>
-                                                </ul>
-                                            </div>
+                                            <button type="button" class="btn bg-blue waves-effect" style="display: inline-block;" onclick="window.location.href='post.php?tab=post&page=posts&id=<?php echo $cat['id']; ?>'" <?php if(count($post->postsPerCategoryList($database, $cat['id'])) == 0) echo "disabled"; ?>><i class="material-icons">list</i><span>POST LIST</span></button>
                                         </center>
                                     </td>
                                     <?php if($_SESSION['type'] == 1){ ?>
