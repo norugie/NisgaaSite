@@ -18,7 +18,7 @@
             $id = $_GET['id'];
             $title = str_replace('%20', ' ', $_GET['postName']);
 
-            $post->disablePost($database, $id, $title);
+            $post->disablePostIntegrated($database, $id, $title);
 
         }
 
@@ -27,7 +27,7 @@
             $id = $_GET['id'];
             $title = str_replace('%20', ' ', $_GET['postName']);
 
-            $post->disablePostEvent($database, $id, $title);
+            $post->disablePostEventIntegrated($database, $id, $title);
 
         }
 
