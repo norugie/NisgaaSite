@@ -59,6 +59,9 @@ function alertDesign(e) {
         showDisablePlanConfirm(id, name);
     } else if (type === 'reopen-plan'){
         showReactivatePlanConfirm(id, name);
+    } else if (type === 'delete-post-integrate') {
+        var event = $(e).data('event');
+        showDisablePostIntegrateConfirm(id, name, event);
     }
 }
 
@@ -139,6 +142,32 @@ function showDisableCatConfirm(id, name) {
     }, function (isConfirm) {
         if (isConfirm) {
             window.location = "../functions/post.php?post=true&catDisable=true&id=" + id + "&cat=" + name;
+        }
+
+    });
+}
+
+//Warning for disabling post - integrated
+function showDisablePostIntegrateConfirm(id, name, event) {
+    swal({
+        title: "Are you sure you want to disable this post?",
+        text: "You won't be able to reactivate this post once archived",
+        type: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#F44336",
+        confirmButtonText: "CONFIRM",
+        cancelButtonText: "CANCEL",
+        closeOnConfirm: false,
+        closeOnCancel: true
+    }, function (isConfirm) {
+        if (isConfirm) {
+            if (event === 1) {
+                window.location = "../functions/post.php?post=true&postDisableEventIntegrated=true&id=" + id + "&postName=" + name;
+            } else {
+                window.location = "../functions/post.php?post=true&postDisableIntegrated=true&id=" + id + "&postName=" + name;
+            }
+
+
         }
 
     });
