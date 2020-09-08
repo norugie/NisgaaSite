@@ -80,9 +80,11 @@
             dictInvalidFileType: 'You cannot upload images of this file type.',
             dictRemoveFile: 'Remove image',
             dictRemoveFileConfirmation: null,
-            success: function (file) {
+            renameFilename: function (file) {
+                file = 'MDA-SD92_' + new Date().getTime() + '_' + file;
                 var imageName = $('#image_name').val();
-                $('#image_name').attr('value', file.name + ',' + imageName);
+                $('#image_name').attr('value', file + ',' + imageName);
+                return file;
             },
             error: function (file, message, xhr) {
                 if (xhr == null) this.removeFile(file);
@@ -91,7 +93,7 @@
             init: function () {
                 this.on('removedfile', function (file) {
                     var imageNameList = $('#image_name').val();
-                    imageNameList = imageNameList.replace(file.name + ',', '');
+                    imageNameList = imageNameList.replace(file.upload.filename + ',', '');
                     $('#image_name').attr('value', imageNameList);
 
                     // Remove image from server folder
@@ -99,7 +101,7 @@
                         url: '../functions/deleteMedia.php',
                         type: 'POST',
                         data: {
-                            'filename': file.name,
+                            'filename': file.upload.filename,
                             post_id: '<?php if((isset($_GET["posts_option"]) && $_GET["posts_option"] == "modify") && (isset($post_info["post_type"]) && $post_info["post_type"] == "Media") ? $post_id = $_GET["post_id"] : $post_id = 0); echo $post_id; ?>',
                             school: '<?php if(isset($post_info["post_school"])) echo $post_info["post_school"]; else echo "2"; ?>'
                         }
