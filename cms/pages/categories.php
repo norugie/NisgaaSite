@@ -51,10 +51,10 @@
                                 <tr>
                                     <td><?php echo $cat['cat_desc']; ?></td>
                                     <td><?php echo $cat['status']; ?></td>
-                                    <td><?php echo $countPosts = count($post->postsAndMediaPerCategoryCount($database, $cat['id'])); ?></td>
+                                    <td><?php echo $countPosts = count($post->postsPerCategoryCount($database, $cat['id'])); ?></td>
                                     <td>
                                         <center>
-                                            <button type="button" class="btn bg-blue waves-effect" style="display: inline-block;" onclick="window.location.href='post.php?tab=post&page=posts&id=<?php echo $cat['id']; ?>'" <?php if(count($post->postsPerCategoryList($database, $cat['id'])) == 0) echo "disabled"; ?>><i class="material-icons">list</i><span>POST LIST</span></button>
+                                            <button type="button" class="btn bg-blue waves-effect" style="display: inline-block;" onclick="window.location.href='post.php?tab=post&page=posts&id=<?php echo $cat['id']; ?>'" <?php if(count($post->postsPerCategoryListIntegrated($database, $cat['id'])) == 0) echo "disabled"; ?>><i class="material-icons">list</i><span>POST LIST</span></button>
                                         </center>
                                     </td>
                                     <?php if($_SESSION['type'] == 1){ ?>
