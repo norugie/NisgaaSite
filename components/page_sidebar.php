@@ -22,9 +22,6 @@
                 $('#<?php echo $tab; ?>').addClass('active');
                 $('#<?php echo $page; ?>').addClass('active');
                 <?php if(isset($_GET['subtab'])){ ?> $('#<?php echo $subtab; ?>').addClass('active'); <?php } ?>
-                <?php if($page == 'posts'){ ?>
-                    $('#categories').addClass('active');
-                <?php } ?>
             });
         </script>
 
@@ -56,19 +53,13 @@
                     <span>Posts</span>
                 </a>
                 <ul class="ml-menu">
-                    <li id="news">
-                        <a href="post.php?tab=post&page=news">
+                    <li id="posts">
+                        <a href="post.php?tab=post&page=posts">
                             <i class="material-icons">mode_comment</i>
-                            <span>News Posts</span>
+                            <span>District Posts</span>
                         </a>
                     </li>
                     <?php if($_SESSION['type'] != 5){ ?>
-                    <li id="media">
-                        <a href="post.php?tab=post&page=media">
-                            <i class="material-icons">photo_library</i>
-                            <span>Media Posts</span>
-                        </a>
-                    </li>
                     <li id="events">
                         <a href="post.php?tab=post&page=events">
                             <i class="material-icons">event</i>
