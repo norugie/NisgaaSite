@@ -37,6 +37,7 @@
                 <form class="edit_form_validate" action="../functions/post.php?post=true&editPostIntegrated=true" method="POST" enctype="multipart/form-data">
                     <input type="text" id="edit_post_id" name="edit_post_id" value="<?php echo $post_info['id']; ?>" hidden>
                     <input type="text" id="edit_post_id_name" name="edit_post_id_name" value="<?php echo $post_info['post_id']; ?>" hidden>
+                    <input type="text" id="edit_post_type" name="edit_post_type" value="<?php echo $post_info['post_type']; ?>" hidden>
                     <div class="row clearfix">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                             <label for="edit_post_title">Post Title *</label>

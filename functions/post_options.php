@@ -191,10 +191,9 @@
             }
             
             $post->editPostIntegrated($database, $id, $post_id, $post_title, $post_content, $post_desc, $post_thumbnail);
-            $categories = mysqli_real_escape_string($database->con, $_POST['edit_post_categories']);
-
+        
             $post->deleteAllPostCategoriesIntegrated($database, $id);
-
+            $categories = mysqli_real_escape_string($database->con, $_POST['edit_post_categories']);
             $post_cats = explode(',', $categories);
 
             if(!empty($post_cats[0])){
@@ -204,6 +203,18 @@
                 }
             } else {
                 if($_SESSION['type'] == 5 ? $post->addPostCategoriesIntegrated($database, $id, 6) : $post->addPostCategoriesIntegrated($database, $id, 2));
+            }
+
+            if($_POST['edit_post_type'] == 'Media'){
+                $post->deleteAllPostMediaIntegrated($database, $id);
+
+                $images = mysqli_real_escape_string($database->con, $_POST['image_name']);
+                $images = rtrim($images, ',');
+                $media_images = explode(',', $images);
+                
+                for($i = 0; $i < count($media_images); $i++){
+                    $post->addPostImagesIntegrated($database, $id, $media_images[$i]);
+                }
             }
 
             header("location:../cms/post.php?tab=post&page=posts&editPost=true");

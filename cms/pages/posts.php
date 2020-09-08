@@ -85,6 +85,7 @@
                 var imageName = $('#image_name').val();
                 $('#image_name').attr('value', file + ',' + imageName);
                 return file;
+                console.log(file);
             },
             error: function (file, message, xhr) {
                 if (xhr == null) this.removeFile(file);
@@ -92,6 +93,7 @@
             },
             init: function () {
                 this.on('removedfile', function (file) {
+                    console.log(file);
                     var imageNameList = $('#image_name').val();
                     imageNameList = imageNameList.replace(file.upload.filename + ',', '');
                     $('#image_name').attr('value', imageNameList);
@@ -120,16 +122,15 @@
                     success: function(response){
                         var imageNameListModify = $('#image_name').val();
                         $.each(response, function(key, value) {
-                            var mockFile = { name: value.name, size: value.size };
+                            var mockFile = { name: value.name, size: value.size, upload: { filename: value.name } };
 
                             md.emit("addedfile", mockFile);
                             md.emit("thumbnail", mockFile, value.url);
                             md.emit("complete", mockFile);
 
                             $('#image_name').attr('value', value.name + ',' + imageNameListModify);
-
+                            console.log(mockFile);
                         });
-
                     }
                 });
             }

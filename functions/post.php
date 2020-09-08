@@ -137,6 +137,15 @@
 			}
 		}
 
+		public function deleteAllPostMediaIntegrated($database, $id){
+			$sql = "DELETE FROM media WHERE post_id = '$id'";
+			$query = mysqli_query($database->con, $sql);
+			if(!$query){
+				$_SESSION['error_message'] = mysqli_error($database->con);
+				header("location:../cms/post.php?tab=post&page=posts&error=true");
+			}
+		}
+
         /*********************************************************************************************/
 		/***************************  Posts Functionalities -- Blog Posts  ***************************/
         /*********************************************************************************************/
