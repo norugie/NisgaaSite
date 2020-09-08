@@ -82,7 +82,7 @@
                 $filepath = $imageFolder . $file;
                 $fileurl = $imageUrl . $file;
                 $filesize = filesize($filepath);
-                $filelist[] = ['name' => $file, 'size' => $filesize, 'url' => $fileurl, 'path' => $filepath];
+                $filelist[] = ['upload' => ['filename' => $file],'name' => $file, 'size' => $filesize, 'url' => $fileurl, 'path' => $filepath];
             }
         }
 
