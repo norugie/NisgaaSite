@@ -37,15 +37,13 @@
             $post_content = mysqli_real_escape_string($database->con, $_POST['post_content']);
             $post_categories = mysqli_real_escape_string($database->con, $_POST['post_categories_id']);
             $post_type = mysqli_real_escape_string($database->con, $_POST['post_opt_type']);
-            $sm_opt = mysqli_real_escape_string($database->con, $_POST['post_sm_autopost']);
-            $ssd_opt = mysqli_real_escape_string($database->con, $_POST['post_ssd_autopost']);
+            $sm_opt;
+            if(isset($_POST['post_sm_autopost']) && !empty($_POST['post_sm_autopost']) ? $sm_opt = mysqli_real_escape_string($database->con, $_POST['post_sm_autopost']) : $sm_optt = "No" );
+            $ssd_opt;
+            if(isset($_POST['post_ssd_autopost']) && !empty($_POST['post_ssd_autopost']) ? $ssd_op = mysqli_real_escape_string($database->con, $_POST['post_ssd_autopost']) : $ssd_opt = "No" );
             $post_thumbnail;
             $post_desc;
-            if(isset($_POST['post_desc']) && !empty($_POST['post_desc'])){
-                $post_desc = mysqli_real_escape_string($database->con, $_POST['post_desc']);
-            } else {
-                $post_desc = "No description given.";
-            }
+            if(isset($_POST['post_desc']) && !empty($_POST['post_desc']) ? $post_desc = mysqli_real_escape_string($database->con, $_POST['post_desc']) : $post_desc = "No description given." );
 
             $post_id;
 
@@ -53,7 +51,6 @@
 
                 $post_thumbnail = "post_thumbnail.jpg";
                 $post_id = $post->addPostIntegrated($database, $post_title, $post_content, $post_thumbnail, $post_desc, $post_type, $sm_opt, $ssd_opt);
-
             } else {
 
                 if(isset($_FILES['post_thumbnail'])){
@@ -86,7 +83,7 @@
                     if($errors == 0){
                         move_uploaded_file($file_tmp, $imageFolder . $new_file_name);
                         $post_thumbnail = mysqli_real_escape_string($database->con, $new_file_name);
-                        $post_id = $post->addPostIntegrated($database, $post_title, $post_content, $post_thumbnail, $post_desc, $sm_opt, $ssd_opt);
+                        $post_id = $post->addPostIntegrated($database, $post_title, $post_content, $post_thumbnail, $post_desc, $post_type, $sm_opt, $ssd_opt);
                     } else {
                         if($errors == 1){
                             $_SESSION['error_message'] = "You tried uploading a file with an invalid file extension. Please make sure that the file's extension is one of the followings: .jpeg, .jpg, .png.";

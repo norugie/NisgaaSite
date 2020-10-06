@@ -1086,7 +1086,7 @@
 
 		// DELETE AFTER NLC PROJECT
 		public function wordList($database){
-			$sql = "SELECT * FROM dictionary";
+			$sql = "SELECT * FROM dictionary ORDER BY word ASC";
 			$query = mysqli_query($database->con, $sql);
 			if (!$query) {
 				return ("Error description: " . mysqli_error($database->con));

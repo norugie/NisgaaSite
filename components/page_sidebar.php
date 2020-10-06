@@ -56,7 +56,7 @@
                     <li id="posts">
                         <a href="post.php?tab=post&page=posts">
                             <i class="material-icons">mode_comment</i>
-                            <span>District Posts</span>
+                            <span><?php if($_SESSION['school'] != 3 && $_SESSION['school'] != 4 && $_SESSION['school'] != 5 && $_SESSION['school'] != 6 && $_SESSION['type'] != 5 ? $text = "District" : $text = "School"); echo $text; ?> Posts</span>
                         </a>
                     </li>
                     <?php if($_SESSION['type'] != 5){ ?>
