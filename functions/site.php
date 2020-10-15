@@ -757,6 +757,118 @@
 			return $count;
 		}
 
+		public function ssList($database, $school, $limit, $sheet_index){
+			$array = array();
+			$sql = "SELECT posts.post_title,
+								posts.post_date,
+								posts.post_desc,
+								posts.id,
+								posts.post_id,
+								posts.post_thumbnail,
+								users.firstname,
+								users.lastname
+						FROM posts 
+						LEFT JOIN users 
+						ON (posts.post_author = users.id) 
+						LEFT JOIN schools 
+						ON (posts.post_school = schools.id) 
+						WHERE posts.status = 'Active'
+						AND posts.post_ss = 'Yes' 
+						AND posts.post_school = '$school'
+						ORDER BY posts.post_date DESC
+						LIMIT $sheet_index, $limit";
+			$query = mysqli_query($database->con, $sql);
+			if (!$query) {
+			    echo "<script>window.open('https://www.nisgaa.bc.ca/error', '_parent');</script>";
+			} else {
+				while($row = mysqli_fetch_array($query)){
+					$array[] = $row;
+				}
+            }
+            
+			return $array;
+        }
+
+        public function ssListCount($database, $school){
+			$count;
+
+			$sql = "SELECT COUNT(*)
+						FROM posts 
+						LEFT JOIN users 
+						ON (posts.post_author = users.id) 
+						LEFT JOIN schools 
+						ON (posts.post_school = schools.id) 
+						WHERE posts.status = 'Active' 
+						AND posts.post_school = '$school'
+						AND posts.post_ss = 'Yes'
+						ORDER BY posts.post_date DESC";
+			$query = mysqli_query($database->con, $sql);
+			if (!$query) {
+			    echo "<script>window.open('https://www.nisgaa.bc.ca/error', '_parent');</script>";
+			} else {
+				$row = mysqli_fetch_array($query);
+                $count = $row[0];
+            }
+            
+			return $count;
+		}
+
+		public function gccList($database, $school, $limit, $sheet_index){
+			$array = array();
+			$sql = "SELECT posts.post_title,
+								posts.post_date,
+								posts.post_desc,
+								posts.id,
+								posts.post_id,
+								posts.post_thumbnail,
+								users.firstname,
+								users.lastname
+						FROM posts 
+						LEFT JOIN users 
+						ON (posts.post_author = users.id) 
+						LEFT JOIN schools 
+						ON (posts.post_school = schools.id) 
+						WHERE posts.status = 'Active'
+						AND posts.post_gcc = 'Yes' 
+						AND posts.post_school = '$school'
+						ORDER BY posts.post_date DESC
+						LIMIT $sheet_index, $limit";
+			$query = mysqli_query($database->con, $sql);
+			if (!$query) {
+			    echo "<script>window.open('https://www.nisgaa.bc.ca/error', '_parent');</script>";
+			} else {
+				while($row = mysqli_fetch_array($query)){
+					$array[] = $row;
+				}
+            }
+            
+			return $array;
+        }
+
+        public function gccListCount($database, $school){
+			$count;
+
+			$sql = "SELECT COUNT(*)
+						FROM posts 
+						LEFT JOIN users 
+						ON (posts.post_author = users.id) 
+						LEFT JOIN schools 
+						ON (posts.post_school = schools.id) 
+						WHERE posts.status = 'Active' 
+						AND posts.post_school = '$school'
+						AND posts.post_gcc = 'Yes'
+						ORDER BY posts.post_date DESC";
+			$query = mysqli_query($database->con, $sql);
+			if (!$query) {
+			    echo "<script>window.open('https://www.nisgaa.bc.ca/error', '_parent');</script>";
+			} else {
+				$row = mysqli_fetch_array($query);
+                $count = $row[0];
+            }
+            
+			return $count;
+		}
+
 		/*********************************************************************************************/
 		/***************************  Site Functionalities -- Curriculum  ****************************/
 		/*********************************************************************************************/

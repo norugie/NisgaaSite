@@ -84,6 +84,7 @@
             <li class="dropdown-item"><a href="https://ges.nisgaa.bc.ca" class="nav-link">GITWINKSIHLKW ELEMENTARY SCHOOL</a></li>
             <li class="dropdown-item"><a href="https://aames.nisgaa.bc.ca" class="nav-link">ALVIN A. MCKAY ELEMENTARY SCHOOL</a></li>
             <li class="dropdown-item"><a href="https://nbes.nisgaa.bc.ca" class="nav-link">NATHAN BARTON ELEMENTARY SCHOOL</a></li>
+            <li class="dropdown-item"><a href="/strong_start" class="nav-link">STRONG START</a></li>
             </ul>
         </li>
         <li class="nav-item dropdown"><a href="javascript: void(0)" data-toggle="dropdown" class="dropdown-toggle">Resources <b class="caret"></b></a>

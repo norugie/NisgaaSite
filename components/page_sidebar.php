@@ -246,6 +246,14 @@
                         </a>
                     </li>
                     <?php } ?>
+                    <?php if($_SESSION['type'] != 3 && $_SESSION['type'] != 4){ ?>
+                    <li id="ss">
+                        <a href="interaction.php?tab=web&page=ss">
+                            <i class="material-icons">school</i>
+                            <span>Strong Start</span>
+                        </a>
+                    </li>
+                    <?php } ?>
                 </ul>
             </li>
         </ul>
