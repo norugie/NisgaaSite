@@ -55,8 +55,10 @@
 					$school = $_SESSION['school'];
 				}
 				$sql = $sqlquery . " AND posts.post_school = '$school' ORDER BY posts.post_date DESC";
+			} if($_SESSION['type'] == 5){
+				$sql = $sqlquery . " AND posts.post_gcc = 'Yes' OR posts.post_ss = 'Yes' ORDER BY posts.post_date DESC";
 			} else {
-				$sql = $sqlquery . " ORDER BY posts.post_date DESC";
+				$sql = $sqlquery . " AND posts.post_school = '2' ORDER BY posts.post_date DESC";
 			}
 			/*  END Content Filter  */
 

@@ -1,17 +1,17 @@
 <?php 
-    $about = $site->aboutList($database, 12); 
+    $about = $site->aboutList($database, 13); 
 ?>
 <div class="col-md-9">
-    <!-- DAYCARE CONTENT -->
+    <!-- STRONG CONTENT -->
     <section>
         <div class="row">
             <div class="col-md-12">
-                <!-- Display description for Daycare -->
+                <!-- Display description for Strong Start -->
                 <p class="lead"><?php echo $about['web_desc']; ?></p>
             </div>
         </div>
     </section>
-    <!--  GCC POSTS -->
+    <!--  STRONG START POSTS -->
     <section>
         <div class="row">
             <div class="col-md-12">
@@ -32,7 +32,7 @@
                     }  
 
                     $sheet_index= ($sheet - 1) * $limit;
-                    $blog_list = $site->gccList($database, $schoolContent, $limit, $sheet_index, $category);
+                    $blog_list = $site->ssList($database, $schoolContent, $limit, $sheet_index, $category);
 
                     ?>
 
@@ -62,7 +62,7 @@
                     </div>
 
                     <?php
-                        $total_sheets = $site->gccListCount($database, $schoolContent, $category);
+                        $total_sheets = $site->ssListCount($database, $schoolContent, $category);
                         $total_pages = ceil($total_sheets / $limit);  
                     ?>
 
