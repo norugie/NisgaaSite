@@ -7,7 +7,7 @@
 <div class="header">
     <div class="row clearfix">
         <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 text-xs-sm-center">
-            <h4><?php if(isset($_GET['id'])){ echo "CATEGORY: " . $cat_name; } else { echo "DISTRICT POSTS LIST"; } ?></h4>      
+            <h4><?php if(isset($_GET['id'])){ echo "CATEGORY: " . $cat_name; } else { if($_SESSION['school'] != 3 && $_SESSION['school'] != 4 && $_SESSION['school'] != 5 && $_SESSION['school'] != 6 && $_SESSION['type'] != 5 ? $text = "DISTRICT" : $text = "SCHOOL"); echo $text . " POSTS LIST"; } ?></h4>      
         </div>
         <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
             <center>

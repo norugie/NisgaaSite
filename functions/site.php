@@ -556,7 +556,34 @@
                     ON (contacts.school = schools.id)
                     WHERE contacts.school = '$school'
 					AND contacts.type = 'Contact'
-                    AND contacts.status = 'Active'";
+					AND contacts.status = 'Active'
+					AND (contacts.position NOT LIKE '%Teacher%'
+					AND contacts.position NOT LIKE '%Education Assistant%')";
+			$query = mysqli_query($database->con, $sql);
+			if (!$query) {
+			    echo "<script>window.open('https://www.nisgaa.bc.ca/error', '_parent');</script>";
+			} else {
+				while($row = mysqli_fetch_array($query)){
+					$array[] = $row;
+				}
+            }
+            
+			return $array;            
+		}
+
+		public function teacherList($database, $school){
+			$array = array();
+
+            $sql =  "SELECT contacts.*
+                    FROM contacts
+                    LEFT JOIN schools
+                    ON (contacts.school = schools.id)
+                    WHERE contacts.school = '$school'
+					AND contacts.type = 'Contact'
+					AND contacts.status = 'Active'
+					AND (contacts.position LIKE '%Teacher%'
+					OR contacts.position LIKE '%Education Assistant%')
+					ORDER BY contacts.firstname ASC";
 			$query = mysqli_query($database->con, $sql);
 			if (!$query) {
 			    echo "<script>window.open('https://www.nisgaa.bc.ca/error', '_parent');</script>";
