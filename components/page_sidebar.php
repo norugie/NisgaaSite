@@ -56,7 +56,7 @@
                     <li id="posts">
                         <a href="post.php?tab=post&page=posts">
                             <i class="material-icons">mode_comment</i>
-                            <span><?php if($_SESSION['school'] != 3 && $_SESSION['school'] != 4 && $_SESSION['school'] != 5 && $_SESSION['school'] != 6 && $_SESSION['type'] != 5 ? $text = "District" : $text = "School"); echo $text; ?> Posts</span>
+                            <span><?php if($_SESSION['school'] != 3 && $_SESSION['school'] != 4 && $_SESSION['school'] != 5 && $_SESSION['school'] != 6 && $_SESSION['type'] != 5 && $_SESSION['type'] != 6 ? $text = "District" : $text = "School"); echo $text; ?> Posts</span>
                         </a>
                     </li>
                     <?php if($_SESSION['type'] != 5){ ?>
@@ -99,7 +99,7 @@
                             <span>Employment</span>
                         </a>
                     </li>
-                    <?php if($_SESSION['school'] != 3 && $_SESSION['school'] != 4 && $_SESSION['school'] != 5 && $_SESSION['school'] != 6 && $_SESSION['type'] != 5){ ?> 
+                    <?php if($_SESSION['school'] != 3 && $_SESSION['school'] != 4 && $_SESSION['school'] != 5 && $_SESSION['school'] != 6 && $_SESSION['type'] != 5 && $_SESSION['type'] != 6){ ?> 
                     <li id="files">
                         <a href="district.php?tab=sd&page=files">
                             <i class="material-icons">library_books</i>
@@ -145,7 +145,7 @@
                     <span>Web Interactions</span>
                 </a>
                 <ul class="ml-menu">
-                    <?php if($_SESSION['type'] != 5){ ?>
+                    <?php if($_SESSION['type'] != 5  && $_SESSION['type'] != 6){ ?>
                     <li id="content">
                         <a href="javascript:void(0);" class="menu-toggle">
                             <i class="material-icons">view_day</i>
@@ -238,7 +238,7 @@
                     </li>
                     <?php } ?>
                     <?php } ?>
-                    <?php if($_SESSION['type'] != 3 && $_SESSION['type'] != 4){ ?>
+                    <?php if($_SESSION['type'] != 3 && $_SESSION['type'] != 4 && $_SESSION['type'] != 6){ ?>
                     <li id="gcc">
                         <a href="interaction.php?tab=web&page=gcc">
                             <i class="material-icons">face</i>
@@ -246,11 +246,19 @@
                         </a>
                     </li>
                     <?php } ?>
-                    <?php if($_SESSION['type'] != 3 && $_SESSION['type'] != 4){ ?>
+                    <?php if($_SESSION['type'] != 3 && $_SESSION['type'] != 4 && $_SESSION['type'] != 6){ ?>
                     <li id="ss">
                         <a href="interaction.php?tab=web&page=ss">
                             <i class="material-icons">school</i>
                             <span>Strong Start</span>
+                        </a>
+                    </li>
+                    <?php } ?>
+                    <?php if($_SESSION['type'] != 3 && $_SESSION['type'] != 4 && $_SESSION['type'] != 5){ ?>
+                    <li id="nlc">
+                        <a href="interaction.php?tab=web&page=nlc">
+                            <i class="material-icons">voice_over_off</i>
+                            <span>Nisga'a Language and Culture</span>
                         </a>
                     </li>
                     <?php } ?>

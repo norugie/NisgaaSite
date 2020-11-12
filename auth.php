@@ -63,6 +63,8 @@
                     $role = 1;
                 } else if(in_array("gccmanager", $gs)){
                     $role = 5;
+                } else if(in_array("nlcmanager", $gs)){
+                    $role = 6;
                 } else if($user->getDepartment() === "SDO" || $user->getDepartment() === "TechOffice") {
                     $role = 2;
                 } else {

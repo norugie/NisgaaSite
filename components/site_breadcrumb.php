@@ -56,6 +56,8 @@ if($page_name == 'news'){
     $breadcrumb = "COVID-19 Updates from the Ministry";
 } else if($page_name == "dictionary"){
     $breadcrumb = "Nisga'a Phrases Dictionary";
+} else if($page_name == "nlc"){
+    $breadcrumb = "Nisga'a Language and Culture";
 } else {
     $breadcrumb = str_replace('_', ' ', $page_name);
 }
