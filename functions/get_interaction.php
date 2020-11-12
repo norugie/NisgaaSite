@@ -19,6 +19,8 @@
 				$school = 12;
 			} else if($_SESSION['type'] == 5 || $_GET['page'] == 'ss'){
 				$school = 13;
+			} else if($_SESSION['type'] == 6 || $_GET['page'] == 'nlc'){
+				$school = 14;
 			} else {
 				$school = 2;
 			}
