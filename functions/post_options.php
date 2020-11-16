@@ -45,6 +45,8 @@
             if(isset($_POST['post_ss_autopost']) && !empty($_POST['post_ss_autopost']) ? $ss_opt = mysqli_real_escape_string($database->con, $_POST['post_ss_autopost']) : $ss_opt = "No" );
             $gcc_opt;
             if(isset($_POST['post_gcc_autopost']) && !empty($_POST['post_gcc_autopost']) ? $gcc_opt = mysqli_real_escape_string($database->con, $_POST['post_gcc_autopost']) : $gcc_opt = "No" );
+            $nlc_opt;
+            if(isset($_POST['post_nlc_autopost']) && !empty($_POST['post_nlc_autopost']) ? $nlc_opt = mysqli_real_escape_string($database->con, $_POST['post_nlc_autopost']) : $gcc_opt = "No" );
             $post_thumbnail;
             $post_desc;
             if(isset($_POST['post_desc']) && !empty($_POST['post_desc']) ? $post_desc = mysqli_real_escape_string($database->con, $_POST['post_desc']) : $post_desc = "No description given." );
@@ -54,7 +56,7 @@
             if(!file_exists($_FILES['post_thumbnail']['tmp_name']) || !is_uploaded_file($_FILES['post_thumbnail']['tmp_name'])){
 
                 $post_thumbnail = "post_thumbnail.jpg";
-                $post_id = $post->addPostIntegrated($database, $post_title, $post_content, $post_thumbnail, $post_desc, $post_type, $sm_opt, $ssd_opt, $ss_opt, $gcc_opt);
+                $post_id = $post->addPostIntegrated($database, $post_title, $post_content, $post_thumbnail, $post_desc, $post_type, $sm_opt, $ssd_opt, $ss_opt, $gcc_opt, $nlc_opt);
             } else {
 
                 if(isset($_FILES['post_thumbnail'])){
@@ -87,7 +89,7 @@
                     if($errors == 0){
                         move_uploaded_file($file_tmp, $imageFolder . $new_file_name);
                         $post_thumbnail = mysqli_real_escape_string($database->con, $new_file_name);
-                        $post_id = $post->addPostIntegrated($database, $post_title, $post_content, $post_thumbnail, $post_desc, $post_type, $sm_opt, $ssd_opt, $ss_opt, $gcc_opt);
+                        $post_id = $post->addPostIntegrated($database, $post_title, $post_content, $post_thumbnail, $post_desc, $post_type, $sm_opt, $ssd_opt, $ss_opt, $gcc_opt, $nlc_opt);
                     } else {
                         if($errors == 1){
                             $_SESSION['error_message'] = "You tried uploading a file with an invalid file extension. Please make sure that the file's extension is one of the followings: .jpeg, .jpg, .png.";

@@ -32,7 +32,7 @@
                     }  
 
                     $sheet_index= ($sheet - 1) * $limit;
-                    $blog_list = $site->ssList($database, $schoolContent, $limit, $sheet_index, $category);
+                    $blog_list = $site->nlcList($database, $schoolContent, $limit, $sheet_index, $category);
 
                     ?>
 
@@ -62,7 +62,7 @@
                     </div>
 
                     <?php
-                        $total_sheets = $site->ssListCount($database, $schoolContent, $category);
+                        $total_sheets = $site->nlcListCount($database, $schoolContent, $category);
                         $total_pages = ceil($total_sheets / $limit);  
                     ?>
 

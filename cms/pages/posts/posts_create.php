@@ -93,7 +93,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="row clearfix" <?php if($_SESSION['school'] == 3 || $_SESSION['school'] == 4 || $_SESSION['school'] == 5 || $_SESSION['school'] == 6 || $_SESSION['type'] == 5){ echo "hidden"; } ?>>
+                <div class="row clearfix" <?php if($_SESSION['school'] == 3 || $_SESSION['school'] == 4 || $_SESSION['school'] == 5 || $_SESSION['school'] == 6 || $_SESSION['type'] == 5 || $_SESSION['type'] == 6){ echo "hidden"; } ?>>
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <label for="post_sm_autopost">Post on SD92 Social Media Platforms?</label>
                         <p class="font-12"><i><b>Note:</b> Posting on to SD92's social media outlets will take at least 15 minutes to 2 hours after the post's creation.</i></p>
@@ -118,7 +118,7 @@
                         </div>
                     </div>
                 <?php } ?>
-                <div class="row clearfix" <?php if($_SESSION['school'] == 3 || $_SESSION['school'] == 4 || $_SESSION['school'] == 5 || $_SESSION['school'] == 6){ echo "hidden"; } ?>>
+                <div class="row clearfix" <?php if($_SESSION['school'] == 3 || $_SESSION['school'] == 4 || $_SESSION['school'] == 5 || $_SESSION['school'] == 6 || $_SESSION['type'] == 6){ echo "hidden"; } ?>>
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <label for="post_ss_autopost">Post on SD92 Strong Start?</label>
                         <div class="demo-radio-button">
@@ -129,7 +129,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="row clearfix" <?php if($_SESSION['school'] == 3 || $_SESSION['school'] == 4 || $_SESSION['school'] == 5 || $_SESSION['school'] == 6){ echo "hidden"; } ?>>
+                <div class="row clearfix" <?php if($_SESSION['school'] == 3 || $_SESSION['school'] == 4 || $_SESSION['school'] == 5 || $_SESSION['school'] == 6 || $_SESSION['type'] == 6){ echo "hidden"; } ?>>
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <label for="post_gcc_autopost">Post on Gitginsaa Childcare Centre?</label>
                         <div class="demo-radio-button">
@@ -137,6 +137,17 @@
                             <label for="gcc_opt_1">No</label>
                             <input type="radio" name="post_gcc_autopost" id="gcc_opt_2" class="radio-col-blue-grey with-gap" value="Yes">
                             <label for="gcc_opt_2">Yes</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row clearfix" <?php if($_SESSION['school'] == 3 || $_SESSION['school'] == 4 || $_SESSION['school'] == 5 || $_SESSION['school'] == 6 || $_SESSION['type'] == 5){ echo "hidden"; } ?>>
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <label for="post_nlc_autopost">Post on Nisga'a Language and Culture?</label>
+                        <div class="demo-radio-button">
+                            <input type="radio" name="post_nlc_autopost" id="nlc_opt_1" class="radio-col-blue-grey with-gap" value="No" checked>
+                            <label for="nlc_opt_1">No</label>
+                            <input type="radio" name="post_nlc_autopost" id="nlc_opt_2" class="radio-col-blue-grey with-gap" value="Yes">
+                            <label for="nlc_opt_2">Yes</label>
                         </div>
                     </div>
                 </div>
