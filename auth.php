@@ -151,8 +151,9 @@
                             VALUES(null, '$logId', '$log', '$userId', '$school', NOW())";
                     $query = mysqli_query($database->con, $sql);
                     if($query){
-                        if($_SESSION['type'] != 5) header("location: /cms/");
-                        else header("location: /cms/interaction.php?tab=web&page=gcc");
+                        if($_SESSION['type'] == 5) header("location: /cms/interaction.php?tab=web&page=gcc");
+                        else if($_SESSION['type'] == 6) header("location: /cms/interaction.php?tab=web&page=nlc");
+                        else header("location: /cms/");
                     }
                     
                 } else {

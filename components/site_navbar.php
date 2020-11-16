@@ -44,7 +44,6 @@
                     <ul class="list-unstyled mb-3">
                     <li class="nav-item"><a href="/curriculum/k12" class="nav-link">K-12 Program</a></li>
                     <li class="nav-item"><a href="/curriculum/dl" class="nav-link">Distributed Learning Program</a></li>
-                    <li class="nav-item"><a href="/curriculum/nlc" class="nav-link">Nisga'a Language and Culture</a></li>
                     </ul>      
                 </div>
                 <div class="col-lg-4">

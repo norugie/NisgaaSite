@@ -56,10 +56,10 @@
                     <li id="posts">
                         <a href="post.php?tab=post&page=posts">
                             <i class="material-icons">mode_comment</i>
-                            <span><?php if($_SESSION['school'] != 3 && $_SESSION['school'] != 4 && $_SESSION['school'] != 5 && $_SESSION['school'] != 6 && $_SESSION['type'] != 5 && $_SESSION['type'] != 6 ? $text = "District" : $text = "School"); echo $text; ?> Posts</span>
+                            <span><?php if($_SESSION['school'] != 3 && $_SESSION['school'] != 4 && $_SESSION['school'] != 5 && $_SESSION['school'] != 6 && $_SESSION['type'] != 5 ? $text = "District" : $text = "School"); echo $text; ?> Posts</span>
                         </a>
                     </li>
-                    <?php if($_SESSION['type'] != 5){ ?>
+                    <?php if($_SESSION['type'] != 5 && $_SESSION['type'] != 6){ ?>
                     <li id="events">
                         <a href="post.php?tab=post&page=events">
                             <i class="material-icons">event</i>
@@ -189,11 +189,6 @@
                                     <span>Distributed Learning Program</span>
                                 </a>
                             </li>
-                            <li id="nlc">
-                                <a href="interaction.php?tab=web&subtab=curriculum&page=nlc">
-                                    <span>Nisga'a Language and Culture</span>
-                                </a>
-                            </li>
                         </ul>
                     </li>
                     <li id="department">
@@ -257,7 +252,7 @@
                     <?php if($_SESSION['type'] != 3 && $_SESSION['type'] != 4 && $_SESSION['type'] != 5){ ?>
                     <li id="nlc">
                         <a href="interaction.php?tab=web&page=nlc">
-                            <i class="material-icons">voice_over_off</i>
+                            <i class="material-icons">record_voice_over</i>
                             <span>Nisga'a Language and Culture</span>
                         </a>
                     </li>

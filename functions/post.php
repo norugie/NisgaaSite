@@ -52,7 +52,7 @@
 	
 		}
 
-		public function addPostIntegrated($database, $post_title, $post_content, $post_thumbnail, $post_desc, $post_type, $sm_opt, $ssd_opt, $ss_opt, $gcc_opt){
+		public function addPostIntegrated($database, $post_title, $post_content, $post_thumbnail, $post_desc, $post_type, $sm_opt, $ssd_opt, $ss_opt, $gcc_opt, $nlc_opt){
 			$id;
 			$post_id = 'PST' . rand(1111111111,9999999999);
 			$user = $_SESSION['id'];
@@ -65,7 +65,7 @@
 			}
 
 			$sql = "INSERT INTO posts
-					VALUES (null, '$post_id', '$post_title', NOW(), NOW(), '$post_type', '$user', '$school', '$post_content', '$post_thumbnail', '$post_desc', '$sm_opt', '$ssd_opt', '$ss_opt', '$gcc_opt', 'Active')";
+					VALUES (null, '$post_id', '$post_title', NOW(), NOW(), '$post_type', '$user', '$school', '$post_content', '$post_thumbnail', '$post_desc', '$sm_opt', '$ssd_opt', '$ss_opt', '$gcc_opt', '$nlc_opt', 'Active')";
 			$query = mysqli_query($database->con, $sql);
 			if(!$query){
 				$_SESSION['error_message'] = mysqli_error($database->con);
