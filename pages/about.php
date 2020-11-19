@@ -1,5 +1,5 @@
 <?php 
-    $about = $site->aboutList($database, $schoolContent); 
+    $about = $site->aboutList($database, $schoolContent);
 ?>
 <div class="col-md-9">
     <!-- ABOUT US CONTENT -->

@@ -12,17 +12,25 @@
         public function aboutList($database){
             $array = array();
 			$school;
+			$type;
 
 			if($_SESSION['type'] == 4){
 				$school = $_SESSION['school'];
+				$type = "About";
 			} else if($_SESSION['type'] == 5 || $_GET['page'] == 'gcc'){
-				$school = 12;
+				$school = 2;
+				$type = "GCC";
 			} else if($_SESSION['type'] == 5 || $_GET['page'] == 'ss'){
-				$school = 13;
+				$school = 2;
+				$type = "SS";
 			} else if($_SESSION['type'] == 6 || $_GET['page'] == 'nlc'){
-				$school = 14;
+				if($_SESSION['school'] != 3 && $_SESSION['school'] != 4 && $_SESSION['school'] != 5 && $_SESSION['school'] != 6){ 
+					$school = 2;
+				} else {$school = $_SESSION['school'];}
+				$type = "NLC";
 			} else {
 				$school = 2;
+				$type = "About";
 			}
 
 			$sql = "SELECT web_content.id,
@@ -32,7 +40,7 @@
 					LEFT JOIN schools
                     ON (schools.id = web_content.school)
                     WHERE web_content.school = '$school'
-                    AND web_content.web_type = 'About'";
+                    AND web_content.web_type = '$type'";
 			$query = mysqli_query($database->con, $sql);
 			if (!$query) {
 				global $error;

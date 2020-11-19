@@ -649,6 +649,36 @@
 			return $array;
         }
 
+		public function specialAboutList($database, $school, $page_name){
+            $array = array();
+			$type;
+
+			if($page_name == "gcc"){
+				$type = "GCC";
+			} else if ($page_name == "strong_start"){
+				$type = "SS";
+			} else if ($page_name == "nlc"){
+				$type = "NLC";
+			} else { $type = "About"; }
+
+			$sql = "SELECT web_content.id,
+                           web_content.web_id, 
+						   web_content.web_desc
+					FROM web_content
+					LEFT JOIN schools
+                    ON (schools.id = web_content.school)
+                    WHERE web_content.school = '$school'
+                    AND web_content.web_type = '$type'";
+			$query = mysqli_query($database->con, $sql);
+			if (!$query) {
+				echo "<script>window.open('https://www.nisgaa.bc.ca/error', '_parent');</script>";
+			} else {
+				$array = mysqli_fetch_assoc($query);
+            }
+            
+			return $array;
+        }
+
         public function programList($database, $school){
             $array = array();
 
