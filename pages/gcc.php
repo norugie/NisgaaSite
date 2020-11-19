@@ -1,5 +1,5 @@
 <?php 
-    $about = $site->aboutList($database, 12); 
+    $about = $site->specialAboutList($database, $schoolContent, $page_name); 
 ?>
 <div class="col-md-9">
     <!-- DAYCARE CONTENT -->
@@ -15,7 +15,7 @@
     <section>
         <div class="row">
             <div class="col-md-12">
-                <p style="margin-bottom:10px!important;font-size:14pt;"><b>Strong Start Posts</b></p>
+                <p style="margin-bottom:10px!important;font-size:14pt;"><b>Gitginsaa Childcare Posts</b></p>
                 <div class="row">
                     <!-- POST LIST -->
 

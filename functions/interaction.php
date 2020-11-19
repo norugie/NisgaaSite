@@ -14,6 +14,7 @@
 			$page;
 			if($id == 18 ? $page = "&page=gcc" : $page = "&subtab=content&page=about");
 			if($id == 19 ? $page = "&page=ss" : $page = "&subtab=content&page=about");
+			if($id >= 20 || $id <= 24 ? $page = "&page=nlc" : $page = "&subtab=content&page=about");
 			if(!$query){
 				$_SESSION['error_message'] = mysqli_error($database->con);
 			    header("location: ../cms/interaction.php?tab=web" . $page . "&error=true");

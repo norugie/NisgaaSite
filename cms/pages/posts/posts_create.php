@@ -140,7 +140,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="row clearfix" <?php if($_SESSION['school'] == 3 || $_SESSION['school'] == 4 || $_SESSION['school'] == 5 || $_SESSION['school'] == 6 || $_SESSION['type'] == 5){ echo "hidden"; } ?>>
+                <div class="row clearfix" <?php if($_SESSION['type'] != 6 && $_SESSION['type'] != 1){ echo "hidden"; } ?>>
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <label for="post_nlc_autopost">Post on Nisga'a Language and Culture?</label>
                         <div class="demo-radio-button">

@@ -1,5 +1,5 @@
 <?php 
-    $about = $site->aboutList($database, 13); 
+    $about = $site->specialAboutList($database, $schoolContent, $page_name); 
 ?>
 <div class="col-md-9">
     <!-- STRONG CONTENT -->
