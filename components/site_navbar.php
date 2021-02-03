@@ -89,10 +89,8 @@
         </li>
         <li class="nav-item dropdown"><a href="javascript: void(0)" data-toggle="dropdown" class="dropdown-toggle">Resources <b class="caret"></b></a>
             <ul class="dropdown-menu">
-            <li class="dropdown-item"><a href="/general_resources" class="nav-link">General Resources</a></li>
-            <li class="dropdown-item"><a href="/teacher_resources" class="nav-link">Teacher Resources</a></li>
+            <li class="dropdown-item"><a href="/district_resources" class="nav-link">District Resources</a></li>
             <li class="dropdown-item"><a href="/learning_resources" class="nav-link">Learning Resources</a></li>
-            <li class="dropdown-item"><a href="/student_resources" class="nav-link">Student Resources</a></li>
             </ul>
         </li>
         <li class="nav-item"><a href="/news">District News</a></li>

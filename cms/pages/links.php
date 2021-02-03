@@ -60,16 +60,16 @@
                                         <?php
                                             $imageFolder;
                 
-                                            if($_SESSION['school'] == '3') {$imageFolder = "https://dev-ness.nisgaa.bc.ca/links/";}
-                                            else if($_SESSION['school'] == '4') {$imageFolder = "https://dev-aames.nisgaa.bc.ca/links/";}
-                                            else if($_SESSION['school'] == '5') {$imageFolder = "https://dev-ges.nisgaa.bc.ca/links/";}
-                                            else if($_SESSION['school'] == '6') {$imageFolder = "https://dev-nbes.nisgaa.bc.ca/links/";}
+                                            if($_SESSION['school'] == '3') {$imageFolder = "https://ness.nisgaa.bc.ca/links/";}
+                                            else if($_SESSION['school'] == '4') {$imageFolder = "https://aames.nisgaa.bc.ca/links/";}
+                                            else if($_SESSION['school'] == '5') {$imageFolder = "https://ges.nisgaa.bc.ca/links/";}
+                                            else if($_SESSION['school'] == '6') {$imageFolder = "https://nbes.nisgaa.bc.ca/links/";}
                                             else {$imageFolder = "../links/";}
                                         ?>
                                         <a href="<?php if($link['link_type'] == 'File'){ echo $imageFolder; } echo $link['link_content']; ?>" <?php if($link['link_type'] == 'Link'){?>target="_blank"<?php } else { ?> download <?php } ?>><?php echo $link['link_name']; ?></a>
                                     </td>  
                                     <td><?php echo $link['link_type']; ?></td>
-                                    <td><?php echo $link['link_tag']; ?></td>
+                                    <td><?php echo ($link['link_tag'] === "General Resources" ? "District Resources" :  $link['link_tag']); ?></td>
                                     <td><?php echo $link['link_desc']; ?></td>
                                     <td><?php echo $link['school_abbv']; ?></td>
                                     <?php if($_SESSION['type'] != 3){ ?>

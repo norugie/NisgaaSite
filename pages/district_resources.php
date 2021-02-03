@@ -1,6 +1,6 @@
 <?php $links = $site->linkList($database, 'General Resources', $schoolContent); ?>
 <div class="col-md-9">
-    <!-- GENERAL RESOURCE INFO CONTENT -->
+    <!-- DISTRICT RESOURCE INFO CONTENT -->
     <section>
         <div class="row">
             <div class="col-md-12">
@@ -9,7 +9,7 @@
         </div>
     </section>
     
-    <!-- GENERAL RESOURCE CONTENT -->
+    <!-- DISTRICT RESOURCE CONTENT -->
     <section>
         <div class="row">
             <div class="col-md-12">

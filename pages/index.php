@@ -52,24 +52,23 @@
     <div class="container-no-center">
         <div class="row vertical-border">
             <div class="col-lg-3 with-border">
-                <h4 class="h5 text-center">RECENT NEWS</h4>
-                <?php $blog_posts = $site->blogListIndex($database, $schoolContent); ?>
+                <h4 class="h5 text-center">DISTRICT UPDATES</h4>
+                <?php $blog_posts = $site->districtListIndex($database, $schoolContent); ?>
                 <ul class="list-unstyled footer-blog-list">
-                    <!-- Displays the three most recent posts (Post and Media included) -->
+                    <!-- Displays most recent important updates (Post and Media included) -->
                     <?php foreach($blog_posts as $blog): ?>
-                        <?php $catIndex = $site->categoryListPerPost($database, $blog['id'])[0]['id']; ?>
-                            <li class="d-flex align-items-center" style="padding:3px; <?php if($catIndex == 3) { ?>background: rgba(255, 255, 255, 0.6)!important;<?php } ?>" >
-                                <div class="image"><img src="/images/thumbnails/<?php echo $blog['post_thumbnail']; ?>" alt="..." class="img-fluid"></div>
-                                <div class="text">
-                                    <h5 class="mb-0"> <a href="/news/read/<?php echo preg_replace('/[a-zA-Z]/', '', $blog['post_id']); ?>" <?php if($catIndex == 3) { ?>style="color:#000!important;"<?php } ?>><?php echo $blog['post_title']; ?></a></h5>
-                                </div>
-                            </li>
+                        <li class="d-flex align-items-center" style="padding:3px;" >
+                            <div class="image"><img src="/images/thumbnails/<?php echo $blog['post_thumbnail']; ?>" alt="..." class="img-fluid"></div>
+                            <div class="text">
+                                <h5 class="mb-0"> <a href="/news/read/<?php echo preg_replace('/[a-zA-Z]/', '', $blog['post_id']); ?>"><?php echo $blog['post_title']; ?></a></h5>
+                            </div>
+                        </li>
                     <?php endforeach; ?>
                 </ul>
               <hr class="d-block d-lg-none">
             </div>
             <div class="col-lg-3 with-border">
-                <h4 class="h5 text-center">CAREER OPPORTUNITIES</h4>
+                <h4 class="h5 text-center">EMPLOYMENT OPPORTUNITIES</h4>
                 <ul class="list-unstyled footer-blog-list">
                     <!-- Display all the current active job postings -->
                     <?php if(count($joblist) < 1){ ?><li class="d-flex align-items-center"><div class="text"><h5 class="mb-0">No job postings available</h5></div></li><?php } ?>

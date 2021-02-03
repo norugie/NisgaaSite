@@ -452,6 +452,45 @@
             }
             
 			return $array;
+		}
+		
+		public function districtListIndex($database, $school){
+
+			$array = array();
+
+			$sql = "SELECT posts.post_title,
+                           posts.post_date,
+						   posts.post_id,
+						   posts.id,
+                           posts.post_thumbnail,
+                           users.firstname,
+						   users.lastname
+					FROM posts
+					LEFT JOIN users
+                    ON (users.id = posts.post_author)
+                    LEFT JOIN schools
+                    ON (schools.id = posts.post_school)
+					LEFT JOIN post_categories
+					ON (post_categories.post_id = posts.id)
+                    WHERE posts.post_school = '$school'
+                    AND posts.status = 'Active'
+					AND post_categories.cat_id = '3'
+					AND post_categories.cat_id != '4'
+					AND post_categories.cat_id != '5'
+					GROUP BY post_categories.post_id
+					ORDER BY posts.post_date DESC
+					LIMIT 5";
+			$query = mysqli_query($database->con, $sql);
+			if (!$query) {
+                 //echo "<script>window.open('https://www.nisgaa.bc.ca/error', '_parent');</script>";
+                return ("Error description: " . mysqli_error($database->con));
+			} else {
+				while($row = mysqli_fetch_array($query)){
+					$array[] = $row;
+				}
+            }
+            
+			return $array;
         }
 
         public function eventList($database, $school){

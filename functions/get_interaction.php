@@ -17,10 +17,10 @@
 			if($_SESSION['type'] == 4){
 				$school = $_SESSION['school'];
 				$type = "About";
-			} else if($_SESSION['type'] == 5 || $_GET['page'] == 'gcc'){
+			} else if($_GET['page'] == 'gcc'){
 				$school = 2;
 				$type = "GCC";
-			} else if($_SESSION['type'] == 5 || $_GET['page'] == 'ss'){
+			} else if($_GET['page'] == 'ss'){
 				$school = 2;
 				$type = "SS";
 			} else if($_SESSION['type'] == 6 || $_GET['page'] == 'nlc'){

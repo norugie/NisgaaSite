@@ -11,15 +11,15 @@
                     <h2>Employment Opportunities</h2>
                 </div>
                 <div class="row">
-                    <div class="col-md-9">
-                        <p class="lead">View and apply to School District 92's (Nisga'a) job postings in <a href="http://www.makeafuture.ca/nisgaa" target="_new">teaching</a>, <a href="http://www.makeafuture.ca/nisgaa" target="_new">support roles</a>, <a href="http://www.makeafuture.ca/nisgaa" target="_new">management</a>, and <a href="http://www.makeafuture.ca/nisgaa" target="_new">administration</a> on <a href="http://www.makeafuture.ca/nisgaa" target="_new">Make a Future</a>. Please create an account with Make A Future to apply online to job postings, and to subscribe to email job alerts. Please note that applications may also be submitted in the method specified in job postings. </p>
+                    <div class="col-md-12">
+                        <p class="lead">View and apply to School District 92's (Nisga'a) job postings in teaching, support roles, management, and administration. You can apply by clicking on the <b>APPLY FOR THIS JOB</b> button when viewing a job posting or send us your application at <a href="mailto:hr@nisgaa.bc.ca">hr@nisgaa.bc.ca</a>.</p>
                         <p class="lead">If you have any questions, please feel free to <a href="/contacts">contact us</a>.</p>
                     </div>
-                    <div class="col-md-3">
+                    <!-- <div class="col-md-3">
                         <center>
                             <div class="image" style="margin-bottom: 25px!important;"><a href="http://www.makeafuture.ca/nisgaa" target="_new"><img src="/images/site/maf-logo.png" alt="Make A Future Logo" class="img-fluid"></a></div>
                         </center>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>

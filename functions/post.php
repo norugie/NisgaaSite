@@ -58,7 +58,7 @@
 			$user = $_SESSION['id'];
 			$school;
 
-			if($_SESSION['type'] == 4){
+			if($_SESSION['type'] == 4 || $_SESSION['type'] == 6){
 				$school = $_SESSION['school'];
 			} else {
 				$school = 2;
