@@ -69,7 +69,7 @@
                     <li id="links">
                         <a href="post.php?tab=post&page=links">
                             <i class="material-icons">link</i>
-                            <span>Resources</span>
+                            <span>Links</span>
                         </a>
                     </li>
                     <?php } ?>

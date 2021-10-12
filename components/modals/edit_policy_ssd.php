@@ -15,7 +15,7 @@
                 <div class="row clearfix">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 
-                    <form class="edit_form_validate_file" action="../functions/district.php?district=true&editPolicy=true" method="POST" enctype="multipart/form-data">
+                    <form class="edit_form_validate_file" action="../functions/interaction.php?interaction=true&editPolicy=true" method="POST" enctype="multipart/form-data">
                             <input type="text" id="edit_policy_id_file" name="edit_link_id" hidden>
                             <input type="text" id="edit_policy_id_name_file" name="edit_link_id_name" hidden>
                             <input type="text" id="edit_policy_id_file_file" name="edit_link_id_file" hidden>
@@ -45,12 +45,10 @@
                                     <label for="edit_policy_tag_file">Policy Tag *</label>
                                     <div class="form-group">
                                         <select class="form-control show-tick" name="edit_link_tag" id="edit_policy_tag_file" title="Select policy tag" required>
-                                            <option value="PolicyP BL">Policy: By Laws</option>
-                                            <option value="PolicyP 100">Policy: Governance</option>
-                                            <option value="PolicyP 300">Policy: Students</option>
-                                            <option value="PolicyP 400">Policy: Operations, Facilities</option>
-                                            <option value="PolicyP 500">Policy: Finance</option>
-                                            <option value="PolicyP 600">Policy: Legislation, School Act, Ministerial Orders, Ministry Directives</option>
+                                            <option value="PolicyAP 200">Administrative Procedure: Personnel</option>
+                                            <option value="PolicyAP 300">Administrative Procedure: Students</option>
+                                            <option value="PolicyAP 400">Administrative Procedure: Operations, Facilities</option>
+                                            <option value="PolicyAP 500">Administrative Procedure: Finance</option>
                                         </select>
                                     </div>
                                 </div>

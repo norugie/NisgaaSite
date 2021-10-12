@@ -51,6 +51,7 @@
                                             <option value="General Resources">District Resources</option>
                                             <option value="Learning Resources">Learning Resources</option>
                                             <option value="Parent Resources">Parent Resources</option>
+                                            <option value="Flipping Book">Flipping Book</option>
                                             <?php } ?>
                                         </select>
                                     </div>

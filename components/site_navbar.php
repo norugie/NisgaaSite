@@ -43,7 +43,7 @@
                     <h5>Curriculum</h5>
                     <ul class="list-unstyled mb-3">
                     <li class="nav-item"><a href="/curriculum/k12" class="nav-link">K-12 Program</a></li>
-                    <li class="nav-item"><a href="/curriculum/dl" class="nav-link">Distributed Learning Program</a></li>
+                    <!-- <li class="nav-item"><a href="/curriculum/dl" class="nav-link">Distributed Learning Program</a></li> -->
                     </ul>      
                 </div>
                 <div class="col-lg-4">
@@ -61,6 +61,7 @@
                     <!-- <li class="nav-item"><a href="/culture_corner" class="nav-link">Culture Corner</a></li> -->
                     <li class="nav-item"><a href="/files" class="nav-link">District Files</a></li>
                     <li class="nav-item"><a href="/help" class="nav-link">Tech Help</a></li>
+                    <li class="nav-item"><a href="/dictionary" class="nav-link">Nisga'a Phrases</a></li>
                     </ul> 
                 </div>
                 <div class="col-lg-4">
@@ -84,6 +85,7 @@
             <li class="dropdown-item"><a href="https://aames.nisgaa.bc.ca" class="nav-link">ALVIN A. MCKAY ELEMENTARY SCHOOL</a></li>
             <li class="dropdown-item"><a href="https://nbes.nisgaa.bc.ca" class="nav-link">NATHAN BARTON ELEMENTARY SCHOOL</a></li>
             <li class="dropdown-item"><a href="/nlc" class="nav-link">NISGA'A LANGUAGE AND CULTURE</a></li>
+            <li class="dropdown-item"><a href="/gcc" class="nav-link">GITGINSAA CHILDCARE CENTRE</a></li>
             <li class="dropdown-item"><a href="/strong_start" class="nav-link">STRONG START</a></li>
             </ul>
         </li>

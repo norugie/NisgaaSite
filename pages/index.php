@@ -6,11 +6,11 @@
 <section class="no-mb relative-positioned">
     <div class="relative-positioned">
         <div class="row jumbotron-new">
-            <div class="col-md-9 jumbotron-left">
+            <div class="col-md-8 jumbotron-left">
                 <section>
                     <div class="owl-carousel owl-theme" id="owl-demo">
                         <!-- Loops through and displays the set of images for the home page -->
-                        <?php $carousel = $site->carouselImages($database, $schoolContent); ?>
+                        <!-- <?php $carousel = $site->carouselImages($database, $schoolContent); ?>
                         <?php foreach($carousel as $c): ?> 
                             <div>
                                 <?php if(isset($c['carousel_desc']) && !empty($c['carousel_desc'])){ ?>
@@ -18,26 +18,36 @@
                                         <h3 class="owl-title d-none m-0 d-md-block" style="padding:5px;"><?php echo $c['carousel_desc']; ?></h3>
                                     </div>
                                 <?php } ?>
-                                <img class="owl-img" src="/images/carousel/<?php echo $c['carousel_name']; ?>" alt="<?php echo $c['carousel_desc']; ?>">
+                                
                             </div>
-                        <?php endforeach; ?>
+                        <?php endforeach; ?> -->
+                        <img class="owl-img" src="/nisgaa-banner-fp.png" alt="">
                     </div>
                 </section>
             </div>
-            <div class="col-md-3 jumbotron-right">
+            <div class="col-md-4 jumbotron-right">
                 <nav id="myTab" role="tablist" class="nav nav-tabs nav-justified">
-                    <a id="tab4-1-tab" data-toggle="tab" href="#tab4-1" role="tab" aria-controls="tab4-1" aria-selected="true" class="nav-item nav-link active my-auto" style="border:none;font-weight:bold;font-size:1rem;">QUICK LINKS</a>
+                    <a id="tab4-1-tab" data-toggle="tab" href="#tab4-1" role="tab" aria-controls="tab4-1" aria-selected="true" class="nav-item nav-link active my-auto" style="border:none;padding:0 25px 0 0;font-weight:bold;font-size:1rem;">QUICK LINKS</a>
                 </nav>
                 <div id="nav-tabContent" class="tab-content" style="border:none;">
                     <div id="tab4-1" role="tabpanel" aria-labelledby="tab4-1-tab" class="tab-pane fade show active">
                         <div class="panel panel-default sidebar-menu">
                             <div class="panel-body">
-                                <ul class="nav nav-pills flex-column text-sm">
+                                <!-- <ul class="nav nav-pills flex-column text-sm"> -->
                                     <!-- Displays the links with the tag "Quick Links" -->
-                                    <?php foreach($quick_links as $ql): ?>
+                                    <!-- <?php foreach($quick_links as $ql): ?>
                                         <li class="nav-item"><a href="<?php if($ql['link_type'] == 'File'){ echo "/links/"; } echo $ql['link_content']; ?>" class="nav-link" target="_blank" rel="noreferrer"><?php echo $ql['link_name']; ?></a></li>
                                     <?php endforeach; ?>
-                                </ul>
+                                </ul> -->
+                                <div class="row">
+                                    <?php foreach($quick_links as $ql): ?>
+                                        <div class="col-lg-6 col-md-6 col-blog-mobile">
+                                            <ul class="nav nav-pills flex-column text-sm">
+                                                <li class="nav-item"><a href="<?php if($ql['link_type'] == 'File'){ echo "/links/"; } echo $ql['link_content']; ?>" class="nav-link" target="_blank" rel="noreferrer"><?php echo $ql['link_name']; ?></a></li>
+                                            </ul>
+                                        </div>
+                                    <?php endforeach; ?>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -130,8 +140,7 @@
                 <hr>
                 <h4 class="text-center" style="font-family: sans-serif!important; font-size: 18px!important;"><?php echo $word['word']; ?></h4>
                 <hr>
-                <p class="lead text-center mb-0" style="font-size: 16px;">"<?php echo $word['word_meaning']; ?>"</p>
-                <p class="intro text-center"><i><?php echo $word['form']; ?></i></p>
+                <p class="lead text-center mb-2" style="font-size: 16px;">"<?php echo $word['word_meaning']; ?>"</p>
                 <h5 class="h5 text-center">Learn more about the Nisga'a language at <a href="https://www.youtube.com/channel/UCQTuOdHLEa2RSM56I5vvoFg"><u>Sim'algax 101</u></a>.</h5>
             </div>
         </div>

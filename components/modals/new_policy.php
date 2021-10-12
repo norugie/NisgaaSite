@@ -40,10 +40,6 @@
                                     <label for="link_tag">Policy Tag *</label>
                                     <div class="form-group">
                                         <select class="form-control show-tick" name="link_tag" id="link_tag" title="Select policy tag" required>
-                                            <option value="PolicyAP 200">Administrative Procedure: Personnel</option>
-                                            <option value="PolicyAP 300">Administrative Procedure: Students</option>
-                                            <option value="PolicyAP 400">Administrative Procedure: Operations, Facilities</option>
-                                            <option value="PolicyAP 500">Administrative Procedure: Finance</option>
                                             <option value="PolicyP BL">Policy: By Laws</option>
                                             <option value="PolicyP 100">Policy: Governance</option>
                                             <option value="PolicyP 300">Policy: Students</option>
