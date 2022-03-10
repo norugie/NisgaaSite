@@ -11,14 +11,14 @@
                     <div class="owl-carousel owl-theme" id="owl-demo">
                         <!-- Loops through and displays the set of images for the home page -->
                         <!-- <?php $carousel = $site->carouselImages($database, $schoolContent); ?>
-                        <?php foreach($carousel as $c): ?> 
+                        <?php foreach($carousel as $c): ?>
                             <div>
                                 <?php if(isset($c['carousel_desc']) && !empty($c['carousel_desc'])){ ?>
                                     <div class="owl-text-overlay d-none d-sm-block">
                                         <h3 class="owl-title d-none m-0 d-md-block" style="padding:5px;"><?php echo $c['carousel_desc']; ?></h3>
                                     </div>
                                 <?php } ?>
-                                
+                                <img class="owl-img" src="/images/carousel/<?php echo $c['carousel_name']; ?>" alt="<?php echo $c['carousel_desc']; ?>">
                             </div>
                         <?php endforeach; ?> -->
                         <img class="owl-img" src="/nisgaa-banner-fp.png" alt="">

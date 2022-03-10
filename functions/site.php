@@ -32,7 +32,7 @@
                     FROM links
                     LEFT JOIN schools
                     ON (links.school = schools.id)
-                    WHERE links.link_tag = '$tag'
+                    WHERE links.link_tag LIKE '%$tag%'
                     AND links.school = '$school'
 					AND links.status = 'Active'";
 

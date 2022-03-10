@@ -105,7 +105,7 @@
                         </div>
                     </div>
                 </div>
-                <?php if($_SESSION['school'] == 11 || $_SESSION['type'] == 1){ ?>
+                <?php if($_SESSION['school'] == 11 || $_SESSION['type'] == 1 || $_SESSION['type'] == 2){ ?>
                     <div class="row clearfix">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                             <label for="post_ssd_autopost">Post on School District Superintendent Page?</label>
