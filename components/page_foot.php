@@ -1,6 +1,9 @@
 
+<!-- Popper Plugin Js -->
+<script src="../plugins/popper/popper.js"></script>
+
 <!-- Bootstrap Core Js -->
-<script src="../plugins/bootstrap/js/bootstrap.js"></script>
+<script src="../plugins/bootstrap-v4/js/bootstrap.js"></script>
 
 <!-- Slimscroll Plugin Js -->
 <script src="../plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
