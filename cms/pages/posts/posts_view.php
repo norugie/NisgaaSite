@@ -10,7 +10,7 @@
                 <?php if($_SESSION['type'] != 3){ ?>
                     <?php if($_SESSION['type'] == 1 || $_SESSION['type'] == 2 || $_SESSION['school'] == $post_info['post_school']){ ?>
                         <button type="button" class="btn bg-green waves-effect" style="display: inline-block; margin-top: 5px; margin-left: 5px;" onclick="window.location.href='post.php?tab=post&page=posts&posts_option=modify&modify=details&post_id=<?php echo $post_info['id']; ?>'"><i class="material-icons">mode_edit</i></button>
-                        <button type="button" class="btn bg-red waves-effect" style="display: inline-block; margin-top: 5px; margin-left: 5px;" data-type="delete-post" data-id="<?php echo $post_info['id']; ?>" data-name="<?php echo $post_info['post_id']; ?>" data-event="<?php echo $event_indicator; ?>" onclick="alertDesign(this);"><i class="material-icons">delete</i></button>
+                        <button type="button" class="btn bg-red waves-effect" style="display: inline-block; margin-top: 5px; margin-left: 5px;" data-type="delete-post-integrate" data-id="<?php echo $post_info['id']; ?>" data-name="<?php echo $post_info['post_id']; ?>" data-event="<?php echo $event_indicator; ?>" onclick="alertDesign(this);"><i class="material-icons">delete</i></button>
                     <?php } ?>
                 <?php } ?>
             </center>

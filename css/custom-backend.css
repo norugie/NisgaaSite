@@ -96,3 +96,7 @@ fieldset[disabled] .btn {
     box-shadow: none;
     opacity: .65;
 }
+
+a:hover {
+    text-decoration: none!important;
+}

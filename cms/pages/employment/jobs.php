@@ -65,8 +65,8 @@
                                         <td>
                                             <center>
                                                 <div class="btn-group">
-                                                    <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" <?php if($job['status'] == 'Closed') echo "disabled"; ?>>
-                                                        <i class="material-icons">more_horiz</i><span>OPTIONS</span> <span class="caret"></span>
+                                                    <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" <?php if($job['status'] == 'Closed') echo "disabled"; ?>><i class="material-icons">more_horiz</i>
+                                                        <span>OPTIONS</span> <span class="caret"></span>
                                                     </button>
                                                     <ul class="dropdown-menu">
                                                         <li><a href="#" data-toggle="modal" data-target="#edit-job-modal" data-values='{
@@ -80,7 +80,7 @@
                                                         onclick="editJob(this);">Edit Job Details</a></li>
                                                         <li><a href="#" data-toggle="modal" data-target="#edit-job-dates-modal" onclick="editJobDates(<?php echo htmlspecialchars(json_encode($job['id'])); ?>,<?php echo htmlspecialchars(json_encode($job['job_id'])); ?>, 1);">Edit Job Posting Dates</a></li>
                                                         <li><a href="#" data-toggle="modal" data-target="#edit-job-file-modal" onclick="editJobFile(<?php echo htmlspecialchars(json_encode($job['id'])); ?>,<?php echo htmlspecialchars(json_encode($job['job_id'])); ?>);">Edit Job File</a></li>
-                                                        <li role="separator" class="divider"></li>
+                                                        <div class="dropdown-divider"></div>
                                                         <li><a href="district.php?tab=sd&page=employment&applicants=true&jobid=<?php echo $job['id']; ?>">See Job Applicants</a></li>
                                                     </ul>
                                                 </div>
