@@ -211,7 +211,7 @@
 			$date = date('Y-m-d');
 
 			$sql = "INSERT INTO posts
-					VALUES (null, '$post_id', '$post_title', '$date', NOW(), 'Post', '$user', '$school', '$post_content', '$post_thumbnail', '$event_desc', '$sm_opt', 'No', 'Active')";
+					VALUES (null, '$post_id', '$post_title', '$date', NOW(), 'Post', '$user', '$school', '$post_content', '$post_thumbnail', '$event_desc', '$sm_opt', 'No', 'No', 'No', 'No', 'Active')";
 			$query = mysqli_query($database->con, $sql);
 			if(!$query){
 				$_SESSION['error_message'] = mysqli_error($database->con);

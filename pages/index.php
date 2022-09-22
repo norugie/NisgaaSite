@@ -81,7 +81,17 @@
                 <h4 class="h5 text-center">EMPLOYMENT OPPORTUNITIES</h4>
                 <ul class="list-unstyled footer-blog-list">
                     <!-- Display all the current active job postings -->
-                    <?php if(count($joblist) < 1){ ?><li class="d-flex align-items-center"><div class="text"><h5 class="mb-0">No job postings available</h5></div></li><?php } ?>
+                    <?php if(count($joblist) < 1 && count($xml) < 3){ ?><li class="d-flex align-items-center"><div class="text"><h5 class="mb-0">No job postings available</h5></div></li><?php } ?>
+                    <?php foreach($xml as $job): ?>
+                        <?php if($job->title){ ?>
+                            <li class="d-flex align-items-center">
+                                <div class="text">
+                                    <h5 class="mb-0"> <a href="<?php echo $job->url; ?>"><?php echo $job->title; ?></a></h5>
+                                </div>
+                            </li>
+                        <?php } ?>
+                    <?php endforeach; ?>
+                    <hr>
                     <?php foreach($joblist as $j): ?>
                         <li class="d-flex align-items-center">
                             <div class="text">

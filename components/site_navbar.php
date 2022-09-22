@@ -7,6 +7,7 @@
     $quick_links = $site->linkList($database, 'Quick Links', $schoolContent);
     $events = $site->eventList($database, $schoolContent);
     $joblist = $site->jobList($database);
+    $xml = $xml = simplexml_load_file('https://sd92-makeafuture.simplication.com/Applicant/attSearchexXML.aspx?ep=6bff4ee4-8ea3-4aa9-9bd0-aeebf6dd3dd6&lc=en&app_type=externall');
 
 ?>
 

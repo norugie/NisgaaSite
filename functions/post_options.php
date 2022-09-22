@@ -108,7 +108,7 @@
 
             if(!empty($post_cats[0])){
                 if($_SESSION['type'] == 5 && !in_array(6, $post_cats)) array_push($post_cats, 6);
-                for($i = 0; $i <= count($post_cats); $i++){
+                for($i = 0; $i < count($post_cats); $i++){
                     $post->addPostCategoriesIntegrated($database, $post_id, $post_cats[$i]);
                 }
             } else {
@@ -124,6 +124,10 @@
                     $post->addPostImagesIntegrated($database, $post_id, $media_images[$i]);
                 }
             }
+
+            echo $_SESSION['type'] . "<br>";
+            echo $post_id . "<br>";
+            echo $post_cats;
 
             header("location:../cms/post.php?tab=post&page=posts&addPost=true");
 
@@ -201,7 +205,7 @@
 
             if(!empty($post_cats[0])){
                 if($_SESSION['type'] == 5 && !in_array(6, $post_cats)) array_push($post_cats, 6);
-                for($i = 0; $i <= count($post_cats); $i++){
+                for($i = 0; $i < count($post_cats); $i++){
                     $post->addPostCategoriesIntegrated($database, $id, $post_cats[$i]);
                 }
             } else {

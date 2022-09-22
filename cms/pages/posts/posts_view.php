@@ -37,11 +37,11 @@
                     // Images upload path
                     $imageurlbase;
                 
-                    if($post_info['post_school'] == '3') {$imageurlbase = "https://ness.nisgaa.bc.ca/";}
-                    else if($post_info['post_school'] == '4') {$imageurlbase = "https://aames.nisgaa.bc.ca/";}
-                    else if($post_info['post_school'] == '5') {$imageurlbase = "https://ges.nisgaa.bc.ca/";}
-                    else if($post_info['post_school'] == '6') {$imageurlbase = "https://nbes.nisgaa.bc.ca/";}
-                    else {$imageurlbase = "https://www.nisgaa.bc.ca/";}
+                    if($post_info['post_school'] == '3') {$imageurlbase = "https://ness.nisgaa.bc.ca";}
+                    else if($post_info['post_school'] == '4') {$imageurlbase = "https://aames.nisgaa.bc.ca";}
+                    else if($post_info['post_school'] == '5') {$imageurlbase = "https://ges.nisgaa.bc.ca";}
+                    else if($post_info['post_school'] == '6') {$imageurlbase = "https://nbes.nisgaa.bc.ca";}
+                    else {$imageurlbase = "https://www.nisgaa.bc.ca";}
                 
                     $media_images = $post->postImagesIntegrated($database, $post_info['id']);
                     foreach($media_images as $mi):

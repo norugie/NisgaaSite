@@ -3,9 +3,9 @@
     $categories = $post->categoryListNoEventNoAnnouncement($database); 
     $cats =  json_encode($categories);
 
-    ?>
+?>
 
-    <style>
+<style>
 
     div.token-input-dropdown-facebook {           
         z-index: 9999!important;

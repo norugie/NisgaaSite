@@ -17,14 +17,19 @@
         </div>
         <div class="panel-body">
             <ul class="nav nav-pills flex-column text-sm">
-                <?php if(count($joblist) < 1){ ?><li class="nav-item">No job postings available</li><?php } ?>
+                <?php if(count($joblist) < 1 && count($xml) < 3){ ?><li class="nav-item">No job postings available</li><?php } ?>
+                <?php foreach($xml as $job): ?>
+                    <?php if($job->title){ ?>
+                        <li class="nav-item"><a href="<?php echo $job->url; ?>" class="nav-link"><?php echo $job->title; ?></a></li>
+                    <?php } ?>
+                <?php endforeach; ?>
                 <?php foreach($joblist as $j): ?>
                     <li class="nav-item"><a href="/careers/read/<?php echo preg_replace('/[a-zA-Z]/', '', $j['job_id']); ?>" class="nav-link"><?php echo $j['title']; ?></a></li>
                 <?php endforeach; ?>
             </ul>
         </div>
     </div>
-    <div class="panel panel-default sidebar-menu">
+    <!-- <div class="panel panel-default sidebar-menu">
         <div class="panel-heading">
             <h3 class="h4 panel-title">Upcoming Events</h3>
         </div>
@@ -36,7 +41,7 @@
                 <?php endforeach; ?>
             </ul>
         </div>
-    </div>
+    </div> -->
 </div>
 
 <!-- SIDEBAR FLOAT ACTION BUTTON -->
@@ -71,14 +76,19 @@
                     </div>
                     <div class="panel-body">
                         <ul class="nav nav-pills flex-column text-sm">
-                            <?php if(count($joblist) < 1){ ?><li class="nav-item">No job postings available</li><?php } ?>
+                            <?php if(count($joblist) < 1 && count($xml) < 3){ ?><li class="nav-item">No job postings available</li><?php } ?>
+                            <?php foreach($xml as $job): ?>
+                                <?php if($job->title){ ?>
+                                    <li class="nav-item"><a href="<?php echo $job->url; ?>" class="nav-link"><?php echo $job->title; ?></a></li>
+                                <?php } ?>
+                            <?php endforeach; ?>
                             <?php foreach($joblist as $j): ?>
                                 <li class="nav-item"><a href="/careers/read/<?php echo preg_replace('/[a-zA-Z]/', '', $j['job_id']); ?>" class="nav-link"><?php echo $j['title']; ?></a></li>
                             <?php endforeach; ?>
                         </ul>
                     </div>
                 </div>
-                <div class="panel panel-default sidebar-menu">
+                <!-- <div class="panel panel-default sidebar-menu">
                     <div class="panel-heading">
                         <h3 class="h4 panel-title">Upcoming Events</h3>
                     </div>
@@ -90,7 +100,7 @@
                             <?php endforeach; ?>
                         </ul>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
         <div class="st-btn-container right-bottom">

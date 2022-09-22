@@ -83,7 +83,7 @@
                     }
                     header("location:../cms/district.php?tab=sd&page=employment&error=true");
                 }
-            } else {
+             } else {
                 header("location:../cms/district.php?tab=sd&page=employment&error=true");
             }
 

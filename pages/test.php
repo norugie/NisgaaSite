@@ -1,6 +1,6 @@
 <?php 
     $jobs = $joblist; 
-    $mofjobs = $xml;
+    $xml = simplexml_load_file('https://sd92-makeafuture.simplication.com/Applicant/attSearchexXML.aspx?ep=6bff4ee4-8ea3-4aa9-9bd0-aeebf6dd3dd6&lc=en&app_type=externall');
 ?>
 
 <div class="col-md-9">
@@ -45,7 +45,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <?php foreach($mofjobs as $job): ?>
+                            <?php foreach($xml as $job): ?>
                                 <?php if($job->title){ ?>
                                     <tr>
                                         <td><?php echo $job->referencenumber; ?></td>
@@ -67,12 +67,6 @@
             <div class="col-md-12">
                 <div class="heading">
                     <h2>Employment Opportunities - On-site Information</h2>
-                </div>
-                <div class="row">
-                    <div class="col-md-12">
-                        <p class="lead">The following job postings are jobs available on-site. View and apply to School District 92's (Nisga'a) job postings in support roles, management, and administration. You can apply to the on-site jobs by sending us your application at <a href="mailto:hr@nisgaa.bc.ca">hr@nisgaa.bc.ca</a>.</p>
-                        <p class="lead">If you have any questions, please feel free to <a href="/contacts">contact us</a>.</p>
-                    </div>
                 </div>
             </div>
         </div>

@@ -16,9 +16,9 @@
     }
 
     // Redirect auth.php to /auth
-    if($page_name == "auth" || $page_name == "login"){
-        require 'auth.php';
-        exit();
+    if(substr($page_name, 0, 4) == "auth" || $page_name == "auth" || $page_name == "login"){
+        require 'auth.php';    
+	    exit();
     }
 
 ?>

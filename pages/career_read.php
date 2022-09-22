@@ -1,4 +1,4 @@
-<?php require 'components/modals/apply.php'; ?>
+<!-- <?php require 'components/modals/apply.php'; ?> -->
 
 <div id="blog-post" class="col-md-9">
     <h2 class="text-center"><?php echo $career['title']; ?></h2>
@@ -17,16 +17,16 @@
         </div>
         <hr>
         <div class="row">
-            <div class="col-md-6 text-center mb-3"><a href="/jobs/<?php echo $career['file']; ?>" target="_blank" class="btn btn-outline-primary">Download job posting</a></div>
-            <div class="col-md-6 text-center"><a  href="#" data-toggle="modal" data-target="#apply-modal" data-values='<?php echo json_encode(str_replace("'", "&apos;", $career)); ?>' onclick="applyInfo(this);" class="btn btn-template-main">Apply for this job</a></div>
+            <div class="col-md-12 text-center mb-3"><a href="/jobs/<?php echo $career['file']; ?>" target="_blank" class="btn btn-outline-primary">Download job posting</a></div>
+            <!-- <div class="col-md-6 text-center"><a  href="#" data-toggle="modal" data-target="#apply-modal" data-values='<?php echo json_encode(str_replace("'", "&apos;", $career)); ?>' onclick="applyInfo(this);" class="btn btn-template-main">Apply for this job</a></div> -->
         </div>
     </div>
 </div>
 
-<script>
+<!-- <script>
 
     function applyInfo(apply) {
         apply = $(apply).data("values");
     }
 
-</script>
+</script> -->

@@ -14,7 +14,6 @@
 
 </style>
 
-
 <div class="header">
     <div class="row clearfix">
         <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 text-xs-sm-center">
@@ -226,10 +225,12 @@
 <script>
     (function () {
         'use strict';
-        $('input[name=post_opt_type]:radio').click(function(ev) {
+        // Dropzone Area
+        $('input[name=post_opt_type]:radio').change(function(ev) {
             if (ev.currentTarget.value == 'Post') {
                 $('.dropzone-area').hide();
             } else if (ev.currentTarget.value == 'Media') {
+                $('.dropzone-area').removeAttr('hidden');
                 $('.dropzone-area').show();
             }
         });

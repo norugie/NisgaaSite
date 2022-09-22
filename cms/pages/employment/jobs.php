@@ -19,7 +19,7 @@
                         <?php if($_SESSION['type'] == 3 || $_SESSION['type'] == 1){ ?>
                             <center>
                                 <button type="button" class="btn bg-blue waves-effect" data-toggle="modal" data-target="#new-job-modal" style="display: inline-block;"><i class="material-icons">add</i><span>NEW JOB</span></button>
-                                <a href="district.php?tab=sd&page=employment&applicants=true" style="color:#fff;"><button type="button" class="btn bg-blue-grey waves-effect change-button" style="margin-right: 10px;"><i class="material-icons">list</i><span>APPLICANT LIST</span></button></a>
+                                <!-- <a href="district.php?tab=sd&page=employment&applicants=true" style="color:#fff;"><button type="button" class="btn bg-blue-grey waves-effect change-button" style="margin-right: 10px;"><i class="material-icons">list</i><span>APPLICANT LIST</span></button></a> -->
                             </center>
                         <?php } ?>
                     </div>
@@ -80,8 +80,8 @@
                                                         onclick="editJob(this);">Edit Job Details</a></li>
                                                         <li><a href="#" data-toggle="modal" data-target="#edit-job-dates-modal" onclick="editJobDates(<?php echo htmlspecialchars(json_encode($job['id'])); ?>,<?php echo htmlspecialchars(json_encode($job['job_id'])); ?>, 1);">Edit Job Posting Dates</a></li>
                                                         <li><a href="#" data-toggle="modal" data-target="#edit-job-file-modal" onclick="editJobFile(<?php echo htmlspecialchars(json_encode($job['id'])); ?>,<?php echo htmlspecialchars(json_encode($job['job_id'])); ?>);">Edit Job File</a></li>
-                                                        <div class="dropdown-divider"></div>
-                                                        <li><a href="district.php?tab=sd&page=employment&applicants=true&jobid=<?php echo $job['id']; ?>">See Job Applicants</a></li>
+                                                        <!-- <div class="dropdown-divider"></div>
+                                                        <li><a href="district.php?tab=sd&page=employment&applicants=true&jobid=<?php echo $job['id']; ?>">See Job Applicants</a></li> -->
                                                     </ul>
                                                 </div>
                                             </center>
